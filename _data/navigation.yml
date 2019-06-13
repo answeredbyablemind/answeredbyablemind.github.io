@@ -39,7 +39,7 @@ docs-ko:
       - title:  Test title
         url:    /docs/en/quick-start
       - title:  To my test post
-        url:    /_posts/2019-06-13-test.html
+        url:    https://angeloyeo.github.io/2019/06/13/test.html
         
   - title:      Customization
     children:
