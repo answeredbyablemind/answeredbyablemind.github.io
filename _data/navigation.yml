@@ -50,4 +50,4 @@ docs-ko:
       ...
       
   sidebar:
-  nav: docs-ko
+    nav: docs-ko
