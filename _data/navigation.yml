@@ -34,7 +34,7 @@ header:
     url: /about.html
     
 sidebar:
-  nav: docs-en
+  nav: docs-ko
     
 docs-ko:
   - title:      Start
