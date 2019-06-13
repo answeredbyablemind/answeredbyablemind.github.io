@@ -1,6 +1,3 @@
-sidebar:
-  nav: docs-ko
-
 header:
   - titles:
       en      : &EN       Archive
@@ -41,7 +38,7 @@ docs-ko:
     children:
       - title:  Test title
         url:    /docs/en/quick-start
-      - title:  Structure
+      - title:  To my test post
         url:    /_posts/2019-06-13-test.html
         
   - title:      Customization
