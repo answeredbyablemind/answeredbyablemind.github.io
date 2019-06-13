@@ -32,3 +32,22 @@ header:
       ko      : &KO       소개
       ko-KR   : *KO
     url: /about.html
+    
+docs-ko:
+  - title:      Start
+    children:
+      - title:  Quick Start
+        url:    /docs/en/quick-start
+      - title:  Structure
+        url:    /docs/en/structure
+      ...
+  - title:      Customization
+    children:
+      - title:  Configuration
+        url:    /docs/en/configuration
+      - title:  Navigation
+        url:    /docs/en/navigation
+      ...
+      
+  sidebar:
+  nav: docs-ko
