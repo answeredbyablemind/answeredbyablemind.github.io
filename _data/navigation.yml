@@ -37,12 +37,12 @@ header:
     url: /about.html
 
 docs-ko:
-  - title:      Start
+  - title:      Test
     children:
-      - title:  Quick Start
+      - title:  Test title
         url:    /docs/en/quick-start
       - title:  Structure
-        url:    /docs/en/structure
+        url:    /_posts/2019-06-13-test.html
         
   - title:      Customization
     children:
