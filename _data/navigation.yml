@@ -33,11 +33,6 @@ header:
       ko-KR   : *KO
     url: /about.html
 
----
-sidebar:
-  nav: docs-ko 
----
-
 docs-ko:
   - title:      Start
     children:
