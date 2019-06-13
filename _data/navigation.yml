@@ -32,10 +32,12 @@ header:
       ko      : &KO       소개
       ko-KR   : *KO
     url: /about.html
-    
+
+---
 sidebar:
-  nav: docs-ko
-    
+  nav: docs-ko 
+---
+
 docs-ko:
   - title:      Start
     children:
