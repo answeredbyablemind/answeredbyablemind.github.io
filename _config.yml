@@ -225,6 +225,11 @@ plugins:
 ## => comments
 ##############################
 comments:
-  provider: disqus
-  disqus:
-    shortname: "your-disqus-shortname"
+  provider: gitalk
+  gitalk:
+    clientID    : ba4e72611dc0a86b3678
+    clientSecret: 36928bb7e726e0c528022c8e81a3ec7f0fa89006
+    repository  : angeloyeo.github.io
+    owner       : gongdols
+    admin: # Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+      - angeloyeo
