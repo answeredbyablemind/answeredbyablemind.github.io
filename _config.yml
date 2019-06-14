@@ -221,4 +221,10 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
- 
+
+## => comments
+##############################
+comments:
+  provider: disqus
+  disqus:
+    shortname: "your-disqus-shortname"
