@@ -5,6 +5,9 @@ sidebar:
   nav: docs-ko
 aside:
   toc: true
+comments: true
+mermaid: true
+
 ---
 
 # 1. 수의 발견 
