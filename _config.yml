@@ -124,7 +124,7 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : a019054f9c42bd01c42b# GitHub Application Client ID
+    clientID    : a019054f9c42bd01c42b # GitHub Application Client ID
     clientSecret: 7c5c48e4e99f9bb4b9cec65c8b673192c46b660 # GitHub Application Client Secret
     repository  : angeloyeo/gongdols # GitHub repo
     owner       : angeloyeo # GitHub repo owner
