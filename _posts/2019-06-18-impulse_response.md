@@ -38,11 +38,11 @@ $$
 위에 Convolution을 통해서 표현된 식을 다시 한번 풀어서 생각해보자.
 
 $$
-y[n] = \sum_{k=-\infty}^{\infty}h[k]\space x[n-k] =
+y[n] = \sum_{k=-\infty}^{\infty}h[k]\space x[n-k] = \notag
 $$
 
 $$
-\cdots +h[-2]\space x[n+2]+h[-1]\space x[n+1]+h[0]\space x[n]
+\cdots +h[-2]\space x[n+2]+h[-1]\space x[n+1]+h[0]\space x[n] \notag
 $$
 
 $$
