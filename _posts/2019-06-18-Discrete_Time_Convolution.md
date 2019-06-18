@@ -71,32 +71,35 @@ $$
 =O_n\left( \sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}\right)
 $$
 
-이 때, $x[k]$ 는 상수이고 $n$ 에 대한 함수가 아니기 때문에, linearity의 성질에 의해서,
+이 때, $x[k]$ 는 상수이고 $n$ 에 대한 함수가 아니기 때문에, linearity의 성질에 의해서 식 (6)은 다음과 같다.
 
+$$
+eq(6) = \sum_{k=-\infty}^{\infty}{\left(x[k]O_n\left(\delta[n-k]\right) \right)}
+$$
 
-<center><img src="http://bit.ly/1JXRdIV"></center>
+라고 할 수 있다. 이 때, $h[n]=O_n\left(\delta[n]\right)$ 라는 정의와 Time-Invariant의 성질에 의해서
 
+$$
+ \sum_{k=-\infty}^{\infty}{\left(x[k]O_n\left(\delta[n-k]\right) \right)} = \sum_{k=-\infty}^{\infty}{x[k]h[n-k]}
 
-라고 할 수 있다. 이 때, $h[n]=O_n\left(\delta[n]\right)$라는 정의와 Time-Invariant의 성질에 의해서
-
-<center><img src="http://bit.ly/1JXReg2"></center>
-
+$$
 
 라는 수식을 만족할 수 있다.
 
-다시 한번, 위 식은 $y[n]$과 같으므로,
+다시 한번, 위 식은 $y[n]$ 과 같으므로,
 
-<center><img src="http://bit.ly/1OFiX1R"></center>
+$$y[n] = \sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$$
 
-
-라고 할 수 있다. (Convolution의 정의)
-
-식 (c)에 의해서,
-
-<center><img src="http://bit.ly/1JXRifL"></center>
+라고 할 수 있으며 이것이 discrete time convolution의 정의이다.
 
 
-이다. (Commutativity)
+또, 식 (3)에 의해서,
+
+$$
+y[n]= \sum_{k=-\infty}^{\infty}{x[k]h[n-k]} = \sum_{k=-\infty}^{\infty}{x[n-k]h[k]}
+$$
+
+라고 할 수 있으며 이 성질이 소위 말하는 Discrete Time Convolution에서 교환법칙이다.
 
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/Yy4xhWPei4I" frameborder="0" allowfullscreen></iframe></center>
