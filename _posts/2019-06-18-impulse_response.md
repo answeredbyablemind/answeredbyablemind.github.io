@@ -42,7 +42,11 @@ y[n] = \sum_{k=-\infty}^{\infty}h[k]\space x[n-k] = \notag
 $$
 
 $$
-\cdots +h[-2]\space x[n+2]+h[-1]\space x[n+1]+h[0]\space x[n] \notag
+\cdots +h[-2]\space x[n+2]+h[-1]\space x[n+1] \notag
+$$
+
+$$
++ h[0]\space x[n] \notag
 $$
 
 $$
@@ -70,7 +74,11 @@ input의 입장에서 보았을 때, 현재값은 무엇인가? $x[n]$ 이다.
 
 우리는 discrete convolution을 풀어가면서 causal system의 impulse response를 생각해보았다.
 
-또한, causal system의 impulse response이 갖는 조건에 대해 알아보았다. 여기서 causal system의 조건이 $h[k]=0 \space for \space k<0$ 이라는 사실을 원리적으로 확인해보았다.
+또한, causal system의 impulse response이 갖는 조건에 대해 알아보았다. 여기서 causal system의 조건이
+
+$$h[k]=0 \space for \space k<0$$
+
+ 이라는 사실을 원리적으로 확인해보았다.
 
 <center>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/E-DkbBSsPVY" frameborder="0" allowfullscreen></iframe>
