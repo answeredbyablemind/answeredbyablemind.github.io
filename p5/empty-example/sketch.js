@@ -5,5 +5,5 @@ function setup() {
 
 function draw() {
   // put drawing code here
-  fill(250,0,0)
+  background(250,0,0)
 }
