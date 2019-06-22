@@ -29,7 +29,7 @@ function draw() {
           vertex(i, wave[i]);
      }
      endShape();
-
+     // aa
      time += 0.05;
 
      if (wave.length > 250) {
