@@ -8,7 +8,6 @@ key: 2019062341
 ---
 
 <p align="center"><iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>
-아래의 슬라이더를 움직여 구형파를 만들어보자.
 
 # 2. Continuous Time Fourier Series
 ## 가. Orthogonal Functions
