@@ -1,5 +1,5 @@
 ---
-title: 푸리에 시리즈(Fourier Seris)
+title: 푸리에 시리즈(Fourier Series)
 sidebar:
   nav: docs-ko
 aside:
