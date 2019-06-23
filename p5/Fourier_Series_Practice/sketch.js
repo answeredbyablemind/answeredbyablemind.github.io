@@ -5,6 +5,7 @@ let slider;
 function setup() {
      createCanvas(600, 400);
      slider = createSlider(1,10,5);
+     slider.position(20, height-30)
 }
 
 function draw() {
@@ -12,6 +13,10 @@ function draw() {
      fill(255)
      textAlign(RIGHT,CENTER)
      text("(c) 공돌이의 수학정리노트",575,375)
+
+     textAlign(CENTER, CENTER)
+     textSize(15)
+     text("아래의 슬라이더를 움직여보자", width/2, 75)
      translate(100, 200)
 
 
