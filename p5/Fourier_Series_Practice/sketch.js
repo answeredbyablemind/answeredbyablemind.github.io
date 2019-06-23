@@ -2,11 +2,6 @@ let time = 0;
 let wave = [];
 let slider;
 
-let myFont;
-
-function preload() {
-     myFont = loadFont("NanumGothic-Regular.ttf")
-}
 function setup() {
      createCanvas(600, 400);
      slider = createSlider(1,10,5);
@@ -14,7 +9,6 @@ function setup() {
 
 function draw() {
      background(0)
-     textFont(myFont)
      fill(255)
      textAlign(RIGHT,CENTER)
      text("(c) 공돌이의 수학정리노트",575,375)
