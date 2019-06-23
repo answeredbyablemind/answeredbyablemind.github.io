@@ -7,7 +7,7 @@ aside:
 key: 2019062341
 ---
 
-<p align="center"><iframe width = "600" height = "400" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>
+<p align="center"><iframe width = "700" height = "500" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>
 
 \#2. Continuous Time Fourier Series
 \##가. Orthogonal Functions
