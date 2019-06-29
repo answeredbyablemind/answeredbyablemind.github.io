@@ -182,11 +182,11 @@ $$\{ \phi_k(t) | \phi_k(t) = exp(j \frac{2\pi k}{T} t), \space k =\cdots, -2,-,1
 >
 > (1) $k=p$ 일 때,
 >
-> $$ eq (11)  = \int_{0}^{T}{1 dt}= T$$
+> $$ eq (12)  = \int_{0}^{T}{1 dt}= T$$
 >
 > (2) $k\neq p$ 일 때,
 >
-> $$ eq(11) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
+> $$ eq(12) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
 >
 > $$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
 >
@@ -298,5 +298,4 @@ $\phi_k(t) = exp(j\frac{2\pi k}{T}t)$ 가 sinusoidal function과 연관되어 �
 
 [^1]: 벡터공간 상의 직교하는 기저벡터는 무한히 많이 찾을 수 있다. 대표적으로 Gram-Schmidt 방법을 이용할 수 있다.
 
-[^2]: 오일러 공식에 관해서는 다음의 포스트/유튜브 영상을 참조
-https://www.youtube.com/watch?v=GJspUkAsKF4
+[^2]: 오일러 공식에 관해서는 다음의 포스트/유튜브 영상을 참조 https://www.youtube.com/watch?v=GJspUkAsKF4
