@@ -142,12 +142,12 @@ Continuous Time Fourier Series의 정의는 아래와 같다.
 
 
 `DEFINITION4. Continuous Time Fourier Series`{:.success}
-
-x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다.
-
-$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
-
-$$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$
+>
+> x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다.
+>
+>$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
+>
+> $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$
 
 '나' 꼭지에서 설명한 것과 같이 orthogonality를 통해 얻게 되는 $x(t)$ 의 식이 갖고 있는 의미에 집중하자.
 
@@ -165,119 +165,111 @@ $$\{\phi_k(t) | \phi_k(t) = exp \left(j \frac{2\pi k}{T} t\right), \space k=\cdo
 
 * * *
 
-`PROOF 1.`{:.info}
-
-아래의 집합의 직교성에 관한 증명
+`PROOF 1.아래의 집합의 직교성에 관한 증명`{:.info}
 
 $$\{ \phi_k(t) | \phi_k(t) = exp(j \frac{2\pi k}{T} t), \space k =\cdots, -2,-,1, 0, 1, 2, \cdots, \}$$
 
-Proof)
-
-정수 k와 p에 대하여,
-
-$$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
-
-$$= \int_{0}^{T}{ exp\left( j \frac{2\pi k}{T} t \right) exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
-
-$$ = \int_{0}^{T}{exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
-
-(1) $k=p$ 일 때,
-
-$$ eq (11)  = \int_{0}^{T}{1 dt}= T$$
-
-(2) $k\neq p$ 일 때,
-
-$$ eq(11) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
-
-$$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
-
-여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
-
-$$\therefore \frac{T}{j2\pi (k-p)} \left(exp(j2\pi(k-p)) -1\right) =0$$
-
-그러므로 집합
-
-$$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
-
-은 직교 집합이다.
-
-* * *
+> Proof)
+>
+> 정수 k와 p에 대하여,
+>
+> $$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
+>
+> $$= \int_{0}^{T}{ exp\left( j \frac{2\pi k}{T} t \right) exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
+>
+> $$ = \int_{0}^{T}{exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
+>
+> (1) $k=p$ 일 때,
+>
+> $$ eq (11)  = \int_{0}^{T}{1 dt}= T$$
+>
+> (2) $k\neq p$ 일 때,
+>
+> $$ eq(11) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
+>
+> $$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
+>
+> 여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
+>
+> $$\therefore \frac{T}{j2\pi (k-p)} \left(exp(j2\pi(k-p)) -1\right) =0$$
+>
+> 그러므로 집합
+>
+> $$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
+>
+> 은 직교 집합이다.
 
 즉, $\{\phi_k(t)\}$ 가 an orthogonal set이기 때문에 같은 구간 $[0,T]$ 에서 정의되는 함수 $x(t)$ 는 $\{ \phi_k(t) \}$ 를 통해서 decompose될 수 있다. 그러므로, 식
 
 $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
 
-는 수학적으로 타당한 주장이라고 할 수 있다.
+는 수학적으로 타당하다고 할 수 있다.
 
 또한 상수 $a_k$ 를 구하는 방법에 대해서 생각해보아야 한다. 상수 $a_k$ 는 함수의 orthogonality의 성질을 이용해야
 유도해낼 수 있다.
 
-* * *
 
-`PROOF 2. 계수 $a_k$의 결정에 관한 증명`{:.info}
+`PROOF 2. 계수 $a_k$ 의 결정에 관한 증명`{:.info}
 
-Proof) PROOF 1로 부터, $x(t)$ 는 다음과 같이 나타낼 수 있다.
+> Proof) PROOF 1로 부터, $x(t)$ 는 다음과 같이 나타낼 수 있다.
+>
+> $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
+>
+> 양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
+>
+> $$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right) exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
+>
+> $$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
+>
+>
+> 이 때, 정수 k와 p에 대하여 두 가지 경우가 있을 수 있다.
+>
+> case 1. $k\neq p$ 일 때,
+>
+> $$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
+> $$
+>
+> $$
+> = \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)
+> \left| exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag
+> $$
+>
+> $$
+> = \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
+> \{exp(
+> j 2\pi (k-p))-exp(0)
+> \} \notag
+> $$
+>
+> 여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$ > 이므로,
+>
+> $$
+> = \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
+> \times{0} = 0
+> $$
+>
+> case 2. $k=p$ 일 때,
+>
+> $$
+> \Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} exp \left(j \frac{2\pi > (k-p)}{T} t \right) dt \notag
+> $$
+>
+> 여기서 $k=p$ 인 경우만을 확인하므로,
+>
+> $$
+> = a_p\int_{0}^{T} exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T
+> $$
+>
+> $$
+> \therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}  dt\right)
+> $$
 
-$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
-
-양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
-
-$$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right) exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
-
-$$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
-
-
-이 때, 정수 k와 p에 대하여 두 가지 경우가 있을 수 있다.
-
-case 1. $k\neq p$ 일 때,
-
-$$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
-$$
-
-$$
-= \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)
-\left| exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag
-$$
-
-$$
-= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
-\{exp(
-j 2\pi (k-p))-exp(0)
-\} \notag
-$$
-
-여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$ 이므로,
-
-$$
-= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
-\times{0} = 0
-$$
-
-case 2. $k=p$ 일 때,
-
-$$
-\Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} exp \left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
-$$
-
-여기서 $k=p$ 인 경우만을 확인하므로,
-
-$$
-= a_p\int_{0}^{T} exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T
-$$
-
-$$
-\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T} dt\right)
-$$
-
-Q.E.D.
-
-* * *
 
 다시 한번 말하지만, 위의 증명의 기초적인 아이디어는 orthogonality를 이용한다는 것이다.
 
 ### 3) CTFS에서 kernel function은 왜 exponential인가?
 
-위의 내용에서 확인한 바는 다음과 같다. T를 주기로 하는 주기함수 $x(t)$에 대해서
+위의 내용에서 확인한 바는 다음과 같다. $T$ 를 주기로 하는 주기함수 $x(t)$ 에 대해서
 
 $$
 x(t) = \sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)
