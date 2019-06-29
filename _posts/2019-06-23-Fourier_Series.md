@@ -16,8 +16,6 @@ key: 2019062341
 ## 가. Orthogonal Functions
 많은 학생들이 Fourier Analysis의 Formulae를 공부할 때, 가장 쉽게 간과하는 부분이 바로 푸리에 급수의 공식 유도 방법이다. 푸리에 급수의 공식은 가장 먼저 함수의 Orthogonality에서부터 출발해야 한다. 함수의 Orthogonality에 대한 개념은, 수학에서는 함수를 벡터처럼 다룰 수도 있다는 것에서 부터 출발한다. 즉, 수학적인 의미에서 함수 역시 마찬가지로 Inner Product를 정의할 수 있다.
 
-* * *
-
 `DEFINITION 1. 함수의 내적`{:.success}
 >
 >구간 $[a, b]$ 에서 두 함수의 내적은 다음과 같이 정의된다.
