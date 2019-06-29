@@ -19,11 +19,11 @@ key: 2019062341
 * * *
 
 `DEFINITION 1. 함수의 내적`{:.success}
-```
-구간 [a, b]에서 두 함수의 내적은 다음과 같이 정의된다.
+>
+>구간 [a, b]에서 두 함수의 내적은 다음과 같이 정의된다.
+>
+>$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
 
-$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
-```
 Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있다. Vector Analysis에 있어서 vector가 orthogonal 하다는 것은 두 벡터의 Inner product의 결과 값이 0이라는 것을 의미한다. 마찬가지로 두 함수의 inner product의 값이 0일 때 두 함수는 orthogonal 하다고 할 수 있다.
 
 `DEFINITION 2. 직교 함수`{:.success}
