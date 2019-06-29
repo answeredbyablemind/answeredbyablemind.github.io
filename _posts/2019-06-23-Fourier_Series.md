@@ -6,7 +6,7 @@ aside:
   toc: true
 key: 2019062341
 ---
-
+{% raw %}
 <p align="center"><iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>
 
 # 1. Continuous Time Fourier Series
@@ -94,7 +94,7 @@ $$\{ \phi_k(t) | \phi_k(t) = exp(j \frac{2\pi k}{T} t), \space k =\cdots, -2,-,1
 
 Proof)
 
-서로 다른 정수 k와 p에 대하여,
+정수 k와 p에 대하여,
 
 $$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
 
@@ -212,3 +212,5 @@ where
 <img src="http://bit.ly/1OFh6Ku">가 sinusoidal function과 연관되어 있다는 사실은 Euler Equation($e^{i\theta}=cos\theta+i sin\theta$)을 통해서 알 수 있다.
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/7JRwjCpKewQ" frameborder="0" allowfullscreen></iframe></center>
+
+{% endraw %}
