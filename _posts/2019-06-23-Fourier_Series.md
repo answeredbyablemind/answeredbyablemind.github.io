@@ -26,7 +26,7 @@ $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
 
 Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있다. Vector Analysis에 있어서 vector가 orthogonal 하다는 것은 두 벡터의 Inner product의 결과 값이 0이라는 것을 의미한다. 마찬가지로 두 함수의 inner product의 값이 0일 때 두 함수는 orthogonal 하다고 할 수 있다.
 
-DEFINITION 2.
+`DEFINITION 2.`{:.success}
 
 직교 함수.
 
@@ -36,11 +36,11 @@ $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
 
 주의해야 할 점이 하나있다면,  함수가 orthogonal하다는 것은 벡터 analysis에서와는 달리 기하학적으로 수직인 것과는 관련 있는 것이 아니라는 점이다.함수의 orthogonality에 대해서 짚고 꼭 넘어가야 할 정의는 orthogonal set에 대한 정의이다.
 
-> DEFINITION 3. 직교 집합 (orthogonal set)
->
-> 구간 [a, b]에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다.
->
-> $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for m \neq n$$
+`DEFINITION 3. 직교 집합 (orthogonal set)`{:.success}
+
+ 구간 [a, b]에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다.
+
+$$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for m \neq n$$
 
  그렇다면 이 Orthogonal Set은 왜 중요한 것일까? 그것은 구간 [a, b]에서 정의된 함수 $y=f(x)$ 는 같은 구간 [a,b]에서 정의된 Orthogonal set을 이용하면 상수 , n=0,1,2,...와 linearly decompose될 수 있기 때문이다. 즉,
 
@@ -60,13 +60,13 @@ $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 Continuous Time Fourier Series의 정의는 아래와 같다.
 
 
-> DEFINITION4. Continuous Time Fourier Series
->
-> x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다.
->
-> $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
->
-> $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$
+`DEFINITION4. Continuous Time Fourier Series`{:.success}
+
+x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다.
+
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
+
+$$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$
 
 
 
@@ -75,6 +75,7 @@ Continuous Time Fourier Series의 정의는 아래와 같다.
  또한 푸리에 급수가 학생들에게 어렵게 느껴지는 두 번째 이유는 x(t)가 DEFINITION 4에서와 같이 decompose된다는 사실보다는 의 공식에 집중하기 때문이다. $a_k$ 에는 꼭 ${1}\over{T}$ 가 곱해진다던지, 적분구간의 범위가 $–T/2$ 에서 $T/2$ 라던지 하는 것들이다. 혹은 exponential의 power에 음수가 붙는다던지 하는 것들이다. 하지만, 우리가 진짜로 집중해야 하는 부분은 가 아니라 라는 것을 거듭 강조하고 싶다.
 
 ### 2) CTFS라고 불리는 주장에 대한 증명
+
 먼저, 다시 한번 CTFS의 식, x(t)를 살펴보자.
 
 $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp \left(j \frac{2\pi k}{T} t\right)}$$
@@ -87,7 +88,7 @@ $$\{\phi_k(t) | \phi_k(t) = exp \left(j \frac{2\pi k}{T} t\right), \space k=\cdo
 
 * * *
 
-PROOF 1.
+`PROOF 1.`{:.info}
 
 아래의 집합의 직교성에 관한 증명
 
@@ -115,44 +116,45 @@ $$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
 
 여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
 
-<center><img src="http://bit.ly/1JXPzqP"></center>
+$$\therefore \frac{T}{j2\pi (k-p)} \left(exp(j2\pi(k-p)) -1\right) =0$$
 
-그러므로 집합 <img src="http://bit.ly/1JXPpQm"> 은 직교 집합이다.
+그러므로 집합
 
-<right>Q.E.D.</right>
+$$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
+
+은 직교 집합이다.
 
 * * *
 
-즉, {$\phi_k(t)$}가 an orthogonal set이기 때문에 같은 구간 [0,T]에서 정의되는 함수 x(t)는 {$\phi_k(t)$}를 통해서 decompose될 수 있다. 그러므로, 식
+즉, $\{\phi_k(t)\}$ 가 an orthogonal set이기 때문에 같은 구간 $[0,T]$ 에서 정의되는 함수 $x(t)$ 는 $\{ \phi_k(t) \}$ 를 통해서 decompose될 수 있다. 그러므로, 식
 
-<center><img src="http://bit.ly/1OFg6pv"></center>
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
 
 는 수학적으로 타당한 주장이라고 할 수 있다.
 
-또한 상수 $a_k$를 구하는 방법에 대해서 생각해보아야 한다. 상수 $a_k$는 함수의 orthogonality의 성질을 이용해야
+또한 상수 $a_k$ 를 구하는 방법에 대해서 생각해보아야 한다. 상수 $a_k$ 는 함수의 orthogonality의 성질을 이용해야
 유도해낼 수 있다.
 
 * * *
 
-PROOF 2. 계수 $a_k$의 결정에 관한 증명
+`PROOF 2. 계수 $a_k$의 결정에 관한 증명`{:.info}
 
 Proof) PROOF 1로 부터, $x(t)$ 는 다음과 같이 나타낼 수 있다.
 
-<center><img src="http://bit.ly/1OFg6pv"></center>
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
 
-양변에 $\phi^{\*}_p (t)=exp(-j\frac{2\pi p}{T}t)$를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
+양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
 
-<center>
+$$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right) exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
 
-<img src="http://bit.ly/1OFhM2d">
+$$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
 
-<img src="http://bit.ly/1JXPF1w">
-
-</center>
 
 이 때, 정수 k와 p에 대하여 두 가지 경우가 있을 수 있다.
 
 case 1. $k\neq p$ 일 때,
+
+$$\Rightarrow $$
 
 <img src="http://bit.ly/1JXPHXj">
 
