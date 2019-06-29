@@ -100,14 +100,23 @@ $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 
 잘 생각해보면, 벡터는 다음과 같이 정의역과 치역의 관계로 표현되는 함수로도 생각할 수도 있다.
 
-2차원 벡터는 다음과 같이 mapping 된 함수이다.
+2차원 벡터 $(3,5)$ 는 다음과 같이 mapping 된 함수이다.
 
+<p align="center">
+  <img width="300" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/3-1-fourier_seris/pic1.png">
+</p>
 
+3차원 벡터 $(3,5,2)$ 는 다음과 같이 mapping 된 함수이다.
 
+<p align="center">
+  <img width="300" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/3-1-fourier_seris/pic2.png">
+</p>
 
+그러면, 4개의 실수를 나열한 것을 4차원 벡터로 볼 수 있고, 5개의 실수를 나열한 것을 5차원 벡터로 볼 수 있을 것이다.
 
-그러면, 4개의 실수를 나열한 것은? 4차원 벡터라고 할 수 있다. 5개의 실수를 나열한 것은? 5차원 벡터이다.
+**일반적으로 실수 함수는 무한개의 실수를 정의역으로 하고 무한개의 함수 값을 치역으로 하는 _무한차원 벡터_이다.**
 
+### (4)
 
 
 
