@@ -9,6 +9,9 @@ key: 2019062341
 {% raw %}
 <p align="center"><iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>
 
+<center> 푸리에 급수가 말하는 것: 임의의 주기함수는 *삼각함수의 합*으로 표현될 수 있다.</center>
+
+
 # 1. Continuous Time Fourier Series
 ## 가. Orthogonal Functions
 많은 학생들이 Fourier Analysis의 Formulae를 공부할 때, 가장 쉽게 간과하는 부분이 바로 푸리에 급수의 공식 유도 방법이다. 푸리에 급수의 공식은 가장 먼저 함수의 Orthogonality에서부터 출발해야 한다. 함수의 Orthogonality에 대한 개념은, 수학에서는 함수를 벡터처럼 다룰 수도 있다는 것에서 부터 출발한다. 즉, 수학적인 의미에서 함수 역시 마찬가지로 Inner Product를 정의할 수 있다.
@@ -51,6 +54,65 @@ $$ f(x) = c_0\phi_0(x) + c_1\phi_1(x) + \cdots + c_n\phi_n(x) + \cdots $$
 $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 
 와 같이 linearly decompose될 수 있기 때문이다.
+
+## 나. orthogonality 성질을 가지는 함수 집합을 이용해서 다른 함수를 표현한다는 것의 의미?
+
+### (1) 함수는 벡터이다.
+
+`DEFINITION3`{:.success}에서 확인한 내용과 관련하여, 하나의 함수를 orthogonal set의 함수를 이용해 급수로 표현될 수 있다는 것은 어떻게 생각해야 할까?
+
+이것은 벡터와 연관시켜 생각해야한다. 함수 역시 벡터로 생각할 수 있으며, 추상적인 벡터로 볼 수 있기 때문이다.
+
+조금 깊이 들어가보자. 벡터란 무엇인가? 크기와 방향을 갖는 요소? 아니다. 선형대수학에서는 더 추상적으로 덧셈과 곱셈 연산이 가능한 대수적 객체(algebraic objects that can be added and scaled)로 정의하고 있다.
+
+즉, 선형대수학에서 벡터라고 한다면 다음과 같은 공리(axioms)가 성립해야 한다.
+
+덧셈에 관한 공리. 벡터 $x, y, z$ 에 대하여 다음이 성립한다.
+* $x+y = y+x$
+* $(x+y)+z = x+(y+z)$
+* $0+x = x+0 = x$
+* $(-x) + x = x + (-x) = 0$
+
+곱셈에 관한 공리. 벡터 x와 실수 c, d에 대하여 다음이 성립한다.
+* $0x = 0$
+* $1x = x$
+* $(cd)x = c(dx)$
+
+분배에 관한 공리. 벡터 x,y 와 실수 c, d에 대하여 다음이 성립한다.
+* $c(x+y) = cx + cy$
+* $(c+d)x = cx +dx$
+
+이러한 공리를 만족시키는 것이 벡터라고 정의할 수 있다면, 함수 역시 일종의 (추상적인) 벡터로 생각할 수 있다.
+
+
+### (2) 함수는 벡터 공간(함수 공간) 상의 한 점(point)이다.
+또, 벡터는 공간 상의 한 점을 표현하기 위해 종종 사용된다. 선형대수학에서도 벡터는 *벡터 공간* 상의 한 점을 표현하는 원소(element)로 생각된다.
+
+마찬가지로 함수를 벡터로 생각할 수 있다고 하면, 우리는 함수 역시 *함수 공간* 상의 한 점을 표현하는 점으로 생각할 수 있다. 매우 추상적이지만 사고를 확장시키는 과정을 통해 얻게된 결론이다.
+
+### (3) 벡터로써의 함수의 차원에 대하여
+
+선형대수학에서 벡터에 대해 논할 때 차원이라는 용어를 자주 쓰게 된다.
+
+가령 $(5,3)$ 과 같은 벡터를 생각해보자. 이 벡터는 2차원 실수 *벡터 공간* 상에 있는 한 점이다. 또, 주목할 것은 이 벡터는 두 개의 실수를 나열한 것(전문 용어로는 튜플)으로 생각할 수도 있다는 점이다.
+
+또, $(5,3,2)$ 과 같은 벡터는 어떤가? 이 벡터는 3차원 실수 *벡터 공간* 상에 있는 한 점을 나타낸다. 또, 이 벡터는 세 개의 실수를 나열한 것이다.
+
+잘 생각해보면, 벡터는 다음과 같이 정의역과 치역의 관계로 표현되는 함수로도 생각할 수도 있다.
+
+2차원 벡터는 다음과 같이 mapping 된 함수이다.
+
+
+
+
+
+그러면, 4개의 실수를 나열한 것은? 4차원 벡터라고 할 수 있다. 5개의 실수를 나열한 것은? 5차원 벡터이다.
+
+
+
+
+
+
 
 
 ## 나. Continuous Time Fourier Series
@@ -154,31 +216,43 @@ $$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\righ
 
 case 1. $k\neq p$ 일 때,
 
-$$\Rightarrow $$
+$$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
+$$
 
-<img src="http://bit.ly/1JXPHXj">
+$$
+= \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)
+\left| exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag
+$$
 
-<img src="http://bit.ly/1JXPIdR">
+$$
+= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
+\{exp(
+j 2\pi (k-p))-exp(0)
+\} \notag
+$$
 
-<img src="http://bit.ly/1JXPJhO">
+여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$ 이므로,
 
-<img src="http://bit.ly/1OFgIeV">
+$$
+= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
+\times{0} = 0
+$$
 
 case 2. $k=p$ 일 때,
 
-<img src="http://bit.ly/1JXPHXj">
+$$
+\Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} exp \left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
+$$
 
-<img src="http://bit.ly/1OFgLao">
+여기서 $k=p$ 인 경우만을 확인하므로,
 
-<img src="http://bit.ly/1JXPPpU">
+$$
+= a_p\int_{0}^{T} exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T
+$$
 
-$p=k$라고 할 수 있으므로,
-
-<center>
-
-<img src="http://bit.ly/1OFgPak">
-
-</center>
+$$
+\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T} dt\right)
+$$
 
 Q.E.D.
 
@@ -188,25 +262,31 @@ Q.E.D.
 
 ### 3) CTFS에서 kernel function은 왜 exponential인가?
 
-위의 내용에서 확인한 바는 다음과 같다. J. Fourier가 주장인 T를 주기로 하는 주기함수 x(t)에 대해서
+위의 내용에서 확인한 바는 다음과 같다. J. Fourier가 주장인 T를 주기로 하는 주기함수 $x(t)$에 대해서
 
-<center>
-<img src="http://bit.ly/1OFgWm6">
+$$
+x(t) = \sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)
+$$
 
-where
+<center> where </center>
 
-<img src="http://bit.ly/1OFgXGV">
-</center>
+$$
+a_k = \frac{1}{T}\int_{0}^{T} x(t)exp\left(j \frac{2\pi k}{T} t\right) dt
+$$
+
 은 수학적으로 타당한 것이다.
 
-그렇다면 J. Fourier의 이론은 왜 중요한 것인가? 그것은 CTFS라고 불리는 위의 Fourier Series의 kernel function인
+그렇다면 신호처리에 있어서 J. Fourier의 이론은 왜 중요한 것인가? 그것은 CTFS라고 불리는 위의 Fourier Series의 kernel function인
 
-<center><img src="http://bit.ly/1OFh6Ku"></center>
+$$\phi_k(t) = exp\left(j \frac{2\pi k}{T}t\right)$$
 
 에 있다.간단히 설명하자면, CTFS는 주기함수를 또 다른 주기 함수인 sinusoidal function을 통해서 나타낼 수 있다는 것을 증명했기 때문이다. 특히, 기초적이고 수학적으로 다루기 쉬운 sinusoidal function을 통해서 모든 주기함수를 decompose할 수 있다는 점에서 CTFS는 중요한 것이다.
 
-<img src="http://bit.ly/1OFh6Ku">가 sinusoidal function과 연관되어 있다는 사실은 Euler Equation($e^{i\theta}=cos\theta+i sin\theta$)을 통해서 알 수 있다.
+$\phi_k(t) = exp(j\frac{2\pi k}{T}t)$ 가 sinusoidal function과 연관되어 있다는 사실은 Euler Equation($e^{i\theta}=cos\theta+i sin\theta$)을 통해서 알 수 있다.[^1]
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/7JRwjCpKewQ" frameborder="0" allowfullscreen></iframe></center>
 
 {% endraw %}
+
+[^1]: 오일러 공식에 관해서는 다음의 포스트/유튜브 영상을 참조
+https://www.youtube.com/watch?v=GJspUkAsKF4
