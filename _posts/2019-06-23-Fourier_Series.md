@@ -15,23 +15,24 @@ key: 2019062341
 
 * * *
 
-> DEFINITION 1.
->
-> 함수의 내적
->
-> 구간 [a, b]에서 두 함수의 내적은 다음과 같이 정의된다.
->
-> $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
+`DEFINITION 1.`{:.success}
+
+함수의 내적
+
+구간 [a, b]에서 두 함수의 내적은 다음과 같이 정의된다.
+
+$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
+{:.success}
 
 Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있다. Vector Analysis에 있어서 vector가 orthogonal 하다는 것은 두 벡터의 Inner product의 결과 값이 0이라는 것을 의미한다. 마찬가지로 두 함수의 inner product의 값이 0일 때 두 함수는 orthogonal 하다고 할 수 있다.
 
-> DEFINITION 2.
->
-> 직교 함수.
->
-> 다음이 성립할 경우 구간 [a, b]에서 두 함수는 직교한다고 한다.
->
-> $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
+DEFINITION 2.
+
+직교 함수.
+
+다음이 성립할 경우 구간 [a, b]에서 두 함수는 직교한다고 한다.
+
+$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
 
 주의해야 할 점이 하나있다면,  함수가 orthogonal하다는 것은 벡터 analysis에서와는 달리 기하학적으로 수직인 것과는 관련 있는 것이 아니라는 점이다.함수의 orthogonality에 대해서 짚고 꼭 넘어가야 할 정의는 orthogonal set에 대한 정의이다.
 
@@ -100,24 +101,17 @@ $$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
 
 $$= \int_{0}^{T}{ exp\left( j \frac{2\pi k}{T} t \right) exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
 
-<center>
-<img src="http://bit.ly/1OFgi8i">
-
-<img src="http://bit.ly/1JXPrHY">
-
-<img src="http://bit.ly/1OFgmF3">
-
-</center>
+$$ = \int_{0}^{T}{exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
 
 (1) $k=p$ 일 때,
 
-식 (1) <img src="http://bit.ly/1JXPtzp">
+$$ eq (11)  = \int_{0}^{T}{1 dt}= T$$
 
 (2) $k\neq p$ 일 때,
 
-식 (1)= <img src="http://bit.ly/1OFgqok">
+$$ eq(11) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
 
-<img src="http://bit.ly/1JXPy6b">
+$$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
 
 여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
 
