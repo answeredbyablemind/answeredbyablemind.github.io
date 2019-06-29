@@ -38,7 +38,8 @@ Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있
 >
 > 구간 $[a, b]$ 에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다.
 >
-> $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for m \neq n$$
+> $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for \space m \neq n$$
+>
 > 여기서 $\phi_n$, $n=0,1,2,\cdots$ 을 *기저함수(basis function)* 라고 부른다.
 
  그렇다면 이 orthogonal Set은 왜 중요한 것일까? 그것은 구간 $[a, b]$ 에서 정의된 함수 $y=f(x)$ 는 같은 구간 $[a,b]$ 에서 정의된 기저 함수와 상수 $c_n, \space$ $n=0,1,2,\cdots$ 를 이용하여 선형적으로 분해할 수 있기 때문이다. 즉,
