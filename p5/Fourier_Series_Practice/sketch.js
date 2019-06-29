@@ -1,11 +1,15 @@
 let time = 0;
 let wave = [];
 let slider;
+let myButton;
+let isButtonPressed = false;
 
 function setup() {
      createCanvas(600, 400);
      slider = createSlider(1,10,5);
      slider.position(20, height-30)
+     myButton = createButton('Play&Stop')
+     myButton.position(50, height-70)
 }
 
 function draw() {
@@ -19,6 +23,7 @@ function draw() {
      text("아래의 슬라이더를 움직여보자", width/2, 75)
      translate(100, 200)
 
+     myButton.mousePressed(changeFlag);
 
      let x = 0
      let y = 0
@@ -57,4 +62,17 @@ function draw() {
      if (wave.length > 260) {
           wave.pop()
      }
+}
+
+function changeFlag(){
+     isButtonPressed = !isButtonPressed;
+     console.log(isButtonPressed)
+
+     if(isButtonPressed){
+          noLoop();
+     }
+     else{
+          loop();
+     }
+
 }
