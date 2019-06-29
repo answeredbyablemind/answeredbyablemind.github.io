@@ -18,26 +18,21 @@ key: 2019062341
 
 * * *
 
-`DEFINITION 1.`{:.success}
-
-함수의 내적
-
+`DEFINITION 1. 함수의 내적`{:.success}
+```
 구간 [a, b]에서 두 함수의 내적은 다음과 같이 정의된다.
 
 $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
-{:.success}
-
+```
 Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있다. Vector Analysis에 있어서 vector가 orthogonal 하다는 것은 두 벡터의 Inner product의 결과 값이 0이라는 것을 의미한다. 마찬가지로 두 함수의 inner product의 값이 0일 때 두 함수는 orthogonal 하다고 할 수 있다.
 
-`DEFINITION 2.`{:.success}
-
-직교 함수.
+`DEFINITION 2. 직교 함수`{:.success}
 
 다음이 성립할 경우 구간 [a, b]에서 두 함수는 직교한다고 한다.
 
 $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
 
-주의해야 할 점이 하나있다면,  함수가 orthogonal하다는 것은 벡터 analysis에서와는 달리 기하학적으로 수직인 것과는 관련 있는 것이 아니라는 점이다.함수의 orthogonality에 대해서 짚고 꼭 넘어가야 할 정의는 orthogonal set에 대한 정의이다.
+함수의 orthogonality에 대해서 짚고 꼭 넘어가야 할 정의는 orthogonal set에 대한 정의이다.
 
 `DEFINITION 3. 직교 집합 (orthogonal set)`{:.success}
 
@@ -114,7 +109,7 @@ $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 
 그러면, 4개의 실수를 나열한 것을 4차원 벡터로 볼 수 있고, 5개의 실수를 나열한 것을 5차원 벡터로 볼 수 있을 것이다.
 
-**일반적으로 실수 함수는 무한개의 실수를 정의역으로 하고 무한개의 함수 값을 치역으로 하는 _무한차원 벡터_이다.**
+**일반적으로 실수 함수는 무한개의 실수를 정의역으로 하고 무한개의 함수 값을 치역으로 하는 *무한차원 벡터* 이다.**
 
 ### (4)
 
