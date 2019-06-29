@@ -9,7 +9,7 @@ key: 2019062341
 {% raw %}
 <p align="center"><iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>
 
-<center> 푸리에 급수가 말하는 것: 임의의 주기함수는 *삼각함수의 합*으로 표현될 수 있다.</center>
+<center> 푸리에 급수가 말하는 것: 임의의 주기함수는 <b>삼각함수의 합</b>으로 표현될 수 있다.</center>
 
 
 # 1. Continuous Time Fourier Series
@@ -20,27 +20,28 @@ key: 2019062341
 
 `DEFINITION 1. 함수의 내적`{:.success}
 >
->구간 [a, b]에서 두 함수의 내적은 다음과 같이 정의된다.
+>구간 $[a, b]$ 에서 두 함수의 내적은 다음과 같이 정의된다.
 >
 >$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
 
 Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있다. Vector Analysis에 있어서 vector가 orthogonal 하다는 것은 두 벡터의 Inner product의 결과 값이 0이라는 것을 의미한다. 마찬가지로 두 함수의 inner product의 값이 0일 때 두 함수는 orthogonal 하다고 할 수 있다.
 
 `DEFINITION 2. 직교 함수`{:.success}
-
-다음이 성립할 경우 구간 [a, b]에서 두 함수는 직교한다고 한다.
-
-$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
+>
+> 다음이 성립할 경우 구간 $[a, b]$ 에서 두 함수는 직교한다고 한다.
+>
+> $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
 
 함수의 orthogonality에 대해서 짚고 꼭 넘어가야 할 정의는 orthogonal set에 대한 정의이다.
 
 `DEFINITION 3. 직교 집합 (orthogonal set)`{:.success}
+>
+> 구간 $[a, b]$ 에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다.
+>
+> $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for m \neq n$$
+> 여기서 $\phi_n$, $n=0,1,2,\cdots$ 을 *기저함수(basis function)* 라고 부른다.
 
- 구간 [a, b]에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다.
-
-$$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for m \neq n$$
-
- 그렇다면 이 Orthogonal Set은 왜 중요한 것일까? 그것은 구간 [a, b]에서 정의된 함수 $y=f(x)$ 는 같은 구간 [a,b]에서 정의된 Orthogonal set을 이용하면 상수 , n=0,1,2,...와 linearly decompose될 수 있기 때문이다. 즉,
+ 그렇다면 이 orthogonal Set은 왜 중요한 것일까? 그것은 구간 $[a, b]$ 에서 정의된 함수 $y=f(x)$ 는 같은 구간 $[a,b]$ 에서 정의된 기저 함수와 상수 $c_n, \space$ $n=0,1,2,\cdots$ 를 이용하여 선형적으로 분해할 수 있기 때문이다. 즉,
 
 $$ f(x) = c_0\phi_0(x) + c_1\phi_1(x) + \cdots + c_n\phi_n(x) + \cdots $$
 
@@ -48,11 +49,11 @@ $$ f(x) = c_0\phi_0(x) + c_1\phi_1(x) + \cdots + c_n\phi_n(x) + \cdots $$
 
 $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 
-와 같이 linearly decompose될 수 있기 때문이다.
+와 같이 선형적으로 분해할 수 있다.
 
 ## 나. orthogonality 성질을 가지는 함수 집합을 이용해서 다른 함수를 표현한다는 것의 의미?
 
-### (1) 함수는 벡터이다.
+### 1) 함수는 벡터이다.
 
 `DEFINITION3`{:.success}에서 확인한 내용과 관련하여, 하나의 함수를 orthogonal set의 함수를 이용해 급수로 표현될 수 있다는 것은 어떻게 생각해야 할까?
 
@@ -68,24 +69,24 @@ $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 * $0+x = x+0 = x$
 * $(-x) + x = x + (-x) = 0$
 
-곱셈에 관한 공리. 벡터 x와 실수 c, d에 대하여 다음이 성립한다.
+곱셈에 관한 공리. 벡터 $x$ 와 실수 $c, d$ 에 대하여 다음이 성립한다.
 * $0x = 0$
 * $1x = x$
 * $(cd)x = c(dx)$
 
-분배에 관한 공리. 벡터 x,y 와 실수 c, d에 대하여 다음이 성립한다.
+분배에 관한 공리. 벡터 $x,y$ 와 실수 $c, d$ 에 대하여 다음이 성립한다.
 * $c(x+y) = cx + cy$
 * $(c+d)x = cx +dx$
 
 이러한 공리를 만족시키는 것이 벡터라고 정의할 수 있다면, 함수 역시 일종의 (추상적인) 벡터로 생각할 수 있다.
 
 
-### (2) 함수는 벡터 공간(함수 공간) 상의 한 점(point)이다.
+### 2) 함수는 벡터 공간(함수 공간) 상의 한 점(point)이다.
 또, 벡터는 공간 상의 한 점을 표현하기 위해 종종 사용된다. 선형대수학에서도 벡터는 *벡터 공간* 상의 한 점을 표현하는 원소(element)로 생각된다.
 
 마찬가지로 함수를 벡터로 생각할 수 있다고 하면, 우리는 함수 역시 *함수 공간* 상의 한 점을 표현하는 점으로 생각할 수 있다. 매우 추상적이지만 사고를 확장시키는 과정을 통해 얻게된 결론이다.
 
-### (3) 벡터로써의 함수의 차원에 대하여
+### 3) 벡터로써의 함수의 차원에 대하여
 
 선형대수학에서 벡터에 대해 논할 때 차원이라는 용어를 자주 쓰게 된다.
 
@@ -111,13 +112,27 @@ $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 
 **일반적으로 실수 함수는 무한개의 실수를 정의역으로 하고 무한개의 함수 값을 치역으로 하는 *무한차원 벡터* 이다.**
 
-### (4)
+### 4) 기저 벡터(basis vector)를 이용한 벡터의 표현
 
+2차원 벡터 $(5,3)$ 을 표현하기 위해서는 2개의 기저 벡터가 필요하다.
 
+기저 벡터는 $(1,0), (0,1)$ 과 같은 벡터 쌍 일 수도 있고, $(1/\sqrt{2}, 1/\sqrt{2})$. $(-1/\sqrt{2}, 1/\sqrt{2})$ 같은 벡터 쌍 일 수도 있다 [^1].
 
+가령, $(1,0), (0,1)$ 이라는 벡터 쌍을 기저벡터로 삼는 경우 $(5,3)$ 은 다음과 같이 생각할 수 있다.
 
+$$
+(5,3) = 5 \times (1,0) + 3 \times (0,1)
+$$
 
+마찬가지로 3차원 벡터를 표현하기 위해서는 세 개의 기저 벡터가 필요하고, 기저벡터를 이용해 하나의 벡터를 분해해서 생각할 수 있다.
 
+이런 아이디어를 이용해 함수(즉, 무한 차원의 벡터)는 무한개의 직교하는 기저벡터가 필요하게 되고, 기저벡터를 이용해 하나의 함수를 분해해서 생각할 수 있게 된다.
+
+푸리에 시리즈에서 삼각함수들은 무한차원 *벡터 공간*의 벡터(함수)를 표현해주기 위해 선택한 기저벡터라고 생각할 수 있는 것이다.
+
+그래서 임의의 함수 $f(x)$ 는 무한개의 기저벡터들을 이용해 다음과 같이 표현가능하다.
+
+$$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)}$$
 
 ## 나. Continuous Time Fourier Series
 
@@ -286,11 +301,13 @@ $$\phi_k(t) = exp\left(j \frac{2\pi k}{T}t\right)$$
 
 에 있다.간단히 설명하자면, CTFS는 주기함수를 또 다른 주기 함수인 sinusoidal function을 통해서 나타낼 수 있다는 것을 증명했기 때문이다. 특히, 기초적이고 수학적으로 다루기 쉬운 sinusoidal function을 통해서 모든 주기함수를 decompose할 수 있다는 점에서 CTFS는 중요한 것이다.
 
-$\phi_k(t) = exp(j\frac{2\pi k}{T}t)$ 가 sinusoidal function과 연관되어 있다는 사실은 Euler Equation($e^{i\theta}=cos\theta+i sin\theta$)을 통해서 알 수 있다.[^1]
+$\phi_k(t) = exp(j\frac{2\pi k}{T}t)$ 가 sinusoidal function과 연관되어 있다는 사실은 Euler Equation($e^{i\theta}=cos\theta+i sin\theta$)을 통해서 알 수 있다.[^2]
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/7JRwjCpKewQ" frameborder="0" allowfullscreen></iframe></center>
 
 {% endraw %}
 
-[^1]: 오일러 공식에 관해서는 다음의 포스트/유튜브 영상을 참조
+[^1]: 벡터공간 상의 직교하는 기저벡터는 무한히 많이 찾을 수 있다. 대표적으로 Gram-Schmidt 방법을 이용할 수 있다.
+
+[^2]: 오일러 공식에 관해서는 다음의 포스트/유튜브 영상을 참조
 https://www.youtube.com/watch?v=GJspUkAsKF4
