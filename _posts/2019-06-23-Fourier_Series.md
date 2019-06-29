@@ -134,9 +134,9 @@ $$
 
 $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)} \notag$$
 
-## 나. Continuous Time Fourier Series
+## 다. Continuous Time Fourier Series
 
-### 1) Continuous Time Fourier Series의 정의 (그리고 약간의 잔소리)
+### 1) Continuous Time Fourier Series의 정의
 
 Continuous Time Fourier Series의 정의는 아래와 같다.
 
@@ -149,13 +149,9 @@ $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
 
 $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$
 
+'나' 꼭지에서 설명한 것과 같이 orthogonality를 통해 얻게 되는 $x(t)$ 의 식이 갖고 있는 의미에 집중하자.
 
-
- 개인적인 의견이지만, 푸리에 급수가 학생들에게 어렵게 느껴지는 이유는 이 때 부터라고 생각된다. 그 이유는 첫 번째로 푸리에 급수는 원래 “주장(claim)“이기 때문이다. 즉, 구간 $[0,T]$ 에서 정의된 어떠한 주기 T를 가지는 주기함수는 복소함수 $e^{j\theta}$  의 linear combination으로 분해될 수 있다는 주장이다. 일반적으로 대부분의 수학 공식은 그 바닥부터 차근차근 설명해준다. 천천히 기초부터 쌓아가기 때문에 조금 조금씩 이해해가면, 뒤돌아보면 꽤 어려운 개념까지도 올라올 수 있게 되는 것이다. 하지만, 푸리에 급수의 경우는 이야기가 약간 다르게 보인다. 그것은 다시 한번 푸리에 급수는 ”주장“에 불과하기 때문이다. (후에 주장이 사실이라는 것을 증명하도록 하겠지만). 하지만, 앞서 이 글의 첫 부분에서 설명했던 ‘적분변환’과 함수의 ’orthogonality’를 잘 생각해본다면 Fourier Series는 ‘적분변환’과 ‘함수의 Orthognonality를 이용한 주기 함수의 Decomposition’의 일종에 불과하다는 것을 알 수 있을 것이다.
-
- 또한 푸리에 급수가 학생들에게 어렵게 느껴지는 두 번째 이유는 x(t)가 DEFINITION 4에서와 같이 decompose된다는 사실보다는 의 공식에 집중하기 때문이다. $a_k$ 에는 꼭 ${1}\over{T}$ 가 곱해진다던지, 적분구간의 범위가 $–T/2$ 에서 $T/2$ 라던지 하는 것들이다. 혹은 exponential의 power에 음수가 붙는다던지 하는 것들이다. 하지만, 우리가 진짜로 집중해야 하는 부분은 가 아니라 라는 것을 거듭 강조하고 싶다.
-
-### 2) CTFS라고 불리는 주장에 대한 증명
+### 2) CTFS 증명
 
 먼저, 다시 한번 CTFS의 식, x(t)를 살펴보자.
 
@@ -281,7 +277,7 @@ Q.E.D.
 
 ### 3) CTFS에서 kernel function은 왜 exponential인가?
 
-위의 내용에서 확인한 바는 다음과 같다. J. Fourier가 주장인 T를 주기로 하는 주기함수 $x(t)$에 대해서
+위의 내용에서 확인한 바는 다음과 같다. T를 주기로 하는 주기함수 $x(t)$에 대해서
 
 $$
 x(t) = \sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)
@@ -295,7 +291,7 @@ $$
 
 은 수학적으로 타당한 것이다.
 
-그렇다면 신호처리에 있어서 J. Fourier의 이론은 왜 중요한 것인가? 그것은 CTFS라고 불리는 위의 Fourier Series의 kernel function인
+그렇다면 신호처리에 있어서 Fourier의 이론은 왜 중요한 것인가? 그것은 CTFS라고 불리는 위의 Fourier Series의 kernel function인
 
 $$\phi_k(t) = exp\left(j \frac{2\pi k}{T}t\right)$$
 
