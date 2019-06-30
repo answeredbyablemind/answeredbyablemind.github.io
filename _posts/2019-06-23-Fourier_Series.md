@@ -240,7 +240,7 @@ $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
 > \} \notag
 > $$
 >
-> 여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$ > 이므로,
+> 여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$  이므로,
 >
 > $$
 > = \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
