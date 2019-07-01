@@ -7,7 +7,7 @@ aside:
 key: 20190701
 ---
 {% raw %}
-<p align="center"><iframe width = "460" height = "380" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
+<p align="center"><iframe width = "530" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
 
 <center> 연속시간 컨볼루션이 말하는 것: 함수를 잘개 쪼개서 표현할 수 있다.</center>
 
