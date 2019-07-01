@@ -39,9 +39,9 @@ docs-ko:
       - title:  호도법과 각도법
         url:    https://angeloyeo.github.io/2019/06/04/2-1-angle_rad.html
       - title:  허수의 존재 의미에 대하여
-        url:    https://angeloyeo.github.io/2019/06/15/%ED%97%88%EC%88%98%EC%9D%98-%EC%A1%B4%EC%9E%AC-%EC%9D%98%EB%AF%B8%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC.html
+        url:    https://angeloyeo.github.io/허수의-존재-의미에-대하여.html
        - title: 허근의 위치
-         url: https://angeloyeo.github.io/2019/06/16/%ED%97%88%EA%B7%BC%EC%9D%98-%EC%9C%84%EC%B9%98.html
+         url: https://angeloyeo.github.io/2019/06/16/허근의-위치.html
 
   - title:      Customization
     children:
