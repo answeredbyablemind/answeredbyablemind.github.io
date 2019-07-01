@@ -34,13 +34,13 @@ header:
     url: /about.html
 
 docs-ko:
-  - title:      Test
+  - title:      복소수와 오일러 공식
     children:
-      - title:  Test title
-        url:    /docs/en/quick-start
+      - title:  호도법과 각도법
+        url:    https://angeloyeo.github.io/2019/06/04/2-1-angle_rad.html
       - title:  To my test post
         url:    https://angeloyeo.github.io/2019/06/13/test.html
-        
+
   - title:      Customization
     children:
       - title:  Configuration
