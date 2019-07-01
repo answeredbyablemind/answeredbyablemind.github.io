@@ -7,9 +7,9 @@ aside:
 key: 20190701
 ---
 {% raw %}
-<p align="center"><iframe width = "700" height = "300" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
+<p align="center"><iframe width = "460" height = "380" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
 
-<center> 연속시간 컨볼루션이 말하는 것: 함수를 잘개 쪼개서 표현할 수 있다..</center>
+<center> 연속시간 컨볼루션이 말하는 것: 함수를 잘개 쪼개서 표현할 수 있다.</center>
 
 #1. Continuous Time Domain에서 delta 함수 $\delta(t)$의 필요성
 
