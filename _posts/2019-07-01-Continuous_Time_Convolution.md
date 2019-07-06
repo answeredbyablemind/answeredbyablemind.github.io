@@ -48,7 +48,8 @@ key: 20190701
   <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Zeroorderhold.signal.svg
 ">
 
-이미지 출처: Wikipedia의 Sample and hold 페이지
+<center>그림 1. 0차 sample and hold. 이미지 출처: Wikipedia의 Sample and hold 페이지</center>
+
 </p>
 
 0차 sample and order는 매우 간단하다. 특정 시간에 신호의 값을 측정(혹은 획득)하고 다음 측정 주기까지 그 신호 값을 유지시키는 방식이다. 이번 post에서는 0차 sample and hold와 비슷한 방식으로 rect함수를 이용해 연속 신호를 sampling하고자 한다. 위의 Wikipedia의 그림과 달라지는 점은 본 포스트의 가장 상단에서 보이는 것 처럼 sample된 연속 신호의 값이 사각 펄스 왼쪽 상단이 아닌 사각 펄스 중앙에 위치한다는 것이다. (아래 그림의 빨간 화살표)
@@ -57,6 +58,8 @@ key: 20190701
      <img width = "400" src="https://angeloyeo.github.io/pics/CT_Convolution/pics/pic1.png"
 </p>
 
+<center>그림 2. 사각파를 이용한 연속신호 sampling</center>
+
 # 3. sampled signal은 각 sample 값들을 합친 것이다.
 
 아래 그림에서 등호 좌측의 그래프는 연속 신호를 주기 $T_s$에 맞추어 sampling한 신호를 표현하고 있다. 그리고 등호 우측의 그래프들은 등호 좌측의 신호는 각각의 sample된 신호들을 합쳐놓은 것으로 생각할 수 있다는 것을 말해주고 있다.
@@ -64,6 +67,10 @@ key: 20190701
 <p align="center">
      <img width = "700" src="https://angeloyeo.github.io/pics/CT_Convolution/pics/pic2.png"
 </p>
+
+<center>그림 3. sample된 신호는 각 sample 들의 합으로도 볼 수 있다.</center>
+
+<p></p>
 
 위 그림의 등호 우측에 있는 하나 하나의 빨간색 네모들은 수학적으로는 사각파로 표현할 수 있다.
 
@@ -82,16 +89,33 @@ key: 20190701
 <p align="center">
      <img width = "400" src="https://upload.wikimedia.org/wikipedia/commons/1/11/Rectangular_function.svg"
 </p>
+<center>그림 4. 사각파의 형태</center>
+<p></p>
 
 
+사각파를 a만큼 평행이동하고, b만큼 늘려준 파형은 다음과 같다.
+
+$$\Pi\left(\frac{t-a}{b}\right)$$
+
+<p align="center">
+     <img width = "400" src="https://angeloyeo.github.io/pics/CT_Convolution/pics/pic3.png"
+</p>
+<center>그림 5. 평행이동 및 scaling한 사각파</center>
+<p></p>
+
+사각파의 정의를 이용해 그림 3에서 샘플된 신호는 다음과 같이 표현할 수 있다.
+
+
+
+
+
+# 4. CT domain에서의 convolution
 
 `DEFINITION 2. 연속시간 델타 함수`{:.success}
 > 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다.
 >$$\delta(t) = \lim_{h\rightarrow 0^+}\frac{1}{h}\Pi\left(\frac{t}{h}\right)$$
 >
 
-
-# 4. CT domain에서의 convolution
 
 이제, CT signal도 $\delta(t)$의 개념이 들어왔기 때문에 어떠한 신호도 분해해서 볼 수 있다. 그렇기 때문에 DT Signal에서와 마찬가지로 LTI의 성질을 이용하면
 
