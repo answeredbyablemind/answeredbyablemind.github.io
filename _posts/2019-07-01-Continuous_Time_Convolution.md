@@ -47,11 +47,13 @@ key: 20190701
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Zeroorderhold.signal.svg
 ">
+
+이미지 출처: Wikipedia의 Sample and hold 페이지
 </p>
 
+0차 sample and order는 매우 간단하다. 특정 시간에 신호의 값을 측정(혹은 획득)하고 다음 측정 주기까지 그 신호 값을 유지시키는 방식이다. 이번 post에서는 0차 sample and hold와 비슷한 방식으로 rect함수를 이용해 연속 신호를 sampling하고자 한다. 위의 Wikipedia의 그림과 달라지는 점은 본 포스트의 가장 상단에서 보이는 것 처럼 sample된 연속 신호의 값이 사각 펄스 왼쪽 상단이 아닌 사각 펄스 중앙에 위치한다는 것이다.
 
 
-이번 post에서는 0차 sample and hold와 비슷한 방식으로 rect함수를 이용해
 
 
 # 2. CT domain에서의 convolution
