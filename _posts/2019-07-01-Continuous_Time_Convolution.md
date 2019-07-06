@@ -7,11 +7,11 @@ aside:
 key: 20190701
 ---
 {% raw %}
-<p align="center"><iframe width = "530" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
+<p align="center"><iframe width = "530" height = "385" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
 
-<center> 연속시간 컨볼루션이 말하는 것: 함수를 잘개 쪼개서 표현할 수 있다.</center>
+<center> 연속시간 컨볼루션이 말하는 것: 연속함수는 잘개 쪼개서 표현될 수 있다.</center>
 
-#1. Continuous Time Domain에서 delta 함수 $\delta(t)$의 필요성
+# 1. Continuous Time Domain에서 delta 함수 $\delta(t)$의 필요성
 
 이번 시간에는 연속 시간 도메인에서 컨볼루션에 대해 생각해보고자 한다. 우리가 수학을 배울 때 연속 시간 신호(즉, 실수 함수)에 대해 먼저 배우고 대학에 와서야 이산 신호에 대해 배우지만, 사실 이해를 돕기위해서는 이산 시간 도메인에서 개념을 먼저 생각해본 뒤 연속 시간 신호의 관점으로 확장시키는 것이 도움이 되는 경우가 많다.
 
@@ -26,18 +26,18 @@ key: 20190701
  = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\delta[k]
  $$
 
-그러니까, 식 (1)을 조금 자세히 보면 함수값 * delta 함수인데, 이산시간 도메인은 연속시간 도메인이 **샘플링** 된 것이라고 볼 수 있기 때문에 뭔가 연속 시간 신호도 함수값과 delta 함수를 이용하면 임의의 신호 $x(t)$ 를 분해할 수 있을 것만 같다.
+그러니까, 식 (1)은 조금 자세히 보면 함수 $x[n]$ 을 "함수 값 $\times \delta[n]$" 으로 나타낼 수 있다는 걸 알 수 있다. 그렇다면 연속 시간 신호도 함수값과 delta 함수를 이용하면 임의의 신호 $x(t)$ 를 분해할 수 있지 않을까?
 
-#2. CT signal의 샘플링 방법: Sample and Hold
+# 2. CT signal의 샘플링 방법: Sample and Hold
 
 잠시 연속 신호 시간 신호를 sampling 하는 방법 중 가장 간단한 방법인 sample and hold를 알아보도록 하자.
 
 **Sample and hold**는 아날로그 신호를 측정한 뒤 한 주기 동안 유지하는 방법이다.
 
-이번 post에서는 0차 sample and hold와 비슷한 방식으로 rect함수를 이용해 
+이번 post에서는 0차 sample and hold와 비슷한 방식으로 rect함수를 이용해
 
 
-#2. CT domain에서의 convolution
+# 2. CT domain에서의 convolution
 
 이제, CT signal도 $\delta(t)$의 개념이 들어왔기 때문에 어떠한 신호도 분해해서 볼 수 있다. 그렇기 때문에 DT Signal에서와 마찬가지로 LTI의 성질을 이용하면
 
