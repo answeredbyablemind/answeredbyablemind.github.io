@@ -51,5 +51,7 @@ docs-ko:
         url:    https://angeloyeo.github.io/2019/06/18/impulse_response.html
       - title:  이산시간 컨볼루션
         url:    https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html
-      - title:  연속시간 푸리에 시리즈
+      - title:  연속시간 푸리에 시리즈 (CTFS)
         url:    https://angeloyeo.github.io/2019/06/23/Fourier_Series.html
+      - title:  연속시간 푸리에 변환 (CTFT)
+        url:    https://angeloyeo.github.io/2019/07/07/CTFT.html
