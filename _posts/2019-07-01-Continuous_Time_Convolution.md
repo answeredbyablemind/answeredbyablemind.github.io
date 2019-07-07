@@ -125,15 +125,43 @@ $$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s}
 
 `DEFINITION 2. 연속시간 델타 함수`{:.success}
 > 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다.
->$$\delta(t) = \lim_{h\rightarrow 0^+}\frac{1}{h}\Pi\left(\frac{t}{h}\right)$$
 >
+> $$\delta(t) = \lim_{h\rightarrow 0^+}\frac{1}{h}\Pi\left(\frac{t}{h}\right)$$
 
+따라서 식 (5)는 정적분의 정의와 델타 함수의 정의에 의해 다음과 같이 쓸 수 있다.
 
-이제, CT signal도 $\delta(t)$의 개념이 들어왔기 때문에 어떠한 신호도 분해해서 볼 수 있다. 그렇기 때문에 DT Signal에서와 마찬가지로 LTI의 성질을 이용하면
+$$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})}\right\} = \int_{-\infty}^{\infty}{x(k) \delta(t-k)dk}$$
 
-<center><img src="http://bit.ly/1JXRATS"></center>
+신호 이론에서는 보통 k 대신에 $\tau$ 를 종종 사용한다.
 
+# 5. 연속 시간 도메인의 impulse response
 
-라는 사실을 알 수 있다.
+DT Signal에서와 마찬가지로 LTI(Linear Time Invariant) system의 성질을 이용하면,
+
+입출력의 관계를 linear operator $O\{ \bullet \}$ 로 나타낼 수 있다고 하자.
+
+$$y(t) = O_n\{x(t)\}$$
+
+그렇다면, 앞서 확인한 연속신호 컨볼루션의 정의에 의해
+
+$$ = O_n\{\int_{-\infty}^{\infty}{x(k) \delta(t-k)dk}\}$$
+
+LTI system의 성질에 의해,
+
+$$=\int_{-\infty}^{\infty}{x(k) O_n\{\delta(t-k)\}dk}$$
+
+다시 impulse response의 정의에 의해서
+
+$$=\int_{-\infty}^{\infty}{x(k) h(t-k)}$$
+
+와 같이 확인할 수 있다.
+
+일반적으로 $k$ 대신에 많이 사용하는 $\tau$ 를 이용해 입력, 출력, impulse response의 관계를 적자면,
+
+$$y(t) = \int_{-\infty}^{\infty}{x(\tau)h(t-\tau) d\tau}$$
+
+라는 사실을 알 수 있다 [^1].
 
 {% endraw %}
+
+[^1]: LTI system에 대한 조금 더 상세한 discrete time convolution에 관한 post를 참고하기 바람.  https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html
