@@ -68,7 +68,7 @@ key: 20190701
      <img width = "700" src="https://angeloyeo.github.io/pics/CT_Convolution/pics/pic2.png">
 </p>
 
-<center>그림 3. sample된 신호는 각 sample 들의 합으로도 볼 수 있다.</center>
+<center>그림 3. sample된 신호는 각 sample 만큼의 크기를 가지고 sample의 위치로 평행이동한 사각파들의 합으로도 볼 수 있다.</center>
 
 <p></p>
 
@@ -138,7 +138,7 @@ $$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s}
 
 DT Signal에서와 마찬가지로 LTI(Linear Time Invariant) system의 성질을 이용하면,
 
-입출력의 관계를 linear operator $O\{ \bullet \}$ 로 나타낼 수 있다고 하자.
+입출력의 관계를 linear operator $O\left \{ \bullet \right \}$ 로 나타낼 수 있다고 하자.
 
 $$y(t) = O_n\{x(t)\}$$
 
