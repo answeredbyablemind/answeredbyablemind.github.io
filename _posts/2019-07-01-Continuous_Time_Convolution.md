@@ -164,4 +164,4 @@ $$y(t) = \int_{-\infty}^{\infty}{x(\tau)h(t-\tau) d\tau}$$
 
 {% endraw %}
 
-[^1]: LTI system에 대한 조금 더 상세한 discrete time convolution에 관한 post를 참고하기 바람.  https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html
+[^1]: LTI system을 이용한 입력, 출력, impulse response의 관계식 유도에 대한 조금 더 상세한 discrete time convolution에 관한 post를 참고하기 바람.  https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html
