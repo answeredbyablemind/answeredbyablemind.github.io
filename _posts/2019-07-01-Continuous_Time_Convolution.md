@@ -103,8 +103,10 @@ $$\Pi\left(\frac{t-a}{b}\right)$$
 <center>그림 5. 평행이동 및 scaling한 사각파</center>
 <p></p>
 
-사각파의 정의를 이용해 그림 3에서 샘플된 신호는 다음과 같이 표현할 수 있다.
+사각파의 정의를 이용해 그림 3에서 $x(t)$ 를 샘플링한 신호는 다음과 같이 표현할 수 있다.
 
+$$x(t) \rightarrow (샘플링) \rightarrow
+\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})}$$
 
 
 
@@ -123,8 +125,5 @@ $$\Pi\left(\frac{t-a}{b}\right)$$
 
 
 라는 사실을 알 수 있다.
-
-
-<center> <iframe width="420" height="315" src="https://www.youtube.com/embed/HLYxnTV1N5k" frameborder="0" allowfullscreen></iframe> </center>
 
 {% endraw %}
