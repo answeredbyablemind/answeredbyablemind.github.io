@@ -108,10 +108,20 @@ $$\Pi\left(\frac{t-a}{b}\right)$$
 $$x(t) \rightarrow (샘플링) \rightarrow
 \sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})}$$
 
-
+위 식에서 $1/T_s$가 들어간 것은 sampling period $T_s$의 길이에 따른 결과의 변화를 방지해주고자 normalize하고자 하는 이유에서이다.
 
 
 # 4. 연속신호 컨볼루션
+
+연속신호를 sampling한 신호에서 sampling 주기를 매우 짧게 만들면 다시 연속신호로 완벽히 복원할 수 있다.
+
+따라서, 아래의 식과 같이 $T_s$ 에 극한을 취해줄 수 있다.
+
+$$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})}\right\}$$
+
+위 식에서 나타내는 과정이 이 포스트 맨 위의 애플릿에서 슬라이드를 오른쪽으로 움직였을 때 표현되어 있다.
+
+그렇다면, 위 식에서 $T_s$ 가 매우 작아질 때 $x(kT_s)$ 부분은 함수 값들을 의미한다는 것을 알겠지만 $\frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})$ 부분은 델타 함수를 정의함으로써 이해할 수 있을 것이다.
 
 `DEFINITION 2. 연속시간 델타 함수`{:.success}
 > 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다.
