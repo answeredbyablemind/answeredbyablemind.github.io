@@ -48,7 +48,7 @@ key: 20190701
   <img width = "500" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Zeroorderhold.signal.svg
 ">
 
-<center>그림 1. 0차 sample and hold. 이미지 출처: Wikipedia의 Sample and hold 페이지</center>
+<center>그림 1. 0차 sample and hold</center>
 
 </p>
 
