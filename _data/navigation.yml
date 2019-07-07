@@ -42,10 +42,14 @@ docs-ko:
         url:   https://angeloyeo.github.io/2019/06/15/허수의-존재-의미에-대하여.html
       - title:  허근의 위치
         url:    https://angeloyeo.github.io/2019/06/16/허근의-위치.html
+      - title:  페이저 (phasor)
+        url:    https://angeloyeo.github.io/2019/06/18/phasor.html
 
-  - title:      Customization
+  - title:      신호처리 이론
     children:
-      - title:  Configuration
-        url:    /docs/en/configuration
-      - title:  Navigation
-        url:    /docs/en/navigation
+      - title:  임펄스 응답 (impulse response)
+        url:    https://angeloyeo.github.io/2019/06/18/impulse_response.html
+      - title:  이산시간 컨볼루션
+        url:    https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html
+      - title:  연속시간 푸리에 시리즈
+        url:    https://angeloyeo.github.io/2019/06/23/Fourier_Series.html
