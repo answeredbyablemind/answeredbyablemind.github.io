@@ -74,17 +74,10 @@ key: 20190701
 
 위 그림의 등호 우측에 있는 하나 하나의 빨간색 네모들은 수학적으로는 사각파로 표현할 수 있다.
 
-`DEFINITION 1. 사각파`{:.success}
-> 사각파 $\Pi(t)$ 는 다음과 같이 정의한다.
->
-> $$\Pi(t) =
-> \left\{
-> \begin{matrix}
->  1, & -0.5\leq t \leq 0.5\\
-> 0, & otherwise.
-> \end{matrix}
-> \right .
-> $$
+
+| DEFINITION 1. 사각파 |
+| --------- |
+| 사각파 $\Pi(t)$ 는 다음과 같이 정의한다. <br><center> $$\Pi(t) = \left\{ \begin{matrix} 1, & -0.5\leq t \leq 0.5\\ 0, & otherwise. \end{matrix} \right . $$</center>|
 
 <p align="center">
      <img width = "400" src="https://upload.wikimedia.org/wikipedia/commons/1/11/Rectangular_function.svg">
@@ -123,10 +116,9 @@ $$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s}
 
 그렇다면, 위 식에서 $T_s$ 가 매우 작아질 때 $x(kT_s)$ 부분은 함수 값들을 의미한다는 것을 알겠지만 $\frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})$ 부분은 델타 함수를 정의함으로써 이해할 수 있을 것이다.
 
-`DEFINITION 2. 연속시간 델타 함수`{:.success}
-> 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다.
->
-> $$\delta(t) = \lim_{h\rightarrow 0^+}\frac{1}{h}\Pi\left(\frac{t}{h}\right)$$
+| DEFINITION 2. 연속시간 델타 함수 |
+| --------- |
+| 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다. <br> <center> $$\delta(t) = \lim_{h\rightarrow 0^+}\frac{1}{h}\Pi\left(\frac{t}{h}\right)$$</center>|
 
 따라서 식 (5)는 정적분의 정의와 델타 함수의 정의에 의해 다음과 같이 쓸 수 있다.
 
