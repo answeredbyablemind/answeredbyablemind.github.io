@@ -1,5 +1,5 @@
 ---
-title: 푸리에 시리즈(Fourier Series)
+title: 연속시간  푸리에 급수(Continuous Time Fourier Series)
 sidebar:
   nav: docs-ko
 aside:
@@ -14,31 +14,25 @@ key: 2019062341
 
 # 1. Continuous Time Fourier Series
 ## 가. Orthogonal Functions
-많은 학생들이 Fourier Analysis의 Formulae를 공부할 때, 가장 쉽게 간과하는 부분이 바로 푸리에 급수의 공식 유도 방법이다. 푸리에 급수의 공식은 가장 먼저 함수의 Orthogonality에서부터 출발해야 한다. 함수의 Orthogonality에 대한 개념은, 수학에서는 함수를 벡터처럼 다룰 수도 있다는 것에서 부터 출발한다. 즉, 수학적인 의미에서 함수 역시 마찬가지로 Inner Product를 정의할 수 있다.
+Fourier Analysis의 Formulae를 공부할 때, 가장 쉽게 간과하는 부분이 바로 푸리에 급수의 공식 유도 방법이다. 푸리에 급수의 공식은 가장 먼저 함수의 Orthogonality에서부터 출발해야 한다. 함수의 Orthogonality에 대한 개념은, 수학에서는 함수를 벡터처럼 다룰 수도 있다는 것에서 부터 출발한다. 즉, 수학적인 의미에서 함수 역시 마찬가지로 Inner Product를 정의할 수 있다.
 
-`DEFINITION 1. 함수의 내적`{:.success}
->
->구간 $[a, b]$ 에서 두 함수의 내적은 다음과 같이 정의된다.
->
->$$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx}$$
+
+| DEFINITION 1. 함수의 내적 |
+| --------- |
+| 구간 $[a, b]$ 에서 두 함수의 내적은 다음과 같이 정의된다.<br> <center>$$(f_1, f_2) = \int_a^b{f_1(x) f^*_2(x) dx}$$ </center><br>여기서 '*' 표시는 켤레복소수 연산이다.|
 
 Inner Product의 정의로부터 Orthogonal function의 정의를 얻을 수 있다. Vector Analysis에 있어서 vector가 orthogonal 하다는 것은 두 벡터의 Inner product의 결과 값이 0이라는 것을 의미한다. 마찬가지로 두 함수의 inner product의 값이 0일 때 두 함수는 orthogonal 하다고 할 수 있다.
 
-`DEFINITION 2. 직교 함수`{:.success}
->
-> 다음이 성립할 경우 구간 $[a, b]$ 에서 두 함수는 직교한다고 한다.
->
-> $$(f_1, f_2) = \int_a^b{f_1(x) f_2(x) dx = 0}$$
+
+| DEFINITION 2. 직교 함수 |
+| --------- |
+| 다음이 성립할 경우 구간 $[a, b]$ 에서 두 함수는 직교한다고 한다. <br><center> $$(f_1, f_2) = \int_a^b{f_1(x) f^*_2(x) dx = 0}$$</center>|
 
 함수의 orthogonality에 대해서 짚고 꼭 넘어가야 할 정의는 orthogonal set에 대한 정의이다.
 
-`DEFINITION 3. 직교 집합 (orthogonal set)`{:.success}
->
-> 구간 $[a, b]$ 에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다.
->
-> $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi_n(x) dx} = 0, \space for \space m \neq n$$
->
-> 여기서 $\phi_n$, $n=0,1,2,\cdots$ 을 *기저함수(basis function)* 라고 부른다.
+| DEFINITION 3. 직교 집합 (orthogonal set) |
+| --------- |
+| 구간 $[a, b]$ 에서 다음을 만족한다면 실수 함수 {}의 집합은 직교 집합(orthogonal set)이다. <br> <center> $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi^*_n(x) dx} = 0, \space for \space m \neq n$$ </center> <br> 여기서 $\phi_n$, $n=0,1,2,\cdots$ 을 *기저함수(basis function)* 라고 부른다.|
 
  그렇다면 이 orthogonal Set은 왜 중요한 것일까? 그것은 구간 $[a, b]$ 에서 정의된 함수 $y=f(x)$ 는 같은 구간 $[a,b]$ 에서 정의된 기저 함수와 상수 $c_n, \space$ $n=0,1,2,\cdots$ 를 이용하여 선형적으로 분해할 수 있기 때문이다. 즉,
 
@@ -140,13 +134,10 @@ $$f(x) = \sum_{n=0}^{\infty}{c_n\phi_n(x)} \notag$$
 Continuous Time Fourier Series의 정의는 아래와 같다.
 
 
-`DEFINITION4. Continuous Time Fourier Series`{:.success}
->
-> x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다.
->
->$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
->
-> $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$
+| DEFINITION 4. 연속시간 푸리에 급수 |
+| --------- |
+| x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다. <br> <center> $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$ <br> $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$</center>|
+
 
 '나' 꼭지에서 설명한 것과 같이 orthogonality를 통해 얻게 되는 $x(t)$ 의 식이 갖고 있는 의미에 집중하자.
 
@@ -164,39 +155,41 @@ $$\{\phi_k(t) | \phi_k(t) = exp \left(j \frac{2\pi k}{T} t\right), \space k=\cdo
 
 * * *
 
-`PROOF 1.아래의 집합의 직교성에 관한 증명`{:.info}
+`PROOF 1`{:.info} 아래의 집합의 직교성에 관한 증명
 
 $$\{ \phi_k(t) | \phi_k(t) = exp(j \frac{2\pi k}{T} t), \space k =\cdots, -2,-,1, 0, 1, 2, \cdots, \}$$
 
-> Proof)
->
-> 정수 k와 p에 대하여,
->
-> $$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
->
-> $$= \int_{0}^{T}{ exp\left( j \frac{2\pi k}{T} t \right) exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
->
-> $$ = \int_{0}^{T}{exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
->
-> (1) $k=p$ 일 때,
->
-> $$ eq (12)  = \int_{0}^{T}{1 dt}= T$$
->
-> (2) $k\neq p$ 일 때,
->
-> $$ eq(12) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
->
-> $$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
->
-> 여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
->
-> $$\therefore \frac{T}{j2\pi (k-p)} \left(exp(j2\pi(k-p)) -1\right) =0$$
->
-> 그러므로 집합
->
-> $$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
->
-> 은 직교 집합이다.
+Proof)
+
+정수 k와 p에 대하여,
+
+$$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
+
+$$= \int_{0}^{T}{ exp\left( j \frac{2\pi k}{T} t \right) exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
+
+$$ = \int_{0}^{T}{exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
+
+(1) $k=p$ 일 때,
+
+$$ eq (12)  = \int_{0}^{T}{1 dt}= T$$
+
+(2) $k\neq p$ 일 때,
+
+$$ eq(12) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
+
+$$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
+
+여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
+
+$$\therefore \frac{T}{j2\pi (k-p)} \left(exp(j2\pi(k-p)) -1\right) =0$$
+
+그러므로 집합
+
+$$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
+
+ 은 직교 집합이다.
+
+***
 
 즉, $\{\phi_k(t)\}$ 가 an orthogonal set이기 때문에 같은 구간 $[0,T]$ 에서 정의되는 함수 $x(t)$ 는 $\{ \phi_k(t) \}$ 를 통해서 decompose될 수 있다. 그러므로, 식
 
@@ -208,61 +201,62 @@ $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
 유도해낼 수 있다.
 
 
-`PROOF 2. 계수 $a_k$ 의 결정에 관한 증명`{:.info}
+`PROOF 2`{:.info} 계수 $a_k$ 의 결정에 관한 증명
 
-> Proof) PROOF 1로 부터, $x(t)$ 는 다음과 같이 나타낼 수 있다.
->
-> $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
->
-> 양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
->
-> $$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right) exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
->
-> $$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
->
->
-> 이 때, 정수 k와 p에 대하여 두 가지 경우가 있을 수 있다.
->
-> case 1. $k\neq p$ 일 때,
->
-> $$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
-> $$
->
-> $$
-> = \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)
-> \left| exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag
-> $$
->
-> $$
-> = \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
-> \{exp(
-> j 2\pi (k-p))-exp(0)
-> \} \notag
-> $$
->
-> 여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$  이므로,
->
-> $$
-> = \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
-> \times{0} = 0
-> $$
->
-> case 2. $k=p$ 일 때,
->
-> $$
-> \Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} exp \left(j \frac{2\pi > (k-p)}{T} t \right) dt \notag
-> $$
->
-> 여기서 $k=p$ 인 경우만을 확인하므로,
->
-> $$
-> = a_p\int_{0}^{T} exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T
-> $$
->
-> $$
-> \therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}  dt\right)
-> $$
+Proof) PROOF 1로 부터, $x(t)$ 는 다음과 같이 나타낼 수 있다.
 
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
+
+양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
+
+$$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right) exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
+
+$$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
+
+
+이 때, 정수 k와 p에 대하여 두 가지 경우가 있을 수 있다.
+
+case 1. $k\neq p$ 일 때,
+
+$$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag
+$$
+
+$$
+= \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)
+\left| exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag
+$$
+
+$$
+= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
+\{exp(
+j 2\pi (k-p))-exp(0)
+\} \notag
+$$
+
+여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =0$  이므로,
+
+$$
+= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
+\times{0} = 0
+$$
+
+case 2. $k=p$ 일 때,
+
+$$
+\Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} exp \left(j \frac{2\pi  (k-p)}{T} t \right) dt \notag
+$$
+
+여기서 $k=p$ 인 경우만을 확인하므로,
+
+$$
+= a_p\int_{0}^{T} exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T
+$$
+
+$$
+\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}  dt\right)
+$$
+
+***
 
 다시 한번 말하지만, 위의 증명의 기초적인 아이디어는 orthogonality를 이용한다는 것이다.
 
