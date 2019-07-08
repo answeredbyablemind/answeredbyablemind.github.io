@@ -57,3 +57,7 @@ docs-ko:
         url:    https://angeloyeo.github.io/2019/06/23/Fourier_Series.html
       - title:  연속시간 푸리에 변환 (CTFT)
         url:    https://angeloyeo.github.io/2019/07/07/CTFT.html
+      - title:  이산시간 푸리에 급수 (DTFS)
+        url:    https://angeloyeo.github.io/2019/07/08/DTFS.html
+      - title:  이산시간 푸리에 변환 (DTFT)
+        url:    https://angeloyeo.github.io/2019/07/09/DTFT.html
