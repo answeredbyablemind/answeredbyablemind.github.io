@@ -13,7 +13,7 @@ function Circle(x, y, radius) {
           var pos = this.body.position;
           var angle = this.body.angle;
           push();
-          fill(255);
+          fill(255)
           translate(pos.x, pos.y);
           ellipseMode(CENTER);
           ellipse(0, 0, this.r*2);
