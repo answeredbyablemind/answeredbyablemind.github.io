@@ -5,6 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 2019062341
+tags: 푸리에 신호처리
 ---
 {% raw %}
 <p align="center"><iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe></p>

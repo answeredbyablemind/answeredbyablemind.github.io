@@ -5,6 +5,8 @@ sidebar:
 aside:
   toc: true
 key: 20190701
+tags: 푸리에 신호처리
+
 ---
 {% raw %}
 <p align="center"><iframe width = "530" height = "385" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
