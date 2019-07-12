@@ -52,19 +52,27 @@ $$y_c(t) = x_c(t)p_c(t) = \sum_{n=-\infty}^{\infty}x_d[n]\delta_c(t-nT)$$
 
 $y_c(t)$ 는 비주기 연속신호이므로 푸리에변환 할 수 있다. $y_c(t)$ 의 푸리에 변환 $Y_c(f)$ 는 다음과 같이 쓸 수 있다.
 
+$$Y_c(f) = \int_{-\infty}^{\infty}y_c(t) exp(-j2\pi ft)dt $$
 
-<center>
-<img src="http://bit.ly/1nz5LVu">
+$$=\int_{-\infty}^{\infty}\sum_{n=-\infty}^{\infty}x_d[n] \delta(t-nT) exp(-j2\pi ft)dt$$
 
-<img src="http://bit.ly/1PGjNeE">
+$$=\sum_{n=-\infty}^{\infty}x_d[n]\int_{-\infty}^{\infty}\delta(t-nT) exp(-j2\pi ft)dt$$
 
-<img src="http://bit.ly/1PGjQHl">
+$$=\sum_{n=-\infty}^{\infty}x_d[n] exp(-j2\pi f nT) = X_d(Tf)$$
 
-<img src="http://bit.ly/1PGjVuw">
-</center>
+여기서 식 () 에서 식 ()로 넘어갈 때에는 다음과 같은 델타 함수의 성질을 이용한 것이다.
 
+$$\int_{-\infty}^{\infty}\delta(t-k)f(t) dt = f(k)$$
 
-동시에, $p_c(t)$는 주기를 T로 하는 연속시간 주기 신호이므로. $p_c(t)$는 CTFS를 통해 표현할 수 있다.
+동시에, $p_c(t)$ 는 주기를 $T$ 로 하는 연속시간 주기 신호이므로. $p_c(t)$ 는 CTFS를 통해 표현할 수 있다.
+
+$$p_c(t) = \sum_{n=-\infty}^{\infty} \delta(t-nT)$$
+
+$$=\sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)$$
+
+<center> where </center>
+
+$$a_k = \frac{1}{T}\int_{-T/2}^{T/2}\delta(t) exp\left(-j \frac{2\pi k}{T}t\right)dt = \frac{1}{T}$$
 
 
 <center>
