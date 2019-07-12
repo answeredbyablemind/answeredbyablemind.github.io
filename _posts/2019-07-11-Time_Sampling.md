@@ -60,7 +60,7 @@ $$=\sum_{n=-\infty}^{\infty}x_d[n]\int_{-\infty}^{\infty}\delta(t-nT) exp(-j2\pi
 
 $$=\sum_{n=-\infty}^{\infty}x_d[n] exp(-j2\pi f nT) = X_d(Tf)$$
 
-여기서 식 () 에서 식 ()로 넘어갈 때에는 다음과 같은 델타 함수의 성질을 이용한 것이다.
+여기서 식 (8) 에서 식 (9)로 넘어갈 때에는 다음과 같은 델타 함수의 성질을 이용한 것이다.
 
 $$\int_{-\infty}^{\infty}\delta(t-k)f(t) dt = f(k)$$
 
@@ -74,17 +74,10 @@ $$=\sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)$$
 
 $$a_k = \frac{1}{T}\int_{-T/2}^{T/2}\delta(t) exp\left(-j \frac{2\pi k}{T}t\right)dt = \frac{1}{T}$$
 
+<center>(여기서도 식 (10)의 성질을 이용했다.)</center>
+<br>
 
-<center>
-<img src="http://bit.ly/1PGk3tW">
-
-where <img src="http://bit.ly/1nz6d6f">
-
-<img src="http://bit.ly/1nz6i9X">
-</center>
-
-
-그런데, 동시에 CTFT는 어떠한 연속 신호에도 적용할 수 있으므로, $p_c(t)$에 CTFT를 적용할 수 있다.
+그런데, 동시에 CTFT는 주기 신호이던 아니던 관계없이 어떤 연속 신호라도 적용할 수 있으므로, $p_c(t)$ 에 CTFT를 적용해도 무방하다.
 
 <center>
 <img src="http://bit.ly/1nz6p5o">
