@@ -9,70 +9,48 @@ tags: 신호처리
 ---
 {% raw %}
 
-# 1. 시작하면서
-## 가. Sampling theorem의 의미
+## Sampling theorem의 증명과정
 
-지금까지 푸리에 급수/변환에서는 다음과 같은 과정을 공부했다.
+연속시간 신호 $x_c(t)$ 와 이산시간 신호 $x_d[n]$ 을 생각해보자.
 
-먼저, Continuous Time Domain에서 Fourier Series를 선두로 시작하였다. 그것을 통해서 Fourier Transform을 유도하였다.
+이 연속시간 신호의 샘플링 된 sequence는 다음과 같이 표현할 수 있다.
 
-두 번째로는 Discrete Time Domain의 신호에 대해서 Fourier Series와 Fourier Transform을 유도해보았다. 그렇다면, 지금 생각해보려는 시간 샘플링은 어떤 의미를 가지는 것이고 앞서 배운 Fourier Analysis와의 관계는 무엇인가?
+$$x_d[n]=x_c(nT)$$
 
-그것은 Continuous Time Fourier Analysis와 Discrete Time Fourier Analysis의 연결성이라고 할 수 있는데, 먼저는 연속시간-이산시간의 관계에 대해서 간단하게 생각해보고, 연속시간과 이산시간의 두 Frequency Response의 관계에 대해서 알아보고자 한다.
+이 때, $T$ 는 샘플링 간격이다.
 
+연속시간 신호 $x_c(t)$ 에 대하여, 다음과 같은 푸리에 변환을 가진다는 것을 알고 있다.
 
-#2. Sampling theorem의 증명과정
+$$X_c(f) = \int_{-\infty}^{\infty}x_c(t) exp(-j2\pi f t)dt$$
 
-##가. 그림으로 이해하는 Sampling Theorem
+이산시간 신호 $x_d[n]$ 에 대하여, 우리는 다음과 같은 푸리에 변환이 가능함을 알고 있다.
 
- Sampling Theorem은 연속 비주기신호 x(t)를 이산신호로 바꾸었을 때, 두 신호 간에 어떤 관계가 있는지 알아보고자 하는 theorem이다.
+$$X_d(f) = \sum_{n=-\infty}^{\infty}x_d[n]exp(-j2\pi fn)$$
 
- 즉, x(t)를 sampling 한 신호 $x_s(t)$는 $x_s(t)=x(t)p(t)$라고 생각할 수 있다.
+이 때, $X_c(f)$ 와 $X_d(f)$ 의 관계를 수학적으로 표현해보고자 한다.
 
-##나. Sampling theorem
+***
 
-#########################################
-# 시간 sampling을 왜 알아야 하는지에 대해 서술 필요     #
-#########################################
+이제  impulse train이라고 불리는 신호를 정의하도록 하자.
 
-이렇게 복잡한 이론까지 왜 필요할까?
+$$p_c(t) = \sum_{n=-\infty}^{\infty}\delta(t-nT)$$
 
---> 얼마나 빠른 속도로 sampling을 해야 원상복구할 수 있는지 알고싶음.
+<p align = "center">
 
-즉, aliasing에 관련된 interactive animation 만들 필요 있음.
+<img width = "400" src = "https://upload.wikimedia.org/wikipedia/commons/4/49/Dirac_comb.svg">
+<br>
+<br>
+그림 1. impulse train의 모습
 
+</p>
 
+impulse train을 이용하여 연속신호를 샘플링한 것을 수학적으로 표현할 수 있다.
 
+따라서, 연속신호와 이산신호의 관계를 다음과 같이 생각할 수 있다.
 
-연속시간 신호 $x_c(t)$를 생각해보자.
+$$y_c(t) = x_c(t)p_c(t) = \sum_{n=-\infty}^{\infty}x_d[n]\delta_c(t-nT)$$
 
-그러면 이 연속시간 신호의 샘플링 된 sequence는 다음과 같이 표현할 수 있다. $x_d[n]=x_c(nT)$. 이 때, T 는 샘플링 간격이고, 샘플율(sampling rate)는 $1/T$이다.
-
-
-연속시간 신호 $x_c(t)$에 대하여, 다음과 같은 푸리에 변환을 가진다.
-
-
-<center>
-<img src="http://bit.ly/1PGjqka"></center>
-
-
-시간 샘플된 신호 $x_d[n]$에 대하여, 우리는 다음과 같은 푸리에 변환을 가진다.
-
-<center><img src="http://bit.ly/1PGjtfY">
-
-이 때, _**$X_c(f)$와 $X_d(f)$는 서로 어떤 관계를 가지고 있는 것일까?**_
-
-</center>
-
-
-이제 uniform impulse train이라고 불리는 신호를 정의하도록 하자. <img src="http://bit.ly/1nz5tOr">
-
-그러면 uniform impulse train을 이용하여 연속신호와 이산신호의 시간 영역에서의 관계를 다음과 같이 생각할 수 있다.
-
-<center><img src="http://bit.ly/1PGjCje"></center>
-
-
-$y_c(t)$는 비주기 연속신호이므로, $y_c(t)$의 푸리에 변환 $Y_c(f)$은 다음과 같이 쓸 수 있다.
+$y_c(t)$ 는 비주기 연속신호이므로 푸리에변환 할 수 있다. $y_c(t)$ 의 푸리에 변환 $Y_c(f)$ 는 다음과 같이 쓸 수 있다.
 
 
 <center>
