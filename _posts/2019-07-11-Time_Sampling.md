@@ -79,15 +79,11 @@ $$a_k = \frac{1}{T}\int_{-T/2}^{T/2}\delta(t) exp\left(-j \frac{2\pi k}{T}t\righ
 
 그런데, 동시에 CTFT는 주기 신호이던 아니던 관계없이 어떤 연속 신호라도 적용할 수 있으므로, $p_c(t)$ 에 CTFT를 적용해도 무방하다.
 
-<center>
-<img src="http://bit.ly/1nz6p5o">
+$$P_c(f) = \int_{-\infty}^{\infty}p_c(t) exp(-j2\pi ft) dt $$
 
+$$=\int_{-\infty}^{\infty}\frac{1}{T} \sum_{k=-\infty}^{\infty} exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
 
-<img src="http://bit.ly/1nz6A0o">
-
-
-<img src="http://bit.ly/1nz6DcD">
-</center>
+$$=\frac{1}{T} \sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty} exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
 
 
 여기서 우리는 <img src="http://bit.ly/1PGkowW">을 <img src="http://bit.ly/1PGksN7">의 CTFT로도 생각할 수 있는데, 1의 CTFT는 $\delta(f)$ 이며,
