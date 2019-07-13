@@ -85,35 +85,49 @@ $$=\int_{-\infty}^{\infty}\frac{1}{T} \sum_{k=-\infty}^{\infty} exp\left(j\frac{
 
 $$=\frac{1}{T} \sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty} exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
 
+여기서 식 (16) 내의 정적분 파트에 대해서 생각해보자. 이 식을 다시 쓰면 아래의 식 (17)과 같다.
 
-여기서 우리는 <img src="http://bit.ly/1PGkowW">을 <img src="http://bit.ly/1PGksN7">의 CTFT로도 생각할 수 있는데, 1의 CTFT는 $\delta(f)$ 이며,
+$$\int_{-\infty}^{\infty}exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
+
+식 (17)은 $exp\left(j\frac{2\pi k}{T}t\right)$ 를 푸리에 변환한 것으로 해석할 수도 있다.
+
+식 (17)을 이해하기 위해 다음의 두 푸리에 변환에 대해 생각해보자.
+
+$$ \mathfrak{F}(1) = \int_{-\infty}^{\infty}1 \times exp\left(-j2\pi ft\right) = \delta(f)$$
+
+또,  $\mathfrak{F}(f(t)) = F(f)$ 라고 했을 때
+
+$$\mathfrak{F}\left(exp\left(j2\pi f_0 t\right)f(t)\right) = F(f-f_0)$$
 
 
-CTFT의 modulation property에 의해서,
-$exp(j2\pi f_0 t)f(t)$의 푸리에 변환은 $F(f-f_0)$임을 알고 있다.
+즉, 식(17)은 1의 푸리에 변환인데, 그것이 $\frac{k}{T}$ 만큼 modulation 되었다고 생각할 수 있는 것이다.
 
-즉, <img src="http://bit.ly/1PGkowW">은 1의 푸리에 변환인데, 그것이 $\frac{k}{T}$ 만큼 modulation 되었다고 생각할 수 있는 것이다.
+따라서 식 (17)은 다음과 같이 쓸 수 있다.
+
+$$식(17) = \delta(f-\frac{k}{T})$$
+
+따라서, 식 (16)은 다음과 같이 쓸 수 있다.
+
+$$P_c(f) = \frac{1}{T}\sum_{-\infty}^{\infty}\delta(f-\frac{k}{T})$$
+
+또한, $y_c(t)=x_c(t)p_c(t)$ 로 생각 할 수 있다고 했는데,
+컨볼루션과 푸리에 변환 사이의 관계를 생각하면 $Y_c(f)=X_c(f)\otimes P_c(f)$ 이다.
+(여기서 '$\otimes$' 연산자는 컨볼루션 연산자를 의미함.)
+
+따라서,
+
+$$Y_c(f) = X_c(f) \otimes P_c(f) = P_c(f) \otimes X_c(f)$$
+
+$$ = \int_{-\infty}^{\infty}P_c(\tau)X_c(f-\tau)d\tau$$
+
+$$=\int_{-\infty}^{\infty}\frac{1}{T}\sum_{k=-\infty}^{\infty}
+\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
+
+$$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty}
+\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
 
 
-따라서, <img src="http://bit.ly/1PGkowW"> 는 <img src="http://bit.ly/1PGksN7">의 푸리에 변환이며 그것은  $\delta(f-\frac{k}{T})$이다..
-
-
-<center><img src="http://bit.ly/1PGkDIi"></center>
-
-
-또한, $y_c(t)=x_c(t)p_c(t)$로 생각 할 수 있다고 했는데,
-컨볼루션과 푸리에 변환 사이의 관계를 생각하면 $Y_c(f)=X_c(f)\otimes P_c(f)$이다.
-<center>
-<img src="http://bit.ly/1REMLS2">
-
-<img src="http://bit.ly/1Nrho5y">
-
-<img src="http://bit.ly/1REMNcw">
-
-<img src="http://bit.ly/1Nrhr1q">
-</center>
-
-여기서 우리는 $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$를 $\delta(f-\frac{k}{T})\otimes X_c(f)$로 생각할 수 있다.
+여기서 우리는 $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 를 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 로 생각할 수 있다.
 
 따라서,
 
