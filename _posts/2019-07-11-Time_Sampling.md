@@ -13,7 +13,8 @@ tags: 신호처리
 시간 샘플링 이론이 말해주는 것:
 <center>
 
-**"얼마나 빼곡히 샘플링을 해야 원래 신호로 복구하는데 어려움이 없을까?"**
+<b>"얼마나 빼곡히 샘플링을 해야 원래 신호로 복구하는데 어려움이 없을까?"</b>
+
 </center>
 
 {% raw %}
@@ -175,7 +176,7 @@ $$Y_c(f) = X_d(Tf) = \frac{1}{T}\sum_{-\infty}^{\infty}X_c\left(f-\frac{k}{T}\ri
 
 이 때, $X_c(f)$ 의 주파수 스펙트럼이 $\|f\|>B$ 에서 0, 다른 말로는 $\frac{1}{T}>2B$ 이라면 (즉, 주파수 영역이 bounded),
 
-$$X_d(Tf) = \frac{1}{T}X_c(f) \space for \space |f| < \frac{1}{2T}$$
+$$Y_c(f) = X_d(Tf) = \frac{1}{T}X_c(f) \space for \space |f| < \frac{1}{2T}$$
 
 ---
 
@@ -184,58 +185,67 @@ $$X_d(Tf) = \frac{1}{T}X_c(f) \space for \space |f| < \frac{1}{2T}$$
 
  지금까지 Frequency Domain에서 $X_c(f)$ 와 $X_d(f)$ 의 관계에 대해서 알아보았다. 그렇다면 둘의 관계에 대해서 아는 것은 어떤 의미를 갖는 것일까? 혹은 어떤 것을 파악하기 위해서 $X_c(f)$ 와 $X_d(f)$ 의 관계를 수식적으로 이해해야 하는 것일까?
 
- 그것은 이 part의 제목인 ideal reconstruction이다. 즉, sampling한 신호(혹은 이산 신호)에 어떤 방법을 취하면 그것이 원래의 contiunous time signal로 완벽하게 복구 시킬 수 있는지를 알고싶은 것이다. 우리는 Sampling Theorem을 통해서 수식적인 관계를 다음과 같이 발견하게 되었다.
+ 우리는 sampling한 신호(혹은 이산 신호)에 어떤 방법을 취하면 그것이 원래의 contiunous time signal로 완벽하게 복구 시킬 수 있는지를 알고싶은 것이다. 우리는 Sampling Theorem을 통해서 수식적인 관계를 식(32)와 같이 발견하게 되었다.
 
-<center>
-<img src="http://bit.ly/1Nrhs5A">
-</center>
+그렇다면, $x_c(t)$ 의 샘플링한 신호의 fourier transform의 형태인 $Y_c(f)$ 를 다시 $X_c(f)$ 로 바꾸기 위해선 어떤 조치를 취해야 할까? 그것은 $Y_c(f)=\frac{1}{T}X_c(f)$ 이기 때문에 다음과 같은 method를 통해서 $Y_c(f)$ 를 다시 $X_c(f)$ 로 돌려 놓을 수 있다고 할 수 있다.     
 
-그렇다면, $x_c(t)$의 샘플링한 신호의 fourier transform의 형태인 $Y_c(f)$를 다시 $X_c(f)$로 바꾸기 위해선 어떤 조치를 취해야 할까? 그것은 $Y_c(f)=\frac{1}{T}X_c(f)$이기 때문에 다음과 같은 method를 통해서 를 다시 로 돌려 놓을 수 있다고 할 수 있다.     
+$$X_c(f) = Y_c(f) H_c(f)$$
 
-<center>
+<center>where</center>
 
-<img src="http://bit.ly/1Nrhvyg">
+$$H_c(f) =
+\begin{cases}
+T,  & \text{if } |f|<\frac{1}{2T} \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
-where
+ 즉, $H_c(f)$ 는 an ideal low pass filter라고 할 수 있다. (특정 주파수보다 낮은 신호들은 모두 내보내고, 특정 주파수보다 높은 대역의 신호들은 모두 통과시키지 않으니까.)
 
-<img src="http://bit.ly/1NrhsSU">
+ 시간 영역(time domain)에서 우리는 $x_c(t)$ 와 $y_c(t)$ 에 대하여 다음과 같은 관계를 구할 수 있다.
 
-</center>
- 즉, $H_c(f)$는 an ideal low pass filter라고 할 수 있다. 즉, 시간 영역(time domain)에서 우리는 $x_c(t)$를 $y_c(t)$에 대하여 다음과 같은 관계를 구할 수 있다.
+$$x_c(t) = y_c(t) \otimes h_c(t) $$
 
-<center><img src="http://bit.ly/1UhoKhE">
+$$ = \int_{-\infty}^{\infty} y_c(\tau)h_c(t-\tau)d\tau$$
 
-<img src="http://bit.ly/1SCtqB4"></center>
- 여기서 우리는 time domain에서의 sinc function이 ideal reconstruction에 사용된다는 것을 알 수 있다.
+$$= \sum_{n=-\infty}^{\infty}x_d[n]h_c(t-nT)$$
 
+$$\Rightarrow h_c(t) = \mathfrak{F}^{-1}(H_c(f)) = \frac{\sin(\pi t/T)}{\pi t/T} = sinc(t/T)$$
 
----
-
-PROOF 1.
-impulse response function in ideal reconstruction transfer function
+ 여기서 우리는 주파수 도메인에서 ideal lowpass filter는 time domain에서 sinc function으로 표현된다는 사실까지 확인할 수 있다. 아래는 위의 sinc function의 유도과정을 증명한 것이다.
 
 
-proof)
+`PROOF`{:.info} impulse response function in ideal reconstruction transfer function
 
-<center><img src="http://bit.ly/1Nria2F"></center>
+아래와 같은 $H_c(f)$ 에 대하여 역 푸리에 변환을 취해보자.
 
-$H_c(f)$에 inverse Fourier Transform을 취해보도록 하자.
+$$H_c(f) =
+\begin{cases}
+T,  & \text{if } |f|<\frac{1}{2T} \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
-<center>
-<img src="http://bit.ly/1Uhp0NM">
+$$\mathfrak{F}^{-1}(H_c(f)) = \int_{-\infty}^{\infty}H_c(f) exp(j2\pi ft) df$$
 
-<img src="http://bit.ly/1REObfo">
+$$= \int_{-1/2T}^{1/2T} T \space exp(j2\pi ft) df$$
 
-<img src="http://bit.ly/1REOcjk">
+$$=\frac{T}{j2\pi t} \left\|exp\left(j2\pi ft\right)\right\|^{1/2T}_{-1/2T}$$
 
-<img src="http://bit.ly/1NrieiO">
+$$
+=\frac{T}{j2\pi ft} \left(
+exp\left(\frac{j2\pi t}{2T}\right) - exp\left(-\frac{j2\pi t}{2T}\right)
+\right)
+$$
 
-<img src="http://bit.ly/1REOd73">
+$$=\frac{T}{\pi t}\space\frac{1}{2j}\left(
+exp\left(j\frac{\pi t}{T}\right)-exp\left(-j\frac{\pi t}{T}\right)
+\right)$$
 
-<img src="http://bit.ly/1REOiYc">
+$$=\frac{T}{\pi t}\sin\left(\frac{\pi t}{T}\right) = \frac{\sin(\pi t /T)}{\pi t /T}$$
 
-<img src="http://bit.ly/1UhoZcJ">
-</center>
+$$\therefore\mathfrak{F}^{-1} (H_c(f))=h_c(t) \frac{\sin(\pi t/T)}{\pi t/T}$$
+
 Q.E.D.
 
 ---
