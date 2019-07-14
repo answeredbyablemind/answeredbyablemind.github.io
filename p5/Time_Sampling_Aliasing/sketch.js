@@ -44,8 +44,8 @@ function draw() {
      pop();
 
      t_sampled = [];
-     // fs = slider1.value();
-     fs = mouseX/width * 5;
+     fs = slider1.value();
+     // fs = mouseX/width * 5;
      for (let i = 0; i <= 6; i += 1 / fs) {
           t_sampled.push(i)
      }
