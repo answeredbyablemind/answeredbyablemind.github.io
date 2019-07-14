@@ -244,7 +244,7 @@ exp\left(j\frac{\pi t}{T}\right)-exp\left(-j\frac{\pi t}{T}\right)
 
 $$=\frac{T}{\pi t}\sin\left(\frac{\pi t}{T}\right) = \frac{\sin(\pi t /T)}{\pi t /T}$$
 
-$$\therefore\mathfrak{F}^{-1} (H_c(f))=h_c(t) \frac{\sin(\pi t/T)}{\pi t/T}$$
+$$\therefore\mathfrak{F}^{-1} (H_c(f))=h_c(t) =\frac{\sin(\pi t/T)}{\pi t/T}$$
 
 Q.E.D.
 
