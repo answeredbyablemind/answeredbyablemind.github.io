@@ -17,7 +17,7 @@ function setup() {
           t.push(i)
      }
      for (let i = 0; i < t.length; i++) {
-          sineWave.push(sin(2 * PI * 0.5 * t[i]))
+          sineWave.push(sin(2 * PI * 1 / 2 * t[i]))
      }
 
 }
@@ -49,43 +49,51 @@ function draw() {
           t_sampled.push(i)
      }
 
+     // plotting sampled Time points
      push();
      translate(30, 0.4 * height)
      scale(1, -1)
      fill(200, 50, 50)
      for (let i = 0; i < t_sampled.length; i++) {
-          ellipse(t_sampled[i] * xscl, sin(2 * PI * 1 / 2 * t_sampled[i]) * yscl, 10)
+          ellipse(t_sampled[i] * xscl, sin(2 * PI * 1 / 2 * t_sampled[i]) * yscl, 8)
+          push();
+          stroke(100)
+          line(
+               t_sampled[i] * xscl, -0.4 * height,
+               t_sampled[i] * xscl, sin(2 * PI * 1 / 2 * t_sampled[i]) * yscl)
+          pop();
      }
      pop();
 
      // calculating the reconstructed Function
-
-     for (let i=0; i<t.length;i++){
-          x_r[i]=0;
+     for (let i = 0; i < t.length; i++) {
+          x_r[i] = 0;
      }
 
-     for (let i =0; i < t_sampled.length; i++){
-          temp = mySinc(t_sampled[i])
-          for (let j = 0; j<x_r.length; j++){
-               x_r[j]+=temp[j] * sin(2 * PI * 1 / 2 * t_sampled[i]);
+     for (let i = 0; i < t_sampled.length; i++) {
+          let temp = [];
+          temp = mySinc(t_sampled[i]);
+
+          for (let j = 0; j < temp.length; j++) {
+               x_r[j] += (temp[j] * sin(2 * PI * 1 / 2 * t_sampled[i]));
           }
+
      }
 
      // plotting the reconstructed Function
      push();
      translate(30, 0.4 * height);
      scale(1, -1)
-     stroke(100, 100, 200)
+     stroke(100, 100, 255)
      strokeWeight(2)
      noFill();
      beginShape();
-     for (let i = 0; i < t.length; i++) {
-          vertex(t[i] * xscl, x_r[i] * yscl)
+     for (let j = 0; j < t.length; j++) {
+          vertex(t[j] * xscl, x_r[j] * yscl)
      }
      endShape();
      pop();
 
-     // noLoop();
 }
 
 function mySinc(delay) {
@@ -93,7 +101,7 @@ function mySinc(delay) {
      for (i = 0; i < t.length; i++) {
           x = (t[i] - delay) * fs;
           if (x != 0) {
-               result[i] = sin(PI *x) / (PI * x)
+               result[i] = sin(PI * x) / (PI * x)
           } else {
                result[i] = 1;
           }
