@@ -37,6 +37,14 @@ function draw() {
      // plotting axis
      plottingAxis(xscl);
 
+     if(h_mobile == 0){
+          my_str = "마우스를 움직여 보세요!"
+     } else {
+          my_str = "슬라이더를 움직여 보세요!"
+     }
+     textSize(15);
+     text(my_str, width/2, height* 0.15)
+
      // plotting a sinusoidal signal
      push();
      translate(30, 0.4 * height)
