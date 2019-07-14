@@ -133,16 +133,11 @@ $$\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}= \delta(f-
 
 > 왜냐하면, 다음과 같이 볼 수 있기 때문이다.
 >
-> 아래 식에서와 같이 $X(f)$ 와 $Y(f)$ 의 컨볼루션 연산은
+> 아래 식에서와 같이 $X(f)$ 와 $Y(f)$ 의 컨볼루션 연산은 $X(f)$ 의 $f$ 를 $\tau$ 로 바꿔주고 $Y(f)$ 의 $f$ 에서 $\tau$ 를 뺀 $f-\tau$ 로 바꿔준 것으로 볼 수 있는데,
 >
-> $X(f)$ 의 $f$ 를 $\tau$ 로 바꿔주고 $Y(f)$ 의 $f$ 에서 $\tau$ 를 뺀 $f-\tau$ 로
->
-> 바꿔준 것으로 볼 수 있는데,
 > $$X(f)\otimes Y(f) = \int_{-\infty}^{\infty}X(\tau)Y(f-\tau)d\tau$$
 >
-> 마찬가지의  방식을 적용해서 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 에서도 왼쪽의 델타함수에 있는 $f$ 는 $\tau$ 로 바꿔주고,
->
-> $X_c$ 에 있는 $f$ 는 $f-\tau$로 바꿔주면  $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 와 같기 때문이다.
+> 마찬가지의  방식을 적용해서 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 에서도 왼쪽의 델타함수에 있는 $f$ 는 $\tau$ 로 바꿔주고, $X_c$ 에 있는 $f$ 는 $f-\tau$로 바꿔주면  $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 와 같기 때문이다.
 >
 
 따라서,
@@ -157,12 +152,11 @@ $$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\delta\left(f-\frac{k}{T}\right)\otimes X
 
 $$=\frac{1}{T}\sum_{k=-\infty}^{\infty}X_c\left(f-\frac{k}{T}\right)$$
 
-그러므로 우리는 (1)과 (2)로부터 $X_c(f)$ 와 $X_d(f)$ 간의 관계를 확인할 수 있다.
-<center>
-<img src="http://bit.ly/1NrhoTp">
-</center>
+그러므로 우리는 식 (6)~(9)와 식 (27)~(29)로부터 $X_c(f)$ 와 $X_d(f)$ 간의 관계를 다음과 같이 확인할 수 있다.
 
-이 때, $X_c(f)$의 주파수 스펙트럼이 $|f|>B$에서 0, 다른 말로는 $\frac{1}{T}>2B$이라면 (즉, 주파수 영역이 bounded),
+$$Y_c(f) = X_d(Tf) = \frac{1}{T}\sum_{-\infty}^{\infty}X_c\left(f-\frac{k}{T}\right)$$
+
+이 때, $X_c(f)$ 의 주파수 스펙트럼이 $|f|>B$ 에서 0, 다른 말로는 $\frac{1}{T}>2B$ 이라면 (즉, 주파수 영역이 bounded),
 
 <center>
 <img src="http://bit.ly/1NrhrP4">
