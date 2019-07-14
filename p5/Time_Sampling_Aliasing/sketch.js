@@ -18,7 +18,7 @@ function setup() {
           sineWave.push(sin(2 * PI * 1 / 2 * t[i]))
      }
 
-     if (FRUBIL.device.class == "Mobile") {
+     if (FRUBIL.device.class == "Smartphone") {
           h_mobile = 1;
           slider1 = createSlider(0.5, 10, 0.8, 0.1);
           slider1.position(30, height * 0.92);
