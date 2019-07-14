@@ -12,7 +12,7 @@ function setup() {
      createCanvas(windowWidth - 20, windowHeight - 20);
      slider1 = createSlider(0.5, 10, 0.8, 0.1);
      slider1.position(30, height * 0.92);
-
+     
      for (let i = 0; i < 6 - 1 / 100; i += 1 / 100) {
           t.push(i)
      }
