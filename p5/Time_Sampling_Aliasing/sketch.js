@@ -18,13 +18,13 @@ function setup() {
           sineWave.push(sin(2 * PI * 1 / 2 * t[i]))
      }
 
-     if (FRUBIL.device.class == "Smartphone") {
+     if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+          console.log("its Desktop")
+     } else {
           h_mobile = 1;
           slider1 = createSlider(0.5, 10, 0.8, 0.1);
           slider1.position(30, height * 0.92);
-     } else if (FRUBIL.device.class == "Desktop") {
-          h_mobile = 0;
-          console.log("its Desktop")
      }
 }
 
