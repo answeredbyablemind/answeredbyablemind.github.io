@@ -6,12 +6,10 @@ let fs;
 let t_sampled = [];
 let xscl
 let yscl
-
+let h_mobile;
 
 function setup() {
      createCanvas(windowWidth - 20, windowHeight - 20);
-     slider1 = createSlider(0.5, 10, 0.8, 0.1);
-     slider1.position(30, height * 0.92);
 
      for (let i = 0; i < 6 - 1 / 100; i += 1 / 100) {
           t.push(i)
@@ -20,6 +18,14 @@ function setup() {
           sineWave.push(sin(2 * PI * 1 / 2 * t[i]))
      }
 
+     if (FRUBIL.device.class == "Mobile") {
+          h_mobile = 1;
+          slider1 = createSlider(0.5, 10, 0.8, 0.1);
+          slider1.position(30, height * 0.92);
+     } else if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+          console.log("its Desktop")
+     }
 }
 
 function draw() {
@@ -44,7 +50,11 @@ function draw() {
      pop();
 
      t_sampled = [];
-     fs = slider1.value();
+     if (h_mobile == 1) {
+          fs = slider1.value();
+     } else {
+          fs = mouseX / width * 5;
+     }
      // fs = mouseX/width * 5;
      for (let i = 0; i <= 6; i += 1 / fs) {
           t_sampled.push(i)
