@@ -10,8 +10,21 @@ tags: 신호처리
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/" width="100%" height = "400" frameborder="0"></iframe></p>
 
+시간 샘플링 이론이 말해주는 것:
+<center>
+
+**"얼마나 빼곡히 샘플링을 해야 원래 신호로 복구하는데 어려움이 없을까?"**
+</center>
 
 {% raw %}
+
+## 시간 샘플링?
+
+물리적인 (아날로그) 신호를 디지털 화면 상에 표시해주기 위해선 샘플링이 필요하다. 대개 신호처리에서 샘플링이라고 하면 시간 샘플링을 말하는 것 같다.
+
+시간 샘플링이란 원래의 아날로그 신호 (포스트 맨 위 애플릿의 흰색 실선)를 디지털 신호로 바꿔주는 과정이라고 할 수 있다. (드디어 아날로그 세계와 디지털 세계가...!) 포스트 맨 위 애플릿에서는 '어느 정도의' 주기를 갖고 아날로그 신호를 샘플링 해주는데, '어느 정도의' 샘플링 속도 이상이 되면 샘플된 시간과 신호 값들을 가지고 원래의 신호로 거의 비슷하게 복구할 수 있다.
+
+그러면, 이론적으로 '어느 정도의' 주기를 갖고 아날로그 신호를 샘플링 해줘야 원래 신호로 복구 가능한 것일까? (즉, ideal reconstruction).  이 질문에 대한 해답을 sampling theorem에서 구할 수 있다.
 
 ## Sampling theorem의 증명과정
 
@@ -160,21 +173,18 @@ $$=\frac{1}{T}\sum_{k=-\infty}^{\infty}X_c\left(f-\frac{k}{T}\right)$$
 
 $$Y_c(f) = X_d(Tf) = \frac{1}{T}\sum_{-\infty}^{\infty}X_c\left(f-\frac{k}{T}\right)$$
 
-이 때, $X_c(f)$ 의 주파수 스펙트럼이 $|f|>B$ 에서 0, 다른 말로는 $\frac{1}{T}>2B$ 이라면 (즉, 주파수 영역이 bounded),
+이 때, $X_c(f)$ 의 주파수 스펙트럼이 $\|f\|>B$ 에서 0, 다른 말로는 $\frac{1}{T}>2B$ 이라면 (즉, 주파수 영역이 bounded),
 
-<center>
-<img src="http://bit.ly/1NrhrP4">
-</center>
+$$X_d(Tf) = \frac{1}{T}X_c(f) \space for \space |f| < \frac{1}{2T}$$
 
 ---
 
 
 ## ideal reconstruction
 
- 지금까지 Frequency Domain에서 $X_c(f)$와 $X_d(f)$의 관계에 대해서 알아보았다. 그렇다면 둘의 관계에 대해서 아는 것은 어떤 의미를 갖는 것일까? 혹은 어떤 것을 파악하기 위해서 $X_c(f)$와 $X_d(f)$의 관계를 수식적으로 이해해야 하는 것일까?
+ 지금까지 Frequency Domain에서 $X_c(f)$ 와 $X_d(f)$ 의 관계에 대해서 알아보았다. 그렇다면 둘의 관계에 대해서 아는 것은 어떤 의미를 갖는 것일까? 혹은 어떤 것을 파악하기 위해서 $X_c(f)$ 와 $X_d(f)$ 의 관계를 수식적으로 이해해야 하는 것일까?
 
  그것은 이 part의 제목인 ideal reconstruction이다. 즉, sampling한 신호(혹은 이산 신호)에 어떤 방법을 취하면 그것이 원래의 contiunous time signal로 완벽하게 복구 시킬 수 있는지를 알고싶은 것이다. 우리는 Sampling Theorem을 통해서 수식적인 관계를 다음과 같이 발견하게 되었다.
- 연속시간 신호 와 그것을 샘플링 한 이산시간 신호 $x_d[n]=x_c(nT)$ where T=sampling period에 대해서, $y_c(t)=x_c(t)p_c(t)$ where $p_c(t)=\sum_{n=-\infty}^{\infty}{\delta(t-nT)}$라고 정의할 수 있다. 이 때, 다음과 같은 관계를 발견할 수 있다.
 
 <center>
 <img src="http://bit.ly/1Nrhs5A">
