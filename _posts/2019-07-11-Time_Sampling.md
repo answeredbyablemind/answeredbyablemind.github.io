@@ -7,6 +7,10 @@ aside:
 key: 20190711
 tags: 신호처리
 ---
+
+<p align="center"><iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/"></iframe></p>
+
+
 {% raw %}
 
 ## Sampling theorem의 증명과정
