@@ -127,19 +127,37 @@ $$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty}
 \delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
 
 
-여기서 우리는 $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 를 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 로 생각할 수 있다.
+여기서 우리는 식 (25)의 $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 를 다음과 같이 생각할 수 있다.
+
+$$\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}= \delta(f-\frac{k}{T})\otimes X_c(f)$$
+
+> 왜냐하면, 다음과 같이 볼 수 있기 때문이다.
+>
+> 아래 식에서와 같이 $X(f)$ 와 $Y(f)$ 의 컨볼루션 연산은
+>
+> $X(f)$ 의 $f$ 를 $\tau$ 로 바꿔주고 $Y(f)$ 의 $f$ 에서 $\tau$ 를 뺀 $f-\tau$ 로
+>
+> 바꿔준 것으로 볼 수 있는데,
+> $$X(f)\otimes Y(f) = \int_{-\infty}^{\infty}X(\tau)Y(f-\tau)d\tau$$
+>
+> 마찬가지의  방식을 적용해서 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 에서도 왼쪽의 델타함수에 있는 $f$ 는 $\tau$ 로 바꿔주고,
+>
+> $X_c$ 에 있는 $f$ 는 $f-\tau$로 바꿔주면  $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 와 같기 때문이다.
+>
 
 따라서,
 
-<center>
+$$Y_c(f) =  P_c(f) \otimes X_c(f) $$
 
-<img src="http://bit.ly/1NrhrhR">
+식 (26)에 의해서,
 
-<img src="http://bit.ly/1NrhoCK">
+$$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\delta\left(f-\frac{k}{T}\right)\otimes X_c(f)$$
 
-</center>
+델타함수의 성질에 의해서,
 
-그러므로 우리는 (1)과 (2)로부터 $X_c(f)$와 $X_d(f)$간의 관계를 확인할 수 있다.
+$$=\frac{1}{T}\sum_{k=-\infty}^{\infty}X_c\left(f-\frac{k}{T}\right)$$
+
+그러므로 우리는 (1)과 (2)로부터 $X_c(f)$ 와 $X_d(f)$ 간의 관계를 확인할 수 있다.
 <center>
 <img src="http://bit.ly/1NrhoTp">
 </center>
@@ -153,7 +171,7 @@ $$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty}
 ---
 
 
-##다. ideal reconstruction
+## ideal reconstruction
 
  지금까지 Frequency Domain에서 $X_c(f)$와 $X_d(f)$의 관계에 대해서 알아보았다. 그렇다면 둘의 관계에 대해서 아는 것은 어떤 의미를 갖는 것일까? 혹은 어떤 것을 파악하기 위해서 $X_c(f)$와 $X_d(f)$의 관계를 수식적으로 이해해야 하는 것일까?
 
