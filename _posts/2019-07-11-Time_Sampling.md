@@ -8,7 +8,7 @@ key: 20190711
 tags: 신호처리
 ---
 
-<p align="center"><iframe width = "100%" frameborder = "0" src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/"></iframe></p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/" style = "display:block; width: 100vw"></iframe></p>
 
 
 {% raw %}
