@@ -26,60 +26,52 @@ tags: 신호처리
 | --------- |
 | 이산 신호에 대하여,<br><center> $$x[n] = \int_{-0.5}^{0.5}X(f) exp(j2\pi fn) df$$<br>where<br>$$X(f)=\sum_{n=-\infty}^{\infty}x[n]exp(-j2\pi fn)$$</center>|
 
----
-
- 다시 한번 DTFT의 수식을 살펴보면 $x[n]$과 $X(f)$ 모두 연속주파수 $f$를 가지고 있다는 것을 알 수 있다. 그렇기 때문에 컴퓨터를 이용해 일반적인 이산신호 $x[n]$의 주파수 응답을 알아보고 싶다면 연속 주파수 $f$를 샘플링하는 과정은 필연적인 것이다.
+ 다시 한번 DTFT의 수식을 살펴보면 $x[n]$ 과 $X(f)$ 모두 연속주파수 $f$ 를 가지고 있다는 것을 알 수 있다. 그렇기 때문에 컴퓨터를 이용해 일반적인 이산신호 $x[n]$ 의 주파수 응답을 알아보고 싶다면 연속 주파수 $f$ 를 샘플링하는 과정은 필연적인 것이다.
 
 ## Sampling DTFT
 
- 우리는 연속주파수를 sample하기 전에 몇 가지 사실에 대해서 짚고 넘어가야 할 필요가 있다. 그것은 우리가 컴퓨터를 통해서 받는 Signal은 any discrete time signal $x[n]$ 이라고 하지만, 어쨋든 길이가 유한할 수 밖에 없다. 그렇기 때문에 우리는 컴퓨터에서 사용할 일반적 이산신호 $x[n]$의 길이를 $N$으로 정하도록 하자. 그렇기 때문에 DTFT $X(f)$는 다음과 같이 생각될 수 있다.
-
-<center><img src="http://bit.ly/1REOoPD"></center>
-
- 이제, 연속 주파수를 이산 주파수로 바꿔보자. CTFT와 DTFT의 유도과정을 다시 생각해보면 이렇게 바꿀 수 있다는 것을 금방 알 수 있을 것이다. 연속주파수 $f$는 $\lim_{N\rightarrow\infty}{\frac{k}{N}}$에서 출발했기 때문이다. 그러므로,
-
-<center>
-<img src="http://bit.ly/1REOmr1">
-</center>
-
-이제, 위의 $\hat{X}[k]$를 새로운 푸리에 변환인 Discrete Fourier Transform이라고 정의할 수 있다.
+ 우리는 연속주파수를 sample하기 전에 몇 가지 사실에 대해서 짚고 넘어가야 할 필요가 있다. 그것은 우리가 컴퓨터를 통해서 받는 신호는 any discrete time signal $x[n]$ 이라고 하지만, 어쨋든 길이가 유한할 수 밖에 없다. 그렇기 때문에 우리는 컴퓨터에서 사용할 일반적 이산신호 $x[n]$ 의 길이를 $N$ 으로 정하도록 하자. 그렇기 때문에 DTFT $X(f)$ 는 다음과 같이 생각될 수 있다.
 
 
----
+$$\hat{X}(f)=\sum_{n=0}^{N-1}x[n]exp(-j2\pi fn)$$
 
-DEFINITION) Discrete Fourier Transform
+ 이제, 연속 주파수를 이산 주파수로 바꿔보자. CTFT와 DTFT의 유도과정을 다시 생각해보면 이렇게 바꿀 수 있다는 것을 금방 알 수 있을 것이다. 연속주파수 $f$는 $\lim_{N\rightarrow\infty}{\frac{k}{N}}$ 에서 출발했기 때문이다. 그러므로,
 
-전체 신호의 길이가 N인 이산 신호 $x[n]$에 대하여
+ $$\hat{X}[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$
 
-<center>
-<img src="http://bit.ly/1Nrii20">
-</center>
+이제, 위의 $\hat{X}[k]$ 를 새로운 푸리에 변환인 Discrete Fourier Transform이라고 정의할 수 있다.
 
+| DEFINITION: Discrete Fourier Transform (DFT) |
+| --------- |
+| 전체 신호의 길이가 N인 이산 신호 $x[n]$ 에 대하여,<br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center>|
 
----
 
 이제, inverse Discrete Fourier Transform을 유도해보자. 지금껏 유도해왔던 Fourier Analysis Series와 마찬가지로 직교성(orthogonality)의 성질을 이용하면 된다.
 
 ---
 
-PROOF) inverse DFT의 유도
+`PROOF`{:.info} inverse DFT의 유도
 
 DFT는 아래와 같이 정의되었다.
 
-<center><img src="http://bit.ly/1Nrii20"></center>
+$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$
 
-두 정수 p, k에 대하여 다음과 같은 식을 생각하여 이산신호의 직교성의 성질을 이용하자.
+두 정수 $p, k$ 에 대하여 다음과 같은 식을 생각하여 이산신호의 직교성의 성질을 이용하자.
 
-<center><img src="http://bit.ly/1REOtTv">
+$$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right)$$
 
-<img src="http://bit.ly/1REOw1v">
-</center>
-여기서도 마찬가지로 $p\neq k$, $p=k$의 두 가지 경우를 생각할 수 있다.
+$$=\sum_{p=0}^{N-1}
+\sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)
+exp\left(j\frac{2\pi p}{N}n\right)$$
+
+$$=\sum_{p=0}^{N-1}\sum_{n=0}^{N-1}x[n] exp\left(j\frac{2\pi(p-k)}{N}n\right)$$
+
+여기서도 마찬가지로 $p\neq k$, $p=k$ 의 두 가지 경우를 생각할 수 있다.
 
 
-1) $p\neq k$인 경우 직교성의 성질에 의해
+1) $p\neq k$인 경우,직교성의 성질에 의해
 
-<center><img src="http://bit.ly/1REOx5N"></center>
+$$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right) = 0$$
 
 이고,
 
