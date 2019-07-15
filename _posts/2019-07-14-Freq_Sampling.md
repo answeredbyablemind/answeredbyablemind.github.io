@@ -112,11 +112,11 @@ $$= 1 + exp\left(-j\frac{\pi}{2}k\right)
 
 ---
 
- 위와 같은 단순한 예제를 풂으로써 알 수 있는 것은 무엇일까? 바로 $x[n]$ 을 DTFT 한 결과물을 frequency domain에서 과연 sampling 했는지 알 수 있다는 것이다.같은 문제를 가지고 DTFT를 구하면 다음과 같다.
+ 위와 같은 단순한 예제를 풂으로써 알 수 있는 것은 무엇일까? 바로 $x[n]$ 을 DTFT 한 결과물을 frequency domain에서 과연 sampling 했는지 알 수 있다는 것이다. 같은 문제를 가지고 DTFT를 구하면 다음과 같다.
 
 ---
 
-ex2) 다음의 이산신호 $x[n]$ 에 대하여 DTFT $X(e^{j\omega})$ 를 구하시오.
+ex2) 다음의 이산신호 $x[n]$ 에 대하여 DTFT $X(f)$ 를 구하시오.
 
 $$x[n] =
 \begin{cases}
@@ -127,20 +127,21 @@ $$
 
 Sol)
 
-<center>
-<img src="http://bit.ly/1REOG9f">
+$$X(f) = \sum_{n=0}^{3}\left(1\times exp({-j2\pi fn})\right)$$
 
-<img src="http://bit.ly/1Nris9C">
-</center>
+$$=\frac{1-exp({-j8\pi f})}{1-exp({-j2\pi f})}$$
 
 여기서 위 식은 다음과 같이 변형할 수 있다.
-<center>
-<img src="http://bit.ly/1REOMgX">
 
-<img src="http://bit.ly/1NriuOX">
-</center>
+$$ = \frac
+{\frac{exp({j4\pi f})-exp({-j4\pi f})}{exp({j4\pi f})}}
+{\frac{exp({j\pi f})-exp({-j\pi f})}{exp({j\pi f})}}$$
 
- Ex2의 답의 결과에서 각주파수 $\omega$를 $\frac{2\pi}{4}k$로 치환함으로써 주파수를 이산화해보자. 그렇게하면, 각각의 $k=0,1,2,3$ 에 대하여 Ex1의 결과와 같은 결과물을 얻게 된다는 것을 알 수 있다.
+$$ = \frac{exp({j\pi f})}{exp({j 4\pi f})} \times \frac{exp({j 4\pi f}) - exp({-j 4\pi f})}{exp({j \pi f}) - exp({-j \pi f})}$$
+
+$$=exp\left(-j 3\pi f \right) \frac{\sin(4\pi f)}{\sin(\pi f)}$$
+
+ Ex2의 답의 결과에서 주파수 $2\pi f$를 $\frac{2\pi}{4}k$로 치환함으로써 주파수를 이산화해보자. 그렇게하면, 각각의 $k=0,1,2,3$ 에 대하여 Ex1의 결과와 같은 결과물을 얻게 된다는 것을 알 수 있다.
 
  위 주파수의 이산화의 결과는 다음 그림을 통해서 확인해 볼 수 있다.
 
