@@ -42,7 +42,7 @@ $$\hat j = \begin{bmatrix}0 \\ 1 \end{bmatrix}$$
 
 
 
-새로운 기저 벡터를 $\hat{i}_{new}$, $\hat{j}_{new}$ 라 했을 때,
+새로운 기저 벡터를 $\hat i_{new}$, $\hat j_{new}$ 라 했을 때,
 
 
 $$\hat i_{new} = T\left ( \begin{bmatrix}1 \\ 0 \end{bmatrix} \right )$$
@@ -76,7 +76,7 @@ $$A=\begin{pmatrix}
  2 & -3 \\
  1 & 1
  \end{pmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix}=\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$
- 
+
 
  임을 알 수 있는데, 아래의 영상에서 처럼 이 값은 새로운 두 기저벡터의 1배와 1배의 합으로
  표현될 수 있다.
