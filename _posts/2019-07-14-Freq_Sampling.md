@@ -89,38 +89,41 @@ $$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$
 
 ## 예제를 통해  DFT를 조금 더 자세히 알아보자.
 
-Ex) 다음의 이산신호 $x[n]$에 대하여 DFT $X[k]$를 구하시오.
+Ex) 다음의 이산신호 $x[n]$ 에 대하여 DFT $X[k]$ 를 구하시오.
 
-<center><img src="http://bit.ly/1NrioH9"></center>
+
+$$x[n] =
+\begin{cases}
+1,  & n = 0, 1, 2, 3 \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
 Sol)
 
 DFT의 정의에 따라,
 
+$$X[k] = \sum_{n=0}^{3} 1 \times exp\left(-j\frac{2\pi k}{4}n\right)$$
 
-<center>
-<img src="http://bit.ly/1NrinD1">
+$$= 1 + exp\left(-j\frac{\pi}{2}k\right) 
++ exp\left(-j\pi k\right) + exp\left(-j\frac{3\pi}{2}k\right)$$
 
-<img src="http://bit.ly/1REOCpQ">
-</center>
-
-그러므로,
-<center>
-<img src="http://bit.ly/1Nripux">
-
-<img src="http://bit.ly/1Nripux">
-</center>
+그러므로, $k=0$ 일 때, $X[0]=4$ 이고, $k= 1,2,3$ 일 때, $X[k]=0$ 이다.
 
 ---
 
-
- 위와 같은 단순한 예제를 풂으로써 알 수 있는 것은 무엇일까? 바로 $x[n]$을 DTFT 한 결과물을 frequency domain에서 과연 sampling 했는지 알 수 있다는 것이다.같은 문제를 가지고 DTFT를 구하면 다음과 같다.
+ 위와 같은 단순한 예제를 풂으로써 알 수 있는 것은 무엇일까? 바로 $x[n]$ 을 DTFT 한 결과물을 frequency domain에서 과연 sampling 했는지 알 수 있다는 것이다.같은 문제를 가지고 DTFT를 구하면 다음과 같다.
 
 ---
 
-ex2) 다음의 이산신호 $x[n]$에 대하여 DTFT $X(e^{j\omega})$를 구하시오.
+ex2) 다음의 이산신호 $x[n]$ 에 대하여 DTFT $X(e^{j\omega})$ 를 구하시오.
 
-<center><img src="http://bit.ly/1NrioH9"></center>
+$$x[n] =
+\begin{cases}
+1,  & n = 0, 1, 2, 3 \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
 Sol)
 
@@ -141,9 +144,9 @@ Sol)
 
  위 주파수의 이산화의 결과는 다음 그림을 통해서 확인해 볼 수 있다.
 
-<center>
-![](https://wikidocs.net/images/page/4046/%EC%BA%A1%EC%B2%98.PNG)
-</center>
+<p align="center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/freq_sampling_DFT/pic1.png">
+</p>
 
 ##  주파수 샘플링된 주파수 응답의 시간 영역에서의 표현
 
