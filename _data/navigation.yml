@@ -63,3 +63,5 @@ docs-ko:
         url:    https://angeloyeo.github.io/2019/07/09/DTFT.html
       - title:  시간 샘플링과 나이퀴스트 이론
         url:    https://angeloyeo.github.io/2019/07/11/Time_Sampling.html
+      - title:  주파수 샘플링과 이산 푸리에 변환 (DFT)
+        url:    https://angeloyeo.github.io/2019/07/14/Freq_Sampling.html
