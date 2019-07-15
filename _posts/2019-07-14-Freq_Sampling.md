@@ -77,22 +77,17 @@ $$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right) = 0$$
 
 2) $p=k$인 경우 직교성의 성질에 의해
 
-<center><img src="http://bit.ly/1REOzKT"></center>
+$$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right) = Nx[n]$$
 
  이다.
 
 그러므로, inverse DFT는
 
-<center><img src="http://bit.ly/1Nrioqz"></center>
+$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$
 
 이다.
 
----
-
-
 ## 예제를 통해  DFT를 조금 더 자세히 알아보자.
-
----
 
 Ex) 다음의 이산신호 $x[n]$에 대하여 DFT $X[k]$를 구하시오.
 
