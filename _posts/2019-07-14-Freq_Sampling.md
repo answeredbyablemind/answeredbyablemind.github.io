@@ -141,7 +141,7 @@ $$ = \frac{exp({j\pi f})}{exp({j 4\pi f})} \times \frac{exp({j 4\pi f}) - exp({-
 
 $$=exp\left(-j 3\pi f \right) \frac{\sin(4\pi f)}{\sin(\pi f)}$$
 
- Ex2의 답의 결과에서 주파수 $2\pi f$를 $\frac{2\pi}{4}k$로 치환함으로써 주파수를 이산화해보자. 그렇게하면, 각각의 $k=0,1,2,3$ 에 대하여 Ex1의 결과와 같은 결과물을 얻게 된다는 것을 알 수 있다.
+ Ex2의 답의 결과에서 주파수 $f$를 $\frac{k}{4}$로 치환함으로써 주파수를 이산화해보자. 그렇게하면, 각각의 $k=0,1,2,3$ 에 대하여 Ex1의 결과와 같은 결과물을 얻게 된다는 것을 알 수 있다.
 
  위 주파수의 이산화의 결과는 다음 그림을 통해서 확인해 볼 수 있다.
 
@@ -152,36 +152,28 @@ $$=exp\left(-j 3\pi f \right) \frac{\sin(4\pi f)}{\sin(\pi f)}$$
 ##  주파수 샘플링된 주파수 응답의 시간 영역에서의 표현
 
  먼저, 시간을 샘플링 했을 때를 다시 생각해보자. 우리는 시간을 샘플링 했을 때에는 주파수 영역에서 주기성을 나타냈었다는 사실을 모두 증명했었다. 결과론적으로 얘기하자면, 시간과 주파수는 Dual Property를 가지고 있기 때문에, 주파수 영역에서 샘플링 한 신호는 시간 영역에서 주기성을 가지게 된다.
- $X(f)$의 연속 주파수 $f$를 M개로 Sampling한 신호를 $X_s[k]$라고 하자. 즉, $X_s[k]$는 이산 주파수 $f_k=\frac{k}{M},\frac k=0,1,\cdots,M-1$를 이용해서 표현될 수 있다. 이것은 Continuous Time Domain을 Sampling 할 때 이용한 기법을 이용해서 수학적으로 증명해 볼 수 있다.
+ $X(f)$의 연속 주파수 $f$ 를 $M$ 개로 Sampling한 신호를 $X_s[k]$ 라고 하자. 즉, $X_s[k]$ 는 이산 주파수 $f_k=\frac{k}{M}\space for \space k=0,1,\cdots,M-1$ 를 이용해서 표현될 수 있다. 이것은 Continuous Time Domain을 Sampling 할 때 이용한 기법을 이용해서 수학적으로 증명해 볼 수 있다.
 
----
+$$X_s[k] = X\left(e^{j\frac{2\pi k}{M}}\right) = X(f) P(f)$$
 <center>
-<img src="http://bit.ly/1NrivlZ">
-
 where
-
-<img src="http://bit.ly/1NrivCw">
 </center>
 
-
-
+$$P(f) = \frac{1}{M}\sum_{k=-\infty}^{\infty}\delta\left(f-\frac{k}{M}\right)$$
 
 또한, 시간 샘플링 이론에서 증명되었던 것을 토대로 생각하면,
 
-<center><img src="http://bit.ly/1REORkN"></center>
+$$p[n] = \sum_{l=-\infty}^{\infty}\delta[n-lM]$$
 
-
-또한, $X_s[k]=X(e^{j\frac{2\pi k}{M}})=X(f)P(f)$이므로, $x_s[n]=x[n]\otimes p[n]$이다.
+또한, $X_s[k]=X(e^{j\frac{2\pi k}{M}})=X(f)P(f)$ 이므로, $x_s[n]=x[n]\otimes p[n]$ 이다.
 
 그러므로,
-<center>
-<img src="http://bit.ly/1REPbAf">
-</center>
+
+$$x_s[n] = x[n] \otimes \sum_{l=-\infty}^{\infty} \delta[n-lM] = \sum_{l=-\infty}^{\infty} x[n]\otimes \delta[n-lM] $$
 
 이것은 다음의 사실을 의미한다.
-<center>
-<img src="http://bit.ly/1REPc79">
-</center>
+
+$$x_s[n] = \sum_{l=-\infty}^{\infty}x[n-lM]$$
 
 ---
 
