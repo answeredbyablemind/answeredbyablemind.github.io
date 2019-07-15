@@ -18,31 +18,13 @@ tags: 신호처리
  
 
  
-| DEFINITION Discrete Time Fourier Series (DTFS) |
+| DEFINITION: Discrete Time Fourier Series (DTFS) |
 | --------- |
 | 주기 이산 신호에 대하여,<br><center> $$x[n] = \sum_{k=N_1}^{N_2}a_k exp\left(j\frac{2\pi k}{N}n\right)$$<br>where<br>$$a_k=\frac{1}{N}\sum_{n=N_1}^{N_2}x[n] exp\left(-j\frac{2\pi k}{N}n\right)$$</center>|
 
-
----
-
-DEFINITION: Discrete Time Fourier Series
-
-For any periodic discrete time signal ,
-<center>
-<img src="http://bit.ly/1REOirl">
-
-<img src="http://bit.ly/1NrigHy">
-</center>
----
-
-Discrete Time Fourier Transform
-
-For any discrete time signal x[n],
-<center>
-<img src="http://bit.ly/1REOo26">
-
-<img src="http://bit.ly/1NrigY4">
-</center>
+| DEFINITION: Discrete Time Fourier Transform (DTFT) |
+| --------- |
+| 이산 신호에 대하여,<br><center> $$x[n] = \int_{-0.5}^{0.5}X(f) exp(j2\pi fn) df$$<br>where<br>$$X(f)=\sum_{n=-\infty}^{\infty}x[n]exp(-j2\pi fn)$$</center>|
 
 ---
 
