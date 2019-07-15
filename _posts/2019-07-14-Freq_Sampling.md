@@ -16,6 +16,13 @@ tags: 신호처리
 
  하지만 주파수는 왜 샘플링 하여야 하는가? 그것은 모든 Digital System은 이산화 되어 있기 때문이다. 즉, Discrete Time Signal을 이용하여, 또는 CT signal을 sample하여 그 신호의 주파수 응답을 분석해보는 것은 마치 컴퓨터에서 가능 할 것 처럼 보이지만, 실제로 분석하고자 하는 DT Signal이 주기신호가 아니라면 그것은 불가능하다. 그것은 DTFS와 DTFT가 정의된 수식에서 충분히 그 근거가 드러난다.
  
+
+ 
+| DEFINITION Discrete Time Fourier Series (DTFS) |
+| --------- |
+| 주기 이산 신호에 대하여,<br><center> $$x[n] = \sum_{k=N_1}^{N_2}a_k exp\left(j\frac{2\pi k}{N}n\right)$$<br>where<br>$$a_k=\frac{1}{N}\sum_{n=N_1}^{N_2}x[n] exp\left(-j\frac{2\pi k}{N}n\right)$$</center>|
+
+
 ---
 
 DEFINITION: Discrete Time Fourier Series
