@@ -61,6 +61,10 @@ function draw() {
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
 
+     textAlign(LEFT)
+     textSize(10)
+     text('↓ 슬라이더를 움직여 보세요.', width * 0.1, height * 0.95)
+
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
      a = slider1.value();
