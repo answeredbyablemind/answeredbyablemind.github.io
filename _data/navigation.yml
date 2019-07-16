@@ -65,3 +65,8 @@ docs-ko:
         url:    https://angeloyeo.github.io/2019/07/11/Time_Sampling.html
       - title:  주파수 샘플링과 이산 푸리에 변환 (DFT)
         url:    https://angeloyeo.github.io/2019/07/14/Freq_Sampling.html
+
+  - title:      선형대수학
+    children:
+      - title:  행렬과 선형변환
+        url:    https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html
