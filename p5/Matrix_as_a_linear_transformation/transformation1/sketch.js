@@ -9,6 +9,12 @@ let new_vu = [],
      new_hr = [];
 let slider1;
 let myMtx = [];
+let basisVecX = [],
+     basisVecY = [],
+     newBasisVecX = [],
+     newBasisVecY = [];
+
+
 
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
@@ -58,6 +64,15 @@ function setup() {
           [0, -1]
      ]))
 
+     basisVecX = [
+          [1],
+          [0]
+     ]
+     basisVecY = [
+          [0],
+          [1]
+     ]
+
 }
 
 function draw() {
@@ -82,9 +97,15 @@ function draw() {
           new_hr[i] = math.multiply(mtx2Apply, hr[i]);
      }
 
+     newBasisVecX = math.multiply(mtx2Apply, basisVecX)
+     newBasisVecY = math.multiply(mtx2Apply, basisVecY)
+
      // 새로운 grid line 그리기. 이 grid는 선형변환이 apply 될 것임.
      plotNewGrid(new_vu, new_vd, new_hl, new_hr);
      // noLoop();
+
+     drawArrow(0, 0, newBasisVecX._data[0][0], newBasisVecX._data[1][0], 200, 50, 50)
+     drawArrow(0, 0, newBasisVecY._data[0][0], newBasisVecY._data[1][0], 50, 200, 50)
 
      fill(255);
      textSize(15)
@@ -148,14 +169,22 @@ function plotNewGrid(vu, vd, hl, hr) {
      pop();
 }
 
-function drawArrow(x1, y1, x2, y2){
-    line(x1, y1, x2, y2); //draw a line beetween the vertices
-    let offset = 16
-    
-    push() //start new drawing state
-    var angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
-    translate(x2, y2); //translates to the destination vertex
-    rotate(angle-HALF_PI); //rotates the arrow point
-    triangle(-offset*0.5, offset, offset*0.5, offset, 0, -offset/2); //draws the arrow point as a triangle
-    pop();
+function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
+     push();
+     translate(width / 2, height / 2)
+     scale(1, -1)
+     strokeWeight(3)
+     stroke(c1,c2,c3);
+     fill(c1,c2,c3)
+     line(x1 * scl, y1 * scl, x2 * scl, y2 * scl); //draw a line beetween the vertices
+     let offset = 16
+
+     var angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
+     translate(x2 * scl, y2 * scl); //translates to the destination vertex
+     rotate(angle - HALF_PI); //rotates the arrow point
+     triangle(
+          -offset * 0.5, offset, 
+          offset * 0.5, offset, 
+          0, 0); //draws the arrow point as a triangle
+     pop();
 }
