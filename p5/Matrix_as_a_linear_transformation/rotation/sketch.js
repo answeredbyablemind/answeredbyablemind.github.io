@@ -26,27 +26,27 @@ function setup() {
      // 각 아래의 내용을 vu, vd, hl, hr에 맞출 수 있게... 벡터화 하고자 함.
      // 즉, 초기화된 벡터를 만들고 싶음.
      // vertical line에 해당하는 vectors
-     for (let i = -floor(width / scl) / 2; i < floor(width / scl) / 2; i++) {
+     for (let i = -floor(width / scl); i < floor(width / scl); i++) {
           // line(i * scl, -height / 2, i * scl, height / 2)
           vu.push([
                [i],
-               [height / (2 * scl)]
+               [height / (scl)]
           ]);
           vd.push([
                [i],
-               [-height / (2 * scl)]
+               [-height / (scl)]
           ]);
      }
      // horizontal line에 해당하는 vectors
-     for (let i = -floor(height / scl) / 2; i < floor(height / scl) / 2; i++) {
+     for (let i = -floor(height / scl); i < floor(height / scl); i++) {
           // line(-width / 2, i * scl, width / 2, i * scl)
           // line(x1, y1, x2, y2) 형식으로 그려짐
           hl.push([
-               [-width / (2 * scl)],
+               [-width / (scl)],
                [i]
           ]);
           hr.push([
-               [width / (2 * scl)],
+               [width / (scl)],
                [i]
           ]);
      }
@@ -187,8 +187,6 @@ function plotNewGrid(vu, vd, hl, hr) {
      // 변환 적용할 lines 그리기
      stroke(109, 155, 222);
      strokeWeight(1);
-
-     // TODO: arrow 그리기
 
      // vertical line
      for (let i = 0; i < vu.length; i++) {
