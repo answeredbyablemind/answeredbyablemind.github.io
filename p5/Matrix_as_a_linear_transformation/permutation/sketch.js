@@ -87,8 +87,11 @@ function draw() {
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
      // a = slider1.value();
-     a = (1 + cos(time))/2;
-     time += 0.04;
+     a = 1/(1+Math.exp(-(time-6)))
+     time += 0.05;
+     if (time > 13){
+          time = 0;
+     }
      mtx2Apply = math.add(math.matrix([
           [1, 0],
           [0, 1]
