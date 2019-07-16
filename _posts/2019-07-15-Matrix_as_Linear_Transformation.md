@@ -126,9 +126,9 @@ $$A=\begin{pmatrix}
 
 ### permutation: $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9htItjY_lgM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/permutation/" width="325" height = "260" frameborder="0"></iframe></p>
+
 
 ### projection on x-axis: $\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} $
 
