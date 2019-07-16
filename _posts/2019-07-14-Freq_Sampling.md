@@ -155,6 +155,7 @@ $$=exp\left(-j 3\pi f \right) \frac{\sin(4\pi f)}{\sin(\pi f)}$$
  $X(f)$의 연속 주파수 $f$ 를 $M$ 개로 Sampling한 신호를 $X_s[k]$ 라고 하자. 즉, $X_s[k]$ 는 이산 주파수 $f_k=\frac{k}{M}\space for \space k=0,1,\cdots,M-1$ 를 이용해서 표현될 수 있다. 이것은 Continuous Time Domain을 Sampling 할 때 이용한 기법을 이용해서 수학적으로 증명해 볼 수 있다.
 
 $$X_s[k] = X\left(e^{j\frac{2\pi k}{M}}\right) = X(f) P(f)$$
+
 <center>
 where
 </center>
