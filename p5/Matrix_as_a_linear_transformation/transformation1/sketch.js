@@ -120,6 +120,8 @@ function plotNewGrid(vu, vd, hl, hr) {
      stroke(109, 155, 222);
      strokeWeight(1);
 
+     // TODO: arrow 그리기
+
      // vertical line
      for (let i = 0; i < vu.length; i++) {
           line(vu[i]._data[0] * scl, vu[i]._data[1] * scl, vd[i]._data[0] * scl, vd[i]._data[1] * scl);
