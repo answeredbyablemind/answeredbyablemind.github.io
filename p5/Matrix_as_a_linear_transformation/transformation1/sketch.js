@@ -14,8 +14,6 @@ let basisVecX = [],
      newBasisVecX = [],
      newBasisVecY = [];
 
-
-
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
