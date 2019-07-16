@@ -11,13 +11,17 @@ function setup() {
      // 각 아래의 내용을 vu, vd, hl, hr에 맞출 수 있게... 벡터화 하고자 함.
      // 즉, 초기화된 벡터를 만들고 싶음.
      for (let i = -floor(height / scl) / 2; i < floor(height / scl) / 2; i++) {
-          line(-width / 2, i * scl, width / 2, i * scl)
+          // line(-width / 2, i * scl, width / 2, i * scl)
+          // line(x1, y1, x2, y2) 형식으로 그려짐
+          hl.push([[- width/(2*scl)], [i]]);
+          hr.push([[width/(2*scl)], [i]]);
      }
      for (let i = -floor(width / scl) / 2; i < floor(width / scl) / 2; i++) {
-          line(i * scl, -height / 2, i * scl, height / 2)
+          // line(i * scl, -height / 2, i * scl, height / 2)
+          vu.push([[i], [-height / (2*scl)]]);
+          vd.push([[i], [height / (2*scl)]]);
      }
-     // a = multiplyMatrices([[2,1],[1,2]],[[1],[0]])
-     // console.log(a);
+     console.log(hl)
 }
 
 function draw() {
