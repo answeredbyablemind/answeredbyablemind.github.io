@@ -21,12 +21,14 @@ function setup() {
           vu.push([[i], [-height / (2*scl)]]);
           vd.push([[i], [height / (2*scl)]]);
      }
-     console.log(hl)
 }
 
 function draw() {
      background(0);
-
+     fill(255);
+     textSize(15)
+     textAlign(RIGHT)
+     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
 
      push();
      translate(width / 2, height / 2);
