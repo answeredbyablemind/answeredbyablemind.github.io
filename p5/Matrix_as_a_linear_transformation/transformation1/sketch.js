@@ -3,6 +3,10 @@ let vu = [] // vertical line의 upper point에 해당하는 vector
 let vd = []
 let hl = []
 let hr = []
+let new_vu = [],
+     new_vd = [],
+     new_hl = [],
+     new_hr = [];
 let slider1;
 let myMtx = [];
 
@@ -52,17 +56,33 @@ function setup() {
 
 function draw() {
      background(0);
-     fill(255);
-     textSize(15)
-     textAlign(RIGHT)
-     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
+     // fill(255);
+     // textSize(15)
+     // textAlign(RIGHT)
+     // text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
+     a = slider1.value();
+
+     mtx2Apply = math.add(math.matrix([
+          [1, 0],
+          [0, 1]
+     ]), math.multiply(a, myMtx));
+
+     for (let i = 0; i < vu.length; i++) {
+          new_vu[i] = math.multiply(mtx2Apply, vu[i]);
+          new_vd[i] = math.multiply(mtx2Apply, vd[i]);
+     }
+
+     for (let i = 0; i < hl.length; i++) {
+          new_hl[i] = math.multiply(mtx2Apply, hl[i]);
+          new_hr[i] = math.multiply(mtx2Apply, hr[i]);
+     }
 
      // 새로운 grid line 그리기. 이 grid는 선형변환이 apply 될 것임.
-     plotNewGrid(vu, vd, hl, hr);
-     noLoop();
+     plotNewGrid(new_vu, new_vd, new_hl, new_hr);
+     // noLoop();
 
 
 }
@@ -98,16 +118,18 @@ function plotNewGrid(vu, vd, hl, hr) {
 
      // vertical line
      for (let i = 0; i < vu.length; i++) {
-          line(vu[i][0] * scl, vu[i][1] * scl, vd[i][0] * scl, vd[i][1] * scl);
+          line(vu[i]._data[0] * scl, vu[i]._data[1] * scl, vd[i]._data[0] * scl, vd[i]._data[1] * scl);
      }
      // horizontal line
      for (let i = 0; i < hl.length; i++) {
-          line(hl[i][0] * scl, hl[i][1] * scl, hr[i][0] * scl, hr[i][1] * scl);
+          line(hl[i]._data[0] * scl, hl[i]._data[1] * scl, hr[i]._data[0] * scl, hr[i]._data[1] * scl);
      }
      // plotting vertical and horizontal lines in the center
      stroke(255);
      strokeWeight(2);
-     line(-width / 2, 0, width / 2, 0);
-     line(0, -height / 2, 0, height / 2);
+     // vertical
+     line(vu[vu.length / 2]._data[0] * scl, vu[vu.length / 2]._data[1] * scl, vd[vd.length / 2]._data[0] * scl, vd[vd.length / 2]._data[1] * scl);
+     // horizontal
+     line(hl[hl.length / 2]._data[0] * scl, hl[hl.length / 2]._data[1] * scl, hr[hr.length / 2]._data[0] * scl, hr[hr.length / 2]._data[1] * scl);
      pop();
 }
