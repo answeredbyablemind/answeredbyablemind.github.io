@@ -147,3 +147,15 @@ function plotNewGrid(vu, vd, hl, hr) {
      line(hl[hl.length / 2]._data[0] * scl, hl[hl.length / 2]._data[1] * scl, hr[hr.length / 2]._data[0] * scl, hr[hr.length / 2]._data[1] * scl);
      pop();
 }
+
+function drawArrow(x1, y1, x2, y2){
+    line(x1, y1, x2, y2); //draw a line beetween the vertices
+    let offset = 16
+    
+    push() //start new drawing state
+    var angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
+    translate(x2, y2); //translates to the destination vertex
+    rotate(angle-HALF_PI); //rotates the arrow point
+    triangle(-offset*0.5, offset, offset*0.5, offset, 0, -offset/2); //draws the arrow point as a triangle
+    pop();
+}
