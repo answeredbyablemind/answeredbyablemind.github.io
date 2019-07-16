@@ -84,9 +84,11 @@ $$A=\begin{pmatrix}
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/transformation1/" width="650" height = "520" frameborder="0"></iframe></p>
 
 
-마지막의 화면은 다음과 같았는데,
+위 애플릿의 슬라이드를 가장 오른쪽으로 옮겼을 때의 결과는 다음과 같은데, 
 
-<center>![](https://wikidocs.net/images/page/25820/2d_linear_transformation_result.png)</center>
+<p align = "center">
+  <img width ="600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png">
+</p>
 
 이를 보면 선형 변환의 결과로써의 빨간 점은 원래 기저 벡터의 -1, 2 배로 표현되었지만,
 

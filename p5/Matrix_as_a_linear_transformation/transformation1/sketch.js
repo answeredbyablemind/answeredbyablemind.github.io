@@ -13,6 +13,8 @@ let basisVecX = [],
      basisVecY = [],
      newBasisVecX = [],
      newBasisVecY = [];
+let redDot = [],
+     newRedDot = [];
 
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
@@ -70,6 +72,10 @@ function setup() {
           [0],
           [1]
      ]
+     redDot = [
+          [1],
+          [1]
+     ]
 
 }
 
@@ -104,6 +110,17 @@ function draw() {
 
      drawArrow(0, 0, newBasisVecX._data[0][0], newBasisVecX._data[1][0], 200, 50, 50)
      drawArrow(0, 0, newBasisVecY._data[0][0], newBasisVecY._data[1][0], 50, 200, 50)
+
+     newRedDot = math.multiply(mtx2Apply, redDot)
+
+     push();
+     translate(width / 2, height / 2);
+     scale(1, -1);
+
+     fill(255, 50, 50)
+     noStroke();
+     ellipse(newRedDot._data[0][0] * scl, newRedDot._data[1][0] * scl, 10);
+     pop();
 
      fill(255);
      textSize(15)
@@ -190,8 +207,8 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      translate(width / 2, height / 2)
      scale(1, -1)
      strokeWeight(3)
-     stroke(c1,c2,c3);
-     fill(c1,c2,c3)
+     stroke(c1, c2, c3);
+     fill(c1, c2, c3)
      line(x1 * scl, y1 * scl, x2 * scl, y2 * scl); //draw a line beetween the vertices
      let offset = 16
 
@@ -199,8 +216,8 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      translate(x2 * scl, y2 * scl); //translates to the destination vertex
      rotate(angle - HALF_PI); //rotates the arrow point
      triangle(
-          -offset * 0.5, offset, 
-          offset * 0.5, offset, 
+          -offset * 0.5, offset,
+          offset * 0.5, offset,
           0, 0); //draws the arrow point as a triangle
      pop();
 }
