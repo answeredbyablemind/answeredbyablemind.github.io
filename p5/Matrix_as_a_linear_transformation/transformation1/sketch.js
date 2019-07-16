@@ -113,14 +113,7 @@ function draw() {
 
      newRedDot = math.multiply(mtx2Apply, redDot)
 
-     push();
-     translate(width / 2, height / 2);
-     scale(1, -1);
-
-     fill(255, 50, 50)
-     noStroke();
-     ellipse(newRedDot._data[0][0] * scl, newRedDot._data[1][0] * scl, 10);
-     pop();
+     drawRedDot();
 
      fill(255);
      textSize(15)
@@ -151,6 +144,16 @@ function draw() {
      // text(myMtx._data[1][1]+1, 520, 130);
      // pop();
 
+}
+
+function drawRedDot() {
+     push();
+     translate(width / 2, height / 2);
+     scale(1, -1);
+     fill(255, 50, 50);
+     noStroke();
+     ellipse(newRedDot._data[0][0] * scl, newRedDot._data[1][0] * scl, 10);
+     pop();
 }
 
 function plotDimGrid() {
