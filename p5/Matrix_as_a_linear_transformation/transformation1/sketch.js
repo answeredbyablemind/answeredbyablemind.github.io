@@ -116,7 +116,25 @@ function draw() {
      textSize(15)
      text('↓ 슬라이더를 움직여 보세요.', width * 0.05, height * 0.95)
 
+     // // matrix 써주기
+     // push();
+     // translate(13,-7);
+     // stroke(255);
+     // line(451, 62, 451, 142);
+     // line(548, 62, 548, 142);
+     // line(451,62, 460, 62);
+     // line(451,142, 460, 142);
+     // line(539,62, 548, 62);
+     // line(539, 142, 548, 142);
 
+     // textSize(25)
+     // textAlign(CENTER);
+
+     // text(myMtx._data[0][0]+1, 480, 90);
+     // text(myMtx._data[0][1]+0, 520, 90);
+     // text(myMtx._data[1][0]+0, 480, 130);
+     // text(myMtx._data[1][1]+1, 520, 130);
+     // pop();
 
 }
 
@@ -188,3 +206,4 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
           0, 0); //draws the arrow point as a triangle
      pop();
 }
+
