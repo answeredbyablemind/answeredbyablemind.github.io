@@ -53,6 +53,8 @@ function setup() {
           [1, 1]
      ];
 
+     myMtx = math.add(myMtx, math.matrix([[-1,0],[0,-1]]))
+
 }
 
 function draw() {
