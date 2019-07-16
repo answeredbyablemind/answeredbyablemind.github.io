@@ -121,12 +121,10 @@ $$A=\begin{pmatrix}
 
 ### rotation: $\begin{pmatrix} \cos(\pi/2) & -sin(\pi/2) \\ sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $
 
-// TODO: x, y grid 좀더 많이 그려서 변환 시 어색함 없게 만들 것.
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 ### permutation: $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $
 
-// TODO: x, y grid 좀더 많이 그려서 변환 시 어색함 없게 만들 것.
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/permutation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
