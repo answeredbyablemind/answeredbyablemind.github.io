@@ -11,10 +11,10 @@ let slider1;
 let myMtx = [];
 
 function setup() {
-     // createCanvas(windowWidth - 20, windowHeight - 20);
+     createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
-     createCanvas(800, 400);
-     scl = floor(height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
+     // createCanvas(800, 400);    
+     scl = (height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
 
      // 각 아래의 내용을 vu, vd, hl, hr에 맞출 수 있게... 벡터화 하고자 함.
      // 즉, 초기화된 벡터를 만들고 싶음.
@@ -57,14 +57,6 @@ function setup() {
 
 function draw() {
      background(0);
-     fill(255);
-     textSize(15)
-     textAlign(RIGHT)
-     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
-
-     textAlign(LEFT)
-     textSize(10)
-     text('↓ 슬라이더를 움직여 보세요.', width * 0.1, height * 0.95)
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
@@ -88,6 +80,16 @@ function draw() {
      // 새로운 grid line 그리기. 이 grid는 선형변환이 apply 될 것임.
      plotNewGrid(new_vu, new_vd, new_hl, new_hr);
      // noLoop();
+     
+     fill(255);
+     textSize(15)
+     textAlign(RIGHT)
+     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
+
+     textAlign(LEFT)
+     textSize(10)
+     text('↓ 슬라이더를 움직여 보세요.', width * 0.05, height * 0.95)
+
 
 
 }
