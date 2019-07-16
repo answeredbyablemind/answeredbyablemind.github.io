@@ -81,7 +81,7 @@ $$A=\begin{pmatrix}
  임을 알 수 있는데, 아래의 영상에서 처럼 이 값은 새로운 두 기저벡터의 1배와 1배의 합으로
  표현될 수 있다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/transformation1/" width="100%" height = "440" frameborder="0"></iframe></p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/transformation1/" width="820" height = "450" frameborder="0"></iframe></p>
 
 
 마지막의 화면은 다음과 같았는데,
