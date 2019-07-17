@@ -17,11 +17,23 @@ function setup() {
      ])
      scl = width / 4;
      extraCanvas.background(0)
+     // TODO: 모바일인 경우...     
+     
+     if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+     } else {
+          h_mobile = 1;
+          slider1 = createSlider(0, 2*PI, PI, 0.1);
+     }
 }
 
 function draw() {
      background(0);
-     mouseMoved();
+     if (h_mobile ==0){
+          mouseMoved();
+     } else {
+          x = math.matrix([[cos(slider1.value())],[sin(slider1.value())]])
+     }
      image(extraCanvas, 0, 0)
      plotAxis();
      Ax = math.multiply(A, x);
