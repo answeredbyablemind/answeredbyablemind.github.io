@@ -70,3 +70,5 @@ docs-ko:
     children:
       - title:  행렬과 선형변환
         url:    https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html
+      - title:  고유값과 고유벡터
+        url:    https://angeloyeo.github.io/2019/07/17/eigen_vector.html
