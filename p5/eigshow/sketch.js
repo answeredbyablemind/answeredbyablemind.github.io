@@ -33,7 +33,11 @@ function draw() {
      fill(255);
      textAlign(CENTER);
      textSize(15);
-     text('x와 AX를 평행하게 만들어보세요.', width/2, height * 0.9)
+     text('x와 Ax를 평행하게 만들어보세요.', width/2, height * 0.875)
+
+     textSize(12)
+     textAlign(RIGHT)
+     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
 }
 
 function textOnArrow() {

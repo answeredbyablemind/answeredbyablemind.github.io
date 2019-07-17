@@ -5,6 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 2019061832
+tags: 신호처리
 ---
 
 아래의 과정은 모두 LTI system에서 생각하는 것임을 명기한다.
