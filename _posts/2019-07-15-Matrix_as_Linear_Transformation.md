@@ -114,55 +114,36 @@ $$A=\begin{pmatrix}
 -----
 
 
-### shearing: $\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} $
+### shearing
+
+$$\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/shear/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
-### rotation: $\begin{pmatrix} \cos(\pi/2) & -sin(\pi/2) \\ sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $
+### rotation
+
+$$\begin{pmatrix} \cos(\pi/2) & -sin(\pi/2) \\ sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe></p>
 
-### permutation: $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $
+### permutation
+
+$$\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/permutation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
-### projection on x-axis: $\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} $
+### projection on x-axis
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IdLvFYfdIto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+$$\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} $$
 
-### projection on a vector $\begin{bmatrix} 1 \\ 2 \end{bmatrix}: \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} $
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/projection_on_x/" width="325" height = "260" frameborder="0"></iframe></p>
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/am5Cb_fpWvM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+### projection on a vector $\begin{bmatrix} 1 \\ 2 \end{bmatrix}$
 
+$$\begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} $$
 
-## 2.2 비선형 변환의 시각적 예시
-
-비선형 변환은 선형변환과 다르게 변환 후에 격자들이 선의 형태가 아니고, 격자 간의 간격도
-
-균일하지 않다. 영상을 통해 확인해보도록 하자.
-
-### $ f \left ( \begin{bmatrix} x \\ y \end{bmatrix} \right ) = \begin{bmatrix} {x+sin(y)} \\ {y+sin(x)} \end{bmatrix} $
-
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8BWG5xSPkgY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-
-### $ f \left ( \begin{bmatrix} x \\ y \end{bmatrix} \right ) = \begin{bmatrix} {x+y^2} \\ {y+e^x} \end{bmatrix} $
-
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/577_Zmp23Ik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-
-### $ f \left ( \begin{bmatrix} x \\ y \end{bmatrix} \right ) = \begin{bmatrix} {xy} \\ {xlog(y)} \end{bmatrix} $
-
-<center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GGGpRkHS3_I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/projection_on_vector/" width="325" height = "260" frameborder="0"></iframe></p>
 
 {% endraw %}
