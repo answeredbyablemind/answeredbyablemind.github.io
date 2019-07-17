@@ -23,7 +23,7 @@ function setup() {
           h_mobile = 0;
      } else {
           h_mobile = 1;
-          slider1 = createSlider(0, 2*PI, PI, 0.1);
+          slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
      }
 }
 
