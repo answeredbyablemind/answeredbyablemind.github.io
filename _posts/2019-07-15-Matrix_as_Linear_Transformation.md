@@ -123,7 +123,7 @@ $$\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} $$
 
 ### rotation
 
-$$\begin{pmatrix} \cos(\pi/2) & -sin(\pi/2) \\ sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $$
+$$\begin{pmatrix} \cos(\pi/2) & -\sin(\pi/2) \\ \sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe></p>
 
