@@ -37,38 +37,38 @@ docs-ko:
   - title:      복소수와 오일러 공식
     children:
       - title:  호도법과 각도법
-        url:    https://angeloyeo.github.io/2019/06/04/2-1-angle_rad.html
+        url:    2019/06/04/2-1-angle_rad.html
       - title:  허수의 존재 의미에 대하여
-        url:   https://angeloyeo.github.io/2019/06/15/허수의-존재-의미에-대하여.html
+        url:   2019/06/15/허수의-존재-의미에-대하여.html
       - title:  허근의 위치
-        url:    https://angeloyeo.github.io/2019/06/16/허근의-위치.html
+        url:    2019/06/16/허근의-위치.html
       - title:  페이저 (phasor)
-        url:    https://angeloyeo.github.io/2019/06/18/phasor.html
+        url:    2019/06/18/phasor.html
 
   - title:      신호처리 이론
     children:
       - title:  임펄스 응답 (impulse response)
-        url:    https://angeloyeo.github.io/2019/06/18/impulse_response.html
+        url:    2019/06/18/impulse_response.html
       - title:  이산시간 컨볼루션
-        url:    https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html
+        url:    2019/06/18/Discrete_Time_Convolution.html
       - title:  연속시간 컨볼루션
-        url:    https://angeloyeo.github.io/2019/07/01/Continuous_Time_Convolution.html
+        url:    2019/07/01/Continuous_Time_Convolution.html
       - title:  연속시간 푸리에 급수 (CTFS)
-        url:    https://angeloyeo.github.io/2019/06/23/Fourier_Series.html
+        url:    2019/06/23/Fourier_Series.html
       - title:  연속시간 푸리에 변환 (CTFT)
-        url:    https://angeloyeo.github.io/2019/07/07/CTFT.html
+        url:    2019/07/07/CTFT.html
       - title:  이산시간 푸리에 급수 (DTFS)
-        url:    https://angeloyeo.github.io/2019/07/08/DTFS.html
+        url:    2019/07/08/DTFS.html
       - title:  이산시간 푸리에 변환 (DTFT)
-        url:    https://angeloyeo.github.io/2019/07/09/DTFT.html
+        url:    2019/07/09/DTFT.html
       - title:  시간 샘플링과 나이퀴스트 이론
-        url:    https://angeloyeo.github.io/2019/07/11/Time_Sampling.html
+        url:    2019/07/11/Time_Sampling.html
       - title:  주파수 샘플링과 이산 푸리에 변환 (DFT)
-        url:    https://angeloyeo.github.io/2019/07/14/Freq_Sampling.html
+        url:    2019/07/14/Freq_Sampling.html
 
   - title:      선형대수학
     children:
       - title:  행렬과 선형변환
-        url:    https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html
+        url:    2019/07/15/Matrix_as_Linear_Transformation.html
       - title:  고유값과 고유벡터
         url:    2019/07/17/eigen_vector.html
