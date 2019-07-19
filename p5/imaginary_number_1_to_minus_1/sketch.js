@@ -44,6 +44,8 @@ function draw() {
 
 function drawLine() {
      let offset = 15;
+
+     // x축, y축의 선 그려주기
      push()
      stroke(75);
      strokeWeight(2.5);
@@ -51,21 +53,23 @@ function drawLine() {
      line(width / 2, 90, width / 2, height - 30);
      pop();
 
+     // axis 끄트머리의 삼각형 그리기 (x축)
      push();
      fill(75);
      translate(width - 30, 250);
      rotate(PI / 2);
-
      triangle(-offset * 0.5, offset, offset * 0.5, offset, 0, 0); //draws the arrow point as a triangle)
      pop();
+
+     // axis 끄트머리의 삼각형 그리기 (y축)
      push();
      fill(75);
      translate(width / 2, 90);
      triangle(-offset * 0.5, offset, offset * 0.5, offset, 0, 0); //draws the arrow point as a triangle)
      pop();
 
+     // scale bar 그려주기
      push();
-
      translate(width / 2, 250);
      scale(1, -1)
      stroke(0);
@@ -74,11 +78,27 @@ function drawLine() {
      line(scl * (-1), -8, scl * (-1), 8)
      line(-8, scl * 1, 8, scl * 1)
      pop();
+
+     // axis labels
+     push();
+     textSize(12)
      textAlign(RIGHT)
      text('Real Axis', width * 0.95, height * 0.90)
 
      textAlign(LEFT);
      text('Imaginary Axis', width / 2 + 20, height * 0.35)
+     pop()
+     
+     // xtick 그려주기
+     push();
+     translate(width / 2, 250)
+     textAlign(CENTER)
+     textSize(15)
+     text('1', 1 * scl, +25)
+     text('-1', -1 * scl, +25)
+     textAlign(LEFT)
+     text('i', 15, - 1 * scl + 5)
+     pop()
 }
 
 function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
