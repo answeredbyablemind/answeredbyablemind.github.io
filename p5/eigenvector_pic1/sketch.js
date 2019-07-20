@@ -1,14 +1,12 @@
 let img;
 
-function preload(){
-     img = loadImage('assets/eq1.png')
-}
-
 function setup() {
      createCanvas(480, 480);
+     img = loadImage('https://latex.codecogs.com/png.latex?\vec{x}')
+
      
      background(255);
-     image(img, 0,0)
+     image(img, 210, 230)
 
 }
 
