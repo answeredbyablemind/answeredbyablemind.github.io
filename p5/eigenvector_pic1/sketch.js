@@ -29,9 +29,20 @@ function drawAxis() {
      fill(0);
      triangle(50, 50, 50 - 4, 50 + 10, 50 + 4, 50 + 10);
      pop();
-     
-     // plotting xticks
-     line(275, height-50-5, 275, height-50+5)
-     line(350, height-50-5, 350, height-50+5)
 
+     // plotting xticks
+     line(275, height - 50 - 5, 275, height - 50 + 5)
+     textAlign(CENTER, TOP)
+     textSize(18)
+     text('x', 275, height - 50 + 4)
+     
+     line(350, height - 50 - 5, 350, height - 50 + 5)
+     text('λx', 350, height - 50 + 4)
+
+     // plotting yticks
+     line(50 - 5, height - 275, 50 + 5, height - 275)
+     textAlign(CENTER, RIGHT)
+     text('y', 50 - 12, height - 275 -10)
+     line(50 - 5, height - 350, 50 + 5, height - 350)
+     text('λy', 50 - 15, height - 350 -10)
 }
