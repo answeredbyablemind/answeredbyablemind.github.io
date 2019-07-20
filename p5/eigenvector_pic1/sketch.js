@@ -2,11 +2,8 @@ let img;
 
 function setup() {
      createCanvas(480, 480);
-     img = loadImage('https://latex.codecogs.com/png.latex?\vec{x}')
-
-     
+     img = loadImage('assets/eq1.png')
      background(255);
-     image(img, 210, 230)
 
 }
 
@@ -14,6 +11,7 @@ function draw() {
      drawAxis();
      drawArrow(300, 100)
      drawArrow(225, 255)
+     image(img,210, 230)
 
      // console.log(mouseX, mouseY)
      // textAlign(RIGHT)
