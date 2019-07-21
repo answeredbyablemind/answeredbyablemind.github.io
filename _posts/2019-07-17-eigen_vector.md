@@ -9,7 +9,7 @@ tags: 선형대수
 ---
 
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/eigshow/" width="520" height = "520" frameborder="0"></iframe>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" width="520" height = "520" frameborder="0"></iframe>
 <br>
 <b>
 고유벡터와 고유값이 물어보는 것:
@@ -23,7 +23,22 @@ tags: 선형대수
 
 # 벡터에 행렬 연산을 취해준다는 것은?
 
-행렬은 선형 변환 연산이다. '선형'이라는 말이 어렵게 들릴 수 있으니, 일단 변환이라고 하자. 무엇을 변환시켜 준 것일까? 행렬은 벡터를 변환시켜 준다[^1].
+행렬은 선형 변환 연산이다. '선형'이라는 말이 어렵게 들릴 수 있으니, 일단 변환이라고 하자. 무엇을 변환시켜 준 것일까? 행렬은 벡터를 변환시켜 다른 벡터를 출력해준다[^1].
+
+<p align = "center">
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic1.png">
+<br>
+그림 1. 행렬은 벡터를 변환시켜주는 연산자이다.
+</p>
+
+그림 1에서 볼 수 있듯이 행렬을 이용해 벡터를 변환 시켜 주면, 변환 후의 벡터($A\vec{x}$)는 변환 전의 벡터(\vec{x})와 비교했을 때, 크기도 방향도 모두 변할 수 있다.
+
+
+//TODO: vecto (1,1)에 대한 임의의 선형 변환을 수행할 수 있는 애플릿.
+
+# 고유값과 고유벡터의 의미
+
+
 
 # 고유값, 고유벡터의 정의
 
@@ -46,31 +61,6 @@ $$(A-\lambda I)k=0$$
 $$det(A-\lambda I)=0$$
 
 이다.
-
-# 고유값과 고유벡터의 의미
-
-고유값과 고유벡터의 숨겨진 의미를 이해하기 위해선 기하학적인 방법을 동원하는 것이 가장 좋은 방법이라고 할 수 있겠다. 
-
-Definition 1에서의 내용들을 기하학적인 실수 2차원 평면으로 옮겨보도록 하자. 
-
-$\lambda$ 와 벡터 $k$ 는 직교 좌표계에서 쉽게 옮길 수 있을 것이라고 생각된다. 즉, 식 (1)의 우항부터 그 기하학적 의미에 대해 생각해보자. 아래의 그림 1을 보게 되면 어떠한 0이 아닌 벡터 $x$에 대해서, $\lambda$ 배만큼 크기가 커진 경우라고 할 수 있다. ($x\rightarrow \lambda x$). 벡터에 대해 공부했다면 기초적인 내용이다. 
-
-![](https://wikidocs.net/images/page/4050/20160201_104311.png)
-
-그렇다면 식 (1)의 좌항은 어떻게 해석해야 할까? 식 (1)의 좌항을 이해하기 위해선 평면상에서 행렬은 기하학적으로 선형변환을 의미한다는 것을 알아야 한다. 선형 변환이란 무엇인지에 대해서는 엄밀한 수학적 정의보다는 예시들을 통해서 감각적으로 받아들이는 것이 좋을 것 같다. 
-
-![](https://wikidocs.net/images/page/4050/20160201_104416.png)
-
-Wikipedia에 있는 선형 변환의 예시는 그림 2와 같다. 즉, 고유값과 고유벡터 다음과 같은 의미를 가지고 있다.
-
-
-
-“어떠한 선형변환 A를 했을 때, 그 크기만 변하고 방향이 변하지 않는 벡터가 있나요?”
-
-“그렇다면, 그 벡터의 크기는 얼마만큼 변했나요?”
-
-
-
 
 # 3. 예시를 통한 Eigenvector와 Eigenvalue, 그리고 선형 변환에 대한 간략한 이해
 
@@ -140,6 +130,6 @@ Wikipedia에 있는 선형 변환의 예시는 그림 2와 같다. 즉, 고유�
 
 $<iframe width="420" height="315" src="https://www.youtube.com/embed/Nvc7ZRVjciM" frameborder="0" $allowfullscreen></iframe>
 
-[^1]: 일반적으로는 벡터공간에 대한 변환 연산이라고 할 수 있다.
+[^1]: 일반적으로는 벡터공간에 대한 선형 변환 연산이라고 할 수 있다.
 
 [^2]: https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
