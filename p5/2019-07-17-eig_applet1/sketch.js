@@ -8,7 +8,7 @@ let t;
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
-     createCanvas(600, 480);
+     createCanvas(400, 400);
      scl = (height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
 
 
@@ -18,7 +18,7 @@ function setup() {
      vec_text.position(0, height- 20);
      inp_vec1 = createInput('1')
      inp_vec1.position(0, height + 30)
-
+     
      inp_vec2 = createInput('1')
      inp_vec2.position(0, height + 30 + 22 + 1)
 
@@ -136,13 +136,13 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
 function Refresh() {
      
      redDot = math.matrix([
-          [int(inp_vec1.value())],
-          [int(inp_vec2.value())]
+          [float(inp_vec1.value())],
+          [float(inp_vec2.value())]
      ])
 
      myMtx = math.matrix([
-          [int(inp1.value()), int(inp2.value())],
-          [int(inp3.value()), int(inp4.value())]
+          [float(inp1.value()), float(inp2.value())],
+          [float(inp3.value()), float(inp4.value())]
      ])
 
      myMtx = math.add(myMtx, math.matrix([
