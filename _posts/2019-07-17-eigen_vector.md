@@ -14,15 +14,18 @@ tags: 선형대수
 <b>
 고유벡터와 고유값이 물어보는 것:
 <br>
-“벡터 x에 어떠한 선형변환 A를 했을 때, 그 크기만 변하고 방향이 변하지 않는 벡터 x는 무엇인가요?”
+“벡터 x에 어떠한 선형변환 A를 했을 때, 그 크기만 변하고 원래 벡터에 평행하게 변하는 벡터 x는 무엇인가요?”
 <br>
-“그렇다면, 그 벡터의 크기는 얼마만큼 변했나요?”
+“그렇다면, 그 크기는 얼마만큼 변했나요?”
 </b>
 </p>
 
 
+# 벡터에 행렬 연산을 취해준다는 것은?
 
-# 1. Definitions of Eigenvalues and Eigenvectors
+행렬은 선형 변환 연산이다. '선형'이라는 말이 어렵게 들릴 수 있으니, 일단 변환이라고 하자. 무엇을 변환시켜 준 것일까? 행렬은 벡터를 변환시켜 준다[^1].
+
+# 고유값, 고유벡터의 정의
 
 먼저, eigenvalues와 eigenvectors를 설명하기 가장 성의없지만 완벽하고, 가장 간단한 방법으로 수학적 정의로부터 설명을 시작해보도록 하자.
 
@@ -44,7 +47,7 @@ $$det(A-\lambda I)=0$$
 
 이다.
 
-# 2. 고유값과 고유벡터의 의미
+# 고유값과 고유벡터의 의미
 
 고유값과 고유벡터의 숨겨진 의미를 이해하기 위해선 기하학적인 방법을 동원하는 것이 가장 좋은 방법이라고 할 수 있겠다. 
 
@@ -129,7 +132,7 @@ Wikipedia에 있는 선형 변환의 예시는 그림 2와 같다. 즉, 고유�
 
 #4. 선형변환과 고유벡터의 확장적 의미
 
-그렇다면 선형변환과 eigenvector간의 관계는 어떻게 그 의미를 확장할 수 있을까? 사실 이 문제에 대한 해답은 eigenvector가 연구되기 시작한 목적이었다. 위키피다아[^1]에 따르면 고유벡터 강체(rigid body)의 회전에 관한 연구를 하던 중 발견되었다고 한다. 즉, 회전에 대한 주축(principal axis)을 찾는 문제에서 시작되었다고 한다. 
+그렇다면 선형변환과 eigenvector간의 관계는 어떻게 그 의미를 확장할 수 있을까? 사실 이 문제에 대한 해답은 eigenvector가 연구되기 시작한 목적이었다. 위키피다아[^2]에 따르면 고유벡터 강체(rigid body)의 회전에 관한 연구를 하던 중 발견되었다고 한다. 즉, 회전에 대한 주축(principal axis)을 찾는 문제에서 시작되었다고 한다. 
 
 이 문제는 18세기 Euler로부터 시작되었고, 그 후 Lagrange와 Fourier가 이론을 발전시켰으며, Cauchy가 수학적인 이론을 선형대수학적으로 확립시킨 것 같다. 
 
@@ -137,4 +140,6 @@ Wikipedia에 있는 선형 변환의 예시는 그림 2와 같다. 즉, 고유�
 
 $<iframe width="420" height="315" src="https://www.youtube.com/embed/Nvc7ZRVjciM" frameborder="0" $allowfullscreen></iframe>
 
-[^1]: https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
+[^1]: 일반적으로는 벡터공간에 대한 변환 연산이라고 할 수 있다.
+
+[^2]: https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
