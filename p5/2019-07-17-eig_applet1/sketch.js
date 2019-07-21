@@ -67,6 +67,10 @@ function setup() {
 
 function draw() {
      background(0);
+     fill(255)
+     textSize(12)
+     textAlign(RIGHT)
+     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
@@ -83,6 +87,7 @@ function draw() {
 
      drawArrow(0, 0, redDot._data[0][0], redDot._data[1][0], 50, 60, 220)
      drawArrow(0, 0, newRedDot._data[0][0], newRedDot._data[1][0], 244, 50, 60)
+     
 
 }
 
