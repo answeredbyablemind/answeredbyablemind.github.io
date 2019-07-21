@@ -1,20 +1,9 @@
 let scl;
-let vu = [] // vertical line의 upper point에 해당하는 vector
-let vd = []
-let hl = []
-let hr = []
-let new_vu = [],
-     new_vd = [],
-     new_hl = [],
-     new_hr = [];
-let slider1;
 let myMtx = [];
-let basisVecX = [],
-     basisVecY = [],
-     newBasisVecX = [],
-     newBasisVecY = [];
 let redDot = [],
      newRedDot = [];
+
+let t;
 
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
@@ -22,36 +11,37 @@ function setup() {
      createCanvas(600, 480);
      scl = (height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
 
-     // 각 아래의 내용을 vu, vd, hl, hr에 맞출 수 있게... 벡터화 하고자 함.
-     // 즉, 초기화된 벡터를 만들고 싶음.
-     // vertical line에 해당하는 vectors
-     for (let i = -floor(width / scl) / 2; i < floor(width / scl) / 2; i++) {
-          // line(i * scl, -height / 2, i * scl, height / 2)
-          vu.push([
-               [i],
-               [height / (2 * scl)]
-          ]);
-          vd.push([
-               [i],
-               [-height / (2 * scl)]
-          ]);
-     }
-     // horizontal line에 해당하는 vectors
-     for (let i = -floor(height / scl) / 2; i < floor(height / scl) / 2; i++) {
-          // line(-width / 2, i * scl, width / 2, i * scl)
-          // line(x1, y1, x2, y2) 형식으로 그려짐
-          hl.push([
-               [-width / (2 * scl)],
-               [i]
-          ]);
-          hr.push([
-               [width / (2 * scl)],
-               [i]
-          ]);
-     }
 
-     // slider 만들기
-     slider1 = createSlider(0, 1, 0, 0.01);
+     // vector input
+
+     vec_text = createElement('h3', 'vector');
+     vec_text.position(0, height- 20);
+     inp_vec1 = createInput('1')
+     inp_vec1.position(0, height + 30)
+
+     inp_vec2 = createInput('1')
+     inp_vec2.position(0, height + 30 + 22 + 1)
+
+     // matrix input
+     vec_text = createElement('h3', 'matrix');
+     vec_text.position(width/2 - 50 + 30, height- 20);
+
+     inp1 = createInput('2');
+     inp1.position(width/2 - 50 + 30 , height + 30)
+
+     inp2 = createInput('-3');
+     inp2.position(width/2 - 50 + 161 + 30, height + 30)
+
+     inp3 = createInput('1');
+     inp3.position(width/2 - 50 + 30, height + 30 + 22 + 1)
+
+     inp4 = createInput('1');
+     inp4.position(width/2 - 50 + 161 + 30, height + 30 + 22 + 1)
+
+     // button
+     button = createButton("Apply the Matrix")
+     button.position(width - 111, height + 3);
+     button.mousePressed(Refresh);
 
      // matrix 설정하기
      myMtx = [
@@ -64,18 +54,14 @@ function setup() {
           [0, -1]
      ]))
 
-     basisVecX = [
-          [1],
-          [0]
-     ]
-     basisVecY = [
-          [0],
-          [1]
-     ]
-     redDot = [
+     redDot = math.matrix([
           [1],
           [1]
-     ]
+     ])
+
+     // 시간 초기화
+     t = 0;
+
 
 }
 
@@ -84,76 +70,20 @@ function draw() {
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
-     a = slider1.value();
 
      mtx2Apply = math.add(math.matrix([
           [1, 0],
           [0, 1]
-     ]), math.multiply(a, myMtx));
-
-     for (let i = 0; i < vu.length; i++) {
-          new_vu[i] = math.multiply(mtx2Apply, vu[i]);
-          new_vd[i] = math.multiply(mtx2Apply, vd[i]);
+     ]), math.multiply(t, myMtx));
+     t += 0.01
+     if (t > 1) {
+          noLoop();
      }
-
-     for (let i = 0; i < hl.length; i++) {
-          new_hl[i] = math.multiply(mtx2Apply, hl[i]);
-          new_hr[i] = math.multiply(mtx2Apply, hr[i]);
-     }
-
-     newBasisVecX = math.multiply(mtx2Apply, basisVecX)
-     newBasisVecY = math.multiply(mtx2Apply, basisVecY)
-
-     // 새로운 grid line 그리기. 이 grid는 선형변환이 apply 될 것임.
-     plotNewGrid(new_vu, new_vd, new_hl, new_hr);
-     // noLoop();
-
-     drawArrow(0, 0, newBasisVecX._data[0][0], newBasisVecX._data[1][0], 200, 50, 50)
-     drawArrow(0, 0, newBasisVecY._data[0][0], newBasisVecY._data[1][0], 50, 200, 50)
-
      newRedDot = math.multiply(mtx2Apply, redDot)
 
-     drawRedDot();
+     drawArrow(0, 0, redDot._data[0][0], redDot._data[1][0], 50, 60, 220)
+     drawArrow(0, 0, newRedDot._data[0][0], newRedDot._data[1][0], 244, 50, 60)
 
-     fill(255);
-     textSize(15)
-     textAlign(RIGHT)
-     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
-
-     textAlign(LEFT)
-     textSize(15)
-     text('↓ 슬라이더를 움직여 보세요.', width * 0.05, height * 0.95)
-
-     // // matrix 써주기
-     // push();
-     // translate(13,-7);
-     // stroke(255);
-     // line(451, 62, 451, 142);
-     // line(548, 62, 548, 142);
-     // line(451,62, 460, 62);
-     // line(451,142, 460, 142);
-     // line(539,62, 548, 62);
-     // line(539, 142, 548, 142);
-
-     // textSize(25)
-     // textAlign(CENTER);
-
-     // text(myMtx._data[0][0]+1, 480, 90);
-     // text(myMtx._data[0][1]+0, 520, 90);
-     // text(myMtx._data[1][0]+0, 480, 130);
-     // text(myMtx._data[1][1]+1, 520, 130);
-     // pop();
-
-}
-
-function drawRedDot() {
-     push();
-     translate(width / 2, height / 2);
-     scale(1, -1);
-     fill(255, 50, 50);
-     noStroke();
-     ellipse(newRedDot._data[0][0] * scl, newRedDot._data[1][0] * scl, 10);
-     pop();
 }
 
 function plotDimGrid() {
@@ -169,39 +99,12 @@ function plotDimGrid() {
           line(i * scl, -height / 2, i * scl, height / 2);
      }
      pop();
-}
-
-function plotNewGrid(vu, vd, hl, hr) {
-     // 각각은 grid의 가장자리에 있는 위치에 관한 vector임.
-     // vu: vertical up
-     // vd: vertical down
-     // hl: horizontal left
-     // hr: horizontal right
-
      push();
-     translate(width / 2, height / 2);
-     scale(1, -1); // 결과는 같아 보이지만, 의도한 것이 문제없이 표현되도록...
-     // 변환 적용할 lines 그리기
-     stroke(109, 155, 222);
-     strokeWeight(1);
-
-     // TODO: arrow 그리기
-
-     // vertical line
-     for (let i = 0; i < vu.length; i++) {
-          line(vu[i]._data[0] * scl, vu[i]._data[1] * scl, vd[i]._data[0] * scl, vd[i]._data[1] * scl);
-     }
-     // horizontal line
-     for (let i = 0; i < hl.length; i++) {
-          line(hl[i]._data[0] * scl, hl[i]._data[1] * scl, hr[i]._data[0] * scl, hr[i]._data[1] * scl);
-     }
-     // plotting vertical and horizontal lines in the center
-     stroke(255);
+     // center lines 그려주기
+     stroke(200);
      strokeWeight(2);
-     // vertical
-     line(vu[vu.length / 2]._data[0] * scl, vu[vu.length / 2]._data[1] * scl, vd[vd.length / 2]._data[0] * scl, vd[vd.length / 2]._data[1] * scl);
-     // horizontal
-     line(hl[hl.length / 2]._data[0] * scl, hl[hl.length / 2]._data[1] * scl, hr[hr.length / 2]._data[0] * scl, hr[hr.length / 2]._data[1] * scl);
+     line(0, height / 2, width, height / 2)
+     line(width / 2, 0, width / 2, height)
      pop();
 }
 
@@ -225,3 +128,24 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      pop();
 }
 
+function Refresh() {
+     
+     redDot = math.matrix([
+          [int(inp_vec1.value())],
+          [int(inp_vec2.value())]
+     ])
+
+     myMtx = math.matrix([
+          [int(inp1.value()), int(inp2.value())],
+          [int(inp3.value()), int(inp4.value())]
+     ])
+
+     myMtx = math.add(myMtx, math.matrix([
+          [-1, 0],
+          [0, -1]
+     ]))
+
+     t = 0;
+     loop();
+
+}
