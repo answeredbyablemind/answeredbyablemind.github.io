@@ -85,8 +85,8 @@ function draw() {
      }
      newRedDot = math.multiply(mtx2Apply, redDot)
 
-     drawArrow(0, 0, redDot._data[0][0], redDot._data[1][0], 50, 60, 220)
-     drawArrow(0, 0, newRedDot._data[0][0], newRedDot._data[1][0], 244, 50, 60)
+     drawArrow(0, 0, redDot._data[0][0], redDot._data[1][0],  66, 135, 245)
+     drawArrow(0, 0, newRedDot._data[0][0], newRedDot._data[1][0], 245, 135, 66)
      
 
 }
