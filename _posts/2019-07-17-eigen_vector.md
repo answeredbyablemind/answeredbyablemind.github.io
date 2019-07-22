@@ -63,8 +63,9 @@ $$\left[
 <p align = "center">
 <img width = "300" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic2.png">
 <br>
-그림 2. 특정 벡터에 특정 행렬을 취해 변환시키면 평행하지만 크기만 바뀐 벡터를 출력한다.
+그림 2. 어떤 벡터와 행렬은 변환시키면 평행하지만 크기만 바뀐 벡터를 출력한다.
 </p>
+
 
 
 # 고유값, 고유벡터의 정의
