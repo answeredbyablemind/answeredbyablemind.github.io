@@ -9,7 +9,7 @@ tags: 신호처리 푸리에
 ---
 
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2019-07-22-Negative_Frequency/" width="820" height = "420" frameborder="0"></iframe>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2019-07-22-preview_negative_frequency/" width="820" height = "420" frameborder="0"></iframe>
 <br>
 <b>음의 주파수가 의미하는 것: </b>
 <br>
@@ -20,5 +20,5 @@ tags: 신호처리 푸리에
 
 ## FFT 결과를 얻게되면 우리가 보는 것
 
-## 
+## $e^{i\theta}$에서 $\cos(\theta)$, $\sin(\theta)$를 얻는 방법
 
