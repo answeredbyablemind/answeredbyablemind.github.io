@@ -21,8 +21,7 @@ tags: 신호처리 푸리에
 ## FFT 결과를 얻게되면 우리가 보는 것
 
 <p align = "center">
-  <img width = "350" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/negative_frequency/pic1.png"
-  </img>
+  <img width = "350" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/negative_frequency/pic1.png">
   <br>
   그림 1. 10Hz 신호를 FFT 했을 때 얻게 되는 결과
 </p>
