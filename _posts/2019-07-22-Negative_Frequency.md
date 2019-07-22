@@ -20,5 +20,16 @@ tags: 신호처리 푸리에
 
 ## FFT 결과를 얻게되면 우리가 보는 것
 
-## $e^{i\theta}$에서 $\cos(\theta)$, $\sin(\theta)$를 얻는 방법
+<p align = "center">
+  <img width = "350" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/negative_frequency/pic1.png"
+  </img>
+  <br>
+  그림 1. 10Hz 신호를 FFT 했을 때 얻게 되는 결과
+</p>
+
+## $\cos(\theta)$, $\sin(\theta)$를 표현하는 또 다른 방법
+
+$$\cos(\theta) = \frac{e^{i\theta}+ e^{-i\theta}}{2}$$
+
+$$\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$$
 
