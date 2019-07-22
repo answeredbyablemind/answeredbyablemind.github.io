@@ -9,8 +9,8 @@ function setup() {
      createCanvas(480, 480);
      extraCanvas = createGraphics(480, 480);
 
-     // A = math.matrix([[0.25, 0.75], [1, 0.5]])
-     A = math.matrix([[2, 1], [1, 2]])
+     A = math.matrix([[0.25, 0.75], [1, 0.5]])
+     // A = math.matrix([[2, 1], [1, 2]])
      let xx = random(1) * 2 - 1;
      x = math.matrix([
           [xx],
