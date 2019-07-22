@@ -208,6 +208,7 @@ function plotAxes() {
      translate(50, 80);
      textSize(15);
      textStyle(ITALIC)
+     textAlign(LEFT);
      text('x(t)', 10, 15)
      pop();
 
