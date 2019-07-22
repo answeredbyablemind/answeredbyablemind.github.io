@@ -18,7 +18,6 @@ function setup() {
      vec_text.position(0, height- 20);
      inp_vec1 = createInput('1')
      inp_vec1.position(0, height + 30)
-     // CSS를 어떻게 적용할 수 있는건지... ㅠㅠ
      inp_vec2 = createInput('1')
      inp_vec2.position(0, height + 30 + 22 + 1)
 
