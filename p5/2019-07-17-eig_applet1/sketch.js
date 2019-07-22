@@ -30,13 +30,13 @@ function setup() {
      inp1.position(width/2 - 50 + 30 , height + 30)
 
      inp2 = createInput('-3');
-     inp2.position(width/2 - 50 + 161 + 30, height + 30)
+     inp2.position(width/2 - 50 + 30 + inp1.width + 2, height + 30)
 
      inp3 = createInput('1');
      inp3.position(width/2 - 50 + 30, height + 30 + 22 + 1)
 
      inp4 = createInput('1');
-     inp4.position(width/2 - 50 + 161 + 30, height + 30 + 22 + 1)
+     inp4.position(width/2 - 50 + 30 + inp3.width + 2, height + 30 + 22 + 1)
 
      // button
      button = createButton("Apply the Matrix")
