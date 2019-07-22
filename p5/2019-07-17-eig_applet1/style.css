@@ -5,3 +5,8 @@ html, body {
 canvas {
   display: block;
 }
+
+input {
+  width: 6%;
+  text-align: center;
+}
