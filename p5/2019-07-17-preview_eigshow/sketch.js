@@ -22,13 +22,13 @@ function setup() {
      extraCanvas.background(0)
      // TODO: 모바일인 경우...     
      
-     // if (FRUBIL.device.class == "Desktop") {
-     //      h_mobile = 0;
-     // } else {
-     //      h_mobile = 1;
-     //      slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
-     // }
-     h_mobile = 0;
+     if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+     } else {
+          h_mobile = 1;
+          slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
+     }
+     // h_mobile = 0;
 }
 
 function draw() {
