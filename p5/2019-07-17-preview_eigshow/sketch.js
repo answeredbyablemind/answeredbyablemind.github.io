@@ -6,8 +6,8 @@ let scl;
 let extraCanvas;
 
 function setup() {
-     createCanvas(480, 480);
-     extraCanvas = createGraphics(480, 480);
+     createCanvas(windowWidth, windowWidth);
+     extraCanvas = createGraphics(windowWidth, windowWidth);
 
      A = math.matrix([[0.25, 0.75], [1, 0.5]])
      // A = math.matrix([[2, 1], [1, 2]])
