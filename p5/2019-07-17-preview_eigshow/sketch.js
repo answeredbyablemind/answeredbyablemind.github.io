@@ -114,7 +114,7 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      stroke(c1, c2, c3);
      fill(c1, c2, c3)
      line(x1 * scl, y1 * scl, x2 * scl, y2 * scl); //draw a line beetween the vertices
-     let offset = 16
+     let offset = 16 / 480 * width
 
      let angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
      translate(x2 * scl, y2 * scl); //translates to the destination vertex
