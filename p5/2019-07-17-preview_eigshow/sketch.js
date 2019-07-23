@@ -4,11 +4,12 @@ let A = [],
 
 let scl;
 let extraCanvas;
-
+var myP;
 function setup() {
      createCanvas(windowWidth, windowWidth);
      extraCanvas = createGraphics(windowWidth, windowWidth);
-
+     myP = createP('$x$');
+     
      A = math.matrix([[0.25, 0.75], [1, 0.5]])
      // A = math.matrix([[2, 1], [1, 2]])
      let xx = random(1) * 2 - 1;
@@ -20,12 +21,13 @@ function setup() {
      extraCanvas.background(0)
      // TODO: 모바일인 경우...     
      
-     if (FRUBIL.device.class == "Desktop") {
-          h_mobile = 0;
-     } else {
-          h_mobile = 1;
-          slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
-     }
+     // if (FRUBIL.device.class == "Desktop") {
+     //      h_mobile = 0;
+     // } else {
+     //      h_mobile = 1;
+     //      slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
+     // }
+     h_mobile = 0;
 }
 
 function draw() {
@@ -51,6 +53,7 @@ function draw() {
      textSize(12)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
+     myP.position(width * 0.8, height * 0.2)
 }
 
 function textOnArrow() {
