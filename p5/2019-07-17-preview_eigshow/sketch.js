@@ -6,9 +6,10 @@ let scl;
 let extraCanvas;
 var myP;
 function setup() {
-     createCanvas(windowWidth, windowWidth);
-     extraCanvas = createGraphics(windowWidth, windowWidth);
+     createCanvas(windowWidth- 20, windowWidth - 20);
+     extraCanvas = createGraphics(windowWidth - 20, windowWidth - 20);
      myP = createP('$x$');
+     myP.style('color','white')
      
      A = math.matrix([[0.25, 0.75], [1, 0.5]])
      // A = math.matrix([[2, 1], [1, 2]])
