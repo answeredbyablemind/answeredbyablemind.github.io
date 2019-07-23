@@ -11,7 +11,7 @@ tags: 선형대수
   @media screen and (max-width:500px){
     iframe {
         width: 100vw; 
-        height: 100vw;
+        height: 105vw;
         background:white;  
     }
   }

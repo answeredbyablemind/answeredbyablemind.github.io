@@ -4,12 +4,12 @@ let A = [],
 
 let scl;
 let extraCanvas;
-var myP;
+// var myP;
 function setup() {
      createCanvas(windowWidth- 20, windowWidth - 20);
      extraCanvas = createGraphics(windowWidth - 20, windowWidth - 20);
-     myP = createP('$x$');
-     myP.style('color','white')
+     // myP = createP('$x$');
+     // myP.style('color','white')
      
      A = math.matrix([[0.25, 0.75], [1, 0.5]])
      // A = math.matrix([[2, 1], [1, 2]])
@@ -54,7 +54,7 @@ function draw() {
      textSize(12)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
-     myP.position(width * 0.8, height * 0.2)
+     // myP.position(width * 0.8, height * 0.2)
 }
 
 function textOnArrow() {
