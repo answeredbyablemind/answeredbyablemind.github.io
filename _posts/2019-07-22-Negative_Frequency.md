@@ -18,8 +18,8 @@ tags: 신호처리 푸리에
 
 @media screen and (min-width:500px){
   iframe {
-  width: 40vw;
-  height: 20vw;
+  width: 50vw;
+  height: 25vw;
   background:white;
   }
 }
