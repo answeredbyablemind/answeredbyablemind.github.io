@@ -48,4 +48,5 @@ $$\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$$
   <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee">
   
 <span style="margin-left:5px">Buy me a coffee</span></a>
+
 </p>
