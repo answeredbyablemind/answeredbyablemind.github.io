@@ -8,15 +8,24 @@ key: 20190717
 tags: 선형대수
 ---
 <style>
-iframe {
-    width: 50vw; 
-    height: 50vw; /* 100/56.25 = 560/315 = 1.778 */
-    background:white;  
-    frameborder: 0;
-}
+  @media screen and (max-width:500px){
+    iframe {
+        width: 100vw; 
+        height: 100vw;
+        background:white;  
+    }
+  }
+
+  @media screen and (min-width:500px){
+    iframe {
+        width: 40vw; 
+        height: 40vw;
+        background:white;  
+    }
+  }
 </style>
 
-<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" ></iframe>
+<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
 <br>
 <b>
 고유벡터와 고유값이 물어보는 것:
