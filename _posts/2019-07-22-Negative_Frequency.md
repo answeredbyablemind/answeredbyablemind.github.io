@@ -11,7 +11,7 @@ tags: 신호처리 푸리에
 @media screen and (max-width:500px){
   iframe {
   width: 100vw;
-  height: 100vw;
+  height: 50vw;
   background:white;
   }
 }
@@ -19,7 +19,7 @@ tags: 신호처리 푸리에
 @media screen and (min-width:500px){
   iframe {
   width: 40vw;
-  height: 40vw;
+  height: 20vw;
   background:white;
   }
 }
