@@ -7,9 +7,26 @@ aside:
 key: 20190722
 tags: 신호처리 푸리에
 ---
+<style>
+@media screen and (max-width:500px){
+  iframe {
+  width: 100vw;
+  height: 100vw;
+  background:white;
+  }
+}
 
+@media screen and (min-width:500px){
+  iframe {
+  width: 40vw;
+  height: 40vw;
+  background:white;
+  }
+}
+</style>
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2019-07-22-preview_negative_frequency/" width="820" height = "420" frameborder="0"></iframe>
+<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-22-preview_negative_frequency/" frameborder = "0"></iframe>
+
 <br>
 <b>음의 주파수가 의미하는 것: </b>
 <br>
