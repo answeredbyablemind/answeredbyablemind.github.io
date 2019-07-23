@@ -1,4 +1,4 @@
-var scl = 100;
+var scl;
 var sig = [];
 var t = []
 var fs = 100;
@@ -8,7 +8,8 @@ var circle_x = [],
      circle_y = [];
 
 function setup() {
-     createCanvas(800, 400);
+     createCanvas(windowWidth, windowWidth/2);
+     scl = width/8;
      for (let i = 0; i < 3; i += 1 / fs) {
           t.push(i)
      }
@@ -69,20 +70,23 @@ function draw() {
 
      // 화살표 legend 그려주기
      push();
-     textSize(12);
-     translate(-225, 0)
-     drawArrowAbsCoord(637, 346, 710, 346, 66, 135, 245);
+     textSize(12 / 800 * width);
+     drawArrowAbsCoord(
+          width * 0.54, height * 0.83, width * 0.60, height * 0.83, 
+          66, 135, 245);
      fill(255);
      textAlign(LEFT, CENTER);
-     text(': 양의 주파수 회전', 715, 346)
-     drawArrowAbsCoord(637, 374, 710, 374, 245, 135, 66);
+     text(': 양의 주파수 회전', width * 0.61, height * 0.83)
+     drawArrowAbsCoord(
+          width * 0.54, height * 0.9, width * 0.60, height * 0.9, 
+          245, 135, 66);
      fill(255);
-     text(': 음의 주파수 회전', 715, 374)
+     text(': 음의 주파수 회전', width * 0.61, height * 0.9)
      pop();
 
      fill(255);
      textAlign(RIGHT)
-     textSize(12)
+     textSize(12/800 * width)
      text('(c) 공돌이의 수학정리노트', width * 0.98, height * 0.95)
 
 
@@ -93,7 +97,7 @@ function drawArrowAbsCoord(x1, y1, x2, y2, c1, c2, c3) {
      stroke(c1, c2, c3);
      fill(c1, c2, c3);
      line(x1, y1, x2, y2); //draw a line beetween the vertices
-     let offset = 16;
+     let offset = 16/800 * width;
      let angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
      translate(x2, y2); //translates to the destination vertex
      rotate(angle - HALF_PI); //rotates the arrow point
@@ -106,18 +110,18 @@ function plotDotRight() {
      fill(252, 73, 3);
      noStroke();
      translate(3 / 4 * width, (50 + height) / 2);
-     ellipse(cos(2 * PI * 1 * tt) * scl, 0, 10, 10);
+     ellipse(cos(2 * PI * 1 * tt) * scl, 0, 10 / 800 * width, 10/ 800 * width);
      pop();
 }
 
 function plotDotLeft() {
      push();
-     translate(50, (50 + height) / 2);
+     translate(50/ 800 * width, (50 + height) / 2);
      scale(1, -1);
      fill(252, 73, 3);
      noStroke();
      ellipseMode(CENTER);
-     ellipse(tt * scl, cos(2 * PI * 1 * tt) * scl, 10, 10);
+     ellipse(tt * scl, cos(2 * PI * 1 * tt) * scl, 10 / 800 * width, 10 / 800 * width);
      pop();
 }
 
@@ -139,7 +143,7 @@ function plotCosine() {
      push();
      stroke(255);
      noFill();
-     translate(50, (50 + height) / 2);
+     translate(50/ 800 * width, (50 + height) / 2);
      scale(1, -1);
      beginShape();
      for (i = 0; i < sig.length; i++) {
@@ -153,31 +157,31 @@ function plotTitles() {
      push();
      stroke(100);
      line(width / 2, 0, width / 2, height);
-     line(0, 50, width, 50);
+     line(0, 50 / 800 * width, width, 50 / 800 * width);
      fill(255);
      textAlign(CENTER);
-     textSize(25);
-     text('시간-신호 그래프', width / 4, 35);
-     text('복소평면 상의 신호 표현', 3 / 4 * width, 35);
+     textSize(25/800 * width);
+     text('시간-신호 그래프', width / 4, 35 / 800 * width);
+     text('복소평면 상의 신호 표현', 3 / 4 * width, 35 / 800 * width);
      pop();
 }
 
 function plotAxes() {
 
      // triangle의 크기
-     let offset = 7;
+     let offset = 7 / 800 * width;
 
      // //////////////////////// 왼쪽 pannel에 axes 그려주기///////////////////////////
      push();
      stroke(255);
-     line(50, 80, 50, height - 30);
-     triangle(50, 80, 50 - 1 / 2 * offset, 80 + offset, 50 + 1 / 2 * offset, 80 + offset);
-     line(50 - 10, (50 + height) / 2, width / 2 - 20, (50 + height) / 2);
+     line(50 / 800 * width, 80/ 800 * width, 50/ 800 * width, height - 30);
+     triangle(50/ 800 * width, 80/ 800 * width, 50 / 800 * width - 1 / 2 * offset, 80/ 800 * width + offset, 50 / 800 * width + 1 / 2 * offset, 80/ 800 * width + offset);
+     line((50 - 10)/ 800 * width, (50 + height) / 2, width / 2 - 20/ 800 * width, (50 + height) / 2);
      pop();
 
      push();
      stroke(255);
-     translate(width / 2 - 20, (50 + height) / 2);
+     translate(width / 2 - 20/ 800 * width, (50 + height) / 2);
      rotate(-PI / 2);
      triangle(0, 0, -1 / 2 * offset, -offset, 1 / 2 * offset, -offset);
      pop();
@@ -186,38 +190,38 @@ function plotAxes() {
      // 원점에 O 글자 써주기
      push();
      fill(255);
-     translate(50, (50 + height) / 2);
+     translate(50/ 800 * width, (50 + height) / 2 );
      textAlign(RIGHT)
      textStyle(ITALIC);
      textSize(15);
-     text('O', -12, 17);
+     text('O', -12/ 800 * width, 17/ 800 * width);
      pop();
 
      // x축에 't' 글자 써주기
      push();
      fill(255);
-     translate(width / 2 - 50, (height + 50) / 2);
-     textSize(15);
+     translate(width / 2 - 50/ 800 * width, (height + 50) / 2);
+     textSize(15/ 800 * width);
      textStyle(ITALIC)
-     text('t', 10, 15)
+     text('t', 10/ 800 * width, 15/ 800 * width)
      pop();
 
      // y축에 'x(t)' 글자 써주기
      push();
      fill(255);
-     translate(50, 80);
-     textSize(15);
+     translate(50/ 800 * width, 80/ 800 * width);
+     textSize(15/ 800 * width);
      textStyle(ITALIC)
      textAlign(LEFT);
-     text('x(t)', 10, 15)
+     text('x(t)', 10/ 800 * width, 15/ 800 * width)
      pop();
 
      // //////////////오른쪽 pannel에 axes 그려주기///////////////////////////
      // x축
      push();
      stroke(255);
-     line(width / 2 + 20, (height + 50) / 2, width - 20, (height + 50) / 2);
-     translate(width - 20, (height + 50) / 2)
+     line(width / 2 + 20/ 800 * width, (height + 50) / 2, width - 20/ 800 * width, (height + 50) / 2);
+     translate(width - 20/ 800 * width, (height + 50) / 2)
      rotate(-PI / 2);
      triangle(0, 0, -1 / 2 * offset, -offset, 1 / 2 * offset, -offset);
      pop();
@@ -225,8 +229,8 @@ function plotAxes() {
      // y축
      push();
      stroke(255);
-     line(3 / 4 * width, 80, 3 / 4 * width, height - 30)
-     translate(3 / 4 * width, 80)
+     line(3 / 4 * width, 80/ 800 * width, 3 / 4 * width, height - 30/ 800 * width)
+     translate(3 / 4 * width, 80/ 800 * width)
      rotate(PI)
      triangle(0, 0, -1 / 2 * offset, -offset, 1 / 2 * offset, -offset);
      pop();
@@ -237,28 +241,28 @@ function plotAxes() {
      fill(255);
      textStyle(ITALIC)
      textAlign(RIGHT)
-     textSize(15);
-     text('O', -10, 20)
+     textSize(15/ 800 * width);
+     text('O', -10/ 800 * width, 20/ 800 * width)
      pop();
 
      // x 축에 Real 글씨 써주기
      push();
-     translate(width - 20, (height + 50) / 2)
+     translate(width - 20/ 800 * width, (height + 50) / 2)
      fill(255)
      textStyle(ITALIC)
      textAlign(RIGHT)
-     textSize(15)
-     text('Real', 0, 20)
+     textSize(15/ 800 * width)
+     text('Real', 0, 20/ 800 * width)
      pop();
 
      // y 축에 Imaginary 글씨 써주기
      push();
-     translate(3/ 4* width, 80)
+     translate(3/ 4* width, 80/ 800 * width)
      fill(255)
      textStyle(ITALIC)
      textAlign(LEFT)
-     textSize(15)
-     text('Imaginary', 10, 20)
+     textSize(15/ 800 * width)
+     text('Imaginary', 10 / 800 * width, 20 / 800 * width)
      pop();
 
 }
@@ -271,7 +275,7 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      stroke(c1, c2, c3);
      fill(c1, c2, c3)
      line(x1 * scl, y1 * scl, x2 * scl, y2 * scl); //draw a line beetween the vertices
-     let offset = 16
+     let offset = 16 / 800 * width
 
      let angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
      translate(x2 * scl, y2 * scl); //translates to the destination vertex
