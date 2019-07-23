@@ -50,7 +50,7 @@ function draw() {
      // 오른쪽 패널 원 위에 움직이는 화살표를 따라가는 점선 그리기
      push();
      stroke(255);
-     translate(3 / 4 * width, height/2 + 15/2*width)
+     translate(3 / 4 * width, (height -30 - 80/800*width)/2)
      scale(1, -1);
      drawingContext.setLineDash([0.5, 3]); // 점선 효과 주기
      line(cos(2 * PI * 1 * tt) * scl, sin(2 * PI * 1 * tt) * scl, cos(2 * PI * 1 * tt) * scl, -1 * sin(2 * PI * 1 * tt) * scl)
@@ -109,14 +109,14 @@ function plotDotRight() {
      push();
      fill(252, 73, 3);
      noStroke();
-     translate(3 / 4 * width, height/2 + 15/2*width);
+     translate(3 / 4 * width, (height -30 - 80/800*width)/2);
      ellipse(cos(2 * PI * 1 * tt) * scl, 0, 10 / 800 * width, 10/ 800 * width);
      pop();
 }
 
 function plotDotLeft() {
      push();
-     translate(50/ 800 * width, height/2 + 15/2*width);
+     translate(50/ 800 * width, (height -30 - 80/800*width)/2);
      scale(1, -1);
      fill(252, 73, 3);
      noStroke();
@@ -129,7 +129,7 @@ function plotCircle() {
      push();
      drawingContext.setLineDash([0.5, 3]); // 점선 효과 주기
      stroke(255);
-     translate(3 / 4 * width, height/2 + 15/2*width);
+     translate(3 / 4 * width, (height -30 - 80/800*width)/2);
      noFill();
      beginShape();
      for (let i = 0; i < circle_x.length; i++) {
@@ -143,7 +143,7 @@ function plotCosine() {
      push();
      stroke(255);
      noFill();
-     translate(50/ 800 * width, height/2 + 15/2*width);
+     translate(50/ 800 * width, (height -30 - 80/800*width)/2);
      scale(1, -1);
      beginShape();
      for (i = 0; i < sig.length; i++) {
@@ -176,12 +176,12 @@ function plotAxes() {
      stroke(255);
      line(50 / 800 * width, 80/ 800 * width, 50/ 800 * width, height - 30);
      triangle(50/ 800 * width, 80/ 800 * width, 50 / 800 * width - 1 / 2 * offset, 80/ 800 * width + offset, 50 / 800 * width + 1 / 2 * offset, 80/ 800 * width + offset);
-     line((50 - 10)/ 800 * width, height/2 + 15/2*width, width / 2 - 20/ 800 * width, height/2 + 15/2*width);
+     line((50 - 10)/ 800 * width, (height -30 - 80/800*width)/2, width / 2 - 20/ 800 * width, (height -30 - 80/800*width)/2);
      pop();
 
      push();
      stroke(255);
-     translate(width / 2 - 20/ 800 * width, height/2 + 15/2*width);
+     translate(width / 2 - 20/ 800 * width, (height -30 - 80/800*width)/2);
      rotate(-PI / 2);
      triangle(0, 0, -1 / 2 * offset, -offset, 1 / 2 * offset, -offset);
      pop();
@@ -190,7 +190,7 @@ function plotAxes() {
      // 원점에 O 글자 써주기
      push();
      fill(255);
-     translate(50/ 800 * width, height/2 + 15/2*width );
+     translate(50/ 800 * width, (height -30 - 80/800*width)/2 );
      textAlign(RIGHT)
      textStyle(ITALIC);
      textSize(15);
@@ -200,7 +200,7 @@ function plotAxes() {
      // x축에 't' 글자 써주기
      push();
      fill(255);
-     translate(width / 2 - 50/ 800 * width, height/2 + 15/2*width);
+     translate(width / 2 - 50/ 800 * width, (height -30 - 80/800*width)/2);
      textSize(15/ 800 * width);
      textStyle(ITALIC)
      text('t', 10/ 800 * width, 15/ 800 * width)
@@ -220,8 +220,8 @@ function plotAxes() {
      // x축
      push();
      stroke(255);
-     line(width / 2 + 20/ 800 * width, height/2 + 15/2*width, width - 20/ 800 * width, height/2 + 15/2*width);
-     translate(width - 20/ 800 * width, height/2 + 15/2*width)
+     line(width / 2 + 20/ 800 * width, (height -30 - 80/800*width)/2, width - 20/ 800 * width, (height -30 - 80/800*width)/2);
+     translate(width - 20/ 800 * width, (height -30 - 80/800*width)/2)
      rotate(-PI / 2);
      triangle(0, 0, -1 / 2 * offset, -offset, 1 / 2 * offset, -offset);
      pop();
@@ -247,7 +247,7 @@ function plotAxes() {
 
      // x 축에 Real 글씨 써주기
      push();
-     translate(width - 20/ 800 * width, height/2 + 15/2*width)
+     translate(width - 20/ 800 * width, (height -30 - 80/800*width)/2)
      fill(255)
      textStyle(ITALIC)
      textAlign(RIGHT)
@@ -269,7 +269,7 @@ function plotAxes() {
 
 function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      push();
-     translate(3 / 4 * width, height/2 + 15/2*width)
+     translate(3 / 4 * width, (height -30 - 80/800*width)/2)
      scale(1, -1)
      strokeWeight(3)
      stroke(c1, c2, c3);
