@@ -9,13 +9,14 @@ tags: 선형대수
 ---
 <style>
 iframe {
-    width: 100vw; 
-    height: 100vw; /* 100/56.25 = 560/315 = 1.778 */
+    width: 50vw; 
+    height: 50vw; /* 100/56.25 = 560/315 = 1.778 */
     background:white;  
+    frameborder: 0;
 }
 </style>
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder="0"></iframe>
+<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" ></iframe>
 <br>
 <b>
 고유벡터와 고유값이 물어보는 것:
