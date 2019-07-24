@@ -9,7 +9,7 @@ tags: 선형대수
 ---
 <style>
   @media screen and (max-width:500px){
-    #my_iframe {
+    iframe {
         width: 100vw; 
         height: 105vw;
         background:white;  
@@ -17,15 +17,21 @@ tags: 선형대수
   }
 
   @media screen and (min-width:500px){
-    #my_iframe {
+    iframe {
         width: 40vw; 
         height: 40vw;
         background:white;  
     }
   }
+
+  #my_iframe {
+    width: 520px;
+    height: 520px;
+    background: white;
+  }
 </style>
 
-<p align="center"><iframe class = "my_iframe" src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
+<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
 <br>
 <b>
 고유벡터와 고유값이 물어보는 것:
@@ -50,7 +56,7 @@ tags: 선형대수
 그림 1에서 볼 수 있듯이 행렬을 이용해 벡터를 변환 시켜 주면, 변환 후의 벡터($A\vec{x}$)는 변환 전의 벡터($\vec{x}$)와 비교했을 때, 크기도 방향도 모두 변할 수 있다. 아래의 애플릿을 이용해 임의의 벡터와 행렬을 이용한 선형 변환 결과를 확인해보자.
 
 <p align="center">
-<iframe  src="https://angeloyeo.github.io/p5/2019-07-17-eig_applet1/" width="520" height = "520" frameborder="0"></iframe>
+<iframe class = "my_iframe" src="https://angeloyeo.github.io/p5/2019-07-17-eig_applet1/" frameborder="0"></iframe>
 </p>
 
 # 고유값과 고유벡터의 의미
