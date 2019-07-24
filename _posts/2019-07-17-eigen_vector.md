@@ -9,7 +9,7 @@ tags: 선형대수
 ---
 <style>
   @media screen and (max-width:500px){
-    iframe {
+    #my_iframe {
         width: 100vw; 
         height: 105vw;
         background:white;  
@@ -17,7 +17,7 @@ tags: 선형대수
   }
 
   @media screen and (min-width:500px){
-    iframe {
+    #my_iframe {
         width: 40vw; 
         height: 40vw;
         background:white;  
@@ -25,7 +25,7 @@ tags: 선형대수
   }
 </style>
 
-<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
+<p align="center"><iframe class = "my_iframe" src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
 <br>
 <b>
 고유벡터와 고유값이 물어보는 것:
