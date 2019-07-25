@@ -25,8 +25,8 @@ tags: 선형대수
   }
 
   #my_iframe {
-    width: 520px;
-    height: 520px;
+    width: 520;
+    height: 520;
     background: white;
   }
 </style>
