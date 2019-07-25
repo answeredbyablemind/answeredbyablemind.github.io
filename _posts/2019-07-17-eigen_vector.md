@@ -14,6 +14,11 @@ tags: 선형대수
         height: 105vw;
         background:white;  
     }
+    .my_iframe {
+        width: 80vw;
+        height: 100vw;
+        background: white;
+    }
   }
 
   @media screen and (min-width:500px){
@@ -22,13 +27,14 @@ tags: 선형대수
         height: 40vw;
         background:white;  
     }
+    .my_iframe {
+        width: 80vw;
+        height: 100vw;
+        background: white;
+    }
   }
 
-  #my_iframe {
-    width: 80vw;
-    height: 100vw;
-    background: white;
-  }
+
 </style>
 
 <p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
