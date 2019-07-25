@@ -9,7 +9,7 @@ let yscl
 let h_mobile;
 
 function setup() {
-     createCanvas(windowWidth - 20, windowHeight - 20);
+     createCanvas(windowWidth - 20, (windowWidth-20)/2);
 
      for (let i = 0; i < 6 - 1 / 100; i += 1 / 100) {
           t.push(i)
