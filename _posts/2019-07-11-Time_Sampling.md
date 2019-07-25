@@ -13,7 +13,7 @@ tags: 신호처리
   @media screen and (max-width:500px){
     iframe {
         width: 100vw; 
-        height: 50vw;
+        height: 40vw;
         background:white;  
     }
   }
@@ -21,7 +21,7 @@ tags: 신호처리
   @media screen and (min-width:500px){
     iframe {
         width: 60vw; 
-        height: 30vw;
+        height: 20vw;
         background:white;  
     }
   }
