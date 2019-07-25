@@ -38,7 +38,7 @@ tags: 신호처리 푸리에
 ## FFT 결과를 얻게되면 우리가 보는 것
 
 <p align = "center">
-  <img width = "350" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/negative_frequency/pic1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/negative_frequency/pic1.png">
   <br>
   그림 1. 10Hz 신호를 FFT 했을 때 얻게 되는 결과
 </p>
@@ -73,4 +73,11 @@ $$\cos(\theta) = \frac{e^{i\theta}+ e^{-i\theta}}{2}$$
 $$\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$$
 
 여기서 우리가 특별히 주목하고 싶은 식은 식(3)이다. 식 (3)을 자세히 뜯어보면 다음과 같다.
+
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/negative_frequency/pic2.png">
+  <br>
+  그림 2. 코사인 함수를 생각할 수 있는 또 다른 방법
+</p>
 
