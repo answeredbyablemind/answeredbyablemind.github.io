@@ -12,20 +12,9 @@ tags: 기초수학
 # 1. 수의 발견 
 우리는 허수의 개념에 대해서 생각해보기 전에 앞서, 수의 체계에 대해서 생각해볼 필요가 있다. 일반적으로 수의 체계는 다음과 같이 알려져 있다.
 
-```mermaid
-graph TD
-  A[복소수]--> B[실수];
-  A--> C[허수];
-  B--> D[유리수];
-  B--> E[무리수];
-  D--> K[정수]
-  K--> F[자연수];
-  K--> G[0];
-  K--> H[음수];
-  D--> L[정수가 아닌 유리수]
-  L--> I[유한 소수];
-  L--> J[순환 소수];
-```
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/imaginary_number/pic1.png">
+</p>
 
 
 위 diagram은 복소수를 실수와 허수로 나누고, 실수를 유리수와 무리수로 나누는 방식 즉, top-down 방식으로 수의 체계를 서술했지만 원래대로라면 수는 자연수의 발견에서부터 출발했을 것이다. 즉, 처음 발견된 수 체계는 자연수였을 것이다. 
