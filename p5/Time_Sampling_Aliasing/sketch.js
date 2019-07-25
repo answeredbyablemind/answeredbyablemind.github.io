@@ -23,7 +23,7 @@ function setup() {
           console.log("its Desktop")
      } else {
           h_mobile = 1;
-          slider1 = createSlider(0.5, 10, 0.8, 0.1);
+          slider1 = createSlider(0.5, 10, 0.8, 0.01);
           slider1.position(30, height * 0.92);
      }
 }
