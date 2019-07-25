@@ -28,8 +28,8 @@ tags: 선형대수
         background:white;  
     }
     .my_iframe {
-        width: 40vw;
-        height: 50vw;
+        width: 35vw;
+        height: 43.75vw;
         background: white;
     }
   }
