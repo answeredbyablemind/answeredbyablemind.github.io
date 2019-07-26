@@ -13,7 +13,7 @@ tags: 신호처리
   @media screen and (max-width:500px){
     iframe {
         width: 100vw; 
-        height: 40vw;
+        height: 50vw;
         background:white;  
     }
   }
