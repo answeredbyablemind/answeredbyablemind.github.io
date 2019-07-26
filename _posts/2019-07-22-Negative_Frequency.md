@@ -10,8 +10,8 @@ tags: 신호처리 푸리에
 <style>
 @media screen and (max-width:500px){
   iframe {
-  width: 100vw;
-  height: 50vw;
+  width: 95vw;
+  height: 47.5vw;
   background:white;
   }
 }
