@@ -6,6 +6,7 @@ var numData = 80;
 var axisAngle;
 var axisX, axisY, axisXOppo, axisYOppo
 var projMtx, dataMtx_proj;
+var ellipseSize;
 
 function setup() {
      createCanvas(windowWidth-20, windowWidth-20);
@@ -16,6 +17,12 @@ function setup() {
      }
      dataMtx = math.multiply(myCov, randomTemp)
      axisAngle = 0;
+
+     if(width<500){
+          ellipseSize = 5 / 800 * width;
+     } else {
+          ellipseSize = 10 / 800 * width;
+     }
 }
 
 function draw() {
@@ -76,7 +83,7 @@ function plotData(){
      noStroke();
      scale(1,-1)
      for(i=0; i<numData; i++){
-          ellipse(dataMtx[0][i] * scl, dataMtx[1][i] * scl, 10/800*width);
+          ellipse(dataMtx[0][i] * scl, dataMtx[1][i] * scl, ellipseSize);
      }
      pop();
 }
