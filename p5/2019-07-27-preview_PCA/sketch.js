@@ -28,7 +28,6 @@ function setup() {
 function draw() {
      background(0);
      plotAxis();
-     plotData();
 
      push();
      translate(width/2, height/2);
@@ -65,6 +64,7 @@ function draw() {
      }
      fill(255)
      textAlign(RIGHT)
+     plotData();
      text('(c) 공돌이의 수학정리노트', width * 0.9, height * 0.9)
 
 
