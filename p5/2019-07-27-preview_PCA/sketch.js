@@ -76,7 +76,7 @@ function plotData(){
      noStroke();
      scale(1,-1)
      for(i=0; i<numData; i++){
-          ellipse(dataMtx[0][i] * scl, dataMtx[1][i] * scl, 10);
+          ellipse(dataMtx[0][i] * scl, dataMtx[1][i] * scl, 10/800*width);
      }
      pop();
 }
