@@ -15,8 +15,8 @@ tags: 선형대수
         background:white;  
     }
     .my_iframe {
-        width: 80vw;
-        height: 100vw;
+        width: 90vw;
+        height: 105vw;
         background: white;
     }
   }
