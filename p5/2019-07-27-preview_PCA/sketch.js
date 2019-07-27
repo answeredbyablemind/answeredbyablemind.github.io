@@ -2,7 +2,7 @@ var scl;
 var randomTemp = [[],[]]
 var myCov = [[2,1],[1,2]]
 var dataMtx
-var numData = 100;
+var numData = 80;
 var axisAngle;
 var axisX, axisY, axisXOppo, axisYOppo
 var projMtx, dataMtx_proj;
