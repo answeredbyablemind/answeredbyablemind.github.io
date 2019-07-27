@@ -19,7 +19,7 @@ function setup() {
      axisAngle = 0;
 
      if(width<500){
-          ellipseSize = 8 / 800 * width;
+          ellipseSize = 15 / 800 * width;
      } else {
           ellipseSize = 10 / 800 * width;
      }
