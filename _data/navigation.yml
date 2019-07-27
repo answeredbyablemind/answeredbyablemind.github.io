@@ -74,3 +74,5 @@ docs-ko:
         url:    2019/07/15/Matrix_as_Linear_Transformation.html
       - title:  고유값과 고유벡터
         url:    2019/07/17/eigen_vector.html
+      - title:  주성분분석(PCA)
+        url:    2019/07/27/PCA.html
