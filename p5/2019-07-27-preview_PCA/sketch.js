@@ -43,6 +43,7 @@ function draw() {
      projMtx = math.multiply([[cos(axisAngle)],[sin(axisAngle)]],[[cos(axisAngle), sin(axisAngle)]])     
      dataMtx_proj = math.multiply(projMtx, dataMtx)
      stroke(232,67,67, 100);
+     strokeWeight(ellipseSize / 3)
      for(i=0;i<numData; i++){
           line(dataMtx[0][i] * scl , dataMtx[1][i] * scl, dataMtx_proj[0][i] * scl, dataMtx_proj[1][i] * scl)
      }
