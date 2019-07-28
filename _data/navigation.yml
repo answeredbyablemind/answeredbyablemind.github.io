@@ -33,6 +33,13 @@ header:
       ko-KR   : *KO
     url: /about.html
 
+    
+  - titles:
+      ko      : &KO       후원하기
+      ko-KR   : *KO
+    url: 2019/07/28/donation.html
+
+
 docs-ko:
   - title:      복소수와 오일러 공식
     children:
