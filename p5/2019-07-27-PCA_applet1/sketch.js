@@ -160,11 +160,11 @@ function plotAxis() {
      stroke(150);
      strokeWeight(0.5);
      // vertical lines
-     for (let i = -16; i <= 16; i++) {
+     for (let i = -16; i <= 16; i+=4) {
           line(i * scl, -height / 2, i * scl, height / 2)
      }
 
-     for (let i = -16; i <= 16; i++) {
+     for (let i = -16; i <= 16; i+=4) {
           line(-width / 2, i * scl, width / 2, i * scl)
      }
      pop();
