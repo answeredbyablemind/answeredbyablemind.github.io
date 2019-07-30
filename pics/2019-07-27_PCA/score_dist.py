@@ -47,7 +47,7 @@ plt.show()
 
 plt.scatter(D[0,:], D[1,:])
 plt.plot([0, 100], [0, 100], 'r--', linewidth = 2)
-plt.plot([0, 100], [0, 100*3/4], 'b-.', linewidth = 2)
+plt.plot([0, 100], [0, 100*4/6], 'b-.', linewidth = 2)
 plt.title('시험 점수의 분포')
 plt.xlabel('국어 점수')
 plt.ylabel('영어 점수')
