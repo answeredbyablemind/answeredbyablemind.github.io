@@ -35,11 +35,23 @@ for i in range(D.shape[0]):
             D[i][j] = 100
 
 
-plt.figure;
 plt.scatter(D[0,:], D[1,:])
 plt.title('시험 점수의 분포')
 plt.xlabel('국어 점수')
 plt.ylabel('영어 점수')
 plt.ylim([0, 100])
 plt.grid(b=True)
+plt.savefig('C:/angeloyeo.github.io/pics/2019-07-27_PCA/pic1.png', dpi = 300)
+plt.show()
+
+
+plt.scatter(D[0,:], D[1,:])
+plt.plot([0, 100], [0, 100], 'r--', linewidth = 2)
+plt.plot([0, 100], [0, 100*3/4], 'b-.', linewidth = 2)
+plt.title('시험 점수의 분포')
+plt.xlabel('국어 점수')
+plt.ylabel('영어 점수')
+plt.ylim([0, 100])
+plt.grid(b=True)
+plt.savefig('C:/angeloyeo.github.io/pics/2019-07-27_PCA/pic2.png', dpi= 300)
 plt.show()
