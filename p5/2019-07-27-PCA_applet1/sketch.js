@@ -43,10 +43,10 @@ function setup() {
      }
 
      // Defining buttons
-     button1 = createButton('Button 1')
-     button2 = createButton('Button 2')
-     button3 = createButton('Button 3')
-     button4 = createButton('Button 4')
+     button1 = createButton('Matrix 1')
+     button2 = createButton('Matrix 2')
+     button3 = createButton('Matrix 3')
+     button4 = createButton('Matrix 4')
      button5 = createButton('Reset')
 
      // button1.position(0, 0)
