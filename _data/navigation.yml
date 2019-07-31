@@ -37,7 +37,7 @@ header:
   - titles:
       ko      : &KO       후원하기
       ko-KR   : *KO
-    url: 2019/07/28/donation.html
+    url: 2019/01/01/donation.html
 
 
 docs-ko:
