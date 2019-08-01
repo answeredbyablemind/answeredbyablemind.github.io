@@ -32,13 +32,13 @@ function setup() {
      scl = width / 4;
      extraCanvas.background(0)
      // 아래는 임시로 ...
-     // if (FRUBIL.device.class == "Desktop") {
-     //      h_mobile = 0;
-     // } else {
-     //      h_mobile = 1;
-     //      slider1 = createSlider(0, 2 * PI + 0.01, 0, 0.01);
-     // }
-     h_mobile = 0;
+     if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+     } else {
+          h_mobile = 1;
+          slider1 = createSlider(0, 2 * PI + 0.01, 0, 0.01);
+     }
+     // h_mobile = 0;
 }
 
 function draw() {
