@@ -1,14 +1,13 @@
-var flower
+var data;
 
+function preload(){
+  data = loadJSON('./birds.json')
+}
 function setup() {
-  // put setup code here
-  flower  = {
-    name: "sunflower",
-    col: color(200, 220, 0) 
-  }
-  
+  noCanvas();
+  var bird = data.birds[1].members[2];
+  createP(bird);
 }
 
 function draw() {
-  // put drawing code here
 }
