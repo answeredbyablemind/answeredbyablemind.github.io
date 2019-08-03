@@ -65,6 +65,8 @@ function draw() {
      let newS_diag = []
 
      val = mySlider.value();
+     // console.log(floor(mouseY / height * 100))
+     // val = floor(mouseY / height) * 100
 
      // U, V 중 필요한 열까지 빼오기
      for (let i = 0; i < 512; i++) {
@@ -119,8 +121,11 @@ function draw() {
      }
      img_r.updatePixels();
      image(img_r, 0, 0)
-
-     fill(255, 0, 0)
-     textAlign(RIGHT)
-     text('(c) 공돌이의 수학정리노트', width * 0.9, height * 0.9)
+     fill(255)
+     noStroke()
+     // rectMode(LEFT)
+     rect(width * 0.7, height * 0.9, 150, 20)
+     fill(0)
+     textAlign(LEFT, TOP)
+     text('(c) 공돌이의 수학정리노트', width * 0.71, height * 0.91)
 }
