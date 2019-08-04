@@ -53,7 +53,7 @@ function setup() {
      }
 
      // slider
-     mySlider = createSlider(1, 100, 10, 1);
+     mySlider = createSlider(1, 500, 10, 1);
 
 }
 
