@@ -43,8 +43,6 @@ tags: 선형대수
         background: white;
     }
   }
-
-
 </style>
 
 # 행렬식
@@ -54,14 +52,14 @@ tags: 선형대수
 
 | DEFINITION 1. 행렬식 |
 | --------- |
-| 행렬 $\begin{pmatrix}a& b \\ c & d \end{pmatrix}$에 대하여 <br><br> <center> $det(a) = ad-bd$ </center><br><br>로 정의된다.|
+| 행렬 <br><br><center>$\begin{pmatrix}a& b \\ c & d \end{pmatrix}$</center><br><br>에 대하여 <br><br><center>$det(a) = ad-bd$ </center><br><br>로 정의된다.|
 
 
 또, 역행렬은 다음과 같이 정의된다.
 
 | DEFINITION 2. 2 x 2 행렬의 역행렬 |
 | --------- |
-| 행렬 $A=\begin{pmatrix} a& b \\ c & d \\\end{pmatrix}$에 대하여 <br><br> <center> $A^-1 = \frac{1}{det(A)} \begin{pmatrix}d& -b \\ -c & a \end{pmatrix}$</center><br><br>로 정의된다.|
+| 행렬 <br><br><center>$A=\begin{pmatrix} a& b \\ c & d \\\end{pmatrix}$</center><br><br>에 대하여 <br><br> <center> $A^-1 = \frac{1}{det(A)} \begin{pmatrix}d& -b \\ -c & a \end{pmatrix}$</center><br><br>로 정의된다.|
 
 
 대수적으로 $AA^{-1} = A^{-1}A = I$는 라는 것을 보일 수는 있지만, 선형 대수학을 너머 행렬을 사용하는 수많은 수학 분야에서 행렬식은 등장한다. 특히 기하학에서 행렬식은 그 역할을 톡톡히 하는데 과연 행렬의 행렬식은 기하학적으로는 어떤 의미를 가지고 있는 것일까?
@@ -83,7 +81,7 @@ tags: 선형대수
  삼각형 VOU의 넓이는 사각형 PORQ에서 삼각형 POV, UOR, VUQ의 넓이를 빼준 빗금친 부분의 넓이와 같다.
  그러므로, 
 
-$$◇ AVOU = $$
+$$◇AVOU = $$
 
 $$=2\times\left\{□PORQ - △POV - △UOR - △VUQ\right\}$$
 
