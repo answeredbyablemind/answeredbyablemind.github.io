@@ -45,6 +45,9 @@ tags: 선형대수
   }
 </style>
 
+<p align="center">
+  <iframe src = "https://angeloyeo.github.io/p5/2019-08-06-preview_determinant/" frameborder = "0">
+</p>
 # 행렬식
 
 역행렬을 구할 때 사용되는 행렬식(determinant)는 $2\times 2$ 행렬에서 다음과 같이 정의된다.
