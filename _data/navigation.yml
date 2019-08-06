@@ -85,3 +85,5 @@ docs-ko:
         url:    2019/07/27/PCA.html
       - title:  특이값분해(SVD)
         url:    2019/08/01/SVD.html
+      - title:  행렬식의 기하학적 의미
+        url:    2019/08/06/determinant.html
