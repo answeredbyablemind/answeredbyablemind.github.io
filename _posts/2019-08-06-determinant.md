@@ -57,21 +57,25 @@ tags: 선형대수
 
 | DEFINITION 1. 행렬식 |
 | --------- |
-| 행렬 <br><br><center>$\begin{pmatrix}a& b \\ c & d \end{pmatrix}$</center><br><br>에 대하여 <br><br><center>$det(a) = ad-bd$ </center><br><br>로 정의된다.|
+| 행렬 <br><center>$\begin{pmatrix}a& b \\ c & d \end{pmatrix}$</center><br>에 대하여 <br><center>$det(a) = ad-bd$ </center><br>로 정의된다.|
 
 
 또, 역행렬은 다음과 같이 정의된다.
 
 | DEFINITION 2. 2 x 2 행렬의 역행렬 |
 | --------- |
-| 행렬 <br><br><center>$A=\begin{pmatrix} a& b \\ c & d \\\end{pmatrix}$</center><br><br>에 대하여 <br><br> <center> $A^-1 = \frac{1}{det(A)} \begin{pmatrix}d& -b \\ -c & a \end{pmatrix}$</center><br><br>로 정의된다.|
+| 행렬 <br><center>$A=\begin{pmatrix} a& b \\ c & d \\\end{pmatrix}$</center><br><br>에 대하여 <br> <center> $A^-1 = \frac{1}{det(A)} \begin{pmatrix}d& -b \\ -c & a \end{pmatrix}$</center><br><br>로 정의된다.|
 
 
 대수적으로 $AA^{-1} = A^{-1}A = I$는 라는 것을 보일 수는 있지만, 선형 대수학을 너머 행렬을 사용하는 수많은 수학 분야에서 행렬식은 등장한다. 특히 기하학에서 행렬식은 그 역할을 톡톡히 하는데 과연 행렬의 행렬식은 기하학적으로는 어떤 의미를 가지고 있는 것일까?
 
 # $2\times 2$ 행렬의 행렬식은 두 벡터가 이루고 있는 평행사변형의 넓이
 
-임의의 행렬 $A=\begin{pmatrix} a& b \\ c & d \\\end{pmatrix}$에 대하여, 이 행렬은 두 벡터를 한꺼번에 표현한 것이라고 해보도록 하자. 이 때, 두 벡터 $\vec{u}=(a,c)$와 $\vec{v}=(b,d)$를 생각해보자. 임의의 벡터 $\vec{u}$와 $\vec{v}$는 좌표평면상에 그림 1과 같이 그릴 수도 있다.
+임의의 행렬 
+
+$$A=\begin{pmatrix} a& b \\ c & d \\end{pmatrix}$$
+
+에 대하여, 이 행렬은 두 벡터를 한꺼번에 표현한 것이라고 해보도록 하자. 이 때, 두 벡터 $\vec{u}=(a,c)$와 $\vec{v}=(b,d)$를 생각해보자. 임의의 벡터 $\vec{u}$와 $\vec{v}$는 좌표평면상에 그림 1과 같이 그릴 수도 있다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/pic1.png">
