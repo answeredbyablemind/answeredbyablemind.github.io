@@ -45,8 +45,8 @@ tags: 선형대수
   }
 </style>
 
-<p align="center">
-  <iframe src = "https://angeloyeo.github.io/p5/2019-08-06-preview_determinant/" frameborder = "0">
+<p align = "center">
+  <iframe src = "https://angeloyeo.github.io/p5/2019-08-06-preview_determinant/" frameborder = "0"></iframe>
   <br>
   행렬식이 의미하는 것: 선형변환 될 때 단위 면적이 얼마만큼 늘어나는가?
 </p>
