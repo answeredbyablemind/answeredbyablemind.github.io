@@ -47,6 +47,8 @@ tags: 선형대수
 
 <p align="center">
   <iframe src = "https://angeloyeo.github.io/p5/2019-08-06-preview_determinant/" frameborder = "0">
+  <br>
+  행렬식이 의미하는 것: 선형변환이 될 때 단위 면적이 얼마만큼 늘어나는가?
 </p>
 # 행렬식
 
