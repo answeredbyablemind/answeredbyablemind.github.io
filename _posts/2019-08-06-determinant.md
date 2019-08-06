@@ -104,9 +104,30 @@ $$=2\times\left\{□PORQ - △POV - △UOR - △VUQ\right\}$$
 $$=2\times \left\{ad-\frac{1}{2}bd -\frac{1}{2}ac - \frac{1}{2}(a-b)(d-c)\right\}$$
 
 $$=2\times\left\{
-  ad-\frac{1}{2}bd-\frac{1}{2}ac-\frac{1}{2}(ad-bd-ac+bd)
+  ad-\frac{1}{2}bd-\frac{1}{2}ac-\frac{1}{2}(ad-bd-ac+bc)
   \right\}
   $$
+
+$$=2\times\left\{
+  ad-\frac{1}{2}bd-\frac{1}{2}ac-\frac{1}{2}ad+\frac{1}{2}bd+\frac{1}{2}ac-\frac{1}{2}bc)
+  \right\}
+  $$
+
+$$=2\times\left\{
+  \left(ad-\frac{1}{2}ad\right)
+  +\left(\frac{1}{2}bd-\frac{1}{2}bd\right)
+  +\left(-\frac{1}{2}ac+\frac{1}{2}ac\right)
+  -\frac{1}{2}bc)
+  \right\}
+$$
+
+$$=2\times\left\{
+  \left(ad-\frac{1}{2}ad\right)
+  +\cancel{\left(\frac{1}{2}bd-\frac{1}{2}bd\right)}
+  +\cancel{\left(-\frac{1}{2}ac+\frac{1}{2}ac\right)}
+  -\frac{1}{2}bc)
+  \right\}
+$$
 
 $$=2\times\left\{\frac{1}{2}ad-\frac{1}{2}bc\right\}$$
 
