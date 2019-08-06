@@ -70,29 +70,33 @@ tags: 선형대수
 
 임의의 행렬 $A=\begin{pmatrix} a& b \\ c & d \\\end{pmatrix}$에 대하여, 이 행렬은 두 벡터를 한꺼번에 표현한 것이라고 해보도록 하자. 이 때, 두 벡터 $\vec{u}=(a,c)$와 $\vec{v}=(b,d)$를 생각해보자. 임의의 벡터 $\vec{u}$와 $\vec{v}$는 좌표평면상에 그림 1과 같이 그릴 수도 있다.
 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/pic1.png">
+</p>
 
-![](https://wikidocs.net/images/page/4049/20160201_102354.png)
+ 이 때, 그림 2에서 설명하듯 두 벡터를 통해 만든 평행사변형 AVOU의 넓이는 $det(A)$이다. 평행사변형 AVOU의 넓이는 삼각형 VOU의 넓이의 두배 값을 가진다. 그러므로 삼각형 VOU의 넓이를 구한 뒤, 두배를 해주면 평행사변형 AVOU의 넓이를 구할 수 있다.
 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/pic2.png">
+</p>
 
- 이 때, 그림 2에서 설명하듯 두 벡터를 통해 만든 평행사변형 AVOU의 넓이는 det(A)이다. 평행사변형 AVOU의 넓이는 삼각형 VOU의 넓이의 두배 값을 가진다. 그러므로 삼각형 VOU의 넓이를 구한 뒤, 두배를 해주면 평행사변형 AVOU의 넓이를 구할 수 있다.
-
-![](https://wikidocs.net/images/page/4049/20160201_102457.png)
-
- 삼각형 VOU의 넓이는 사각형 PORQ에서 삼각형 POV, UOR, QVU의 넓이를 빼준 빗금친 부분의 넓이와 같다.
+ 삼각형 VOU의 넓이는 사각형 PORQ에서 삼각형 POV, UOR, VUQ의 넓이를 빼준 빗금친 부분의 넓이와 같다.
  그러므로, 
 
-평행사변형 AVOU = 
+$$◇ AVOU = $$
 
-$$2(ad-\frac{1}{2}cd-\frac{1}{2}ab-\frac{1}{2}(a-c)(d-b))$$
+$$=2\times\left\{□PORQ - △POV - △UOR - △VUQ\right\}$$
 
-$$=2(ad-\frac{1}{2}cd-\frac{1}{2}ab-\frac{1}{2}(ad-cd-ab+bc))$$
+$$=2\times \left\{ad-\frac{1}{2}bd -\frac{1}{2}ac - \frac{1}{2}(a-b)(d-c)\right\}$$
 
-$$=2(\frac{1}{2}ad-\frac{1}{2}bd)$$
+$$=2\times\left\{
+  ad-\frac{1}{2}bd-\frac{1}{2}ac-\frac{1}{2}(ad-bd-ac+bd)
+  \right\}
+  $$
 
-$$=ad-bc$$
+$$=2\times\left\{\frac{1}{2}ad-\frac{1}{2}bc\right\}$$
 
-$$=det(A)$$
-
+$$=ad-bc = det(A)$$
 
 # 행렬식과 역행렬의 기하학적 관계
 
