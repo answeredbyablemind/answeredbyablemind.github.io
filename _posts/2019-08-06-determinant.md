@@ -58,14 +58,14 @@ tags: 선형대수
 
 | DEFINITION 1. 행렬식 |
 | --------- |
-| 행렬 <br>$$\begin{pmatrix}a& b \\ c & d \end{pmatrix}$$<br>에 대하여 <br>$$det(a) = ad-bd$$<br>로 정의된다.|
+| 행렬 <br> <center> $$\begin{pmatrix}a& b \\ c & d \end{pmatrix}$$ </center> <br>에 대하여 <br><center> $$det(a) = ad-bd$$</center> <br>로 정의된다.|
 
 
 또, 역행렬은 다음과 같이 정의된다.
 
 | DEFINITION 2. 2 x 2 행렬의 역행렬 |
 | --------- |
-| 행렬 <br>$$A=\begin{pmatrix} a& b \\ c & d \end{pmatrix} \notag$$<br>에 대하여 <br>$$A^-1 = \frac{1}{det(A)} \begin{pmatrix}d& -b \\ -c & a \end{pmatrix}$$<br><br>로 정의된다.|
+| 행렬 <br><center> $$A=\begin{pmatrix} a& b \\ c & d \end{pmatrix} \notag$$</center> <br>에 대하여 <br><center> $$A^-1 = \frac{1}{det(A)} \begin{pmatrix}d& -b \\ -c & a \end{pmatrix}$$</center> <br>로 정의된다.|
 
 
 대수적으로 $AA^{-1} = A^{-1}A = I$는 라는 것을 보일 수는 있지만, 선형 대수학을 너머 행렬을 사용하는 수많은 수학 분야에서 행렬식은 등장한다. 특히 기하학에서 행렬식은 그 역할을 톡톡히 하는데 과연 행렬의 행렬식은 기하학적으로는 어떤 의미를 가지고 있는 것일까?
