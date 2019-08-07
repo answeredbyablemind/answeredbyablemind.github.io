@@ -58,7 +58,7 @@ tags: 선형대수
 
 | DEFINITION 1. 행렬식 |
 | --------- |
-| 행렬 <br> <center> $$\begin{pmatrix}a& b \\ c & d \end{pmatrix}$$ </center> <br>에 대하여 <br><center> $$det(a) = ad-bd$$</center> <br>로 정의된다.|
+| 행렬 <br> <center> $$A=\begin{pmatrix}a& b \\ c & d \end{pmatrix}$$ </center> <br>에 대하여 <br><center> $$det(A) = ad-bc$$</center> <br>로 정의된다.|
 
 
 또, 역행렬은 다음과 같이 정의된다.
