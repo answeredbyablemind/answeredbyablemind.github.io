@@ -97,7 +97,7 @@ $$A=\begin{pmatrix} a& b \\ c & d \end{pmatrix}$$
  삼각형 VOU의 넓이는 사각형 PORQ에서 삼각형 POV, UOR, VUQ의 넓이를 빼준 빗금친 부분의 넓이와 같다.
  그러므로, 
 
-$$◇AVOU = $$
+$$◇AVOU = \notag$$
 
 $$=2\times\left\{□PORQ - △POV - △UOR - △VUQ\right\}$$
 
