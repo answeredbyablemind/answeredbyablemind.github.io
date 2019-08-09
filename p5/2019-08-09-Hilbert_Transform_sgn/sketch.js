@@ -29,6 +29,7 @@ function draw() {
 
      drawGrid();
      plotFunction();
+     fill(255);
      text('↓ alpha 값', 0, height * 0.95)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
