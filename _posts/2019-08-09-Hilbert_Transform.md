@@ -76,7 +76,12 @@ e^{-\alpha f}, & \text{for $f > 0$} \\
 
 이 때, $G(f;\alpha)$는 $\alpha\rightarrow 0$로 근접할 때 $sgn(f)$와 매우 근사해진다는 것을 알 수 있다.
 
-<iframe src = ""></iframe>
+
+<p align = "center">
+  <iframe src = "https://angeloyeo.github.io/p5/2019-08-09-Hilbert_transform_sgn/" frameborder = "0"></iframe>
+  <br>
+  행렬식이 의미하는 것: 선형변환 될 때 단위 면적이 얼마만큼 늘어나는가?
+</p>
 
 
 그러므로, 유도 과정에서는 $G(f;\alpha)$의 inverse Fourier transform을 생각하고, 이후 $\alpha\rightarrow 0$로 근접할 때의 $g(t)$의 모양을 생각하도록 하자.
