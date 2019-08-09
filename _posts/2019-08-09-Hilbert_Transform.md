@@ -1,11 +1,11 @@
 ---
-title: 행렬식의 기하학적 의미
+title: 힐버트 변환
 sidebar:
   nav: docs-ko
 aside:
   toc: true
-key: 20190806
-tags: 선형대수
+key: 20190809
+tags: 신호처리
 ---
 <style>
   @media screen and (max-width:500px){
