@@ -8,7 +8,7 @@ Created on Fri Aug  9 21:19:05 2019
 import numpy as np
 import matplotlib.pyplot as plt
 
-alpha = 0.3
+alpha = 1
 
 f_neg= np.linspace(-3, 0, num = 50)
 f_pos = np.linspace(0, 3, num = 50)

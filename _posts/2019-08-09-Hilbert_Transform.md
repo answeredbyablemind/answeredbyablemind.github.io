@@ -78,9 +78,7 @@ e^{-\alpha f}, & \text{for $f > 0$} \\
 
 
 <p align = "center">
-  <iframe src = "https://angeloyeo.github.io/p5/2019-08-09-Hilbert_transform_sgn/" frameborder = "0"></iframe>
-  <br>
-  행렬식이 의미하는 것: 선형변환 될 때 단위 면적이 얼마만큼 늘어나는가?
+  <iframe src = "https://angeloyeo.github.io/p5/2019-08-09-Hilbert_Transform_sgn/" frameborder = "0"></iframe>
 </p>
 
 
