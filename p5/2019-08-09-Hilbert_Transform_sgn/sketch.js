@@ -32,8 +32,8 @@ function draw() {
      fill(255);
      textSize(20)
      textAlign(LEFT)
-     text('↓ alpha 값: ', 0.01 * width , height * 0.95)
-     text(a, 0.17 * width, height * 0.95)
+     let my_array= ['↓ alpha 값: ', a];
+     text(join(my_array, ' '), 0.01 * width , height * 0.95)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
      textAlign(LEFT)
