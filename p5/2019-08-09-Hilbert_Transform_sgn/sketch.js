@@ -30,9 +30,13 @@ function draw() {
      drawGrid();
      plotFunction();
      fill(255);
-     text('↓ alpha 값', 0, height * 0.95)
+     textSize(20)
+     textAlign(LEFT)
+     text('↓ alpha 값: ', 0.01 * width , height * 0.95)
+     text(a, 0.17 * width, height * 0.95)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
+     textAlign(LEFT)
 }
 
 function plotFunction() {
