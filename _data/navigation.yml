@@ -74,6 +74,8 @@ docs-ko:
         url:    2019/07/14/Freq_Sampling.html
       - title:  음의 주파수
         url:    2019/07/22/Negative_Frequency.html
+      - title:  힐버트 변환
+        url:    2019/08/09/Hilbert_Transform.html
 
   - title:      선형대수학
     children:
