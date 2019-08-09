@@ -48,7 +48,7 @@ function plotFunction() {
      // G 그려주기
      noFill();
      stroke(242, 125, 50);
-     strokeWeight(2);
+     strokeWeight(4);
      beginShape();
      for (let i = 0; i < G_neg.length; i++) {
           vertex(f_neg[i] * scl, G_neg[i] * scl);
