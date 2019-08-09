@@ -30,7 +30,7 @@ tags: 신호처리
  힐버트 변환이 필요한 이유에 대해 설명하기 위해서는 힐버트 변환이 하는 역할이 무엇인지, 그리고 그 역할을 수행함으로써 얻을 수 있는 결과는 무엇인지 파악하는 것이 중요한 과정일 것이라는 생각이 든다.  먼저, 힐버트 변환의 역할은 일종의 선형 필터로써 신호의 amplitude는 유지하되, phase만 $-\frac{\pi}{2}$만큼 shift 시켜주는 것이다. (음의 주파수의 경우에는 $\pi/2$만큼 phase shift 시켜준다.) 
 
 <p align = "center">
-  <img width = 800 src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-09_Hilbert_Transform/pic1.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-09_Hilbert_Transform/pic1.png">
   <br>
   그림 1. 힐버트 변환은 원 신호의 amplitude는 유지하고 phase를 -90' shift 시킨다.
 </p>
@@ -199,18 +199,21 @@ $$\int_{-\infty}^{\infty}x(t)\hat{x}(t)dt = 0$$
 
 
  이것 또한 Parseval's theorem으로 증명할 수 있는데, 복소 신호에 대한 일반적인 Parseval's theorem을 적용하면 위의 내적 값은 다음과 같아진다.
-<center>
-<img src="http://bit.ly/1REQMpC">
 
-<img src="http://bit.ly/1REQQpd">
+$$=\int_{-\infty}^{\infty}X(f)\hat{X}^*(f) df$$
 
-<img src="http://bit.ly/1REQSxw">
-</center>
-($sgn(f)$는 0에 대해 symmetric function이기 때문)
+$$=\int_{-\infty}^{\infty}X(f)\space j \space sign(f) X^*(f)df$$
 
-###5. (Bedrosian identity)
+$$=\int_{-\infty}^{\infty} j\space sgn(f) \left|X(f)\right|^2 df = 0$$
+
+
+$\because sgn(f)$는 0에 대해 symmetric function이기 때문
+
+## Bedrosian identity (☆)
 
 주파수 대역(spectra)가 겹치지 않는 두개의 신호 $c(t)$와 $m(t)$를 생각해보자. 이 때, $m(t)$가 lowpass filter이고 $c(t)$가 highpass filter라고 할 수 있으며 다음이 성립한다.
+
+$$\hat{ m(t)c(t) }$$
 
 <center><img src="http://bit.ly/1NrjSRF"></center>
 
@@ -218,35 +221,45 @@ $$\int_{-\infty}^{\infty}x(t)\hat{x}(t)dt = 0$$
 
 <center>
 <img src="http://bit.ly/1RER6ER">
-
+<br>
 <img src="http://bit.ly/1NrjX7W">
 </center>
 
-###6. Signal의 Envelope
-<center>
-![](http://www.expertsmind.com/CMSImages/2091_Detection%20of%20AM%20signals.png)
-</center>
-(출처 : http://www.expertsmind.com/CMSImages/2091_Detection%20of%20AM%20signals.png)
+## Signal의 Envelope
+<p align = "center">
+  <img src = "http://www.expertsmind.com/CMSImages/2091_Detection%20of%20AM%20signals.png">
+  <br>
+  (출처 : http://www.expertsmind.com/CMSImages/2091_Detection%20of%20AM%20signals.png)
+</p>
 
-5의 Bedrosian identity를 통해 amplitude modulation된 신호의 envelope를 구할 때 힐버트 변환을 활용할 수 있다.
+Bedrosian identity를 통해 amplitude modulation된 신호의 envelope를 구할 때 힐버트 변환을 활용할 수 있다.
 
 즉, lowpass filter $m(t)$를 높은 주파수 $f_0$로 amplitude modulation 시킬 때, carrier signal을 $c(t)=cos(\omega_0 t)$라고 하면 AM signal은 $x(t)=m(t)c(t)$이다.
 
 이 때, $x(t)$를 힐버트 변환하여 다음의 신호를 생각 할 수 있다.
-<center>
 
-<img src="http://bit.ly/1RERtz5">
+$$x_p(t) = x(t) +j \hat{x}(t)$$
 
-<img src="http://bit.ly/1Nrk9Ea">
-</center>
+where
+
+$$\hat{x}(t) = \sin (\omega_0 t)$$
+
 
 이므로 
+
+$$x_p(t) = m(t) \cos(\omega_0 t) + j m(t) \sin (\omega_0 t) \notag$$
+
+$$=m(t) exp(j\omega_0t)$$
+
 <center>
 <img src="http://bit.ly/1Nrkd6Q">
 </center>
-그러므로, 
-<center>
-<img src="http://bit.ly/1NrkdDY">
-</center>
 
-이다. $|m(t)|$는 AM signal의 envelope이다.
+이다.
+
+그러므로, 
+
+$$\left|x_p(t)\right| = \left|m(t) exp(j\omega_0 t)\right| = \left|m(t)\right|$$
+
+
+이다. 따라서 $|m(t)|$는 AM signal의 envelope이다.
