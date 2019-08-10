@@ -30,7 +30,7 @@ function draw() {
      drawGrid();
      plotFunction();
      fill(255);
-     textSize(20)
+     textSize(20/ 800 * width)
      textAlign(LEFT)
      let my_array= ['↓ alpha 값: ', a];
      text(join(my_array, ' '), 0.01 * width , height * 0.95)
