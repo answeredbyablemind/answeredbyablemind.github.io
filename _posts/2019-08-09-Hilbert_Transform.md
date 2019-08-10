@@ -262,4 +262,8 @@ $$=m(t) exp(j\omega_0t)$$
 $$\left|x_p(t)\right| = \left|m(t) exp(j\omega_0 t)\right| = \left|m(t)\right|$$
 
 
-이다. 따라서 $|m(t)|$는 AM signal의 envelope이다.
+이다. 따라서 
+
+$$|m(t)|\notag$$
+
+는 AM signal의 envelope이다.
