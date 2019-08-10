@@ -213,8 +213,6 @@ $\because sgn(f)$는 0에 대해 symmetric function이기 때문
 
 주파수 대역(spectra)가 겹치지 않는 두개의 신호 $c(t)$와 $m(t)$를 생각해보자. 이 때, $m(t)$가 lowpass filter이고 $c(t)$가 highpass filter라고 할 수 있으며 다음이 성립한다.
 
-$$\hat{ m(t)c(t) }$$
-
 <center><img src="http://bit.ly/1NrjSRF"></center>
 
 즉, $f_0$의 높은 주파수로 신호가 amplitude modulation된다고 했을 때, modulation되는 신호를 $m(t)$라고 하고 carrier signal을 $c(t)$라고 하면 다음이 성립한다.
@@ -250,10 +248,6 @@ $$\hat{x}(t) = \sin (\omega_0 t)$$
 $$x_p(t) = m(t) \cos(\omega_0 t) + j m(t) \sin (\omega_0 t) \notag$$
 
 $$=m(t) exp(j\omega_0t)$$
-
-<center>
-<img src="http://bit.ly/1Nrkd6Q">
-</center>
 
 이다.
 
