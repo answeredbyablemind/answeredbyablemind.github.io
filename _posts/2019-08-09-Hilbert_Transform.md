@@ -145,7 +145,7 @@ $$= -j \frac{j4\pi t}{4\pi ^2 t^2} = -j \frac{j}{\pi t} = \frac{1}{\pi t}$$
 
 힐버트 변환을 두 번 취해주게 되면 원래 신호의 부호가 반전되는 결과를 가져온다. 이것은 phase shift를 $-\pi$ 또는 $\pi$만큼 시켜주기 때문. 이것을 수식을 이용해 표현하자면 
 
-$$\left(\left(H(f)\right)\right)^2 = 
+$$\left(H(f)\right)^2 = 
 \begin{cases}
 j \times j = -1, & \text{for $f < 0$} \\
 (-j)\times (-j) = -1, & \text{for $f > 0$}
