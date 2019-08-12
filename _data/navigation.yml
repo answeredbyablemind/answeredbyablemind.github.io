@@ -77,7 +77,7 @@ docs-ko:
       - title:  힐버트 변환
         url:    2019/08/09/Hilbert_Transform.html
       - title:  라플라스 변환
-        url:    2019/08/12/Laplace_Transform.html
+        url:    2019/08/12/Laplace_transform.html
 
   - title:      선형대수학
     children:
