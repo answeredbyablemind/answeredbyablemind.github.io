@@ -161,9 +161,9 @@ $$\hat{\hat{x}}(t) = -x(t)$$
 
 ## 삼각함수의 힐버트 변환
 
-* $x(t) = cos(2\pi f_0 t) \Leftrightarrow \hat{x}(t) = sin(2\pi f_0 t)$
+* $x(t) = \cos(2\pi f_0 t) \Leftrightarrow \hat{x}(t) = \sin(2\pi f_0 t)$
 
-* $x(t) = sin(2\pi f_0 t) \Leftrightarrow \hat{x}(t) = -cos(2\pi f_0 t)$
+* $x(t) = \sin(2\pi f_0 t) \Leftrightarrow \hat{x}(t) = -\cos(2\pi f_0 t)$
 
 * $x(t) = \exp(j2\pi f_0 t)$
 
@@ -173,7 +173,7 @@ $$\Leftrightarrow \hat{x}(t) =
 -j \exp(j 2\pi f_0 t),  & \text{for $f_0 > 0$} \\
 +j \exp(j 2\pi f_0 t), & \text{for $f_0 < 0$}
 \end{cases}
- = -j\times sgn(2\pi f_0) exp(j2\pi f_0 t) \notag
+ = -j\times sgn(2\pi f_0) \exp(j2\pi f_0 t) \notag
 $$
 
 
@@ -247,13 +247,13 @@ $$\hat{x}(t) = \sin (\omega_0 t)$$
 
 $$x_p(t) = m(t) \cos(\omega_0 t) + j m(t) \sin (\omega_0 t) \notag$$
 
-$$=m(t) exp(j\omega_0t)$$
+$$=m(t) \exp(j\omega_0t)$$
 
 이다.
 
 그러므로, 
 
-$$\left|x_p(t)\right| = \left|m(t) exp(j\omega_0 t)\right| = \left|m(t)\right|$$
+$$\left|x_p(t)\right| = \left|m(t) \exp(j\omega_0 t)\right| = \left|m(t)\right|$$
 
 
 이다. 따라서 
