@@ -25,4 +25,6 @@ tags: 신호처리
   }
 </style>
 
-asdf
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic1.png">
+</p>
