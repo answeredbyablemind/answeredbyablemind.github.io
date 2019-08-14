@@ -10,8 +10,8 @@ tags: 신호처리
 <style>
   @media screen and (max-width:500px){
     iframe {
-        width: 100vw; 
-        height: 55vw;
+        width: 120vw; 
+        height: 66vw;
         background:white;  
     }
   }
