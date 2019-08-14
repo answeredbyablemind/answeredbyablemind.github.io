@@ -11,7 +11,7 @@ tags: 신호처리
   @media screen and (max-width:500px){
     iframe {
         width: 100vw; 
-        height: 80vw;
+        height: 55vw;
         background:white;  
     }
   }
@@ -19,18 +19,18 @@ tags: 신호처리
   @media screen and (min-width:500px){
     iframe {
         width: 40vw; 
-        height: 30vw;
+        height: 22vw;
         background:white;  
     }
   }
 </style>
 
+
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic0.png">
+  <iframe src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
+  <br>
+  라플라스 변환이 말하는 것: 신호(정확히는 시스템)의 안전성을 s-plane에 한번에 표현해보고 싶다.
 </p>
-
-// TODO: 왼쪽 화면 복소 평면, 오른쪽 화면 시간 표현. 왼쪽에 있는 point를 옮겨가면서 신호의 시간 표현의 변화를 확인할 수 있게 하는 applet 만들기.
-
 
 # 라플라스 변환
 
