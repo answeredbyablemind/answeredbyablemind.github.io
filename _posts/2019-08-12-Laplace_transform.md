@@ -10,16 +10,16 @@ tags: 신호처리
 <style>
   @media screen and (max-width:500px){
     iframe {
-        width: 120vw; 
-        height: 66vw;
+        width: 100vw; 
+        height: 55vw;
         background:white;  
     }
   }
 
   @media screen and (min-width:500px){
     iframe {
-        width: 40vw; 
-        height: 22vw;
+        width: 80vw; 
+        height: 44vw;
         background:white;  
     }
   }

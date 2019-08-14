@@ -25,3 +25,49 @@ tags: 신호처리
   }
 </style>
 
+## Z-변환의 정의 및 유도 과정
+
+
+| DEFINITION 1. Z-변환 |
+| --------- |
+| 이산신호 $x[n]$에 대하여 아래와 같은 변환을 Z-변환이라 한다.<br><center>$$Z\left[x[n]\right] = \sum_{n=-\infty}^{\infty}x[n]z^{-n}$$<br> 여기서 $z$ 는 복소수</center>|
+
+Z-변환은 좁게는 선형 차분 방정식(Linear Difference Equation)을 쉽게 풀 수 있게 만들어 주는 테크닉이라고 할 수도 있고, 좀 더 넓은 의미에서는 Discrete Time Fourier Transform의 일반화된 형태라고 할 수도 있다. 
+
+이것은 Continuous Time Domain에서의 CTFT와 라플라스 변환의 관계에 비유하는 것이 가장 알맞다. 즉, Z-Transform은 DTFT의 일반적인 형태이다. 혹은 DTFT는 Z-Transform의 특수한 경우라고 할 수 있다. 
+
+
+## Z-변환과 푸리에 변환
+
+Discrete Time Fourier Transform(DTFT)의 수식으로부터 Z-변환의 수식을 유도해보면, 수학적으로 DTFT와 Z-변환이 닮아있다는 것을 확인할 수 있다.
+
+우리가 잘 알다시피 DTFT의 형태는 다음과 같다.
+
+$$x[n] = \int_{-0.5}^{0.5}X_{DTFT}(f) \exp(2\pi fn) df$$
+
+$$where\space X_{DTFT}(f) = \sum_{n=-\infty}^{\infty}x[n]\exp(-j2\pi fn)$$
+
+여기서 $x[n]\exp(-\sigma n)$의 DTFT를 생각해보자.
+
+$$\mathfrak{F}\left[x[n]\exp(-\sigma n)\right] = \sum_{n = -\infty}^{\infty} x[n] \exp\left(-(\sigma n + j 2\pi fn)\right)$$
+
+여기서 $2\pi f = \omega$로 두면 식 (4)는 다음과 같이 쓸 수 있다.
+
+$$식(4) \Rightarrow \sum_{n = -\infty}^{\infty}x[n] \exp\left(-(\sigma+j\omega)n\right)$$
+
+여기서 복소수 $z$를 다음과 같이 정의하자.
+
+$$z = \exp(-(\sigma + j \omega))$$
+
+그러면 식 (5)는 다음과 같이 쓸 수 있다.
+
+$$식 (5) \Rightarrow \sum_{n=-\infty}^{\infty}x[n]z^{-n}$$
+
+위 유도 과정은 Z-Transform과 DTFT와의 관계에 대해서 보여준다. 또한 이 유도 과정은 Z-Transform과 DTFT가 Laplace Transform과 CTFT의 관계와 얼마나 닮아있는지를 보여준다는 의의가 있다. 그리고 DTFT는 Z-transform의 특수한 경우인데 그것은 원의 반지름이 1인 경우에 Z 변환을 취한 것과 같은 경우이다. 
+
+ Laplace 변환과의 약간의 차이점이 있다면 Laplace 변환에서는 $s=\sigma+j\omega$로 설정한 것에 반해 Z 변환에서는 $z = \exp\left(-(\sigma + j\omega)\right)$로 설정했다는 점이다. 이것은 관례적인 이유 또는 개발자가 착안한 아이디어에 의한 차이로 보인다. 또한 이렇게 $s$와 $z$가 다른 약간의 차이를 가지고 설정되어 s plane과 z plane의 stability를 결정해주는 방식에 차이가 생기게 된다.
+
+ 
+
+
+
