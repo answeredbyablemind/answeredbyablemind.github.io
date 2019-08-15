@@ -11,14 +11,14 @@ tags: 신호처리
   @media screen and (max-width:500px){
     iframe {
         width: 100vw; 
-        height: 80vw;
+        height: 55vw;
         background:white;  
     }
   }
 
   @media screen and (min-width:500px){
     iframe {
-        width: 40vw; 
+        width: 55vw; 
         height: 30vw;
         background:white;  
     }

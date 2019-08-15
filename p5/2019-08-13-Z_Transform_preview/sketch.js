@@ -113,7 +113,7 @@ function draw() {
           translate(cos(7 / 4 * PI) * 0.7 * scl, sin(7 / 4 * PI) * 0.7 * scl);
           scale(1, -1);
           textAlign(CENTER, BOTTOM);
-          textSize(15);
+          textSize(15 / 800 * width);
           text('수렴', 0, 0);
           pop();
      }
@@ -141,7 +141,7 @@ function draw() {
           translate(cos(7 / 4 * PI) * 1.3 * scl, sin(7 / 4 * PI) * 1.35 * scl);
           scale(1, -1);
           textAlign(LEFT, BOTTOM);
-          textSize(15);
+          textSize(15 / 800 * width);
           text('발산', 0, 0);
           pop();
      }
