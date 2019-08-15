@@ -29,7 +29,7 @@ tags: 신호처리
 <p align = "center">
   <iframe src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
   <br>
-  라플라스 변환이 말하는 것: 신호(정확히는 시스템)의 안전성을 s-plane에 한번에 표현해보고 싶다.
+  라플라스 변환이 말하는 것: 신호(정확히는 시스템)의 특성을 s-plane에 한번에 표현해보고 싶다.
 </p>
 
 # 라플라스 변환
