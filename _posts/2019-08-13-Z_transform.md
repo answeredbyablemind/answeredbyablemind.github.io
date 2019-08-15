@@ -94,6 +94,8 @@ $$식(10) \Rightarrow \sum_{n=0}^{\infty}x[n]z^{-n}$$
 
 위 유도과정을 통해서 Laplace와 Z-transform이 수식적으로 연관되어 있다는 사실을 확인할 수 있다. 결론적으로 Laplace 변환과 Z 변환은 각각의 복소수를 정의해주는 방법에 차이가 있을 뿐 모두 system의 특성을 확인하기 위한 테크닉이라고 할 수 있겠다. 
 
+s-plane과 z-plane은 다음과 같은 형태학적 관계를 가지게 된다. 
+
 <p align = "center">
-  
+
 </p>
