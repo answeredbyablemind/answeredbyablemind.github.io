@@ -18,8 +18,8 @@ tags: 신호처리
 
   @media screen and (min-width:500px){
     iframe {
-        width: 50vw; 
-        height: 27vw;
+        width: 55vw; 
+        height: 30vw;
         background:white;  
     }
   }
