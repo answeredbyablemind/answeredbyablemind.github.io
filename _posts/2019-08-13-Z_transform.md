@@ -67,7 +67,17 @@ $$식 (5) \Rightarrow \sum_{n=-\infty}^{\infty}x[n]z^{-n}$$
 
  Laplace 변환과의 약간의 차이점이 있다면 Laplace 변환에서는 $s=\sigma+j\omega$로 설정한 것에 반해 Z 변환에서는 $z = \exp\left(-(\sigma + j\omega)\right)$로 설정했다는 점이다. 이것은 관례적인 이유 또는 개발자가 착안한 아이디어에 의한 차이로 보인다. 또한 이렇게 $s$와 $z$가 다른 약간의 차이를 가지고 설정되어 s plane과 z plane의 stability를 결정해주는 방식에 차이가 생기게 된다.
 
- 
+## Z-변환과 라플라스 변환
+
+Z-변환은 라플라스 변환의 discrete time 버전이라고 할 수 있다.
+
+라플라스 변환의 식에서 시간 sampling을 해줌으로써 Z-변환을 얻어보자.
+
+연속시간 신호$x(t)$에 대해 라플라스 변환은 다음과 같이 정의된다.
+
+$$\mathfrak{L}\left[x(t)\right] = X(s) = \int_{0^{-}}^{\infty}x(t) e^{-st}dt$$
+
+
 
 
 
