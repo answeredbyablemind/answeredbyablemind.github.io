@@ -104,5 +104,38 @@ $$식(10) \Rightarrow \sum_{n=0}^{\infty}x[n]z^{-n}$$
 s-plane과 z-plane은 다음과 같은 형태학적 관계를 가지게 된다. 
 
 <p align = "center">
-
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-13_Z_Transform/pic1.png">
+  <br>
+  그림 1. s-plane과 z-plane의 관계. z-plane은 s-plane을 말아 넣은 것 같은 형태를 띄고 있다.
 </p>
+
+그림 1에서 처럼 s-plane에서는 세로축 기준 왼쪽에 pole이 위치해야 stable system이고 z-plane에서는 단위원 기준 안쪽에 pole이 위치하면 stable system이다.
+
+## Z-변환의 쓰임새에 대해서
+
+Z-변환은 이산 시스템의 해석에 사용될 수 있다. 
+
+즉, Laplace Transform이 연속 시간 시스템에 이용되었던 것과 마찬가지로 Z-변환은 이산 시스템의 해석에 사용될 수 있는 것이다. Z-변환에서도 마찬가지로 이산시간 전달함수에서 $z=\exp(j\omega)$를 대입하면 시스템의 주파수 응답을 확인할 수 있다. 예를 들어, $y[n] = 0.5 y[n-1] + x[n] $이라는 AR 시스템에 대하여, Z 변환을 해주게 되면, 
+
+$$Y(z) = 0.5 \times z^{-1} \times Y(z) + X(z)$$
+
+$$\therefore Y(z)(1-0.5\times z^{-1}) = X(z)$$
+
+$$H(z) = \frac{Y(z)}{X(z)} = \frac{1}{1-0.5 \times z^{-1}}$$
+
+이다. 이 때, 주파수 응답을 얻기 위해 $z = \exp(j\omega)$를 대입하면,
+
+$$H(z)|_{z = \exp(j\omega)} = H(e^{j\omega}) = \frac{1}{1-0.5e^{-j\omega}}$$
+
+를 얻게된다.
+
+이를 도시하면,
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-13_Z_Transform/pic2.png">
+  <br>
+  그림 2. Z-변환을 통해 얻은 1차 AR system의 bode plot.
+</p>
+
+와 같게 됨을 확인할 수 있으며, 이것은 lowpass filter의 성질을 갖는 시스템임을 알 수 있다. 
+
