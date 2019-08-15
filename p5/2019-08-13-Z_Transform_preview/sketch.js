@@ -329,23 +329,23 @@ function plotAxes() {
      text('O', -12 / 800 * width, 17 / 800 * width);
      pop();
 
-     // x축에 't' 글자 써주기
+     // x축에 'n' 글자 써주기
      push();
      fill(255);
      translate(width / 2 - 50 / 800 * width, (height - 30 + 80 / 800 * width) / 2);
      textSize(15 / 800 * width);
      textStyle(ITALIC)
-     text('t', 10 / 800 * width, 15 / 800 * width)
+     text('n', 10 / 800 * width, 15 / 800 * width)
      pop();
 
-     // y축에 'x(t)' 글자 써주기
+     // y축에 'x[n]' 글자 써주기
      push();
      fill(255);
      translate(50 / 800 * width, 80 / 800 * width);
      textSize(15 / 800 * width);
      textStyle(ITALIC)
      textAlign(LEFT);
-     text('x(t)', 10 / 800 * width, 15 / 800 * width)
+     text('x[n]', 10 / 800 * width, 15 / 800 * width)
      pop();
 
      // //////////////오른쪽 pannel에 axes 그려주기///////////////////////////
@@ -377,24 +377,24 @@ function plotAxes() {
      text('O', -10 / 800 * width, 20 / 800 * width)
      pop();
 
-     // x 축에 σ 글씨 써주기
+     // x 축에 Real(z) 글씨 써주기
      push();
      translate(width - 20 / 800 * width, (height - 30 + 80 / 800 * width) / 2)
      fill(255)
      textStyle(ITALIC)
      textAlign(RIGHT)
      textSize(15 / 800 * width)
-     text('σ', 0, 20 / 800 * width)
+     text('real(z)', 0, 20 / 800 * width)
      pop();
 
-     // y 축에 ω 글씨 써주기
+     // y 축에 imag(z) 글씨 써주기
      push();
      translate(3 / 4 * width, 80 / 800 * width)
      fill(255)
      textStyle(ITALIC)
      textAlign(LEFT)
      textSize(15 / 800 * width)
-     text('ω', 10 / 800 * width, 20 / 800 * width)
+     text('imag(z)', 10 / 800 * width, 20 / 800 * width)
      pop();
 
 }
