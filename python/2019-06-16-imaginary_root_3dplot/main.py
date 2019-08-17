@@ -64,6 +64,11 @@ data[0]['surfacecolor'] = p
 
 fig['data'] = data;
 
+camera = dict(
+    up=dict(x=0, y=0, z=1),
+    center=dict(x=0, y=0, z=0),
+    eye=dict(x=3, y=2, z=0.1)
+)
 
 fig.update_layout(scene = dict(
                     xaxis_title='real(Z)',
@@ -72,5 +77,8 @@ fig.update_layout(scene = dict(
                     zaxis = dict(nticks=10, range=[0,10])),
                     width=800,
                     margin=dict(r=20, b=10, l=20, t=10))
+
+fig['layout'].update(
+        scene = dict(camera = camera))
 
 fig.write_html('main_figure.html', auto_open = True)
