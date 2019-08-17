@@ -55,11 +55,9 @@ $\lt$ 허수의 존재 의미 $\gt$ 편에서 허수에 대해 짧게 다루었�
 아래는 $f(z)=f(x,y)=z^2+1=(x+iy)^2+1$의 그래프이다.
 
 <p align = "center">
-  <iframe width = "800" src = "https://angeloyeo.github.io/python/2019-06-16-imaginary_root_3dplot/main_figure.html" frameborder = "0"></iframe>
+  <iframe width = "800" height = "900" src = "https://angeloyeo.github.io/python/2019-06-16-imaginary_root_3dplot/main_figure.html" frameborder = "0"></iframe>
 </p>
 빨간 선을 따라간 것이 지금 까지 배운 내용을 바탕으로 실수 축에서만 생각할 수 있는 함수 $y=x^2+1$ 이다. 또한 이렇게 plot을 해두면 $\pm i$에서 근을 가진다는 것을 시각적으로 확인할 수 있다.
-
-
 
 <center>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/DJD-s9jK6Tk" frameborder="0" allowfullscreen></iframe></center>
