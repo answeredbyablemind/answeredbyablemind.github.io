@@ -44,15 +44,17 @@ tags: 딥러닝
 
 이걸 이해하기 위한 연구들은 크게 두 종류로~
 
-// pic 0 here
-// 출처: ICASSP2017 Tutorials on Methods for Interpreting and Understanding Deep Neural Networks
-
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic0_making_neural_network_transparent.png">
+<br>
+그림 0. 뉴럴네트워크의 동작을 이해하기 위한 여러가지 방법들의 분류
+<br>
+출처: ICASSP2017 Tutorials on Methods for Interpreting and Understanding Deep Neural Networks
+</p>
 Layer-wise Relevance Propagation (이하 LRP)는 ~에 속한다.
 
 
-# Layer-wise Relevance Propagation (LRP)
-
-## Goal of LRP
+# Goal of LRP
 
 분해를 통한 설명(explanation by decomposition)을 목표로 한다.
 
@@ -73,11 +75,15 @@ $$f(x) = \sum_{i=1}^{d}R_i$$
 아래 그림 1에서 볼 수 있듯이 heatmap이라고 적힌 그림에 각 pixel들의 기여도(relevance score)를 색깔로 표시해두었으며, 수탉의 부리나 머리등을 보고 해당 입력의 클래스가 '수탉'임을 출력했다는 것을 알 수 있다.
 
 [^1]: 여기서 이 분류기가 수탉이냐 아니냐를 판단하는 binary classifier라면 출력 f(x)는 sigmoid 함수의 출력으로, 다중 클래스 분류기라면 softmax의 출력을 쓸 수 있다.
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic1.png">
+<br>
+그림 1. LRP가 작동하는 방법 및 결과를 요약한 그림
+<br>
+출처: Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017
+</p>
 
-// pic 1 here
-// 출처: Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017 
-
-## The intuition behind it
+# The intuition behind it
 
 LRP(Layer-wise Relevance Propagation)의 이름에서 볼 수 있듯이 이 method는 relevance score를 출력단에서 입력단 방향으로 top-down 방식으로 기여도를 재분배 하는 방법이다.
 
@@ -87,20 +93,34 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 * 기여도는 top-down 방식으로 각 뉴런의 출력단에서 입력단 방향으로 재분배 된다.
 * (재)분배시 기여도는 보존된다.
 
-// pic 2 here
-// 출처: Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic2.png">
+<br>
+그림 2. relevance score의 분배 과정
+<br>
+출처: Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017 
+</p>
 
 재분배시 기여도가 보존된다는 말을 추가 설명 하자면, 예를 들어 그림 1에서와 같이 특정 사진 입력에 대해 '수탉'이라는 분류를 했고 그 출력값(여기서는 확률이라고 할 수 있겠다) $f(x)$가 0.9였다고 하자. 그러면 각 layer의 뉴런들은 0.9라는 출력에 대한 기여도를 모두 조금씩은 갖고 있으며, relevance score를 분배한 후 각 layer에서의 relevance score의 합은 0.9가 되어야 한다는 뜻이다.
 
-## Explanation for neural network?
+# Explanation for neural network?
 
-// pic 3 here
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic3.png">
+<br>
+그림 3. 딥뉴럴네트워크의 예측값(prediction)을 어떻게 분해(decompose)할 것인가?
+</p>
 
-이제 우리가 실질적으로 맞닥뜨리게 되는 문제는 이것이다: **딥 뉴럴 네트워크의 예측값 혹은 출력값($f(x)$)을 수학적으로 어떻게 분해해 '기여도'를 정의할 것인가?**
+이제 우리가 실질적으로 맞닥뜨리게 되는 문제는 이것이다: **딥 뉴럴 네트워크의 예측값 혹은 출력값($f(x)$)을 수학적으로 어떻게 분해하고, 어떻게 '기여도'를 정의할 것인가?**
 
 이 문제에 대한 해결법은 위에서 설명한 "기본적인 가정 및 작동 방식"에 따라 각 뉴런별로 생각하게 되고, 특히 각 뉴런의 출력과 입력의 관계를 이용해 기여도를 수학적으로 정의하고자 한다.
 
-// pic 4 here
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic4.png">
+<br>
+그림 4. 2차원 입력과 1차원 출력을 갖는 뉴런
+</p>
 
 그림 4에서와 같이 입력 2개를 갖는(즉, weight는 2개, bias는 1개) 기본적인 뉴런 하나를 생각해보자.
 
@@ -116,7 +136,7 @@ $$\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}$$
 
 LRP에서는 Taylor Series를 도입한다.
 
-### Taylor Series
+## Taylor Series
 
 임의의 매끄러운 함수 $f(x)$ 및 실수 $a$에 대해 $f(x)$의 Taylor Series는 다음과 같다.
 
@@ -130,7 +150,12 @@ $$f(x) = f(a) + \frac{d}{dx}f(x)\big|_{x=a}(x-a) + \epsilon$$
 
 다변수 함수의 경우에는 Taylor 급수는 다음과 같다.
 
-// pic 5 here
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic5.png">
+<br>
+그림 5. 다변수 함수의 Taylor 급수. 출처: Wikipedia
+</p>
 
 즉, d 차원 input에 대해서는 다음과 같이 first-order Taylor series를 쓸 수 있다.
 
@@ -138,7 +163,7 @@ $$f(\pmb{x}) = f(\pmb{a}) + \sum_{p = 1}^{d}\frac{\partial \pmb{f}}{\partial x_p
 
 위 식에서 우변의 두 번째 term이 의미하는 것이 바로 $x_p$가 변했을 때 $f(x)$는 얼마나 변했는가이다.
 
-### 테일러 급수 수식의 '적절한' 변형
+## 테일러 급수 수식의 '적절한' 변형
 
 식 (6)은 우리에게 꼭 필요한 기능인 "출력을 relevance score로 분해해주는 기능"을 할 수 있게 도와주지만, 불필요한 term이 두 가지 있다. $f(a)$와 $\epsilon$이 그것이다. 
 
@@ -152,7 +177,7 @@ $$ = \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i = a_i}(x_i-a_i)$$
 
 $$ = \sum_{i=1}^{d}R_i$$
 
-### ReLU의 특성을 통해 epsilon = 0임을 확인해보자.
+## ReLU의 특성을 통해 epsilon = 0임을 확인해보자.
 
 그림 4와 같은 입력 2개와 출력 하나를 갖고, 활성화 함수가 ReLU인 뉴런의 작동은 수학적으로 다음과 같이 기술 할 수 있다.
 
@@ -160,8 +185,8 @@ $$f(x) = \max\left(0, \sum_{i=1}^{2}w_i x_i + b\right)$$
 
 
 $$= \begin{cases}
-0  & \text{: case i) when $\sum_{i=1}^{2}w_ix_i + b \leq 0$} \\
-\sum_{i=1}^{2}w_ix_i + b & \text{: case ii) when $\sum_{i=1}^{2}w_ix_i + b > 0$}
+0  & \text{case i) when $\sum_{i=1}^{2}w_ix_i + b \leq 0$} \\
+\sum_{i=1}^{2}w_ix_i + b & \text{case ii) when $\sum_{i=1}^{2}w_ix_i + b > 0$}
 \end{cases}$$
 
 
@@ -181,10 +206,55 @@ $$\frac{\partial f(x)}{\partial x_1}= w_1, \frac{\partial f(x)}{\partial x_2} = 
 
 또, 다음과 같이 2차 이상의 편미분 계수는 모두 0이다.
 
-$$\frac{\partial ^2 f(x)}{\partial x_1 ^2} = 0, \space \frac{\partial^2 f(x)}{\partial x_1 \partial x_2} = 0, \space, \cdots $$
+$$\frac{\partial ^2 f(x)}{\partial x_1 ^2} = 0, \space \frac{\partial^2 f(x)}{\partial x_1 \partial x_2} = 0, \space \cdots $$
 
 따라서, 식 (12)에서 Taylor Series로 씌여진 식에서 $\epsilon=0$임을 알 수 있다.
 
 그러므로, 식 (12)를 다시 쓰면 다음과 같다.
 
 $$f(x) = \sum_{i=1}^{2}w_ix_i+b = f(a) + \sum_{i=1}^{2}w_i(x_i-a_i)$$
+
+## 적절한 a를 찾는 방법
+
+테일러 급수를 이용해 함수를 근사화(approximate) 할 때 근사화를 시작할 점 $x=a$는 어느 위치여도 관계 없이 무한한 항을 다 더해줄 수 만 있다면 정확하게 그 함수를 근사화할 수 있다.
+
+다만 LRP에서는 식 (8)에서 보았듯이 $f(a)=0$이라는 제약조건이 존재하므로, 이 조건을 만족시키는 a를 찾으면 되고 여전히 무수히 많은 $a$가 해당 제약조건을 만족할 수 있다.
+
+이번에 소개할 방법은 참고문헌 (Explaining NonLinear Classification ~)에서 소개하는 $w^2$-rule이다.
+
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic6.png">
+<br>
+그림 6. 하나의 뉴런에서, 두 개의 입력값과 ReLU 통과 후의 출력값(색깔)을 도시한 그림
+</p>
+
+그림 6은 그림 4에서 표현한 뉴런과 같이 두 개의 입력값과 하나의 출력값을 가지는 뉴런의 입출력 관계를 나타내고 있다. 입력 $x_1, x_2$는 우리가 입력한 것이니 알고 있는 값이고, 그 출력값 $f(x_1, x_2) = ReLU(x_1, x_2)$는 뉴럴네트워크 모델에 의해 결정된 값이다. 출력 값은 색깔로 표시되었으며, 흰색에 가까울 수록 0에 가깝고 빨간색에 가까울 수록 그 값이 크다. 실선으로 표시되어 있는 지점은 모든 값이 0인 지점이고, 점선으로 표시되어 있는 지점은 동일한 값을 갖는 등고선이다.
+
+그림 6에서 볼 수 있는 것 처럼 $w^2$-rule이 말하는 적절한 $a$는 출력값이 0 (즉, $f(a) = 0$)이면서 입력 $x = (x_1, x_2)$에 가장 가까운 지점이다.
+
+$w^2$-rule을 따를 때, $a$를 계산하기 위해 다음과 같은 과정을 거칠 수 있다.
+
+일단 그림 6에서 화살표의 의미를 생각해보면 $\vec{a}$와 $\vec{x}$는 다음과 같은 관계를 갖는다.
+
+$$\vec{a} -  \vec{x} = t\vec{w}$$
+
+즉, $\vec{a}$와 $\vec{x}$를 빼준 벡터가 $\vec{w}$의 실수배가 되어야 한다는 점이다.
+
+이 식을 약간 변경하면,
+
+$$\vec{a} = \vec{x} + t\vec{w}$$
+
+가 된다.
+
+또, 우리의 제약 조건($f(a) = 0$)에 따라,
+
+$$f(\vec{a}) = \sum_{i=1}^{2}w_ia_i+b = 0$$
+
+이다. 
+
+즉, 
+
+
+참고문헌
+* Explaining NonLinear Classification Decisions with Deep Taylor Decomposition, Montavon et al., 2015
