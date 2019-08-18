@@ -98,7 +98,7 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 
 이제 우리가 실질적으로 맞닥뜨리게 되는 문제는 이것이다: **딥 뉴럴 네트워크의 예측값 혹은 출력값($f(x)$)을 수학적으로 어떻게 분해해 '기여도'를 정의할 것인가?**
 
-이 문제에 대한 해결법은 위에서 설명한 <기본적인 가정 및 작동 방식>에 따라 각 뉴런별로 생각하게 되고, 특히 각 뉴런의 출력과 입력의 관계를 이용해 기여도를 수학적으로 정의하고자 한다.
+이 문제에 대한 해결법은 위에서 설명한 "기본적인 가정 및 작동 방식"에 따라 각 뉴런별로 생각하게 되고, 특히 각 뉴런의 출력과 입력의 관계를 이용해 기여도를 수학적으로 정의하고자 한다.
 
 // pic 4 here
 
@@ -138,11 +138,53 @@ $$f(\pmb{x}) = f(\pmb{a}) + \sum_{p = 1}^{d}\frac{\partial \pmb{f}}{\partial x_p
 
 위 식에서 우변의 두 번째 term이 의미하는 것이 바로 $x_p$가 변했을 때 $f(x)$는 얼마나 변했는가이다.
 
-### 뉴런의 특성을 이용한 테일러 급수 수식의 '적절한' 변형
+### 테일러 급수 수식의 '적절한' 변형
+
+식 (6)은 우리에게 꼭 필요한 기능인 "출력을 relevance score로 분해해주는 기능"을 할 수 있게 도와주지만, 불필요한 term이 두 가지 있다. $f(a)$와 $\epsilon$이 그것이다. 
+
+$f(a)$는 Taylor series의 특성을 통해 $f(a) = 0$인 $a$를 수학적으로 찾고, 그 지점으로부터 함수를 근사화 함으로써 $0$으로 만들어버릴 수 있다. 또, $\epsilon$은 ReLU 활성화 함수의 특성을 이용해 $0$으로 만들어버릴 수 있다.
+
+만약 그렇게 할 수 있다면 다음과 같이 출력 $f(x)$는 relevance score만으로 분해가능하다.
+
+$$f(x) = f(a) + \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i = a_i}(x_i-a_i) + \epsilon$$
+
+$$ = \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i = a_i}(x_i-a_i)$$
+
+$$ = \sum_{i=1}^{d}R_i$$
+
+### ReLU의 특성을 통해 epsilon = 0임을 확인해보자.
+
+그림 4와 같은 입력 2개와 출력 하나를 갖고, 활성화 함수가 ReLU인 뉴런의 작동은 수학적으로 다음과 같이 기술 할 수 있다.
+
+$$f(x) = \max\left(0, \sum_{i=1}^{2}w_i x_i + b\right)$$
 
 
+$$= \begin{cases}
+0  & \text{: case i) when $\sum_{i=1}^{2}w_ix_i + b \leq 0$} \\
+\sum_{i=1}^{2}w_ix_i + b & \text{: case ii) when $\sum_{i=1}^{2}w_ix_i + b > 0$}
+\end{cases}$$
 
 
+식 (11)에서 볼 수 있듯이 case i)인 경우에는 우리가 더 이상 신경쓸 이유가 없고, case ii)에 대해서 수식 전개를 계속해나가도록 하자.
 
+한편, 식 (10)의 $f(x)$는 식 (7)에서와 같이 $f(x)$는 Taylor 급수로도 나타낼 수 있다. 따라서,
 
+$$f(x) = \sum_{i=1}^{2}w_ix_i + b = f(a) + \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i=a_i}(x_i-a_i) + \epsilon$$
 
+여기서 식 (12)를 잘 보면, $f(x)$는 다음과 같이 쓸 수 있다.
+
+$$f(x) = w_1x_1+w_2x_2+b$$
+
+따라서, $\frac{\partial f}{\partial x_i}$는 다음과 같다.
+
+$$\frac{\partial f(x)}{\partial x_1}= w_1, \frac{\partial f(x)}{\partial x_2} = w_2$$
+
+또, 다음과 같이 2차 이상의 편미분 계수는 모두 0이다.
+
+$$\frac{\partial ^2 f(x)}{\partial x_1 ^2} = 0, \space \frac{\partial^2 f(x)}{\partial x_1 \partial x_2} = 0, \space, \cdots $$
+
+따라서, 식 (12)에서 Taylor Series로 씌여진 식에서 $\epsilon=0$임을 알 수 있다.
+
+그러므로, 식 (12)를 다시 쓰면 다음과 같다.
+
+$$f(x) = \sum_{i=1}^{2}w_ix_i+b = f(a) + \sum_{i=1}^{2}w_i(x_i-a_i)$$
