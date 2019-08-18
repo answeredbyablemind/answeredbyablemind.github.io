@@ -93,3 +93,8 @@ docs-ko:
         url:    2019/08/01/SVD.html
       - title:  행렬식의 기하학적 의미
         url:    2019/08/06/determinant.html
+
+  - title:      딥러닝
+    children:
+      - title:  Layer-wise Relevance Propagation
+        url:    2019/08/17/Layerwise_Relevance_Propagation.html
