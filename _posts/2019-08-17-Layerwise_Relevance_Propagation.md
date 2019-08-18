@@ -25,24 +25,13 @@ tags: 딥러닝
   }
 </style>
 
-# Feature의 중요성
-
-패턴 인식과 기계학습에서 특징을 잘 만들어내는 것이 매우 중요.
-
-딥뉴럴넷에서는 특징까지도 스스로 선별.
-
-그런데, 사람들이 알기 어렵다. 어떤 특성을 보고 어떻게 그러한 결정을 했는지 알아내는 것은 특히 실제 필드에서 적용 시에는 매우 중요한 이슈.
-
-
 # Deep Nerual Network Transparency
 
-뉴럴네트워크는 비선형 회귀모델의 일종으로 생각할 수 있고, 
+뉴럴네트워크는 전통적으로 "Blackbox" 모델로 생각되어 왔다. 필자 생각에는 그 이유는 크게 두 가지로 보인다. 우선은 뉴럴네트워크가 본래부터 비선형 회귀모델이다보니 입력과 출력간의 관계가 선형적이지 못해 어떻게 영향을 주고 받는지 직접적으로 알기 어렵기 때문이다. 또, 최근 들어 딥러닝 기술이 발전하면서 부터는 모델이 스스로 복잡도가 높은 feature에서 분류/회귀에 필요한 feature를 잘 선택할 수 있게되었기 때문이다.
 
-망이 깊어지는 딥 뉴럴 네트워크의 탄생 이후로 feature selection까지 ~~~ 추상화~~ 
+이러한 상황속에서 뉴럴네트워크의 성능은 나날이 좋아져가고, 실제 필드에 적용하려는 시도도 많지만 알고리즘이 어떻게 작동하는지 개발자가 정확히 이해하기 어렵다면 필드에 적용했을 때 안정성을 보장하기 어렵기 때문에 뉴럴네트워크가 어떻게 동작하는지 이해하는 연구는 꼭 필요하다고 할 수 있다.
 
-그래서 뉴럴네트워크는 "Blackbox" 모델로 생각되어 왔다.
-
-이걸 이해하기 위한 연구들은 크게 두 종류로~
+뉴럴네트워크의 동작을 이해하기 위한 연구들은 크게 두 종류로 나눌 수 있다. 첫 번째는 모델 자체를 해석하는 방법이고, 두 번째는 '왜 그런 결정을 내렸는지' 파악하는 방법이다.
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic0_making_neural_network_transparent.png">
@@ -51,12 +40,12 @@ tags: 딥러닝
 <br>
 출처: ICASSP2017 Tutorials on Methods for Interpreting and Understanding Deep Neural Networks
 </p>
-Layer-wise Relevance Propagation (이하 LRP)는 ~에 속한다.
 
+이번 글에서 알아보고자하는 Layer-wise Relevance Propagation (이하 LRP)는 두 번째인 '왜 그런 결정을 내렸는지' 파악하는 방법에 속하며, 그 중에서도 decomposition을 이용한 방법이다.
 
 # Goal of LRP
 
-분해를 통한 설명(explanation by decomposition)을 목표로 한다.
+LRP는 분해를 통한 설명(explanation by decomposition)을 통해 뉴럴네트워크의 결과물을 이해할 수 있게 도와주는 방법이다.
 
 좀더 상세하게는, 훈련된 뉴럴넷 모델에서 임의의 샘플 $x = (x_1, x_2, \cdots, x_i, \cdots, x_d)$에 대하여 이 뉴럴넷 모델은 $f(x)$라는 출력을 얻는다고 하면,
 
@@ -152,7 +141,7 @@ $$f(x) = f(a) + \frac{d}{dx}f(x)\big|_{x=a}(x-a) + \epsilon$$
 
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic5.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic5.png">
 <br>
 그림 5. 다변수 함수의 Taylor 급수. 출처: Wikipedia
 </p>
@@ -249,12 +238,53 @@ $$\vec{a} = \vec{x} + t\vec{w}$$
 
 또, 우리의 제약 조건($f(a) = 0$)에 따라,
 
-$$f(\vec{a}) = \sum_{i=1}^{2}w_ia_i+b = 0$$
+$$f(\vec{a}) = \sum_{i=1}w_ia_i+b = 0$$
 
 이다. 
 
-즉, 
+식 (19)에 식 (18)을 대입하면,
 
+$$f(\vec{a}) = \sum_{i=1} w_i(x_i+tw_i) + b = 0$$
 
-참고문헌
+$$= \sum_{i=1}w_ix_i + t\sum_{i}w_i^2 + b = 0$$
+
+$$\therefore t = - \frac{\sum_i w_ix_i + b}{\sum_i w_i^2}$$
+
+식 (22)를 식 (18)에 다시 대입하면,
+
+$$a_i = x_i - \left(
+  \frac{\sum_iw_ix_i + b}{\sum_iw_i^2}
+  \right)w_i$$
+
+식 (23)을 이용하면 $f(x)$를 다음과 같이 쓸 수 있다.
+
+$$f(x) = 0 + \sum_i w_i\left(\frac{\sum_iw_ix_i + b}{\sum_i w_i^2}\right)w_i + 0 $$
+
+$$=\sum_i\left(\frac{\sum_iw_ix_i + b}{\sum_i w_i^2}\right)w_i^2 = \sum_iR_i$$
+
+참고로, $w^2$-rule 외에도 $z$-rule, $z^+$-rule 등 여러가지 Rule이 있으니, 이것은 참고문헌 (Explaining NonLinear ~)를 참고하도록 하자.
+
+## Relevance Propagation Rule 정리
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic7.png">
+<br>
+그림 7. Forward Pass, Relevance Propagation을 한 그림에 모두 표시한 것.
+</p>
+
+지금까지 정리한 내용에 따르면 적절한 $a$를 찾음으로써, 하나의 뉴런의 출력 $f(x)$는 다음과 같이 분해될 수 있다는 것을 알 수 있었다.
+
+$$f(x) = \sum_i R_i$$
+
+ 지금까지 하나의 뉴런에 대해 알아온 내용을 그림 7에서처럼 전체 뉴럴 네트워크에 적용시키고자 한다면 다음과 같은 과정을 통해 진행할 수 있다.
+
+그림 7의 상단에서 처럼 특정 입력 ${x_p}$에 대한 뉴럴네트워크의 최종 출력이 $x_f$라고 하자 (forward pass).
+
+그런 다음 출력단의 뉴런이 가지는 relevance score $R_f$를 $x_f$와 같게 둔 다음 그 전 layer들로 propagation을 시킨다고 하자.
+
+즉, $f(x) = \sum_i R_i$에서 처럼 $R_f = \sum_i R_i$로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
+
+# 참고문헌
 * Explaining NonLinear Classification Decisions with Deep Taylor Decomposition, Montavon et al., 2015
+* Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017
+* ICASSP2017 Tutorials on Methods for Interpreting and Understanding Deep Neural Networks
