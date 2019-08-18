@@ -23,7 +23,7 @@ for i in range(x.shape[0]):
     for j in range(y.shape[0]):
         f[j,i] = np.sqrt(
                 (x[i]**2 - y[j] **2 + 1) ** 2 + (2 * x[i] * y[j]) **2
-                );
+                )
 
 for i in range(x.shape[0]):
     for j in range(y.shape[0]):
@@ -62,7 +62,7 @@ data = fig['data']
 
 data[0]['surfacecolor'] = p
 
-fig['data'] = data;
+fig['data'] = data
 
 camera = dict(
     up=dict(x=0, y=0, z=1),
