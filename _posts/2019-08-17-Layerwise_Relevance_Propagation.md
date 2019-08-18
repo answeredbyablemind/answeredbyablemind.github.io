@@ -134,9 +134,9 @@ $$f(x) = f(a) + \frac{d}{dx}f(x)\big|_{x=a}(x-a) + \epsilon$$
 
 즉, d 차원 input에 대해서는 다음과 같이 first-order Taylor series를 쓸 수 있다.
 
-$$f(\pmb{x}) = f(\pmb{a}) + \sum_{p = 1}^{d}\frac{\partial \pmb{f}}{\partial x_p}\big|_{x=a}(\pmb{x} - \pmb{a}) + \epsilon$$
+$$f(\pmb{x}) = f(\pmb{a}) + \sum_{p = 1}^{d}\frac{\partial \pmb{f}}{\partial x_p}\big|_{\pmb{x}=\pmb{a}}(\pmb{x} - \pmb{a}) + \epsilon$$
 
-위 식에서 $\frac{\partial f}{\partial x_p}|_{x=a}(x-a)$가 의미하는 것이 바로 $x_p$가 변했을 때 $f(x)$는 얼마나 변했는가이다.
+위 식에서 우변의 두 번째 term이 의미하는 것이 바로 $x_p$가 변했을 때 $f(x)$는 얼마나 변했는가이다.
 
 ### 뉴런의 특성을 이용한 테일러 급수 수식의 '적절한' 변형
 
