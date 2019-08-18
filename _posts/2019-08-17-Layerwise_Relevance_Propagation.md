@@ -27,7 +27,7 @@ tags: 딥러닝
 
 # Deep Nerual Network Transparency
 
-뉴럴네트워크는 전통적으로 "Blackbox" 모델로 생각되어 왔다. 필자 생각에는 그 이유는 크게 두 가지로 보인다. 우선은 뉴럴네트워크가 본래부터 비선형 회귀모델이다보니 입력과 출력간의 관계가 선형적이지 못해 어떻게 영향을 주고 받는지 직접적으로 알기 어렵기 때문이다. 또, 최근 들어 딥러닝 기술이 발전하면서 부터는 모델이 스스로 복잡도가 높은 feature에서 분류/회귀에 필요한 feature를 잘 선택할 수 있게되었기 때문이다.
+뉴럴네트워크는 전통적으로 "Blackbox" 모델로 생각되어 왔다. 필자 생각에는 그 이유는 크게 두 가지로 보인다. 우선은 뉴럴네트워크가 본래부터 비선형 회귀모델이다보니 입력과 출력간의 관계가 선형적이지 못해 입력이 출력에 어떻게 영향을 주는지 직접적으로 알기 어렵기 때문이다. 또, 최근 들어 딥러닝 기술이 발전하면서 부터는 모델이 스스로 복잡도가 높은 feature에서 분류/회귀에 필요한 feature를 잘 선택할 수 있게되었기 때문에 개발자가 직접 feature를 생성하지 않아도 되었기 때문이다.
 
 이러한 상황속에서 뉴럴네트워크의 성능은 나날이 좋아져가고, 실제 필드에 적용하려는 시도도 많지만 알고리즘이 어떻게 작동하는지 개발자가 정확히 이해하기 어렵다면 필드에 적용했을 때 안정성을 보장하기 어렵기 때문에 뉴럴네트워크가 어떻게 동작하는지 이해하는 연구는 꼭 필요하다고 할 수 있다.
 
@@ -41,7 +41,7 @@ tags: 딥러닝
 출처: ICASSP2017 Tutorials on Methods for Interpreting and Understanding Deep Neural Networks
 </p>
 
-이번 글에서 알아보고자하는 Layer-wise Relevance Propagation (이하 LRP)는 두 번째인 '왜 그런 결정을 내렸는지' 파악하는 방법에 속하며, 그 중에서도 decomposition을 이용한 방법이다.
+이번 글에서 알아보고자하는 **Layer-wise Relevance Propagation (이하 LRP)**는 두 번째 종류인 '왜 그런 결정을 내렸는지' 파악하는 방법에 속하며, 그 중에서도 decomposition을 이용한 방법이다.
 
 # Goal of LRP
 
@@ -97,7 +97,7 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic3.png">
 <br>
-그림 3. 딥뉴럴네트워크의 예측값(prediction)을 어떻게 분해(decompose)할 것인가?
+그림 3. 딥뉴럴네트워크의 예측값(prediction)을 잘 분해하기 위해 네트워크 상의 하나 하나의 뉴런 별로 출력값을 분해해볼 수 있다.
 </p>
 
 이제 우리가 실질적으로 맞닥뜨리게 되는 문제는 이것이다: **딥 뉴럴 네트워크의 예측값 혹은 출력값($f(x)$)을 수학적으로 어떻게 분해하고, 어떻게 '기여도'를 정의할 것인가?**
