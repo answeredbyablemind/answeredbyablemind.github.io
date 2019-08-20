@@ -38,7 +38,7 @@ tags: 선형대수
 
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic1.png">
   <br>
   그림 1. 산점도의 예시 plot. 수학 점수와 영어 점수 간의 양의 상관 관계가 보인다.
 </p>
@@ -77,7 +77,7 @@ $$\vec{a}\cdot\vec{b} = \sum_{i=1}^{n}a_ib_i = (2\times 3)+(3\times 0) =6$$
 
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic2.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic2.png">
   <br>
   그림 2. a = (2,3), b= (3,0)의 두 벡터를 2차원 평면상에 도시한 것
 </p>
@@ -99,7 +99,7 @@ $$\vec{a}\cdot\vec{b} = |\vec{a}|\cos(\theta)\times|\vec{b}|$$
   라고 말이다.
   <br><br>
 
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic3.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic3.png">
   <br>
   그림 3. 벡터 a에서 벡터 b로 향하는 정사영
 </p>
@@ -125,7 +125,7 @@ $$prok_ab = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}$$
 <p align = "center">
 <b>"$\vec{b}$의 변화를 $\vec{a}$가 얼마만큼 설명해줄 수 있는가?”</b><br><br>
 
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic4.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic4.png">
   <br>
   그림 4. 벡터 b에서 벡터 a로 향하는 정사영
 </p>
@@ -133,13 +133,21 @@ $$prok_ab = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}$$
 
 종합하자면 다음과 같이 설명할 수 있을 것이다.
 
-① $\vec{a}$와 $\vec{b}$의 관계를 알고싶다. $\rightarrow \vec{a}\cdot\vec{b}$
+① $\vec{a}$와 $\vec{b}$의 관계를 알고싶다. 
 
-② $\vec{a}$가 $\vec{b}$를 설명하는 정도를 파악하려면? $\rightarrow$ $\times \frac{1}{|\vec{a}|}$
+$$\Rightarrow \vec{a}\cdot\vec{b}$$
 
-③ $\vec{b}$가 $\vec{a}$를 설명하는 정도를 파악하려면? $\rightarrow$ $\times \frac{1}{|\vec{b}|}$
+② $\vec{a}$가 $\vec{b}$를 설명하는 정도를 파악하려면? 
 
-따라서 $\vec{a}$와 $\vec{b}$가 서로를 설명하려면  $\rightarrow \times \frac{1}{|\vec{a}|} \times \frac{1}{|\vec{b}|}$
+$$\Rightarrow \times \frac{1}{|\vec{a}|}$$
+
+③ $\vec{b}$가 $\vec{a}$를 설명하는 정도를 파악하려면? 
+
+$$\Rightarrow \times \frac{1}{|\vec{b}|}$$
+
+따라서 $\vec{a}$와 $\vec{b}$가 서로를 설명하려면
+
+$$\rightarrow \times \frac{1}{|\vec{a}|} \times \frac{1}{|\vec{b}|}$$
 
 그러니까 $\vec{a}$와 $\vec{b}$가 서로를 설명하는 양은
 
@@ -171,7 +179,7 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
 
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq1.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq1.png">
 </p>
 
 여기서 $\vec{a}=x_i-\bar{X}$, $\vec{b}=y_i-\bar{Y}$라 하자.
@@ -179,7 +187,7 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
 그러면 위 식은 다음과 같이 쓸 수 있다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq2.png">
+  <img width = "200" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq2.png">
 </p>
 
 
