@@ -179,7 +179,7 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
 
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq1.png">
 </p>
 
 여기서 $\vec{a}=x_i-\bar{X}$, $\vec{b}=y_i-\bar{Y}$라 하자.
@@ -187,13 +187,11 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
 그러면 위 식은 다음과 같이 쓸 수 있다.
 
 <p align = "center">
-  <img width = "200" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq2.png">
+  <img width = "250" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq2.png">
 </p>
 
 
 다시 말하면 상관 계수 $r$은
-
-<p align = "center">
 
 _**"$\vec{a}$와 $\vec{b}$의 관계에 대해 서로가 얼마나 서로를 설명하는가?"**_
 
@@ -205,8 +203,6 @@ _**"$x_i-\bar{X}$와 $y_i-\bar{Y}$의 관계에 대해 서로가 얼마나 서�
 
 
 <p align = "center">
-<b>"$\vec{b}$의 변화를 $\vec{a}$가 얼마만큼 설명해줄 수 있는가?”</b><br><br>
-
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic5.png">
   <br>
 그림 5. 왼쪽 그림에서는 산점도의 중심이 (3,2)이지만 상관 관계는 데이터 셋이 원점으로부터 얼마나 떨어져있는지 관계없는 양이다. 따라서 오른쪽 그림처럼 상관 관계의 식으로부터 원점으로만큼 떨어진 정도를 무시할 수 있게 한다.
