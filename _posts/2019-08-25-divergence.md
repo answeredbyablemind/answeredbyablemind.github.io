@@ -20,78 +20,93 @@ Divergence와 Curl은 벡터장에서 적용되는 연산자인데 우선 벡터
 
 매우 작은 공간 안에서 벡터장이 퍼져 나오는지를 확인해보기 전에 조금 더 macro 스케일에서 벡터장이 나오는지 모여서 없어지는 지를 한번 확인해보자.
 
-
-![](https://wikidocs.net/images/page/6999/noname01.png)
-
+<p align = "center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname01.png">
+<br>
 그림 1. xy 평면에서 모이기도 하고 나오기도 하는 점이 있는 벡터장
+</p>
 
 위와 같이 xy 평면상에 벡터장이 있다고 생각해보자. 얼핏 보기에 (2,2), (2,8), (8,2), (8,8)에서 벡터장이 모여서 사라지거나 퍼져 나오는 점이 있다는 것을 알 수 있을 것이다. 
 
 그렇다면 macro level에서는 임의의 점 에서 발산량을 확인하려면 어떤식으로 생각해야 할까? 일반적으로는 아래와 같이 생각할 수 있을 것이다.
 
-<center>![](https://wikidocs.net/images/page/6999/noname02.png)</center>
 
+<p align = "center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname02.png">
+<br>
 그림 2 macro level에서 생각한 발산량을 생각하는 방법
+</p>
 
- 그런데 이렇게 발산량을 정의하려면 생각해야 할 문제가 있다. 
+그런데 이렇게 발산량을 정의하려면 생각해야 할 문제가 있다. 
 
 가장 큰 문제는 실제로는 그림 2에 표현된 화살표는 벡터장 내의 벡터를 몇 개 샘플링해서 보여준 것이고 실제로는 매우 빽빽하게 많은 벡터들이 ‘꽤 작은 영역’으로 들어오거나 나가기 때문이다. 
 
 그렇기 때문에 발산량을 생각할 때는 미소 영역에서 벡터의 발산량을 생각해주어야 한다. 
 
-<center>![](https://wikidocs.net/images/page/6999/noname03.png)</center>
-
+<p align = "center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname03.png">
+<br>
 그림 3 미소 영역에서 확인할 수 있는 벡터장의 발산량
+</p>
+
 
  미소 영역에서만 벡터장의 유입, 유출량의 차이만을 생각하게 되면 두 방향으로부터만 들어오거나 나가는 벡터만 생각해줄 수 있다. 극한의 영역이기 때문이다. 
 
 그렇다면 이 미소 영역에서의 벡터 발산량은 어떻게 확인할 수 있을까? 
 
-그것은 (유출량 – 유입량)이다. 물론 x축에서의 발산량과 y축에서의 발산량을 합쳐야 한다.
+그것은 (유출량 – 유입량)이다. 물론 $x$축에서의 발산량과 $y$축에서의 발산량을 합쳐야 한다.
 
 그렇다면 벡터 함수 $f(x,y)$를 $f(x,y)=P(x,y)\hat{i}+Q(x,y)\hat{j}$로 정의했을 때, 미소 영역에서의 발산량은 다음과 같이 정의될 것이다.
 
-<center>미소 영역의 발산량 = x 성분 방향의 발산량 + y 성분 방향의 발산량 ![](https://wikidocs.net/images/page/6999/20161107_224803.png)</center>
+미소 영역의 발산량 = $x$ 성분 방향의 발산량 + $y$ 성분 방향의 발산량
 
-<center>![](https://wikidocs.net/images/page/6999/20161107_224849.png)</center>
+$$= \lim_{\Delta x\rightarrow 0}\lim_{\Delta y\rightarrow 0}
+\left\{
+  \frac{P(x+\Delta x, y+\frac{1}{2}\Delta y) - P(x, y+\frac{1}{2}\Delta y)}{\Delta x}
++ \frac{Q(x+\frac{1}{2}\Delta x, y+\Delta y) - Q(x+\frac{1}{2}\Delta x, y)}{\Delta y}
+
+  \right\}
+$$
 
 $\Delta x$와 $\Delta y$로 나눠주는 것은 해당 미소 영역의 너비와 높이에 맞게 정규화 시켜준 것이라고 생각해도 될 것 같다.
 
 그렇다면 이 미소 영역의 발산량은 편미분의 정의를 통해 다음과 같이 나타낼 수 있다.
 
-<center> 미소 영역의 발산량 = <img src="http://bit.ly/2f9z7ci"></center>
+
+$$\text{미소 영역의 발산량} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}$$
 
 한편, 스칼라 필드와 Gradient편을 보았다면 Del 연산자를 보았을 텐데, 복습하는 차원에서 한 번 더 적어보자면 스칼라 함수 (또는 필드) 의 gradient는 다음과 같이 적었다.
 
-<center><img src="http://bit.ly/2fvFxkk"></center>
+$$gradient(f) = \nabla f=\frac{\partial}{\partial x}f(x,y)\hat{i} + \frac{\partial}{\partial y}f(x,y)\hat{j}$$
 
 여기서 $\nabla$연산자만 다음과 같이 떼서 생각해볼 수 있다.
 
-<center><img src="http://bit.ly/2fvB5lR"></center>
+$$\nabla = \frac{\partial}{\partial x}\hat{i} +\frac{\partial}{\partial y}\hat{j}$$
 
 벡터의 divergence(발산)는 내가 생각하는 정의에 따르면 벡터장이 향하는 방향으로의 변화량을 확인하는 것이기 때문에 $\nabla$과 벡터장 $f(x,y)$를 내적함으로써 얻는 다고도 생각할 수 있을 것 같다. 
 
 벡터장 $f(x,y)$를 $P(x,y)\hat{i}+Q(x,y)\hat{j}$라 하자. 벡터장 $f$의 divergence는 다음과 같이 계산할 수 있다.
 
-<center><img src="http://bit.ly/2f9zi78"></center>
+$$\nabla \cdot f = \left(\frac{\partial }{\partial x}\hat{i} + \frac{\partial }{\partial y}\hat{j}\right)\cdot\left(P(x,y)\hat{i} + Q(x,y)\hat{j}\right) = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}$$
 
 이것은 앞에서 구한 미소 영역의 발산량과 동일하다.
 
 한 가지만 덧붙이자면 발산(divergence)은 벡터장에 적용해서 임의의 점 $(x,y)$에서 스칼라 값을 얻게 된다. 
 
-
-
-# 2. Divergence의 예시
+# Divergence의 예시
 
 이제, 예를 들어 보기 위해 다음과 같은 벡터장을 생각해보자.
 
-<center><img src="http://bit.ly/2f9xwDb"></center>
+$$f(x,y) = 2x\hat{i} + (0)\hat{j}$$
 
 그러니까 x 축에서 값이 양수로 갈수록 벡터의 크기는 커지는데 방향은 여전히 오른쪽을 향하게 되는 벡터장이다. MATLAB으로 그리면 다음과 같다.
 
-<center>![](https://wikidocs.net/images/page/6999/noname04.png)</center>
 
+<p align = "center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname04.png">
+<br>
 그림 4 벡터장 $f(x,y)=2x\hat{i}$를 표시한 그림
+</p>
 
 그렇다면 이러한 벡터장에서 divergence는 무엇을 의미할까? 우선 divergence를 구해보면
 
