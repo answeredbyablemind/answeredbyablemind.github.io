@@ -110,13 +110,14 @@ $$f(x,y) = 2x\hat{i} + (0)\hat{j}$$
 
 그렇다면 이러한 벡터장에서 divergence는 무엇을 의미할까? 우선 divergence를 구해보면
 
-<center><img src="http://bit.ly/2fvITDT"></center>
+$$\nabla \cdot f = \frac{\partial (2x)}{\partial x} + \frac{\partial(0)}{\partial y} = 2$$
 
 $xy$ 평면 상의 어떤 점이든지 상관없이 이 벡터장의 divergence는 항상 2이다. 이것이 의미하는 바는 무엇일까?
 
-<center>![](https://wikidocs.net/images/page/6999/noname05.png)</center>
-
-그림 5  벡터장 위에 임의의 구역을 설정해보자. 빨간색으로 임의의 구역을 표시했다. 임의의 구역 내에 들어가고 나오는 벡터들의 net sum(순(純) 합)은 어떻게 되는가?
+<p align = "center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname05.png">
+<br>
+그림 5  벡터장 위에 임의의 구역을 설정해보자. 빨간색으로 임의의 구역을 표시했다. 임의의 구역 내에 들어가고 나오는 벡터들의 net sum(순(純) 합)은 어떻게 되는가?</p>
 
 그림 5를 보도록 하자. 같은 벡터장 $f(x,y)=2x\hat{i}$를 그린 것인데 그 위에 임의의 영역을 빨간색 동그라미로 그려보았다. 이 동그라미 안에 들어가고 나오는 벡터들이 있다는 것을 알 수 있을 것이다. 
 
@@ -132,11 +133,11 @@ $xy$ 평면 상의 어떤 점이든지 상관없이 이 벡터장의 divergence�
 
 그림 1의 벡터장은 다음과 같은 벡터 함수이다.
 
-<center><img src="http://bit.ly/2fvBUef"></center>
+$$f(x,y) = (x-2)(x-8)\hat{i} + (y-2)(y-8)\hat{j}$$
 
 divergence를 구해보면
 
-<center><img src="http://bit.ly/2fvDXyP"></center>
+$$\nabla \cdot f = 2x-10+2y-10 = 2x+2y-20$$
 
 가 된다.
 
@@ -144,10 +145,14 @@ divergence를 구해보면
 
 MATLAB으로 확인해보면 다음과 같다. 계산한 값과 정확히 일치하는 결과를 확인할 수 있다.
 
-<center>![](https://wikidocs.net/images/page/6999/noname06.png)</center>
 
-그림 6 $f(x)=(x-2)(x-8)\hat{i}+(y-2)(y-8)\hat{j}$ 의 divergence를 확인한 plot. y=-x+10을 중심으로 그 위는 양의 divergence, 그 아래로는 음의 divergence 값을 가진다.
+<p align = "center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname06.png">
+<br>
+그림 6 $f(x)=(x-2)(x-8)\hat{i}+(y-2)(y-8)\hat{j}$ 의 divergence를 확인한 plot. y=-x+10을 중심으로 그 위는 양의 divergence, 그 아래로는 음의 divergence 값을 가진다.</p>
 
-※ MATLAB 코드는 요청하면 드리겠습니다. 
+※ MATLAB 코드는 공돌이의 수학정리노트 Github Repo에서 받으실 수 있습니다.
+
+$\Rightarrow$ [공돌이의 수학정리노트 Github Repo](https://github.com/angeloyeo/gongdols/tree/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99/%EB%B2%A1%ED%84%B0%EC%9E%A5%EC%9D%98%20%EB%B0%9C%EC%82%B0%20(divergence))
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/re5U2tUsu18" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
