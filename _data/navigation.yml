@@ -96,6 +96,11 @@ docs-ko:
       - title:  상관계수는 벡터의 내적이다
         url:    2019/08/20/correlation_and_inner_product.html
 
+  - title:      다변수함수 미적분
+    children:
+      - title:  스칼라장의 기울기(gradient)
+        url:    2019/08/25/gradient.html
+
   - title:      딥러닝
     children:
       - title:  Layer-wise Relevance Propagation
