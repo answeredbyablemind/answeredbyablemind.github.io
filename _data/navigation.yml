@@ -102,6 +102,8 @@ docs-ko:
         url:    2019/08/25/gradient.html
       - title:  벡터장의 발산(divergence)
         url:    2019/08/25/divergence.html
+      - title:  벡터장의 회전(curl)
+        url:    2019/08/25/curl.html
 
 
 
