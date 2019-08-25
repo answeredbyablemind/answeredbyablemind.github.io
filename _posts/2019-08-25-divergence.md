@@ -32,7 +32,7 @@ Divergence와 Curl은 벡터장에서 적용되는 연산자인데 우선 벡터
 
 
 <p align = "center">
-<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname02.png">
+<img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname02.png">
 <br>
 그림 2 macro level에서 생각한 발산량을 생각하는 방법
 </p>
@@ -149,7 +149,7 @@ MATLAB으로 확인해보면 다음과 같다. 계산한 값과 정확히 일치
 <p align = "center">
 <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2910-08-25_divergence/noname06.png">
 <br>
-그림 6 $f(x)=(x-2)(x-8)\hat{i}+(y-2)(y-8)\hat{j}$ 의 divergence를 확인한 plot. y=-x+10을 중심으로 그 위는 양의 divergence, 그 아래로는 음의 divergence 값을 가진다.</p>
+그림 6 $f(x)=(x-2)(x-8)\hat{i}+(y-2)(y-8)\hat{j}$ 의 divergence를 확인한 plot. $y=-x+10$을 중심으로 그 위는 양의 divergence, 그 아래로는 음의 divergence 값을 가진다.</p>
 
 ※ MATLAB 코드는 공돌이의 수학정리노트 Github Repo에서 받으실 수 있습니다.
 
