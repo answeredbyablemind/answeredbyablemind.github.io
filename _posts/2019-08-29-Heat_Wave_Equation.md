@@ -7,7 +7,23 @@ aside:
 key: 20190829
 tags: 다변수미적분
 ---
+<style>
+  @media screen and (max-width:500px){
+    iframe {
+        width: 100px; 
+        height: 89vw;
+        background:white;  
+    }
+  }
 
+  @media screen and (min-width:500px){
+    iframe {
+        width: 80vw; 
+        height: 71vw;
+        background:white;  
+    }
+  }
+</style>
 # 열방정식 (heat equation)
 
 위키피디아에 따르면 열 방정식(heat equation)은 열 따위의 성질이 시간에 따라 전도되는 과정을 나타내는 2차 편미분 방정식이라고 한다.
@@ -23,7 +39,8 @@ tags: 다변수미적분
 열방정식에 대해 이해하기 위해 아래의 그림 1과 같이 쇠막대기를 어느정도 달궈뒀다고 생각해보자.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic1_steel_rod.png">
+  <img width = "600" 
+  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic1_steel_rod.png">
   <br>
   그림 1. 쇠막대기의 중간 지점을 어느정도 시간동안 불로 지져뒀다고 생각해보자.
 </p>
@@ -132,7 +149,7 @@ $$u_t = k u_{xx}$$
 
 아래의 애플릿은 쇠막대기의 온도 변화 $u(x, t)$를 3차원 공간 상에 도시한 것이다.
 
-<iframe width="900" height="800" frameborder="0" src="//plot.ly/~angeloyeo/8.embed"></iframe>
+<iframe frameborder="0" src="//plot.ly/~angeloyeo/8.embed"></iframe>
 
 위 애플릿에서는 x 축이 시간, y 축이 쇠막대기에서의 위치, z 축이 온도값을 나타낸다.
 
