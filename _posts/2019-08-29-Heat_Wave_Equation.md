@@ -23,7 +23,7 @@ tags: 다변수미적분
 열방정식에 대해 이해하기 위해 아래의 그림 1과 같이 쇠막대기를 어느정도 달궈뒀다고 생각해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic1_steel_rod.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic1_steel_rod.png">
   <br>
   그림 1. 쇠막대기의 중간 지점을 어느정도 시간동안 불로 지져뒀다고 생각해보자.
 </p>
@@ -33,7 +33,7 @@ tags: 다변수미적분
 [^1]: 물리학적으로 정확히는 '열(heat)'이지만 설명의 편의를 위해 '온도'로 서술하고자 한다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic2_u_x.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic2_u_x.png">
   <br>
   그림 2. 쇠막대기의 길이에 따른 온도의 분포를 나타낸 것.
 </p>
@@ -45,7 +45,7 @@ tags: 다변수미적분
 기본적으로는 온도가 높은 곳은 온도가 떨어질 것이고, 온도가 낮은 곳은 온도가 올라간다고 생각할 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic3_as_time.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic3_as_time.png">
   <br>
   그림 3. 시간이 지나게 되면서 생길 변화. 빨간색 화살표는 온도가 오르는 것을, 파란색 화살표는 온도가 내려가는 것을 나타냄.
 </p>
@@ -56,7 +56,7 @@ tags: 다변수미적분
 
 이러한 잘 표현해보자면 가장 중요한 포인트는 다음과 같다.
 
-* 주변 공간과의 상대적인 온도의 차이로 인해 온도가 변하게 된다.
+**주변 공간과의 상대적인 온도의 차이로 인해 온도가 변하게 된다.**
 
 **즉, 주변 온도가 높으면 온도는 올라가게 되고, 주변 온도가 낮으면 온도는 낮아진다.**
 
@@ -71,7 +71,7 @@ tags: 다변수미적분
 고등학교 시시절 변곡점(point of inflection)이라는 용어를 들어본 적이 있을 것이다. 변곡점은 2차 미분계수가 0이 되는 지점으로, 위로 볼록인 상태에서 아래로 오목인 상태로 변하거나 반대로 상태가 변하는 그 시점을 말한다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic4_inflection.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic4_inflection.png">
   <br>
   그림 4. 변곡점은 볼록>오목 혹은 오목>볼록으로 변하는 시점을 의미한다
 </p>
@@ -125,7 +125,7 @@ $$u_t = k u_{xx}$$
 볼록/오목한 정도가 심할 수록 온도가 빨리 변하는 것을 확인할 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic5_candle_example.gif">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic5_candle_example.gif">
   <br>
   그림 5. 쇠막대기의 온도 변화를 시뮬레이션 한 것
 </p>
