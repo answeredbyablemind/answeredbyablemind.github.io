@@ -132,7 +132,7 @@ $$u_t = k u_{xx}$$
 
 아래의 애플릿은 쇠막대기의 온도 변화 $u(x, t)$를 3차원 공간 상에 도시한 것이다.
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~angeloyeo/8.embed"></iframe>
+<iframe width="900" height="800" frameborder="0" src="//plot.ly/~angeloyeo/8.embed"></iframe>
 
 위 애플릿에서는 x 축이 시간, y 축이 쇠막대기에서의 위치, z 축이 온도값을 나타낸다.
 
