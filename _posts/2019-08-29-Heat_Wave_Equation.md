@@ -11,15 +11,15 @@ tags: 다변수미적분
   @media screen and (max-width:500px){
     iframe {
         width: 100vw; 
-        height: 89vw;
+        height: 110vw;
         background:white;  
     }
   }
 
   @media screen and (min-width:500px){
     iframe {
-        width: 80vw; 
-        height: 71vw;
+        width: 60vw; 
+        height: 53vw;
         background:white;  
     }
   }
