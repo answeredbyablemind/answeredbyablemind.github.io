@@ -10,7 +10,7 @@ tags: 다변수미적분
 <style>
   @media screen and (max-width:500px){
     iframe {
-        width: 100px; 
+        width: 100vw; 
         height: 89vw;
         background:white;  
     }
