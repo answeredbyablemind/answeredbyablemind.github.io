@@ -106,6 +106,8 @@ docs-ko:
         url:    2019/08/25/curl.html
       - title:  스칼라장의 라플라시안(laplacian)
         url:    2019/08/28/laplacian.html
+      - title:  열방정식/파동방정식의 의미
+        url:    2019/08/29/Heat_Wave_Equation.html
 
 
 
