@@ -199,15 +199,36 @@ $$u_tt = c^2 u_xx$$
   출처: Meaning of Vector Wave Equation, StackExchange
 </p>
 
-## MATAB 시뮬레이션: 1차원 공간 상의 파동
+## 시뮬레이션: 1차원 공간 상의 파동
 
 파동방정식의 함수 역시 열방정식의 함수처럼 2차원 입력을 갖는 함수로 생각할 수 있다.
 
 즉, 시간과 공간(여기서는 로프를 따라가는 x축)에 대한 함수로 나타낼 수 있으며, 
 
-그림 7과 같은 파동의 움직임은 아래와 같이 3차원 공간에서 표현할 수 있다.
+그림 7과 같은 파동의 움직임은 아래와 같이 3차원 공간에서 표현할 수 있다. (MATLAB 시뮬레이션은 그림 7과 같게 만들어서 생략)
 
 <iframe frameborder="0" src="https://angeloyeo.github.io/pics/2019-08-29_Heat_Wave_Equation/applet2.html"></iframe>
 
+위 애플릿에서 x축은 로프의 길이, y축이 시간, z축이 로프의 높이를 나타낸다.
 
-## MATAB 시뮬레이션: 2차원 공간 상의 물결파
+## 시뮬레이션: 2차원 공간 상의 물결파
+
+아래의 MATLAB 시뮬레이션은 2차원 공간에서의 물결파를 시뮬레이션 해본 것이다.
+
+가정한 상황은 중앙 지점에서 wave의 source가 주기적으로 나온다는 것이고, 주변으로 어떻게 wave가 퍼지는지를 확인해본 것이다.
+
+또, 이 공간은 벽으로 막혀있어서 wave가 반사되어 돌아오게 된다고 boundary condition을 설정했다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic8_wave_equation_2d.gif">
+  <br>
+  그림 8. 2차원 공간 상에서의 파동 시뮬레이션
+</p>
+
+
+※ 시뮬레이션에 사용된 MATLAB 코드는 공돌이의 수학정리노트 Github Repo에서 받으실 수 있습니다.
+
+$\Rightarrow$ [공돌이의 수학정리노트 Github Repo](https://github.com/angeloyeo/gongdols/tree/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YNAI3hAcVKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
