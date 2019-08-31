@@ -1,5 +1,5 @@
 ---
-title: 열방정식, 파동방정식
+title: 열방정식, 파동방정식의 의미
 sidebar:
   nav: docs-ko
 aside:
