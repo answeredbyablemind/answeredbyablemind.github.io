@@ -207,6 +207,8 @@ $$u_tt = c^2 u_xx$$
 
 그림 7과 같은 파동의 움직임은 아래와 같이 3차원 공간에서 표현할 수 있다.
 
+<iframe frameborder="0" src="https://angeloyeo.github.io/pics/2019-08-29_Heat_Wave_Equation/applet2.html
+"></iframe>
 
 
 ## MATAB 시뮬레이션: 2차원 공간 상의 물결파
