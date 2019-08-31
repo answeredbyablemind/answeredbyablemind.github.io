@@ -157,7 +157,7 @@ $$u_t = k u_{xx}$$
 
 지금까지는 1차원 공간에서의 열방정식에 대해서 얘기가 되었는데, 이번 예시에서는 2차원 공간의 열방정식의 예제를 시뮬레이션 해보았다.
 
-상정한 상황은 2차원 쇠 판대기를 잠깐동안 라이터로 지진 뒤 열을 더이상 가하지 않게 되었을 때 쇠 판대기에서 열이 어떻게 퍼지는지를 시뮬레이션 한 것이다.
+상정한 상황은 2차원 쇠 판대기를 1초 동안 라이터로 지진 뒤 열을 더이상 가하지 않게 되었을 때 쇠 판대기에서 열이 어떻게 퍼지는지를 시뮬레이션 한 것이다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic6_steel_plate_example.gif">
