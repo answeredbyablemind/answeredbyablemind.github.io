@@ -183,7 +183,7 @@ $$\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$$
 
 또는
 
-$$u_tt = c^2 u_xx$$
+$$u_{tt} = c^2 u_{xx}$$
 
 여기서 c^2는 양의 상수이다.
 
