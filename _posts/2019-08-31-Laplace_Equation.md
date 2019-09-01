@@ -114,11 +114,11 @@ $$f(x) = e^x = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!}+ \frac{x^3}{3!} 
 
 | DEFINITION 1. 테일러 급수 |
 | --------- |
-|<center>매끄러운 함수 $f: \Bbb{R}\rightarrow \Bbb{R}$ 및 실수 $a \in \Bbb{R}$에 대해 $f$의 테일러 급수는 다음과 같다. <br><br>$$T_f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n \notag$$ <br><br>$$=f(a) + f'(a)(x-a) + \frac{1}{2}f''(a)(x-a)^2 + \frac{1}{6}f'''(a)(x-a)^3 +\cdots $$</center>|
+|<center>매끄러운 함수 $f: \Bbb{R}\rightarrow \Bbb{R}$ 및 실수 $a \in \Bbb{R}$에 대해 $f$의 테일러 급수는 다음과 같다. <br><br>$$T_f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n \notag$$ <br>$$=f(a) + f'(a)(x-a) + \frac{1}{2}f''(a)(x-a)^2 + \frac{1}{6}f'''(a)(x-a)^3 +\cdots $$</center>|
 
 DEFINITION 1에서 확인한 테일러 급수의 정의를 이용해서 $f(x)$를 $x_0$이라는 점에서 approximate 해본다고 생각해보자. 
 
-$$f(X) = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2+\frac{1}{6}f'''(x_0)(x-x_0)^3+\cdots$$
+$$f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2+\frac{1}{6}f'''(x_0)(x-x_0)^3+\cdots$$
 
 여기서 3차 이상의 다항식을 포함하는 항을 통틀어 $R_3(x)$라고 이름 붙이자. 즉,
 
@@ -126,7 +126,7 @@ $$식(4) = f(x_0)+f'(x_0)(x-x_0)+\frac{1}{2}f''(x_0)(x-x_0)^2 + R_3(x)$$
 
 그렇다면, 충분히 작은 양의 실수 $\Delta x$에 대해서,
 
-$f(x)$의 $x_0+\Delta x$라는 점에서의 함수 값은 $f(x+\Delta x)$이다.
+$f(x)$의 $x_0+\Delta x$라는 점에서의 함수 값은 $f(x_0+\Delta x)$이다.
 
 이는 식 (5)에서 $x$에 $x_0+\Delta x$를 대입함으로써 얻을 수 있다.
 
@@ -154,7 +154,7 @@ $$\Rightarrow f(x_0+\Delta x) + f(x_0-\Delta x) = 2f(x_0) + f''(x_0)(\Delta x)^2
 
 $$f(x_0+\Delta x)+ f(x_0-\Delta) \approx 2f(x_0) + f''(x_0)(\Delta x)^2$$
 
-식 (9)에서 우항의 $2f(x_0)$을 좌항으로 옮겨주면,
+식 (9)에서 우변의 $2f(x_0)$을 좌변으로 옮겨주면,
 
 $$f(x_0 + \Delta x) - 2f(x_0) + f(x_0-\Delta x) \approx f''(x_0)(\Delta x)^2$$
 
@@ -168,9 +168,9 @@ $$f''(x) = \frac{(x + \Delta x) - 2f(x) + f(x-\Delta x)}{(\Delta x)^2}$$
 
 만약 $f(x)$가 아니라 다변수 함수 $u(x,y)$였다고 하면 다음도 성립하게 된다.
 
-$$\frac{\partial^2 u}{\partial x^2}\approx \frac{u(x+\Delta x, y)-2u(x,y)+\u(x-\Delta x, y)}{(\Delta x)^2}$$
+$$\frac{\partial^2 u}{\partial x^2}\approx \frac{u(x+\Delta x, y)-2u(x,y)+u(x-\Delta x, y)}{(\Delta x)^2}$$
 
-$$\frac{\partial^2 u}{\partial y^2}\approx \frac{u(x, y +\Delta y)-2u(x,y)+\u(x, y-\Delta y)}{(\Delta y)^2}$$
+$$\frac{\partial^2 u}{\partial y^2}\approx \frac{u(x, y +\Delta y)-2u(x,y)+u(x, y-\Delta y)}{(\Delta y)^2}$$
 
 ## 다시 라플라스 방정식으로!
 
@@ -180,7 +180,7 @@ $$\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$$
 
 여기에 앞서 파악한 식 (13), 식(14)의 2차 미분 계수의 approximation을 대입해보자.
 
-$$\frac{u(x+\Delta x, y)-2u(x,y)+\u(x-\Delta x, y)}{(\Delta x)^2} + \frac{u(x, y +\Delta y)-2u(x,y)+\u(x, y-\Delta y)}{(\Delta y)^2} = 0$$
+$$\frac{u(x+\Delta x, y)-2u(x,y)+u(x-\Delta x, y)}{(\Delta x)^2} + \frac{u(x, y +\Delta y)-2u(x,y)+u(x, y-\Delta y)}{(\Delta y)^2} = 0$$
 
 계산의 편의를 위해 $\Delta x = \Delta y$라고 두자. 그러면 위의 식 (16)은 다음과 같아진다.
 
