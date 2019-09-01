@@ -108,6 +108,8 @@ docs-ko:
         url:    2019/08/28/laplacian.html
       - title:  열방정식/파동방정식의 의미
         url:    2019/08/29/Heat_Wave_Equation.html
+      - title:  라플라스 방정식의 의미
+        url:    2019/08/31/Laplace_Equation.html
 
 
 
