@@ -110,6 +110,8 @@ docs-ko:
         url:    2019/08/29/Heat_Wave_Equation.html
       - title:  라플라스 방정식의 의미
         url:    2019/08/31/Laplace_Equation.html
+      - title:  테일러 급수의 유도와 의미
+        url:    2019/09/02/Taylor_Series.html
 
 
 
