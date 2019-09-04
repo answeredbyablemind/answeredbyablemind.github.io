@@ -1,5 +1,5 @@
 ---
-title: 테일러 급수의 의미
+title: 테일러 급수의 유도와 의미
 sidebar:
   nav: docs-ko
 aside:
@@ -49,9 +49,7 @@ $$u = t, \space v' = f''(t)$$
 
 여기서 주의할 점은 $u=t$라고 보통은 둘 수 있지만, 사실은 $u$는 $u'$의 부정적분으로써
 
-$u$는 원래 $u=t+C$로 쓰는 것이 더 정확하다. 우리는 여기서 적분상수 $C$를
-
-$-x$로 사용하도록 하자.
+$u$는 원래 $u=t+C$로 쓰는 것이 더 정확하다. 우리는 여기서 적분상수 $C$를 $-x$로 사용하도록 하자.
 
 피적분변수는 $t$이기 때문에 $x$는 상수에 불과하다. 
 
@@ -112,9 +110,7 @@ $$e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\c
 
 테일러 급수의 특징 중 하나는 특정 포인트 주변의 함수 값을 근사한다는 것이다.
 
-방금 위에서 든 예시처럼 $x=0$에서 $y=e^x$를 근사하는 경우를 MATLAB을 이용해
-
-그려보면 아래 그림과 같다.
+방금 위에서 든 예시처럼 $x=0$에서 $y=e^x$를 근사하는 경우를 MATLAB을 이용해 그려보면 아래 그림과 같다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-02_Taylor_Series/pic1.gif">
@@ -122,7 +118,7 @@ $$e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\c
   그림 1. x=0에서 y=exp(x)를 근사하는 경우
 </p>
 
-또, 테일러 급수는 다변수 함수에서도 마찬가지로 적용될 수 있는데, 그림 2에서는 두 개의 독립변수를 갖는 함수에 대해서 (1,1)이라는 점에서 근사를 수행하는 모습을 볼 수 있다. 항을 더해갈수록 원래 함수의 모양에 더 맞게 근사되는 것을 알 수 있다.
+또, 테일러 급수는 다변수 함수에서도 마찬가지로 적용될 수 있는데, 그림 2에서는 두 개의 독립변수를 갖는 함수에 대해서 (1,1)이라는 점에서 근사를 수행하는 모습을 볼 수 있다. 항을 더해갈수록 원래 함수의 모양에 더 가깝게 근사되는 것을 알 수 있다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-02_Taylor_Series/pic2.gif">
