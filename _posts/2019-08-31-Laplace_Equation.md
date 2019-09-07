@@ -7,23 +7,6 @@ aside:
 key: 20190831
 tags: 다변수미적분
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 110vw;
-        background:white;  
-    }
-  }
-
-  @media screen and (min-width:500px){
-    iframe {
-        width: 60vw; 
-        height: 53vw;
-        background:white;  
-    }
-  }
-</style>
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-31_Laplace_Equation/pic1_i_am_still.png">
@@ -211,4 +194,6 @@ $$u(x,y) = \frac{1}{4}\left\{
 </p>
 
 
+<p align = "cener">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UbhIJOJ_vDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>

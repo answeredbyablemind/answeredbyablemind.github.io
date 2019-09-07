@@ -131,4 +131,6 @@ $$e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\c
 
 한마디로 요약하면, 테일러 급수는 특정 point의 도함수 정보를 이용해서 point 주변의 함수 값을 알아내는 방법이라고 할 수 있을 것 같다.
 
+<p align = "center">>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O4T5STR8NPs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
