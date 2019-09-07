@@ -142,3 +142,5 @@ $$e^{\text{성쟝횟수 x 성장률}}$$
 즉, A라는 성장량을 알고 있다고 하고, 이것을 $A = e^{\text{성장횟숫 x 성장률}}$로 나타낼 수 있다고 하면 자연로그를 이용해 아래와 같이 성장횟수 x 성장률을 계산할 수 있다.
 
 $$\ln(e^{\text{성장횟수 x 성장률}}) = \text{성장횟수 x 성장률}$$
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_EY8QUKWrhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
