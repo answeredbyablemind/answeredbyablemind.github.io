@@ -7,23 +7,6 @@ aside:
 key: 20190902
 tags: 다변수미적분
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 110vw;
-        background:white;  
-    }
-  }
-
-  @media screen and (min-width:500px){
-    iframe {
-        width: 60vw; 
-        height: 53vw;
-        background:white;  
-    }
-  }
-</style>
 
 # 테일러 급수 공식 유도
 
