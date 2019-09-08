@@ -117,7 +117,7 @@ DEFINITION 1에서 확인한 로피탈의 정리를 다시 생각해보면, 로�
 $\infty / \infty$ 꼴인 경우 $x = g(t)$, $y=f(t)$가 무한대로 커질 때 정해진 값 만큼의 기울기를 가지는 곡선을 상정할 수 있다면 그 기하학적 의미를 파악할 수 있다.
 
 <p align = "center">
-  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic5.gif">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic6.gif">
   <br>
   그림 6. $\infty / \infty$ 꼴인 경우 $f(t)$와 $g(t)$ 모두 $\infty$로 향하면서 순간기울기가 $L$로 유지되는 곡선을 만든 뒤 $t\rightarrow \infty$로 극한을 취해주면 순간 기울기와 평균 기울기가 같아진다.
 </p>
@@ -131,4 +131,6 @@ $\infty / \infty$ 꼴인 경우 $x = g(t)$, $y=f(t)$가 무한대로 커질 때 
 
 * Paths and geometry of l'Hopital's Rule, Frank J. Swenton
 
+<p align = "center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hcUyPkhd3qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
