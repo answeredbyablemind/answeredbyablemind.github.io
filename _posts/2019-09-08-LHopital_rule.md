@@ -42,13 +42,29 @@ DEFINITION 1에서 주목해야할 점 중 하나는, 보통 많이들 알고 �
 
 # 로피탈 정리의 기하학적 이해
 
-로피탈의 정리를 기하학적으로 이해하기 위해 다음과 같이 매개변수 방정식을 이용해 아래의 식 및 그림 1과 같이 $g(t)$와 $f(t)$를 평면상의 경로의 한 점으로 생각하자.
+로피탈의 정리를 기하학적으로 이해하기 위해 다음과 같이 매개변수 방정식을 이용해 아래의 식 (5) 및 그림 1과 같이 $g(t)$와 $f(t)$를 평면상의 경로의 한 점으로 생각하자.
 
 $$(x, y) = (g(t), f(t))$$
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic1.png">
   <br>
   그림 1. $t$를 매개변수로 하여 함수 $g(t), f(t)$를 평면상의 한 점으로 생각하자.
+</p>
+
+이런 처리를 해줌으로써 두 개의 함수를 하나의 곡선으로 대체해 생각할 수 있다.
+
+또, 다음과 같이 바꿔 생각할 수 있다.
+
+$$\frac{f'(t)}{g'(t)} = \frac{dy/dt}{dx/dt} = \frac{dy}{dx}$$
+
+$$\frac{f(t)}{g(t)} = \frac{y}{x}$$
+
+즉, 식 (6)이 의미하는 것은 그림 1의 경로에서 $(x, y)$의 **순간 변화율**을 의미하고, 식 (7)은 원점에서부터 $(x, y)$까지의 **평균 변화율**을 의미하게 된다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic2.png">
+  <br>
+  그림 2. 매개변수를 이용한 곡선에서 $f'(t)/g'(t)$와 $f(t)/g(t)$의 의미는 각각 순간변화율(파란색)과 평균변화율(빨간색)이다.
 </p>
 
