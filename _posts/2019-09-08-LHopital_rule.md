@@ -42,7 +42,13 @@ DEFINITION 1에서 주목해야할 점 중 하나는, 보통 많이들 알고 �
 
 # 로피탈 정리의 기하학적 이해
 
-로피탈의 정리를 기하학적으로 이해하기 위해 다음과 같이 매개변수 방정식을 이용해 $g(t)$와 $f(t)$를 평면상의 경로의 한 점으로 생각하자.
+로피탈의 정리를 기하학적으로 이해하기 위해 다음과 같이 매개변수 방정식을 이용해 아래의 식 및 그림 1과 같이 $g(t)$와 $f(t)$를 평면상의 경로의 한 점으로 생각하자.
 
 $$(x, y) = (g(t), f(t))$$
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic1.png">
+  <br>
+  그림 1. $t$를 매개변수로 하여 함수 $g(t), f(t)$를 평면상의 한 점으로 생각하자.
+</p>
 
