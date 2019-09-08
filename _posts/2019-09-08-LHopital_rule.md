@@ -9,7 +9,7 @@ tags: 미적분학
 ---
 
 <p align = "center">
-  <img width = "500" src = "https://data.ygosu.com/upload_files/board_study/240555/574b096040ae3.jpg">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/574b096040ae3.jpg">
   <br>
   로피탈 정리만 생각하면 아직도 그분의 외침이 들린다. <del>아니 선생!...</del>
 </p>
