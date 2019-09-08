@@ -65,6 +65,15 @@ $$\frac{f(t)}{g(t)} = \frac{y}{x}$$
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic2.png">
   <br>
-  그림 2. 매개변수를 이용한 곡선에서 $f'(t)/g'(t)$와 $f(t)/g(t)$의 의미는 각각 순간변화율(파란색)과 평균변화율(빨간색)이다.
+  그림 2. 매개변수를 이용한 곡선에서 $f'(t)/g'(t)$와 $f(t)/g(t)$의 의미는 <br>각각 순간변화율(파란색)과 평균변화율(빨간색)이다.
 </p>
 
+여기서 로피탈의 정리는 극한에 관한 것인데 $t$를 어떤 $\alpha$로 보내주는 것에 관한 것이다. 그림 1 또는 2에서 $\alpha$에 대한 극한을 취해준다는 것은 곡선상의 어디엔가 있는 $(x,y)$로 접근하겠다는 의미로 해석할 수 있다.
+
+그렇다면, 이 때 $t\rightarrow \alpha$로 접근할 때 시시각각 순간 변화율과 평균 변화율이 변하는 것을 확인할 수 있다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic3.gif">
+  <br>
+  그림 3. $t\rightarrow \alpha$로 접근하겠다는 것은 <br> 빨간점을 곡선상의 어디엔가 있는 $(x,y)$로 접근시키겠다는 의미와 같으며, <br>시시각각 순간 변화율(파란색)과 평균 변화율(빨간색)이 변한다.
+</p>
