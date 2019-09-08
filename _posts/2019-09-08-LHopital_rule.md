@@ -103,6 +103,11 @@ DEFINITION 1에서 확인한 로피탈의 정리를 다시 생각해보면, 로�
 그러면, $f(t)/g(t)$(즉, 평균 기울기)의 값은 같아질까?
 
 
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic5.gif">
+  <br>
+  그림 5. 0/0 꼴인 경우 순간 기울기와 
+</p>
 
 
 
