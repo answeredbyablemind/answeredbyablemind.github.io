@@ -34,7 +34,7 @@ $$\lim_{x\rightarrow 0}\frac{\sin x}{x} = \lim_{x\rightarrow 0}\frac{(\sin x)'}{
 | --------- |
 |실수함수 $f(t)$와 $g(t)$에 대하여[^1], $\alpha$는 다음 중 하나의 극한값을 갖는다고 하자. <br> <center>$$\alpha^{\pm}, \alpha^+, \alpha^-, +\infty, -\infty \notag$$</center><br> 또, $L$은 실수이거나 $+\infty$ 혹은 $-\infty$로 발산한다고 하자. <br><br> 이 때, 만약 <br><center>$$\lim_{t\rightarrow \alpha}\frac{f'(t)}{g'(t)}=L$$</center> 이고, <br> <center>$\text{(i) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = \pm\infty$ 또는 <br> $\text{(ii) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = 0$ 이라면</center> <br> <center>$$\lim_{t\rightarrow \alpha}\frac{f(t)}{g(t)} = L$$</center> 이다.|
 
-[^1]: 단, 두 함수는 모두 alpha를 포함한 열린구간 I에서 연속이고 미분 가능하여야 한다. 그러나, 한 점 alpha에서만 미분가능하지 않거나 불연속이어도 괜찮다.
+[^1]: 단, 두 함수는 모두 alpha를 포함한 열린구간에서 연속이고 미분 가능하여야 한다. 그러나, 한 점 alpha에서만 미분가능하지 않거나 불연속이어도 괜찮다.
 
 DEFINITION 1에서 주목해야할 점 중 하나는, 보통 많이들 알고 있기로는 $f(t)/g(t)$의 극한을 풀기 위해 분자, 분모를 미분해서 극한값을 구하는 방식으로 로피탈의 정리를 이용한다고 생각하지만, 
 
@@ -102,14 +102,33 @@ DEFINITION 1에서 확인한 로피탈의 정리를 다시 생각해보면, 로�
 
 그러면, $f(t)/g(t)$(즉, 평균 기울기)의 값은 같아질까?
 
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic5.gif">
+  <br>
+  그림 5. 0/0 꼴인 경우 $f(t)$와 $g(t)$ 모두 0으로 향하는 극한을 취해주면 순간 기울기와 평균 기울기가 같아진다.
+</p>
+
+즉, $0/0$꼴에서 로피탈의 정리는 다음에 대해 말해주고 있는 것이다.
+
+**$(0,0)$에서 순간 기울기가 $L$이라면, $(x,y)$가 모두 0으로 갈 때, 평균 기울기는 $L$에 매우 가까워진다.**
+
+## 무한대/무한대 꼴인 경우
+
+$\infty / \infty$ 꼴인 경우 $x = g(t)$, $y=f(t)$가 무한대로 커질 때 정해진 값 만큼의 기울기를 가지는 곡선을 상정할 수 있다면 그 기하학적 의미를 파악할 수 있다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic5.gif">
   <br>
-  그림 5. 0/0 꼴인 경우 순간 기울기와 
+  그림 6. $\infty / \infty$ 꼴인 경우 $f(t)$와 $g(t)$ 모두 $\infty$로 향하면서 순간기울기가 $L$로 유지되는 곡선을 만든 뒤 $t\rightarrow \infty$로 극한을 취해주면 순간 기울기와 평균 기울기가 같아진다.
 </p>
 
 
+즉, $\infty / \infty$꼴에서 로피탈의 정리는 다음에 대해 말해주고 있는 것이다.
 
-로피탈 정리를 다시 생각해보면 로피탈의 정리는 다음에 대해 말해주고 있는 것이다.
+**$(\infty,\infty)$에서 순간 기울기가 $L$이라면, $(x,y)$가 모두 $\infty$으로 갈 때, 평균 기울기는 $L$에 매우 가까워진다.**
 
+# 참고 문헌
+
+* Paths and geometry of l'Hopital's Rule, Frank J. Swenton
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hcUyPkhd3qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
