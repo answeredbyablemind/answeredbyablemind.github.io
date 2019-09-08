@@ -14,7 +14,7 @@ tags: 미적분학
   로피탈 정리만 생각하면 아직도 그분의 외침이 들린다. <del>아니 선생!...</del>
 </p>
 
-# 로피탈 정리의 정의
+# 로피탈 정리
 
 고교 시절 극한을 공부할 때 일명 '꼼수'로 통했던 정리가 하나 있으니, 로피탈의 정리이다.
 
@@ -72,7 +72,7 @@ $$\frac{f(t)}{g(t)} = \frac{y}{x}$$
 
 여기서 로피탈의 정리는 극한에 관한 것인데 $t$를 어떤 $\alpha$로 보내주는 것에 관한 것이다. 그림 1 또는 2에서 $\alpha$에 대한 극한을 취해준다는 것은 곡선상의 어디엔가 있는 $(x,y)$로 접근하겠다는 의미로 해석할 수 있다.
 
-그렇다면, 이 때 $t\rightarrow \alpha$로 접근할 때 시시각각 순간 변화율과 평균 변화율이 변하는 것을 확인할 수 있다.
+이 때 $t\rightarrow \alpha$로 접근할 때 시시각각 순간 변화율과 평균 변화율이 변하는 것을 확인할 수 있다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic3.gif">
@@ -114,7 +114,7 @@ DEFINITION 1에서 확인한 로피탈의 정리를 다시 생각해보면, 로�
 
 ## 무한대/무한대 꼴인 경우
 
-$\infty / \infty$ 꼴인 경우 $x = g(t)$, $y=f(t)$가 무한대로 커질 때 정해진 값 만큼의 기울기를 가지는 곡선을 상정할 수 있다면 그 기하학적 의미를 파악할 수 있다.
+$\infty / \infty$ 꼴인 경우 $x = g(t)$, $y=f(t)$가 모두 무한히 커질 때 정해진 값 만큼의 기울기(여기서는 $L$)를 가지는 곡선을 상정할 수 있다면 그 기하학적 의미를 파악할 수 있다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-08_LHopital_rule/pic6.gif">
