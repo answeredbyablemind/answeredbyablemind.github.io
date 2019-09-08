@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190902
-tags: 다변수미적분
+tags: 미적분학
 ---
 
 # 테일러 급수 공식 유도

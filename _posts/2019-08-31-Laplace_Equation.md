@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190831
-tags: 다변수미적분
+tags: 미적분학
 ---
 
 <p align = "center">

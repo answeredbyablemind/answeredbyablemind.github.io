@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190825_1
-tags: 다변수미적분
+tags: 미적분학
 ---
 
 Divergence와 Curl은 벡터장에서 적용되는 연산자인데 우선 벡터장(vector field)이란 유클리드 공간의 각 점에 벡터를 대응시킨 것이라고 할 수 있다. 

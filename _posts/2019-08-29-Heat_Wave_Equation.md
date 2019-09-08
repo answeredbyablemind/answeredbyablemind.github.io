@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190829
-tags: 다변수미적분
+tags: 미적분학
 ---
 <style>
   @media screen and (max-width:500px){

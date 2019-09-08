@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190828
-tags: 다변수미적분
+tags: 미적분학
 ---
 
 # 1. 라플라시안의 정의 (definition)
