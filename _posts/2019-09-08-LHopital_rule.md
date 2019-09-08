@@ -32,4 +32,4 @@ $$\lim_{x\rightarrow 0}\frac{\sin x}{x} = \lim_{x\rightarrow 0}\frac{(\sin x)'}{
 
 | DEFINITION 1. 로피탈의 정리 |
 | --------- |
-|<center>실수함수 $f(t)$와 $g(t)$에 대하여, $\alpha$는 다음 중 하나의 극한값을 갖는다고 하자. <br><br> $$\alpha^{\pm}, \alpha^+, \alpha^-, +\infty, -\infty \notag$$<br> 또, $L$은 실수이거나 $+\infty$ 혹은 $-\infty$로 발산한다고 하자. <br><br> 이 때, 만약 $\lim_{t\rightarrow \alpha}\frac{f'(t)}{g'(t)}=L$ 이고, <br> $\text{(1) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = \pm\infty$ 또는 <br> $\text{(2) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = 0$ 이라면 <br> $$\lim_{t\rightarrow \alpha}\frac{f(t)}{g(t)} = L$$ <br>이다.</center>|
+|<center>실수함수 $f(t)$와 $g(t)$에 대하여, $\alpha$는 다음 중 하나의 극한값을 갖는다고 하자. <br> $$\alpha^{\pm}, \alpha^+, \alpha^-, +\infty, -\infty \notag$$<br> 또, $L$은 실수이거나 $+\infty$ 혹은 $-\infty$로 발산한다고 하자. <br><br> 이 때, 만약 <br>$$\lim_{t\rightarrow \alpha}\frac{f'(t)}{g'(t)}=L$$ <br> 이고, <br> $\text{(1) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = \pm\infty$ 또는 <br> $\text{(2) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = 0$ 이라면 <br> $$\lim_{t\rightarrow \alpha}\frac{f(t)}{g(t)} = L$$ <br>이다.</center>|
