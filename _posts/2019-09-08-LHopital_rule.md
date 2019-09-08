@@ -9,7 +9,7 @@ tags: 미적분학
 ---
 
 <p align = "center">
-  <img src = "https://data.ygosu.com/upload_files/board_study/240555/574b096040ae3.jpg">
+  <img width = "500" src = "https://data.ygosu.com/upload_files/board_study/240555/574b096040ae3.jpg">
   <br>
   로피탈 정리만 생각하면 아직도 그분의 외침이 들린다. <del>아니 선생!...</del>
 </p>
@@ -33,3 +33,16 @@ $$\lim_{x\rightarrow 0}\frac{\sin x}{x} = \lim_{x\rightarrow 0}\frac{(\sin x)'}{
 | DEFINITION 1. 로피탈의 정리 |
 | --------- |
 |실수함수 $f(t)$와 $g(t)$에 대하여, $\alpha$는 다음 중 하나의 극한값을 갖는다고 하자. <br> <center>$$\alpha^{\pm}, \alpha^+, \alpha^-, +\infty, -\infty \notag$$</center><br> 또, $L$은 실수이거나 $+\infty$ 혹은 $-\infty$로 발산한다고 하자. <br><br> 이 때, 만약 <br><center>$$\lim_{t\rightarrow \alpha}\frac{f'(t)}{g'(t)}=L$$</center> 이고, <br> <center>$\text{(i) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = \pm\infty$ 또는 <br> $\text{(ii) }\lim_{t\rightarrow \alpha}g(t) = \lim_{t\rightarrow \alpha}f(t) = 0$ 이라면</center> <br> <center>$$\lim_{t\rightarrow \alpha}\frac{f(t)}{g(t)} = L$$</center> 이다.|
+
+DEFINITION 1에서 주목해야할 점 중 하나는, 보통 많이들 알고 있기로는 $f(t)/g(t)$의 극한을 풀기 위해 분자, 분모를 미분해서 극한값을 구하는 방식으로 로피탈의 정리를 이용한다고 생각하지만, 
+
+원래는 로피탈의 정리는 $f'(t)/g'(t)$의 극한이 존재하는 경우에야 $f(t)/g(t)$의 극한과 $f'(t)/g'(t)$의 극한이 같다는 것을 말해주고 있다는 점이다.
+
+또, 구하고자 하는 $f(t)/g(t)$의 극한에 대해서, 분자, 분모가 모두 0 으로 수렴하거나 무한대로 발산할 때에야 비로소 로피탈의 정리가 사용될 수 있다는 점 역시 주목해야할 점이다.
+
+# 로피탈 정리의 기하학적 이해
+
+로피탈의 정리를 기하학적으로 이해하기 위해 다음과 같이 매개변수 방정식을 이용해 $g(t)$와 $f(t)$를 평면상의 경로의 한 점으로 생각하자.
+
+$$(x, y) = (g(t), f(t))$$
+
