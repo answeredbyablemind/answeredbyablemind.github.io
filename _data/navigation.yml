@@ -114,6 +114,8 @@ docs-ko:
         url:    2019/08/31/Laplace_Equation.html
       - title:  테일러 급수의 유도와 의미
         url:    2019/09/02/Taylor_Series.html
+      - title:  로피탈 정리의 기하학적 의미
+        url:    2019/09/08/LHopital_rule.html
 
 
 
