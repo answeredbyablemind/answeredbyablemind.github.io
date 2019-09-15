@@ -99,3 +99,9 @@ $$r e^{i\theta} = r (\cos\theta + i \sin\theta)$$
 
 $$(-1)^x = (e^{i\pi})^x = e^{ix\pi}$$
 
+
+<p align = "center">
+<img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic7.gif">
+<br>
+그림 7. -1의 x승을 표현한 그래프. 왼쪽의 plot이 정의역, 오른족의 plot이 치역이다.
+</p>
