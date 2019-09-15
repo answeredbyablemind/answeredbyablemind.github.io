@@ -11,7 +11,7 @@ tags: 기초수학
 <p align = "center">
 <img widht = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic0.png">
 <br>
-밑이 음수인 지수 함수. 왼쪽 plot이 정의역, 오른쪽 plot이 치역을 나타내고 있다.
+밑이 음수인 지수 함수 y=1.5^x. 왼쪽 plot이 정의역, 오른쪽 plot이 치역을 나타내고 있다.
 </p>
 
 **※ 이 article에서는 복소수가 single-valued라고 가정하겠습니다.** 
@@ -104,7 +104,7 @@ $$(-1)^x = (e^{i\pi})^x = e^{ix\pi}$$
 식 3을 해석할 때, 오일러 공식을 이용하면 $(-1)^x$는 $x$축으로부의 각도가 $x \pi \space rad$ 인 점의 위치를 나타낸다고 할 수 있다.
 
 <p align = "center">
-<img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic7.gif">
+<img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic7.gif">
 <br>
 그림 7. -1의 x승을 표현한 그래프. 왼쪽의 plot이 정의역, 오른쪽의 plot이 치역이다.
 </p>
@@ -120,7 +120,7 @@ $$(-1.5)^x = (1.5 \times (-1))^x = (1.5 \times e^{i\pi})^x = 1.5^x + e^{ix\pi}$$
 따라서, 식 4의 결과를 보면 x가 커질 수록 값이 커지면서 회전하는 결과를 보일 것이다.
 
 <p align = "center">
-<img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic8.gif">
+<img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic8.gif">
 <br>
 그림 8. -1.5 의 x승을 표현한 그래프. 왼쪽의 plot이 정의역, 오른쪽의 plot이 치역이다.
 </p>
