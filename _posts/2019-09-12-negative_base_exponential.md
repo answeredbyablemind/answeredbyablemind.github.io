@@ -40,3 +40,9 @@ tags: 기초수학
 
 # 음수에 대한 
 
+
+<p align = "center>
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic1.png">
+<br>
+그림 1. 일반적인 지수 함수. 밑이 1보다 큰 경우와 0에서 1 사이인 경우의 예시
+</p>
