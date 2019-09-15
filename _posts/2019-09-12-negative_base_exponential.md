@@ -118,3 +118,35 @@ $$(-1.5)^x = (1.5 \times (-1))^x = (1.5 \times e^{i\pi})^x = 1.5^x + e^{ix\pi}$$
 식 4를 자세히 보면 가장 우측 식에서 $1.5^x$는 x가 커질 수록 값이 커지고, $e^{ix\pi}$는 식 3 및 그림 7에서 보았듯이 x의 크기에 따라 회전한다.
 
 따라서, 식 4의 결과를 보면 x가 커질 수록 값이 커지면서 회전하는 결과를 보일 것이다.
+
+<p align = "center">
+<img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic8.gif">
+<br>
+그림 8. -1.5 의 x승을 표현한 그래프. 왼쪽의 plot이 정의역, 오른쪽의 plot이 치역이다.
+</p>
+
+그림 8의 시간에 따른 흐름을 색깔로 나타내면 이 article의 맨 처음과 같은 그림을 얻을 수 있게 되는 것이다.
+
+<p align = "center">
+<img widht = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic0.png">
+<br>
+그림 9. -1.5의 x승을 표현한 그래프. 시간에 따른 흐름을 색깔을 이용해 표시했다.
+</p>
+
+## 또 다른 방식의 시각화
+
+지금까지 밑이 음수인 지수함수를 시각화 하기 위해선 정의역과 치역을 따로 분리시켰는데, 
+
+다른 방법을 이용해 시각화 하면 정의역과 치역을 한번에 표시해줄 수도 있다.
+
+다만 이 방법에서는 치역의 실수부와 허수부를 따로 그려야 한다.
+
+가령 $y=-1.5^x$의 그래프는 아래의 그림 10과 같다.
+
+<p align = "center">
+<img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic10.png">
+<br>
+그림 10. 정의역과 치역을 한번에 표현할 수 있는 밑이 음수인 지수함수의 시각화
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KlAW7xkwDRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
