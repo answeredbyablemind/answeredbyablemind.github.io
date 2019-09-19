@@ -11,7 +11,7 @@ tags: 기초수학
 <p align = "center">
 <img widht = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic0.png">
 <br>
-밑이 음수인 지수 함수 y=1.5^x. 왼쪽 plot이 정의역, 오른쪽 plot이 치역을 나타내고 있다.
+밑이 음수인 지수 함수 y=(-1.5)^x. 왼쪽 plot이 정의역, 오른쪽 plot이 치역을 나타내고 있다.
 </p>
 
 **※ 이 article에서는 복소수가 single-valued라고 가정하겠습니다.** 
