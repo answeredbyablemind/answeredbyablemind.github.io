@@ -141,7 +141,7 @@ $$(-1.5)^x = (1.5 \times (-1))^x = (1.5 \times e^{i\pi})^x = 1.5^x + e^{ix\pi}$$
 
 다만 이 방법에서는 치역의 실수부와 허수부를 따로 그려야 한다.
 
-가령 $y=-1.5^x$의 그래프는 아래의 그림 10과 같다.
+가령 $y=(-1.5)^x$의 그래프는 아래의 그림 10과 같다.
 
 <p align = "center">
 <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic10.png">
