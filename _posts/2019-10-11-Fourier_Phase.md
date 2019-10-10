@@ -81,9 +81,22 @@ $$\mathfrak{F}[sin(2\pi f_0 t)] - \mathfrak{F}[\frac{exp(j2\pi f_0 t) - exp(-j2\
 
 그러므로 처음으로 돌아가서,
 
+$$\mathfrak{F}[A\cos(2\pi f_0 t + \phi)] = \mathfrak{F}[A cos(2\pi f_0 t) cos(\phi) - A\sin(2\pi f_0 t)\sin(\phi)]$$
+
+$$ = A\cos(\phi)\mathfrak{F}[\cos(2\pi f_0 t)] - A\sin(\phi)\mathfrak{F}[\sin(2\pi f_0 t)]$$
+
+$$ = A\cos(\phi)[\frac{1}{2}(\delta(f-f_0)+\delta(f+f_0))] - A\sin(\phi)[\frac{1}{2j}(\delta(f-f_0)-\delta(f+f_0))]$$
+
+$여기서 \frac{1}{2j} = -\frac{j}{2}$ 이므로,
+
+$$ = A\cos(\phi)[\frac{1}{2}(\delta(f-f_0)+\delta(f+f_0))] + A\sin(\phi)[\frac{j}{2}(\delta(f-f_0)-\delta(f+f_0))]$$
+
+$$ = \frac{A}{2}\delta(f-f_0)(\cos(\phi) + j\sin(\phi)) + \frac{A}{2}\delta(f+f_0)(\cos(\phi)-j\sin(\phi))$$
 
 와 같이 정리할 수 있게 된다. 
 
 실수 신호를 푸리에 변환하면 양의 주파수와 음의 주파수가 모두 나오게 되는데, 우리는 결과 중 양의 주파수만 관찰하여도 결과의 본질을 이해하는데 큰 문제가 없으므로 다음과 같이 생각할 수 있다.
 
-‘$Acos(2\pi f_0t+\phi)$를 $exp(-j2\pi ft)=cos(2\pi ft)-jsin(2\pi ft)$와 함수 내적을 통해 닮음 정도를 확인해보았더니 $f_0$라는 주파수에서 cosine 부분과는 $Acos(\phi)$만큼 닮았기 때문에 실수부를 $A cos(\phi)$로 표현했고 sine 부분과는 $A sin(\phi)$만큼 닮았기 때문에 허수부를 $A sin(\phi)$로 표현했습니다. 즉, 입력하신 함수는 주파수 $f_0$에서 크기 $A$를 갖고 위상 $\phi$를 갖습니다.’
+"$Acos(2\pi f_0t+\phi)$를 $exp(-j2\pi ft)=cos(2\pi ft)-jsin(2\pi ft)$와 함수 내적을 통해 닮음 정도를 확인해보았더니 $f_0$라는 주파수에서 cosine 부분과는 $Acos(\phi)$만큼 닮았음.
+
+ 이에 따라, 실수부를 $A cos(\phi)$로 표현했고 sine 부분과는 $A sin(\phi)$만큼 닮았기 때문에 허수부를 $A sin(\phi)$로 표현하였음. 즉, 해당 함수는 주파수 $f_0$에서 크기 $A$를 갖고 위상 $\phi$를 가짐."
