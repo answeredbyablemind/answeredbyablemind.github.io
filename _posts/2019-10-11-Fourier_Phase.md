@@ -75,7 +75,7 @@ $$\sin(2\pi f_0 t) = \frac{exp(j2\pi f_0 t) - exp(-j2\pi f_0 t)}{2j}$$
 
 이므로,
 
-$$\mathfrak{F}[sin(2\pi f_0 t)] - \mathfrak{F}[\frac{exp(j2\pi f_0 t) - exp(-j2\pi f_0 t)}{2j}] = \frac{1}{2j}[\delta(f-f_0) - \delta(f+f_0)]$$
+$$\mathfrak{F}[sin(2\pi f_0 t)] = \mathfrak{F}[\frac{exp(j2\pi f_0 t) - exp(-j2\pi f_0 t)}{2j}] = \frac{1}{2j}[\delta(f-f_0) - \delta(f+f_0)]$$
 
 이다.
 
