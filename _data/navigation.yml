@@ -99,6 +99,8 @@ docs-ko:
         url:    2019/08/06/determinant.html
       - title:  상관계수는 벡터의 내적이다
         url:    2019/08/20/correlation_and_inner_product.html
+      - title:  론스키안(Wronskian)
+        url:    2019/10/10/Wronskian.html
 
   - title:      미적분학
     children:
