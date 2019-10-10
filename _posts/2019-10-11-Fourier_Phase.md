@@ -9,11 +9,12 @@ tags: 신호처리 푸리에변환
 ---
 # 들어가기에 앞서
 
- 푸리에 변환에 대해서 이해하기 어려워 하는 부분 중 하나로 phase를 꼽을 수 있다. 보통 amplitude에 대한 개념은 직관적이기 때문에 이해하기 쉽지만 phase는 그렇지 않은 경우가 많고 phase에 대해서 많이들 신경 쓰지 않는 경우도 종종 있다. 푸리에 변환의 시작인 함수 내적의 의미와 복소수의 근본적인 의미에 대해 잘 이해할 수 있어야 어떻게 푸리에 변환을 통해서 amplitude와 phase가 비로소 이해될 수 있다고 생각한다. 
+푸리에 변환에 대해서 이해하기 어려워 하는 부분 중 하나로 phase를 꼽을 수 있다. 보통 amplitude에 대한 개념은 직관적이기 때문에 이해하기 쉽지만 phase는 그렇지 않은 경우가 많고 phase에 대해서 많이들 신경 쓰지 않는 경우도 종종 있다. 푸리에 변환의 시작인 함수 내적의 의미와 복소수의 근본적인 의미에 대해 잘 이해할 수 있어야 어떻게 푸리에 변환을 통해서 amplitude와 phase가 비로소 이해될 수 있다고 생각한다. 
 
- 푸리에 변환은 실수함수를 복소수 영역으로 mapping 시켜주는 기능을 한다. 특별히 mapping의 kernel이 독특한 성질을 가지고 있기 때문에 이것을 통해 우리는 시간 영역에서 주파수 영역으로의 변환으로 대응해 생각해볼 수 있는 것이다. 그렇다면 왜, 다시 한 번, 푸리에 변환을 통해서 amplitude와 phase라는 결과가 둘 다 나올 수 있는 것일까?
+푸리에 변환은 실수함수를 복소수 영역으로 mapping 시켜주는 기능을 한다. 특별히 mapping의 kernel이 독특한 성질을 가지고 있기 때문에 이것을 통해 우리는 시간 영역에서 주파수 영역으로의 변환으로 대응해 생각해볼 수 있는 것이다. 그렇다면 왜, 다시 한 번, 푸리에 변환을 통해서 amplitude와 phase라는 결과가 둘 다 나올 수 있는 것일까?
 
 # 푸리에 변환의 식
+
 푸리에 변환의 공식을 다시 한 번 생각해보자.
 
 $$X(f) = \int_{-\infty}^{\infty}x(t)exp(-j2\pi ft)dt$$
@@ -40,53 +41,46 @@ $$\frac{E[(X-\mu_x)(Y-\mu_y)]}{\sigma_X\sigma_Y}$$
 
 그런데, $exp(-j2\pi ft)$의 의미는 무엇인가? 바로 $exp(-j2\pi ft)=cos(2\pi ft)-jsin(2\pi ft)$이다. 그렇다면 위의 문장은 다음과 같이 바꿔 쓸 수도 있다.
 
-<center> "$x(t)$가 $cos(2\pi ft)$와 얼마나 닮았는지, $sin(2\pi ft)$와는 또 얼마나 닮았는지 알아본 다음 각각을 실수부와 허수부의 값으로 표현해 복소수로 표현해보자."</center>
+<center> "$x(t)$가 $cos(2\pi ft)$와 얼마나 닮았는지, $sin(2\pi ft)$와는 또 얼마나 닮았는지 알아본 다음
+
+각각을 실수부와 허수부의 값으로 표현해 복소수로 표현해보자."</center>
 
 그렇게 되면 어떠한 정현파이던지 크기와 위상을 확인할 수 있게 되는 것이다. 
 
 즉, 푸리에 변환은 주어진 신호 $x(t)$가 cosine, sine과 얼마나 닮았는지를 말해주게 되고, 그것을 이용하면 어떠한 주파수를 가진 정현파로 쪼갤 때 그 주파수의 크기와 위상을 모두 알 수 있게 되는 것이다. 어떠한 정현파도 코사인으로 환원시켜 생각해볼 수 있으므로 코사인의 합 공식을 생각해보면,
 
-<center><img src="http://bit.ly/2b1LcQf"></center>
+$$A\cos(2\pi f_0 t + \phi) = A\cos(2\pi f_0 t) cos(\phi) - A \sin (2\pi f_0 t)sin(\phi)$$
 
 cosine과 닮은 정도는 $A cos(\phi)$만큼으로 표현되고 sine과 닮은 정도는 $A sin(\phi)$로 표현되어 해당 신호의 주파수 $f_0$에서의 성분의 크기 $A$와 위상 $\phi$를 모두 확인할 수 있게 되는 것이다. 
 
 위에서 간단히 적은 내용을 직접 수식적으로 확인해보자.
 
-<center><img src="http://bit.ly/2aEQu0C"></center>
-
+$$\mathfrak{F}[A\cos(2\pi f_0 t + \phi)] = \mathfrak{F}[\cos(2\pi f_0 t)\cos(\phi) - \sin(2\pi f_0 t)\sin(\phi)]$$
 
 
 잠시 여기서 정현파의 푸리에 변환을 생각해보면,
 
-<center><img src="http://bit.ly/2b1Lpmr"></center>
+$$\cos(2\pi f_0 t) = \frac{exp(j2\pi f_0 t) + exp(-j2\pi f_0 t)}{2}$$
 
 로 생각할 수 있는데, 푸리에 변환의 frequency shift 성질을 이용하면,
 
-<center><img src="http://bit.ly/2b1LDKq"></center>
+$$\mathfrak{F}[cos(2\pi f_0 t)] - \mathfrak{F}[\frac{exp(j2\pi f_0 t) + exp(-j2\pi f_0 t)}{2}] = \frac{1}{2}[\delta(f-f_0) + \delta(f+f_0)]$$
 
 이다.
 
 
 Sine파의 경우에는 
 
-<center><img src="http://bit.ly/2aEQHAL"></center>
+$$\sin(2\pi f_0 t) = \frac{exp(j2\pi f_0 t) - exp(-j2\pi f_0 t)}{2j}$$
 
 이므로,
 
-<center><img src="http://bit.ly/2aERBxi"></center>
+$$\mathfrak{F}[sin(2\pi f_0 t)] - \mathfrak{F}[\frac{exp(j2\pi f_0 t) - exp(-j2\pi f_0 t)}{2j}] = \frac{1}{2j}[\delta(f-f_0) - \delta(f+f_0)]$$
 
 이다.
 
 그러므로 처음으로 돌아가서,
 
-<center>
-<img src="http://bit.ly/2aERuBP">
-
-<img src="http://bit.ly/2aERC4r">
-
-<img src="http://bit.ly/2b1M1bO">
-
-</center>
 
 와 같이 정리할 수 있게 된다. 
 
