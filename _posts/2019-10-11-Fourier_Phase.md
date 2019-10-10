@@ -64,7 +64,7 @@ $$\cos(2\pi f_0 t) = \frac{exp(j2\pi f_0 t) + exp(-j2\pi f_0 t)}{2}$$
 
 로 생각할 수 있는데, 푸리에 변환의 frequency shift 성질을 이용하면,
 
-$$\mathfrak{F}[cos(2\pi f_0 t)] - \mathfrak{F}[\frac{exp(j2\pi f_0 t) + exp(-j2\pi f_0 t)}{2}] = \frac{1}{2}[\delta(f-f_0) + \delta(f+f_0)]$$
+$$\mathfrak{F}[cos(2\pi f_0 t)] = \mathfrak{F}[\frac{exp(j2\pi f_0 t) + exp(-j2\pi f_0 t)}{2}] = \frac{1}{2}[\delta(f-f_0) + \delta(f+f_0)]$$
 
 이다.
 
