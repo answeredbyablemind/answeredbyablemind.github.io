@@ -100,7 +100,7 @@ $$ = \frac{A}{2}\delta(f-f_0)(\cos(\phi) + j\sin(\phi)) + \frac{A}{2}\delta(f+f_
 <center> 
 
 "$Acos(2\pi f_0t+\phi)$를 $exp(-j2\pi ft)=cos(2\pi ft)-jsin(2\pi ft)$와 함수 내적을 통해 닮음 정도를 확인해보았더니 $f_0$라는 주파수에서 cosine 부분과는 $Acos(\phi)$만큼 닮았음.
-
+<br><br>
  이에 따라, 실수부를 $A cos(\phi)$로 표현했고 sine 부분과는 $A sin(\phi)$만큼 닮았기 때문에 허수부를 $A sin(\phi)$로 표현하였음. 즉, 해당 함수는 주파수 $f_0$에서 크기 $A$를 갖고 위상 $\phi$를 가짐."
 
 </center>
