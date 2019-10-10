@@ -76,6 +76,8 @@ docs-ko:
         url:    2019/07/11/Time_Sampling.html
       - title:  주파수 샘플링과 이산 푸리에 변환 (DFT)
         url:    2019/07/14/Freq_Sampling.html
+      - title:  푸리에 변환과 위상(phase)
+        url:    2019/10/11/Fourier_Phase.html
       - title:  음의 주파수
         url:    2019/07/22/Negative_Frequency.html
       - title:  힐버트 변환
