@@ -4,7 +4,7 @@ sidebar:
   nav: docs-ko
 aside:
   toc: true
-key: 20191010
+key: 20191011
 tags: 신호처리 푸리에변환
 ---
 # 들어가기에 앞서
