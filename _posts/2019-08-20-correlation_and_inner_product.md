@@ -7,23 +7,6 @@ aside:
 key: 20190820
 tags: 선형대수
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 55vw;
-        background:white;  
-    }
-  }
-
-  @media screen and (min-width:500px){
-    iframe {
-        width: 55vw; 
-        height: 30vw;
-        background:white;  
-    }
-  }
-</style>
 
 # 상관 계수의 용도와 정의
 
