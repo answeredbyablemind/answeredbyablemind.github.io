@@ -133,3 +133,8 @@ docs-ko:
     children:
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation.html
+
+  - title:      확률과 통계
+    children:
+      - title:  베이즈 정리의 의미
+        url:    2020/01/09/Bayes_rule.html
