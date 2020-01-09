@@ -8,12 +8,70 @@ key: 20200109
 tags: 확률통계
 ---
 
+# 베이즈 정리의 공식
+
+# 베이즈 정리의 의의
+
+[a method to update belief on the basis of new information]
+
+## 사전 확률, 사후 확률이란?
+
+## 확률론 패러다임의 전환: 연역적 추론에서 귀납적 추론으로
+
+
+# 문제 해결을 위한 베이즈 정리의 시각적 접근
+
+Hypothesis와 Evidence를 잘 정의할 수 있어야 함.
+
+* Hypothesis: True이다. 즉 실제로 병이 있다.
+* Evidence: Positive로 출력되었다.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 베이즈 정리의 공식
+
+우선 베이즈 정리의 공식부터 확인해보도록 하자. 베이즈 정리의 공식은 아래 식 (1)과 같다.
+
+$$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
+
+식 (1)에는 총 네 개의 확률값이 적혀져 있으며, 생김새도 거의 비슷비슷해 그냥 보기에는 의미를 파악하기가 어렵다.
+
+베이즈 정리의 의의를 알아보자면, 위키피디아에서는 다음과 같이 설명하고 있다.
+
 확률론과 통계학에서 베이즈 정리(Bayes' theorem)는 두 확률변수의 사전확률(prior probability)과 사후확률(posterior probability) 사이의 관계를 나타내는 정리이다.
 
 베이즈 정리에 따르면 사전확률로부터 사후확률을 계산할 수 있다.
 
 
-위의 두 문장은 위키피디아로부터 가져왔다. 위 두 문자을 잘 이해하려면 사전확률, 사후확률이란 무엇인지부터 알아볼 필요가 있을 것 같다.
+위와 같은 베이즈 정리의 의의를 잘 이해하려면 사전확률, 사후확률이란 무엇인지부터 알아볼 필요가 있을 것 같다.
 
 # 사전 확률, 사후 확률이란?
 
@@ -53,5 +111,7 @@ $$\text{posterior } = \frac{\text{likelihood } \times \text{ prior}}{\text{evide
 
 식(2)는 복잡해보일 수도 있지만 주요하게 확인해야 할 점은 **베이즈 정리는 사전 확률과 사후 확률 간의 관계에 대해 설명해주고 있다는 점**이다.
 
-
-
+<p align="center">
+  <img width="800" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic1.png"> <br>
+  그림 1. 베이즈 정리는 사전확률과 사후확률간의 관계에 대해 설명하는 정리이다.
+</p>
