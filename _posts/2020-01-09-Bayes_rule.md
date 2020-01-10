@@ -86,17 +86,47 @@ $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 이 문제에서 Hypothesis와 Evidence는 다음과 같이 정의할 수 있다.
 
 * Hypothesis: True이다. 즉 실제로 병이 있다.
-* Evidence: Positive로 출력되었다.
+* Evidence: Positive로 출력되었다. 즉, 병이 있다고 진단 받았다.
 
 따라서, 기본적으로 질병 A의 발병률은 0.1%이므로 임의의 사람이 이 질병에 걸렸을 확률은 $P(H)$로 쓸 수 있으며, $P(H)=0.001$이다.
 
+또한 문제에서 주어진 민감도와 특이도는 각각 True Positive와 True Negative에 해당되는 것이고 각각 $P(E\|H) = 0.99$, $P(E^c\|H^c) = 0.98$이다.
 
+이를 그림으로 나타내면 아래의 그림 2와 같다.
 
 <p align="center">
   <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic2.png"> <br>
   그림 2. 주어진 확률값들의 값을 사각형의 상대적 넓이로 시각화 한 것
 </p>
 
+식 (1)을 좀 더 정리해서 쓰면 아래의 식 (2)와 같다.
+
+$$P(H|E) = \frac{P(E|H)P(H)}{P(E)} = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)}$$
+
+따라서, 우리가 구하고자 하는 $P(H\|E)$를 계산하면 결과값은 다음과 같다.
+
+$$P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)} = \frac{0.01\times 0.99}{0.01\times 0.99 + 0.99\times 0.02}\notag$$
+
+$$= 0.04721$$
+
+
 ## 예제 2 
 
+예제 1에서 한 번 양성 판정을 받았던 사람이 두 번째 검진을 받고 또 양성 판정을 받았을 때, 이 사람이 실제로 질병에 걸린 확률은?
+
 ### Solution
+
+예제 2와 같은 문제를 굳이 내는 이유는 베이즈 정리는 신뢰도를 갱신해 나가는 방법이라고 했는데, 예제 2와 같은 상황이 되면
+
+Hypothesis는 다음과 같이 바꿔 생각할 수 있기 때문이다.
+
+* Hypothesis: 병이 있다고 한 번 진단받았으며 이것이 사실이다.
+
+즉, 예제 1에서 사후확률로 계산된 값이 예제 2에서는 사전확률로 이용되어서, 다시 한번 더 갱신된 사후확률을 계산해주게 된다.
+
+
+<p align="center">
+  <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic3.png"> <br>
+  그림 3. 주어진 확률값들의 값을 사각형의 상대적 넓이로 시각화 한 것
+</p>
+
