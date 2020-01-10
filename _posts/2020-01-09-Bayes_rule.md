@@ -12,7 +12,9 @@ tags: 확률통계
 
 # 베이즈 정리의 의의
 
-[a method to update belief on the basis of new information]
+베이즈 정리는 새로운 정보를 토대로 어떤 사건의 신뢰도를 갱신해 나가는 방법이다.
+(a method to update belief on the basis of new information)
+
 
 ## 사전 확률, 사후 확률이란?
 
@@ -118,5 +120,5 @@ $$\text{posterior } = \frac{\text{likelihood } \times \text{ prior}}{\text{evide
 
 <p align="center">
   <img width="800" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic2.png"> <br>
-  그림 2. 베이즈 정리는 사전확률과 사후확률간의 관계에 대해 설명하는 정리이다.
+  그림 2. 주어진 확률값들의 값을 사각형의 상대적 넓이로 시각화 한 것
 </p>
