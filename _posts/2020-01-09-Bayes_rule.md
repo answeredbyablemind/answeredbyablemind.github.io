@@ -115,3 +115,8 @@ $$\text{posterior } = \frac{\text{likelihood } \times \text{ prior}}{\text{evide
   <img width="800" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic1.png"> <br>
   그림 1. 베이즈 정리는 사전확률과 사후확률간의 관계에 대해 설명하는 정리이다.
 </p>
+
+<p align="center">
+  <img width="800" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic2.png"> <br>
+  그림 2. 베이즈 정리는 사전확률과 사후확률간의 관계에 대해 설명하는 정리이다.
+</p>
