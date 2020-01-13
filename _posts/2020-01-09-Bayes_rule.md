@@ -139,4 +139,6 @@ $$= 0.709\text{ (소숫점 세자리까지 반올림)}$$
 
 약 70%의 신뢰도로 이 사람은 병에 걸렸을 수 있다고 말할 수 있을 것이다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/euH9C61ywEM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/euH9C61ywEM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
