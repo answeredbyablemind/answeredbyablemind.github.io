@@ -88,6 +88,8 @@ docs-ko:
         url:    2019/08/12/Laplace_transform.html
       - title:  Z-변환
         url:    2019/08/13/Z_transform.html
+      - title:  시간-주파수 불확정도
+        url:    2020/01/16/time_frequency_uncertainty.html
 
   - title:      선형대수학
     children:
