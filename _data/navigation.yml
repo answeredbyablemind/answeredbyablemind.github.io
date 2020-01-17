@@ -140,5 +140,7 @@ docs-ko:
     children:
       - title:  베이즈 정리의 의미
         url:    2020/01/09/Bayes_rule.html
+      - title:  가우스 적분
+        url:    2020/01/17/Gaussian_Integral.html
       - title:  중심극한정리 증명
         url:    2020/01/10/CLT_proof.html
