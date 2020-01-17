@@ -92,7 +92,7 @@ Curl 편에서 확인했듯이 curl은 단위 영역이 받는 회전력이다.
 
 그렇다면 $N\rightarrow \infty$일 때 이 $R_k$영역은 미소 영역으로 생각할 수 있을 것이다. 
 
-그러면 넓이가 $|R_k|$인 영역 $R_k$의 회전량은 얼마인가?
+그러면 넓이가 $\|R_k\|$인 영역 $R_k$의 회전량은 얼마인가?
 
 
 그것은 
@@ -116,7 +116,7 @@ $$\oint_{C_k}\vec{f}\cdot d\vec{r}$$
 
 $$식(5) \Rightarrow \oint_C\vec{f}\cdot d\vec{r}=\sum_{k=1}^{N}\oint_{C_k}\vec{f}\cdot d\vec{r}\approx \sum_{k=1}^{N}\text{2d-curl}\left\{F(x_k, y_k)\right\}|R_k|$$
 
-이 때 $N$을 무한하게 크게 만들면 $|R_k|\rightarrow dA$가 되고,
+이 때 $N$을 무한하게 크게 만들면 $\|R_k\|\rightarrow dA$가 되고,
 
 
 따라서,
