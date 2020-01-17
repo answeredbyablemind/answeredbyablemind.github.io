@@ -118,6 +118,8 @@ docs-ko:
         url:    2019/08/25/divergence.html
       - title:  벡터장의 회전(curl)
         url:    2019/08/25/curl.html
+      - title:  그린정리
+        url:    2020/01/18/Green_theorem.html
       - title:  스칼라장의 라플라시안(laplacian)
         url:    2019/08/28/laplacian.html
       - title:  열방정식/파동방정식의 의미
