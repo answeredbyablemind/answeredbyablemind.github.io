@@ -149,4 +149,8 @@ $$(-1.5)^x = (1.5 \times (-1))^x = (1.5 \times e^{i\pi})^x = 1.5^x + e^{ix\pi}$$
 그림 10. 정의역과 치역을 한번에 표현할 수 있는 밑이 음수인 지수함수의 시각화
 </p>
 
+<center>
+  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KlAW7xkwDRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>
