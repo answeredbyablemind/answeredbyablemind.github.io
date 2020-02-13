@@ -17,7 +17,7 @@ tags: 통계학
 아래 그림과 같이 두 집단의 분포를 생각해보자.
 
 <p align = "center">
-    <img width = "500" src = "address">
+    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic1.png">
     <br>
     그림 1. 임의로 표시한 두 집단의 분포. <br> 두 집단의 평균값의 차이를 보기 위해선 어떤 수학적 조치가 필요할까?
 </p>
@@ -35,11 +35,10 @@ tags: 통계학
 우리는 두 가지 편차에 대해 생각해보아야 하는데, 첫 번째는 그룹간 평균의 편차이고 두 번째는 그룹 내 평균의 편차이다.
 
 <p align = "center">
-    <img width = "500" src = "address">
+    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic2.png">
     <br>
     그림 2. 두 그룹의 그룹 간 편차와 각 그룹의 그룹 내 편차
 </p>
-
 
 
 
