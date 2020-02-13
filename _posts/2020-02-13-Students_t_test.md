@@ -37,7 +37,7 @@ tags: 통계학
 <p align = "center">
     <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic2.png">
     <br>
-    그림 2. 두 그룹의 그룹 간 편차와 각 그룹의 그룹 내 편차
+    그림 2. 두 그룹의 그룹 간 편차와 각 그룹의 그룹 내 편차. <br> 각각 빨간색과 초록색으로 표시.
 </p>
 
 
