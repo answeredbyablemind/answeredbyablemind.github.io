@@ -59,7 +59,7 @@ tags: 통계학
 지표값을 $t$라고 이름 붙여보자.
 
 <p align = "center">
-    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic4.png">
+    <img width = "300" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic4.png">
     <br>
     그림 4. 두 그룹의 차이를 나타낼 수 있는 지표. 그룹 간 편차가 커지거나 그룹 내 편차가 작아질 수록 t는 커진다.
 </p>
@@ -67,8 +67,13 @@ tags: 통계학
 
 ## 평균값을 "통계적으로" 비교하기 위한 지표 2: 표본 샘플의 갯수
 
+우리가 두 그룹의 평균값을 비교하고자 할 때에 실제로는 그림 1~3과 같이 연속적인 두 함수를 비교하는 것이 아니라 샘플들을 추출하여 비교하게 된다.
 
-
+<p align = "center">
+    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic5.png">
+    <br>
+    그림 5. 두 그룹의 차이가 평균적으로 커질 수 있는 방법 2가지
+</p>
 
 
 
