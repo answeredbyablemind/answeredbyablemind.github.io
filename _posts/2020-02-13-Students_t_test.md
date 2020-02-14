@@ -40,7 +40,17 @@ tags: 통계학
     그림 2. 두 그룹의 그룹 간 편차와 각 그룹의 그룹 내 편차. <br> 각각 빨간색과 초록색으로 표시.
 </p>
 
+이 두 가지의 편차(그룹 간 편차와 그룹 내 편차)를 생각해보았을 때, 두 그룹이 차이가 나게 되려면 두 편차들이 어떻게 되어야 할까?
 
+그룹 간 편차는 커야하고 그룹 내 편차(이 경우 두 그룹의 평균적 그룹 내 편차)는 작아야 한다.
+
+그림으로 나타내면 아래의 그림 3과 같다.
+
+<p align = "center">
+    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic3.png">
+    <br>
+    그림 3. 두 그룹의 그룹 간 편차와 각 그룹의 그룹 내 편차. <br> 각각 빨간색과 초록색으로 표시.
+</p>
 
 
 
