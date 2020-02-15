@@ -12,9 +12,21 @@ tags: 통계학
 
 ## 모집단
 
+<p align = "center">
+    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic1.png">
+    <br>
+    그림 1. 
+</p>
+
 ### 모수
 
 ## 표본 집단
+
+<p align = "center">
+    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic2.png">
+    <br>
+    그림 2. 
+</p>
 
 ### 표본을 추출하는 이유
 
