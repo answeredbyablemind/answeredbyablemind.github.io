@@ -110,7 +110,7 @@ tags: 통계학
 마지막 장면은 그림 5와 같은데 오른쪽의 표본 평균의 분포의 너비가 왼쪽의 원래의 분포에 비해 너비가 작은 것을 알 수 있다.
 
 <p align = "center">
-    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic4.gif">
+    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic5.gif">
     <br>
     그림 5. 100 번째 표본까지의 표본 평균을 도시한 것. 
 </p>
