@@ -91,6 +91,29 @@ tags: 통계학
 
 ## 추정은 오차를 수반한다: 표준 오차(☆)
 
+표준 오차[^2]란 "표준 통계량의 표준 편차"를 의미하는 말이다.
+
+(글을 잘 읽어봐야 한다. 말이 꼬인다.)
+
+[^2]: 여기서, 즉 통계학에서, '표준'이란 말은 '정규화 했다'라는 의미이거나 '평균 냈음'이란 의미로 볼 수 있을 것 같다.
+
+앞서 말했듯 표본이 매번 추출될 때 마다 값이 바뀌는 특성때문에 표본 통계량은 매번 그 값에 변동(혹은 오차)이 있다.
+
+아래의 그림 4에서는 n=6인 표본을 100회 추출하면서 매번 표본 평균을 계산하여 그려가는 과정을 만들어보았다.
+
+<p align = "center">
+    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic4.gif">
+    <br>
+    그림 4. 100 번 표본을 추출해보고 그 때 마다 얻게되는 표본 평균을 그린 것
+</p>
+
+마지막 장면은 그림 5와 같은데 오른쪽의 표본 평균의 분포의 너비가 왼쪽의 원래의 분포에 비해 너비가 작은 것을 알 수 있다.
+
+<p align = "center">
+    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic4.gif">
+    <br>
+    그림 5. 100 번째 표본까지의 표본 평균을 도시한 것. 
+</p>
 
 
 ### 표본 평균 평균의 표준 오차 수식적인 증명
