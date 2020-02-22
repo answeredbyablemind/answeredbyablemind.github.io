@@ -34,7 +34,7 @@ $\lt$표본과 표준 오차의 의미$\gt$편에서는 모집단, 모수, 표�
 
 이렇게 말하더라도 와닿지 않을 수 있는데, 이번 article에서는 t-value를 중심으로 검정 통계량에 대해 이해해보도록 하자.
 
-# t-value의 의미
+# t-value의 의미: 차이 x 확실도
 
 조사 혹은 연구를 진행하다보면 두 표본 집단 간의 차이를 비교해야 할 때가 생길 수 있다. 표본 집단간의 차이를 비교할 때에는 여러가지 방법을 사용할 수 있겠으나, 주로 비교되는 지표는 평균이다.
 
@@ -46,35 +46,91 @@ $\lt$표본과 표준 오차의 의미$\gt$편에서는 모집단, 모수, 표�
 
 즉,  통계적으로 두 표본 집단 사이의 평균 값을 분석하고 싶을 때 상식적인 수준에서 생각해보면 우리가 원하는 것은 다음과 같이 생각할 수 있다.
 
-<p align = "center"> <b> 통계적 차이의 지표: 차이 x 확실도 </b></p>
+<p align = "center">
+    <b> 표본 평균 차이의 통계적 지표: 차이 x 확실도 </b>
+</p>
 
 평균의 차이는 실험을 통계 두 숫자를 빼주면 바로 계산하는게 어렵지 않지만 확실도라는 것은 수학적으로 어떻게 정의하면 좋을까? 수학적으로 확실도라는 개념은 잘 만들기 어려울지 모르지만 우리는 표본 통계량의 불확실도에 대해 배운 바 있으며 이것을 표준 오차라고 한다고 배운바 있다.
 
 그래서 우리가 할 수 있는 것은 차이에 확실도를 곱하는 방향으로 통계적 차이 지표를 계산하는 것이 아니고 차이에 불확실도를 나누는 방식으로 통계적 차이 지표를 만드는 것이다.
 
-<p align = "center"> <b> 통계적 차이의 지표: 차이 / 불확실도 </b></p>
+<p align = "center">
+    <b> 표본 평균 차이의 통계적 지표: 차이 / 불확실도 </b>
+</p>
 
 여기서 말하는 불확실도는 두 표본그룹의 평균간 차이의 불확실도를 의미한다.
 
-## t-value를 정의해보자.
+t-value의 의미는 위에서 확인한 '통계적 지표'와 같은 의미를 가진다. 즉, t-value가 말하는 것은 "이 정도 차이나고~! 그러면서 오류는 이정도야~!"라고 할 수 있다.
 
-두 표본 그룹간의 차이는 $\bar{X_1} - \bar{X_2}$로 쓰면 좋겠고, 불확실도 표준오차로 생각할 수 있으므로 $s_{\bar{X_1} - \bar{X_2}}$로 쓸 수 있다.
+## 수학적으로 t-value를 정의해보자.
 
-이 '차이의 지표'에 $t$라는 이름을 붙이면 다음과 같은 식으로 쓸 수 있다.
+두 표본 그룹간의 차이는 $\bar{X_1} - \bar{X_2}$로 쓰면 좋겠고, 위에서 말한 불확실도는 두 표본 그룹간의 평균 차이에 관한 것이며 수학적으로는 표준오차로 생각할 수 있으므로 $s_{\bar{X_1} - \bar{X_2}}$로 쓸 수 있다.
 
-
-<p align = "center">
-    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic1.png">
-    <br>
-    그림 1. 표본
-</p>
-
+이 '차이의 지표'에 $t$라는 이름을 붙이면 그림 1과 같은 식으로 쓸 수 있다.
 
 <p align = "center">
-    <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic2.png">
+    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic1.png">
     <br>
-    그림 2. 표본
+    그림 1. t-value의 구성 성분과 그 의미
 </p>
+
+조금 더 식을 구체화시켜보면 다음과 같이 써나갈 수 있을 것이다.
+
+$$t = \frac{\bar{X_1} - \bar{X_2}}{s_{\bar{X_1} - \bar{X_2}}}$$
+
+여기서 $s_{\bar{X_1} - \bar{X_2}}$에 대해서 조금 더 풀어서 생각해보자.
+
+$$ s_{\bar{X_1} - \bar{X_2}} = \sqrt{Var\left[{\bar{X_1} - \bar{X_2}}\right]}$$
+
+이고,
+
+$$Var\left[{\bar{X_1} - \bar{X_2}}\right] = Var[\bar{X_1}] + Var[\bar{X_2}] = \frac{Var[X_1]}{n_1} + \frac{Var[X_2]}{n_2}= \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}$$
+
+이다.
+
+따라서, 
+
+$$ s_{\bar{X_1} - \bar{X_2}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
+
+로 쓸 수 있다.
+
+따라서 식(1)은 다시 쓰면 다음과 같다.
+
+$$식(1) = \frac
+{\bar{X_1} - \bar{X_2}}
+{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+
+### t-value의 여러가지 variation
+
+식(1) 혹은 식(5)로 표현되는 t-value는 실험 상의 가정이나 세팅에 따라 여러가지 변형이 존재하는데 결국은 "pooled standard deviation을 사용하는가?"가 핵심이다.
+
+첫번째로 두 표본 집단의 n 수가 $n_1=n_2=n$으로 동일하고 두 표본 집단의 분산이 같다고 가정할 수 있는 경우에는 다음과 같이 $s_{\bar{X_1} - \bar{X_2}}$을 쓸 수 있다.
+
+$$식(1) = \frac
+{\bar{X_1} - \bar{X_2}}
+{s_p\sqrt{\frac{2}{n}}}\quad\text{where}\quad s_p=\sqrt{\frac{s_1^2+s_2^2}{2}}$$
+
+즉, 식(6)은 식(5)에서 $s_1$과 $s_2$를 $s_p$로 대체한 것으로 $s_p$는 pooled standard deviation을 나타내고 있다.
+
+두 번째로 두 표본 집단의 n수는 다르지만 두 표본 집단의 분산은 같다고 가정할 수 있는 경우에는 t-value를 다음과 같이 쓸 수 있다.
+
+$$식(1) = \frac
+{\bar{X_1} - \bar{X_2}}
+{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\quad\text{where}\quad s_p=\sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}}$$
+
+식 (6), (7)의 수식은 복잡해 보이지만 사실은 표준 편차값을 pooled 처리 할 것이냐 아니냐에 따라 달린 문제이므로, 실제 연구나 분석에서 적용할 때에는 그 상황에 맞게 적절한 수식을 이용하면 될 것이다.
+
+## 그냥 표준편차로만 나누면 안되나?
+
+<p align = "center">
+    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic2.png">
+    <br>
+    그림 2. 표본의 크기가 클 수록 두 표본의 평균 값을 더 확실히 계산할 수 있다.
+    <br> 즉, 표본의 크기가 클 수록 표본 평균에 대한 표준 오차가 작아진다.
+</p>
+
+# 충분히 큰 t-value의 기준은 어떻게 정해지는가?
+
 
 # 참고문헌
 
