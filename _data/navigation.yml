@@ -146,6 +146,8 @@ docs-ko:
         url:    2020/01/17/Gaussian_Integral.html
       - title:  중심극한정리 증명
         url:    2020/01/10/CLT_proof.html
+      - title:  통계적 추론: Big Picture
+        url:    2020/02/11/big_picture_stats_infer.html
       - title:  표본과 표준오차의 의미
         url:    2020/02/12/standard_error.html
       - title:  스튜던트의 t-test
