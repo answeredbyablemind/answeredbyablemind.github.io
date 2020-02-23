@@ -1,5 +1,5 @@
 ---
-title: 스튜던트의 T 테스트
+title: t-value의 의미와 스튜던트의 T 테스트
 sidebar:
   nav: docs-ko
 aside:
