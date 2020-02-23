@@ -74,11 +74,42 @@ $$ s_{\bar{X_1} - \bar{X_2}} = \sqrt{Var\left[{\bar{X_1} - \bar{X_2}}\right]}$$
 
 이고,
 
-$$Var\left[{\bar{X_1} - \bar{X_2}}\right] = Var[\bar{X_1}] + Var[\bar{X_2}] = \frac{Var[X_1]}{n_1} + \frac{Var[X_2]}{n_2}= \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}$$
+$$Var\left[{\bar{X_1} - \bar{X_2}}\right] $$
+
+$$ = Var[\bar{X_1}] + Var[\bar{X_2}]$$
+
+$$ = \frac{Var[X_1]}{n_1} + \frac{Var[X_2]}{n_2}$$
+
+$$= \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}$$
 
 이다.
 
-따라서, 
+식 (4)에서 식 (5)로 넘어갈 때에는 다음과 같은 방식으로 계산되었다.
+
+식 (4)에서
+
+$$\bar{X}_1 = \frac{1}{n_1}\sum_{i=1}^{n_1}X_i$$
+
+이므로
+
+$$Var[\bar{X}_1] = Var\left[\frac{1}{n_1}\sum_{i=1}^{n_1}X_i\right]$$
+
+여기서 $Var[aX]=a^2Var[X]$ 이므로,
+
+$$= \frac{1}{n_1^2}Var\left[\sum_{i=1}^{n_1}X_i\right]$$
+
+$$=\frac{1}{n_1^2}Var\left[X_1+X_2+\cdots+X_{n_1}\right]$$
+
+여기서 $Var[X\pm Y] = Var[X] + Var[Y]$ 이므로,
+
+$$=\frac{1}{n_1^2}\left(Var[X_1]+Var[X_2]+\cdots+Var[X_{n_1}]\right)$$
+
+여기서 $Var[X_1] = Var[X_2] = \cdots = Var[X_n] = s_1^2$ 이므로,
+
+$$=\frac{1}{n_1^2}\times n_1\times s_1^2 = \frac{s_1^2}{n_1}$$
+
+
+따라서, 식 (6)~(11)과 같은 방식을 $\bar{X_2}$에도 적용하면,
 
 $$ s_{\bar{X_1} - \bar{X_2}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
 
@@ -92,7 +123,7 @@ $$식(1) = \frac
 
 ## t-value의 여러가지 variation
 
-식(1) 혹은 식(5)로 표현되는 t-value는 실험 상의 가정이나 세팅에 따라 여러가지 변형이 존재하는데 결국은 "pooled standard deviation을 사용하는가?"가 핵심이다.
+식(1) 혹은 식(13)로 표현되는 t-value는 실험 상의 가정이나 세팅에 따라 여러가지 변형이 존재하는데 결국은 "pooled standard deviation을 사용하는가?"가 핵심이다.
 
 첫번째로 두 표본 집단의 n 수가 $n_1=n_2=n$으로 동일하고 두 표본 집단의 분산이 같다고 가정할 수 있는 경우에는 다음과 같이 $s_{\bar{X_1} - \bar{X_2}}$을 쓸 수 있다.
 
@@ -100,7 +131,7 @@ $$식(1) = \frac
 {\bar{X_1} - \bar{X_2}}
 {s_p\sqrt{\frac{2}{n}}}\quad\text{where}\quad s_p=\sqrt{\frac{s_1^2+s_2^2}{2}}$$
 
-즉, 식(6)은 식(5)에서 $s_1$과 $s_2$를 $s_p$로 대체한 것으로 $s_p$는 pooled standard deviation을 나타내고 있다.
+즉, 식(14)은 식(13)에서 $s_1$과 $s_2$를 $s_p$로 대체한 것으로 $s_p$는 pooled standard deviation을 나타내고 있다.
 
 두 번째로 두 표본 집단의 n수는 다르지만 두 표본 집단의 분산은 같다고 가정할 수 있는 경우에는 t-value를 다음과 같이 쓸 수 있다.
 
@@ -108,11 +139,11 @@ $$식(1) = \frac
 {\bar{X_1} - \bar{X_2}}
 {s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\quad\text{where}\quad s_p=\sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}}$$
 
-식 (6), (7)의 수식은 복잡해 보이지만 사실은 표준 편차값을 pooled 처리 할 것이냐 아니냐에 따라 달린 문제이므로, 실제 연구나 분석에서 적용할 때에는 그 상황에 맞게 적절한 수식을 이용하면 될 것이다.
+식 (14), (15)의 수식은 복잡해 보이지만 사실은 표준 편차값을 pooled 처리 할 것이냐 아니냐에 따라 달린 문제이므로, 실제 연구나 분석에서 적용할 때에는 그 상황에 맞게 적절한 수식을 이용하면 될 것이다.
 
 ## 그냥 표준편차로만 나누면 안되나?
 
-식 (5), (6), (7)을 보면 그림 1에서 표현한 것에 비해서 식이 꽤 복잡해 보이고, 특히나 정규분포의 식 $z=\frac{\bar{X}-\mu}{\sigma }$에 비해 $n$이라는 값이 복잡하게 들어가있어서 식 (5)~(7)만을 봤을 때에는 t-value에 대해 이해하기 어렵다.
+식 (13)~(15)를 보면 그림 1에서 표현한 것에 비해서 식이 꽤 복잡해 보이고, 특히나 정규분포의 식 $z=\frac{\bar{X}-\mu}{\sigma }$에 비해 $n$이라는 값이 복잡하게 들어가있어서 식 (13)~(15)만을 봤을 때에는 t-value에 대해 이해하기 어렵다.
 
 왜 t-value에는 $n$이 포함되어야 할까?
 
