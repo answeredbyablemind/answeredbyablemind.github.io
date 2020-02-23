@@ -165,6 +165,8 @@ $$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 
 보통의 경우 결과를 보는 사람의 입장에서는 모집단에 관심있는 경우가 더 많으므로 데이터에 관해 기술할 때는 표준 편차(혹은 그에 준하는 추정치)를 사용해 기술해야한다.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bIYBi8HjXAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # 참고문헌
 
 * Primer of biostatistics 6th edition, Stanton A Glantz, McGraw-Hill Medical Publishing Division
