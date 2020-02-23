@@ -1,5 +1,5 @@
 ---
-title: 통계적 추론: Big Picture 
+title: 통계적 추론 - Big Picture 
 sidebar:
   nav: docs-ko
 aside:
