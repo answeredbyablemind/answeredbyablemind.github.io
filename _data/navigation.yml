@@ -152,3 +152,5 @@ docs-ko:
         url:    2020/02/12/standard_error.html
       - title:  t-value의 의미와 스튜던트의 t-test
         url:    2020/02/13/Students_t_test.html
+      - title:  F-value의 의미와 분산분석
+        url:    2020/02/29/ANOVA.html
