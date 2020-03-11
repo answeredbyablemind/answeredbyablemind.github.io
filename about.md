@@ -18,10 +18,8 @@ titles:
 key: page-about
 ---
 
-반갑습니다.
+반갑습니다. 아래의 링크를 클릭하시면 저에 대한 정보를 확인하실 수 있습니다.
 
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
-<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="ko_KR" data-type="horizontal" data-theme="light" data-vanity="angeloyeo"><a class="LI-simple-link" href='https://kr.linkedin.com/in/angeloyeo?trk=profile-badge'>여동훈</a></div>
-
-https://www.linkedin.com/in/angeloyeo/
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="ko_KR" data-type="horizontal" data-theme="dark" data-vanity="angeloyeo"><a class="LI-simple-link" href='https://kr.linkedin.com/in/angeloyeo?trk=profile-badge'>여동훈</a></div>
