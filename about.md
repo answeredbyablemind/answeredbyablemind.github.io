@@ -19,3 +19,5 @@ key: page-about
 ---
 
 반갑습니다.
+
+https://www.linkedin.com/in/angeloyeo/
