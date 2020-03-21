@@ -188,7 +188,7 @@ $$_{150}C_{12} = 172,420,656,389,440,550\notag$$
 
 가지나 된다.
 
-이처럼 수많은 경우의 수에 대해 표본 추출을 할 수는 없으므로, 수학적으로 t-value들의 분포를 확인하여 공식화 한 것이 t-분포(그림 3 우측에서 실선)라고 할 수 있다.
+이처럼 수많은 경우의 수에 대해 표본 추출을 할 수는 없으므로, 수학적으로 t-value들의 분포를 계산하여 공식화 한 것이 t-분포(그림 3 우측에서 실선)라고 할 수 있다.
 
 <p align = "center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/J2sv6NNu1-M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
