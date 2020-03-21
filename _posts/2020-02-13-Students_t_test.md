@@ -164,7 +164,7 @@ $$식(1) = \frac
 
 이번 article의 초반부 "검정 통계량" 꼭지에서 언급했듯이 검정 통계량 중 하나인 t-value는 표본 통계량을 2차 가공한 것과 다를바가 없다.
 
-$\lt$표본과 표준오차의 의미$\gt$편에서 표본 평균의 분포를 계산한 것과 같이 모집단에서 임의의 두 개의 표본 집단을 추출하고 t-value를 계산할 수 있다. 모집단의 수가 150이고 n=10인 표본을 두 개 뽑는 과정을 총 100번 반복하면서 t-value의 분포를 확인해보자.
+[표본과 표준오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)편에서 표본 평균의 분포를 계산한 것과 같이 모집단에서 임의의 두 개의 표본 집단을 추출하고 t-value를 계산할 수 있다. 모집단의 수가 150이고 n=10인 표본을 두 개 뽑는 과정을 총 100번 반복하면서 t-value의 분포를 확인해보자.
 
 <p align = "center">
     <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic3.gif">
