@@ -150,6 +150,8 @@ docs-ko:
         url:    2020/02/11/big_picture_stats_infer.html
       - title:  표본과 표준오차의 의미
         url:    2020/02/12/standard_error.html
+      - title:  표본 분산은 n 대신 n-1로 나눈다
+        url:    2020/02/23/sample_variance.html
       - title:  t-value의 의미와 스튜던트의 t-test
         url:    2020/02/13/Students_t_test.html
       - title:  F-value의 의미와 분산분석
