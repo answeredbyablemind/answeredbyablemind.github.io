@@ -47,10 +47,12 @@ tags: 통계학
 
 그런 다음 변화가 없다는 가설에 모순이 있다는 것을 발견하게 될 수만 있다면 이것을 근거로 변화가 있다는 사실을 간접적으로 증명할 수 있게 되는 것이다.
 
-
 따라서, 귀무가설을 이용한 가설검증 과정을 다시 정리하면 다음과 같다.
 
-귀무가설 가정 > 실험 수행 > 결과 해석 불가 > 귀무가설 기각 > 대립가설 채택
+<p align = "center">
+    <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-03-25-hypothesis/pic1.png"><br>
+    그림 1. 귀무가설을 이용한 가설 검증 프로세스
+</p>
 
 ## 모수에 대해 알지 못하므로 귀류법을 쓴다니?
 
