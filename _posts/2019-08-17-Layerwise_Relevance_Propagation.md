@@ -7,23 +7,6 @@ aside:
 key: 20190817
 tags: 딥러닝
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 55vw;
-        background:white;  
-    }
-  }
-
-  @media screen and (min-width:500px){
-    iframe {
-        width: 55vw; 
-        height: 30vw;
-        background:white;  
-    }
-  }
-</style>
 
 # Deep Nerual Network Transparency
 
@@ -283,6 +266,8 @@ $$f(x) = \sum_i R_i$$
 그런 다음 출력단의 뉴런이 가지는 relevance score $R_f$를 $x_f$와 같게 둔 다음 그 전 layer들로 propagation을 시킨다고 하자.
 
 즉, $f(x) = \sum_i R_i$에서 처럼 $R_f = \sum_i R_i$로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7A0AnhLmZAg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 참고문헌
 * Explaining NonLinear Classification Decisions with Deep Taylor Decomposition, Montavon et al., 2015
