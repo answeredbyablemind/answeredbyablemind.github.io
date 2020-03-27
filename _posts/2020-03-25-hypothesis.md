@@ -54,6 +54,9 @@ tags: 통계학
     그림 1. 귀무가설을 이용한 가설 검증 프로세스
 </p>
 
+The concept of a null hypothesis is used differently in two approaches to statistical inference. In the significance testing approach of Ronald Fisher, a null hypothesis is rejected if the observed data is significantly unlikely to have occurred if the null hypothesis were true. In this case, the null hypothesis is rejected and an alternative hypothesis is accepted in its place. If the data is consistent with the null hypothesis, then the null hypothesis is not rejected. In neither case is the null hypothesis or its alternative proven; the null hypothesis is tested with data and a decision is made based on how likely or unlikely the data is.
+This is analogous to the legal principle of presumption of innocence, in which a suspect or defendant is assumed to be innocent (null is not rejected) until proven guilty (null is rejected) beyond a reasonable doubt (to a statistically significant degree).[3]
+
 ## 모수에 대해 알지 못하므로 귀류법을 쓴다니?
 
 의미없는 고민일 수도 있지만, 두 그룹의 비교를 수행할 때 우리가 모수를 안다고 가정한 뒤, 검정통계량을 어떻게 정의하면 좋을지 생각해보자.
@@ -87,3 +90,4 @@ tags: 통계학
 # 참고문헌
 
 * 닥터배의 술술 보건의학통계, 배정민, 한나래 아카데미
+* Null hypothesis, Wikipedia
