@@ -1,5 +1,5 @@
 ---
-title: 귀무가설, 대립가설, 1종/2종 오류
+title: 실패를 기도하는 이론 - 귀무가설과 대립가설
 sidebar:
   nav: docs-ko
 aside:
@@ -14,7 +14,7 @@ tags: 통계학
 
 통계학에서 처음 접하는 용어 중 어려운 것들을 꼽으라면 가설에 관한 것이다.
 
-귀무가설, 대립가설, 1종/2종 오류가 대표적인데, 한자 용어라 어려운가 싶어서 영문으로 봐도 전혀 도움이 되지 않는 아주 불친절한 용어들이다. (각각은 null hypothesis, alternative hypothesis, type-1 error, type-2 error로 번역할 수 있다)
+귀무가설, 대립가설이 대표적인데, 한자 용어라 어려운가 싶어서 영문으로 봐도 전혀 도움이 되지 않는 아주 불친절한 용어들이다 (각각은 null hypothesis, alternative hypothesis로 번역할 수 있다).
 
 필자의 경우 대학원에 들어가서야 통계학을 독학으로 공부했는데 이 용어들에 익숙해지는데까지 1년 넘는 시간이 걸렸던 것 같다.
 
@@ -37,11 +37,18 @@ tags: 통계학
 
 <p align = "center"> <b>"새로울 것이 있다"는 가설인 대립가설만 사용하면 될 것을 <br>왜 굳이 "귀무가설"이라는 불필요해보이는 개념을 추가로 도입하는 것일까?</b></p>
 
-귀무가설을 굳이 도입하는 본질적인 이유는 우리는 **모수에 대해서 알 수 없으므로** 귀류법[^1] [^2]으로 새로운 가설이 사실임을 간접적으로 증명하려고 하기 때문이다.
+귀무가설을 굳이 도입하는 이유는 여러가지가 있을 수 있겠지만, 대략 세 가지 정도로 추릴 수 있을 것 같다.
 
-[^1]: 귀류법은 어떤 명제를 간접적으로 증명하는 방법이다. 어떤 명제가 참이라고 직접 증명하기 어려우므로 그 부정이 참이라고 가정한 뒤 증명을 해나가다가 모순을 발견하고 이를 통해 해당 명제를 증명한다. 
+1. 참이 아님을 증명하는 것이 참임을 증명하는 것보다 훨씬 쉽기 때문이다.
+2. 귀무가설을 "올바르게" 서술하는 것이 대립가설을 "정확하게" 서술하는 것 보다 실패할 가능성이 적다.
+3. 우리는 모수에 대해서 알 수 없으며, 연구에 있어 주관성이 개입되어선 안되기 때문이다.
+   * 이러한 관점에 있어서 대척점에 서계신 분들이 바로 베이지안 통계학자들이다
 
-[^2]: 의외로 귀류법은 평소 생활에서도 종종 쓴다. "자, 니 말이 맞다고 쳐보자~" 라는 식의 화법이 귀류법을 이용한 화법이라고 할 수 있다.
+이러한 여러가지 이유에 따라 전통적인 통계학에서는 귀무가설을 검증하는 데 실패함으로써 간접적으로 새로운 가실에 대해 확인하고자 한다. 이러한 방법은 귀류법[^1]과 궤를 같이한다고 봐도 좋을 것 같다.
+
+귀류법은 어떤 명제를 간접적으로 증명하는 방법이다. 어떤 명제가 참이라고 직접 증명하기 어려우므로 그 부정이 참이라고 가정한 뒤 증명을 해나가다가 모순을 발견하고 이를 통해 해당 명제를 증명한다. 
+
+[^1]: 의외로 귀류법은 평소 생활에서도 종종 쓴다. "자, 니 말이 맞다고 쳐보자~" 라는 식의 화법이 귀류법을 이용한 화법이라고 할 수 있다.
 
 다시 말해, 조사나 연구에서 어떤 변화가 있다는 가설을 검증하고자한다면 역으로 가설이 없다고 가정한 뒤 실험을 진행한다.
 
@@ -54,40 +61,32 @@ tags: 통계학
     그림 1. 귀무가설을 이용한 가설 검증 프로세스
 </p>
 
-The concept of a null hypothesis is used differently in two approaches to statistical inference. In the significance testing approach of Ronald Fisher, a null hypothesis is rejected if the observed data is significantly unlikely to have occurred if the null hypothesis were true. In this case, the null hypothesis is rejected and an alternative hypothesis is accepted in its place. If the data is consistent with the null hypothesis, then the null hypothesis is not rejected. In neither case is the null hypothesis or its alternative proven; the null hypothesis is tested with data and a decision is made based on how likely or unlikely the data is.
-This is analogous to the legal principle of presumption of innocence, in which a suspect or defendant is assumed to be innocent (null is not rejected) until proven guilty (null is rejected) beyond a reasonable doubt (to a statistically significant degree).[3]
+귀무가설을 이용한 검증 방식을 비유하자면 "무죄 추정의 원칙"과 같다고 할 수 있다. 무죄 추정의 원칙을 따르면 용의자나 피고인은 유죄로 판결이 확정(귀무가설이 기각된 상태)되기 전 까지는 무죄로 추정한다(귀무가설이 기각되지 않은 상태)는 원칙이다. 
 
-## 모수에 대해 알지 못하므로 귀류법을 쓴다니?
+이 때, 유죄로 판결하기 위해선 피고인이 실제로 무죄라고 가정했을 때 발생할 수 없는 증거나 상황(통계학적으로 유의한 수준)이 뒷받침 되어야 한다.
 
-의미없는 고민일 수도 있지만, 두 그룹의 비교를 수행할 때 우리가 모수를 안다고 가정한 뒤, 검정통계량을 어떻게 정의하면 좋을지 생각해보자.
+## 귀무가설/대립가설에 대한 주의점
 
-이것에 대해 생각해보면 왜 귀류법(즉, 귀무가설 기각)을 사용한 가설검증이 필요한지 좀더 이해할 수 있게 된다.
+귀무가설/대립가설에 대해 주의할 핵심 내용 중 하나는 귀무가설을 기각할 수 있게 되었다고 해서 대립가설을 증명한 것이 아니라는 점이다. 또, 반대로 귀무가설을 기각하지 못했다고 해서 귀무가설이 맞다고 증명한 것 또한 아니라는 것이다.
 
-(모평균이 다른 두 모집단에서 샘플을 추출하는 경우에 대한 그림. discrete 하게 그릴 것)
+다시 말해 귀무가설 검증 과정은 오로지 "(검증) 실패"에만 주안점을 두는 과정인 것이다.
 
-(모평균을 알지 못한다고 가정하는 경우와 안다고 가정하는 경우의 t-value의 정의 차이)
+이 부분은 연구분야에서 굉장히 중요한 이슈이기도 한데, 이에 대해서는 p-value에 대해 다룰 때 좀 더 자세히 다루도록 하자.
 
-(두 샘플을 당겨와서 비교해야한다)
-
-## 가설 검증 시에는 귀무가설만 이용할 수 있고, 대립가설은 쓸 수 없다?
+## 그렇다면, 가설 검증 시에는 귀무가설만 이용해야할까?
 
 그렇지 않다.
 
 가설 검증 시 어떤 이유로 대립가설을 사용할 수 없어서 귀무가설 만을 이용할 수 있다고 생각할 수도 있는데 이는 사실이 아니다.
 
-대립 가설을 (간접적으로) 이용한 통계적 추론 방법이 있는데, 이 방법이 바로 신뢰구간을 이용한 검정이다.
+대립 가설을 간접적으로 이용한 통계적 추론 방법이 있는데, 이 방법이 바로 신뢰구간을 이용한 검정이다. 이에 대해선 추후에 다루도록 하겠다.
 
-
-# 1종 오류와 2종 오류
-
-모든 가설과 추론을 통한 검증에는 오류가 있을 수 있다.
-
-1종 오류는 false alarm
-
-2종 오류는 
+또, 아직은 멀게 느껴지긴 하지만 대립 가설을 직접적으로 이용하기 위해 통계 모델을 제안하는 방법이 있는데 베이즈 추론 방법을 이용하면 대립가설을 직접 이용하여 검정할 수도 있다.
 
 
 # 참고문헌
 
+* Helmenstine, Anne Marie, Ph.D. "Null Hypothesis Definition and Examples." ThoughtCo, Feb. 11, 2020, thoughtco.com/definition-of-null-hypothesis-and-examples-605436.
 * 닥터배의 술술 보건의학통계, 배정민, 한나래 아카데미
 * Null hypothesis, Wikipedia
+* Statistical hypothesis testing, Wikipedia

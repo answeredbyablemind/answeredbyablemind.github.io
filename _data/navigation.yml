@@ -156,5 +156,5 @@ docs-ko:
         url:    2020/02/13/Students_t_test.html
       - title:  F-value의 의미와 분산분석
         url:    2020/02/29/ANOVA.html
-      - title:  귀무가설, 대립가설, 1종/2종 오류
+      - title:  실패를 기도하는 이론 - 귀무가설, 대립가설
         url:    2020/03/25/hypothesis.html
