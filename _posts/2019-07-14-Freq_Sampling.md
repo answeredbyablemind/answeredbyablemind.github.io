@@ -56,28 +56,28 @@ DFT는 아래와 같이 정의되었다.
 
 $$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$
 
-두 정수 $p, k$ 에 대하여 다음과 같은 식을 생각하여 이산신호의 직교성의 성질을 이용하자.
+두 정수 $p, n$ 에 대하여 다음과 같은 식을 생각하여 이산신호의 직교성의 성질을 이용하자.
 
-$$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right)$$
+$$\sum_{p=0}^{N-1}X[k] exp\left(j\frac{2\pi p}{N}k\right)$$
 
 $$=\sum_{p=0}^{N-1}
 \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)
-exp\left(j\frac{2\pi p}{N}n\right)$$
+exp\left(j\frac{2\pi p}{N}k\right)$$
 
-$$=\sum_{p=0}^{N-1}\sum_{n=0}^{N-1}x[n] exp\left(j\frac{2\pi(p-k)}{N}n\right)$$
+$$=\sum_{p=0}^{N-1}\sum_{n=0}^{N-1}x[n] exp\left(j\frac{2\pi(p-n)}{N}k\right)$$
 
-여기서도 마찬가지로 $p\neq k$, $p=k$ 의 두 가지 경우를 생각할 수 있다.
+여기서도 CTFS에서 사용했던 방법과 마찬가지로 $p\neq n$, $p=n$ 의 두 가지 경우를 생각할 수 있다.
 
 
-1) $p\neq k$인 경우,직교성의 성질에 의해
+1) $p\neq n$인 경우,직교성의 성질에 의해
 
-$$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right) = 0$$
+$$식(9) = \sum_{p=0}^{N-1}X[k] exp\left(j\frac{2\pi p}{N}k\right) = 0$$
 
 이고,
 
-2) $p=k$인 경우 직교성의 성질에 의해
+2) $p=n$인 경우 직교성의 성질에 의해
 
-$$\sum_{p=0}^{N-1}X[p] exp\left(j\frac{2\pi p}{N}n\right) = Nx[n]$$
+$$식(9) = \sum_{p=0}^{N-1}X[k] exp\left(j\frac{2\pi p}{N}k\right) = Nx[n]$$
 
  이다.
 
