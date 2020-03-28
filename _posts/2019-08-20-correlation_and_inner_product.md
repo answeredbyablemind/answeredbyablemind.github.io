@@ -165,7 +165,7 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq1.png">
 </p>
 
-여기서 $\vec{a}=x_i-\bar{X}$, $\vec{b}=y_i-\bar{Y}$라 하자.
+여기서 $a_i=x_i-\bar{X}$, $b_i=y_i-\bar{Y}$라 하자.
 
 그러면 위 식은 다음과 같이 쓸 수 있다.
 
