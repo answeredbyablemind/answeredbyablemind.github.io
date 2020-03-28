@@ -181,3 +181,5 @@ $$|H(j\omega)| = \frac{A_0\omega_0^2}{\sqrt{(\omega_0^2-\omega^2)^2 +(\alpha\ome
 $$\angle H(j\omega) = \tan^{-1}\left(\frac{-\alpha\omega_0\omega}{\omega_0^2-\omega^2}\right)$$
 
 가 된다.
+<p align = "center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6LKCyaPRTr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
