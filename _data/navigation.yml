@@ -39,6 +39,11 @@ header:
       ko-KR   : *KO
     url: 2019/01/01/donation.html
 
+    
+  - titles:
+      ko      : &KO       github 소스코드
+      ko-KR   : *KO
+    url: https://github.com/angeloyeo/gongdols
 
 docs-ko:
   - title:      복소수와 오일러 공식
