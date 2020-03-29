@@ -83,7 +83,9 @@ tags: 통계학
 
 또, 아직은 멀게 느껴지긴 하지만 대립 가설을 직접적으로 이용하기 위해 통계 모델을 제안하는 방법이 있는데 베이즈 추론 방법을 이용하면 대립가설을 직접 이용하여 검정할 수도 있다.
 
+<p align = "center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P7Y1Dg9U64g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 # 참고문헌
 
