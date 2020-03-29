@@ -158,3 +158,5 @@ docs-ko:
         url:    2020/02/29/ANOVA.html
       - title:  실패를 기도하는 이론 - 귀무가설, 대립가설
         url:    2020/03/25/hypothesis.html
+      - title:  p-value의 의미
+        url:    2020/03/29/p_value.html
