@@ -39,7 +39,7 @@ header:
     url: 2019/01/01/donation.html
     
   - titles:
-      ko      : &KO       github 소스코드
+      ko      : &KO       Github 소스코드
       ko-KR   : *KO
     url: https://github.com/angeloyeo/gongdols
 
