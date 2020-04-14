@@ -32,18 +32,21 @@ header:
       ko      : &KO       소개
       ko-KR   : *KO
     url: /about.html
-
     
   - titles:
       ko      : &KO       후원하기
       ko-KR   : *KO
     url: 2019/01/01/donation.html
-
     
   - titles:
       ko      : &KO       github 소스코드
       ko-KR   : *KO
     url: https://github.com/angeloyeo/gongdols
+
+  - titles:
+      ko      : &KO       Youtube 채널
+      ko-KR   : *KO
+    url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
 docs-ko:
   - title:      복소수와 오일러 공식
