@@ -32,7 +32,7 @@ $$
 x[n]= \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\delta[k]
 $$
 
-한편, 식 (a)를 XY 좌표 평면에서 생각해보자. impulse train $( p[n]=\sum_{k=-\infty}^{\infty}{\delta [n-k]} )$ 을 생각해볼 때, 식 (a)는 각각의 impulse에 $x[k]$ 라는 weight factor를 곱해주어 더해진 것이라고도 생각해 볼 수 있다. 그것은 $k$가 정수일 때, $x[k]$ 는 일정한 값을 가지는 상수이기 때문이다.
+한편, 식 (3)을 XY 좌표 평면에서 생각해보자. impulse train $( p[n]=\sum_{k=-\infty}^{\infty}{\delta [n-k]} )$ 을 생각해볼 때, 식 (3)은 각각의 impulse에 $x[k]$ 라는 weight factor를 곱해주어 더해진 것이라고도 생각해 볼 수 있다. 그것은 $k$가 정수일 때, $x[k]$ 는 일정한 값을 가지는 상수이기 때문이다.
 
 
 ## 1.2 Impulse response와 convolution의 관계
