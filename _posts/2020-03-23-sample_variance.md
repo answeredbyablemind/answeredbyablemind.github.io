@@ -53,7 +53,7 @@ $$=\sum_{k=1}^{n}\left(
 
 
 $$=\sum_{k=1}^{n}
-  (X_k-m)^2 + 2(X_k-m)n(m-\bar{X})+n(m-\bar{X})^2
+  (X_k-m)^2 + 2(\bar{X}-m)n(m-\bar{X})+n(m-\bar{X})^2
   $$
 
 $$=\sum_{k=1}^{n}(X_k-m)^2-n(\bar{X}-m)^2$$
