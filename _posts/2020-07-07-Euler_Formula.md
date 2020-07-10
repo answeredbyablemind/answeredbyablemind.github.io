@@ -77,7 +77,7 @@ $$\lim_{n\rightarrow \infty}\left(1+\frac{i}{n}\right)^n $$
 
 식 (6)에서는 $n$을 무한대로 크게 만들어버렸지만, 일단은 $n$이 1인 경우부터 생각해보자.
 
-n =1 인 경우.
+n = 1 인 경우.
 
 $$\text{n=1 }\Rightarrow \left(1+\frac{i}{1}\right)^1$$
 
@@ -120,13 +120,13 @@ $\left(1+\frac{i}{2}\right)\left(1+\frac{i}{2}\right)$을 기하학적으로 그
   <br> 그림 5. (1+i/10)^10의 복소 평면 상에서의 위치를 생각하는 방법
 </p>
 
-n이 커지면 커질 수록 1과 1/n을 밑변고 높이로 하는 직각 삼각형의 빗변의 길이는 거의 1에 가까워지며, 
+$n$이 커지면 커질 수록 1과 $1/n$을 밑변고 높이로 하는 직각 삼각형의 빗변의 길이는 거의 1에 가까워지며, 
 
-n이 커질 수록 반지름이 1이고, 길이가 1인 호(arc) 위의 점에 가까워지는 것을 알 수 있다.
+$n$이 커질 수록 반지름이 1이고, 길이가 1인 호(arc) 위의 점에 가까워지는 것을 알 수 있다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/various_n_Euler_discretely.gif">
-  <br> 그림 6. 식 6에서 n이 커질 수록 반지름이 1이고 길이가 1인 호위의 점을 의미한다.
+  <br> 그림 6. 식 (6)에서 n이 커질 수록 식 (6)의 값은 반지름이 1이고 길이가 1인 호(arc) 위의 점을 의미한다.
 </p>
 
 따라서 최종적으로 식 (6)이 의미하는 것은 무엇인가?
