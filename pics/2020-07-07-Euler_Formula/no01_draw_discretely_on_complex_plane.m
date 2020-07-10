@@ -1,5 +1,25 @@
 clear; close all; clc;
 
+%% 호 위의 점
+
+plotXY(-0.2,1.5,-0.2,1.5,true,15)
+theta = 1/4 * pi;
+hold on;
+plot(cos(theta), sin(theta),'o','markerfacecolor','k','markeredgecolor','none','markersize',8);
+line([0, cos(theta)], [0, sin(theta)],'color','k','linestyle','--','linewidth',1)
+
+line([cos(theta), cos(theta)], [0, sin(theta)],'color','k','linestyle','--')
+line([0, cos(theta)], [sin(theta), sin(theta)],'color','k','linestyle','--')
+
+xx = cos(linspace(0, theta, 100));
+yy = sin(linspace(0, theta, 100));
+plot(xx, yy, 'k--')
+
+xx = 0.1 * cos(linspace(0, theta, 100));
+yy = 0.1 * sin(linspace(0, theta, 100));
+plot(xx, yy, 'k-')
+
+
 %% 다양한 n에 대하여
 
 fun_plot_Euler_Discretely(1); saveas(gcf,'euler_n_1.png')
@@ -18,7 +38,7 @@ open(v);
 
 clear F
 
-n = 20;
+n = 100;
 figure;
 
 for i = 1:n

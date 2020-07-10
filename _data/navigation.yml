@@ -61,6 +61,8 @@ docs-ko:
         url:    2019/09/12/negative_base_exponential.html
       - title:  허근의 위치
         url:    2019/06/16/imaginary_root.html
+      - title:  오일러 공식의 기하학적 의미
+        url:    2020/07/07/Euler_Formula.html
       - title:  페이저 (phasor)
         url:    2019/06/18/phasor.html
 
