@@ -119,6 +119,8 @@ docs-ko:
         url:    2019/09/09/Gauss_Jordan.html
       - title:  론스키안(Wronskian)
         url:    2019/10/10/Wronskian.html
+      - title:  독립성분분석(ICA)
+        url:    2020/07/14/ICA.html
 
   - title:      미적분학
     children:
