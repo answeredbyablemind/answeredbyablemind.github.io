@@ -81,7 +81,7 @@ for i = 1:length(ns)
     t = stats.tstat;
     p;
     
-    title(['n = ',num2str(n)]);
+    title(['n = ',num2str(n),' / effect size = -0.1 (∞Ì¡§)']);
     
     if p < 0.01
         text(0.03, 0.87, sprintf('t-value: %.2f \np-value: %.2e',t, p),'Units','normalized','fontsize',12)
