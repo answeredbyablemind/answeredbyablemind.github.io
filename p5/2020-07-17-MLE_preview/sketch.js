@@ -177,9 +177,6 @@ class DrawCircle {
 }
 
 function plotLikelihoodFunction(mu_moving) {
-     
-     // print(x - mu_moving)
-     // print(x)
      var x2 = []
      for (i = 0; i < x.length; i++){
           x2.push(abs(x[i] - mu_moving))
