@@ -20,7 +20,7 @@ var lh = []; // likelihood funtion
 var mouseX_scaled
 
 function setup() {
-     createCanvas(windowWidth/3, windowWidth/4);
+     createCanvas(windowWidth * 0.8, windowWidth/2);
      scl = width / 8;
      
      yPos1 = height * 1 / 4
@@ -83,7 +83,7 @@ function draw() {
      background(0);
 
      plotGaussian2Sample();
-
+    
      plotDataFallingDown();
 
      plotLikelihoodFunction(mouseX_scaled);
@@ -140,9 +140,14 @@ function plotGaussian2Sample() {
 function plotDataFallingDown() {
      push()
      translate(width / 2, yPos1);
+  
      for (let i = 0; i < data.length; i++){
-          circles[i].move();
-          circles[i].display();
+         let mov_height = []
+         mov_height = gaussian(circles[i].xPos/scl, mouseX_scaled, sigma)
+         //각 circle의 xPos에서는 moving_sig의 높이가 얼마나 될까?
+         
+         circles[i].move(mov_height * scl);
+         circles[i].display();
      }
      pop()
 }
@@ -164,15 +169,23 @@ class DrawCircle {
           fill(this.color)
           ellipse(this.xPos, this.yPos, this.diameter, this.diameter)
 
-     };
+     }
 
-     move() {// 움직여주기
+     move(mov_height) {// 움직여주기
           this.yPos += this.speed;
-          
-          if (this.yPos > this.dist) {
-               this.yPos = this.dist
+       
+          if (this.yPos > (this.dist - mov_height)) {
+               this.yPos = (this.dist - mov_height)
           }
-     };
+         push()
+          drawingContext.setLineDash([0.5, 3]); // 점선 효과 주기
+          stroke(255)
+          strokeWeight(3)
+          line(this.xPos, this.dist, this.xPos, this.dist - mov_height)
+       
+          drawingContext.setLineDash([1, 1]); // 점선 효과 종료
+       pop()
+     }
 
 }
 
@@ -243,8 +256,8 @@ function plotMovingGaussian(mu_moving){
      pop()
 }
 function plotSignature(){
-     // fill(255);
-     // textAlign(RIGHT)
-     // textSize(12 / 800 * width)
-     // text('(c) 공돌이의 수학정리노트', width * 0.98, height * 0.95)
+     fill(255);
+     textAlign(RIGHT)
+     textSize(12 / 800 * width)
+     text('(c) 공돌이의 수학정리노트', width * 0.98, height * 0.95)
 }
