@@ -110,20 +110,20 @@ function plotGaussian2Sample() {
      beginShape();
      noFill();
      stroke(255);
-
+     strokeWeight(2)
      for (let i = 0; i < (x.length - 1); i++) {
           line(x[i] * scl, sig[i] * scl, x[i + 1] * scl, sig[i + 1] * scl);
      }
      endShape();
      // ************ end of Normal Dist. to sample ************** //
-
+     strokeWeight(1)
      // ************ x axis indicators ******************** //
 
      line(-3 * scl, -0.1 * scl, 3 * scl, -0.1 * scl)
 
      // 눈금 그리기
      textAlign(CENTER)
-
+     
      for (i = -3; i <= 3; i++){
           line(i * scl, -0.15 * scl, i * scl, -0.05 * scl)
      }
@@ -134,6 +134,8 @@ function plotGaussian2Sample() {
           text(i, i * scl, +0.30 * scl)
      }
      // ************ end of x axis indicators ******************** //
+     textAlign(LEFT)
+     text('Sampling distribution', -3 * scl, - 0.5 * scl);
      pop();
 }
 
@@ -204,11 +206,13 @@ function plotLikelihoodFunction(mu_moving) {
      // **************** Normal Dist. to sample **************** //
      beginShape();
      noFill();
-     stroke(255);
-
+     stroke(227, 79, 134);
+     strokeWeight(2)
      for (let i = 0; i < x_min_idx; i++) {
           line(x[i] * scl, lh[i] * scl, x[i + 1] * scl, lh[i + 1] * scl);
      }
+     stroke(255)
+     strokeWeight(1)
      endShape();
      // ************ end of Normal Dist. to sample ************** //
 
@@ -229,6 +233,9 @@ function plotLikelihoodFunction(mu_moving) {
           text(i, i * scl, +0.30 * scl)
      }
      // ************ end of x axis indicators ******************** //
+  
+     textAlign(LEFT)
+     text('likelihood function L(θ|x)', -3 * scl, - 0.5 * scl);
      pop();
 }
 
@@ -252,7 +259,9 @@ function plotMovingGaussian(mu_moving){
           line(x[i] * scl, moving_sig[i] * scl, x[i + 1] * scl, moving_sig[i + 1] * scl);
      }
      endShape();
-
+     scale(1, -1)
+     textAlign(LEFT)
+     text('density p(x|θ)', -3 * scl, - 0.5 * scl);
      pop()
 }
 function plotSignature(){
