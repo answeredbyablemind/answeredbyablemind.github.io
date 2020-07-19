@@ -83,7 +83,8 @@ function setup() {
           h_mobile = 0;
      } else {
           h_mobile = 1;
-          slider1 = createSlider(0, width, 0, 0.01);
+          slider1 = createSlider(0, width / 5, 0, 0.01);
+          slider1.position(width / 20, height * 0.9)
      }
 }
 
