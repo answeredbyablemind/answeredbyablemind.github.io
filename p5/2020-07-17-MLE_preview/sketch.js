@@ -19,6 +19,8 @@ var lh = []; // likelihood funtion
 
 var mouseX_scaled
 
+var h_mobile // 모바일 환경인지 여부 확인
+
 function setup() {
      createCanvas(windowWidth * 0.8, windowWidth/2);
      scl = width / 8;
@@ -75,11 +77,23 @@ function setup() {
      }
 
      // likelihood 계산 및 정규화 끝
+     
+     // mobile 환경인지 확인
+     if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+     } else {
+          h_mobile = 1;
+          slider1 = createSlider(0, width, 0, 0.01);
+     }
 }
 
 function draw() {
-     mouseX_scaled = (mouseX - width/2)/ scl
-
+  
+     if (h_mobile ==0){
+         mouseX_scaled = (mouseX - width/2)/ scl
+     } else {
+         mouseX_scaled = slider1.value()
+     }
      background(0);
 
      plotGaussian2Sample();
