@@ -93,7 +93,7 @@ function draw() {
      if (h_mobile ==0){
          mouseX_scaled = (mouseX - width/2)/ scl
      } else {
-         mouseX_scaled = slider1.value()/scl
+         mouseX_scaled = (slider1.value() - width/2)/scl
      }
      background(0);
 
