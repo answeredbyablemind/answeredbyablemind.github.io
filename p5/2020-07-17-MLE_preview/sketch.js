@@ -23,7 +23,7 @@ var redrawButton
 var h_mobile // 모바일 환경인지 여부 확인
 
 function setup() {
-     createCanvas(windowWidth * 0.8, windowWidth/2);
+     createCanvas(windowWidth * 0.9, windowHeight * 0.9);
      scl = width / 8;
      
      yPos1 = height * 1 / 4
