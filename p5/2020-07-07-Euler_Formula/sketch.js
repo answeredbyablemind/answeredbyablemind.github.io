@@ -2,7 +2,7 @@ var scl;
 var n
 var slider
 function setup() {
-     createCanvas(windowWidth, windowHeight);
+     createCanvas(windowWidth * 0.9, windowHeight * 0.9);
      // createCanvas(400, 300);
      scl = width / 2;
      slider = createSlider(0, 20, 1, 1)
@@ -23,7 +23,7 @@ function draw() {
      let array = ['n = ', str(slider.value())]
      let separator = ' ';
      let message = join(array, separator)
-     textSize(10)
+     textSize(15 / 800 * width);
      text(message, width * 3 / 4, height / 4)
 }
 
