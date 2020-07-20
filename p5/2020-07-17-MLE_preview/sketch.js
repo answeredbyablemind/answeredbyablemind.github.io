@@ -79,14 +79,14 @@ function setup() {
 
      // likelihood 계산 및 정규화 끝
      
-     // // mobile 환경인지 확인
-     // if (FRUBIL.device.class == "Desktop") {
-     //      h_mobile = 0;
-     // } else {
-     //      h_mobile = 1;
-     //      slider1 = createSlider(0, width, 0, 0.01);
-     //      slider1.position(width / 20, height * 0.9)
-     // }
+     // mobile 환경인지 확인
+     if (FRUBIL.device.class == "Desktop") {
+          h_mobile = 0;
+     } else {
+          h_mobile = 1;
+          slider1 = createSlider(0, width, 0, 0.01);
+          slider1.position(width / 20, height * 0.9)
+     }
 
      // 다시 샘플링 버튼
 
@@ -99,12 +99,12 @@ function ButtonPressed(){
 }
 function draw() {
   
-     // if (h_mobile ==0){
-     //     mouseX_scaled = (mouseX - width/2)/ scl
-     // } else {
-     //     mouseX_scaled = (slider1.value() - width/2)/scl
-     // }
-     mouseX_scaled = (mouseX - width/2) / scl
+     if (h_mobile ==0){
+         mouseX_scaled = (mouseX - width/2)/ scl
+     } else {
+         mouseX_scaled = (slider1.value() - width/2)/scl
+     }
+     // mouseX_scaled = (mouseX - width/2) / scl
      background(0);
 
      plotGaussian2Sample();
