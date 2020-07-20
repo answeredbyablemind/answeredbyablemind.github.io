@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20200109
-tags: 확률통계
+tags: 통계학
 ---
 
 # 베이즈 정리의 공식
