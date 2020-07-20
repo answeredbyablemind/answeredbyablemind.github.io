@@ -2,7 +2,7 @@ var scl;
 var n
 var slider
 function setup() {
-     createCanvas(windowWidth * 0.8, windowWidth * 0.6);
+     createCanvas(windowWidth, windowHeight);
      // createCanvas(400, 300);
      scl = width / 2;
      slider = createSlider(0, 20, 1, 1)

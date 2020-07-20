@@ -8,6 +8,12 @@ key: 20200707
 tags: 기초수학
 ---
 
+<p align = "center">
+     <iframe width ="800" height = "600" src="https://angeloyeo.github.io/p5/2020-07-07-Euler_Formula/" frameborder = "0"></iframe>
+     <br>
+     슬라이더를 움직여 보세요 ^^
+</p>
+
 # 오일러 공식이란
 
 우선 오일러 공식을 직접 써보도록 하자.
