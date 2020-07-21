@@ -161,6 +161,9 @@ function plotGaussian2Sample() {
      // ************ end of x axis indicators ******************** //
      textAlign(LEFT)
      text('Sampling distribution', -3 * scl, - 0.5 * scl);
+
+     // 축 맨 오른쪽에 'x' 써주기
+     text('x', 3.2 * scl, 0 * scl)
      pop();
 }
 
@@ -258,7 +261,9 @@ function plotLikelihoodFunction(mu_moving) {
           text(i, i * scl, +0.30 * scl)
      }
      // ************ end of x axis indicators ******************** //
-  
+     
+     // axis 맨 끝에 'theta' 써주기
+     text('θ', 3.2 * scl, 0 * scl)
      textAlign(LEFT)
      text('likelihood function L(θ|x)', -3 * scl, - 0.5 * scl);
      pop();
