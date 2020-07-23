@@ -7,6 +7,14 @@ aside:
 key: 20200723
 tags: 신호처리
 ---
+
+<style>
+  @media screen{
+    iframe {
+        display:block;
+    }
+</style>
+
 {% raw %}
 
   <p align = "center">
