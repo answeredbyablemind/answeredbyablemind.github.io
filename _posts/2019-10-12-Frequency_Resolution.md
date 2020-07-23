@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20191012
-tags: 신호처리 푸리에변환
+tags: 신호처리 푸리에
 ---
 
 # 주파수 해상도란 무엇인가?
