@@ -18,11 +18,15 @@ tags: 신호처리
 
 {% raw %}
 
-  <p align = "center">
-    <iframe width ="800" height = "800" src="https://angeloyeo.github.io/p5/2020-07-23-laplace_and_z/" frameborder = "0"></iframe>
-     <br>
-     슬라이드를 움직여 보세요 ^^
-  </p>
+<p align = "center">
+  <iframe width ="800" height = "800" src="https://angeloyeo.github.io/p5/2020-07-23-laplace_and_z/" frameborder = "0"></iframe>
+    <br>
+    슬라이더를 움직여 보세요 ^^
+</p>
+
+<p align = "center">
+  <img src = "https://i.stack.imgur.com/KnfdW.jpg">
+</p>
 
 
 {% endraw %}
