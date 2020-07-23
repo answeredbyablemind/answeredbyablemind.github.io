@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20191011
-tags: 신호처리 푸리에변환
+tags: 신호처리 푸리에
 ---
 # 들어가기에 앞서
 
