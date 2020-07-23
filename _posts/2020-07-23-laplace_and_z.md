@@ -9,7 +9,6 @@ tags: 신호처리
 ---
 
 <style>
-  @media screen{
     iframe {
         display:block;
     }
