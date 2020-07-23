@@ -10,7 +10,9 @@ tags: 신호처리
 
 <style>
     iframe {
-        display:block;
+        display: block;
+        border-style: none;
+        margin: 0 auto;
     }
 </style>
 
