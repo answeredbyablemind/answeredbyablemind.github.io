@@ -7,7 +7,9 @@ var range = 11
 var ROI = [1, 1]
 
 var scl
-var my_slider
+// var my_slider
+
+var time
 
 function setup() {
      createCanvas(windowHeight* 0.9, windowHeight * 0.9);
@@ -15,11 +17,18 @@ function setup() {
      ys_ROI = [ROI[1]-delta * Math.floor(num_lines_ROI/2), ROI[1]+delta * Math.floor(num_lines_ROI/2)]
 
      scl = width / 8
-     my_slider = createSlider(0, n_steps, 0, 1)
-     my_slider.position(0, height)
+     // my_slider = createSlider(0, n_steps, 0, 1)
+     // my_slider.position(0, height)
 
+     time = 0
 }
 function draw() {
+
+     a = n_steps/(1+Math.exp(-(time-6)))
+     time += 0.05
+     if (time>13){
+          time = 0
+     }
      background(0);
      push();
      
@@ -27,7 +36,8 @@ function draw() {
 
      translate(width/2, height/2)
      scale(1, -1)
-     let i_step = my_slider.value()
+     // let i_step = my_slider.value()
+     let i_step = a
 
      // 원래 위치의 격자 그리기
      
