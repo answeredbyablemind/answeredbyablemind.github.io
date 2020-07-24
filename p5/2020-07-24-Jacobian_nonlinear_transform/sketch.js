@@ -24,13 +24,26 @@ function draw() {
      push();
      
      noFill()
-     stroke(255)
 
      translate(width/2, height/2)
      scale(1, -1)
      let i_step = my_slider.value()
+
+     // 원래 위치의 격자 그리기
+     
+     stroke(100);
+     strokeWeight(0.5);
+     plot_original_grid()
+
+     stroke(109, 155, 222);
+     strokeWeight(1)
      nonlin_trans_vertical(-range, range, 1) // 세로축의 비선형 변환
      nonlin_trans_horizon(-range, range, 1) // 가로축의 비선형 변환
+
+     stroke(255)
+     strokeWeight(3)
+     nonlin_trans_vertical(0, 0, 1) // y축의 비선형 변환
+     nonlin_trans_horizon(0, 0, 1) // x축의 비선형 변환
 
      // nonlin_trans_vertical(xs_ROI[0], xs_ROI[1], delta) // 세로축 ROI의 비선형 변환
      // nonlin_trans_horizon(ys_ROI[0], ys_ROI[1], delta) // 세로축 ROI의 비선형 변환
@@ -38,6 +51,13 @@ function draw() {
 
      pop()
 
+     function plot_original_grid(){
+          for(i = -range; i <= range; i ++){
+               line(i * scl, -height/2, i * scl, height/2)
+               line(-width/2, i * scl, width/2, i * scl)
+          }
+
+     }
      function nonlin_trans_vertical(range_stt, range_end, incre) {
           // range_stt: 시작하고자 가장 왼쪽의 x 좌표
           // range_end: 끝내하고자 가장 오른쪽의 x 좌표
