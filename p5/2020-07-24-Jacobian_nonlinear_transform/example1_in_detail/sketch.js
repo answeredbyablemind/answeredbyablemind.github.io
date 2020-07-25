@@ -7,9 +7,11 @@ var range = 8
 var ROI = [1, 1]
 
 var scl
-var my_slider
+// var my_slider
 
 var time
+
+var extraCanvas
 
 function setup() {
      createCanvas(windowHeight* 0.9 * 2, windowHeight * 0.9);
@@ -17,64 +19,162 @@ function setup() {
      ys_ROI = [ROI[1]-delta * Math.floor(num_lines_ROI/2), ROI[1]+delta * Math.floor(num_lines_ROI/2)]
 
      scl = height / 8
-     my_slider = createSlider(0, n_steps, 0, 1)
-     my_slider.position(0, height)
+     // my_slider = createSlider(0, n_steps, 0, 1)
+     // my_slider.position(0, height)
 
      time = 0
 
+     extraCanvas = createGraphics(windowHeight* 0.9 * 2, windowHeight * 0.9)
+     extraCanvas.background(0)
 }
 function draw() {
 
-     // a = n_steps/(1+Math.exp(-(time-6)))
-     // time += 0.05
-     // if (time>13){
-     //      time = 0
-     // }
+     a = n_steps/(1+Math.exp(-(time-6)))
+     time += 0.05
+     if (time>13){
+          time = 0
+     }
 
-     a = my_slider.value()
+     // a = my_slider.value()
      background(0);
 
      // 왼쪽 절반 그려주기
      draw_left_half(width / 4, height / 2)
 
      // 오른쪽 절반 그려주기
-     fill(0)
-     push()
-     square(width/2, 0, height)
-     translate(1/4 * width, 1/2 * height)
-     stroke(100)
-     noFill()
+     // ROI 중심으로 중점 잡기
 
-     let i_step = a
-     pos_x = ROI[0]
-     pos_y = ROI[1]
+     let changeX_for_center
+     let changeY_for_center
+     let new_X_for_center
+     let new_Y_for_center
 
-     var changeX
-     var changeY
-     var new_X
-     var new_Y
+     let temp_for_center = []
+     temp_for_center = my_nonlin_func([ROI[0]], [ROI[1]])
+     changeX_for_center = temp_for_center[0]
+     changeY_for_center = temp_for_center[1]
 
-     let temp = []
-     temp = my_nonlin_func([pos_x], [pos_y])
-     changeX = temp[0]
-     changeY = temp[1]
+     new_X_for_center = ROI[0] + changeX_for_center * a / n_steps // 새로운 중점 x 좌표
+     new_Y_for_center = ROI[1] + changeY_for_center * a / n_steps // 새로운 중점 y 좌표
 
-     new_X = pos_x + changeX * i_step / n_steps
 
-     new_Y = pos_y + changeY * i_step / n_steps
+     image(extraCanvas, width/2, 0)
+     extraCanvas.clear()
+     extraCanvas.fill(0)
+     extraCanvas.rect(0, 0, width, height)
+
+     extraCanvas.push();
+     extraCanvas.translate(1/4 * width, 1/2 * height)
+     extraCanvas.scale(12, -12)
+     extraCanvas.strokeWeight(0.3)
+
+     // extraCanvas에 vertical lines 그리기
+     extraCanvas.translate(-new_X_for_center * scl, -new_Y_for_center * scl)
+
      
-     // copy((new_X - 4.5 /2 * delta) * scl, (new_Y - 4.5 /2 * delta)* scl, 
-     //      4.5* delta * scl, 4.5* delta * scl, 
-     //      1/4 * width, -1/2 * height, 1/2*width, height)
+     var center_moved_by_func = my_nonlin_func([new_X_for_center], [new_X_for_center])
+     extraCanvas.translate(-center_moved_by_func[0] * a / n_steps* scl, -center_moved_by_func[1] * a / n_steps * scl)
 
+     extraCanvas.noFill()
+     for(i_vert = 0; i_vert < 4; i_vert ++){
+          let x_r = [] // 오른쪽 panel에 그려질 x
+          let y_r = [] // 오른쪽 panel에 그려질 y
 
-     copy(1/4 * width + (new_X - 3 * delta) * scl, 1/2 * height - (new_Y + 2 * delta) * scl, 
-          5 * delta * scl, 5 * delta * scl, 
-          1/4 * width, -1/2 * height, 1/2*width, height)
-     pop()
+          for (i = 0; i<100; i++){
+               x_r.push(new_X_for_center - 1.5 * delta + i_vert * delta)
+          }
+
+          y_r = linspace(new_Y_for_center - 5 * delta, 
+                         new_Y_for_center + 5 * delta, 100)
+
+          let changeX = []
+          let changeY = []
+          let new_X = []
+          let new_Y = []
+          let temp = []
+
+          temp = my_nonlin_func(x_r, y_r)    
+          changeX = temp[0]
+          changeY = temp[1]
+               
+          for(let i = 0; i < x_r.length; i++) {
+               new_X.push(
+                    x_r[i] + changeX[i] * a / n_steps
+               )
+               new_Y.push(
+                    y_r[i] + changeY[i] * a / n_steps
+               )
+          }
+          
+
+          extraCanvas.stroke(112, 196, 125)
+          extraCanvas.beginShape()
+
+          for (let i = 0; i < new_X.length; i++) {
+               extraCanvas.vertex(new_X[i] * scl, new_Y[i] * scl)
+          }
+
+          extraCanvas.endShape()
+     }
+     
+     // extraCanvas에 horizontal lines 그리기
+
+     for(i_vert = 0; i_vert < 4; i_vert ++){
+          let x_r = [] // 오른쪽 패널에 그려질 x
+          let y_r = [] // 오른쪽 패널에 그려질 y
+
+          for (i = 0; i<100; i++){
+               y_r.push(new_Y_for_center - 1.5 * delta + i_vert * delta)
+          }
+
+          x_r = linspace(new_X_for_center - 5 * delta, 
+                         new_X_for_center + 5 * delta, 100)
+
+          let changeX = []
+          let changeY = []
+          let new_X = []
+          let new_Y = []
+          let temp = []
+
+          temp = my_nonlin_func(x_r, y_r)    
+          changeX = temp[0]
+          changeY = temp[1]
+               
+          for(let i = 0; i < x_r.length; i++) {
+               new_X.push(
+                    x_r[i] + changeX[i] * a / n_steps
+               )
+               new_Y.push(
+                    y_r[i] + changeY[i] * a / n_steps
+               )
+          }
+
+          // extraCanvas.translate(new_X_for_center * scl, new_Y_for_center * scl)
+
+          extraCanvas.stroke(230, 57, 57)
+          extraCanvas.beginShape()
+
+          for (let i = 0; i < new_X.length; i++) {
+               extraCanvas.vertex(new_X[i] * scl, new_Y[i] * scl)
+          }
+
+          extraCanvas.endShape()
+     }
+
+     extraCanvas.pop()
+
+     extraCanvas.push();
+     extraCanvas.translate(1/4 * width, 1/2 * height)
+     extraCanvas.scale(12, -12)
+
+     extraCanvas.rectMode(CENTER)
+     extraCanvas.noFill()
+     extraCanvas.stroke(255)
+     extraCanvas.rect(0, 0, 4.5 * delta * scl, 4.5 * delta * scl)
+     extraCanvas.pop()
 
      // 마지막 서명
-     // plotSignature();
+     plotSignature();
 
 
      function draw_left_half(pos1, pos2) {
