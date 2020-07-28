@@ -30,6 +30,7 @@ function buttonPressed(){
 
 function createAndDrawCircle(){
      var newCircle
+     var circleSafeToDraw = false
      for(var tries = 0; tries < createCircleAttempts; tries++) {
           newCircle = {
             x: Math.floor(Math.random() * width),
