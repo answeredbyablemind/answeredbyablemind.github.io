@@ -1,10 +1,10 @@
 ---
-title: 몬드리안 작품 그리기 (p5.js)
+title: Hypnotic Squares (p5.js)
 sidebar:
   nav: docs-ko
 aside:
   toc: true
-key: 20200724
+key: 19000103
 tags: p5js
 ---
 
