@@ -1,5 +1,5 @@
 ---
-title: Circle Packing (p5.js)
+title: Tiled Lines (p5.js)
 sidebar:
   nav: docs-ko
 aside:
