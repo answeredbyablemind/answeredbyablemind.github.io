@@ -180,7 +180,6 @@ docs-ko:
         url:    2020/03/29/p_value.html
       - title:  최대우도법(MLE)
         url:    2020/07/17/MLE.html
-      - title:  최대우도법(MLE)
 
   - title:      JS Applet 연습 모음
     children:
@@ -194,6 +193,9 @@ docs-ko:
         url:    1900/01/04/circle_packing.html
       - title:  Tiled Lines
         url:    1900/01/05/tiled_lines.html
+      - title:  Un Deux Trois
+        url:    1900/01/06/Un_Deux_Trois.html
+        
         
         
 
