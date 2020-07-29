@@ -44,7 +44,7 @@ function my_draw(x, y, my_width, my_height, positions){
      for (var i = 0; i <= positions.length; i++){
           push()
           translate(x + my_width/2, y + my_height/2)
-          rotate(Math.random() * 5)
+          rotate((Math.random() - 0.5) * 2 * PI/3 + PI)
           translate(-my_width/2, -my_height/2)
           line(positions[i] * my_width, 0, positions[i] * my_width, my_height)
           pop()
