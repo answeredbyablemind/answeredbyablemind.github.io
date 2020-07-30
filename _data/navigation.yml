@@ -126,6 +126,8 @@ docs-ko:
 
   - title:      미적분학
     children:
+      - title:  중적분의 의미
+        url:    2020/07/30/multiple_integral.html
       - title:  스칼라장의 기울기(gradient)
         url:    2019/08/25/gradient.html
       - title:  벡터장의 발산(divergence)
