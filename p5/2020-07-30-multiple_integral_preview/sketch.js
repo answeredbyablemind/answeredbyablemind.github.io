@@ -123,8 +123,8 @@ function plotAxes(){
 }
 function plotBoxes(){
      var sumOfVolumes = 0
-     for(var i = -(1-delta_x/2); i <= (1-delta_x/2); i+=delta_x){
-          for(var j = -(1-delta_y/2); j <= (1-delta_y/2); j+=delta_y){
+     for(var i = -(1-delta_x/2); i < 1; i+=delta_x){
+          for(var j = -(1-delta_y/2); j < 1 ; j+=delta_y){
                let box_height_arr = [
                     4 - (i - delta_x/2)**2 - (j - delta_y/2)**2, 
                     4 - (i + delta_x/2)**2 - (j - delta_y/2)**2, 
