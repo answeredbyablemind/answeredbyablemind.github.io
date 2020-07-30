@@ -60,22 +60,9 @@ function draw() {
      plotBoxes()
 
      orbitControl()
-     my_color = color(100, 50, 100);
-     my_color.setAlpha(50)
-     fill(my_color)
-     // stroke(0)
-     noStroke()
 
-     for(var j = 0; j < y.length-1; j++){
-          beginShape(TESS)
-          for(var i = 0; i < x.length-1; i++){
-               vertex(x[i] * scl, y[j] * scl, f[i][j] * scl / z_axis_ratio)
-               vertex(x[i] * scl, y[j+1] * scl, f[i][j+1] * scl / z_axis_ratio)
-               vertex(x[i+1] * scl, y[j+1] * scl, f[i+1][j+1] * scl / z_axis_ratio)
-               vertex(x[i+1] * scl, y[j] * scl, f[i+1][j] * scl / z_axis_ratio)
-          }
-          endShape()
-     }
+     plotCurvedPlane()
+     plotSignature()
 
 }
 
@@ -134,3 +121,30 @@ function plotBoxes(){
      }
      
 }
+
+function plotCurvedPlane(){
+     my_color = color(100, 50, 100);
+     my_color.setAlpha(50)
+     fill(my_color)
+     // stroke(0)
+     noStroke()
+
+     for(var j = 0; j < y.length-1; j++){
+          beginShape(TESS)
+          for(var i = 0; i < x.length-1; i++){
+               vertex(x[i] * scl, y[j] * scl, f[i][j] * scl / z_axis_ratio)
+               vertex(x[i] * scl, y[j+1] * scl, f[i][j+1] * scl / z_axis_ratio)
+               vertex(x[i+1] * scl, y[j+1] * scl, f[i+1][j+1] * scl / z_axis_ratio)
+               vertex(x[i+1] * scl, y[j] * scl, f[i+1][j] * scl / z_axis_ratio)
+          }
+          endShape()
+     }
+
+}
+function plotSignature(){
+     fill(255);
+     textAlign(RIGHT)
+     textSize(20 / 800 * width)
+     text('(c) 공돌이의 수학정리노트', width * 0.98, height * 0.95)
+}
+

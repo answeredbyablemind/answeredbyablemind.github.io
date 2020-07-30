@@ -18,7 +18,7 @@ tags: 미적분학
 
 {% raw %}
 <center>
-  <iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-07-30-multiple_integral_preview/"></iframe></p>
+  <iframe width = "700" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-07-30-multiple_integral_preview/"></iframe>
 </center>
 
 {% endraw %}
