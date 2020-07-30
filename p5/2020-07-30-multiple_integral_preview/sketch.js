@@ -64,7 +64,7 @@ function draw() {
 
      plotAxes()
 
-     plotBoxes()
+     plotBoxes() //TODO: 남는 부분 box 채워넣어주기
 
      orbitControl()
 
