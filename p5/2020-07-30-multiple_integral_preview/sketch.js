@@ -136,7 +136,7 @@ function plotCurvedPlane(){
      noStroke()
 
      for(var j = 0; j < y.length-1; j++){
-          beginShape(TESS)
+          beginShape(TESS) // p5.js 버전 확실히 체크할 것. 버전 낮으면 TESS 작동 안함.
           for(var i = 0; i < x.length-1; i++){
                vertex(x[i] * scl, y[j] * scl, f[i][j] * scl / z_axis_ratio)
                vertex(x[i] * scl, y[j+1] * scl, f[i][j+1] * scl / z_axis_ratio)
