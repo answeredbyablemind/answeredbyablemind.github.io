@@ -40,10 +40,10 @@ function setup() {
      tex.position(width/4, 0)
      katex.render('f(x,y) = 4 - x^2 - y^2', tex.elt)
 
-     delta_x_slider = createSlider(1, 20, 10, 1)
+     delta_x_slider = createSlider(1, 21, 9, 1)
      delta_x_slider.position(0, height)
      
-     delta_y_slider = createSlider(1, 20, 10, 1)
+     delta_y_slider = createSlider(1, 21, 9, 1)
      delta_y_slider.position(width/2, height)
 
      // 서명 쓰기
@@ -130,9 +130,9 @@ function plotBoxes(){
                     4 - (i + delta_x/2)**2 - (j - delta_y/2)**2, 
                     4 - (i - delta_x/2)**2 - (j + delta_y/2)**2, 
                     4 - (i + delta_x/2)**2 - (j + delta_y/2)**2]
-               box_height = min(box_height_arr)
+               box_height = min(box_height_arr) //visualization 용
                
-               sumOfVolumes += delta_x * delta_y * box_height_arr[3]
+               sumOfVolumes += delta_x * delta_y * box_height_arr[3] // 실제 계산
                push()
                translate(i * scl, j * scl, box_height/2 * scl / z_axis_ratio)
                fill(255)
