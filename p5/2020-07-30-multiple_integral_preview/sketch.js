@@ -4,6 +4,7 @@ var x = []
 var y = []
 var tex
 var signature
+var my_font
 
 var delta_x
 var delta_y
@@ -12,10 +13,14 @@ var z_axis_ratio = 2
 
 var delta_x_slider
 var delta_y_slider
-
+// function preload(){
+//      my_font = loadFont('Ligconsolata.otf')
+// }
 function setup() {
      createCanvas(320, 320, WEBGL);
-
+     // textFont(my_font)
+     textSize(50)
+     textAlign(CENTER, CENTER)
      setAttributes('antialias', true)
      // my function
      // z = 4- x^2- y^2
@@ -35,10 +40,10 @@ function setup() {
      scl = width / 8
 
      // 글씨 쓰기
-     tex = createP()
-     tex.style('font-size', '15px')
-     tex.position(width/4, 0)
-     katex.render('f(x,y) = 4 - x^2 - y^2', tex.elt)
+     // tex = createP()
+     // tex.style('font-size', '15px')
+     // tex.position(width/4, 0)
+     // katex.render('f(x,y) = 4 - x^2 - y^2', tex.elt)
 
      delta_x_slider = createSlider(1, 20, 10, 1)
      delta_x_slider.position(0, height)
@@ -47,16 +52,17 @@ function setup() {
      delta_y_slider.position(width/2, height)
 
      // 서명 쓰기
-     signature = createP()
-     signature.style('font-size', '10px')
-     signature.position(width*0.7, height*0.88)
-     katex.render('(c) 공돌이의 수학정리노트', signature.elt)
+     // signature = createP()
+     // signature.style('font-size', '10px')
+     // signature.position(width*0.7, height*0.88)
+     // katex.render('(c) 공돌이의 수학정리노트', signature.elt)
 }
 
 
 function draw() {
+     let sumOfVolumes
      background(255);
-     plotSignature()
+     text(str(sumOfVolumes), 0, 0)
 
      rotateX(PI/4)
      delta_x = 2/delta_x_slider.value()
@@ -64,7 +70,7 @@ function draw() {
 
      plotAxes()
 
-     plotBoxes() //TODO: 남는 부분 box 채워넣어주기
+     sumOfVolumes = plotBoxes()
 
      orbitControl()
 
@@ -108,6 +114,7 @@ function plotAxes(){
      pop()
 }
 function plotBoxes(){
+     var sumOfVolumes = 0
      for(var i = -(1-delta_x/2); i <= (1-delta_x/2); i+=delta_x){
           for(var j = -(1-delta_y/2); j <= (1-delta_y/2); j+=delta_y){
                let box_height_arr = [
@@ -116,7 +123,8 @@ function plotBoxes(){
                     box_height3 = 4 - (i - delta_x/2)**2 - (j + delta_y/2)**2, 
                     box_height4 = 4 - (i + delta_x/2)**2 - (j + delta_y/2)**2]
                box_height = min(box_height_arr)
-
+               
+               sumOfVolumes += delta_x * delta_y * box_height
                push()
                translate(i * scl, j * scl, box_height/2 * scl / z_axis_ratio)
                fill(255)
@@ -125,6 +133,7 @@ function plotBoxes(){
                pop()
           }
      }
+     return sumOfVolumes
 
 }
 
@@ -147,10 +156,3 @@ function plotCurvedPlane(){
      }
 
 }
-function plotSignature(){
-     fill(255);
-     textAlign(RIGHT)
-     textSize(20 / 800 * width)
-     text('(c) 공돌이의 수학정리노트', width * 0.98, height * 0.95)
-}
-
