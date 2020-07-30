@@ -67,7 +67,7 @@ function setup() {
 function draw() {
      let sumOfVolumes
      background(255);
-     orbitControl()
+     // orbitControl()
 
      rotateX(PI/4)
      rotateZ(millis()/5000)
