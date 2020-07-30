@@ -11,7 +11,7 @@ tags: 푸리에 신호처리
 {% raw %}
 <p align="center"><iframe width = "530" height = "385" frameborder = "0" src="https://angeloyeo.github.io/p5/CT_Convolution_2/p5/"></iframe></p>
 
-<center> 연속 시간 컨볼루션이 말하는 것: 연속함수는 잘개 쪼개서 표현될 수 있다.</center>
+<center> 연속 시간 컨볼루션이 말하는 것: 연속함수는 잘게 쪼개서 표현될 수 있다.</center>
 
 > 본 post에서는 linear time invariant (LTI) 시스템을 상정함.
 >
