@@ -3,6 +3,7 @@ var scl
 var x = []
 var y = []
 var tex
+var signature
 
 var delta_x
 var delta_y
@@ -45,12 +46,18 @@ function setup() {
      delta_y_slider = createSlider(0.1, 2, 0.1, 0.05)
      delta_y_slider.position(width/2, height)
 
-
+     // 서명 쓰기
+     signature = createP()
+     signature.style('font-size', '10px')
+     signature.position(width*0.7, height*0.88)
+     katex.render('(c) 공돌이의 수학정리노트', signature.elt)
 }
 
 
 function draw() {
      background(255);
+     plotSignature()
+
      rotateX(PI/4)
      delta_x = delta_x_slider.value()
      delta_y = delta_y_slider.value()
@@ -62,7 +69,6 @@ function draw() {
      orbitControl()
 
      plotCurvedPlane()
-     plotSignature()
 
 }
 
