@@ -4,7 +4,8 @@ var x = []
 var y = []
 var tex
 var signature
-var my_font
+var texVol
+var texVolReal
 
 var delta_x
 var delta_y
@@ -13,20 +14,14 @@ var z_axis_ratio = 2
 
 var delta_x_slider
 var delta_y_slider
-// function preload(){
-//      my_font = loadFont('Ligconsolata.otf')
-// }
 function setup() {
      createCanvas(320, 320, WEBGL);
-     // textFont(my_font)
-     textSize(50)
-     textAlign(CENTER, CENTER)
      setAttributes('antialias', true)
      // my function
      // z = 4- x^2- y^2
 
-     x = linspace(-2, 2, 20)
-     y = linspace(-2, 2, 20)
+     x = linspace(-2, 2, 100)
+     y = linspace(-2, 2, 100)
 
      // calc function
 
@@ -40,10 +35,10 @@ function setup() {
      scl = width / 8
 
      // 글씨 쓰기
-     // tex = createP()
-     // tex.style('font-size', '15px')
-     // tex.position(width/4, 0)
-     // katex.render('f(x,y) = 4 - x^2 - y^2', tex.elt)
+     tex = createP()
+     tex.style('font-size', '15px')
+     tex.position(width/4, 0)
+     katex.render('f(x,y) = 4 - x^2 - y^2', tex.elt)
 
      delta_x_slider = createSlider(1, 20, 10, 1)
      delta_x_slider.position(0, height)
@@ -52,17 +47,27 @@ function setup() {
      delta_y_slider.position(width/2, height)
 
      // 서명 쓰기
-     // signature = createP()
-     // signature.style('font-size', '10px')
-     // signature.position(width*0.7, height*0.88)
-     // katex.render('(c) 공돌이의 수학정리노트', signature.elt)
+     signature = createP()
+     signature.style('font-size', '10px')
+     signature.position(width*0.7, height*0.88)
+     katex.render('(c) 공돌이의 수학정리노트', signature.elt)
+
+     texVolReal = createP()
+     texVolReal.style('font-size', '10px')
+     texVolReal.position(width*0.85, height * 0.68)
+     katex.render('\\int_{-1}^{1}\\int_{-1}^{1}(4-x^2-y^2)dxdy = 13.333\\cdots', texVolReal.elt)
+
+     texVol = createP()
+     texVol.style('font-size', '10px')
+     texVol.position(width, height * 0.75)
+     
 }
 
 
 function draw() {
      let sumOfVolumes
      background(255);
-     text(str(sumOfVolumes), 0, 0)
+     orbitControl()
 
      rotateX(PI/4)
      delta_x = 2/delta_x_slider.value()
@@ -71,8 +76,11 @@ function draw() {
      plotAxes()
 
      sumOfVolumes = plotBoxes()
-
-     orbitControl()
+     let my_arr = ['부피 추정값:', str(round(sumOfVolumes,2))]
+     let separator = ' '
+     katex.render(
+          join(my_arr, separator)
+          , texVol.elt)
 
      plotCurvedPlane()
 
@@ -118,13 +126,13 @@ function plotBoxes(){
      for(var i = -(1-delta_x/2); i <= (1-delta_x/2); i+=delta_x){
           for(var j = -(1-delta_y/2); j <= (1-delta_y/2); j+=delta_y){
                let box_height_arr = [
-                    box_height1 = 4 - (i - delta_x/2)**2 - (j - delta_y/2)**2, 
-                    box_height2 = 4 - (i + delta_x/2)**2 - (j - delta_y/2)**2, 
-                    box_height3 = 4 - (i - delta_x/2)**2 - (j + delta_y/2)**2, 
-                    box_height4 = 4 - (i + delta_x/2)**2 - (j + delta_y/2)**2]
+                    4 - (i - delta_x/2)**2 - (j - delta_y/2)**2, 
+                    4 - (i + delta_x/2)**2 - (j - delta_y/2)**2, 
+                    4 - (i - delta_x/2)**2 - (j + delta_y/2)**2, 
+                    4 - (i + delta_x/2)**2 - (j + delta_y/2)**2]
                box_height = min(box_height_arr)
                
-               sumOfVolumes += delta_x * delta_y * box_height
+               sumOfVolumes += delta_x * delta_y * box_height_arr[3]
                push()
                translate(i * scl, j * scl, box_height/2 * scl / z_axis_ratio)
                fill(255)
