@@ -40,10 +40,10 @@ function setup() {
      tex.position(width/4, 0)
      katex.render('f(x,y) = 4 - x^2 - y^2', tex.elt)
 
-     delta_x_slider = createSlider(0.1, 2, 0.1, 0.05)
+     delta_x_slider = createSlider(1, 20, 10, 1)
      delta_x_slider.position(0, height)
      
-     delta_y_slider = createSlider(0.1, 2, 0.1, 0.05)
+     delta_y_slider = createSlider(1, 20, 10, 1)
      delta_y_slider.position(width/2, height)
 
      // 서명 쓰기
@@ -59,8 +59,8 @@ function draw() {
      plotSignature()
 
      rotateX(PI/4)
-     delta_x = delta_x_slider.value()
-     delta_y = delta_y_slider.value()
+     delta_x = 2/delta_x_slider.value()
+     delta_y = 2/delta_y_slider.value()
 
      plotAxes()
 
@@ -108,8 +108,8 @@ function plotAxes(){
      pop()
 }
 function plotBoxes(){
-     for(var i = -1; i <= 1; i+=delta_x){
-          for(var j = -1; j <= 1; j+=delta_y){
+     for(var i = -(1-delta_x/2); i <= (1-delta_x/2); i+=delta_x){
+          for(var j = -(1-delta_y/2); j <= (1-delta_y/2); j+=delta_y){
                let box_height_arr = [
                     box_height1 = 4 - (i - delta_x/2)**2 - (j - delta_y/2)**2, 
                     box_height2 = 4 - (i + delta_x/2)**2 - (j - delta_y/2)**2, 
@@ -125,7 +125,7 @@ function plotBoxes(){
                pop()
           }
      }
-     
+
 }
 
 function plotCurvedPlane(){
