@@ -54,12 +54,12 @@ function setup() {
 
      texVolReal = createP()
      texVolReal.style('font-size', '10px')
-     texVolReal.position(width*0.85, height * 0.68)
+     texVolReal.position(width/5, height * 0.1)
      katex.render('\\int_{-1}^{1}\\int_{-1}^{1}(4-x^2-y^2)dxdy = 13.333\\cdots', texVolReal.elt)
 
      texVol = createP()
      texVol.style('font-size', '10px')
-     texVol.position(width, height * 0.75)
+     texVol.position(width/3, height * 0.17)
      
 }
 
