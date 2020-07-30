@@ -70,6 +70,7 @@ function draw() {
      orbitControl()
 
      rotateX(PI/4)
+     rotateZ(millis()/5000)
      delta_x = 2/delta_x_slider.value()
      delta_y = 2/delta_y_slider.value()
 
