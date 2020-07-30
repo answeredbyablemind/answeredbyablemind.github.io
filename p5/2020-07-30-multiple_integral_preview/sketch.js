@@ -20,8 +20,8 @@ function setup() {
      // my function
      // z = 4- x^2- y^2
 
-     x = linspace(-2, 2, 100)
-     y = linspace(-2, 2, 100)
+     x = linspace(-2, 2, 20)
+     y = linspace(-2, 2, 20)
 
      // calc function
 
