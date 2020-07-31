@@ -27,7 +27,11 @@ tags: 미적분학
 
 # 정적분의 개념으로부터 출발
 
-/////// 그림 1: 정적분 Boas Fig 2.1 같은 느낌으로 그림 그릴 것. ////////
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-30_Multiple_Integral/pic1.png">
+  <br>
+  그림 1. 구분구적법을 이용해 함수 f(x) 아래의 넓이를 구해주는 과정을 통해 정적분의 개념을 얻었다.
+</p>
 
 함수가 $y = f(x)$라고 하면, $\Delta x$만큼의 길이를 곱해줘서 작은 사각형의 넓이를 생각해서 $a$부터 $b$까지 더해준다.
 
