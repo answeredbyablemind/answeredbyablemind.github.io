@@ -6,17 +6,27 @@ var y = []
 var tex
 var signature
 
-var delta_x
-var delta_y
-var box_height
 var z_axis_ratio = 2
+var colormap = []
+
+function preload(){
+     table = loadTable('https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/p5/2019-06-16-imaginary_root/colormap.csv','csv')
+}
 
 function setup() {
+     
+     for (let r = 0; r < table.getRowCount(); r++){
+          colormap[r] = []
+          for (let c = 0; c < table.getColumnCount(); c++) {
+               colormap[r][c] = int(float(table.getString(r, c)) * 255)
+          }
+     }
+
      createCanvas(320, 320, WEBGL);
      setAttributes('antialias', true)
      
-     x = linspace(-2, 2, 30)
-     y = linspace(-2, 2, 30)
+     x = linspace(-2, 2, 50)
+     y = linspace(-2, 2, 50)
 
      // calc function
 
@@ -41,12 +51,11 @@ function setup() {
      // signature = createP()
      // signature.style('font-size', '10px')
      // signature.position(width*0.7, height*0.88)
-     // katex.render('(c) 공돌이의 수학정리노트', signature.elt)     
+     // katex.render('(c) 공돌이의 수학정리노트', signature.elt)          
 }
 
 
 function draw() {
-     let sumOfVolumes
      background(255);
      orbitControl()
 
@@ -55,7 +64,6 @@ function draw() {
      plotAxes()
 
      plotCurvedPlane()
-
 }
 
 function linspace(stt, end, steps){
@@ -97,16 +105,13 @@ function plotAxes(){
 function plotCurvedPlane(){
      // stroke(0)
      noStroke()
-     colorMode(HSB, 100)
      for(var j = 0; j < y.length-1; j++){
           beginShape(TESS) // p5.js 버전 확실히 체크할 것. 버전 낮으면 TESS 작동 안함.
           for(var i = 0; i < x.length-1; i++){
-               my_color = color(
-                    round(map(phase[i][j], -PI, PI, 0, 99)), 100, 100)
-               // my_color = color(100, 50, 100);
-               my_color.setAlpha(50)
+               my_color = color(colormap[round(map(phase[i][j], -PI, PI, 0, 100))])
+               // my_color.setAlpha(50)
           
-               fill(my_color)
+               fill(my_color) // phase color가 왜 MATLAB이랑 다르게 나올까~~~ ㅠㅠ
 
                vertex(x[i] * scl, y[j] * scl, f[i][j] * scl / z_axis_ratio)
                vertex(x[i] * scl, y[j+1] * scl, f[i][j+1] * scl / z_axis_ratio)
