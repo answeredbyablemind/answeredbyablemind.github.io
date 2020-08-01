@@ -15,6 +15,7 @@ var colormap = []
 
 var my_canvas
 
+
 function preload() {
   table = loadTable('https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/p5/2019-06-16-imaginary_root/colormap.csv', 'csv')
 }
@@ -59,7 +60,7 @@ function setup() {
   signature.style('font-size', '10px')
   signature.position(width / 3.5, height * 0.8)
   katex.render('(c) 공돌이의 수학정리노트', signature.elt)
-
+  
 }
 
 
@@ -146,11 +147,11 @@ new p5(function(p) {
     for(i = 0; i < colormap.length; i++){
       p.fill(color(colormap[i]));
       p.noStroke()
-      p.rect(10, map(i, 0, 100, 50, 270), 30, 10)
+      p.rect(10, map(i, 0, 100, 30, 270), 30, 10)
     }
     p.fill(0)
     p.textAlign(CENTER)
-    p.text('-PI/2', 25, 45)
+    p.text('-PI/2', 25, 25)
     p.text('PI/2', 25, 295)
     
   }
