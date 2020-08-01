@@ -131,6 +131,17 @@ function plotCurvedPlane() {
     }
     endShape()
   }
+  push()
+  for (i = 0; i < x.length -1; i++){
+     beginShape()
+     stroke(255, 0, 0)
+     strokeWeight(3)
+     noFill()
+     vertex(x[i] * scl, 0, f[i][x.length/2] * scl / z_axis_ratio)
+     vertex(x[i+1] * scl, 0, f[i+1][x.length/2] * scl / z_axis_ratio)
+     endShape()
+  }
+  pop()
 
 }
 
@@ -157,5 +168,3 @@ new p5(function(p) {
   }
   
 })
-
-
