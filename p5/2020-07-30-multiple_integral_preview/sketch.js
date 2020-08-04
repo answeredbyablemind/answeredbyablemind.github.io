@@ -133,7 +133,8 @@ function plotBoxes(){
                     4 - (i + delta_x/2)**2 - (j + delta_y/2)**2]
                box_height = min(box_height_arr) //visualization 용
                
-               sumOfVolumes += delta_x * delta_y * box_height_arr[3] // 실제 계산
+               // sumOfVolumes += delta_x * delta_y * box_height_arr[3]
+               sumOfVolumes += delta_x * delta_y * box_height // 함수 아랫 부분만을 이용해 계산한 부피
                push()
                translate(i * scl, j * scl, box_height/2 * scl / z_axis_ratio)
                fill(255)
