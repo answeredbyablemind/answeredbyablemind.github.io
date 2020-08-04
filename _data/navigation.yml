@@ -182,6 +182,8 @@ docs-ko:
         url:    2020/03/29/p_value.html
       - title:  최대우도법(MLE)
         url:    2020/07/17/MLE.html
+      - title:  나이브 베이즈 분류기
+        url:    2020/08/04/naive_bayes.html
 
   - title:      JS Applet 연습 모음
     children:

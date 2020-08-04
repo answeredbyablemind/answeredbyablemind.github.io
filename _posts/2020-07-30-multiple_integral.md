@@ -18,7 +18,7 @@ tags: 미적분학
 
 {% raw %}
 <center>
-  <iframe width = "390" height = "450" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-07-30-multiple_integral_preview/"></iframe>
+  <iframe width = "390" height = "390" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-07-30-multiple_integral_preview/"></iframe>
   <br>
   중적분의 의미. 함수 아래에 있는 부피들을 잘게 쪼개서 더해주자.
   <br>
