@@ -80,7 +80,11 @@ tags: 통계학
 
 우리는 주어진 training sample들을 통해 다음과 같이 남자와 여자의 키 분포가 다르다는 것을 알고 있다고 해보자.
 
-
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic2.png">
+  <br>
+  그림 2. training sample들을 통해 얻은 남자, 여자의 키 확률 분포
+</p>
 
 # 정보가 더 추가된다면?
 
