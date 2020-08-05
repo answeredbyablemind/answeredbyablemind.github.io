@@ -7,6 +7,7 @@ var mu2
 var height_scl_factor = 15
 var alpha_val = 175
 var mySlider
+var newScl = 200
 
 var dragged = false; // 마우스가 dragged 되고 있는가?
 var rollover = false; // 마우스가 threshold bar 위에 위치해 있는가?
@@ -114,7 +115,17 @@ function draw() {
 
      // 오른쪽 panel에 axis 그려주기
      drawArrow(440, height - 40, width - 10, height - 40)
+     text('FPR', width-25, height - 20) // x축 이름
      drawArrow(440 + 10, height - 30, 440 + 10, 40)
+     text('TPR', 440 + 10, 35)
+     
+     // 오른쪽 패널에 사선 그려주기 (점선)
+     push()
+     drawingContext.setLineDash([0.5, 3]); // 점선 효과 주기
+     stroke(255)
+     line(440+10, height -40, 440+10+FPR[FPR.length-1]*newScl, height - 40 - TPR[TPR.length-1]*newScl)
+     pop()
+
      push()
      translate(440+10, height - 40)
      scale(1, -1)
@@ -123,7 +134,6 @@ function draw() {
      beginShape()
      noFill()
      stroke(255)
-     var newScl = 200
      for (var i = 0; i<xx.length; i++){
           vertex(FPR[i] * newScl, TPR[i] * newScl)
      }
@@ -136,6 +146,7 @@ function draw() {
 
      ellipse(FPR_loc * newScl, TPR_loc * newScl, 10)
      pop()
+
 }
 
 function linspace(stt, end, steps){
