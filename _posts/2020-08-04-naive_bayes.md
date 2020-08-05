@@ -39,6 +39,10 @@ tags: 통계학
 
 * likelihood에 관한 이론: [최대우도법 소개 편](https://angeloyeo.github.io/2020/07/17/MLE.html)
 
+베이즈 정리 없이 이해해보자고 하였지만, 그래도 베이즈 정리에 대해 알고오면 더 도움이 될것이다.
+
+* Bayes' Rule에 대한 내용: [베이즈 정리의 의미 편](https://angeloyeo.github.io/2020/01/09/Bayes_rule.html)
+
 # 사전 지식을 이용한 분류: prior
 
 확률적인 배경 지식을 가지고 특별한 추가 정보 없이 어떤 샘플을 분류하는 예시를 생각해보자.
@@ -80,13 +84,73 @@ tags: 통계학
 
 우리는 주어진 training sample들을 통해 다음과 같이 남자와 여자의 키 분포가 다르다는 것을 알고 있다고 해보자.
 
+(이러한 분포 모델링은 정규 분포를 가정하는 경우 training sample들의 평균과 분산을 계산함으로써 쉽게 구축할 수 있다.)
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic2.png">
   <br>
   그림 2. training sample들을 통해 얻은 남자, 여자의 키 확률 분포
 </p>
 
+이 때, 우리가 분류하고자 하는 사람의 키가 가령 175cm라고 해보자. 그러면 175 cm에 대해 우리가 구축해놓은 확률밀도함수의 분포는 뭐라 말할까?
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic3.png">
+  <br>
+  그림 3. 미리 구축해둔 남자, 여자의 키 확률 분포에 test data sample의 값을 대입시켜 본 경우
+</p>
+
+위의 그림 3을 보면 그 해답을 알 수 있다. 여자라고 생각하는 것 보다 남자라고 생각하는 것이 더 "가능성"이 커보인다는 것을 알 수 있다.
+
+여기서 말하는 "가능성"이 바로 [최대우도법 소개 편](https://angeloyeo.github.io/2020/07/17/MLE.html)에서 언급한 "likelihood 기여도"이다.
+
+이번 예시에서는 특징 정보가 하나밖에 없기 때문에 이 "likelihood 기여도"를 곧바로 likelihood라고 보자.
+
+우리는 이 likelihood를 다음과 같이 생각할 수 있다.
+
+남자라고 판단했을 때의 키가 175cm일 likelihood는 다음과 같이 쓸 수 있다.
+
+$$P(키=175cm | 성별 = 남자)$$
+
+반면, 여자라고 판단했을 때 키가 175cm일 likelihood는 다음과 같이 쓸 수 있다.
+
+$$P(키=175cm | 성별 = 여자)$$
+
+이번 예시에서는 식(1)과 식(2)의 두 likelihood의 값이 다음과 같다는 것 또한 알 수 있었다.
+
+$$P(키=175cm | 성별 = 남자) > P(키=175cm | 성별 = 여자)$$
+
+우리는 식 (3)이 이 test data 사람의 성별이 남자라고 판단할 좋은 근거라는 것을 쉽게 이해할 수 있다.
+
+그렇다면, 식(3)과 같은 likelihood 비교만으로 이 사람이 남자라고 판단할 충분한 근거가 될까?
+
+그렇지는 않다.
+
+왜냐하면 likelihood는 앞서 말했듯 '추가 정보'이기 때문이다. 즉, 우리가 기존에 알고있던 prior에 추가된 정보이므로
+
+우리가 이 사람이 남자인지, 여자인지 판단하려면 기존의 배경 지식에다가 이번에 추가된 정보인 likelihood를 곱해주는 방식으로 "판단 근거"를 찾을 수 있다.
+
+(즉, 사전지식을 완전히 무시할 수 없다.)
+
+정리하자면, 남자라고 판단할 수 있는 판단 근거 $\text{prior} \times \text{likelihood}$는 다음과 같다.
+
+$$P(성별 = 남자) \times P(키=175cm | 성별 = 남자)$$
+
+그리고, 여자라고 판단할 수 있는 근거에 관한 $prior \times likelihood$는 다음과 같다.
+
+$$ P(성별 = 여자) \times P(키=175cm | 성별 = 여자)$$
+
+우리는 이 두 $prior \times likelihood$를 비교함으로써 test data 사람의 성별을 비교할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic3.png">
+  <br>
+  그림 4. 주어진 데이터를 판별(혹은 판단)하기 위해 사전 지식(prior)에 추가정보(likelihood)를 곱한 값을 판단근거로 삼을 수 있다.
+</p>
+
 # 정보가 더 추가된다면?
+
+
 
 # 배경 이론 소개
 
