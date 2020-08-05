@@ -184,6 +184,8 @@ docs-ko:
         url:    2020/07/17/MLE.html
       - title:  나이브 베이즈 분류기
         url:    2020/08/04/naive_bayes.html
+      - title:  ROC curve
+        url:    2020/08/05/ROC.html
 
   - title:      JS Applet 연습 모음
     children:
