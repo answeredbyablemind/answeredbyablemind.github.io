@@ -1,5 +1,32 @@
+var scl
+var xx = []
+var yy1 = []
+var yy2 = []
+var mu1 = 2
+var mu2
+var height_scl_factor = 15
+var alpha_val = 175
+var mySlider
+
+var dragged = false; // 마우스가 dragged 되고 있는가?
+var rollover = false; // 마우스가 threshold bar 위에 위치해 있는가?
+var bar_center = (400+10)/2
+var n_xx = 200
+
 function setup() {
      createCanvas(720, 320); // 위아래로 20씩 여유 pixel 주기. 
+     scl = 30;
+     xx = linspace(-10,10,n_xx)
+     
+     // 왼쪽에 고정되어 있는 (mu = 2)인 gaussian distribution 미리 계산
+     for(var i = 0; i < xx.length; i++){
+          yy1.push(
+               gaussian(xx[i], mu1)
+          )
+     }
+
+     mySlider = createSlider(-3, 3, -2, 0.1)
+     mySlider.position(0, height)
 }
 
 
@@ -19,12 +46,101 @@ function draw() {
      
      text('ROC curve', 430+145, 30)
 
+     mu2 = mySlider.value()
+     yy2 = [] // clear yy2
+     // 왼쪽 패널에서 움직이는 (mu = -2)인 gaussian distribution 계산
+     for(var i = 0; i < xx.length; i++){
+          yy2.push(
+               gaussian(xx[i], mu2)
+          )
+     }
+
+     // gaussian distribution 두 개 그려주기
+     push()
+     translate((10+400)/2, height - 40) // 0,0 좌표
+     scale(1, -1)
+
+     var my_color = color(255, 100, 200)
+     my_color.setAlpha(alpha_val)
+     fill(my_color)
+
+     beginShape()
+     for(var i = 0; i<xx.length; i++){
+          vertex(xx[i] * scl, yy1[i] * scl * height_scl_factor)
+     }
+     endShape()
+
+     my_color = color(100, 100, 255)
+     my_color.setAlpha(alpha_val)
+     fill(my_color)
+
+     beginShape()
+     for(var i = 0; i<xx.length; i++){
+          vertex(xx[i] * scl, yy2[i] * scl * height_scl_factor)
+     }
+     endShape()
+     pop()
+
+     // TPR, FPR 계산
+     temp = calc_ROC(mu1, mu2)
+     var TPR = temp[0]
+     var FPR = temp[1]
+
+     // Threshold bar 그려주기
+     push()
+     bar_h = max(yy2)
+     bar_w = 7
+     fill(255)
+
+     if (bar_center > 380){
+          bar_center = 380
+     }
+
+     if (bar_center < 20){
+          bar_center = 20
+     }
+     translate(bar_center, 0)
+
+     if (dragged){
+          bar_center = mouseX
+     }
+
+     rect(0-bar_w/2, height-40-bar_h*scl*height_scl_factor, bar_w, bar_h * scl * height_scl_factor)
+     pop()
 
      //// axis 그려주기
      // 왼쪽 panel에 axis 그려주기
-     drawArrow(20, height - 30, 20, 50)
      drawArrow(10, height - 40, 400, height - 40)
 
+     // 오른쪽 panel에 axis 그려주기
+     drawArrow(440, height - 40, width - 10, height - 40)
+     drawArrow(440 + 10, height - 30, 440 + 10, 40)
+     push()
+     translate(440+10, height - 40)
+     scale(1, -1)
+     fill(255, 0, 0)
+
+     beginShape()
+     noFill()
+     stroke(255)
+     var newScl = 200
+     for (var i = 0; i<xx.length; i++){
+          vertex(FPR[i] * newScl, TPR[i] * newScl)
+     }
+     endShape()
+
+     fill(255,0, 0)
+     // 실제 threshold bar의 x 좌표 계산해서 FPR, TPR 계산할 것. 그런 다음 ROC curve 위에 올릴 것.
+     var loc = round(map(bar_center, 20, 380, 0, n_xx-1))
+
+     if(loc<0){
+          loc = 0
+     }
+     if (loc>n_xx-1){
+          loc = n_xx-2
+     }
+     ellipse(FPR[loc] * newScl, TPR[loc] * newScl, 10)
+     pop()
 }
 
 function linspace(stt, end, steps){
@@ -34,10 +150,8 @@ function linspace(stt, end, steps){
                i
           )
      }
-     res.push(end)
      return res
 }
-
 
 function drawArrow(x1, y1, x2, y2) {
      push();
@@ -51,4 +165,70 @@ function drawArrow(x1, y1, x2, y2) {
      rotate(angle - HALF_PI); //rotates the arrow point
      triangle(-offset * 0.5, offset, offset * 0.5, offset, 0, 0); //draws the arrow point as a triangle
      pop();
+}
+
+function gaussian(x, mu){
+     var sigma = 1;
+     
+     return  1/(sigma * sqrt(2 * PI)) * exp(-1 * (x-mu)**2 / (2 * sigma**2))
+}
+
+function calc_ROC(mu1, mu2){
+     // sigma = 1이고 mu1, mu2인 정규분포 두 개가 있다고 했을 때
+     // 생각하고 있는 모든 xx에 대해 TPR과 FPR 값을 계산해야 함
+     var TPR = []
+     var FPR = []
+     for (var i = 0; i<xx.length; i++){
+          TPR.push(
+               GetZPercent(xx[i]-mu2)  // sigma = 1이므로 나누기는 생략
+               )
+          FPR.push(
+               GetZPercent(xx[i]-mu1) 
+               )
+     }
+
+     return [TPR, FPR]
+}
+
+function GetZPercent(z) 
+  { //출처: https://stackoverflow.com/questions/16194730/seeking-a-statistical-javascript-function-to-return-p-value-from-a-z-score
+    //z == number of standard deviations from the mean
+
+    //if z is greater than 6.5 standard deviations from the mean
+    //the number of significant digits will be outside of a reasonable 
+    //range
+    if ( z < -6.5)
+      return 0.0;
+    if( z > 6.5) 
+      return 1.0;
+
+    var factK = 1;
+    var sum = 0;
+    var term = 1;
+    var k = 0;
+    var loopStop = Math.exp(-23);
+    while(Math.abs(term) > loopStop) 
+    {
+      term = .3989422804 * Math.pow(-1,k) * Math.pow(z,k) / (2 * k + 1) / Math.pow(2,k) * Math.pow(z,k+1) / factK;
+      sum += term;
+      k++;
+      factK *= k;
+
+    }
+    sum += 0.5;
+
+    return sum;
+}
+
+function mousePressed(){
+     if (
+          (mouseX > (-bar_w/2 + bar_center)) & (mouseX < (bar_w + bar_center)) 
+               & (mouseY < (height - 40)) & (mouseY > (height-40-bar_h*scl*height_scl_factor))
+          ){
+          dragged = true
+     }
+}
+
+function mouseReleased(){
+     dragged = false
 }
