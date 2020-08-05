@@ -145,7 +145,7 @@ $$ P(성별 = 여자) \times P(키=175cm | 성별 = 여자)$$
 우리는 이 두 $prior \times likelihood$를 비교함으로써 test data 사람의 성별을 비교할 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic3.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic4.png">
   <br>
   그림 4. 주어진 데이터를 판별(혹은 판단)하기 위해 사전 지식(prior)에 추가정보(likelihood)를 곱한 값을 판단근거로 삼을 수 있다.
 </p>
@@ -230,7 +230,7 @@ $$ P(c_1 | x_1, x_2, \cdots, x_n) = P(c_1) P(x_1|c_1) P(x_2 | c_1, x_1) P(x_3 | 
 
 (그래서 이런 과정을 거치는 분류기를 "naive" Bayes라고 부른다.)
 
-그러면, 가령 $P(x_2 | c_1, x_1)$은 다음과 같이 쓸 수 있다.
+그러면, 가령 $P(x_2 \| c_1, x_1)$은 다음과 같이 쓸 수 있다.
 
 $$P(x_2 | c_1, x_1) = P(x_2 | c_1)$$
 
@@ -246,6 +246,6 @@ $$ = P(c_1) \prod_{i=1}^{n}P(x_i | c_1)$$
 
 한마디로 나이브 베이즈 분류기를 사용하게 되면 predicted class $\hat{y}$는 다음과 같다.
 
-$$\hat{y} = \argmax_{k\in \lbrace 1, 2, \cdots, k\rbrace}P(c_k)\prod_{i=1}^{n}P(x_i | c_k)$$
+$$\hat{y} = argmax_{k\in \lbrace 1, 2, \cdots, k\rbrace}P(c_k)\prod_{i=1}^{n}P(x_i | c_k)$$
 
 {% endraw %}
