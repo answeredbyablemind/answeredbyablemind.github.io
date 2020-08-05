@@ -130,7 +130,6 @@ function draw() {
      endShape()
 
      fill(255,0, 0)
-     // 실제 threshold bar의 x 좌표 계산해서 FPR, TPR 계산할 것. 그런 다음 ROC curve 위에 올릴 것.
      var loc = (bar_center - (400+10)/2) / scl
      var TPR_loc = GetZPercent(loc - mu2)
      var FPR_loc = GetZPercent(loc - mu1)
