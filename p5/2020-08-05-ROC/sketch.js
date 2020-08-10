@@ -146,6 +146,10 @@ function draw() {
 
      ellipse(FPR_loc * newScl, TPR_loc * newScl, 10)
      pop()
+     
+     //
+     text('ⓒ공돌이의 수학정리노트',width * 0.9, height * 0.9)
+     
 
 }
 
