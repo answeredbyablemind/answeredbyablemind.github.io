@@ -238,4 +238,8 @@ $$ = P(c_1) \prod_{i=1}^{n}P(x_i | c_1)$$
 
 $$\hat{y} = argmax_{k\in \lbrace 1, 2, \cdots, k\rbrace}P(c_k)\prod_{i=1}^{n}P(x_i | c_k)$$
 
+
+<p align = "center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/KueAHu7iFNE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 {% endraw %}
