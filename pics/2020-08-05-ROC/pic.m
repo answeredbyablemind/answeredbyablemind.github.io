@@ -50,8 +50,13 @@ yy2 = gaussian(xx, 1, 2);
 
 my_color = lines(2);
 
-figure;
-threshs = fliplr(linspace(-3, 0, 40));
+figure('position',[488, 342, 560, 420]);
+% threshs = fliplr(linspace(-5, 0, 40)); % lowering의 경우
+threshs = linspace(0, 5, 40); % 올려주는 경우
+
+% my_ttl = 'threshold를 계속 내리는 경우';
+my_ttl = 'threshold를 계속 올리는 경우';
+
 set(gcf,'color','w')
 for i_thresh = 1:length(threshs)
     plot(xx, yy1)
@@ -83,9 +88,11 @@ for i_thresh = 1:length(threshs)
     xlabel('x');
     ylabel('probability density')
     
-    title('threshold를 계속 내리는 경우')
+    title(my_ttl)
+    
     drawnow;
     if i_thresh < length(threshs)
         cla;
     end
 end
+
