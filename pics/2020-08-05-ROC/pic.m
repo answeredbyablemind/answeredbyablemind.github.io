@@ -96,3 +96,57 @@ for i_thresh = 1:length(threshs)
     end
 end
 
+%% threshold 변화에 따른 ROC 커브상 점의 위치 변화
+
+xx = linspace(-5, 5, 100);
+yy1 = gaussian(xx, -1, 2);
+yy2 = gaussian(xx, 1, 2);
+
+ROC = zeros(length(xx), 2);
+for i = 1:length(xx)
+    ROC(i, 1) = 1-normcdf(xx(i), -1, 2);
+    ROC(i, 2) = 1-normcdf(xx(i), 1, 2);
+end
+
+figure('position', [488, 450, 820, 320],'color','w')
+
+threshs = [linspace(-5, 5, 50), linspace(5, -5, 50)];
+
+for i_thresh = 1:length(threshs)
+    thresh = threshs(i_thresh);
+    
+    subplot(1, 2,1);
+    plot(xx, yy1,'color', my_color(1,:),'linewidth',2);
+    hold on;
+    plot(xx, yy2,'color', my_color(2,:),'linewidth',2);
+    
+    YLIMs = ylim;
+    line([thresh, thresh], YLIMs, 'color','k','linewidth',2)
+    ylim(YLIMs)
+    grid on;
+    xlabel('x');
+    ylabel('probability density');
+    set(gca,'xtick',-5:2.5:5)
+    
+    subplot(1,2, 2);
+    plot(ROC(:,1), ROC(:,2),'k','linewidth',2)
+    
+    [~, idx_thresh] = min(abs(xx - thresh));
+    hold on;
+    plot(ROC(idx_thresh,1), ROC(idx_thresh,2),'o', 'markersize', 10, 'markerfacecolor','r','markeredgecolor','none')
+
+    xlabel('FPR');
+    ylabel('TPR');
+    grid on;
+    
+    drawnow;
+    
+    if i_thresh < length(threshs)
+        subplot(1,2,1)
+        cla;
+        subplot(1,2,2);
+        cla;
+    end
+    
+end
+
