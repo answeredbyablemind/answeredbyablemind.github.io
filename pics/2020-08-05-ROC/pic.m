@@ -134,7 +134,7 @@ for i_thresh = 1:length(threshs)
     [~, idx_thresh] = min(abs(xx - thresh));
     hold on;
     plot(ROC(idx_thresh,1), ROC(idx_thresh,2),'o', 'markersize', 10, 'markerfacecolor','r','markeredgecolor','none')
-
+    
     xlabel('FPR');
     ylabel('TPR');
     grid on;
@@ -150,3 +150,50 @@ for i_thresh = 1:length(threshs)
     
 end
 
+%% gaussian 분포가 멀어지는 경우
+
+
+xx = linspace(-10, 5, 100);
+mu1_range = [fliplr(linspace(-5, 0.5, 20)), linspace(-5, 0.5, 20)];
+yy2 = gaussian(xx, 1, 2);
+ROC = zeros(length(xx), 2);
+
+figure('position', [488, 450, 820, 320],'color','w')
+
+for i_mu1 = 1:length(mu1_range)
+    mu1 = mu1_range(i_mu1);
+    yy1 = gaussian(xx, mu1, 2);
+    
+    for i = 1:length(xx)
+        ROC(i, 1) = 1-normcdf(xx(i), mu1, 2);
+        ROC(i, 2) = 1-normcdf(xx(i), 1, 2);
+    end
+    
+    subplot(1, 2,1);
+    plot(xx, yy1,'color', my_color(1,:),'linewidth',2);
+    hold on;
+    plot(xx, yy2,'color', my_color(2,:),'linewidth',2);
+    
+    YLIMs = ylim;
+    grid on;
+    xlabel('x');
+    ylabel('probability density');
+    set(gca,'xtick',-10:2:5)
+    
+    subplot(1,2, 2);
+    plot(ROC(:,1), ROC(:,2),'k','linewidth',2)
+    hold on;
+    plot([0, 1], [0, 1],'r--')
+    xlabel('FPR');
+    ylabel('TPR');
+    grid on;
+    
+    drawnow;
+    
+    if i_mu1 < length(mu1_range)
+        subplot(1,2,1)
+        cla;
+        subplot(1,2,2);
+        cla;
+    end
+end
