@@ -141,8 +141,8 @@ function draw() {
 
      fill(255,0, 0)
      var loc = (bar_center - (400+10)/2) / scl
-     var TPR_loc = GetZPercent(loc - mu2)
-     var FPR_loc = GetZPercent(loc - mu1)
+     var FPR_loc = 1- GetZPercent(loc - mu2)
+     var TPR_loc = 1- GetZPercent(loc - mu1)
 
      ellipse(FPR_loc * newScl, TPR_loc * newScl, 10)
      pop()
