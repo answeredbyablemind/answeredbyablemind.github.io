@@ -150,13 +150,21 @@ docs-ko:
         url:    2020/06/17/Hessian.html
       - title:  자코비안 행렬의 기하학적 의미
         url:    2020/07/24/Jacobian.html
+
+
+
+  - title:      머신러닝
+    children:
+      - title:  베이즈 정리의 의미
+        url:    2020/01/09/Bayes_rule.html
+      - title:  나이브 베이즈 분류기
+        url:    2020/08/04/naive_bayes.html
+      - title:  ROC curve
+        url:    2020/08/05/ROC.html
       - title:  경사하강법(Gradient Descent)
         url:    2020/08/16/gradient_descent.html
-
-
-
-  - title:      딥러닝
-    children:
+      - title:  헤시안 행렬의 기하학적 의미
+        url:    2020/06/17/Hessian.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation.html
 
@@ -184,32 +192,6 @@ docs-ko:
         url:    2020/03/29/p_value.html
       - title:  최대우도법(MLE)
         url:    2020/07/17/MLE.html
-      - title:  나이브 베이즈 분류기
-        url:    2020/08/04/naive_bayes.html
-      - title:  ROC curve
-        url:    2020/08/05/ROC.html
-
-  - title:      JS Applet 연습 모음
-    children:
-      - title:  JS Applet에 관하여
-        url:    1900/01/01/about_p5js_contents.html
-      - title:  Mondrian
-        url:    1900/01/02/Mondrian.html
-      - title:  Hypnotic Squares
-        url:    1900/01/03/Hypnotic_Squares.html
-      - title:  Circle Packing
-        url:    1900/01/04/circle_packing.html
-      - title:  Tiled Lines
-        url:    1900/01/05/tiled_lines.html
-      - title:  Un Deux Trois
-        url:    1900/01/06/Un_Deux_Trois.html
-      - title:  Purple Rain
-        url:    1900/01/07/purple_rain.html
-      - title:  Perlin Noise Flow Field 1
-        url:    1900/01/08/perlin_noise_flow_field1.html
-      - title:  Perlin Noise Flow Field 2
-        url:    1900/01/09/perlin_noise_flow_field2.html
-        
         
         
 
