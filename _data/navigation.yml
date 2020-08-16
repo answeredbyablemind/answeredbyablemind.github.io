@@ -49,7 +49,95 @@ header:
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
 docs-ko:
-  - title:      복소수와 오일러 공식
+  - title:      선형대수학
+    children:
+      - title:  행렬과 선형변환
+        url:    2019/07/15/Matrix_as_Linear_Transformation.html
+      - title:  고유값과 고유벡터
+        url:    2019/07/17/eigen_vector.html
+      - title:  주성분분석(PCA)
+        url:    2019/07/27/PCA.html
+      - title:  특이값분해(SVD)
+        url:    2019/08/01/SVD.html
+      - title:  행렬식의 기하학적 의미
+        url:    2019/08/06/determinant.html
+      - title:  상관계수는 벡터의 내적이다
+        url:    2019/08/20/correlation_and_inner_product.html
+      - title:  가우스-행렬 소거법의 기하학적 의미
+        url:    2019/09/09/Gauss_Jordan.html
+      - title:  론스키안(Wronskian)
+        url:    2019/10/10/Wronskian.html
+      - title:  독립성분분석(ICA)
+        url:    2020/07/14/ICA.html
+
+  - title:      미적분학
+    children:
+      - title:  중적분의 의미
+        url:    2020/07/30/multiple_integral.html
+      - title:  스칼라장의 기울기(gradient)
+        url:    2019/08/25/gradient.html
+      - title:  벡터장의 발산(divergence)
+        url:    2019/08/25/divergence.html
+      - title:  벡터장의 회전(curl)
+        url:    2019/08/25/curl.html
+      - title:  그린정리
+        url:    2020/01/18/Green_theorem.html
+      - title:  스칼라장의 라플라시안(laplacian)
+        url:    2019/08/28/laplacian.html
+      - title:  열방정식/파동방정식의 의미
+        url:    2019/08/29/Heat_Wave_Equation.html
+      - title:  라플라스 방정식의 의미
+        url:    2019/08/31/Laplace_Equation.html
+      - title:  테일러 급수의 유도와 의미
+        url:    2019/09/02/Taylor_Series.html
+      - title:  로피탈 정리의 기하학적 의미
+        url:    2019/09/08/LHopital_rule.html
+      - title:  헤시안 행렬의 기하학적 의미
+        url:    2020/06/17/Hessian.html
+      - title:  자코비안 행렬의 기하학적 의미
+        url:    2020/07/24/Jacobian.html
+
+  - title:      머신러닝
+    children:
+      - title:  베이즈 정리의 의미
+        url:    2020/01/09/Bayes_rule.html
+      - title:  나이브 베이즈 분류기
+        url:    2020/08/04/naive_bayes.html
+      - title:  ROC curve
+        url:    2020/08/05/ROC.html
+      - title:  경사하강법(Gradient Descent)
+        url:    2020/08/16/gradient_descent.html
+      - title:  헤시안 행렬의 기하학적 의미
+        url:    2020/06/17/Hessian.html
+      - title:  Layer-wise Relevance Propagation
+        url:    2019/08/17/Layerwise_Relevance_Propagation.html
+
+  - title:      확률과 통계
+    children:
+      - title:  베이즈 정리의 의미
+        url:    2020/01/09/Bayes_rule.html
+      - title:  가우스 적분
+        url:    2020/01/17/Gaussian_Integral.html
+      - title:  중심극한정리 증명
+        url:    2020/01/10/CLT_proof.html
+      - title:  통계적 추론 - Big Picture
+        url:    2020/02/11/big_picture_stats_infer.html
+      - title:  표본과 표준오차의 의미
+        url:    2020/02/12/standard_error.html
+      - title:  표본 분산은 n 대신 n-1로 나눈다
+        url:    2020/03/23/sample_variance.html
+      - title:  t-value의 의미와 스튜던트의 t-test
+        url:    2020/02/13/Students_t_test.html
+      - title:  F-value의 의미와 분산분석
+        url:    2020/02/29/ANOVA.html
+      - title:  실패를 기도하는 이론 - 귀무가설, 대립가설
+        url:    2020/03/25/hypothesis.html
+      - title:  p-value의 의미
+        url:    2020/03/29/p_value.html
+      - title:  최대우도법(MLE)
+        url:    2020/07/17/MLE.html
+        
+    - title:    복소수와 오일러 공식
     children:
       - title:  호도법과 각도법
         url:    2019/06/04/2-1-angle_rad.html
@@ -102,96 +190,5 @@ docs-ko:
         url:    2020/07/23/laplace_and_z.html
       - title:  시간-주파수 불확정도
         url:    2020/01/16/time_frequency_uncertainty.html
-
-  - title:      선형대수학
-    children:
-      - title:  행렬과 선형변환
-        url:    2019/07/15/Matrix_as_Linear_Transformation.html
-      - title:  고유값과 고유벡터
-        url:    2019/07/17/eigen_vector.html
-      - title:  주성분분석(PCA)
-        url:    2019/07/27/PCA.html
-      - title:  특이값분해(SVD)
-        url:    2019/08/01/SVD.html
-      - title:  행렬식의 기하학적 의미
-        url:    2019/08/06/determinant.html
-      - title:  상관계수는 벡터의 내적이다
-        url:    2019/08/20/correlation_and_inner_product.html
-      - title:  가우스-행렬 소거법의 기하학적 의미
-        url:    2019/09/09/Gauss_Jordan.html
-      - title:  론스키안(Wronskian)
-        url:    2019/10/10/Wronskian.html
-      - title:  독립성분분석(ICA)
-        url:    2020/07/14/ICA.html
-
-  - title:      미적분학
-    children:
-      - title:  중적분의 의미
-        url:    2020/07/30/multiple_integral.html
-      - title:  스칼라장의 기울기(gradient)
-        url:    2019/08/25/gradient.html
-      - title:  벡터장의 발산(divergence)
-        url:    2019/08/25/divergence.html
-      - title:  벡터장의 회전(curl)
-        url:    2019/08/25/curl.html
-      - title:  그린정리
-        url:    2020/01/18/Green_theorem.html
-      - title:  스칼라장의 라플라시안(laplacian)
-        url:    2019/08/28/laplacian.html
-      - title:  열방정식/파동방정식의 의미
-        url:    2019/08/29/Heat_Wave_Equation.html
-      - title:  라플라스 방정식의 의미
-        url:    2019/08/31/Laplace_Equation.html
-      - title:  테일러 급수의 유도와 의미
-        url:    2019/09/02/Taylor_Series.html
-      - title:  로피탈 정리의 기하학적 의미
-        url:    2019/09/08/LHopital_rule.html
-      - title:  헤시안 행렬의 기하학적 의미
-        url:    2020/06/17/Hessian.html
-      - title:  자코비안 행렬의 기하학적 의미
-        url:    2020/07/24/Jacobian.html
-
-
-
-  - title:      머신러닝
-    children:
-      - title:  베이즈 정리의 의미
-        url:    2020/01/09/Bayes_rule.html
-      - title:  나이브 베이즈 분류기
-        url:    2020/08/04/naive_bayes.html
-      - title:  ROC curve
-        url:    2020/08/05/ROC.html
-      - title:  경사하강법(Gradient Descent)
-        url:    2020/08/16/gradient_descent.html
-      - title:  헤시안 행렬의 기하학적 의미
-        url:    2020/06/17/Hessian.html
-      - title:  Layer-wise Relevance Propagation
-        url:    2019/08/17/Layerwise_Relevance_Propagation.html
-
-  - title:      확률과 통계
-    children:
-      - title:  베이즈 정리의 의미
-        url:    2020/01/09/Bayes_rule.html
-      - title:  가우스 적분
-        url:    2020/01/17/Gaussian_Integral.html
-      - title:  중심극한정리 증명
-        url:    2020/01/10/CLT_proof.html
-      - title:  통계적 추론 - Big Picture
-        url:    2020/02/11/big_picture_stats_infer.html
-      - title:  표본과 표준오차의 의미
-        url:    2020/02/12/standard_error.html
-      - title:  표본 분산은 n 대신 n-1로 나눈다
-        url:    2020/03/23/sample_variance.html
-      - title:  t-value의 의미와 스튜던트의 t-test
-        url:    2020/02/13/Students_t_test.html
-      - title:  F-value의 의미와 분산분석
-        url:    2020/02/29/ANOVA.html
-      - title:  실패를 기도하는 이론 - 귀무가설, 대립가설
-        url:    2020/03/25/hypothesis.html
-      - title:  p-value의 의미
-        url:    2020/03/29/p_value.html
-      - title:  최대우도법(MLE)
-        url:    2020/07/17/MLE.html
-        
         
 
