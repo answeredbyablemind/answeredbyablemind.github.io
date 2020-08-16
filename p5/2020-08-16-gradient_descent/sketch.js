@@ -29,7 +29,7 @@ function setup() {
      my_slider = createSlider(0.01, 1.2, 0.8, 0.0001) // step size
      my_slider.position(0, height - 30)
 
-     my_slider2 = createSlider(-1.3, 1.3, 0.9, 0.00001) // loc
+     my_slider2 = createSlider(-1.3, 1.3, 1.3, 0.00001) // loc
      my_slider2.position(0, height - 70)
 
 }
@@ -64,12 +64,12 @@ function draw() {
           vertex(x[i] * scl, y[i] * scl)
      }
      endShape()
-     strokeWeight(1)
+     strokeWeight(1.5)
      fill(255, 0, 0)
      ellipse(loc * scl, my_function(loc) * scl, 10)
      drawingContext.setLineDash([0.5, 3]); // 점선 효과 주기
      old_loc = loc
-
+     stroke(255, 100, 100)
      for (let i = 0; i < 30; i++){
           new_loc = old_loc - step_size * my_function_prime(old_loc)
           line(old_loc * scl, my_function(old_loc) * scl, new_loc * scl, my_function(new_loc) * scl)
