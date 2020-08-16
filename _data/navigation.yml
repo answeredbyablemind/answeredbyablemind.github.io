@@ -150,6 +150,8 @@ docs-ko:
         url:    2020/06/17/Hessian.html
       - title:  자코비안 행렬의 기하학적 의미
         url:    2020/07/24/Jacobian.html
+      - title:  경사하강법(Gradient Descent)
+        url:    2020/08/16/gradient_descent.html
 
 
 
