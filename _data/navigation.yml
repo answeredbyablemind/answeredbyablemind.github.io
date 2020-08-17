@@ -72,16 +72,30 @@ docs-ko:
 
   - title:      미적분학
     children:
-      - title:  중적분의 의미
-        url:    2020/07/30/multiple_integral.html
       - title:  스칼라장의 기울기(gradient)
         url:    2019/08/25/gradient.html
       - title:  벡터장의 발산(divergence)
         url:    2019/08/25/divergence.html
       - title:  벡터장의 회전(curl)
         url:    2019/08/25/curl.html
+      - title:  중적분의 의미
+        url:    2020/07/30/multiple_integral.html
       - title:  그린정리
         url:    2020/01/18/Green_theorem.html
+      - title:  벡터장의 flux(2D)
+        url:    2020/08/17/flux_2D.html
+      - title:  벡터장의 선적분
+        url:    2020/08/18/line_integral.html
+      - title:  발산정리(2D)
+        url:    2020/08/19/divergence_theorem_2D.html  
+      - title:  미소곡면의 법선벡터
+        url:    2020/08/20/normal_vector.html
+      - title:  벡터장의 면적분(3D)
+        url:    2020/08/21/surface_integral.html
+      - title:  스토크스의 정리
+        url:    2020/08/22/stokes_theorem.html
+      - title:  발산정리(3D)
+        url:    2020/08/23/divergence_theorem_3D.html  
       - title:  스칼라장의 라플라시안(laplacian)
         url:    2019/08/28/laplacian.html
       - title:  열방정식/파동방정식의 의미
