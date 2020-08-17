@@ -82,10 +82,10 @@ docs-ko:
         url:    2020/07/30/multiple_integral.html
       - title:  그린정리
         url:    2020/01/18/Green_theorem.html
-      - title:  벡터장의 flux(2D)
-        url:    2020/08/17/flux_2D.html
       - title:  벡터장의 선적분
-        url:    2020/08/18/line_integral.html
+        url:    2020/08/17/line_integral.html
+      - title:  벡터장의 flux(2D)
+        url:    2020/08/18/flux_2D.html
       - title:  발산정리(2D)
         url:    2020/08/19/divergence_theorem_2D.html  
       - title:  미소곡면의 법선벡터
