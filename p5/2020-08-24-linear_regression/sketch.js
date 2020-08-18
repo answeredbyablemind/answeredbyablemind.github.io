@@ -85,7 +85,6 @@ function draw() {
      // 오른쪽 패널 사각형 그려주기
      fill(255)
      noStroke()
-     rect(340, 20, 240, 240)
      push()
      translate(340 + 120, height - 20)
      
@@ -105,10 +104,10 @@ function draw() {
      }
      pop()
 
-     drawArrow(width - 60, height - 20, width - 20, height - 20)
+     drawArrow(340, height - 20, width - 20, height - 20)
      text('기울기', width-40, height - 40)
 
-     drawArrow(341, 40, 341, 5)
+     drawArrow(340, height - 20, 340, 5)
      text('절편', 310, 20)
 
      
@@ -137,11 +136,11 @@ function draw() {
      }
      push()
      noStroke()
-     translate(340, height - 20)
+     translate(341, height -21)
      scale(1, -1)
      for(let i = 0; i< N_slps; i++){
           for(let j = 0; j < N_intcpts; j++){
-               fill((coord_slp_intcpt[i][j] - minMSE) / (maxMSE - minMSE) * 255)
+               fill((coord_slp_intcpt[i][j] - minMSE) / (maxMSE - minMSE + 0.001) * 255)
                rect( i * cell_size, j * cell_size, cell_size, cell_size)
           }
      }
@@ -161,7 +160,11 @@ function draw() {
           stroke(255)
           
      }
+     
      endShape()
+     
+     fill(255, 100, 100)
+     ellipse(slp * scl, intcpt * scl, 5, 5)
      pop()
 
 }
