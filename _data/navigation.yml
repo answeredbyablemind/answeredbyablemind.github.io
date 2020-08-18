@@ -122,7 +122,7 @@ docs-ko:
       - title:  경사하강법(Gradient Descent)
         url:    2020/08/16/gradient_descent.html
       - title:  선형회귀(linear regression)
-        url:    2019/08/24/linear_regression.html
+        url:    2020/08/24/linear_regression.html
       - title:  헤시안 행렬의 기하학적 의미
         url:    2020/06/17/Hessian.html
       - title:  Layer-wise Relevance Propagation
