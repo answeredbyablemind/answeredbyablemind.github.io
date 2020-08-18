@@ -20,6 +20,7 @@ var N_intcpts
 
 var txt_slp
 var txt_intcpt
+var txt_signature
 
 function setup() {
      createCanvas(640, 280);
@@ -33,7 +34,10 @@ function setup() {
      intcpts = linspace(-3, 3, N_intcpts)
      txt_slp = createElement("text", " ")
      txt_intcpt = createElement("text", " ")
+     txt_signature = createElement("text", " ")
 
+     txt_signature.position(width-190, height)
+     txt_signature.html("ⓒ 공돌이의 수학정리노트")
 }
 
 
@@ -166,6 +170,10 @@ function draw() {
      fill(255, 100, 100)
      ellipse(slp * scl, intcpt * scl, 5, 5)
      pop()
+
+     
+
+     
 
 }
 
