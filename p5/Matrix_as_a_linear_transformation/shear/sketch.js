@@ -126,7 +126,7 @@ function draw() {
      textSize(12)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
-
+     
      // textAlign(LEFT)
      // textSize(15)
      // text('↓ 슬라이더를 움직여 보세요.', width * 0.05, height * 0.95)
