@@ -69,6 +69,8 @@ docs-ko:
         url:    2019/10/10/Wronskian.html
       - title:  독립성분분석(ICA)
         url:    2020/07/14/ICA.html
+      - title:  선형회귀(linear regression)
+        url:    2020/08/24/linear_regression.html
 
   - title:      미적분학
     children:
