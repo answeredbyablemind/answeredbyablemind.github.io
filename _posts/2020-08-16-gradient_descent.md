@@ -97,3 +97,14 @@ step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 �
 </p>
 
 # local minima 문제
+
+Gradient descent의 또 다른 문제는 local minima 문제이다. 실제로 우리가 찾고 싶은 것은 아래의 그림에서 볼 수 있는 빨간점이 표시하는 global maximum이지만,
+
+gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다.
+
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic2.png">
+  <br>
+  그림 2. 실제로 얻고 싶은 값은 global maximum(빨간색)이지만, initialization이 우연히도 잘못 되면 local minima(노란색)에 빠지기도 한다.
+</p>
