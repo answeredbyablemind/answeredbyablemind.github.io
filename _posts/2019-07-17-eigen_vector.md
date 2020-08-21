@@ -7,45 +7,17 @@ aside:
 key: 20190717
 tags: 선형대수
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 110vw;
-        background:white;  
-    }
-    .my_iframe {
-        width: 100vw;
-        height: 120vw;
-        background: white;
-    }
-  }
 
-  @media screen and (min-width:500px){
-    iframe {
-        width: 40vw; 
-        height: 40vw;
-        background:white;  
-    }
-    .my_iframe {
-        width: 35vw;
-        height: 43.75vw;
-        background: white;
-    }
-  }
-
-
-</style>
-
-<p align="center"><iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
-<br>
-<b>
-고유벡터와 고유값이 물어보는 것:
-<br>
-“벡터 x에 어떠한 선형변환 A를 했을 때, 그 크기만 변하고 원래 벡터와 평행한 벡터 x는 무엇인가요?”
-<br>
-“그렇다면, 그 크기는 얼마만큼 변했나요?”
-</b>
+<p align="center">
+  <iframe src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
+  <br>
+  <b>
+  고유벡터와 고유값이 물어보는 것:
+  <br>
+  “벡터 x에 어떠한 선형변환 A를 했을 때, 그 크기만 변하고 원래 벡터와 평행한 벡터 x는 무엇인가요?”
+  <br>
+  “그렇다면, 그 크기는 얼마만큼 변했나요?”
+  </b>
 </p>
 
 
@@ -62,7 +34,7 @@ tags: 선형대수
 그림 1에서 볼 수 있듯이 행렬을 이용해 벡터를 변환 시켜 주면, 변환 후의 벡터($A\vec{x}$)는 변환 전의 벡터($\vec{x}$)와 비교했을 때, 크기도 방향도 모두 변할 수 있다. 아래의 애플릿을 이용해 임의의 벡터와 행렬을 이용한 선형 변환 결과를 확인해보자.
 
 <p align="center">
-<iframe class = "my_iframe" src="https://angeloyeo.github.io/p5/2019-07-17-eig_applet1/" frameborder="0"></iframe>
+<iframe width = "370" height = "450" src="https://angeloyeo.github.io/p5/2019-07-17-eig_applet1/" frameborder="0"></iframe>
 </p>
 
 # 고유값과 고유벡터의 의미
@@ -235,7 +207,7 @@ $$\left[
  그러므로 기하학적으로 이것을 다시 설명하면, $\vec{x} = [1,1]$ 벡터는 선형변환 $A$ 를 취해주면 그 방향은 변하지 않고, 크기가 3배가 된다. 또, $\vec{x} = [1, -1]$ 벡터는 선형변환 $A$ 를 취해주게 되면 그 방향은 변하지 않고 크기는 1배가 된다는 의미이다.
 
 <center>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/Nvc7ZRVjciM" frameborder="0" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/Nvc7ZRVjciM" frameborder="0" allowfullscreen></iframe>
 </center>
 
 [^1]: 일반적으로는 벡터공간에 대한 선형 변환 연산이라고 할 수 있다.

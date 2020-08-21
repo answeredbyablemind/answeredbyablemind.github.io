@@ -8,7 +8,7 @@ let t;
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
-     createCanvas(windowWidth-20, windowWidth-20);
+     createCanvas(350, 350);
      scl = (height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
 
 
@@ -18,29 +18,36 @@ function setup() {
      vec_text.position(0, height- 20);
      inp_vec1 = createInput('1')
      inp_vec1.position(0, height + 30)
+     inp_vec1.size(80, 15)
      inp_vec2 = createInput('1')
      inp_vec2.position(0, height + 30 + 22 + 1)
+     inp_vec2.size(80, 15)
 
      // matrix input
      vec_text = createElement('h3', 'matrix');
      vec_text.position(width/2 - 50 + 30, height- 20);
 
      inp1 = createInput('2');
-     inp1.position(width/2 - 50 + 30 , height + 30)
+     inp1.position(160 , height + 30)
+     inp1.size(80, 15)
 
      inp2 = createInput('-3');
-     inp2.position(width/2 - 50 + 30 + inp1.width + 2, height + 30)
+     inp2.position(160 + inp1.width + 2, height + 30)
+     inp2.size(80, 15)
 
      inp3 = createInput('1');
-     inp3.position(width/2 - 50 + 30, height + 30 + 22 + 1)
+     inp3.position(160, height + 30 + 22 + 1)
+     inp3.size(80, 15)
 
      inp4 = createInput('1');
-     inp4.position(width/2 - 50 + 30 + inp3.width + 2, height + 30 + 22 + 1)
+     inp4.position(160 + inp3.width + 2, height + 30 + 22 + 1)
+     inp4.size(80, 15)
 
      // button
-     button = createButton("Apply the Matrix")
-     button.position(width - 111, height + 3);
+     button = createButton("Apply")
+     button.position(width - 111, height -5);
      button.mousePressed(Refresh);
+     button.size(100, 30)
 
      // matrix 설정하기
      myMtx = [

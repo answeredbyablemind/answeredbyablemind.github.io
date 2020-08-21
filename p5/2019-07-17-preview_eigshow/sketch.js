@@ -7,8 +7,8 @@ let extraCanvas;
 // var myP;
 
 function setup() {
-     createCanvas(windowWidth- 20, windowWidth - 20);
-     extraCanvas = createGraphics(windowWidth - 20, windowWidth - 20);
+     createCanvas(350, 350);
+     extraCanvas = createGraphics(350, 350);
      // myP = createP('$$\\begin{bmatrix}0.25 & 0.75\\\\ 1 & 0.5\\end{bmatrix}$$');
      // myP.style('color','white')
      
@@ -21,24 +21,15 @@ function setup() {
      ])
      scl = width / 4;
      extraCanvas.background(0)
-     // TODO: 모바일인 경우...     
      
-     if (FRUBIL.device.class == "Desktop") {
-          h_mobile = 0;
-     } else {
-          h_mobile = 1;
-          slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
-     }
-     // h_mobile = 0;
+     slider1 = createSlider(0, 2*PI + 0.01, 0, 0.01);
+     slider1.position(0, height + 10)
+
 }
 
 function draw() {
      background(0);
-     if (h_mobile ==0){
-          mouseMoved();
-     } else {
-          x = math.matrix([[cos(slider1.value())],[sin(slider1.value())]])
-     }
+     x = math.matrix([[cos(slider1.value())],[sin(slider1.value())]])
      image(extraCanvas, 0, 0)
      plotAxis();
      Ax = math.multiply(A, x);
@@ -49,7 +40,7 @@ function draw() {
      textOnArrow();
      fill(255);
      textAlign(CENTER);
-     textSize(15);
+     textSize(12);
      text('x와 Ax를 평행하게 만들어보세요.', width/2, height * 0.875)
 
      textSize(12)
@@ -63,28 +54,16 @@ function textOnArrow() {
      translate(width / 2, height / 2);
      // scale(1, -1)
      fill(255);
-     textSize(20);
+     textSize(13);
      text('x', x._data[0][0] * 0.5 * scl, -x._data[1][0] * 0.5 * scl);
      text('Ax', Ax._data[0][0] * 0.5 * scl, -Ax._data[1][0] * 0.5 * scl);
      pop();
 }
 
-function mouseMoved() {
-     let temp_x, temp_y
-     temp_x = mouseX - width / 2;
-     temp_y = -(mouseY - height / 2);
-
-     let xx, yy
-     xx = 1 / sqrt(temp_x ** 2 + temp_y ** 2) * temp_x
-     yy = 1 / sqrt(temp_x ** 2 + temp_y ** 2) * temp_y
-
-     x = math.matrix([[xx],[yy]])
-}
-
 function plotAxis() {
      push();
      stroke(200);
-     strokeWeight(4);
+     strokeWeight(2);
      line(width / 2, 0, width / 2, height);
      line(0, height / 2, width, height / 2);
      pop();
@@ -111,7 +90,7 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      push();
      translate(width / 2, height / 2)
      scale(1, -1)
-     strokeWeight(3)
+     strokeWeight(2)
      stroke(c1, c2, c3);
      fill(c1, c2, c3)
      line(x1 * scl, y1 * scl, x2 * scl, y2 * scl); //draw a line beetween the vertices
