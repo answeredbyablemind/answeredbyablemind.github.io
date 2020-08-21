@@ -35,3 +35,13 @@ colormap(jet);
 cbar = colorbar;
 set(cbar, 'Ticks', [])
 set(gca,'visible','off')
+
+%% local minima ฐüทร 
+xx= linspace(-1, 5, 100);
+yy = 1/5 * (xx+0.1).*(xx-1.1).*(xx-1.8) .* (xx-2.1).*(xx-3.2).*(8*xx-4.8)+2;
+
+figure; plot(xx, yy,'linewidth',2)
+ylim([-5, 8])
+xlabel('x');
+ylabel('y');
+grid on;
