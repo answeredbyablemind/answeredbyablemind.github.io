@@ -9,7 +9,7 @@ var projMtx, dataMtx_proj;
 var ellipseSize;
 
 function setup() {
-     createCanvas(windowWidth-20, windowWidth-20);
+     createCanvas(350, 350);
      scl = width / 8;
      for (i=0; i<numData; i++){
           randomTemp[0][i] = random(1) * 2 - 1
@@ -65,7 +65,7 @@ function draw() {
      fill(255)
      textAlign(RIGHT)
      plotData();
-     text('(c) 공돌이의 수학정리노트', width * 0.9, height * 0.9)
+     text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.92)
 
 
 }

@@ -29,18 +29,15 @@ let mtx2Apply = [
 let inc;
 
 function setup() {
-     createCanvas(windowWidth - 20, windowHeight - 60);
+     createCanvas(350, 350);
      scl = width / 32;
      for (let i = 0; i < numData; i++) {
           randomTemp[0][i] = randomGaussian(0, 1)
           randomTemp[1][i] = randomGaussian(0, 1)
      }
 
-     if (width < 500) {
-          ellipseSize = 25 / 800 * width;
-     } else {
-          ellipseSize = 15 / 800 * width;
-     }
+     ellipseSize = 18 / 800 * width;
+
 
      // Defining buttons
      button1 = createButton('Matrix 1')
