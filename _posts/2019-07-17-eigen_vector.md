@@ -9,7 +9,7 @@ tags: 선형대수
 ---
 
 <p align="center">
-  <iframe width = "370" height = "370" src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
+  <iframe width = "380" height = "380" src="https://angeloyeo.github.io/p5/2019-07-17-preview_eigshow/" frameborder = "0"></iframe>
   <br>
   <b>
   고유벡터와 고유값이 물어보는 것:
