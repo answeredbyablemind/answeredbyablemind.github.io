@@ -267,7 +267,11 @@ $$f(x) = \sum_i R_i$$
 
 즉, $f(x) = \sum_i R_i$에서 처럼 $R_f = \sum_i R_i$로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
 
+<center>
+  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4twkQWYTXpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>
 
 # 참고문헌
 * Explaining NonLinear Classification Decisions with Deep Taylor Decomposition, Montavon et al., 2015
