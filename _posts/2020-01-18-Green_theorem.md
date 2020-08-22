@@ -7,8 +7,42 @@ aside:
 key: 20200118
 tags: 미적분학
 ---
+# prerequisites
 
-# 부제 : Curl을 통한 그린 정리의 직관적 이해
+그린 정리를 이해하기 위해선 다음의 세 가지 내용에 대해 알고 오시는 것이 좋습니다.
+
+* 미적분학의 기본정리
+함수 $f$가 닫힌구간 $[a, b]$에서 연속이며, 함수 $F$가 $f$의 임의의 부정적분이면 다음이 성립한다.
+
+$$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
+
+* [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
+* [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
+   
+
+# 그린 정리
+
+평면에서의 그린 정리는 다음과 같다.
+
+| THEOREM 1. 그린 정리 |
+| --------- |
+| 여기서 벡터장 $F(x,y) = P(x,y)\hat{i} + Q(x,y)\hat{j}$로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, <br><center>$$\iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\partial A}\left(Pdx - Qdy\right)$$ </center>|
+
+위 식에서 볼 수 있듯이 좌변에는 중적분, 우변에는 선적분의 결과가 있으며 두 결과 값이 같다는 것을 보여주고 있다.
+
+특히, 그린 정리를 생각할 때 중요한 점 중 하나는 닫힌 경로에 대해서 그 경로와 내부 면적에 대해 적용하는 정리(theorem)라는 점이다.
+
+# 그린 정리의 증명
+
+본 post에서 그린 정리의 증명의 방식은 선적분을 먼저 증명하고, 그 결과가 중적분의 결과와 같다는 것을 보여주는 것이 될 것이다.
+
+증명을 위해 다음과 같은 닫힌 경로를 생각해보자.
+
+<p align = "center">
+  
+</p>
+
+# Curl을 통한 그린 정리의 직관적 이해
 
 
 그린 정리는 평면에서의 이중 적분과, 그 영역의 경계선에서의 선적분 사이의 관계에 대한 정리이다. 스토크스 정리 (Stoke’s theorem)의 특수한 경우이다.
