@@ -29,7 +29,7 @@ $$일 = 힘 \times \text{이동 거리}$$
 철수가 $F$라는 힘으로 $s$ 만큼의 거리를 이동했을 때 철수가 한 일은 $W=Fs$이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic1.png">
   <br>
   그림 1. 철수가 수레를 끌며 한 일은 힘과 이동거리를 곱한 만큼의 값이다.
   <br>
@@ -43,7 +43,7 @@ $$일 = 힘 \times \text{이동 거리}$$
 $$W=\vec{F}\cdot \vec{s}=|\vec{F}||\vec{S}|\cos\theta$$
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic2.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic2.png">
   <br>
   그림 2. 철수가 수레를 끌 때 수평면으로 똑바로 밀지 않고 비스듬하게 밀었을 때 철수가 수레를 끌며 한 일은 벡터의 내적으로 계산할 수 있다.
   <br>
@@ -57,7 +57,7 @@ $$W=\vec{F}\cdot \vec{s}=|\vec{F}||\vec{S}|\cos\theta$$
 다시 말해, 아래의 그림 3과 같이 전체 이동 거리 중 세 개의 구간에서 사용한 힘의 크기가 서로 달랐거나, 힘을 준 각도가 서로 달랐을 경우를 상정해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic3.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic3.png">
   <br>
   그림 3. 이동 경로를 세 구간으로 나누어 각 구간에서 한 일을 합치면 전체 구간에서 한 일을 구할 수 있다.
 </p>
@@ -71,7 +71,7 @@ $$W = W_1 + W_2 + W_3 = \sum_{i=1}^{3}\vec{F}_i\cdot \vec{s}_i$$
 그림 4와 같이 검은 실선으로 표현된 구불 구불한 경로에서 한 일을 계산하려면 빨간 점선으로 나타낸 것과 같이 직선적으로 여러 구간으로 경로를 나눈 뒤 각 경로에서 한 일을 모두 더해주면 된다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic4.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic4.png">
   <br>
   그림 4. 좀 더 구불구불하게 복잡한 경로에서 한 일을 계산하기 위해선 구간별로 잘게 잘라 각 구간에서 일한 일(Work)을 합하면 된다.
 </p>
@@ -86,11 +86,11 @@ $$W = \lim_{|\Delta \vec{s}|\rightarrow 0}\sum_{i=1}^{n}\vec{F}_i\cdot \Delta \v
 
 이 값을 우리는 line integral이라고 정의할 수 있다.
 
-$$\Rightarrow \int_C\vec{F}\cdot d\vec{s}\notag$$
+$$\Rightarrow \int_C\vec{F}\cdot d\vec{s}$$
 
 # line integral
 
-보통은 line integral에서 적분인자($d\vec{s}$)를 $d\vec{r}$로 많이 쓴다.
+보통은 line integral을 표기할 때 식 (6)에서 사용한 적분인자($d\vec{s}$)를 $d\vec{r}$로 많이 쓴다.
 
 $$\int_C\vec{F}\cdot d\vec{r}$$
 
@@ -117,7 +117,7 @@ $$
 $$y=\frac{1}{2}x\text{ where } 0<x<2$$
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic5.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-17-line_integral/pic5.png">
   <br>
   그림 5. 예시 문제의 벡터장과 이동 경로
 </p>
