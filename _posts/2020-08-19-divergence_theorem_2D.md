@@ -44,7 +44,7 @@ $$Q(x,y) \Rightarrow + V_x$$
 
 그렇게 하면 식(2)의 좌변은 다음과 같이 바뀐다.
 
-$$식(2)의 좌변 \Rightarrow \oint_C\vec{F}\cdot d\vec{r} = \oint_C\left(-V_ydx+V_xdy\right)=\oint_C\vec{V}\cdot \hat{n} ds$$
+$$\text{식(2)의 좌변} \Rightarrow \oint_C\vec{F}\cdot d\vec{r} = \oint_C\left(-V_ydx+V_xdy\right)=\oint_C\vec{V}\cdot \hat{n} ds$$
 
 (만약 위 식에서 $\oint \vec{V}\cdot \hat{n} ds$의 의미가 이해되지 않는다면 [벡터장의 flux(2D)](https://angeloyeo.github.io/2020/08/18/flux_2D.html)편을 복습하고 오는 것도 좋을 것 같다.)
 
@@ -52,7 +52,7 @@ $$식(2)의 좌변 \Rightarrow \oint_C\vec{F}\cdot d\vec{r} = \oint_C\left(-V_yd
 
 그리고 식 (2)의 우변은 다음과 같이 바뀐다.
 
-$$식(2)의 우변 \Rightarrow \iint_A\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}dxdy = \iint_A\frac{\partial V_x}{dx}+\frac{\partial V_y}{\partial y}$$
+$$\text{식(2)의 우변} \Rightarrow \iint_A\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}dxdy = \iint_A\frac{\partial V_x}{dx}+\frac{\partial V_y}{\partial y}$$
 
 사실 식 (4), (5)의 아이디어는 접선 벡터를 법선 벡터로 바꾸는 -90도 회전을 의미하는 과정에서부터 얻은 것이라고 할 수 있다.
 
@@ -82,7 +82,7 @@ y \\
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-19-divergence_theorem_2D/pic1.png">
   <br>
-  그림 1. 발산 정리의 의미를 설명하기 위해 생각한 닫힌 경로 C와 내부의 면적 A
+  그림 1. 발산 정리의 의미를 설명하기 위해 생각한 닫힌 경로 C와 내부의 면적 R
 </p>
 
 <center>
