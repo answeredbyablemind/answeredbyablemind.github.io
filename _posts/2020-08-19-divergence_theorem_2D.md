@@ -52,7 +52,7 @@ $$\text{식(2)의 좌변} \Rightarrow \oint_C\vec{F}\cdot d\vec{r} = \oint_C\lef
 
 그리고 식 (2)의 우변은 다음과 같이 바뀐다.
 
-$$\text{식(2)의 우변} \Rightarrow \iint_A\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}dxdy = \iint_A\frac{\partial V_x}{dx}+\frac{\partial V_y}{\partial y}$$
+$$\text{식(2)의 우변} \Rightarrow \iint_A\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}dxdy = \iint_A\frac{\partial V_x}{\partial x}+\frac{\partial V_y}{\partial y}$$
 
 사실 식 (4), (5)의 아이디어는 접선 벡터를 법선 벡터로 바꾸는 -90도 회전을 의미하는 과정에서부터 얻은 것이라고 할 수 있다.
 
@@ -76,6 +76,10 @@ y \\
 \end{bmatrix}$$
 
 이므로 임의의 벡터를 -90도 회전을 할 때에는 $x$, $y$를 각각 $y$, $-x$로 바꿔준다는 것이 아이디어의 핵심이다. 해당 내용에 대한 자세한 논의는 [벡터장의 flux(2D)의 법선 벡터 계산 부분](https://angeloyeo.github.io/2020/08/18/flux_2D.html#%EB%B2%95%EC%84%A0-%EB%B2%A1%ED%84%B0-%EA%B3%84%EC%82%B0)을 다시 한번 보고 오는 것도 좋을 것 같다.
+
+이제 식 (6)과 식 (7)은 같은 것이므로 수식으로 연결해주면 발산정리가 증명된다.
+
+$$\Rightarrow \oint_C\vec{V}\cdot \hat{n} ds=\iint_A\frac{\partial V_x}{\partial x}+\frac{\partial V_y}{\partial y}$$
 
 # 발산정리(2D)의 의미
 
