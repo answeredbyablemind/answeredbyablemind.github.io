@@ -77,7 +77,7 @@ function plotAxes() {
 
      text('y', width/2 + 10, 10)
 
-     text('t = 0', 0, height- 5)
+     text('t = 0', 10, height- 5)
      text('t = 3', 100, height - 5)
 
      text('ⓒ공돌이의 수학정리노트', 180, height-5)
