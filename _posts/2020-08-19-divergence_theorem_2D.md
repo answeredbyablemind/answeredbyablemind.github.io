@@ -22,6 +22,7 @@ tags: 미적분학
 
 * [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)
 * [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
+* [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
 * [벡터장의 flux(2D)](https://angeloyeo.github.io/2020/08/18/flux_2D.html)
 
 # 발산 정리의 증명
@@ -83,11 +84,31 @@ $$\Rightarrow \oint_C\vec{V}\cdot \hat{n} ds=\iint_A\frac{\partial V_x}{\partial
 
 # 발산정리(2D)의 의미
 
+아래의 그림 1과 같이 임의의 벡터장 $\vec{F}$와 닫힌 경로 $C$를 생각해보자.
+
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-19-divergence_theorem_2D/pic1.png">
   <br>
   그림 1. 발산 정리의 의미를 설명하기 위해 생각한 닫힌 경로 C와 내부의 면적 R
 </p>
+
+발산정리의 의미에 대한 설명은 [그린 정리](https://angeloyeo.github.io/2020/01/18/Green_theorem.html)편에서와 마찬가지로 flux의 결과값이 면적분과 관련이 있다는 방식으로 설명하고자 한다.
+
+flux를 계산하는 과정도 기본적으로는 [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)에 기반을 두고 있기 때문에 벡터의 내적이 가장 중요한 개념이다.
+
+우선 그림 1에서 주어진 닫힌 경로를 따라 flux를 계산한 결과는 다음과 같다.
+
+$$\oint_C\vec{F}\cdot \hat{n}ds$$
+
+이 때 닫힌 경로 $C$를 아래 그림 2와 같이 반으로 쪼개보도록 하자.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-19-divergence_theorem_2D/pic2.png">
+  <br>
+  그림 2. 닫힌 경로 C를 두 개로 나눠 생각해보면 두 경로에 대해 flux를 계산할 때의 법선 벡터는 빨간색, 파란색 화살표와 같이 표시할 수 있다.
+</p>
+
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/dtAgMxlt9u4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
