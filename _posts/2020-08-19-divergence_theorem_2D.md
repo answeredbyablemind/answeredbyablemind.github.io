@@ -100,7 +100,7 @@ flux를 계산하는 과정도 기본적으로는 [벡터장의 선적분](https
 
 $$\oint_C\vec{F}\cdot \hat{n}ds$$
 
-이 때 닫힌 경로 $C$를 아래 그림 2와 같이 반으로 쪼개보도록 하자.
+이제 닫힌 경로 $C$를 아래 그림 2와 같이 반으로 쪼개보도록 하자.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-19-divergence_theorem_2D/pic2.png">
@@ -108,6 +108,34 @@ $$\oint_C\vec{F}\cdot \hat{n}ds$$
   그림 2. 닫힌 경로 C를 두 개로 나눠 생각해보면 두 경로에 대해 flux를 계산할 때의 법선 벡터는 빨간색, 파란색 화살표와 같이 표시할 수 있다.
 </p>
 
+이 때, 그림 2의 나눠진 두 경로의 가운데 부분을 보면 이 경로는 $C_1$ 경로에서와 $C_2$ 경로에서 동시에 포함되는 경로임을 알 수 있다.
+
+이 "동시에 포함되는 경로"는 $C_1$에 대한 flux를 계산할 때와 $C_2$에 대한 flux를 계산할 때 지나가는 길이는 동일하지만 법선벡터는 반대이므로 해당 경로에서는 $C_1$에 대한 flux를 계산할 때의 결과값과 $C_2$에 대한 flux를 계산할 때의 결과 값이 서로 크기는 같으나 부호는 반대이므로 더하면 0이 된다.
+
+그러므로, $C_1$에 대해 계산해준 flux 값과 $C_2$에 대해 계산해준 flux 값을 더하면 원래의 닫힌 경로 $C$에 대해 계산해준 flux 값과 같아진다는 것을 알 수 있다. 수식으로 적으면 다음과 같다.
+
+$$\oint_C\vec{F}\cdot\hat{n}ds = \oint_{C_1}\vec{F}\cdot\hat{n}ds+\oint_{C_2}\vec{F}\cdot\hat{n}ds$$
+
+이번엔 그림 2에서 쪼갰던 경로를 한번 더 쪼개서 아래의 그림 3과 같이 원래의 경로 $C$를 총 네 개의 닫힌 경로로 쪼개보자.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-19-divergence_theorem_2D/pic3.png">
+  <br>
+  그림 3. 닫힌 경로 C를 네 개로 나눠 생각해보면 두 경로에 대해 flux를 계산할 때의 법선 벡터는 빨간색, 파란색, 초록색, 보라색 화살표와 같이 표시할 수 있다.
+</p>
+
+그림 2의 flux 값들을 계산해줬을 때와 마찬가지 논리로 원래의 닫힌 경로 $C$ 내부에 있는 경로들의 flux 값은 더해줬을 때 모두 0이 되므로 모든 경로 $C_1$, $C_2$, $C_3$, $C_4$에 대해서 구해준 flux 값들의 합은 원래 경로 $C$에 대한 flux 값과 같다. 수식으로 적으면 다음과 같다.
+
+
+$$\oint_C\vec{F}\cdot\hat{n}ds = \sum_i^4\oint_{C_i}\vec{F}\cdot\hat{n}ds$$
+
+이러한 방식을 이용하면 닫힌 경로 $C$ 내부를 임의의 양수 $N$개 만큼으로 쪼갤 수도 있을 것이다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-19-divergence_theorem_2D/pic3.png">
+  <br>
+  그림 3. 닫힌 경로 C를 네 개로 나눠 생각해보면 두 경로에 대해 flux를 계산할 때의 법선 벡터는 빨간색, 파란색, 초록색, 보라색 화살표와 같이 표시할 수 있다.
+</p>
 
 
 <center>
