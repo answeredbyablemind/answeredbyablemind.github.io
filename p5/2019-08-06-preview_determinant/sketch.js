@@ -22,7 +22,7 @@ let ii;
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
-     createCanvas(windowWidth-20, windowWidth-20);
+     createCanvas(350, 350);
      scl = (height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
 
      // 각 아래의 내용을 vu, vd, hl, hr에 맞출 수 있게... 벡터화 하고자 함.
