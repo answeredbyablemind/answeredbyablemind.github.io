@@ -202,7 +202,7 @@ $$\sum_{k=1}^N\oint_{C_k}\vec{F}\cdot\hat{n}ds = \sum_{k=1}^N|R_k|pdiv(\vec{F})$
 
 또, 원래의 닫힌 경로 $C$에 대한 flux 값은 무한히 쪼개 발생한 경로 $C_k$들의 flux의 합과 같다. 그러므로 식 (22)에 대해 $N$을 무한히 크게하면,
 
-$$\oint_C\vec{F}\cdot\hat{n}ds = \lim_{N\rightarrow \infty}\sum_{k=1}^N\oint_{C_k}\vec{F}\cdot\hat{n}ds $$
+$$\oint_C\vec{F}\cdot\hat{n}ds = \lim_{N\rightarrow \infty}\sum_{k=1}^N\oint_{C_k}\vec{F}\cdot\hat{n}ds \notag$$
 
 $$= \lim_{N\rightarrow \infty}\sum_{k=1}^N|R_k|pdiv(\vec{F})=\iint_A div(\vec{F})dA =\iint_A\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}\right)dxdy$$
 
