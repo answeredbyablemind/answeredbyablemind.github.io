@@ -154,13 +154,13 @@ $$\oint_C\vec{F}\cdot\hat{n}ds = \sum_{k=1}^N\oint_{C_i}\vec{F}\cdot\hat{n}ds$$
 
 이 경로의 밑변과 높이가 각각 $2\Delta x$, $2\Delta y$라고 하고, 주어진 벡터장 $\vec{F} = P(x,y)\hat{i}+Q(x,y)\hat{j}$에 대해, 경로 위의 네 점에서의 벡터값을 각각 $v_1$부터 $v_4$라고 하자.
 
-$$\color{red} \vec{v_1} = P(x+\Delta x, y)\hat{i} + Q(x+\Delta x, y)\hat{j}$$
+$$\vec{v_1} = P(x+\Delta x, y)\hat{i} + Q(x+\Delta x, y)\hat{j}$$
 
-$$\color{blue} \vec{v_2} = P(x, y + \Delta y)\hat{i} + Q(x, y + \Delta y)\hat{j}$$
+$$\vec{v_2} = P(x, y + \Delta y)\hat{i} + Q(x, y + \Delta y)\hat{j}$$
 
-$$\color{green} \vec{v_3} = P(x-\Delta x, y)\hat{i} + Q(x-\Delta x, y)\hat{j}$$
+$$\vec{v_3} = P(x-\Delta x, y)\hat{i} + Q(x-\Delta x, y)\hat{j}$$
 
-$$\color{purple} \vec{v_4} = P(x, y - \Delta y)\hat{i} + Q(x, y - \Delta y)\hat{j}$$
+$$\vec{v_4} = P(x, y - \Delta y)\hat{i} + Q(x, y - \Delta y)\hat{j}$$
 
 그리고, 여기서의 하나의 가정은 $\Delta x$, $\Delta y$는 충분히 작기 때문에 닫힌 경로 $C_k$에서 네 변 각각에서 벡터장은 변하지 않는다고 가정하도록 하자.
 
@@ -188,13 +188,25 @@ $$\Rightarrow 4\Delta x\Delta y\left\lbrace
 \frac{P(x+\Delta x, y) - P(x-\Delta x, y)}{2\Delta x} + \frac{Q(x, y + \Delta y) - Q(x, y-\Delta y)}{2\Delta y}
 \right\rbrace$$
 
-여기서 $4\Delta x \Delta y$는 닫힌 경로 $C_k$의 면적 $|R_k|$가 되고, 중괄호 안에 있는 값은 [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)편에서 본 발산 값과 비슷한데 여기서는 '유사 발산'이라고 이름 붙이도록 하자. 기호는 pseudo divergence를 생각해 $pdiv(\cdot)$이라고 하도록 하자.
+여기서 $4\Delta x \Delta y$는 닫힌 경로 $C_k$의 면적 $\|R_k\|$가 되고, 중괄호 안에 있는 값은 [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)편에서 본 발산 값과 비슷한데 여기서는 '유사 발산'이라고 이름 붙이도록 하자. 기호는 pseudo divergence를 생각해 $pdiv(\cdot)$이라고 하도록 하자.
 
 $$\oint_{C_k}\vec{F}\cdot\hat{n}ds\Rightarrow |R_k|pdiv(\vec{F})$$
 
-여기서 원래의 닫힌경로 $C$를 쪼개준 개수 $N$을 무수하게 많이 늘린다면 결국 $\Delta x$와 $\Delta y$는 매우 작아지게 되고 위 식은 다음과 같이 쓸 수 있게 된다.
+## 지금까지 얻은 내용을 종합해보자.
 
-$$$$
+따라서, 식 (13)은 결국 다음과 같이 쓸 수 있게 된다.
+
+$$\sum_{k=1}^N\oint_{C_k}\vec{F}\cdot\hat{n}ds = \sum_{k=1}^N|R_k|pdiv(\vec{F})$$
+
+여기서 원래의 닫힌경로 $C$를 쪼개준 개수 $N$을 무수하게 많이 늘린다면 결국 $\Delta x$와 $\Delta y$는 매우 작아지게 되고 $\|R_k\|$는 미소 면적 $dA$로 생각할 수 있게 되고 유사 발산(pdiv)은 한 점에서의 벡터장의 발산과 같은 의미를 갖게 된다.
+
+또, 원래의 닫힌 경로 $C$에 대한 flux 값은 무한히 쪼개 발생한 경로 $C_k$들의 flux의 합과 같다. 그러므로 식 (22)에 대해 $N$을 무한히 크게하면,
+
+$$\oint_C\vec{F}\cdot\hat{n}ds = \lim_{N\rightarrow \infty}\sum_{k=1}^N\oint_{C_k}\vec{F}\cdot\hat{n}ds $$
+
+$$= \lim_{N\rightarrow \infty}\sum_{k=1}^N|R_k|pdiv(\vec{F})=\iint_A div(\vec{F})dA =\iint_A\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}\right)dxdy$$
+
+즉, 발산정리가 말하고자 하는 것은 닫힌 경로에 대해 최외각 경로에 대한 flux 값이나 그 내부를 아주 잘게 쪼개 얻은 작은 면적들의 divergence의 합이 같다는 의미를 갖는다.
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/dtAgMxlt9u4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
