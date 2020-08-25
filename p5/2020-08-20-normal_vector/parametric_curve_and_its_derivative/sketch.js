@@ -52,18 +52,12 @@ function draw() {
      var x1 = x[my_slider.value()]
      var y1 = y[my_slider.value()]
      var tangent = y_prime / x_prime // 무조건 화살표가 오른쪽으로만 향하게 되는 문제 있음.
-     var delta_x
-     // 아래의 방법으론 안됨... 수학적으로 생각해보자.
-     if (tangent > 0){
-          delta_x = 0.5
-     } else {
-          delta_x = -0.5
-     }
-          
-
+     var delta_x = 0.5
+     var tan_length = sqrt(y_prime ** 2/x_prime **2)
      // 각도가 90'가 될 때 화살표의 크기가 너무 커지는 문제 있음.
-     drawArrow(x1 * scl, y1 * scl, (x1 + delta_x) * scl, (y1 + delta_x * tangent) * scl)
-     print(x_prime, y_prime)
+     drawArrow(x1 * scl, y1 * scl, (x1 + delta_x) * scl, (y1 + delta_x * tangent/tan_length) * scl)
+     // print(x_prime, y_prime)
+     print(tan_length)
      pop()
 
 }
