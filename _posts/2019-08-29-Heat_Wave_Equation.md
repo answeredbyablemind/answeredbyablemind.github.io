@@ -216,5 +216,10 @@ $$u_{tt} = c^2 u_{xx}$$
 
 $\Rightarrow$ [공돌이의 수학정리노트 Github Repo](https://github.com/angeloyeo/gongdols/tree/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99)
 
+<center>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YNAI3hAcVKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>
+
 
