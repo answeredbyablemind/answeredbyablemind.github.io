@@ -265,8 +265,13 @@ $$
 
 애니메이션에서 파란색, 주황색, 노란색이 각각 첫 번째, 두 번째, 세 번째에 해당되는 식이다.
 
+
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PBPuwnv59pk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
----
+</center>
 
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ov7fetr-qg8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>
