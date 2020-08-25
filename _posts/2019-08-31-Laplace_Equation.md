@@ -193,7 +193,10 @@ $$u(x,y) = \frac{1}{4}\left\{
   그림6. 그림 2의 예제에 대한 라플라스 방정식의 solution
 </p>
 
+<center>
 
 <p align = "cener">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UbhIJOJ_vDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
+
+</center>
