@@ -7,23 +7,7 @@ aside:
 key: 20190829
 tags: 미적분학
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 110vw;
-        background:white;  
-    }
-  }
 
-  @media screen and (min-width:500px){
-    iframe {
-        width: 60vw; 
-        height: 53vw;
-        background:white;  
-    }
-  }
-</style>
 # 열방정식 (heat equation)
 
 위키피디아에 따르면 열 방정식(heat equation)은 열 따위의 성질이 시간에 따라 전도되는 과정을 나타내는 2차 편미분 방정식이라고 한다.
@@ -147,11 +131,11 @@ $$u_t = k u_{xx}$$
   그림 5. 쇠막대기의 온도 변화를 시뮬레이션 한 것
 </p>
 
-아래의 애플릿은 쇠막대기의 온도 변화 $u(x, t)$를 3차원 공간 상에 도시한 것이다.
+아래의 3D 그림은 쇠막대기의 온도 변화 $u(x, t)$를 3차원 공간 상에 도시한 것이다.
 
-<iframe frameborder="0" src="//plot.ly/~angeloyeo/8.embed"></iframe>
-
-위 애플릿에서는 x 축이 시간, y 축이 쇠막대기에서의 위치, z 축이 온도값을 나타낸다.
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/heat_3D_result.gif">
+</p>
 
 ## MATLAB demo 2: 쇠판대기 예제
 
@@ -205,11 +189,11 @@ $$u_{tt} = c^2 u_{xx}$$
 
 즉, 시간과 공간(여기서는 로프를 따라가는 x축)에 대한 함수로 나타낼 수 있으며, 
 
-그림 7과 같은 파동의 움직임은 아래와 같이 3차원 공간에서 표현할 수 있다. (MATLAB 시뮬레이션은 그림 7과 같게 만들어서 생략)
+그림 7과 같은 파동의 움직임은 아래와 같이 3차원 공간에서 표현할 수 있다.
 
-<iframe frameborder="0" src="https://angeloyeo.github.io/pics/2019-08-29_Heat_Wave_Equation/applet2.html"></iframe>
-
-위 애플릿에서 x축은 로프의 길이, y축이 시간, z축이 로프의 높이를 나타낸다.
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/wave_3D_result.gif">
+</p>
 
 ## 시뮬레이션: 2차원 공간 상의 물결파
 
