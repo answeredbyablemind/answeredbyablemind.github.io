@@ -88,17 +88,37 @@ $$r(u, v) = \begin{bmatrix}x(u,v) \\ y(u,v) \\ z(u,v) \end{bmatrix} = x(u,v)\hat
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-20-normal_vector/pic2.png">
   <br>
-  그림 2. 
+  그림 2. 매개 변수를 이용해 표현한 곡면의 입력 공간과 출력 공간
 </p>
 
+우선, 곡면의 방정식은 $u$와 $v$로 표현한 두 개의 매개 변수가 이용되므로 입력 공간(정의역)은 2차원 벡터 공간으로 생각할 수 있다.
+
+이 때, 출력 공간(치역)에서는 $u$와 $v$가 변함에 따라 출력 함수 $r(u, v)$의 값이 결정되게 되므로 3차원 벡터 공간 상에서의 위치가 결정되게 된다.
+
+특히 주목할 점은 입력 공간에서 $u$ 혹은 $v$를 상수로 놓으면 출력 공간에서는 하나의 곡선이 결정되게 된다는 점이다.
+
 ## 매개 변수를 이용해 표현한 곡면의 접평면과 법선벡터
+
+매개 변수를 이용한 방정식으로 곡면을 하나 결정할 수 있게 된다고 하였을 때, 입력 공간에서의 $u$ 혹은 $v$ 방향으로의 미세한 변화 $du$ 혹은 $dv$는 출력 함수 $r$의 작은 변화 $dr$을 이끌어 내게 된다.
+
+이러한 변화의 비율을 수식으로 쓰면 각각 다음과 같다.
+
+$$u\text{의 작은 변화에 따른 } r\text{의 변화 }\Rightarrow \frac{\partial r}{\partial u} = r_u$$
+
+$$v\text{의 작은 변화에 따른 } r\text{의 변화 }\Rightarrow \frac{\partial r}{\partial v} = r_v$$
+
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-20-normal_vector/pic3.png">
   <br>
-  그림 3. 
+  그림 3. 입력 공간의 작은 변화에 따라 얻어지는 출력 공간에서의 변화율
 </p>
 
+이렇듯 출력 공간 상의 한 점에서 서로 다른 방향으로의 벡터 두 개를 얻을수 있으면 접평면을 하나 결정할 수 있게 되고, 해당 접평면의 법선벡터는 두 벡터의 외적으로 표현할 수 있다. 
+
+또한, 법선벡터는 크기 정보는 갖지 않고 방향 정보만 가지므로 곡면의 법선 벡터는 다음과 같이 계산할 수 있다.
+
+$$\hat{n} = \frac{r_u\times r_v}{|r_u\times r_v|}$$
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/tCBegKMJY7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
