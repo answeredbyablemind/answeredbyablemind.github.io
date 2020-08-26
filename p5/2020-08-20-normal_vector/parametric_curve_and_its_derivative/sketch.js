@@ -52,7 +52,7 @@ function draw() {
      var x1 = x[my_slider.value()]
      var y1 = y[my_slider.value()]
      
-     var delta_x = 0.8
+     var delta_x = 1
 
      translate(x1 * scl, y1 * scl)
      rotate(atan2(y_prime, x_prime))

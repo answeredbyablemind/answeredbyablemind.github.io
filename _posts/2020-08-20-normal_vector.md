@@ -48,6 +48,12 @@ $$f(t) = \begin{bmatrix} t\cdot \cos(2\pi t) \\ t\cdot \sin(2\pi t)\end{bmatrix}
 
 위 applet을 보면 $t = 0$일 때 부터 $t = 3$일 때 까지의 변화가 슬라이더 상에 표현되고, 그 결과들이 각 $t$의 변화에 따라 매핑되는 것을 알 수 있다.
 
+<center>
+  <iframe width = "350" height = "350" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-08-20-normal_vector/parametric_curve_and_its_derivative/"></iframe>
+  <br>
+  t로 매개된 곡선의 매개변수 방정식의 접선 벡터
+</center>
+
 # 매개 변수 두 개를 이용해 표현하는 곡면의 방정식
 
 <center>
