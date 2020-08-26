@@ -10,7 +10,7 @@ function setup() {
      scl = 60
      t = linspace(0, 3, 500)
 
-     my_slider = createSlider(0, 500, 0, 1)
+     my_slider = createSlider(0, 499, 0, 1)
      my_slider.position(0, height)
 
      var temp = []
@@ -51,20 +51,19 @@ function draw() {
 
      var x1 = x[my_slider.value()]
      var y1 = y[my_slider.value()]
-     var tangent = y_prime / x_prime // 무조건 화살표가 오른쪽으로만 향하게 되는 문제 있음.
-     var delta_x = 0.5
-     var tan_length = sqrt(y_prime ** 2/x_prime **2)
-     // 각도가 90'가 될 때 화살표의 크기가 너무 커지는 문제 있음.
-     drawArrow(x1 * scl, y1 * scl, (x1 + delta_x) * scl, (y1 + delta_x * tangent/tan_length) * scl)
-     // print(x_prime, y_prime)
-     print(tan_length)
+     
+     var delta_x = 0.8
+
+     translate(x1 * scl, y1 * scl)
+     rotate(atan2(y_prime, x_prime))
+     drawArrow(0, 0, delta_x * scl, 0, 255, 0, 0)
      pop()
 
 }
 
 function plotAxes() {
-     drawArrow(0, height / 2, width, height / 2);
-     drawArrow(width / 2, height, width / 2, 0);
+     drawArrow(0, height / 2, width, height / 2, 255, 255, 255);
+     drawArrow(width / 2, height, width / 2, 0, 255, 255, 255);
      push()
      fill(255);
      textAlign(RIGHT, TOP);
@@ -120,11 +119,11 @@ function linspace(stt, end, steps){
      return res
 }
 
-function drawArrow(x1, y1, x2, y2) {
+function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      push();
      // strokeWeight(w);
-     stroke(255);
-     fill(255);
+     stroke(c1, c2, c3);
+     fill(c1, c2, c3);
      line(x1, y1, x2, y2); //draw a line beetween the vertices
      let offset = 10 / 320 * width;
      let angle = atan2(y1 - y2, x1 - x2); //gets the angle of the line
