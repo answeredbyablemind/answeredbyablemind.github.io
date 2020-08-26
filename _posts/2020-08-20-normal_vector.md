@@ -18,7 +18,7 @@ tags: 미적분학
 
 매개변수 $t$에 대하여,
 
-$$f(t) = \begin{bmatrix}x(t)\\y(t)\end{bmatrix}$$
+$$r(t) = \begin{bmatrix}x(t)\\y(t)\end{bmatrix}=x(t)\hat{i}+y(t)\hat{j}$$
 
 고등학교 수학 시간에 배우기는 하지만 매개변수를 이용해 표현하는 직선(혹은 곡선)의 방정식은 한 눈에 이해하기가 어려웠던 것 같다.
 
@@ -42,9 +42,9 @@ $$f(t) = \begin{bmatrix}x(t)\\y(t)\end{bmatrix}$$
 
 이와 같이 매개변수의 정의역과 함수의 결과값인 치역을 한번에 나타내는 방식으로 조금 더 복잡한 함수를 표현해보자.
 
-아래의 applet은 매개 변수 $t$를 이용해 표현한 함수 $f(t)$이다.
+아래의 applet은 매개 변수 $t$를 이용해 표현한 함수 $r(t)$이다.
 
-$$f(t) = \begin{bmatrix} t\cdot \cos(2\pi t) \\ t\cdot \sin(2\pi t)\end{bmatrix}$$
+$$r(t) = \begin{bmatrix} t\cdot \cos(2\pi t) \\ t\cdot \sin(2\pi t)\end{bmatrix}$$
 
 <center>
   <iframe width = "350" height = "350" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-08-20-normal_vector/parametric_curve/"></iframe>
@@ -68,7 +68,7 @@ $$f(t) = \begin{bmatrix} t\cdot \cos(2\pi t) \\ t\cdot \sin(2\pi t)\end{bmatrix}
 
 매개 변수의 접선 벡터를 수식으로 표현하면 다음과 같은데,
 
-$$f'(t) = \begin{bmatrix} \frac{\partial x}{\partial t} \\ \frac{\partial y}{\partial t}\end{bmatrix}$$
+$$r'(t) = \begin{bmatrix} \partial x / \partial t \\ \partial y/\partial t\end{bmatrix}$$
 
 이 말인 즉슨, 매개 변수 $t$가 약간 변할 때 $x(t)$와 $y(t)$는 각각 얼마나 변하는가를 말하고 있다.
 
@@ -81,12 +81,15 @@ $$f'(t) = \begin{bmatrix} \frac{\partial x}{\partial t} \\ \frac{\partial y}{\pa
 
 매개변수를 이용한 곡면의 방정식은 일반적으로 다음과 같이 쓸 수 있다.
 
-$$f(u, v) = \begin{bmatrix}x(u,v) \\ y(u,v) \\ z(u,v) \end{bmatrix}$$
+$$r(u, v) = \begin{bmatrix}x(u,v) \\ y(u,v) \\ z(u,v) \end{bmatrix} = x(u,v)\hat{i} + y(u,v)\hat{j} + z(u,v)\hat{k}$$
 
 곡선에 대해 이해할 때와 마찬가지로 정의역과 치역을 각각 따로 놓고 곡면을 표현해보면 아래 그림과 같다.
 
-(TODO: u, v space와 f의 대응 관계 표현한 애니메이션)
-
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-20-normal_vector/pic2.png">
+  <br>
+  그림 2. 스크롤의 위치를 이용해 현재 보여줄 페이지의 위치를 현재 화면에 매핑해 표현해주고 있다.
+</p>
 ## 매개 변수를 이용해 표현한 곡면의 접평면과 법선벡터
 
 
