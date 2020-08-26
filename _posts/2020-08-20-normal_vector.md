@@ -88,9 +88,16 @@ $$r(u, v) = \begin{bmatrix}x(u,v) \\ y(u,v) \\ z(u,v) \end{bmatrix} = x(u,v)\hat
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-20-normal_vector/pic2.png">
   <br>
-  그림 2. 스크롤의 위치를 이용해 현재 보여줄 페이지의 위치를 현재 화면에 매핑해 표현해주고 있다.
+  그림 2. 
 </p>
+
 ## 매개 변수를 이용해 표현한 곡면의 접평면과 법선벡터
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-20-normal_vector/pic3.png">
+  <br>
+  그림 3. 
+</p>
 
 
 <center>
