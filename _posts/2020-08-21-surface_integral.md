@@ -21,7 +21,7 @@ tags: 미적분학
 
 $$\iint_S\vec{F}\cdot d\vec{S} = \iint_S\vec{F}\cdot\hat{n}dS$$
 
-여기서 $\vec{F}$는 벡터장이다. 또, $\vec{S}$는 면벡터로써 쪼개보면 $\hat{n}dS$로 쓸 수 있다. 즉, 크기는 곡면상의 미소 곡면의 넓이($dS$)이고 방향은 [법선 벡터](https://angeloyeo.github.io/2020/08/20/normal_vector.html)($\hat{n})인 벡터이다.
+여기서 $\vec{F}$는 벡터장이다. 또, $\vec{S}$는 면벡터로써 쪼개보면 $\hat{n}dS$로 쓸 수 있다. 즉, 크기는 곡면상의 미소 곡면의 넓이($dS$)이고 방향은 [법선 벡터](https://angeloyeo.github.io/2020/08/20/normal_vector.html)($\hat{n}$)인 벡터이다.
 
 면적분의 수식을 잘 살펴보면 [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)의 수식과 굉장히 닮아있다는 것 또한 알 수 있다.
 
