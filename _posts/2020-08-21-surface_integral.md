@@ -14,6 +14,7 @@ tags: 미적분학
 
 * [미소곡면의 법선 벡터](https://angeloyeo.github.io/2020/08/20/normal_vector.html)
 * [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
+* [벡터장의 flux(2D)](https://angeloyeo.github.io/2020/08/18/flux_2D.html)
 
 # 면적분의 수식
 
