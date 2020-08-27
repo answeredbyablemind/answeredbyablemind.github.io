@@ -87,7 +87,7 @@ $$\iint_S\vec{F}\cdot\hat n dS = \iint_D\vec{F}\cdot \frac{r_u \times r_v}{|r_u 
 [벡터장의 flux(2D)](https://angeloyeo.github.io/2020/08/18/flux_2D.html)편에서는 미소 경로를 따라 얻을 수 있는 유량에 대해 알아보았는데, 미소 경로에 따른 유량과 미소 곡면에 따른 유량을 비교하면 아래의 그림 3과 같다.
 
 <p align="center">
-  <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-21-surface_integral/pic3.png"> <br>
+  <img src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-21-surface_integral/pic3.png"> <br>
   그림 3. 미소 경로의 유량과 미소 곡면의 유량 비교
 </p>
 
