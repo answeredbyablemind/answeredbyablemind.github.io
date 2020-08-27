@@ -82,11 +82,42 @@ $$\iint_S\vec{F}\cdot\hat n dS = \iint_D\vec{F}\cdot \frac{r_u \times r_v}{|r_u 
 
 # 면적분의 의미: 3D flux
 
+면적분의 값은 미소 곡면의 유량의 의미를 갖는다.
+
+[벡터장의 flux(2D)](https://angeloyeo.github.io/2020/08/18/flux_2D.html)편에서는 미소 경로를 따라 얻을 수 있는 유량에 대해 알아보았는데, 미소 경로에 따른 유량과 미소 곡면에 따른 유량을 비교하면 아래의 그림 3과 같다.
+
 <p align="center">
   <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-21-surface_integral/pic3.png"> <br>
-  그림 3. 입력 공간의 작은 변화에 따라 얻어지는 출력 공간에서의 변화율
+  그림 3. 미소 경로의 유량과 미소 곡면의 유량 비교
 </p>
 
+미소 곡면의 면적 $dS$에 대해서 벡터장 $\vec{F}$가 주어져 있다고 하자. 
+
+여기서의 가정은 미소 곡면의 네 변은 매우 길이가 작기 때문에 미소 곡면 상에 있는 벡터장은 모두 같다고 가정해보자.
+
+여기서 유량이라 함은, 벡터장이 물의 유속을 의미한다고 할 때 단위 시간동안 빠져나간 물의 총 양을 의미한다.
+
+$\Delta t$라는 시간동안 물이 빠져나간다고 했을 때 그 물의 양은 그림 3의 우측 그림에서 보는 평행육면체의 부피와 같다.
+
+물이 빠져나가는 속도가 $\vec{F}$이므로 경사면의 길이는 $\vec{F}\Delta t$와 같고, 평행육면체의 높이는 $\vec{F}\Delta t$를 법선벡터 $\hat n$에 내적해줌으로써 얻을 수 있다.
+
+따라서, 물이 시간 $\Delta t$ 동안 빠져나간 총 양은 
+
+$$dS\times (\vec{F}\Delta t \cdot \hat n)$$
+
+이며, 단위시간동안 빠져나간 물의 양은
+
+$$dS\times (\vec{F}\cdot \hat n) = \vec{F}\cdot \hat n dS$$
+
+이다.
+
+이 단위 시간동안 빠져나간 물의 총 양을 모든 곡면에 대해 [중적분](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)해주면,
+
+$$\iint_S\vec{F}\cdot \hat n dS$$
+
+가 되며 이것은 식 (1)의 면적분과 동일하다.
+
+따라서, 면적분이 의미하는 것은 곡면 $S$를 따라 빠져나간 유량(flux)의 총 양을 의미한다고 할 수 있다.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DqUIcWUGCoA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
