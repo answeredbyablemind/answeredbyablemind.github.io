@@ -119,5 +119,6 @@ $$\iint_S\vec{F}\cdot \hat n dS$$
 
 따라서, 면적분이 의미하는 것은 곡면 $S$를 따라 빠져나간 유량(flux)의 총 양을 의미한다고 할 수 있다.
 
-
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DqUIcWUGCoA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
