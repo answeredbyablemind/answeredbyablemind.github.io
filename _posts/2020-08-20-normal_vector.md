@@ -68,7 +68,7 @@ $$r(t) = \begin{bmatrix} t\cdot \cos(2\pi t) \\ t\cdot \sin(2\pi t)\end{bmatrix}
 
 매개 변수의 접선 벡터를 수식으로 표현하면 다음과 같은데,
 
-$$r'(t) = \begin{bmatrix} \partial x / \partial t \\ \partial y/\partial t\end{bmatrix}$$
+$$r'(t) = \begin{bmatrix} dx / dt \\ dy/dt\end{bmatrix}$$
 
 이 말인 즉슨, 매개 변수 $t$가 약간 변할 때 $x(t)$와 $y(t)$는 각각 얼마나 변하는가를 말하고 있다.
 
