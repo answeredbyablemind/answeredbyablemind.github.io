@@ -14,7 +14,7 @@ var circle_x, circle_y, circle_r; // 움직일 원의 위치와 사이즈
 var offsetX, offsetY; // mouse offset
 
 function setup() {
-     createCanvas(windowWidth * 0.9, windowWidth * 0.9 / 2.1);
+     createCanvas(800, 400);
      scl = width / 8;
      for (let i = 0; i < 3; i += 1 / fs) {
           t.push(i)

@@ -9,7 +9,7 @@ tags: 신호처리
 ---
 
 <p align = "center">
-  <iframe width = "800" height = "400" src = "https://angeloyeo.github.io/p5/2019-08-13-Z_Transform_preview/" frameborder = "0"></iframe>
+  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-13-Z_Transform_preview/" frameborder = "0"></iframe>
   <br>
   Z-변환이 말하는 것: 이산 신호(정확히는 시스템)의 특성을 Z-plane에 한번에 표현해보고 싶다.
   <br> 빨간색 마커를 마우스로 움직여 보세요 ^^

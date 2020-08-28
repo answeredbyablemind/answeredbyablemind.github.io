@@ -12,7 +12,7 @@ tags: 신호처리
   <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
   <br>
   라플라스 변환이 말하는 것: 신호(정확히는 시스템)의 특성을 s-plane에 한번에 표현해보고 싶다.
-
+  <br>
   (빨간 포인터를 마우스로 움직여 보세요!)
 </p>
 
@@ -127,7 +127,7 @@ $$\mathfrak{L}\left[f(t)\right] = \mathfrak{F}\left[\exp(-\sigma t)f(t)\right]$$
 [^2]: 그래서 우리가 배우는 과목 이름이 Signals and System이고 주인공들이 푸리에 변환과 라플라스 변환이다. 물론 Continuous Time Domain에 한해서...
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
+  <img width = "600" height = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
   <br>
   그림 4. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
 </p>
