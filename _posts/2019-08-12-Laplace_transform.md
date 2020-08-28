@@ -7,27 +7,9 @@ aside:
 key: 20190812
 tags: 신호처리
 ---
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 55vw;
-        background:white;  
-    }
-  }
-
-  @media screen and (min-width:500px){
-    iframe {
-        width: 55vw; 
-        height: 30vw;
-        background:white;  
-    }
-  }
-</style>
-
 
 <p align = "center">
-  <iframe src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
+  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
   <br>
   라플라스 변환이 말하는 것: 신호(정확히는 시스템)의 특성을 s-plane에 한번에 표현해보고 싶다.
 
