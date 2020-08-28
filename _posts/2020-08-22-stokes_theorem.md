@@ -37,15 +37,32 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 
 # 스토크스 정리의 의미
 
-아래와 같이 어떤 벡터장 위에 넓이를 갖는 곡면 S가 있다고 하자.
+아래와 같이 어떤 벡터장 위에 넓이를 갖는 곡면 S과 그 가장 외각의 폐곡선 C가 있다고 하자.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/vid1.mp4">
   </video>
   <br>
+  그림 1. 3차원 공간 위에 임의의 곡면 S와 폐곡선 C를 가정해보자.
+</p>
+
+이 때, 이 3차원 공간에 벡터장 $\vec{F}$가 주어져 있다고 하면 스토크스 정리에 의해 아래의 식이 성립한다.
+
+$$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d \vec{S}$$
+
+식 (3)의 좌변은 curve C를 따라 벡터장에 대해 선적분한 것이다.
+
+이제 식 (3)의 좌변으로부터 식(3)의 우변을 유도해보자. 곡면 $S$를 아래와 같이 반으로 쪼개서 보도록 하자.
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/vid2.mp4">
+  </video>
+  <br>
   그림 2. 3차원 공간 위에 임의의 곡면 S와 폐곡선 C를 가정해보자.
 </p>
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/O1PrrBpbVjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
