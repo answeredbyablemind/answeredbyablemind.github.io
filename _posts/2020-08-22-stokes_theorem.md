@@ -115,13 +115,27 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^4\oint_{C_k}\vec{F}\cdot d\vec{r}$$
 
 $$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^N\oint_{C_k}\vec{F}\cdot d\vec{r}$$
 
-이 때, $N$ 개로 쪼깨진 작은 곡면을 생각해보면 아래와 같이 상상할 수 있는데,
+이 때, $N$ 개로 쪼깨진 작은 곡면을 생각해보면 아래와 같이 상상할 수 있는데, 이 작은 경로 내부의 선적분은 결국 미소 경로에서의 [벡터장의 회전](https://angeloyeo.github.io/2019/08/25/curl.html)과 같은 의미를 갖게 된다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic7.png">
   <br>
   그림 7. 작은 곡면에서의 경로와 선적분
 </p>
+
+또, curl 편에서 확인했던 것 처럼 curl은 단위 영역에서 받는 회전력이므로 넓이가 $dS$인 곡면에서의 회전량은 곡면의 면벡터와 내적해준 값으로 생각할 수 있다.
+
+그러므로, 아래와 같이 생각할 수 있다.
+
+$$\oint_{C_k}\vec{F}\cdot d\vec{r}\approx(\vec\nabla\times\vec F)_{C_k}\cdot \vec{S}_k$$
+
+따라서 식 (6)을 다시 쓰면 아래와 같다.
+
+$$식(6) = \sum_{k=1}^N\oint_{C_k}\vec{F}\cdot d\vec{r} \approx \sum_{k=1}^N(\vec\nabla\times\vec F)_{C_k}\cdot \vec{S}_k$$
+
+식 (8)에서 $N$을 무한히 크게 만들면 $\vec{S}_k$는 $d\vec{S}$가 될 것이고 결국 식 (6)은 다음과 같이 변하게 될 것이다.
+
+$$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S}$$
 
 
 
