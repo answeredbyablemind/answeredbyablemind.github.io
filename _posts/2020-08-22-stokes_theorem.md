@@ -40,7 +40,7 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 아래와 같이 어떤 벡터장 위에 넓이를 갖는 곡면 S가 있다고 하자.
 
 <p align = "center">
-  <video width = "100%" height = "auto" loop autoplay controls>
+  <video width = "400" height = "auto" loop autoplay controls>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/vid1.mp4">
   </video>
   <br>
