@@ -115,6 +115,15 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^4\oint_{C_k}\vec{F}\cdot d\vec{r}$$
 
 $$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^N\oint_{C_k}\vec{F}\cdot d\vec{r}$$
 
+이 때, $N$ 개로 쪼깨진 작은 곡면을 생각해보면 아래와 같이 상상할 수 있는데,
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic7.png">
+  <br>
+  그림 7. 작은 곡면에서의 경로와 선적분
+</p>
+
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/O1PrrBpbVjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
