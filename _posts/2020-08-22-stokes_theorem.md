@@ -41,7 +41,7 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 
 <p align="center">
   <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic1.gif"> <br>
-  그림 2 xy 평면 위에 임의의 벡터장 $f$와 폐곡선 C가 있다.
+  그림 2 3차원 공간 위에 임의의 곡면 S와 폐곡선 C를 가정해보자.
 </p>
 
 <center>
