@@ -89,6 +89,32 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \oint_{C_1}\vec{F}\cdot d\vec{r} + \oint_{C_2}\
   그림 4. 곡면 S를 네 개의 페곡선으로 나누어 표현한 것.
 </p>
 
+위 그림 4를 위쪽에서 조감해보면 아래와 같다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic5.png">
+  <br>
+  그림 5. 곡면 S를 2개의 폐곡선으로 나누었을 때의 선적분 경로
+</p>
+
+앞서 곡면을 두 개로 쪼갰을 때와 마찬가지의 논리로 내부의 경로에서는 선적분 시 길이는 같고 방향은 반대이므로 $C_1$에서 $C_4$까지의 네 개의 닫힌 경로에 대한 선적분을 모두 더해주면 기존의 최외각 경로에 대한 선적분의 값과 같아진다.
+
+$$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^4\oint_{C_k}\vec{F}\cdot d\vec{r}$$
+
+그렇다면 곡면 $S$를 $N$ 등분하면 어떻게 될까?
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic6.mp4">
+  </video>
+  <br>
+  그림 6. 곡면 S를 많은 페곡선으로 나누어 표현한 것.
+</p>
+
+지금까지의 논리와 같이 아무리 많은 폐곡선으로 쪼개더라도 아래의 식이 성립하게 된다.
+
+$$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^N\oint_{C_k}\vec{F}\cdot d\vec{r}$$
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/O1PrrBpbVjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
