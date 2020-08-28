@@ -39,15 +39,12 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 
 아래와 같이 어떤 벡터장 위에 넓이를 갖는 곡면 S가 있다고 하자.
 
-<p align="center">
-  <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic1.gif"> <br>
-  그림 2 3차원 공간 위에 임의의 곡면 S와 폐곡선 C를 가정해보자.
-</p>
-
 <p align = "center">
   <video width = "100%" height = "auto" loop autoplay controls>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/vid1.mp4">
   </video>
+  <br>
+  그림 2 3차원 공간 위에 임의의 곡면 S와 폐곡선 C를 가정해보자.
 </p>
 
 <center>
