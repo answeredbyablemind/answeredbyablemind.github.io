@@ -41,7 +41,7 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/vid1.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic1.mp4">
   </video>
   <br>
   그림 1. 3차원 공간 위에 임의의 곡면 S와 폐곡선 C를 가정해보자.
@@ -57,7 +57,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d \vec{
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/vid2.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic2.mp4">
   </video>
   <br>
   그림 2. 곡면 S를 두 개의 페곡선으로 나누어 표현한 것.
@@ -69,7 +69,26 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d \vec{
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic3.png">
   <br>
   그림 3. 곡면 S를 2개의 폐곡선으로 나누었을 때의 선적분 경로
-</p>ㄴ
+</p>
+
+그림 3에서 보면 두 개로 쪼개진 닫힌 경로를 각각 $C_1$, $C_2$라고 하였다.
+
+또한, $C_1$과 $C_2$의 선적분 경로를 잘 생각해보면 가운데 있는 구간에서는 선적분 경로의 길이는 같으나 길이는 반대이므로 이 영역에서는 선적분의 값이 상쇄된다.
+
+따라서, 우리는 다음과 같은 관계를 생각할 수 있다.
+
+$$\oint_C\vec{F}\cdot d\vec{r} = \oint_{C_1}\vec{F}\cdot d\vec{r} + \oint_{C_2}\vec{F}\cdot d\vec{r}$$
+
+이번엔 아래와 같이 곡면 $S$를 4등분 해보자.
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic4.mp4">
+  </video>
+  <br>
+  그림 4. 곡면 S를 네 개의 페곡선으로 나누어 표현한 것.
+</p>
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/O1PrrBpbVjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
