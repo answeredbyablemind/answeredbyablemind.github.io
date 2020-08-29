@@ -161,7 +161,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S
 
 ## prerequisites
 
-스토크스 정리의 증명 과정을 잘 이해하기 위해선 다음의 세 가지 정도의 내용에 대해서는 알고 오시는 것이 좋습니다.
+스토크스 정리의 증명 과정을 잘 이해하기 위해선 다음의 네 가지 정도의 내용에 대해서는 알고 오시는 것이 좋습니다.
 
 * [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
 * [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
@@ -326,7 +326,7 @@ $$\Rightarrow P_y+P_z g_y + (R_y + R_z g_y)g_x + Rg_{xy}$$
 
 식 (31)을 계산하기 위해 식 (34)의 결과에서 식 (36)의 결과를 빼보도록 하자.
 
-$$식(34)-식(36) = \left{Q_x+Q_zg_x+(R_x+R_zg_x)g_y +Rg_{yx}\right} - \left{P_y+P_zg_y + (R_y+R_zg_y)g_x + Rg_{xy}\right}$$
+$$식(34)-식(36) = \left\lbrace Q_x+Q_zg_x+(R_x+R_zg_x)g_y +Rg_{yx}\right\rbrace - \left\lbrace P_y+P_zg_y + (R_y+R_zg_y)g_x + Rg_{xy}\right\rbrace$$
 
 $$=Q_x-P_y + Q_xg_x-P_zg_y+R_xg_y-R_yg_x$$
 
@@ -334,14 +334,19 @@ $$=g_x(Q_z-R_y) + g_y(R_x-P_z) + Q_x-P_y$$
 
 따라서 식 (31)은 다음과 같다.
 
-$$식(31) = \iint_D g_x(Q_z-R_y) + g_y(R_x-P_z) + Q_x-P_y dxdy$$
+$$식(31) = \iint_D \left\lbrace g_x(Q_z-R_y) + g_y(R_x-P_z) + Q_x-P_y\right\rbrace dxdy$$
 
 ## 면적분 계산과 선적분 계산의 결과 일치 여부 확인
 
 지금껏 우리는 스토크스 정리를 증명하기 위해 면적분 부분으로부터의 계산과 선적분 부분으로부터의 계산을 각각 수행했다.
 
-각 계산의 최종 결과를 확인해보면 식() 과 식()은 동일함을 알 수 있다.
+각 계산의 최종 결과를 확인해보면 식(22)와 식(40)은 동일함을 알 수 있다.
 
+## 일반적인 3차원 공간에 대한 스토크스 정리
+
+앞서 우리는 곡면 $S: g(x,y)$와 같은 곡면 $S$가 $x, y$에 대한 함수인 경우에 대해 증명하였다.
+
+이와 같은 방식으로 곡면이 $S: g(x, z)$ 인 경우와 $S: g(y,z)$인 경우에 대해서도 증명할 수 있으므로 일반적인 곡면에 대한 3차원 공간에서 스토크스 정리가 성립한다고 할 수 있다.
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
