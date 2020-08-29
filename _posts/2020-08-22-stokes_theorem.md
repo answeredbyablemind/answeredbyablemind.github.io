@@ -188,10 +188,50 @@ $$\frac{df}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic9.png">
   <br>
-  그림 9. 스토크스 정리의 증명을 위한 정의역이 x, y이고 높이가 x, y의 함수로 정해지는 영역
+  그림 9. 스토크스 정리의 증명을 위한 정의역이 x, y이고 높이가 x, y의 함수로 정해지는 영역과 닫힌 경로(검은 실선)와 그 정사영(점선 표시)
 </p>
 
 이후 정의역이 $x$, $z$인 경우와 $y$, $z$인 경우에 대해서는 지금의 정의역이 $x$, $y$인 경우에 대한 증명 방식과 유사한 방식으로 증명할 수 있다는 방식으로 일반적인 3차원 공간에 대해 스토크스 정리를 증명할 수 있다.
+
+여기서 3차원 공간상에 주어진 벡터 필드 $\vec{F}$를 $\lt P, Q, R\gt$로 쓰도록 하자. 꺽쇠 괄호로 표시한 것은 원래의 $\vec{F} = P(x,y,z)\hat i +Q(x,y,z)\hat j + R(x,y,z)\hat k$를 줄여 표시한 것이다.
+
+스토크스 정리의 수식을 쓰면 다음과 같이 쓸 수 있다.
+
+$$\oint_c\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S}$$
+
+여기서 우리는 면적분 부분 증명을 먼저 시작해보자.
+
+$$\iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S}$$
+
+여기서 벡터장의 curl 부분만 따로 계산해도록 하자.
+
+$$\vec{\nabla}\times\vec{F} = 
+\begin{vmatrix} 
+  \hat{i} && \hat{j} && \hat{k} \\
+  \frac{\partial}{\partial x} && \frac{\partial}{\partial y} && \frac{\partial}{\partial z} \\
+  P && Q && R \end{vmatrix}$$
+
+$$=\lt R_y-Q_z, P_z- R_x, Q_x - P_y \gt$$
+
+여기서 $R_y$등의 표기는 $R$에 대한 $y$의 편미분으로 생각하면 된다.
+
+또, 면벡터 $d\vec{S}$에 대해 생각해보면 매개 변수 2개를 이용해 곡면을 나타내는 일반적인 식은 아래와 같은데,
+
+$$r(u,v) = x(u,v)\hat{i} + y(u,v)\hat{j} + z(u,v)\hat{j}$$
+
+이번 경우에는 매개변수 2개가 $x$와 $y$에 해당하므로 곡면의 방정식은 다음과 같이 나타낼 수 있다.
+
+$$r(x,y) = x\hat{i} + y\hat{j} + z\hat{j} = x\hat{i} + y\hat{j} + g(x,y)\hat{j} = \lt x, y, g(x,y)\gt$$
+
+따라서, [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)에서 알아보았던 것 처럼 면벡터 $d\vec{S}$는 아래와 같다.
+
+$$d\vec{S} = \vec{r}_x\times\vec{r}_y dxdy = 
+
+\begin{vmatrix}\hat{i} && \hat{j} && \hat{k} \\
+
+1 && 0 && g_x \\ 0 && 1 && g_y\end{vmatrix}dxdy$$
+
+$$\lt -g_x, -g_y, 1\gt $$
 
 
 
