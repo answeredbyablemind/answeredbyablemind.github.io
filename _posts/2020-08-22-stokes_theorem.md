@@ -163,6 +163,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S
 
 * [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
 * [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
+* [그린 정리](https://angeloyeo.github.io/2020/01/18/Green_theorem.html)
 * 편미분의 chain rule
 
 여기서 필요한 편미분의 chain rule은 다음과 같이 세 가지이다.
@@ -275,7 +276,21 @@ $$d\vec{r} = \lt dx, dy, g_x dx + g_y dy\gt$$
 
 $$\vec{F}\cdot d\vec{r} = \lt P, Q, R \gt \cdot \lt dx, dy, g_x dx + g_y dy\gt = Pdx + Qdy + R g_x dx + Rg_y dy$$
 
-따라서 원래의 선적분
+이를 이용하면 원래의 식 (23)의 선적분은 $t$에 대한 적분으로 바꿀 수 있다.
+
+$$식(23)\Rightarrow \int_{t=a}^{t=b}Pdx+Qdy+Rg_xdx+Rg_ydy$$
+
+여기서 $dx$, $dy$에 대해 묶으면,
+
+$$\Rightarrow \int_{t=a}^{t=b}(P+Rg_x)dx + (Q+Rg_y)dy$$
+
+여기서 그린정리를 적용해보자.
+
+$$\Rightarrow \iint_D(Q+Rg_y)_x - (P+Rg_x)_y dxdy$$
+
+여기서 괄호 뒤에 있는 아래첨자 $x$, $y$는 각각 $x$에 대한 편미분과 $y$에 대한 편미분을 의미한다.
+
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
