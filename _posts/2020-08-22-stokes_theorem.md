@@ -322,6 +322,27 @@ $$(P+Rg_x)_y = \frac{\partial}{\partial y}\left(
 
 $$\Rightarrow P_y+P_z g_y + (R_y + R_z g_y)g_x + Rg_{xy}$$
 
+### 두 편미분 계산 과정을 종합하면,
+
+식 (31)을 계산하기 위해 식 (34)의 결과에서 식 (36)의 결과를 빼보도록 하자.
+
+$$식(34)-식(36) = \left{Q_x+Q_zg_x+(R_x+R_zg_x)g_y +Rg_{yx}\right} - \left{P_y+P_zg_y + (R_y+R_zg_y)g_x + Rg_{xy}\right}$$
+
+$$=Q_x-P_y + Q_xg_x-P_zg_y+R_xg_y-R_yg_x$$
+
+$$=g_x(Q_z-R_y) + g_y(R_x-P_z) + Q_x-P_y$$
+
+따라서 식 (31)은 다음과 같다.
+
+$$식(31) = \iint_D g_x(Q_z-R_y) + g_y(R_x-P_z) + Q_x-P_y dxdy$$
+
+## 면적분 계산과 선적분 계산의 결과 일치 여부 확인
+
+지금껏 우리는 스토크스 정리를 증명하기 위해 면적분 부분으로부터의 계산과 선적분 부분으로부터의 계산을 각각 수행했다.
+
+각 계산의 최종 결과를 확인해보면 식() 과 식()은 동일함을 알 수 있다.
+
+
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
