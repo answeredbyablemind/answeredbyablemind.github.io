@@ -8,17 +8,6 @@ key: 20200822
 tags: 미적분학
 ---
 
-# prerequisites
-
-스토크스 정리를 이해하기 위해선 다음의 내용에 대해 알고 오는 것이 좋습니다
-
-* [그린 정리](https://angeloyeo.github.io/2020/01/18/Green_theorem.html)
-* [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
-* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
-* [벡터장의 회전](https://angeloyeo.github.io/2019/08/25/curl.html)
-
-특히, [그린 정리의 의미 설명 부분](https://angeloyeo.github.io/2020/01/18/Green_theorem.html#curl%EC%9D%84-%ED%86%B5%ED%95%9C-%EA%B7%B8%EB%A6%B0-%EC%A0%95%EB%A6%AC%EC%9D%98-%EC%A7%81%EA%B4%80%EC%A0%81-%EC%9D%B4%ED%95%B4)에 대해서는 꼭 알고 오시는 것을 추천드립니다.
-
 # 스토크스 정리의 수식
 
 스토크스 정리의 수식을 써보자면 다음과 같다.
@@ -36,6 +25,19 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 스토크스의 정리는 그린 정리의 3차원 버전이라고 할 수 있다. [일반적인 스토크스 정리](https://en.wikipedia.org/wiki/Stokes%27_theorem)는 더 고차원 다양체에 대해 다룰 수 있다고 하지만, 우리는 우리가 필요한 3차원 정도의 수준에서 이해와 증명을 해보도록 하자.
 
 # 스토크스 정리의 의미
+
+## prerequisites
+
+스토크스 정리의 의미를 이해하기 위해선 다음의 내용에 대해 알고 오는 것이 좋습니다
+
+* [그린 정리](https://angeloyeo.github.io/2020/01/18/Green_theorem.html)
+* [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
+* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
+* [벡터장의 회전](https://angeloyeo.github.io/2019/08/25/curl.html)
+
+특히, [그린 정리의 의미 설명 부분](https://angeloyeo.github.io/2020/01/18/Green_theorem.html#curl%EC%9D%84-%ED%86%B5%ED%95%9C-%EA%B7%B8%EB%A6%B0-%EC%A0%95%EB%A6%AC%EC%9D%98-%EC%A7%81%EA%B4%80%EC%A0%81-%EC%9D%B4%ED%95%B4)에 대해서는 꼭 알고 오시는 것을 추천드립니다.
+
+## 스토크스 정리의 의미 소개
 
 아래와 같이 어떤 벡터장 위에 넓이를 갖는 곡면 S과 그 가장 외각의 폐곡선 C가 있다고 하자.
 
@@ -246,7 +248,7 @@ $$=\iint_D \left( g_x(Q_z-R_y) + g_y(R_x - P_z) + Q_x-P_y\right) dxdy$$
 
 ## 선적분 부분의 계산
 
-$$\oint_C\vec{F}\cdot c\vec{r}$$
+$$\oint_C\vec{F}\cdot d\vec{r}$$
 
 선적분 부분의 계산을 위해 아래의 그림 10과 같이 원래의 곡면에 대한 닫힌 경로를 $C$, 그 경로의 정의역으로의 정사영을 $C_0$라고 하자.
 
@@ -284,13 +286,41 @@ $$식(23)\Rightarrow \int_{t=a}^{t=b}Pdx+Qdy+Rg_xdx+Rg_ydy$$
 
 $$\Rightarrow \int_{t=a}^{t=b}(P+Rg_x)dx + (Q+Rg_y)dy$$
 
-여기서 그린정리를 적용해보자.
+여기서 [그린정리](https://angeloyeo.github.io/2020/01/18/Green_theorem.html)를 적용하면 2차원 평면 상의 닫힌 경로에 대한 선적분을 중적분으로 바꿔줄 수 있으므로, 
 
 $$\Rightarrow \iint_D(Q+Rg_y)_x - (P+Rg_x)_y dxdy$$
 
 여기서 괄호 뒤에 있는 아래첨자 $x$, $y$는 각각 $x$에 대한 편미분과 $y$에 대한 편미분을 의미한다.
 
+이제 식 (31)의 두 개의 편미분 계산을 각각 수행해보도록 하자.
 
+### (Q+Rg_y)_x에 대한 편미분 계산
+
+식 (31)에서 앞쪽의 편미분 계산부를 먼저 가져오면,
+
+$$(Q+Rg_y)_x = \frac{\partial}{\partial x}\left(
+  Q(x, y, g(x,y)) + R(x, y, g(x,y))g_y(x, y)
+  \right)$$
+
+이 때, 증명부 초반에 소개했던 편미분 chain rule 중 첫 번째인 식 (10)과 두 번째인 식 (11)을 사용하면 위 식은 아래와 같이 쓸 수 있다.
+
+$$\Rightarrow Q_x + Q_g g_x + (R_x+R_g g_x)g_y + Rg_{yx}$$
+
+여기서 $Q_g$나 $R_g$나 $z=g(x,y)$이므로 각각 $Q_z$와 $R_z$로 쓸 수 있다.
+
+$$\Rightarrow Q_x + Q_z g_x + (R_x+R_z g_x)g_y + Rg_{yx}$$
+
+### (P+Rg_x)_y에 대한 편미분 계산
+
+식 (31)에서 뒷쪽의 편미분 계산부를 가져오면,
+
+$$(P+Rg_x)_y = \frac{\partial}{\partial y}\left(
+  P(x,y,g(x,y)) + R(x,y,g(x,y))g_x(x,y)
+  \right)$$
+
+이 때, 증명부 초반에 소개했던 편미분 chain rule 중 첫 번째인 식 (10)과 두 번째인 식 (11)을 사용하면 위 식은 아래와 같이 계산할 수 있다.
+
+$$\Rightarrow P_y+P_z g_y + (R_y + R_z g_y)g_x + Rg_{xy}$$
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
