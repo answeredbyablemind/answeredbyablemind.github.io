@@ -157,6 +157,44 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S
 
 # 스토크스 정리의 증명
 
+## prerequisites
+
+스토크스 정리의 증명 과정을 잘 이해하기 위해선 다음의 세 가지 정도의 내용에 대해서는 알고 오시는 것이 좋습니다.
+
+* [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
+* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
+* 편미분의 chain rule
+
+여기서 필요한 편미분의 chain rule은 다음과 같이 세 가지이다.
+
+1) for a function $f(x, y, g(x,y))$
+
+$$\frac{\partial}{\partial x}f(x,y,g(x,y)) = \frac{\partial f}{\partial x} + \frac{\partial f}{\partial g}\frac{\partial g}{\partial x}$$
+
+2) for two functions $f(x, y, z)$ and $h(x,y,z)$
+
+$$\frac{\partial}{\partial x}(f\cdot h) = \frac{\partial f}{\partial x}h + f \frac{\partial h}{\partial x}$$
+
+3) for a function $f(x(t), y(t))$
+
+$$\frac{df}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}$$
+
+위 세 가지 chain rule들은 증명 과정 이곳 저곳에서 필요할 때 쓰일 것이므로 혹시 어려운 부분이 있다면 미리 숙지해두도록 하자.
+
+## 증명을 위한 곡면과 정의역 소개
+
+이번 증명 과정에서는 정의역이 $x$, $y$ 평면이고 높이가 $z=g(x,y)$와 같이 정해지는 함수를 통해 스토크스 정리를 증명하고자 한다. 
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic9.png">
+  <br>
+  그림 9. 스토크스 정리의 증명을 위한 정의역이 x, y이고 높이가 x, y의 함수로 정해지는 영역
+</p>
+
+이후 정의역이 $x$, $z$인 경우와 $y$, $z$인 경우에 대해서는 지금의 정의역이 $x$, $y$인 경우에 대한 증명 방식과 유사한 방식으로 증명할 수 있다는 방식으로 일반적인 3차원 공간에 대해 스토크스 정리를 증명할 수 있다.
+
+
+
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
