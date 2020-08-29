@@ -123,7 +123,10 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^N\oint_{C_k}\vec{F}\cdot d\vec{r}$$
   그림 7. 작은 곡면에서의 경로와 선적분
 </p>
 
-또, curl 편에서 확인했던 것 처럼 curl은 단위 영역에서 받는 회전력이므로 넓이가 $dS$인 곡면에서의 회전량은 곡면의 면벡터와 내적해준 값으로 생각할 수 있다.
+또, curl 편에서 확인했던 것 처럼 curl은 단위 영역에서 받는 회전력이므로 넓이가 $dS$인 곡면에서의 회전량은 curl의 값에 곡면의 넓이를 곱해준 값으로 생각할 수 있다.
+
+한편 curl의 벡터 방향과 곡면의 법선 벡터는 방향이 같으므로 curl의 크기와 곡면의 넓이의 곱은 curl 벡터와 곡면의 면벡터의 내적과 같다고 볼 수 있다.
+
 
 그러므로, 아래와 같이 생각할 수 있다.
 
@@ -137,11 +140,22 @@ $$식(6) = \sum_{k=1}^N\oint_{C_k}\vec{F}\cdot d\vec{r} \approx \sum_{k=1}^N(\ve
 
 $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S}$$
 
+이렇듯 스토크스 정리는 곡면의 모양이 어떠하든 간에 상관없이 닫힌 경로의 모양만 유지된다면 같은 결과값을 가져오게 된다.
 
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic8.mp4">
+  </video>
+  <br>
+  그림 8. 곡면 S의 모양이 어떻든 간에 상관없이 닫힌 경로 C의 모양만 유지된다면 스토크스 정리는 항상 성립한다.
+</p>
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/O1PrrBpbVjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+
+# 스토크스 정리의 증명
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
