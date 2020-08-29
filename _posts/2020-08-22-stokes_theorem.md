@@ -199,6 +199,8 @@ $$\frac{df}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\
 
 $$\oint_c\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S}$$
 
+## 면적분 부분의 계산
+
 여기서 우리는 면적분 부분 증명을 먼저 시작해보자.
 
 $$\iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S}$$
@@ -231,9 +233,49 @@ $$d\vec{S} = \vec{r}_x\times\vec{r}_y dxdy =
 
 1 && 0 && g_x \\ 0 && 1 && g_y\end{vmatrix}dxdy$$
 
-$$\lt -g_x, -g_y, 1\gt $$
+$$=\lt -g_x, -g_y, 1\gt $$
 
+따라서 식(14)는 다음과 같이 쓸 수 있다.
 
+$$식(14)\Rightarrow \iint_S \lt R_y-Qz, P_z-R_x, Q_x-P_y\gt\cdot\lt -g_x, -g_y, 1\gt dxdy$$
+
+$$=\iint_D \left( g_x(Q_z-R_y) + g_y(R_x - P_z) + Q_x-P_y\right) dxdy$$
+
+여기서 더 이상 해줄 수 있는 일이 없기 때문에 스토크스 정리 수식의 선적분 부분의 계산으로 넘어가도록 하자.
+
+## 선적분 부분의 계산
+
+$$\oint_C\vec{F}\cdot c\vec{r}$$
+
+선적분 부분의 계산을 위해 아래의 그림 10과 같이 원래의 곡면에 대한 닫힌 경로를 $C$, 그 경로의 정의역으로의 정사영을 $C_0$라고 하자.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic10.png">
+  <br>
+  그림 10. 닫힌 경로 C와 그 경로의 정의역으로의 정사영 C_0
+</p>
+
+그러면 $C_0$에 대한 곡선의 매개변수 방정식은 다음과 같이 생각할 수 있다.
+
+$$\vec{r}_{C_0} = \lt x(t), y(t)\gt\text{ where }a\leq t \leq b$$
+
+또, 이에 따라 원래의 닫힌 경로 $C$에 대한 곡선의 매개변수 방정식은 다음과 같이 생각할 수 있다. 여기서 $a$와 $b$는 $a\lt b$인 임의의 실수이다.
+
+$$\vec{r}_C = \lt x(t), y(t), g(x(t), y(t))\gt\text{ where }a\leq t \leq b$$
+
+이제 우리는 $d\vec{r}$에 대해 생각해보자. 우선 $d\vec{r}$을 계산하기 위해 $r$을 $t$에 대해 먼저 미분해보자. 스토크스 정리의 증명 파트 초반부에 소개하였던 편미분 chain rule 3) (식 (12))를 적용해보면 아래와 같다.
+
+$$\frac{d\vec{r}}{dt} = \lt \frac{dx}{dt}, \frac{dy}{dt}, g_x \frac{dx}{dt} + g_y \frac{dy}{dt}\gt$$
+
+그런 다음 위 식에서 $dt$를 양변에 곱해주면,
+
+$$d\vec{r} = \lt dx, dy, g_x dx + g_y dy\gt$$
+
+따라서, 여기서 $\vec{F}$는 주어진 것이므로, $\vec{F}\cdot d\vec{r}$은 아래와 같다.
+
+$$\vec{F}\cdot d\vec{r} = \lt P, Q, R \gt \cdot \lt dx, dy, g_x dx + g_y dy\gt = Pdx + Qdy + R g_x dx + Rg_y dy$$
+
+따라서 원래의 선적분
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6SanOG3cSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
