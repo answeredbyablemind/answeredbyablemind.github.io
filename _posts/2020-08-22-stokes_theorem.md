@@ -222,11 +222,11 @@ $$=\lt R_y-Q_z, P_z- R_x, Q_x - P_y \gt$$
 
 또, 면벡터 $d\vec{S}$에 대해 생각해보면 매개 변수 2개를 이용해 곡면을 나타내는 일반적인 식은 아래와 같은데,
 
-$$r(u,v) = x(u,v)\hat{i} + y(u,v)\hat{j} + z(u,v)\hat{j}$$
+$$\vec{r}(u,v) = x(u,v)\hat{i} + y(u,v)\hat{j} + z(u,v)\hat{k}$$
 
 이번 경우에는 매개변수 2개가 $x$와 $y$에 해당하므로 곡면의 방정식은 다음과 같이 나타낼 수 있다.
 
-$$r(x,y) = x\hat{i} + y\hat{j} + z\hat{j} = x\hat{i} + y\hat{j} + g(x,y)\hat{j} = \lt x, y, g(x,y)\gt$$
+$$\vec{r}(x,y) = x\hat{i} + y\hat{j} + z\hat{j} = x\hat{i} + y\hat{j} + g(x,y)\hat{k} = \lt x, y, g(x,y)\gt$$
 
 따라서, [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)에서 알아보았던 것 처럼 면벡터 $d\vec{S}$는 아래와 같다.
 
@@ -266,7 +266,7 @@ $$\vec{r}_{C_0} = \lt x(t), y(t)\gt\text{ where }a\leq t \leq b$$
 
 $$\vec{r}_C = \lt x(t), y(t), g(x(t), y(t))\gt\text{ where }a\leq t \leq b$$
 
-이제 우리는 $d\vec{r}$에 대해 생각해보자. 우선 $d\vec{r}$을 계산하기 위해 $r$을 $t$에 대해 먼저 미분해보자. 스토크스 정리의 증명 파트 초반부에 소개하였던 편미분 chain rule 3) (식 (12))를 적용해보면 아래와 같다.
+이제 우리는 닫힌 곡선 $C$에 대한 미소변위 $d\vec{r}$에 대해 생각해보자. 우선 $d\vec{r}$을 계산하기 위해 $r$을 $t$에 대해 먼저 미분해보자. 스토크스 정리의 증명 파트 초반부에 소개하였던 편미분 chain rule 3) (식 (12))를 적용해보면 아래와 같다.
 
 $$\frac{d\vec{r}}{dt} = \lt \frac{dx}{dt}, \frac{dy}{dt}, g_x \frac{dx}{dt} + g_y \frac{dy}{dt}\gt$$
 
