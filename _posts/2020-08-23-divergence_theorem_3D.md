@@ -33,7 +33,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 
 ## prerequisites
 
-발산 정리의 증명 과정을 잘 이해하기 위해선 다음의 네 가지 정도의 내용에 대해 알고오시는 것이 좋습니다.
+발산 정리의 증명 과정을 잘 이해하기 위해선 다음의 내용에 대해 알고오시는 것이 좋습니다.
 
 * 미적분학의 기본정리
 
