@@ -17,6 +17,16 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 
 # 발산 정리의 의미
 
+## prerequisites
+
+발산 정리의 의미에 대해 이해하시기 위해선 아래의 내용에 대해 알고 오시는 것을 추천드립니다.
+
+* [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)
+* [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
+* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
+
+## 발산 정리의 의미 소개
+
 아래와 같이 어떤 벡터장 위에 닫힌 곡면 S과 그로 인해 만들어지는 정육면체 모양의 부피체가 있다고 하자.
 
 <p align = "center">
@@ -34,17 +44,27 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
   <br>
 </p>
 
-## prerequisites
+발산 정리에서 우리가 알고자 하는 것은 이 6개 면에 대한 [면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)이 결국 이 부피체에 의한 [삼중적분](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)의 값과 같다는 것이다.
 
-발산 정리의 의미에 대해 이해하시기 위해선 아래의 내용에 대해 알고 오시는 것을 추천드립니다.
+우리는 [그린정리](https://angeloyeo.github.io/2020/01/18/Green_theorem.html#curl%EC%9D%84-%ED%86%B5%ED%95%9C-%EA%B7%B8%EB%A6%B0-%EC%A0%95%EB%A6%AC%EC%9D%98-%EC%A7%81%EA%B4%80%EC%A0%81-%EC%9D%B4%ED%95%B4)나 [스토크스 정리](https://angeloyeo.github.io/2020/08/22/stokes_theorem.html)의 의미를 알아볼 때 처럼 부피체의 부피를 쪼개가면서 발산정리의 의미에 대해 생각해보자.
 
-* [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)
-* [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
-* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
+우선 아래와 같이 부피체를 y 축에 대해 2개로 쪼개보자.
 
-## 발산 정리의 의미 소개
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic3.mp4">
+  </video>
+  <br>
+  그림 3. 정육면체 형태의 부피체를 y축에 대해 두 개로 쪼갠 경우
+</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Jgng92Hhl5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+여기서 우리는 총 12개의 면에 대해 생각할 수 있지만, 특별히 두 개로 쪼개진 부분의 면을 생각해서 조감해보면 다음과 같다.
+
+
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Jgng92Hhl5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 # 발산 정리의 증명
 
