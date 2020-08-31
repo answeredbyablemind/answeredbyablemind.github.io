@@ -13,7 +13,7 @@ tags: 미적분학
 
 # 발산 정리의 수식
 
-$$\oiint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabla}\cdot\vec{F})dV$$
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabla}\cdot\vec{F})dV$$
 
 # 발산 정리의 의미
 
@@ -59,21 +59,21 @@ $$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
 
 우리가 증명할 발산 정리의 수식을 다시 한번 써보고 증명을 시작해보자.
 
-$$\oiint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabla}\cdot\vec{F})dV$$
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabla}\cdot\vec{F})dV$$
 
 ## 주어진 곡면, 정의역, 벡터장을 이용한 증명
 
 발산 정리의 수식 중 면적분 부분을 먼저 계산해보도록 하자.
 
-$$\oiint_S\vec{F}\cdot d\vec{S}$$
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S}$$
 
 우리가 이번 발산 정리의 증명에서 상정하는 닫힌 곡면은 원통형인데, 원통형의 면은 윗면, 측면, 아랫면의 세 가지 면으로 나눠서 생각할 수 있으므로 위의 면적분의 식도 아래와 같이 나눠서 쓸 수 있다.
 
-$$\oiint_S\vec{F}\cdot d\vec{S} = \iint_{S_\text{윗면}}\vec{F}\cdot d\vec{S} + \iint_{S_{측면}}\vec{F}\cdot d\vec{S} + \iint_{S_{아랫면}}\vec{F}\cdot d\vec{S}$$
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iint_{S_\text{윗면}}\vec{F}\cdot d\vec{S} + \iint_{S_{측면}}\vec{F}\cdot d\vec{S} + \iint_{S_{아랫면}}\vec{F}\cdot d\vec{S}$$
 
 이 때, 측면에 대한 면적분을 생각해보면, 측면에 해당하는 면의 법선 벡터는 항상 $x, y$ 평면에 평행한 법선벡터를 갖게 된다. 그런데, 동시에 우리가 상정한 벡터장은 $\hat k$ 컴포넌트만 가지므로 법선벡터와 벡터장이 항상 수직이다. 따라서, 측면에 해당하는 면적분 값은 0이 된다. 즉, 아래와 같다.
 
-$$\oiint_S\vec{F}\cdot d\vec{S} = \iint_{S_\text{윗면}}\vec{F}\cdot d\vec{S} + \iint_{S_{아랫면}}\vec{F}\cdot d\vec{S}$$
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iint_{S_\text{윗면}}\vec{F}\cdot d\vec{S} + \iint_{S_{아랫면}}\vec{F}\cdot d\vec{S}$$
 
 이제 여기서 수식을 좀 더 전개하기 위해 벡터장의 면적분에서 계산했던 것 처럼 면벡터($d\vec{S}$)에 대해 계산해보도록 하자. 일반적으로 곡면은 아래와 같이 두 개의 매개변수를 이용해 표현된다.
 
@@ -102,6 +102,9 @@ $$=
 
 \iint_{D_{윗면}}\lt 0, 0, R(x, y, g_2(x,y))\gt \cdot \lt -g_x, -g_y, 1\gt dxdy
 
+\notag$$
+
+$$
 -
 
 \iint_{D_{아랫면}}\lt 0, 0, R(x, y, g_1(x,y))\gt \cdot \lt -g_x, -g_y, 1\gt dxdy
