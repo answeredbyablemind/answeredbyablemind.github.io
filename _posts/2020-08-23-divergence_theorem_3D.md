@@ -17,6 +17,20 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 
 # 발산 정리의 의미
 
+아래와 같이 어떤 벡터장 위에 닫힌 곡면 S과 그로 인해 만들어지는 정육면체 모양의 부피체가 있다고 하자.
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic1.mp4">
+  </video>
+  <br>
+  그림 1. 3차원 공간 위에 닫힌 곡면 S와 그로 인해 만들어지는 정육면체 모양의 부피체
+</p>
+
+이 때 우리는 정육면체의 6개의 면에 대한 면벡터를 생각할 수 있다.
+
+
+
 ## prerequisites
 
 발산 정리의 의미에 대해 이해하시기 위해선 아래의 내용에 대해 알고 오시는 것을 추천드립니다.
