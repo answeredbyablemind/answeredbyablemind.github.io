@@ -29,7 +29,10 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 
 이 때 우리는 정육면체의 6개의 면에 대한 면벡터를 생각할 수 있다.
 
-
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic2.png">
+  <br>
+</p>
 
 ## prerequisites
 
