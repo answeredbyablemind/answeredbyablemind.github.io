@@ -98,17 +98,9 @@ $$=\lt -g_x, -g_y, 1 \gt dxdy$$
 
 $$\Rightarrow \iint_{S_\text{윗면}}\vec{F}\cdot d\vec{S} + \iint_{S_{아랫면}}\vec{F}\cdot d\vec{S} \notag$$
 
-$$=
+$$=\iint_{D_{윗면}}\lt 0, 0, R(x, y, g_2(x,y))\gt \cdot \lt -g_x, -g_y, 1\gt dxdy\notag$$
 
-\iint_{D_{윗면}}\lt 0, 0, R(x, y, g_2(x,y))\gt \cdot \lt -g_x, -g_y, 1\gt dxdy
-
-\notag$$
-
-$$
--
-
-\iint_{D_{아랫면}}\lt 0, 0, R(x, y, g_1(x,y))\gt \cdot \lt -g_x, -g_y, 1\gt dxdy
-$$
+$$-\iint_{D_{아랫면}}\lt 0, 0, R(x, y, g_1(x,y))\gt \cdot \lt -g_x, -g_y, 1\gt dxdy$$
 
 위 식에서 중간의 부호가 더하기에서 빼기로 바뀌는 것은 $g_2(x,y)$의 법선벡터와 $g_1(x, y)$의 법선벡터의 방향이 반대이기 때문이다.
 
@@ -138,8 +130,9 @@ $$\Rightarrow \iiint_V\left(\vec{\nabla}\cdot \vec{F}\right)dV$$
 
 마찬가지 방법으로 정의역이 $y$, $z$이고 $x$축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우[^2]에 대해서, 그리고 정의역이 $x$, $z$이고 $y$축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우[^3]에도 앞서 증명한 방법과 같은 방법으로 증명할 수 있기 때문에 일반적인 닫힌 곡면에 대한 3차원 공간에서 발산 정리가 성립한다고 할 수 있다.
 
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mGAVueXsqcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+</center>
 
 [^1]: 보통 이런 공간을 type-I region이라고도 부른다.
 
