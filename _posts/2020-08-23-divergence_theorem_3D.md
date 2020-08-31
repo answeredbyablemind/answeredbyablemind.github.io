@@ -75,7 +75,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iint_{S_\text{윗�
 
 $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iint_{S_\text{윗면}}\vec{F}\cdot d\vec{S} + \iint_{S_{아랫면}}\vec{F}\cdot d\vec{S}$$
 
-이제 여기서 수식을 좀 더 전개하기 위해 벡터장의 면적분에서 계산했던 것 처럼 면벡터($d\vec{S}$)에 대해 계산해보도록 하자. 일반적으로 곡면은 아래와 같이 두 개의 매개변수를 이용해 표현된다.
+이제 여기서 수식을 좀 더 전개하기 위해 [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)에서 계산했던 것 처럼 면벡터($d\vec{S}$)에 대해 계산해보도록 하자. 일반적으로 곡면은 아래와 같이 두 개의 매개변수를 이용해 표현된다.
 
 $$\vec{r}(u,v) = x(u,v)\hat i + y(u,v)\hat j + z(u,v)\hat k$$
 

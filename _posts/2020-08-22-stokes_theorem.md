@@ -326,7 +326,9 @@ $$\Rightarrow P_y+P_z g_y + (R_y + R_z g_y)g_x + Rg_{xy}$$
 
 식 (31)을 계산하기 위해 식 (34)의 결과에서 식 (36)의 결과를 빼보도록 하자.
 
-$$식(34)-식(36) = \left\lbrace Q_x+Q_zg_x+(R_x+R_zg_x)g_y +Rg_{yx}\right\rbrace - \left\lbrace P_y+P_zg_y + (R_y+R_zg_y)g_x + Rg_{xy}\right\rbrace$$
+$$식(34)-식(36) = \left\lbrace Q_x+Q_zg_x+(R_x+R_zg_x)g_y +Rg_{yx}\right\rbrace \notag$$
+
+$$- \left\lbrace P_y+P_zg_y + (R_y+R_zg_y)g_x + Rg_{xy}\right\rbrace$$
 
 $$=Q_x-P_y + Q_xg_x-P_zg_y+R_xg_y-R_yg_x$$
 
