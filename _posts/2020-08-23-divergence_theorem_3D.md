@@ -35,9 +35,16 @@ $$\oiint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabla}\cdot\vec{F})dV$$
 
 발산 정리의 증명 과정을 잘 이해하기 위해선 다음의 네 가지 정도의 내용에 대해 알고오시는 것이 좋습니다.
 
-* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
-* [미소곡면의 법선벡터](https://angeloyeo.github.io/2020/08/20/normal_vector.html)
+* 미적분학의 기본정리
+
+함수 $f$가 닫힌구간 $[a, b]$에서 연속이며, 함수 $F$가 $f$의 임의의 부정적분이면 다음이 성립한다.
+
+$$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
+
+* [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)
 * [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
+* [미소곡면의 법선벡터](https://angeloyeo.github.io/2020/08/20/normal_vector.html)
+* [벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)
 * [발산 정리의 의미](https://angeloyeo.github.io/2020/08/23/divergence_theorem_3D.html#발산-정리의-의미)
 
 ## 증명을 위한 곡면, 정의역, 벡터장 소개
@@ -124,9 +131,9 @@ $$\Rightarrow \iiint_V\left(\vec{\nabla}\cdot \vec{F}\right)dV$$
 
 ## 일반적인 3차원 공간에 대한 발산 정리
 
-앞서 우리는 정의역이 $x$, $y$이고 $z$ 축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우에 대해 발산정리를 증명했다.
+앞서 우리는 정의역이 $x$, $y$이고 $z$ 축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우[^1]에 대해 발산정리를 증명했다.
 
-마찬가지 방법으로 정의역이 $x$, $z$이고 $y$축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우에 대해서, 그리고 정의역이 $y$, $z$이고 $x$축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우에도 앞서 증명한 방법과 같은 방법으로 증명할 수 있기 때문에 일반적인 닫힌 곡면에 대한 3차원 공간에서 발산 정리가 성립한다고 할 수 있다.
+마찬가지 방법으로 정의역이 $y$, $z$이고 $x$축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우[^2]에 대해서, 그리고 정의역이 $x$, $z$이고 $y$축 방향으로의 컴포넌트만을 가진 벡터장이 주어진 경우[^3]에도 앞서 증명한 방법과 같은 방법으로 증명할 수 있기 때문에 일반적인 닫힌 곡면에 대한 3차원 공간에서 발산 정리가 성립한다고 할 수 있다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mGAVueXsqcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
