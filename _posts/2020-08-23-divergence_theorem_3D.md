@@ -63,7 +63,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 
 ## 주어진 곡면, 정의역, 벡터장을 이용한 증명
 
-발산 정리의 수식 중 면적분 부분을 먼저 계산해보도록 하자.
+발산 정리의 수식 중 면적분 부분으로부터 증명을 시작해 보도록 하자.
 
 $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S}$$
 
