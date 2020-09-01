@@ -25,9 +25,19 @@ $$\int x^{dx}-1$$
 <p align = "center">
   <img width = "400" src = "https://upload.wikimedia.org/wikipedia/commons/f/f2/Integral_as_region_under_curve.svg">
   <br>
-  그림 1. 함수 f(x)에 대해 $a\lt x\gt b$의 구간에 대한 면적 S
+  그림 1. 함수 $f(x)$에 대해 $a\lt x\lt b$의 구간에 대한 면적 $S$
+  <br>
+  출처: [위키피디아, 리만 적분](https://en.wikipedia.org/wiki/Riemann_integral)
 </p>
 
+
+<p align = "center">
+  <img src = "https://en.wikipedia.org/wiki/Riemann_integral#/media/File:Riemann_integral_regular.gif">
+  <br>
+  그림 2. 리만 적분은 특정 구간 내에서 규칙적으로 구간을 분할하여 사각형의 면적 합을 계산하는 과정이라고 할 수 있다. <br> 맨 위의 숫자는 함수의 적분으로 수렴되는 사각형의 총 면적을 나타냄.
+  <br>
+  출처: [위키피디아, 리만 적분](https://en.wikipedia.org/wiki/Riemann_integral)
+</p>
 # 최종 정답
 
 $$\int x^{dx}-1 = x ln(x) -x + C$$
