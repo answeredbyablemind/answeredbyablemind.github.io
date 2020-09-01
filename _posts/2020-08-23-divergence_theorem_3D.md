@@ -30,7 +30,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 아래와 같이 어떤 벡터장 위에 닫힌 곡면 S과 그로 인해 만들어지는 정육면체 모양의 부피체가 있다고 하자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic1.mp4">
   </video>
   <br>
@@ -52,7 +52,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 우선 아래와 같이 부피체를 y 축에 대해 2개로 쪼개보자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic3.mp4">
   </video>
   <br>
@@ -79,15 +79,13 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} ={\large\bigcirc}\ker
 
 이번엔 부피체를 $x$, $y$ 축에 대해 각각 두 개로 쪼개 총 네 개의 부피체를 만들어보자.
 
---- TODO ---
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic5.mp4">
   </video>
   <br>
   그림 5. 정육면체 형태의 부피체를 x, y축에 대해 각각 두 개로 쪼갠 경우
 </p>
------------
 
 이 때, 쪼개진 부피체를 각각 $V_1$에서 $V_4$라고 하고, 각 부피체에 포함되는 6개의 면들을 통틀어 $S_1$에서 $S_4$로 부르도록 하자.
 
@@ -114,15 +112,13 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
 \sum_{i=1}^{N}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
 
 
---- TODO ---
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic7.mp4">
   </video>
   <br>
-  그림 7. 정육면체 형태의 부피체를 x, y축에 대해 임의의 양수 N개로 쪼갠 경우(그림에선 1000개로 쪼개었음.)
+  그림 7. 정육면체 형태의 부피체를 x, y축에 대해 임의의 양수 N개로 쪼갠 경우<br>(그림에선 1000개로 쪼개었음)
 </p>
-------------
 
 또, 귀납적으로 생각하면 무수하게 많이 부피체를 쪼개더라도 위의 논의는 계속하여 성립하게 되어 무수하게 많이 쪼개진 부피체의 면적분 값을 다 더하면 원래의 부피체의 면적분값과 같다고 생각할 수 있다.
 
