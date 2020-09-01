@@ -26,7 +26,7 @@ $$\int x^{dx}-1$$
 
 리만 적분은 임의의 함수 아래의 면적을 계산하는데 사용된다.
 
-아래의 그림 1에서 처럼 임의의 함수 $f(x)$와 $a\lt x \lt b$로 둘러싸인 영역의 면적을 계산하는데 리만 적분이 사용될 수 있다.
+아래의 그림 1에서 처럼 임의의 함수 $f(x)$와 $a\leq x \leq b$로 둘러싸인 영역의 면적을 계산하는데 리만 적분이 사용될 수 있다.
 
 아래의 그림 1의 면적을 계산한다고 하면 이런 식으로 수식으로 표현할 수 있다.
 
@@ -37,7 +37,7 @@ $$\int_a^b f(x) dx$$
 <p align = "center">
   <img width = "400" src = "https://upload.wikimedia.org/wikipedia/commons/f/f2/Integral_as_region_under_curve.svg">
   <br>
-  그림 1. 함수 $f(x)$에 대해 $a\lt x\lt b$의 구간에 대한 면적 $S$
+  그림 1. 함수 $f(x)$에 대해 $a\leq x\leq b$의 구간에 대한 면적 $S$
   <br>
   출처: <a href = "https://en.wikipedia.org/wiki/Riemann_integral" target="_blank"> 위키피디아, 리만 적분</a>
 </p>
@@ -56,7 +56,7 @@ $$\int_a^b f(x) dx$$
 
 즉, 리만 적분의 원래 의미를 수식으로 쓰면 아래와 같다.
 
-$$\int_a^b f(x)dx = \lim_{\Delta x \rightarrow 0}\sum_{x\in(a, b)} f(x) \Delta x$$
+$$\int_a^b f(x)dx = \lim_{\Delta x \rightarrow 0}\sum_{x\in[a, b]} f(x) \Delta x$$
 
 즉, 적분기호 $\int$는 본래 $\sum$에서 부터 나왔으며 $dx$는 매우 작아지는 직사각형의 밑변의 길이 $\Delta x$를 의미하는 것이다.
 
