@@ -67,16 +67,57 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
   그림 4. 두 개로 쪼개진 부피체를 z-축에서 조감한 경우의 각 면벡터의 형상
 </p>
 
-이 때 쪼개진 두 부피체를 각각 $V_1$, $V_2$라고 하고 각 부피체에 포함되는 
+이 때 쪼개진 두 부피체를 각각 $V_1$, $V_2$라고 하고 각 부피체에 포함되는 6개의 면들을 통틀어 $S_1$과 $S_2$라고 하자.
 
 이 때, 그림 4에서 볼 수 있듯이 쪼개진 면에서는 양쪽으로 나오는 두 면벡터가 면적은 같으나 그 방향이 반대이므로 이 면에서 구하게 되는 두 면적분 값을 합쳐주면 0이 된다.
 
-따라서, 전체 12개의 면에 대한 면적분 값을 모두 합치면 원래의 (쪼개기 전의) 부피체에 대한 면적분의 값과 같다.
+따라서, 전체 2개의 부피체에 대한 면적분 값을 모두 합치면 원래의 (쪼개기 전의) 부피체에 대한 면적분의 값과 같다.
 
 즉, 수식으로 작성하면 다음과 같다.
 
-
 $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} ={\large\bigcirc}\kern-1.55em\iint_{S_1}\vec{F}\cdot d\vec{S_1} + {\large\bigcirc}\kern-1.55em\iint_{S_2}\vec{F}\cdot d\vec{S_2} $$
+
+이번엔 부피체를 $x$, $y$ 축에 대해 각각 두 개로 쪼개 총 네 개의 부피체를 만들어보자.
+
+--- TODO ---
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic5.mp4">
+  </video>
+  <br>
+  그림 5. 정육면체 형태의 부피체를 x, y축에 대해 각각 두 개로 쪼갠 경우
+</p>
+-----------
+
+이 때, 쪼개진 부피체를 각각 $V_1$에서 $V_4$라고 하고, 각 부피체에 포함되는 6개의 면들을 통틀어 $S_1$에서 $S_4$로 부르도록 하자.
+
+그러면 아래의 그림 6에서 볼 수 있는 것 처럼 부피체를 쪼개게 된 내부의 면들에 대해서는 양쪽으로 나오는 두 면벡터가 면적은 같으나 그 방향이 반대이기 때문에, 이 면들에서 두 면적분 값을 구해서 더해주면 0이 된다는 것을 알 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic6.png">
+  <br>
+  그림 6. 네 개로 쪼개진 부피체를 z-축에서 조감한 경우의 각 면벡터의 형상
+</p>
+
+따라서, 전체 네 개의 부피체에 대한 면적분 값을 모두 합치면 원래의 (쪼개기 전의) 부피체에 대한 면적분의 값과 같다.
+
+즉, 수식으로 작성하면 다음과 같다.
+
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
+
+\sum_{i}^{4}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
+
+위의 논의를 이어간다면 이러한 방식으로 무수히 많이 부피체를 조깨더라도 쪼개진 부피체에 대한 면적분 값을 모두 합치면 원래의 부피체에 대한 면적분 값과 같을 것이다. 즉, 임의의 양수 $N$에 대하여 다음이 성립한다.
+
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
+
+\sum_{i}^{N}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
+
+---
+
+그렇다면 하나의 작은 부피에서의 면적분 값이 의미하는 것은 무엇일까?
+
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/Jgng92Hhl5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
