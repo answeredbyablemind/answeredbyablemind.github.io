@@ -114,7 +114,7 @@ $$\int f(x)g'(x)dx = f(x)g(x) - \int f'(x)g(x)dx$$
 
 따라서, 
 
-$$\Rightarrow x\ln(x)-\int 1 dx$$
+$$식(13) =  x\ln(x)-\int 1 dx$$
 
 $$=x \ln(x)-x + C$$
 
