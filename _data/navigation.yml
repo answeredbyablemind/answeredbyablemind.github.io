@@ -74,7 +74,7 @@ docs-ko:
 
   - title:      미적분학
     children:
-      - title:  $\int x^dx-1$?
+      - title:  $\int x^{dx}-1=$?
         url:    2020/09/01/int_x_to_the_dx_minus_1.html
       - title:  스칼라장의 기울기(gradient)
         url:    2019/08/25/gradient.html
