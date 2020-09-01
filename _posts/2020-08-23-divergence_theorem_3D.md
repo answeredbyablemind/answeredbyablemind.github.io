@@ -42,6 +42,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic2.png">
   <br>
+  그림 2. 정육면체가 갖는 6가지 면
 </p>
 
 발산 정리에서 우리가 알고자 하는 것은 이 6개 면에 대한 [면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)이 결국 이 부피체에 의한 [삼중적분](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)의 값과 같다는 것이다.
@@ -60,7 +61,22 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 
 여기서 우리는 총 12개의 면에 대해 생각할 수 있지만, 특별히 두 개로 쪼개진 부분의 면을 생각해서 조감해보면 다음과 같다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic4.png">
+  <br>
+  그림 4. 두 개로 쪼개진 부피체를 z-축에서 조감한 경우의 각 면벡터의 형상
+</p>
 
+이 때 쪼개진 두 부피체를 각각 $V_1$, $V_2$라고 하고 각 부피체에 포함되는 
+
+이 때, 그림 4에서 볼 수 있듯이 쪼개진 면에서는 양쪽으로 나오는 두 면벡터가 면적은 같으나 그 방향이 반대이므로 이 면에서 구하게 되는 두 면적분 값을 합쳐주면 0이 된다.
+
+따라서, 전체 12개의 면에 대한 면적분 값을 모두 합치면 원래의 (쪼개기 전의) 부피체에 대한 면적분의 값과 같다.
+
+즉, 수식으로 작성하면 다음과 같다.
+
+
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} ={\large\bigcirc}\kern-1.55em\iint_{S_1}\vec{F}\cdot d\vec{S_1} + {\large\bigcirc}\kern-1.55em\iint_{S_2}\vec{F}\cdot d\vec{S_2} $$
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/Jgng92Hhl5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
