@@ -42,10 +42,8 @@ gradient는 경사도를 얘기하는데 가파르게 올라가는 방향으로 
 
 글로 설명하니 모호하게 들릴 수도 있지만 스스로 어떤 벡터장이 나올지 미리 상상해보도록 하자.
 
-
-
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-28_laplacian/noname02.png">
+  <img width = "600" height = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-28_laplacian/noname02.png">
 <br>그림 2 peak 함수와 그 gradient가 표시되어 있다.
 </p>
 
