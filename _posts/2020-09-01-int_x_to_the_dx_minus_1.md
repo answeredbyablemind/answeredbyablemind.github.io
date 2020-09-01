@@ -4,7 +4,7 @@ sidebar:
   nav: docs-ko
 aside:
   toc: true
-key: 20200824
-tags: 선형대수 머신러닝
+key: 200901
+tags: 미적분학
 ---
 
