@@ -105,18 +105,59 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} ={\large\bigcirc}\ker
 
 $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
 
-\sum_{i}^{4}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
+\sum_{i=1}^{4}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
 
-위의 논의를 이어간다면 이러한 방식으로 무수히 많이 부피체를 조깨더라도 쪼개진 부피체에 대한 면적분 값을 모두 합치면 원래의 부피체에 대한 면적분 값과 같을 것이다. 즉, 임의의 양수 $N$에 대하여 다음이 성립한다.
+위의 논의를 이어간다면 이러한 방식으로 임의의 개수만큼 부피체를 조깨더라도 쪼개진 부피체에 대한 면적분 값을 모두 합치면 원래의 부피체에 대한 면적분 값과 같을 것이다. 즉, 임의의 양수 $N$에 대하여 다음이 성립한다.
 
 $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
 
-\sum_{i}^{N}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
+\sum_{i=1}^{N}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
 
----
+
+--- TODO ---
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic7.mp4">
+  </video>
+  <br>
+  그림 7. 정육면체 형태의 부피체를 x, y축에 대해 임의의 양수 N개로 쪼갠 경우(그림에선 1000개로 쪼개었음.)
+</p>
+------------
+
+또, 귀납적으로 생각하면 무수하게 많이 부피체를 쪼개더라도 위의 논의는 계속하여 성립하게 되어 무수하게 많이 쪼개진 부피체의 면적분 값을 다 더하면 원래의 부피체의 면적분값과 같다고 생각할 수 있다.
+
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
+
+\lim_{N\rightarrow \infty}\sum_{i=1}^{N}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}$$
+
+-----------
 
 그렇다면 하나의 작은 부피에서의 면적분 값이 의미하는 것은 무엇일까?
 
+[벡터장의 면적분](https://angeloyeo.github.io/2020/08/21/surface_integral.html)은 해당 미소면적을 지나는 벡터장의 벡터와 면벡터가 얼마나 닮았는지를 내적을 통해 계산해주고 전체 곡면에 대해 더해준 것이라고 언급하였다.
+
+그리고, [면적분의 물리적 의미](https://angeloyeo.github.io/2020/08/21/surface_integral.html#%EB%A9%B4%EC%A0%81%EB%B6%84%EC%9D%98-%EC%9D%98%EB%AF%B8-3d-flux)는 곡면 S를 통해 빠져나간 유량을 의미한다고도 언급한 바 있다.
+
+또한, [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html)에서 배운 내용을 생각해본다면, 발산(divergence)의 의미는 "단위 부피당 빠져나간 유량"이었다.
+
+즉, 이 부피체가 매우 작다고 하면 미소 부피의 발산값에 미소 부피의 부피를 곱해주면 이 미소 부피를 통해 빠져나간 유량을 의미한다고 할 수 있다.
+
+수식으로 적어보면 다음과 같을 것이다. 임의의 $i$ 번째 매우 작은 부피체에 대하여 이 부피체의 부피가 $\Delta V$라고 한다면,
+
+$${\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i} = (\vec{\nabla}\cdot\vec{F})\Delta V$$
+
+이제 매우 작고 무수하게 쪼개준 전체 부피체에 대해 생각해준다면 식(5)는 다음과 같이 쓸 수 있을 것이다.
+
+
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
+
+\lim_{N\rightarrow \infty}\sum_{i=1}^{N}{\large\bigcirc}\kern-1.55em\iint_{S_i}\vec{F}\cdot d\vec{S_i}=\lim_{N\rightarrow \infty}\sum_{i=1}^{N}\left\lbrace(\vec{\nabla}\cdot\vec{F})\Delta V\right\rbrace$$
+
+결국 주어진 최외각의 부피체에 대해 $(\vec{\nabla}\cdot\vec{F})\Delta V$을 무수하게 많이 더해준다는 것은 이 부피체 내의 모든 $x$, $y$, $z$ 에 대해 적분해준다는 뜻과 같다.
+
+또, $N$이 무한히 커지면 $\Delta V$는 $dV$로 쓸 수 있다. 따라서 아래와 같이 발산 정리의 식을 생각할 수 있게 된다.
+
+$${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V (\vec{\nabla}\cdot\vec{F})dV$$
 
 
 <center>
@@ -145,7 +186,11 @@ $$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
 
 이번 증명 과정에서는 정의역이 $x$, $y$ 평면이고 윗면과 아랫면의 높이가 $z = g_1(x,y)$, $z=g_2(x,y)$와 같이 정해지는 원통 모양의 닫힌 곡면을 이용해 발산 정리를 증명하고자 한다. 특히, $g_1(x,y)$와 $g_2(x,y)$로 결정되는 이 닫힌 곡면(원통)의 윗면과 아랫면의 법선 벡터는 $z$축의 단위벡터와 평행하다[^1].
 
------ 정의역과 닫힌 곡면 그림 넣을 곳 -----
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic8.png">
+  <br>
+  그림 8. 정의역이 x, y 평면이고 윗면, 아랫면의 높이가 z = g(x,y)로 정해지는 원통 모양의 닫힌 곡면
+</p>
 
 이후 정의역이 $y$, $z$인 경우[^2]와 $x$, $z$인 경우[^3]에 대해서는 지금의 정의역이 $x$, $y$인 경우에 대한 증명 방식과 유사한 방식으로 증명할 수 있다는 방식으로 일반적인 3차원 공간에 대해 발산 정리를 증명할 수 있다.
 
