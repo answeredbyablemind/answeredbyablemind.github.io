@@ -25,6 +25,7 @@ text(0.2, 3.3397, '(0, 3)','fontsize',12)
 saveas(gcf, 'pic1.png')
 
 %% pic2
+close all;
 v = [-1, 1, 0;
     0, 1, 1;
     0, 1, 3];
@@ -53,7 +54,6 @@ newVid = VideoWriter('pic2', 'MPEG-4'); % New
 newVid.FrameRate = 30;
 newVid.Quality = 100;
 open(newVid);
-figure(1)
 set(gcf,'color','w')
 xlabel('$$x$$','interpreter','latex')
 ylabel('$$y$$','interpreter','latex')
