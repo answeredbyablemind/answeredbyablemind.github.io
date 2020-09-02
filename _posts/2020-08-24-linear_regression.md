@@ -47,7 +47,9 @@ $$f(0) = 0 + b = 3$$
 
 이것을 행렬과 벡터를 이용해 표시하면 다음과 같다.
 
-$$\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatrix}m \\ b\end{bmatrix} = \begin{bmatrix}0\\1 \\ 3 \end{bmatrix}$$
+$$Ax = b$$
+
+$$\Rightarrow\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatrix}m \\ b\end{bmatrix} = \begin{bmatrix}0\\1 \\ 3 \end{bmatrix}$$
 
 이 행렬을 푸는 문제를 기하학적인 관점에서 생각해보면 그림 X와 같이 세 개의 데이터 포인트가 주어졌을 때 이 데이터 포인트들을 모두 통과하는 직선을 구하는 문제와 같다. 
 
