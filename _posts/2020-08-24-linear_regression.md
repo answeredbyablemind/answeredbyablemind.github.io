@@ -10,7 +10,7 @@ tags: 선형대수 머신러닝
 
 
 <center>
-  <iframe width = "660" height = "400" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-08-24-linear_regression/"></iframe>
+  <iframe width = "660" height = "350" frameborder = "0" src="https://angeloyeo.github.io/p5/2020-08-24-linear_regression/"></iframe>
   <br>
   Gradient descent로 풀어내는 Linear Regression.
   <br>
@@ -36,8 +36,11 @@ $$(-1, 0), (0, 1), (0, 3)$$
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic1.png">
+  <br>
+  그림 1. 주어진 세 개의 데이터 포인트
 </p>
-만약 이 세 점에 대해 $f(x) = mx+b$와 같은 system을 통해 이 네 개의 데이터 포인트를 얻었다고 가정하면  아래와 같이 세 개의 방정식으로 구성된 연립방정식을 세울 수 있다.
+
+만약 이 세 점에 대해 $f(x) = mx+b$와 같은 모델을 통해 이 네 개의 데이터 포인트를 얻었다고 가정하면  아래와 같이 세 개의 방정식으로 구성된 연립방정식을 세울 수 있다.
 
 $$f(-1) = -m + b = 0$$
 
@@ -51,13 +54,13 @@ $$Ax = b$$
 
 $$\Rightarrow\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatrix}m \\ b\end{bmatrix} = \begin{bmatrix}0\\1 \\ 3 \end{bmatrix}$$
 
-이 행렬을 푸는 문제를 기하학적인 관점에서 생각해보면 그림 X와 같이 세 개의 데이터 포인트가 주어졌을 때 이 데이터 포인트들을 모두 통과하는 직선을 구하는 문제와 같다. 
+이 행렬을 푸는 문제를 기하학적인 관점에서 생각해보면 그림 1과 같이 세 개의 데이터 포인트가 주어졌을 때 이 데이터 포인트들을 모두 통과하는 직선을 구하는 문제와 같다. 
 
 다시 말해, 이 문제는 풀릴 수 없다. 해가 존재하지 않기 때문이다.
 
 ## 최적의 해를 찾기
 
-꿩대신 닭이라고 했던가. 정답을 못찾으면 최대한 정답에 가까운 것이라도 내놓아야 한다.
+꿩대신 닭이라고 했던가. 정답을 못찾으면 최대한 정답에 가까운 것이라도 찾아야 한다.
 
 선형대수학의 관점에서 선형회귀 모델을 찾는 것은 해가 행렬 A의 column space안에 존재하지 않는 경우 column space안에 있는 정답에 가장 가까운 해를 찾는 과정이라고 할 수 있다.
 
