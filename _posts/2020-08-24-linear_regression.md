@@ -34,8 +34,9 @@ tags: 선형대수 머신러닝
 
 $$(-1, 0), (0, 1), (0, 3)$$
 
---- x, y 평면에서 데이터 포인트들의 좌표를 표시한 그림 넣을 곳---
-
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic1.png">
+</p>
 만약 이 세 점에 대해 $f(x) = mx+b$와 같은 system을 통해 이 네 개의 데이터 포인트를 얻었다고 가정하면  아래와 같이 세 개의 방정식으로 구성된 연립방정식을 세울 수 있다.
 
 $$f(-1) = -m + b = 0$$
@@ -58,7 +59,17 @@ $$\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatrix}m \\ b\e
 
 선형대수학의 관점에서 선형회귀 모델을 찾는 것은 해가 행렬 A의 column space안에 존재하지 않는 경우 column space안에 있는 정답에 가장 가까운 해를 찾는 과정이라고 할 수 있다.
 
-위 문제에선 $[-1, 0, 2]^T$와 $[1, 1, 1]^T$의 두 벡터를 어떻게 선형 조합 하더라도 $[0, 1, 1]^T$를 표현할 수 없다고 생각할 수 있다.
+위 문제에선 $[-1, 0, 0]^T$와 $[1, 1, 1]^T$의 두 벡터를 어떻게 선형 조합 하더라도 $[0, 1, 3]^T$를 표현할 수 없다고 생각할 수 있다.
+
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic2.mp4">
+  </video>
+  <br>
+  그림 2. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 span으로 표현되는 column space(평면)과 이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
+</p>
+
 
 # 최적화 문제 관점에서 본 회귀분석
 
