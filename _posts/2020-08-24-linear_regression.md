@@ -69,7 +69,7 @@ $$\Rightarrow\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatr
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic2.mp4">
   </video>
   <br>
-  그림 2. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 span으로 표현되는 column space(평면)과 이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
+  그림 2. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 span으로 표현되는 column space(평면)과<br>이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
 </p>
 
 
