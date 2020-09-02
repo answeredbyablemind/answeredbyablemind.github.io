@@ -119,3 +119,7 @@ $$식(13) =  x\ln(x)-\int 1 dx$$
 $$=x \ln(x)-x + C$$
 
 인 것을 알 수 있다. (여기서 $C$는 적분 상수)
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/bRKGnzHkmzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
