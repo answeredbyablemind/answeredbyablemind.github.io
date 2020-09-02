@@ -98,11 +98,13 @@ $$\Rightarrow x^n\ln(x)\big|_{n=0}$$
 
 $$=\ln(x)$$
 
+이다.
+
 즉, 원래의 식은
 
 $$\int x^{dx}-1 = \int \ln(x)dx$$
 
-이다.
+으로 쓸 수 있다.
 
 여기서는 부분적분을 이용하면 위 부정적분을 계산할 수 있다.
 
@@ -119,7 +121,3 @@ $$식(13) =  x\ln(x)-\int 1 dx$$
 $$=x \ln(x)-x + C$$
 
 인 것을 알 수 있다. (여기서 $C$는 적분 상수)
-
-<center>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/bRKGnzHkmzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
