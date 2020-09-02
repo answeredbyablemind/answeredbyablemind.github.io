@@ -76,6 +76,12 @@ $$\Rightarrow\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatr
 </p>
 
 
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic3.png">
+  <br>
+  그림 3. A의 열(column)을 이루는 열벡터(\vec{a}_1, \vec{a}_2)의 span인 A의 열공간 $col(A)$와 열공간에 포함되지 않는 \vec{b}
+</p>
+
 # 최적화 문제 관점에서 본 회귀분석
 
 ※ 선형대수학 관련 내용으로 궁금한 사람은 $\lt$최적화 문제 관점에서 본 회귀분석$\gt$ 파트를 건너뛰어도 무관함.
