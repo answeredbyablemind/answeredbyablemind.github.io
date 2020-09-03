@@ -96,31 +96,42 @@ $$\Rightarrow x_1\begin{bmatrix} | \\ \vec{a}_1 \\ | \end{bmatrix} + x_2\begin{b
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic2.png">
   <br>
-  그림 2. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 span인 A의 열공간 $col(A)$에 포함되어 있는 $\vec{b}$를 구하려면 $\vec{a}_1$와 $\vec{a}_2$를 얼마만큼 조합해주어야 할까?
+  그림 2. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 생성공간(span)인 A의 열공간 $col(A)$에 포함되어 있는 $\vec{b}$를 구하려면 $\vec{a}_1$와 $\vec{a}_2$를 얼마만큼 조합해주어야 할까?
 </p>
 
-하지만 
+하지만 $\vec{a}_1$과 $\vec{a}_2$를 조합해서 $\vec{b}$를 얻을 수 있으려면 $\vec{b}$는 $\vec{a}_1$과 $\vec{a}_2$를 조합해 얻을 수 있는 모든 경우의 수 중 하나여야 한다.
+
+다시 말해 $\vec{a}_1$과 $\vec{a}_2$의 생성공간(span) 안에 $\vec{b}$가 포함되어 있어야 한다. 이것이 해를 찾을 수 있는 조건이다.
 
 ## 최적의 해를 찾기
 
-꿩대신 닭이라고 했던가. 정답을 못찾으면 최대한 정답에 가까운 것이라도 찾아야 한다.
+꿩대신 닭이라고 했던가. 그림 1과 같은 문제에서 처럼 정확한 정답을 찾을 수 없다면 최대한 정답에 가까운 것이라도 찾아야 한다.
 
-해가 행렬 A의 column space안에 존재하지 않는 경우 column space안에 있는 정답에 가장 가까운 해를 찾는 과정이라고 할 수 있다.
+다시 말해 그래도 그나마 가장 세 점의 트렌드를 잘 표현해줄 수 있는 직선을 찾을 수는 있을 것이다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic3.png">
+  <br>
+  그림 3. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 생성공간(span)인 A의 열공간 $col(A)$에 포함되어 있는 $\vec{b}$를 구하려면 $\vec{a}_1$와 $\vec{a}_2$를 얼마만큼 조합해주어야 할까?
+</p>
+
+
+여기서, 우리가 점 세 개의 트렌드를 잘 표현해주는 직선을 과정은 선형대수학적으로 해가 행렬 A의 column space안에 존재하지 않는 경우 column space안에 있는 정답에 가장 가까운 해를 찾는 과정과 일치시켜 생각할 수 있다.
 
 위 문제에선 $[-1, 0, 0]^T$와 $[1, 1, 1]^T$의 두 벡터를 어떻게 선형 조합 하더라도 $[0, 1, 3]^T$를 표현할 수 없다고 생각할 수 있다.
 
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic3.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic4.mp4">
   </video>
   <br>
-  그림 3. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 span으로 표현되는 column space(평면)과<br>이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
+  그림 3. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 생성공간(span)으로 표현되는 column space(평면)과<br>이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
 </p>
 
 
 <p align = "center">
-  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic4.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic5.png">
   <br>
   그림 4. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 span인 A의 열공간 $col(A)$와 열공간에 포함되지 않는 $\vec{b}$
 </p>
