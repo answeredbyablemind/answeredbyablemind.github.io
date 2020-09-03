@@ -29,6 +29,7 @@ tags: 선형대수 머신러닝
 이 내용에 대해 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
 * 벡터의 스칼라곱과 벡터의 합
+* 벡터의 내적
 * 벡터의 생성공간(span)
 * 벡터 공간(열공간, 행공간)
 
@@ -112,28 +113,77 @@ $$\Rightarrow x_1\begin{bmatrix} | \\ \vec{a}_1 \\ | \end{bmatrix} + x_2\begin{b
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic3.png">
   <br>
-  그림 3. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 생성공간(span)인 A의 열공간 $col(A)$에 포함되어 있는 $\vec{b}$를 구하려면 $\vec{a}_1$와 $\vec{a}_2$를 얼마만큼 조합해주어야 할까?
+  그림 3. 그나마 세 점의 트렌드를 잘 설명해 줄 수 있을 것 같은 직선을 그어보자
 </p>
 
+여기서, 우리가 점 세 개의 트렌드를 잘 표현해주는 직선을 과정은 선형대수학적으로는 해($\vec{b}$)가 행렬 $A$의 열공간(column space)안에 존재하지 않는 경우 열 공간안에 있는 정답에 가장 가까운 해를 찾는 과정과 일치시켜 생각할 수 있다.
 
-여기서, 우리가 점 세 개의 트렌드를 잘 표현해주는 직선을 과정은 선형대수학적으로 해가 행렬 A의 column space안에 존재하지 않는 경우 column space안에 있는 정답에 가장 가까운 해를 찾는 과정과 일치시켜 생각할 수 있다.
-
-위 문제에선 $[-1, 0, 0]^T$와 $[1, 1, 1]^T$의 두 벡터를 어떻게 선형 조합 하더라도 $[0, 1, 3]^T$를 표현할 수 없다고 생각할 수 있다.
-
+실제로 그림 1 혹은 그림 3의 문제에서 $\vec{a}_1$, $\vec{a}_2$와 이 두 벡터로부터 생성되는 열공간, 그리고 $\vec{b}$를 직접 그려보면 다음과 같다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic4.mp4">
   </video>
   <br>
-  그림 3. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 생성공간(span)으로 표현되는 column space(평면)과<br>이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
+  그림 4. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 생성공간(span)으로 표현되는 열공간과 이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
 </p>
 
+그림 4에 있는 내용을 조금 더 추상적으로 그리면 아래의 그림 5와 같다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic5.png">
   <br>
-  그림 4. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 span인 A의 열공간 $col(A)$와 열공간에 포함되지 않는 $\vec{b}$
+  그림 5. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 span인 A의 열공간 $col(A)$와 열공간에 포함되지 않는 $\vec{b}$
+</p>
+
+그림 5에서 볼 수 있듯이 $\vec{b}$는 $\vec{a}_1$과 $\vec{a}_2$의 열공간 안에 포함되어 있지 않다. 그리고 그림 5에서 확인할 수 있듯이 여기서 우리가 찾을 수 있는 $\vec{b}$와 가장 가까우면서 $\vec{a}_1$과 $\vec{a}_2$의 선형결합을 통해 얻을 수 있는 최적의 벡터는 $\vec{b}$가 열공간(col(A))에 정사영된 $\vec{p}$이며 우리는 이 $\vec{p}$를 계산해줌으로써 벡터 $\vec{a}_1$과 $\vec{a}_2$를 얼마만큼 선형조합 해주어야 할지($\hat{x}$)를 알 수 있게 된다.
+
+그렇다면 원래의 해 $\vec{b}$와 정사영 벡터 $\vec{p}$의 차이 벡터를 $\vec{e}$라고 하면 $\vec{e}$는 행렬 $A$의 어떤 벡터와도 직교하므로 다음이 성립한다.
+
+$$A\cdot\vec{e} = \begin{bmatrix} | & | \\ \vec{a}_1 & \vec{a}_2 \\ | & | \end{bmatrix}\cdot\vec{e} = 0$$
+
+여기서 '$\cdot$'은 내적 연산이다.
+
+즉, 내적을 계산해주면,
+
+$$A^Te = A^T(\vec{b}-A\hat{x}) = 0$$
+
+$$\Rightarrow A^T\vec{b}-A^TA\hat{x} = 0$$
+
+$$\Rightarrow A^TA\hat{x} = A^T\vec{b}$$
+
+
+$$\therefore \hat{x}=(A^TA)^{-1}A^T\vec{b}$$
+
+이라는 것을 알 수 있다.
+
+### 실제 계산
+
+MATLAB으로 아래와 같이 $A$, $b$를 설정하고 $\hat{x}$를 구할 수 있다.
+
+```{matlab}
+A = [-1, 1; 0, 1; 0, 1];
+b = [0; 1; 3];
+
+x_hat = inv(A'*A)*A'*b;
+```
+
+계산 결과는
+
+```{matlab}
+x_hat =
+
+     2
+     2
+```
+이다.
+
+즉, 아래의 그림 6에서 표현된 것과 같은 기울기가 2이고 절편이 2인 직선이 그림 1, 3에서 본 세 점의 트렌드를 제일 잘 설명해줄 수 있는 점이라는 의미이다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic6.png">
+  <br>
+  그림 6. 그림 1과 그림 3에서 본 데이터에 대한 최적의 회귀식
 </p>
 
 # 최적화 문제 관점에서 본 회귀분석

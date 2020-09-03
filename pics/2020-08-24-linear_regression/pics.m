@@ -50,7 +50,7 @@ end
 xlim([-1, 1])
 ylim([-1, 1])
 
-newVid = VideoWriter('pic2', 'MPEG-4'); % New
+newVid = VideoWriter('pic4', 'MPEG-4'); % New
 newVid.FrameRate = 30;
 newVid.Quality = 100;
 open(newVid);
@@ -66,3 +66,36 @@ for i = 1:360
     drawnow
 end
 close(newVid)
+
+%% x hat °è»ê
+
+A = [-1, 1; 0, 1; 0, 1];
+b = [0; 1; 3];
+
+x_hat = inv(A'*A)*A'*b;
+
+
+figure; hold on;
+xlim([-2, 3])
+ylim([-2, 7])
+line([0, 0], ylim)
+line(xlim, [0, 0])
+plot(-1, 0,'o','markerfacecolor',my_color(1,:),'markeredgecolor','none','markersize',12);
+plot(0, 1,'o','markerfacecolor',my_color(2,:),'markeredgecolor','none','markersize',12);
+plot(0, 3,'o','markerfacecolor',my_color(3,:),'markeredgecolor','none','markersize',12);
+grid on;
+
+set(gcf,'color','w')
+xlabel('$$x$$','interpreter','latex')
+ylabel('$$y$$','interpreter','latex')
+
+text(-1.2, 0.71574, '(-1, 0)','fontsize',12)
+text(0.2, 1.2143, '(0, 1)','fontsize',12)
+text(0.2, 3.3397, '(0, 3)','fontsize',12)
+
+xx = linspace(-2, 3, 100);
+yy = x_hat(1) * xx + x_hat(2);
+plot(xx, yy,'r','linewidth',2)
+
+saveas(gcf, 'pic6.png')
+
