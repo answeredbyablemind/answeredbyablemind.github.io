@@ -190,4 +190,27 @@ x_hat =
 
 ※ 선형대수학 관련 내용으로 궁금한 사람은 $\lt$최적화 문제 관점에서 본 회귀분석$\gt$ 파트를 건너뛰어도 무관함.
 
+최적화 관점에서 보는 회귀분석은 데이터에 대한 모델 설정으로부터 시작할 수 있다.
+
+가령 아래 그림과 같이 두 개의 특성을 갖는 데이터가 있다고 생각해보자.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic7.png">
+  <br>
+  그림 7. 서로 상관관계를 가지고 있는 특성(feature)쌍
+</p>
+
+이 데이터는 특정 주(states)의 인구수와 각 주에서 일어난 교통사고 건수를 각각 x, y 축에 표시한 것이다.
+
+우리는 이 데이터에 대한 모델을 가정해보고자 한다.
+
+데이터의 형태를 볼 때 직선 모델을 이용한다면 어떻게든 이 데이터를 모델링하는데는 무리가 없어 보인다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic8.png">
+  <br>
+  그림 8. 어떤 모델이 이 데이터의 특성(feature)쌍의 관계를 제일 잘 설명해주는 걸까?
+</p>
+
+
 ## Gradient Descent를 이용한 최소 비용함수 계산
