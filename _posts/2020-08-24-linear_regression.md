@@ -241,6 +241,12 @@ $$e_i = \hat{y_i} - y_i$$
 
 라고 생각할 수 있다.
 
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic9.png">
+  <br>
+  그림 9. 선형 모델의 예측값과 실제 데이터 간의 차이
+</p>
+
 여기서 오차의 부호에 대한 고민 자체를 애초에 하지 않으려면 오차를 다음과 같이 정의하는 것도 좋을 것이다.
 
 $$e_i = (\hat{y_i} - y_i)^2$$

@@ -111,19 +111,43 @@ title('한 주에서 발생한 교통사고 건수와 그 주의 인구');
 saveas(gcf,'pic7.png');
 
 %% pic 8
-
-load accidents
-x = hwydata(:,14)/10000; %Population of states
-y = hwydata(:,4); %Accidents per state
+rng(1)
+x = rand(1, 50) * 100 + 1; % 1~100 사이의 랜덤한 데이터 50개
+y = 3 * x + 1 + randn(size(x)) * 30;
+y = abs(y); 
 
 figure; plot(x, y, 'o');
 xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
-title('한 주에서 발생한 교통사고 건수와 그 주의 인구');
+title('여러 도시에서 발생한 교통사고 건수와 그 주의 인구');
 
-c = fit(x, y, 'poly1');
+c = fit(x', y', 'poly1');
 XLIMs = xlim;
 
 xx = linspace(XLIMs(1), XLIMs(2), 100);
 yy = c.p1 * xx + c.p2;
 hold on;
 plot(xx, yy, 'r','linewidth',2)
+
+%% pic 10
+close all;
+Ngrid = 50;
+[a, b] = meshgrid(linspace(-30, 30, Ngrid), linspace(-30, 30, Ngrid));
+
+f = zeros(size(a));
+xx = fun_minmax_normalize(x);
+yy = fun_minmax_normalize(y);
+for i = 1:Ngrid
+    for j = 1:Ngrid
+        f(i, j) = 1/2 * 1/length(x) * sum((a(i,j) * xx + b(i,j) - yy).^2);
+    end
+end
+figure;
+subplot(1,2,1);
+surf(a, b, f)
+hold on;
+plot3(c.p1, c.p2, 1/2 * 1/length(x) * sum((c.p1 * xx + c.p2 - yy).^2),'p',...
+    'markersize',20,'markerfacecolor','r','markeredgecolor','none');
+
+
+subplot(1,2,2);
+contour(a,b,f, 30)
