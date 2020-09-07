@@ -262,7 +262,7 @@ $$=\frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 여기서 우리의 모델은 $f(x) = ax+b$이므로 $\hat{y}_i = ax_i + b$로 계산하였다.
 
-## Gradient Descent를 이용한 최소 비용함수 계산
+## 비용 함수의 시각화
 
 앞서 계산한 $E$는 소위 말하는 '비용 함수(cost function)'라고 부르기도 하는데, 이 비용함수 값이 작을 수록 데이터에 대한 설명 능력이 좋다고 볼 수 있다.
 
@@ -277,18 +277,26 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 $E$를 최소화해주는 $a$와 $b$를 찾는 문제로 바꿔 생각할 수 있다. 즉, $E$의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
 
+이것을 시각화해보자면 아래의 그림 10에서 slope와 intercept가 정의역인 공간에서 cost function $E$가 스칼라 함수로 존재한다고 할 수 있다.
+
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic10.mp4">
   </video>
   <br>
-  그림 10
+  그림 10. slope와 intercept가 정의역인 공간에서 cost function과 그 최솟값(별표)
 </p>
+
+즉, 그림 10에서 볼 수 있는 최소값을 찾기 위해선 어떻게 하는 것이 좋을까?
+
+## Gradient Descent를 이용한 최소 비용함수 계산
+
+함수의 최솟값을 찾는 방법은 정말 다양하지만, 일반적인 비용 함수에 대해서는 [Gradient Descent](https://angeloyeo.github.io/2020/08/16/gradient_descent.html) 방법이 가장 많이 사용된다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic11.mp4">
   </video>
   <br>
-  그림 11
+  그림 11. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
 </p>
