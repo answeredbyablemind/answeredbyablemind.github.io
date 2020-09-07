@@ -293,7 +293,7 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 ## Gradient Descent를 이용한 최소 비용함수 계산
 
-함수의 최솟값을 찾는 방법은 정말 다양하지만, 일반적으로 회귀모델 비용 함수의 최솟값을 찾는 문제를 해결하기 위해 [Gradient Descent](https://angeloyeo.github.io/2020/08/16/gradient_descent.html) 방법이 가장 많이 이용된다.
+함수의 최솟값을 찾는 방법은 정말 다양하지만, 일반적으로 회귀모델 비용 함수의 최솟값을 찾는 문제를 해결하기 위해 [경사하강법(gradient descent)](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)이 가장 많이 이용된다.
 
 짧게나마 [경사하강법](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)을 복습해보자면, 높은 곳에서 낮은 곳으로 비탈길을 타고 내려갈 때에는 한발 한발 씩 가장 경사진 방향으로 내려가는 방법을 수학적으로 써놓은 알고리즘이라고 할 수 있다.
 
