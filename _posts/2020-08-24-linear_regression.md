@@ -196,7 +196,7 @@ x_hat =
 
 * [경사하강법](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)
 
-##
+## 최적화 문제 관점에서 본 회귀분석 소개
 
 최적화 관점에서 보는 회귀분석은 데이터에 대한 모델 설정으로부터 시작할 수 있다.
 
@@ -257,9 +257,9 @@ $$e_i = \frac{1}{2}(\hat{y_i} - y_i)^2$$
 
 이제 데이터의 총 수가 $N$이라고 하면, 모든 데이터에 대한 오차의 총합은 다음과 같이 계산할 수 있다.
 
-$$E = \sum_{i=1}^Ne_i = \sum_{i=1}^N\frac{1}{2}(\hat{y_i} - y_i)^2 = \frac{1}{2}\sum_{i=1}^{N}(\hat{y_i} - y_i)^2$$
+$$E = \frac{1}{N}\sum_{i=1}^Ne_i = \frac{1}{N}\sum_{i=1}^N\frac{1}{2}(\hat{y_i} - y_i)^2 = \frac{1}{2N}\sum_{i=1}^{N}(\hat{y_i} - y_i)^2$$
 
-$$=\frac{1}{2}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
+$$=\frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 여기서 우리의 모델은 $f(x) = ax+b$이므로 $\hat{y}_i = ax_i + b$로 계산하였다.
 
@@ -271,10 +271,18 @@ $$=\frac{1}{2}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 즉,
 
-$$E=f(a, b) = \frac{1}{2}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
+$$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 이라고 쓸 수 있다.
 
 
 그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 $E$를 최소화해주는 $a$와 $b$를 찾는 문제로 바꿔 생각할 수 있다. 즉, $E$의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
 
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic10.mp4">
+  </video>
+  <br>
+  그림 10
+</p>

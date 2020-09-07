@@ -1,3 +1,6 @@
-function new_x = fun_minmax_normalize(x)
+function [new_x, minx, maxx] = fun_minmax_normalize(x)
 
-new_x = (x - min(x)) / (max(x) - min(x));
+minx = min(x);
+maxx = max(x);
+
+new_x = (x - minx) / (maxx - minx);
