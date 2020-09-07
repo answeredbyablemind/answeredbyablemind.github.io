@@ -194,6 +194,7 @@ x_hat =
 
 최적화 관점에서 본 회귀분석을 이해하기 위해서는 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
+* [gradient의 의미](https://angeloyeo.github.io/2019/08/25/gradient.html)
 * [경사하강법](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)
 
 ## 최적화 문제 관점에서 본 회귀분석 소개
@@ -300,9 +301,27 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 아래의 그림을 보면 검은색 점으로 표현한 곳에서 임의로 gradient descent 알고리즘을 시작한다고 하면 gradient의 방향은 다음과 같이 빨간색 화살표로 생각할 수 있다.
 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic11.png">
+  <br>
+  그림 11. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서의 gradient 방향은 함수값이 커지는 방향이다.
+</p>
 
+따라서 gradient의 방향은 함수가 '커지는' 방향이므로 우리는 이 반대 방향으로 한 스텝, 한 스텝 $a$와 $b$의 위치를 업데이트 해간다면 결국은 비용함수 $E=f(a,b)$의 최소값(별표) 위치까지 $a$, $b$를 옮겨갈 수 있을 것이다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic12.png">
+  <br>
+  그림 12. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서 gradient의 반대방향으로 $a$와 $b$의 위치를 업데이트 해간다면 결국 비용함수가 최소가 되는 $a$와 $b$를 찾아갈 수 있을 것이다.
+</p>
 
 즉, 우리가 구하고자 하는 함수 $f(a,b)$에서 파라미터 $a$, $b$를 임의의 값으로 설정한 뒤 업데이트 해줄 수 있다.
+
+즉, 벡터 $[a, b]^T$에 대해 다음과 같이 업데이트 해줄 수 있다.
+
+$$\begin{bmatrix}a\\b\end{bmatrix}:=\begin{bmatrix}a\\b\end{bmatrix}-\nabla f(a, b)$$
+
+이를 풀어 쓰면 다음과 같다.
 
 $$a := a - \alpha \frac{\partial f}{\partial a}$$
 
