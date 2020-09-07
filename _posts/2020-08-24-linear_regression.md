@@ -319,15 +319,15 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 즉, 벡터 $[a, b]^T$에 대해 다음과 같이 업데이트 해줄 수 있다.
 
-$$\begin{bmatrix}a\\b\end{bmatrix}:=\begin{bmatrix}a\\b\end{bmatrix}-\nabla f(a, b)$$
+$$\begin{bmatrix}a\\b\end{bmatrix}:=\begin{bmatrix}a\\b\end{bmatrix}-\alpha\nabla f(a, b)$$
+
+여기서 $\alpha$는 learning rate 혹은 step size라고 부르는 것으로 $0.1$ 혹은 $0.001$ 등의 작은 숫자이다.
 
 이를 풀어 쓰면 다음과 같다.
 
 $$a := a - \alpha \frac{\partial f}{\partial a}$$
 
 $$b := b - \alpha \frac{\partial f}{\partial b}$$
-
-여기서 $\alpha$는 learning rate 혹은 step size라고 부르는 것으로 $0.1$ 혹은 $0.001$ 등의 작은 숫자이다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
