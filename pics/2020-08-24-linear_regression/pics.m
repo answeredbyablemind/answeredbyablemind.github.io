@@ -138,6 +138,8 @@ Ngrid = 50;
 f = zeros(size(a));
 [x_norm, min_x_norm, max_x_norm] = fun_minmax_normalize(x);
 [y_norm, min_y_norm, max_y_norm] = fun_minmax_normalize(y);
+c2 = fit(x_norm', y_norm', 'poly1');
+
 for i = 1:Ngrid
     for j = 1:Ngrid
         f(i, j) = 1/2 * 1/length(x) * sum((a(i,j) * x_norm + b(i,j) - y_norm).^2);
@@ -147,22 +149,38 @@ figure('position',[488.0000  342.0000  926.6000  420.0000])
 subplot(1,2,1);
 surf(a, b, f)
 hold on;
-plot3(c1.p1, c1.p2, 1/2 * 1/length(x) * sum((c1.p1 * x_norm + c1.p2 - y_norm).^2),'p',...
+plot3(c2.p1, c2.p2, 1/2 * 1/length(x) * sum((c2.p1 * x_norm + c2.p2 - y_norm).^2),'p',...
     'markersize',20,'markerfacecolor','r','markeredgecolor','none');
 axis vis3d
+xlabel('s'); ylabel('i'); zlabel('cost');
 
 subplot(1,2,2);
 contour(a,b,f, 30)
 hold on;
 
-c2 = fit(x_norm', y_norm', 'poly1');
 plot(c2.p1, c2.p2, 'p',...
     'markersize',20,'markerfacecolor','r','markeredgecolor','none');
+xlabel('slope (normalized)'); ylabel('intercept (normalized)'); 
 
 xx = fun_restore_minmax_normalization(linspace(-30, 30, 100), min_x_norm, max_x_norm);
 yy = fun_restore_minmax_normalization(linspace(-30, 30, 100), min_y_norm, max_y_norm);
 
-% Gradient descent 해보기
+%% 녹화를 위한 회전
+newVid = VideoWriter('pic10', 'MPEG-4'); % New
+newVid.FrameRate = 30;
+newVid.Quality = 100;
+open(newVid);
+set(gcf,'color','w')
+subplot(1,2,1)
+for i = 1:360
+    disp(i)
+    camorbit(1, 0, 'data')
+    writeVideo(newVid, getframe(gcf))
+    drawnow
+end
+close(newVid)
+
+%% Gradient descent 해보기
 
 my_function = @(x, slp, int) slp * x + int;
 N = length(x);
@@ -196,7 +214,7 @@ end
 
 %% 영상 촬영 
 
-newVid = VideoWriter('pic10', 'MPEG-4'); % New
+newVid = VideoWriter('pic11', 'MPEG-4'); % New
 newVid.FrameRate = 30;
 newVid.Quality = 100;
 open(newVid);

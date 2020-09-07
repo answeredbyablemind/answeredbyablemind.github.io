@@ -232,10 +232,9 @@ $$y = f(x) = ax+b$$
 
 여기서 '가장 잘 설명한다'는 말을 다른 말로 정의하자면 모델과 데이터 간의 격차가 가장 적어야 한다고 말할 수도 있을 것 같다.
 
-다시 말해 전체 데이터에 대해 오차(error)가 가장 작은 모델이 더 좋은 모델이라고 말할 수 있다. 우리는 어떤 $i$ 번째 데이터 포인트에 대한 오차($e$)를 다음과 같이 정의해볼 수 있을 것이다.
+다시 말해 전체 데이터에 대해 평균적으로 오차(error)가 가장 작은 모델이 더 좋은 모델이라고 말할 수 있다. 우리는 어떤 $i$ 번째 데이터 포인트에 대한 오차($e$)를 다음과 같이 정의해볼 수 있을 것이다.
 
 우리의 직선 모델로부터 계산된 $y$축의 feature 값을 $\hat{y}_i$라고 하고, 데이터에서 주어진 $y$축의 feature 값을 $y_i$라고 하면,
-
 
 $$e_i = \hat{y_i} - y_i$$
 
@@ -255,7 +254,7 @@ $$e_i = (\hat{y_i} - y_i)^2$$
 
 $$e_i = \frac{1}{2}(\hat{y_i} - y_i)^2$$
 
-이제 데이터의 총 수가 $N$이라고 하면, 모든 데이터에 대한 오차의 총합은 다음과 같이 계산할 수 있다.
+이제 데이터의 총 수가 $N$이라고 하면, 모든 데이터에 대한 평균적인 오차는 다음과 같이 계산할 수 있다.
 
 $$E = \frac{1}{N}\sum_{i=1}^Ne_i = \frac{1}{N}\sum_{i=1}^N\frac{1}{2}(\hat{y_i} - y_i)^2 = \frac{1}{2N}\sum_{i=1}^{N}(\hat{y_i} - y_i)^2$$
 
@@ -278,11 +277,18 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 $E$를 최소화해주는 $a$와 $b$를 찾는 문제로 바꿔 생각할 수 있다. 즉, $E$의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
 
-
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic10.mp4">
   </video>
   <br>
   그림 10
+</p>
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic11.mp4">
+  </video>
+  <br>
+  그림 11
 </p>
