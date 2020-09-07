@@ -277,7 +277,7 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 $E$를 최소화해주는 $a$와 $b$를 찾는 문제로 바꿔 생각할 수 있다. 즉, $E$의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
 
-이것을 시각화해보자면 아래의 그림 10에서 slope와 intercept가 정의역인 공간에서 cost function $E$가 스칼라 함수로 존재한다고 할 수 있다.
+이것을 시각화해보자면 아래의 그림 10에서와 같이 slope(즉, 위에서 $a$에 해당)와 intercept(즉, 위에서 $b$에 해당)가 정의역인 공간에서 cost function $E$가 스칼라 함수로 존재한다고 할 수 있다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
@@ -285,18 +285,36 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
   </video>
   <br>
   그림 10. slope와 intercept가 정의역인 공간에서 cost function과 그 최솟값(별표)
+  <br> ※ 비용 함수의 parameter들은 모두 normalize하여 시각화하였음.
 </p>
 
 즉, 그림 10에서 볼 수 있는 최소값을 찾기 위해선 어떻게 하는 것이 좋을까?
 
 ## Gradient Descent를 이용한 최소 비용함수 계산
 
-함수의 최솟값을 찾는 방법은 정말 다양하지만, 일반적인 비용 함수에 대해서는 [Gradient Descent](https://angeloyeo.github.io/2020/08/16/gradient_descent.html) 방법이 가장 많이 사용된다.
+함수의 최솟값을 찾는 방법은 정말 다양하지만, 일반적으로 회귀모델 비용 함수의 최솟값을 찾는 문제를 해결하기 위해 [Gradient Descent](https://angeloyeo.github.io/2020/08/16/gradient_descent.html) 방법이 가장 많이 이용된다.
+
+짧게나마 [경사하강법](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)을 복습해보자면, 높은 곳에서 낮은 곳으로 비탈길을 타고 내려갈 때에는 한발 한발 씩 가장 경사진 방향으로 내려가는 방법을 수학적으로 써놓은 알고리즘이라고 할 수 있다.
+
+[gradient의 의미](https://angeloyeo.github.io/2019/08/25/gradient.html)를 생각하면 gradient에 대해 생각해볼 것은 gradient는 기울기가 '커지는' 방향으로 정의된다는 점이다.
+
+아래의 그림을 보면 검은색 점으로 표현한 곳에서 임의로 gradient descent 알고리즘을 시작한다고 하면 gradient의 방향은 다음과 같이 빨간색 화살표로 생각할 수 있다.
+
+
+
+즉, 우리가 구하고자 하는 함수 $f(a,b)$에서 파라미터 $a$, $b$를 임의의 값으로 설정한 뒤 업데이트 해줄 수 있다.
+
+$$a := a - \alpha \frac{\partial f}{\partial a}$$
+
+$$b := b - \alpha \frac{\partial f}{\partial b}$$
+
+여기서 $\alpha$는 learning rate 혹은 step size라고 부르는 것으로 $0.1$ 혹은 $0.001$ 등의 작은 숫자이다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic11.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic13.mp4">
   </video>
   <br>
-  그림 11. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
+  그림 13. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
+  <br> ※ 비용 함수의 parameter들은 모두 normalize하여 시각화하였음.
 </p>

@@ -180,6 +180,11 @@ for i = 1:360
 end
 close(newVid)
 
+%% Gradient 설명하기 위한 추가 그림
+figure;
+contour(a,b,f, 30)
+xlabel('slope (normalized)'); ylabel('intercept (normalized)'); 
+axis tight
 %% Gradient descent 해보기
 
 my_function = @(x, slp, int) slp * x + int;
