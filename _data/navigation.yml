@@ -55,8 +55,10 @@ docs-ko:
         url:    2020/09/07/scalar_multiplication_and_vector_addition.html
       - title:  행렬 곱에 대한 새로운 이해
         url:    2020/09/08/matrix_multiplication.html
-      - title:  벡터 공간과 공간 생성(span)
-        url:    2020/09/09/vector_space_and_span.html
+      - title:  공간 생성(span)과 벡터 공간
+        url:    2020/09/09/span_and_vector_space.html
+      - title:  행벡터의 의미와 벡터의 내적
+        url:    2020/09/10/row_vector_and_inner_product.html
       - title:  행렬과 선형변환
         url:    2019/07/15/Matrix_as_Linear_Transformation.html
       - title:  고유값과 고유벡터
@@ -67,8 +69,6 @@ docs-ko:
         url:    2019/08/01/SVD.html
       - title:  행렬식의 기하학적 의미
         url:    2019/08/06/determinant.html
-      - title:  벡터의 내적
-        url:    2020/09/10/inner_product.html
       - title:  상관계수는 벡터의 내적이다
         url:    2019/08/20/correlation_and_inner_product.html
       - title:  가우스-행렬 소거법의 기하학적 의미

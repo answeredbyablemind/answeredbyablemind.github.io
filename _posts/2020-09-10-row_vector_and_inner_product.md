@@ -1,5 +1,5 @@
 ---
-title: 벡터의 내적
+title: 행벡터의 의미와 벡터의 내적
 sidebar:
   nav: docs-ko
 aside:

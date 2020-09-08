@@ -1,5 +1,5 @@
 ---
-title: 벡터 공간과 공간 생성(span)
+title: 공간 생성(span)과 벡터 공간
 sidebar:
   nav: docs-ko
 aside:
