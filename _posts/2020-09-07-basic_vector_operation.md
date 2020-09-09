@@ -76,7 +76,7 @@ $$x\in V, k\in {\Bbb R} \Rightarrow kx\in V$$
 
 ## 벡터 간의 합
 
-임의의 집합 $V(\neq \phi)$에 대해 임의의 벡터 $, yx\in V$에 대하여 다음이 성립하여야 한다.
+임의의 집합 $V(\neq \phi)$에 대해 임의의 벡터 $x, y\in V$에 대하여 다음이 성립하여야 한다.
 
 $$x, y\in V, \Rightarrow x+y\in V$$
 
