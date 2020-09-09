@@ -51,8 +51,8 @@ header:
 docs-ko:
   - title:      선형대수학
     children:
-      - title:  스칼라 곱과 벡터 간의 합
-        url:    2020/09/07/scalar_multiplication_and_vector_addition.html
+      - title:  벡터의 기본 연산(상수배, 덧셈)
+        url:    2020/09/07/basic_vector_operation.html
       - title:  행렬 곱에 대한 새로운 이해
         url:    2020/09/08/matrix_multiplication.html
       - title:  공간 생성(span)과 벡터 공간

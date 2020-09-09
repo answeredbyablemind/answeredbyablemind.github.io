@@ -1,5 +1,5 @@
 ---
-title: 스칼라 곱과 벡터 간의 합
+title: 벡터의 기본 연산(상수배, 덧셈)
 sidebar:
   nav: docs-ko
 aside:
