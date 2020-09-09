@@ -65,14 +65,19 @@ $$x_{i+1} = x_i - \text{이동 거리}\times\text{기울기의 부호}$$
 
 여기서 $x_{i}$와 $x_{i+1}$은 각각 $i$번째 계산된 $x$의 좌표와 $i+1$번째 계산된 $x$의 좌표를 의미한다.
 
+그러면 여기서 이동거리는 어떻게 생각해야 할까? 그것은 gradient의 크기를 이용하면 된다.
 
 ## gradient의 크기도 이용해보자.
 
-식 (1)의 문제점을 생각해보면 "이동 거리"라는 factor인데, 이를 잘 생각해보면 gradient 값은 최소값에 가까울 수록 그 값이 작아진다.
+식 (1)의 문제점을 생각해보면 "이동 거리"라는 factor를 어떻게 구할지 생각해보아야 한다는 점이다.
 
-따라서, gradient 값 자체를 사용해버리면 x 값이 최소값에서 멀 때는 많이 이동하고, 최소값에 가까워졌을 때는 조금씩 이동할 수 있게 된다.
+이 문제에 대해 다시 잘 생각해보면 미분 계수(즉, 기울기 혹은 gradient)값은 극소값에 가까울 수록 그 값이 작아진다.
 
-즉, $\text{이동 거리}\times\text{기울기의 부호}$는 gradient 값을 직접 이용하되, 이동 거리를 적절히 사용자가 조절 할 수 있게 수식을 조정해줄 수 있을 것이다.
+사실 극대값에 가까울 때에도 미분 계수는 작아지기 마련인데, gradient descent 과정에서 극대값에 머물러 있는 경우는 극히 드물기 때문에 이 문제에 대해서는 고려하지 않고자 한다.
+
+따라서, 이동거리에 사용할 값을 gradient의 크기와 비례하는 factor를 이용하면 현재 $x$의 값이 극소값에서 멀 때는 많이 이동하고, 극소값에 가까워졌을 때는 조금씩 이동할 수 있게 된다.
+
+즉, 이동거리 는 gradient 값을 직접 이용하되, 이동 거리를 적절히 사용자가 조절 할 수 있게 수식을 조정해 줌으로써 상황에 맞게 이동거리를 맞춰나갈 수 있게 하면 될 것이다.
 
 이 때, 이동 거리의 조정 값을 보통 step size라고 부르고 기호는 $\alpha$로 쓰도록 하겠다.
 
@@ -80,13 +85,34 @@ $$x_{i+1} = x_i - \text{이동 거리}\times\text{기울기의 부호}$$
 
 ## 최종 수식
 
-최적화하고자 하는 함수 $f(x)$에 대해 다음과 같이 
+최적화하고자 하는 함수 $f(x)$에 대해 다음과 같이 쓸 수 있다.
 
 $$x_{i+1} = x_i - \alpha \frac{df}{dx}(x_i)$$
+
+<p align = "center">
+  <img src = "https://hackernoon.com/hn-images/1*ZmzSnV6xluGa42wtU7KYVA.gif">
+  <br>
+  그림 2. 함수 $f(x)$에 대한 gradient descent의 시각화
+  <br>
+  <a href="https://hackernoon.com/life-is-gradient-descent-880c60ac1be8"> 그림 출처 </a>
+</p>
 
 이를 다변수함수에 대해 확장하면 다음과 같이 쓸 수 있다.
 
 $$x_{i+1} = x_i - \alpha \nabla f(x_i)$$
+
+아래는 변수가 두 개인 경우에 대한 gradient descent의 예시 장면으로, 선형 회귀 모델을 찾는 과정이다.
+
+아래의 그림 3의 오른쪽의 contour plot이 등고선을 의미한다고 보면 된다.
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic13.mp4">
+  </video>
+  <br>
+  그림 3. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
+  <br> ※ 비용 함수의 parameter들은 모두 normalize하여 시각화하였음.
+</p>
 
 # 적절한 크기의 step size
 
@@ -97,9 +123,9 @@ step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 �
 아래의 그림을 통해 적절한 step size를 선택하지 못하는 경우 수렴하지 않거나 발산하는 경우를 확인해볼 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic4.png">
   <br>
-  그림 2. step size가 너무 작으면 매 step 별로 이동하는 거리가 너무 작아 수렴하지 못하고, step size가 너무 크면 발산하게 될 수 있다.
+  그림 4. step size가 너무 작으면 매 step 별로 이동하는 거리가 너무 작아 수렴하지 못하고, step size가 너무 크면 발산하게 될 수 있다.
 </p>
 
 # local minima 문제
@@ -110,7 +136,7 @@ gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때�
 
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic3.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic5.png">
   <br>
-  그림 3. 실제로 얻고 싶은 값은 global maximum(빨간색)이지만, initialization이 우연히도 잘못 되면 local minima(노란색)에 빠지기도 한다.
+  그림 5. 실제로 얻고 싶은 값은 global maximum(빨간색)이지만, initialization이 우연히도 잘못 되면 local minima(노란색)에 빠지기도 한다.
 </p>
