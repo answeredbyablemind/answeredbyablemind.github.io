@@ -47,6 +47,12 @@ gradient descent는 함수의 기울기(즉, gradient)를 이용해 $x$의 값�
 
 또, 기울기의 값이 크다는 것은 가파르다는 것을 의미하기도 하지만, 또 한편으로는 $x$의 위치가 최소값/최댓값에 해당되는 $x$ 좌표로부터 멀리 떨어져있는 것을 의미하기도 한다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic1.png">
+  <br>
+  그림 1. 기울기가 양수일 때와 음수일 때의 비교
+</p>
+
 ## gradient의 방향 성분을 이용하자.
 
 이를 이용해 특정 포인트 $x$에서 $x$가 커질 수록 함수값이 커지는 중이라면 (즉, 기울기의 부호는 양수) 음의 방향으로 $x$를 옮겨야 할 것이고,
@@ -91,9 +97,9 @@ step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 �
 아래의 그림을 통해 적절한 step size를 선택하지 못하는 경우 수렴하지 않거나 발산하는 경우를 확인해볼 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic2.png">
   <br>
-  그림 1. step size가 너무 작으면 매 step 별로 이동하는 거리가 너무 작아 수렴하지 못하고, step size가 너무 크면 발산하게 될 수 있다.
+  그림 2. step size가 너무 작으면 매 step 별로 이동하는 거리가 너무 작아 수렴하지 못하고, step size가 너무 크면 발산하게 될 수 있다.
 </p>
 
 # local minima 문제
@@ -104,7 +110,7 @@ gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때�
 
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic3.png">
   <br>
-  그림 2. 실제로 얻고 싶은 값은 global maximum(빨간색)이지만, initialization이 우연히도 잘못 되면 local minima(노란색)에 빠지기도 한다.
+  그림 3. 실제로 얻고 싶은 값은 global maximum(빨간색)이지만, initialization이 우연히도 잘못 되면 local minima(노란색)에 빠지기도 한다.
 </p>

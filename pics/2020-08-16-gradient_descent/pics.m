@@ -3,6 +3,20 @@ clear; close all; clc;
 %%
 xx = linspace(-3,3,100);
 yy = xx.^2;
+
+figure;
+
+plot(xx, yy)
+ylim([-1, 5])
+hold on;
+grid on;
+xlabel('x');
+ylabel('y');
+
+
+%%
+xx = linspace(-3,3,100);
+yy = xx.^2;
 yy_prime = 2*xx;
 n_iter = 100;
 
@@ -37,7 +51,7 @@ set(cbar, 'Ticks', [])
 set(gca,'visible','off')
 
 %% local minima ฐüทร 
-xx= linspace(-1, 5, 100);
+xx= linspace(-1, 5, 1000);
 yy = 1/5 * (xx+0.1).*(xx-1.1).*(xx-1.8) .* (xx-2.1).*(xx-3.2).*(8*xx-4.8)+2;
 
 figure; plot(xx, yy,'linewidth',2)
