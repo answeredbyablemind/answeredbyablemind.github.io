@@ -1,5 +1,5 @@
 ---
-title: 공간 생성(span)과 벡터 공간
+title: 행벡터의 의미와 벡터의 내적
 sidebar:
   nav: docs-ko
 aside:
@@ -7,6 +7,3 @@ aside:
 key: 20200909
 tags: 선형대수
 ---
-
-# 일차 독립과 일차 종속
-
