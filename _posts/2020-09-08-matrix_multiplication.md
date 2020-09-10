@@ -37,9 +37,47 @@ $$\begin{bmatrix}1 & 2\end{bmatrix}\begin{bmatrix}a\\c\end{bmatrix} = 1\cdot a +
 
 즉, 일반적으로 이용하는 행렬곱의 관점은 행벡터와 열벡터 간의 내적(inner product)을 계산함으로써 행렬곱이 이루어진다는 것을 알 수 있다.
 
+<p align = "center">
+  <img src = "https://i.imgur.com/3PVaEXE.gif">
+  <br>
+  그림 1. 행렬의 곱에 대한 시각화
+  <br>
+  <a href = "https://imgur.com/3PVaEXE"> 그림 출처 </a>
+</p>
 이러한 관점을 응용한 개념으로는 [공분산 행렬](https://angeloyeo.github.io/2019/07/27/PCA.html#%EA%B3%B5%EB%B6%84%EC%82%B0-%ED%96%89%EB%A0%AC%EC%9D%98-%EC%9D%98%EB%AF%B8)이 있다.
 
 # 열벡터의 선형 결합
+
+또 다른 방식으로 행렬의 곱을 이해하는 방법은 [열벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9)으로 이해하는 방법이다.
+
+이번에는 행렬과 벡터의 곱에 대해 생각해보자. 다시 말해 식 (1)에서 두 행렬을 곱했던 경우에서 오른쪽에 곱해지는 행렬의 한 열만 가져와서 결과를 확인해보자.
+
+$$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}\begin{bmatrix}a \\ c \end{bmatrix} = 
+
+\begin{bmatrix}
+  1 \cdot a +2\cdot c  \\ 
+  3\cdot a + 4\cdot c
+\end{bmatrix}$$
+
+이 결과를 보면 다음과 같이 생각할 수도 있다는 점을 알 수 있다.
+
+$$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}\begin{bmatrix}a \\ c \end{bmatrix} = 
+
+a\cdot\begin{bmatrix}
+  1\\ 
+  3
+\end{bmatrix}
++
+
+c\cdot\begin{bmatrix}
+  2\\ 
+  4
+\end{bmatrix}
+$$
+
+다시 말해 행렬과 벡터의 곱은 행렬을 구성하고 있는 [두 열벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9)을 다른 방식으로 표현한 것이라고 할 수 있는 것이다.
+
+// TODO: 이 관점이 왜 중요한지 서술할 것
 
 열벡터의 선형 결합의 관점에서 행렬곱을 이해하는 응용
 
@@ -50,6 +88,8 @@ SVD
 선형회귀
 
 # 행벡터의 선형 결합
+
+// 행공간을 만들어낼 수 있는것이긴 하지만, 이것에 대해서 굳이 다루어야할까? 고민해보기.
 
 행벡터의 선형 결합의 관점에서 행렬곱을 이해하는 응용
 
