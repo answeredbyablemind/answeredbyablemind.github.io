@@ -70,7 +70,7 @@ $$
 
 다시 말해 행렬과 벡터의 곱은 행렬을 구성하고 있는 [두 열벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9)을 다른 방식으로 표현한 것이라고 할 수 있는 것이다.
 
-[벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9) 부분에서 설명했던 것 처럼 벡터의 선형결합이 의미하는 것은 벡터 공간의 생성이다. 즉, 행렬과 벡터의 곱이라는 수식이 우리에게 묻는것은 "주어진 열벡터들을 이용해 만들 수 있는 벡터 공간에 대한 탐구"라는 점에서 매우 중요하다고 할 수 있다.
+[벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9) 부분에서 설명했던 것 처럼 벡터의 선형결합이 의미하는 것은 벡터 공간의 생성이다. 즉, 행렬과 벡터의 곱이라는 수식이 우리에게 묻는것은 "주어진 열벡터들을 이용해 만들 수 있는 벡터 공간(즉, 열공간(column space))에 대한 탐구"라는 점에서 매우 중요하다고 할 수 있다.
 
 이런 관점에서 다음의 수식의 의미를 생각해보자.
 
@@ -93,14 +93,18 @@ $$\Rightarrow x=-1, \text{ }y=2$$
 
 $$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\4\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
 
-// TODO 계속 작성
+위 식을 필자는 이렇게 해석하고 싶다. 
 
-이 뿐 아니라, 행렬과 벡터의 곱이 열벡터의 선형결합이라는 해석이 우리에게 주는 또 다른 관점은 행렬과 벡터의 곱을 기저 벡터의 변형을 통한 [벡터의 선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)으로 해석할 수 있도록 도움을 주기 때문이다.
+<center>
 
-열벡터의 선형 결합의 관점에서 행렬곱을 이해하는 응용
+  "두 벡터 $\begin{bmatrix}1\\3\end{bmatrix}$과 $\begin{bmatrix}2\\4\end{bmatrix}$로부터 생성된  벡터공간 내에 벡터 $\begin{bmatrix}3\\5\end{bmatrix}$가 존재하는가? 
 
-벡터의 기저 변환
-고윳값과 고유벡터
-PCA
-SVD
-선형회귀
+  만약 그렇다면,  $\begin{bmatrix}1\\3\end{bmatrix}$과 $\begin{bmatrix}2\\4\end{bmatrix}$을 어떻게 조합해야 $\begin{bmatrix}3\\5\end{bmatrix}$을 구할 수 있을까??"
+
+</center>
+
+이러한 관점을 이용한 선형대수학에서의 응용은 [선형연립방정식의 풀이](https://angeloyeo.github.io/2019/09/09/Gauss_Jordan.html)와 [선형 회귀](https://angeloyeo.github.io/2020/08/24/linear_regression.html)가 있다.
+
+이 뿐 아니라, 행렬과 벡터의 곱이 열벡터의 선형결합이라는 해석이 우리에게 주는 또 다른 관점은 행렬과 벡터의 곱을 기저 벡터의 변형을 통한 벡터의 선형 변환으로 해석할 수 있도록 도움을 주기 때문이다. 이 내용에 대해서는 [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)편에서 자세히 다루었으므로 해당 포스트를 참고하는 것도 좋을 것 같다.
+
+이러한 관점을 이용한 선형대수학에서의 응용은 [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html), [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html), [특이값 분해(SVD)](https://angeloyeo.github.io/2019/08/01/SVD.html) 등이 있다.
