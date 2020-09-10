@@ -37,14 +37,7 @@ $$\begin{bmatrix}1 & 2\end{bmatrix}\begin{bmatrix}a\\c\end{bmatrix} = 1\cdot a +
 
 즉, 일반적으로 이용하는 행렬곱의 관점은 행벡터와 열벡터 간의 내적(inner product)을 계산함으로써 행렬곱이 이루어진다는 것을 알 수 있다.
 
-<p align = "center">
-  <img src = "https://i.imgur.com/3PVaEXE.gif">
-  <br>
-  그림 1. 행렬의 곱에 대한 시각화
-  <br>
-  <a href = "https://imgur.com/3PVaEXE"> 그림 출처 </a>
-</p>
-이러한 관점을 응용한 개념으로는 [공분산 행렬](https://angeloyeo.github.io/2019/07/27/PCA.html#%EA%B3%B5%EB%B6%84%EC%82%B0-%ED%96%89%EB%A0%AC%EC%9D%98-%EC%9D%98%EB%AF%B8)이 있다.
+참고로 이러한 관점을 응용한 개념으로는 [공분산 행렬](https://angeloyeo.github.io/2019/07/27/PCA.html#%EA%B3%B5%EB%B6%84%EC%82%B0-%ED%96%89%EB%A0%AC%EC%9D%98-%EC%9D%98%EB%AF%B8)이 있으며, 공분산 행렬의 의미는 여러 종류의 feature들이 서로 얼마나 닮았는가(즉, 내적을 이용)를 의미한다.
 
 # 열벡터의 선형 결합
 
@@ -77,7 +70,32 @@ $$
 
 다시 말해 행렬과 벡터의 곱은 행렬을 구성하고 있는 [두 열벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9)을 다른 방식으로 표현한 것이라고 할 수 있는 것이다.
 
-// TODO: 이 관점이 왜 중요한지 서술할 것
+[벡터의 선형결합](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#%EB%B2%A1%ED%84%B0-%EA%B0%84%EC%9D%98-%EC%84%A0%ED%98%95-%EA%B2%B0%ED%95%A9) 부분에서 설명했던 것 처럼 벡터의 선형결합이 의미하는 것은 벡터 공간의 생성이다. 즉, 행렬과 벡터의 곱이라는 수식이 우리에게 묻는것은 "주어진 열벡터들을 이용해 만들 수 있는 벡터 공간에 대한 탐구"라는 점에서 매우 중요하다고 할 수 있다.
+
+이런 관점에서 다음의 수식의 의미를 생각해보자.
+
+$$A\vec{x} = \vec{b}$$
+
+예를 들어 아래와 같은 문제를 생각해보자.
+
+$$\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
+
+이 문제의 해답은 아래와 같다는 것은 연립방정식을 풀면 쉽게 알 수 있다.
+
+$$\begin{cases}
+x+2y = 3 \\
+3x+4y = 5
+\end{cases}$$
+
+$$\Rightarrow x=-1, \text{ }y=2$$
+
+하지만, 이번엔 이 식을 아래와 같이 생각해보자.
+
+$$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\4\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
+
+// TODO 계속 작성
+
+이 뿐 아니라, 행렬과 벡터의 곱이 열벡터의 선형결합이라는 해석이 우리에게 주는 또 다른 관점은 행렬과 벡터의 곱을 기저 벡터의 변형을 통한 [벡터의 선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)으로 해석할 수 있도록 도움을 주기 때문이다.
 
 열벡터의 선형 결합의 관점에서 행렬곱을 이해하는 응용
 
@@ -86,11 +104,3 @@ $$
 PCA
 SVD
 선형회귀
-
-# 행벡터의 선형 결합
-
-// 행공간을 만들어낼 수 있는것이긴 하지만, 이것에 대해서 굳이 다루어야할까? 고민해보기.
-
-행벡터의 선형 결합의 관점에서 행렬곱을 이해하는 응용
-
-가우스 조던 행렬 소거법
