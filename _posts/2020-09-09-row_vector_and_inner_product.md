@@ -46,7 +46,7 @@ $$\alpha(n\vec{w}) = n\alpha(\vec{w})$$
 가령 $y=x^2$을 시각화 한다는 것은 시각화하기에 좋은 범위의 $x$, 가령 $-2\leq x \leq 2$ 에 대해 대응되는 $y=f(x)=x^2$ 값을 좌표 평면에 모두 나타낸 것이다.
 
 
-그렇다면 $\begin{bmatrix}2 & 1\end{bmatrix}$이라는 행벡터를 시각화 한다고 하면, 임의의 벡터 $\begin{bmatrix}x \\y\end{bmatrix}$에 대해 함수의 출력을 좌표계에 나열하면 된다.
+그렇다면 $\begin{bmatrix}2 & 1\end{bmatrix}$이라는 행벡터를 시각화 한다고 하면, 임의의 벡터 $\begin{bmatrix}x & y \end{bmatrix}^T$에 대해 함수의 출력을 좌표계에 나열하면 된다.
 
 $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = 2x+ y$$
 
@@ -59,10 +59,12 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 
 ## 행벡터가 선형함수라는 것의 의미.
 
+작성 할 것.
+
+grid 들의 결합
+
 # 행벡터와 벡터의 내적
 
 벡터에 왜 정사영을 해주게 왜 내적의 기하학적 의미란 말인지?
-
-
 
 [^1]: 좀 더 엄밀하게는 범함수(functional)이라고 하는게 맞는 표현이지만, 엄밀한 내용에 대해선 넘어가도록 하자.
