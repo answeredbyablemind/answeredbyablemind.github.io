@@ -72,44 +72,16 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 </p>
 
 
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.png">
-  <br>
-  그림 3. 
-</p>
-
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic4.png">
-  <br>
-  그림 4. 
-</p>
-
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic5.png">
-  <br>
-  그림 5. 
-</p>
-
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.png">
-  <br>
-  그림 6. 
-</p>
-
-
 ## 행벡터가 선형함수라는 것의 의미.
 
 행벡터의 스칼라배
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.mp4">
   </video>
   <br>
-  그림 7. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
+  그림 3. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
 </p>
 
 # 행벡터와 벡터의 내적

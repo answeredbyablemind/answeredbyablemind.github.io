@@ -52,11 +52,12 @@ xlim([-3, 3])
 ylim([-3, 3])
 
 %% 등고선에 걸치는 여러 벡터 그려주기
-ontos = [-3, -1, 0, 1, 3];
+ontos = [-3, -1, 0, 1, 3, 4];
 my_color = lines(length(ontos));
+figure('color','w','position',[680, 300, 1000, 680]);
+ii=1;
 for i_onto = 1:length(ontos)
-    
-    figure('color','w','position',[680, 500, 480, 480]);
+    subplot(2,3, ii);
     hold on;
     set(gca,'Visible','off')
     xlim([-3, 3])
@@ -85,9 +86,10 @@ for i_onto = 1:length(ontos)
     
     % line들 그려주기
     xx = linspace(-6, 6, 100);
-    
-    for i = -3:3
+
+    for i = -3:4
         plot(xx, -2 * xx + i,'k--');
+    
     end
     onto = ontos(i_onto);
     
@@ -102,11 +104,16 @@ for i_onto = 1:length(ontos)
             h.Primitive.LineWidth= 2;
         end
     end
+    
+    % title 써주기
+    text(0, 3.5, ['출력값이 ',num2str(onto),'인 벡터들'],'HorizontalAlignment','center')
+    
+    ii=ii+1;
 end
 
 %% row vector 함수 시각화에서 scaling
 
-newVid = VideoWriter('pic7', 'MPEG-4'); % New
+newVid = VideoWriter('pic3', 'MPEG-4'); % New
 newVid.FrameRate = 20;
 newVid.Quality = 100;
 open(newVid);
