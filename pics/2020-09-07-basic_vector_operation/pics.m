@@ -66,6 +66,59 @@ line([linetip(1), onto(1)], [linetip(2), onto(2)],'color','k','linestyle','--')
 
 % saveas(gcf,'pic1.png');
 
+%% º¤ÅÍÀÇ ½ºÄ®¶ó¹è
+
+newVid = VideoWriter('pic2', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+c = sin(linspace(0, 2*pi, 100)) + 2;
+
+
+figure('color','w');
+hold on;
+set(gca,'Visible','off')
+xlim([-2, 9])
+ylim([-2, 9])
+
+Annotate(gca,'arrow', [-1.5, 8], [0, 0]);
+Annotate(gca,'arrow', [0, 0], [-1.5, 8]);
+
+for i = -1:7
+    if i~=0
+        line([i ,i], [-0.1, 0.1],'color','k')
+        text(i, -0.3, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+for i = -1:7
+    if i~= 0
+        line([-0.1, 0.1], [i ,i], 'color','k')
+        text(-0.3, i, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+% xlabel on original axis
+text(7.9228, -0.51633, '$$x$$','interpreter','latex','fontsize',12);
+text(-0.24401, 8.3105, '$$y$$','interpreter','latex','fontsize',12);
+
+
+for i = 1:length(c)
+    h = Annotate(gca,'arrow',[0, c(i)],[0, c(i)]);
+    h.Primitive.Color = [1, 0, 0];
+    h.Primitive.LineWidth = 2;
+
+    writeVideo(newVid, getframe(gcf))
+    drawnow
+    
+    if i< length(c)
+        delete(h);
+    end
+end
+
+close(newVid)
+
 %% º¤ÅÍÀÇ ÇÕ ±×¸²
 
 

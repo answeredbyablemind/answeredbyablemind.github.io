@@ -76,7 +76,14 @@ $$x\in V, k\in {\Bbb R} \Rightarrow kx\in V$$
 
 그림으로 설명하자면, 주어진 화살표에 대해서 화살표의 크기가 늘어나거나 줄어드는 것을 의미할 수 있다.
 
-// 그림 2 //
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic2.mp4">
+  </video>
+  <br>
+  그림 2. 다양한 스칼라값에 대응하여 크기가 커지거나 작아지는 2차원 실수 공간 상의 벡터
+</p>
 
 ## 벡터 간의 합
 
