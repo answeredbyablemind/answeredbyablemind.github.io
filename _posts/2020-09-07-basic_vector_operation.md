@@ -21,7 +21,7 @@ tags: 선형대수
 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic1.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic1.png">
   <br>
   그림 1. 좌표계의 변환과 벡터. 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.
 </p>
@@ -86,7 +86,11 @@ $$x, y\in V, \Rightarrow x+y\in V$$
 
 그림으로 설명하자면 주어진 두 화살표에 대해 화살표의 크기와 방향을 합해주어 평행사변형 꼴을 이룰 수 있도록 합해진 벡터가 출력되면 된다.
 
-// 그림 3 //
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic3.png">
+  <br>
+  그림 3. 두 벡터 $\vec{a}$와 $\vec{b}$의 합인 $\vec{a}+\vec{b}$
+</p>
 
 약간의 부연설명을 하자면, 물리학에서 말하는 벡터와 수학에서 말하는 벡터는 약간 차이가 있는데, 수학에서는 모든 벡터들의 시점이 원점이어야 한다.
 

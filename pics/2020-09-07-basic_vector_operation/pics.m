@@ -51,10 +51,10 @@ text(3.0818, 4.3959, '$$\vec{v} = 3\hat{i} + 4\hat{j}$$','interpreter','latex','
 text(3.6, 3.3959, ['$$= ',sprintf('%.1f',vec_changed(1)),'\hat{i}_{new} + ',sprintf('%.1f',vec_changed(2)),'\hat{j}_{new}$$'],'interpreter','latex','fontsize',15)
 
 % xlabel on original axis
-text(7.9228, -0.51633, '$$\hat{i}$$','interpreter','latex','fontsize',12);
-text(-0.24401, 8.3105, '$$\hat{j}$$','interpreter','latex','fontsize',12);
-text(7.8173, 1.821,'$$\hat{i}_{new}$$','interpreter','latex','fontsize',12);
-text(-2.038, 8.4708, '$$\hat{j}_{new}$$','interpreter','latex','fontsize',12);
+text(7.9228, -0.51633, '$$x$$','interpreter','latex','fontsize',12);
+text(-0.24401, 8.3105, '$$y$$','interpreter','latex','fontsize',12);
+text(7.8173, 1.821,'$$x_{new}$$','interpreter','latex','fontsize',12);
+text(-2.038, 8.4708, '$$y_{new}$$','interpreter','latex','fontsize',12);
 
 % 새로운 좌표계에 정사영
 linetip = [3; 4];
@@ -64,7 +64,55 @@ line([linetip(1), onto(1)], [linetip(2), onto(2)],'color','k','linestyle','--')
 onto = mtx_rot * [0; vec_changed(2)];
 line([linetip(1), onto(1)], [linetip(2), onto(2)],'color','k','linestyle','--')
 
-saveas(gcf,'pic1.png');
+% saveas(gcf,'pic1.png');
+
+%% 벡터의 합 그림
+
+
+figure('color','w');
+hold on;
+set(gca,'Visible','off')
+xlim([-2, 9])
+ylim([-2, 9])
+
+Annotate(gca,'arrow', [-1.5, 8], [0, 0]);
+Annotate(gca,'arrow', [0, 0], [-1.5, 8]);
+
+for i = -1:7
+    if i~=0
+        line([i ,i], [-0.1, 0.1],'color','k')
+        text(i, -0.3, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+for i = -1:7
+    if i~= 0
+        line([-0.1, 0.1], [i ,i], 'color','k')
+        text(-0.3, i, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+
+% xlabel on original axis
+text(7.9228, -0.51633, '$$x$$','interpreter','latex','fontsize',12);
+text(-0.24401, 8.3105, '$$y$$','interpreter','latex','fontsize',12);
+
+Annotate(gca,'arrow', [0, 3], [0, 1]);
+Annotate(gca,'arrow', [0, 1], [0, 3]);
+h =Annotate(gca,'arrow', [0, 4], [0, 4]);
+h.Primitive.LineWidth = 2;
+h.Primitive.Color = [1, 0, 0];
+
+h = Annotate(gca,'line', [3, 4], [1, 4]);
+h.Primitive.LineStyle = '--';
+h = Annotate(gca,'line', [1, 4], [3, 4]);
+h.Primitive.LineStyle = '--';
+
+text(3.2592, 1.0306,'$$\vec{a}$$','interpreter','latex','fontsize',15)
+text(0.59793, 3.4038,'$$\vec{b}$$','interpreter','latex','fontsize',15)
+text(4.2224, 4.6866,'$$\vec{a}+\vec{b}$$','interpreter','latex','fontsize',15)
+
+% saveas(gcf,'pic3.png')
 %% 2차원 벡터공간 span animation
 
 
