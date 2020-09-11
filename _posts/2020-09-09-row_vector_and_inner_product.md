@@ -57,11 +57,38 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 
 즉, 이 등고선을 이용하면 임의의 벡터 $\vec{v}$가 $\begin{bmatrix} 2 & 1\end{bmatrix}$이라는 함수를 통과했을 때의 출력값을 쉽게 시각화 할 수 있게 된다.
 
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
+  <br>
+  그림 1. 행벡터를 통해 출력된 함수값들의 시각화
+</p>
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic2.png">
+  <br>
+  그림 2. 
+</p>
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.png">
+  <br>
+  그림 3. 
+</p>
+
 ## 행벡터가 선형함수라는 것의 의미.
 
-작성 할 것.
+행벡터의 스칼라배
 
-grid 들의 결합
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.mp4">
+  </video>
+  <br>
+  그림 7. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
+</p>
 
 # 행벡터와 벡터의 내적
 
