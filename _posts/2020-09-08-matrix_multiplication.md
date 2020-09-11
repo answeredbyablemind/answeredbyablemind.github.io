@@ -16,7 +16,10 @@ tags: 선형대수
 
 행렬의 곱은 일반적으로 다음과 같이 생각한다.
 
-// 그림 1: 행렬의 일반적인 곱셈 방법 그림으로 표현할 것. 두 행렬의 크기 명시할 것. //
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-08-matrix_multiplication/pic1.png">  <br>
+  그림 1. 행렬의 일반적인 곱셈 방법
+</p>
 
 수식을 이용해 조금 더 정확하게 쓰면 다음과 같다.
 
