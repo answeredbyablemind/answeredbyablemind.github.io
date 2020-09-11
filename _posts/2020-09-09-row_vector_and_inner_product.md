@@ -78,12 +78,34 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
   그림 3. 
 </p>
 
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic4.png">
+  <br>
+  그림 4. 
+</p>
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic5.png">
+  <br>
+  그림 5. 
+</p>
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.png">
+  <br>
+  그림 6. 
+</p>
+
+
 ## 행벡터가 선형함수라는 것의 의미.
 
 행벡터의 스칼라배
 
 <p align = "center">
-  <video width = "600" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.mp4">
   </video>
   <br>
