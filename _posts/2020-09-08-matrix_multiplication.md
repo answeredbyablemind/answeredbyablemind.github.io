@@ -17,7 +17,7 @@ tags: 선형대수
 행렬의 곱은 일반적으로 다음과 같이 생각한다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-08-matrix_multiplication/pic1.png">  <br>
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-08-matrix_multiplication/pic1.png">  <br>
   그림 1. 행렬의 일반적인 곱셈 방법
 </p>
 
