@@ -21,7 +21,7 @@ y = flipud(Y(:));
 my_color = flipud(parula(length(x)));
 
 newVid = VideoWriter('pic4', 'MPEG-4'); % New
-newVid.FrameRate = 10;
+newVid.FrameRate = 5;
 newVid.Quality = 100;
 open(newVid);
 
