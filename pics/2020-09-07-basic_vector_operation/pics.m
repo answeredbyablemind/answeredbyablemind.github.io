@@ -3,7 +3,7 @@ clear; close all; clc;
 addpath('D:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
 %% 2차원 벡터공간 span animation
 
-figure;
+figure('color','w');
 hold on;
 
 set(gca,'Color',[120, 120, 120]/255)
@@ -34,6 +34,10 @@ for i = 1:length(x)
         writeVideo(newVid, getframe(gcf))
         drawnow
     end
+end
+
+for i =1:newVid.FrameRate % 1초 정도만 마지막 장면을 늘리는것으로
+    writeVideo(newVid, getframe(gcf))
 end
 
 close(newVid)
