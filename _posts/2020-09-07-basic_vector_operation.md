@@ -132,7 +132,7 @@ $$\Rightarrow c_1\begin{bmatrix}1\\0 \end{bmatrix}+c_2\begin{bmatrix}0\\1 \end{b
 
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic4.mp4">
   </video>
   <br>
