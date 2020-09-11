@@ -20,7 +20,11 @@ tags: 선형대수
 
 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다.
 
-// 그림 1 //
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic1.png">
+  <br>
+  그림 1. 좌표계의 변환과 벡터. 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.
+</p>
 
 이러한 벡터 정의에 대해 첨언하자면 이러한 '크기와 방향으로 정의되는 값'이라는 설명은 Euclidean 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다.
 
