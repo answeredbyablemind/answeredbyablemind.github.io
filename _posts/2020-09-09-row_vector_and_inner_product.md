@@ -10,14 +10,14 @@ tags: 선형대수
 
 지금까지 우리는 [벡터란 무엇인지에 대해 알아보고](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html), [행렬과 벡터의 곱](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)에 대해 알아보았다.
 
-짧게 요약하자면 벡터란 상수배(곱셈 규칙)와 덧셈 규칙이 정의되는 원소들이라고 하였으며, 이들의 집합에 이 연산들이 정의된 집합을 벡터 공간(vector space)라고 한다고 하였다.
+짧게 요약하자면 벡터란 상수배(곱셈 규칙)와 덧셈 규칙이 정의되는 원소들이라고 하였으며, 이들의 집합에 이 연산들이 정의된 집합을 벡터 공간(vector space)라고 한다고 하였다. 여기서 이러한 상수배와 덧셈 규칙이 정의되는 원소들을 '선형성을 갖는다'라고 표현한다.
 
 또, 행렬은 벡터를 또 다른 벡터로 변환 시키는 일종의 연산자로 볼 수 있으며, 특히 행렬과 벡터의 곱은 행렬의 열벡터들을 얼마나 선형결합 시킬 것인가라는 의미로 볼 수 있다고 하였다.
 
 이번 시간에는 행벡터의 기능과 역할에 대해 알아보고, 이를 통해 벡터의 내적이 왜 기하학적으로 한 벡터에서 다른 벡터로의 정사영과 관련이 되어 있는지를 알아보고자 한다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
   <br>
   그림 1. 행벡터의 기능과 역할은 무엇이며 이것이 벡터의 내적의 기하학적 의미와는 어떻게 연관되어 있을까?
 </p>
@@ -27,18 +27,36 @@ tags: 선형대수
 행렬과 행렬의 곱 혹은 행렬과 벡터의 곱에 대해 생각해보면 행렬의 곱을 해석할 수 있는 가장 기본적인 방법은 아래와 같이 곱해지는 행렬 중 왼쪽 행렬의 행 요소들과 오른쪽 행렬의 열 요소들의 값들을 순서대로 곱해주고 더해주는 방법이다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic2.png">
   <br>
   그림 2. 행렬의 곱에 관한 가장 기본적인 해석
 </p>
 
-행벡터는 열벡터에 대한 함수이다.
+이것은 [행렬의 곱에 대한 새로운 이해](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 이러한 해석이 행벡터와 역벡터 간의 내적이라고 언급하였다. 하지만, 이번에는 '내적'이라는 용어나 계산 방법을 모른다고 생각하고, 오직 행렬의 곱셈만이 주어진 상태라고 했을 때 행벡터와 열벡터 간에 어떤 일이 일어나는지 알아보도록 하자.
 
-가령 $[2, 1]$이라는 행벡터와 $[3, -4]^T$라는 열벡터에 대해,
+우리는 보통 '벡터'라 하면 열벡터를 우리가 "흔히 말하는" 벡터라고 본다. 이것은 일종의 수학적 관례로써 기준을 잡아둔 것으로 생각하면 된다. 다시 말해, 변화가 되는 대상을 열 벡터로 보자고 관례적으로 잡아둔 것이다.
 
-$$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right) = 2\cdot 3 + 1\cdot(-4) = 6-4 = 2$$
+반면, 행벡터는 열벡터에 대한 함수이다. 무슨 말이냐 하면, 방금 언급했듯 열벡터는 '변화의 대상'이 되는 것에 반해 행벡터는 변화를 시키는 행위자인 것이다.
 
-즉, $V\rightarrow\Bbb{R}$인 함수
+가령 $[2, 1]$이라는 행벡터와 $[3, -4]^T$라는 열벡터에 대해 다음과 같은 곱셈을 생각해보자.
+
+$$\begin{bmatrix}2 & 1\end{bmatrix}\begin{bmatrix}3\\-4\end{bmatrix} = 2\cdot 3 + 1\cdot(-4) = 6-4 = 2$$
+
+이것을 달리 생각해보면 아래와 같이 함수의 표기로 생각할 수도 있다.
+
+$$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right) = 2$$
+
+즉, 행벡터는 열벡터를 입력으로 받아 스칼라를 출력하는 $f:V\rightarrow\Bbb{R}$인 함수[^1]인 것이다.
+
+# 행벡터는 선형연산자일까?
+
+연산자라는 것은 어떤 입력을 받아 출력을 내뱉는 함수라는 의미와 같으며, 여기서 '선형'이라는 말이 붙는 것은 벡터공간의 요소라면 가져야할 덧셈 법칙과 상수배(곱셈 법칙)이 적용되는 연산자라는 의미이다.
+
+이러한 선형성을 만족하는지 알아보는 것이 왜 중요할까?
+
+그것은 행벡터가 처리 대상인 '데이터'가 아니라 '함수'임에도 선형성을 갖는다면 일반적인 벡터에 적용할 수 있다고 알려진 모든 method들이 적용가능해지는 것이다.
+
+// 여기부터 추가 작성 할 것...
 
 그리고 선형연산자이다.
 
@@ -56,7 +74,7 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 
 다시 말해 row vector는
 
-* 열벡터를 입력으로 받아 스칼라(즉, 숫자)를 출력하는 함수[^1]
+* 열벡터를 입력으로 받아 스칼라(즉, 숫자)를 출력하는 함수
 * 선형연산자임. 
 * 다시 말해 두 벡터를 더한 채로 함수 출력을 볼 때와 두 벡터의 함수 출력을 합한 것이 같음.
 * 또, 선형연산자이기 때문에 입력에 상수배를 해준 채로 함수를 출력할 때와 출력된 함수에 상수배를 해준 것의 결과는 같음.
