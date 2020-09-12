@@ -17,12 +17,20 @@ tags: 선형대수
 이번 시간에는 행벡터의 기능과 역할에 대해 알아보고, 이를 통해 벡터의 내적이 왜 기하학적으로 한 벡터에서 다른 벡터로의 정사영과 관련이 되어 있는지를 알아보고자 한다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic0.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
   <br>
-  행벡터의 기능과 역할은 무엇이며 이것이 벡터의 내적의 기하학적 의미와는 어떻게 연관되어 있을까?
+  그림 1. 행벡터의 기능과 역할은 무엇이며 이것이 벡터의 내적의 기하학적 의미와는 어떻게 연관되어 있을까?
 </p>
 
 # 행벡터의 기능과 역할
+
+행렬과 행렬의 곱 혹은 행렬과 벡터의 곱에 대해 생각해보면 행렬의 곱을 해석할 수 있는 가장 기본적인 방법은 아래와 같이 곱해지는 행렬 중 왼쪽 행렬의 행 요소들과 오른쪽 행렬의 열 요소들의 값들을 순서대로 곱해주고 더해주는 방법이다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
+  <br>
+  그림 2. 행렬의 곱에 관한 가장 기본적인 해석
+</p>
 
 행벡터는 열벡터에 대한 함수이다.
 
@@ -75,16 +83,16 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic1.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.png">
   <br>
-  그림 1. 행벡터를 통해 출력된 함수값들의 시각화
+  그림 3. 행벡터를 통해 출력된 함수값들의 시각화
 </p>
 
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic4.png">
   <br>
-  그림 2. 
+  그림 4. row vector의 scaling에 따른 함수값 등고선의 변화
 </p>
 
 
