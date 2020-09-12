@@ -32,7 +32,7 @@ tags: 선형대수
   그림 2. 행렬의 곱에 관한 가장 기본적인 해석
 </p>
 
-이것은 [행렬의 곱에 대한 새로운 이해](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 이러한 해석이 행벡터와 역벡터 간의 내적이라고 언급하였다. 하지만, 이번에는 '내적'이라는 용어나 계산 방법을 모른다고 생각하고, 오직 행렬의 곱셈만이 주어진 상태라고 했을 때 행벡터와 열벡터 간에 어떤 일이 일어나는지 알아보도록 하자.
+이것은 [행렬의 곱에 대한 새로운 이해](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 이러한 해석이 행벡터와 역벡터 간의 내적으로 해석될 수 있다고 언급하였다. 하지만, 이번에는 '내적'이라는 용어나 계산 방법을 모른다고 생각하고, 오직 행렬의 곱셈만이 주어진 상태라고 했을 때 행벡터와 열벡터 간에 어떤 일이 일어나는지 알아보도록 하자.
 
 우리는 보통 '벡터'라 하면 열벡터를 우리가 "흔히 말하는" 벡터라고 본다. 이것은 일종의 수학적 관례로써 기준을 잡아둔 것으로 생각하면 된다. 다시 말해, 변화가 되는 대상을 열 벡터로 보자고 관례적으로 잡아둔 것이다.
 
@@ -48,7 +48,48 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right
 
 즉, 행벡터는 열벡터를 입력으로 받아 스칼라를 출력하는 $f:V\rightarrow\Bbb{R}$인 함수[^1]인 것이다.
 
-# 행벡터는 선형연산자일까?
+# 행벡터의 시각화
+
+지금까지 우리는 행벡터는 열벡터를 입력으로 받는 함수라고 언급하였다. 그러면 우리는 함수로써의 행벡터를 시각화 할 수 있을까? 
+
+함수를 시각화 한다는 것의 의미는 임의의 입력 $x$에 대해 함수의 출력 $f(x)$를 대응시킨 좌표들을 나열한 것이다.
+
+가령 $y=x^2$을 시각화 한다는 것은 시각화하기에 좋은 범위의 $x$, 가령 $-2\leq x \leq 2$ 에 대해 대응되는 $y=f(x)=x^2$ 값을 좌표 평면에 모두 나타낸 것이다.
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.png">
+  <br>
+  그림 3. 
+</p>
+
+그렇다면 $\begin{bmatrix}2 & 1\end{bmatrix}$이라는 행벡터를 시각화 한다고 하면, 임의의 벡터 $\begin{bmatrix}x & y \end{bmatrix}^T$에 대해 함수의 출력을 좌표계에 나열하면 된다.
+
+$$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = 2x+ y$$
+
+
+등고선의 아이디어를 이용하자.
+
+// 등고선 그림 넣을 것 //
+
+즉, 이 등고선을 이용하면 임의의 벡터 $\vec{v}$가 $\begin{bmatrix} 2 & 1\end{bmatrix}$이라는 함수를 통과했을 때의 출력값을 쉽게 시각화 할 수 있게 된다.
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic4.png">
+  <br>
+  그림 4. 행벡터를 통해 출력된 함수값들의 시각화
+</p>
+
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic5.png">
+  <br>
+  그림 5. row vector의 scaling에 따른 함수값 등고선의 변화
+</p>
+
+
+# 행벡터는 선형연산자이다.
 
 연산자라는 것은 어떤 입력을 받아 출력을 내뱉는 함수라는 의미와 같으며, 여기서 '선형'이라는 말이 붙는 것은 벡터공간의 요소라면 가져야할 덧셈 법칙과 상수배(곱셈 법칙)이 적용되는 연산자라는 의미이다.
 
@@ -78,52 +119,17 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 * 선형연산자임. 
 * 다시 말해 두 벡터를 더한 채로 함수 출력을 볼 때와 두 벡터의 함수 출력을 합한 것이 같음.
 * 또, 선형연산자이기 때문에 입력에 상수배를 해준 채로 함수를 출력할 때와 출력된 함수에 상수배를 해준 것의 결과는 같음.
-
-# 행벡터의 시각화
-
-지금까지 우리는 행벡터는 열벡터를 입력으로 받는 함수라고 언급하였다. 그렇다면 함수를 시각화 한다는 것, 즉 함수를 그린다는 것의 의미는 무엇일까?
-
-함수를 시각화 한다는 것의 의미는 임의의 입력 $x$에 대해 함수의 출력 $f(x)$를 대응시킨 좌표들을 나열한 것이다.
-
-가령 $y=x^2$을 시각화 한다는 것은 시각화하기에 좋은 범위의 $x$, 가령 $-2\leq x \leq 2$ 에 대해 대응되는 $y=f(x)=x^2$ 값을 좌표 평면에 모두 나타낸 것이다.
-
-
-그렇다면 $\begin{bmatrix}2 & 1\end{bmatrix}$이라는 행벡터를 시각화 한다고 하면, 임의의 벡터 $\begin{bmatrix}x & y \end{bmatrix}^T$에 대해 함수의 출력을 좌표계에 나열하면 된다.
-
-$$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = 2x+ y$$
-
-
-등고선의 아이디어를 이용하자.
-
-// 등고선 그림 넣을 것 //
-
-즉, 이 등고선을 이용하면 임의의 벡터 $\vec{v}$가 $\begin{bmatrix} 2 & 1\end{bmatrix}$이라는 함수를 통과했을 때의 출력값을 쉽게 시각화 할 수 있게 된다.
-
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.png">
-  <br>
-  그림 3. 행벡터를 통해 출력된 함수값들의 시각화
-</p>
-
-
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic4.png">
-  <br>
-  그림 4. row vector의 scaling에 따른 함수값 등고선의 변화
-</p>
-
-
+* 
 ## 행벡터가 선형함수라는 것의 의미.
 
 행벡터의 스칼라배
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.mp4">
   </video>
   <br>
-  그림 3. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
+  그림 6. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
 </p>
 
 벡터에 대해 정의할 때 스칼라배와 벡터 간의 합에 대해 정의가 되는 것들을 벡터로 정의한다고 하였으며, 이 벡터는 벡터 공간을 이룬다고 하였다.

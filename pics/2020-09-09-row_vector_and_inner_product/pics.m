@@ -1,6 +1,39 @@
 clear; close all; clc;
 addpath('D:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
+addpath('C:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
+%% y = x^2
 
+figure('color','w','position',[680, 317, 500, 413]);
+hold on;
+set(gca,'Visible','off')
+xlim([-3, 3])
+ylim([-1, 5])
+
+Annotate(gca,'arrow', [-3, 3], [0, 0]);
+Annotate(gca,'arrow', [0, 0], [-1, 5]);
+
+for i = -2:2
+    if i~=0
+        line([i ,i], [-0.1, 0.1],'color','k')
+        text(i, -0.3, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+for i = 0:4
+    if i~= 0
+        line([-0.1, 0.1], [i ,i], 'color','k')
+        text(-0.3, i, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+% xlabel on original axis
+text(2.9228, -0.3, '$$x$$','interpreter','latex','fontsize',12);
+text(-0.3, 4.8105, '$$y$$','interpreter','latex','fontsize',12);
+
+xx = linspace(-2, 2, 100);
+plot(xx, xx.^2, 'color',[0.85, 0.325, 0.098],'linewidth',2)
+
+text(2, 4.3, '$$y=x^2$$','interpreter','latex','fontsize',12,'HorizontalAlignment','Center')
 %% row vector operation 시각화
 figure('color','w','position',[680, 500, 480, 480]);
 hold on;
