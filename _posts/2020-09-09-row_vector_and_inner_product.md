@@ -8,9 +8,25 @@ key: 20200909
 tags: 선형대수
 ---
 
+지금까지 우리는 [벡터란 무엇인지에 대해 알아보고](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html), [행렬과 벡터의 곱](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)에 대해 알아보았다.
+
+짧게 요약하자면 벡터란 상수배(곱셈 규칙)와 덧셈 규칙이 정의되는 원소들이라고 하였으며, 이들의 집합에 이 연산들이 정의된 집합을 벡터 공간(vector space)라고 한다고 하였다.
+
+또, 행렬은 벡터를 또 다른 벡터로 변환 시키는 일종의 연산자로 볼 수 있으며, 특히 행렬과 벡터의 곱은 행렬의 열벡터들을 얼마나 선형결합 시킬 것인가라는 의미로 볼 수 있다고 하였다.
+
+이번 시간에는 행벡터의 기능과 역할에 대해 알아보고, 이를 통해 벡터의 내적이 왜 기하학적으로 한 벡터에서 다른 벡터로의 정사영과 관련이 되어 있는지를 알아보고자 한다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic0.png">
+  <br>
+  행벡터의 기능과 역할은 무엇이며 이것이 벡터의 내적의 기하학적 의미와는 어떻게 연관되어 있을까?
+</p>
+
+# 행벡터의 기능과 역할
+
 행벡터는 열벡터에 대한 함수이다.
 
-가령
+가령 $[2, 1]$이라는 행벡터와 $[3, -4]^T$라는 열벡터에 대해,
 
 $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right) = 2\cdot 3 + 1\cdot(-4) = 6-4 = 2$$
 
@@ -18,7 +34,7 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right
 
 그리고 선형연산자이다.
 
-$$\alpha(\vec{v}+\vec{w}) = \alpha\vec{v} + \alpha\vec{w}$$
+$$f(\vec{v}+\vec{w}) = f(\vec{v}) + f(\vec{w})$$
 
 예시)
 
@@ -26,7 +42,7 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix} + \be
 
 = \begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right) + \begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}1\\2\end{bmatrix}\right)$$
 
-$$\alpha(n\vec{w}) = n\alpha(\vec{w})$$
+$$f(n\vec{w}) = nf(\vec{w})$$
 
 예시)
 
