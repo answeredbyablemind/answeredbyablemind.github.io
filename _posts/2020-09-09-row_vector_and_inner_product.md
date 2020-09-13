@@ -67,25 +67,34 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right
 
 $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\right) = 2x+ y$$
 
+행벡터는 열벡터를 입력으로 받고 스칼라값을 출력하므로 여러가지 출력에 대한 함수를 하나의 $x, y$ 평면에 나타낼 수도 있을 것이다.
 
-등고선의 아이디어를 이용하자.
+가령, $2x+y=1$을 만족하는 $x, y$ 쌍을 나타내면 $y=-2x+1$이라는 선 위에 모두 표시할 수 있을 것이다.
 
-// 등고선 그림 넣을 것 //
+이렇듯 여러 스칼라 출력값에 대한 결과를 한번에 표시하기 위해서 등고선의 아이디어를 차용해보자.
+
+<p align = "center">
+  <img src = "https://mblogthumb-phinf.pstatic.net/20130512_173/rbtnddl123_1368334255943Lcw14_JPEG/%B5%EE%B0%ED%BC%B11.jpg?type=w2">
+  <br>
+  그림 4. 등고선의 예시
+  <br>
+  <a href = "https://m.blog.naver.com/PostView.nhn?blogId=rbtnddl123&logNo=60191795215&proxyReferer=https:%2F%2Fwww.google.com%2F">그림 출처</a>
+</p>
 
 즉, 이 등고선을 이용하면 임의의 벡터 $\vec{v}$가 $\begin{bmatrix} 2 & 1\end{bmatrix}$이라는 함수를 통과했을 때의 출력값을 쉽게 시각화 할 수 있게 된다.
 
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic4.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic5.png">
   <br>
-  그림 4. 행벡터를 통해 출력된 함수값들의 시각화
+  그림 5. 행벡터를 통해 출력된 함수값들의 시각화
 </p>
 
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic5.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.png">
   <br>
-  그림 5. row vector의 scaling에 따른 함수값 등고선의 변화
+  그림 6. row vector의 scaling에 따른 함수값 등고선의 변화
 </p>
 
 
@@ -126,10 +135,10 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.mp4">
   </video>
   <br>
-  그림 6. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
+  그림 7. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
 </p>
 
 벡터에 대해 정의할 때 스칼라배와 벡터 간의 합에 대해 정의가 되는 것들을 벡터로 정의한다고 하였으며, 이 벡터는 벡터 공간을 이룬다고 하였다.

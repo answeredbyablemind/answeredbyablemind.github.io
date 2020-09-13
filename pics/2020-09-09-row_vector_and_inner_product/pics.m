@@ -34,6 +34,10 @@ xx = linspace(-2, 2, 100);
 plot(xx, xx.^2, 'color',[0.85, 0.325, 0.098],'linewidth',2)
 
 text(2, 4.3, '$$y=x^2$$','interpreter','latex','fontsize',12,'HorizontalAlignment','Center')
+
+line([2, 2], [0, 4],'color','k','linestyle','--')
+line([-2, -2], [0, 4],'color','k','linestyle','--')
+line([-2, 2],[4, 4],'color','k','linestyle','--')
 %% row vector operation ½Ã°¢È­
 figure('color','w','position',[680, 500, 480, 480]);
 hold on;
