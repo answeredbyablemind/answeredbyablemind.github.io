@@ -27,7 +27,7 @@ tags: 선형대수
 행렬과 행렬의 곱 혹은 행렬과 벡터의 곱에 대해 생각해보면 행렬의 곱을 해석할 수 있는 가장 기본적인 방법은 아래와 같이 곱해지는 행렬 중 왼쪽 행렬의 행 요소들과 오른쪽 행렬의 열 요소들의 값들을 순서대로 곱해주고 더해주는 방법이다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic2.png">
   <br>
   그림 2. 행렬의 곱에 관한 가장 기본적인 해석
 </p>
@@ -47,6 +47,8 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\begin{bmatrix}3\\-4\end{bmatrix} = 2\cdot 3 
 $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right) = 2$$
 
 즉, 행벡터는 열벡터를 입력으로 받아 스칼라를 출력하는 $f:V\rightarrow\Bbb{R}$인 함수[^1]인 것이다.
+
+[^1]: 좀 더 엄밀하게는 범함수(functional)이라고 하는게 맞는 표현이지만, 엄밀한 내용에 대해선 넘어가도록 하자.
 
 # 행벡터의 시각화
 
@@ -81,8 +83,9 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
   <a href = "https://m.blog.naver.com/PostView.nhn?blogId=rbtnddl123&logNo=60191795215&proxyReferer=https:%2F%2Fwww.google.com%2F">그림 출처</a>
 </p>
 
-즉, 이 등고선을 이용하면 임의의 벡터 $\vec{v}$가 $\begin{bmatrix} 2 & 1\end{bmatrix}$이라는 함수를 통과했을 때의 출력값을 쉽게 시각화 할 수 있게 된다.
+등고선은 그 이름에서 알 수 있듯이 높이가 같은 곳들을 하나의 선으로 연결한 지도를 의미한다. 우리는 여기서 동일한 스칼라 출력값을 갖는 $x, y$ 순서 쌍들을 하나의 선으로 연결하도록 하자.
 
+즉, 이 등고선을 이용하면 임의의 벡터 $\vec{v}$가 $\begin{bmatrix} 2 & 1\end{bmatrix}$이라는 함수를 통과했을 때의 출력값을 쉽게 시각화 할 수 있게 된다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic5.png">
@@ -90,6 +93,9 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
   그림 5. 행벡터를 통해 출력된 함수값들의 시각화
 </p>
 
+그림 5를 보면 $2x+y$의 출력값이 각각 -3부터 4에 해당되는 $x, y$ 순서 쌍들을 한 선에 표시한 것을 알 수 있다. 
+
+여기서 이 순서쌍들 중 일부를 화살표 모양의 벡터 형태로 표시하면 아래의 그림 6에서 볼 수 있는 것들과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.png">
@@ -97,8 +103,16 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
   그림 6. row vector의 scaling에 따른 함수값 등고선의 변화
 </p>
 
+가령, 그림 6의 가장 좌상단에서 볼 수 있는 출력값이 -3인 벡터들을 보면 모두 $2x+y=-3$인 점선 위에서 종점(end point)을 가지는 벡터들의 집합인 것을 알 수 있다.
 
-# 행벡터는 선형연산자이다.
+
+# 행벡터와 벡터의 내적
+
+그렇다면 이쯤해서 벡터 간의 내적의 기하학적 의미에 대해 생각해보도록 하자.
+
+
+
+# 행벡터와 행공간
 
 연산자라는 것은 어떤 입력을 받아 출력을 내뱉는 함수라는 의미와 같으며, 여기서 '선형'이라는 말이 붙는 것은 벡터공간의 요소라면 가져야할 덧셈 법칙과 상수배(곱셈 법칙)이 적용되는 연산자라는 의미이다.
 
@@ -150,9 +164,3 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 행공간은 ~라는 점에서 열공간의 쌍대공간(dual space)라고 볼 수 있다.
 
 지금까지 우리가 행벡터를 행벡터라고 불렀기 때문에 당연히 벡터라고 생각하고 있지만, 이렇듯 엄밀한 잣대를 들이댐으로써 새로운 개념의 벡터에 대해 생각해볼 수 있는 것이다.
-
-# 행벡터와 벡터의 내적
-
-벡터에 왜 정사영을 해주게 왜 내적의 기하학적 의미란 말인지?
-
-[^1]: 좀 더 엄밀하게는 범함수(functional)이라고 하는게 맞는 표현이지만, 엄밀한 내용에 대해선 넘어가도록 하자.
