@@ -39,7 +39,7 @@ line([2, 2], [0, 4],'color','k','linestyle','--')
 line([-2, -2], [0, 4],'color','k','linestyle','--')
 line([-2, 2],[4, 4],'color','k','linestyle','--')
 %% row vector operation ½Ã°¢È­
-figure('color','w','position',[680, 500, 480, 480]);
+figure('color','w','position',[680, 300, 480, 480]);
 hold on;
 set(gca,'Visible','off')
 xlim([-3, 3])
@@ -83,6 +83,11 @@ xx = linspace(-6, 6, 100);
 
 for i = -3:4
     plot(xx, -2 * xx + i,'k--');
+    % 2x+y = 1
+    % 2x = 1- y
+    % x = (1-y)/2
+    
+    text((i-2.5)/2  + 0.1, 2.5, num2str(i),'color',[1, 0, 0],'FontWeight','Bold');
 end
 
 xlim([-3, 3])
@@ -126,6 +131,8 @@ for i_onto = 1:length(ontos)
 
     for i = -3:4
         plot(xx, -2 * xx + i,'k--');
+        
+        text((i-2.5)/2  + 0.1, 2.5, num2str(i),'color',[1, 0, 0],'FontWeight','Bold');
     
     end
     onto = ontos(i_onto);
