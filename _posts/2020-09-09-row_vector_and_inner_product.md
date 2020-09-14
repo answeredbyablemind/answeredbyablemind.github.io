@@ -143,7 +143,7 @@ $$\vec{v}_1\cdot\vec{v}_2 = |\vec{v}_1||\vec{v}_2|\cos\theta$$
 
 즉, 
 
-$$4*2 = d*\sqrt{20}$$
+$$4\times 2 = d\times \sqrt{20}$$
 
 이므로,
 
