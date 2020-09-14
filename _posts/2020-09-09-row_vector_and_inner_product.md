@@ -229,4 +229,4 @@ dual space의 엄밀한 정의는 다음과 같이 생각할 수 있다.
 
 | DEFINITION  Dual Space |
 | --------- |
-| Vector Space V의 선형 범함수들의 집합 <center><br>$$V*=\left\lbrace f:V\rightarrow \Bbb{R} \| f(c\vec{a}+\vec{b})\text{ for all }\vec{a},\vec{b}\in V\right\rbrace$$</center><br>을 $V$의 dual space라고 한다.|
+| Vector Space $V$의 선형 범함수들의 집합 <center><br>$$V^*=\left\lbrace f:V\rightarrow \Bbb{R} \| f(c\vec{a}+\vec{b})\text{ for all }\vec{a},\vec{b}\in V\right\rbrace$$</center><br>을 $V$의 dual space라고 한다.|
