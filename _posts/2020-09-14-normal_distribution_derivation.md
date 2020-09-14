@@ -13,7 +13,7 @@ tags: 통계학
 정규 분포의 공식은 꽤 복잡하기 때문에 아래의 그림과 같이 세 가지 파트로 나누어 유도해보도록 하자.
 
 <p align = "center">
-  <img src = "">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-14-normal_distribution_derivation/pic1.png">
   <br> 그림 1. 정규 분포의 공식과 포스팅에서의 유도 순서
 </p>
 
@@ -32,13 +32,13 @@ tags: 통계학
 
 이를 위해 아래와 같이 중심을 직교좌표계의 원점에 일치시킨 원형 다트 판에 다트 던지기를 하는 과정을 상상해보자.
 
-[//]: # (그림 2: 원형 다트판. 직교 좌표계의 원점에 중앙을 일치시킬 것)
-
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-14-normal_distribution_derivation/pic2.png">
+  <br> 그림 1. 정규 분포의 공식과 포스팅에서의 유도 순서
+</p>
 필요한 가정
 
-1. 다트판 상에서 점수를 등고선으로 나타낸다고 했을 때, 동일한 점수의 등고선 상에 맞춘 다트는 모두 점수가 같다.
-
-즉, 확률밀도 함수는 회전에 독립적이다.
+1. 다트판 상에서 점수를 등고선으로 나타낸다고 했을 때, 동일한 점수의 등고선 상에 맞춘 다트는 모두 점수가 같다. 즉, 확률밀도 함수는 회전에 독립적이다.
 
 2. 다트를 던져서 사각형 안에 맞추는 상황을 가정했을 때, 목표로 하는 사각형의 넓이가 같다면 원점으로부터 사각형까지의 거리가 가까울수록그 사각형에 맞을 확률이 높다.
 
