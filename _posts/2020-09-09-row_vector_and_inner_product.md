@@ -138,7 +138,7 @@ $$\vec{v}_1\cdot\vec{v}_2 = |\vec{v}_1||\vec{v}_2|\cos\theta$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic9.png">
   <br>
-  그림 9. 행벡터 $[2, 1]$(진한 파란색)과 $2x+y=4$까지의 거리(빨간색)
+  그림 9. 직각 삼각형의 넓이를 구하는 방법을 이용해 $d$의 길이를 계산할 수 있다.
 </p>
 
 즉, 
@@ -165,9 +165,9 @@ $$d\times\sqrt{5} = \frac{4}{\sqrt{5}} * \sqrt{5} = 4$$
 
 # 행벡터와 행공간
 
-행벡터도 열벡터와 마찬가지로 [벡터의 정의](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#3-%EB%B2%A1%ED%84%B0%EB%9E%80-%EB%B2%A1%ED%84%B0-%EA%B3%B5%EA%B0%84%EC%9D%98-%EC%9B%90%EC%86%8C)를 만족하며 선형성을 갖는다. 그런데 이러한 선형성을 만족하는지 알아보는 것이 왜 중요할까?
+행벡터도 열벡터와 마찬가지로 [벡터의 정의](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#3-%EB%B2%A1%ED%84%B0%EB%9E%80-%EB%B2%A1%ED%84%B0-%EA%B3%B5%EA%B0%84%EC%9D%98-%EC%9B%90%EC%86%8C)를 만족하며 선형성을 갖는다. 따라서 행벡터도 일반적인 벡터로 생각할 수 있는 것이다. 
 
-그것은 행벡터가 처리 대상인 '데이터'가 아니라 '함수'임에도 선형성을 갖는다면 일반적인 벡터에 적용할 수 있다고 알려진 모든 method들이 적용가능해지는 것이다.
+그런데 이러한 선형성을 만족하는지 알아보는 것이 왜 중요할까? 그것은 행벡터가 처리 대상인 '데이터'가 아니라 '함수'임에도 선형성을 갖는다면 일반적인 벡터에 적용할 수 있다고 알려진 모든 method들을 적용할 수 있기 때문이다.
 
 우선은 행벡터는 아래와 같이 벡터 합의 연산이 성립한다.
 
@@ -202,30 +202,47 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(2\begin{bmatrix}3 \\ -4\end{bmatrix}\ri
 
 ## 행벡터가 선형함수라는 것의 기하학적 의미.
 
-행벡터의 스칼라배
+### 행벡터의 스칼라배
+
+우리는 그림 6에서와 같이 행벡터에 열벡터를 입력시켰을 때 얻는 스칼라 출력값을 등고선을 이용해 표현해보았다.
+
+이 그림을 다시 생각해보면 주어진 행벡터에 대해서 어떤 열벡터와의 연산 후 출력된 스칼라 값을 생각하는 방법은 해당 열벡터가 등고선 몇 개를 통과했는가와 같다고도 볼 수 있다.
+
+따라서, 행벡터의 길이가 길어진다면 등고선의 간격이 더 좁아지는 것과 같은 효과를 내게 된다는 것을 알 수 있다.
+
+반대로 행벡터의 길이가 짧아진다면 등고선의 간격이 더 넓어지는 것과 같은 효과를 내게 된다는 것 또한 알 수 있다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic10.mp4">
   </video>
   <br>
-  그림 7. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
+  그림 10. 다양한 스칼라배로 크기가 커지거나 작아지는 행백터에 대응한 시각화
 </p>
 
-벡터에 대해 정의할 때 스칼라배와 벡터 간의 합에 대해 정의가 되는 것들을 벡터로 정의한다고 하였으며, 이 벡터는 벡터 공간을 이룬다고 하였다.
+### 행벡터 간의 합
 
-따라서, 행벡터에 대한 선형 함수로 생각할 수 있는 행벡터들도 벡터로 간주할 수 있다는 것을 알 수 있다. 즉, 함수를 벡터로 생각한 경우이다.
+또한, 행벡터 간의 합이 의미하는 것은 두 개의 서로 다른 등고선이 합해져서 새로운 등고선을 만들어낼 수 있음을 의미한다.
 
-이 때, 덧셈 법칙과 곱셈 법칙이 정의된 행벡터들로 구성된 집합을 **행공간**이라고 부른다.
+이 때, 새롭게 만들어지는 등고선은 두 개의 서로 다른 등고선이 표방하는 행벡터들이 합쳐져 얻어진 새로운 행벡터에 수직하도록 형성된다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic11.png">
+  <br>
+  그림 11. 두 행벡터를 더해서 얻게되는 새로운 행벡터에 대응되는 등고선 시각화
+</p>
 
 ## 행공간은 열공간의 쌍대공간
 
-행공간은 ~라는 점에서 열공간의 쌍대공간(dual space)이라고 불린다.
+벡터에 대해 정의할 때 스칼라배와 벡터 간의 합에 대해 정의가 되는 것들을 벡터로 정의한다고 하였으며, 이 벡터는 벡터 공간을 이룬다고 하였다.
+
+따라서, 행벡터에 대한 선형 함수[^1]로 생각할 수 있는 행벡터들도 일반적인 벡터로 간주할 수 있다는 것을 알 수 있다.
+
+이 때, 덧셈 법칙과 곱셈 법칙이 정의된 행벡터들로 구성된 집합을 **행공간**이라고 부른다.
 
 지금까지 우리가 행벡터를 행벡터라고 불렀기 때문에 당연히 벡터라고 생각하고 있지만, 이렇듯 엄밀한 잣대를 들이댐으로써 새로운 개념의 벡터에 대해 생각해볼 수 있는 것이다.
 
-dual space의 엄밀한 정의는 다음과 같이 생각할 수 있다.
-
+행공간은 열공간에 대응되는 공간이라는 의미에서 쌍대공간(dual space)이라고 불리며, dual space의 엄밀한 정의는 다음과 같다.
 
 | DEFINITION  Dual Space |
 | --------- |
