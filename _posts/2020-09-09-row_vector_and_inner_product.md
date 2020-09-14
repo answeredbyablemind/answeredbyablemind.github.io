@@ -113,7 +113,7 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 
 $$\vec{v}_1\cdot\vec{v}_2 = |\vec{v}_1||\vec{v}_2|\cos\theta$$
 
-여기서 $|\vec{v}_2|\cos\theta$는 $\vec{v}_2$의 $\vec{v}_1$방향으로의 정사영이라는 점도 알 수 있을 것이다.
+여기서 $\|\vec{v}_2\|\cos\theta$는 $\vec{v}_2$의 $\vec{v}_1$방향으로의 정사영이라는 점도 알 수 있을 것이다.
 
 우리는 그림 6의 여러 subplot 중에서 출력 스칼라 값이 4가 되게 하는 경우에 대해 생각해보자. 이 때, 출력 스칼라 값이 4가 되게하는 임의의 벡터를 하나 생각해 그려보면 다음과 같다.
 
