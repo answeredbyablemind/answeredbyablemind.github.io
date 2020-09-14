@@ -247,3 +247,7 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(2\begin{bmatrix}3 \\ -4\end{bmatrix}\ri
 | DEFINITION  Dual Space |
 | --------- |
 | Vector Space $V$의 선형 범함수들의 집합 <center><br>$$V^*=\left\lbrace f:V\rightarrow \Bbb{R} \| f(c\vec{a}+\vec{b})\text{ for all }\vec{a},\vec{b}\in V\right\rbrace$$</center><br>을 $V$의 dual space라고 한다.|
+
+쌍대 공간의 개념이 중요한 것은 원래의 벡터 공간에서 특정 문제를 풀기가 어려운 경우에 해당 쌍대 공간에서는 문제가 쉽게 풀리는 경우가 있기 때문이다.
+
+가령, [선형회귀에 대한 선형대수학적 해석](https://angeloyeo.github.io/2020/08/24/linear_regression.html#%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%ED%95%99%EC%9D%98-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D)이나 [푸리에 변환](https://angeloyeo.github.io/2019/06/23/Fourier_Series.html)에서 시간-주파수 간의 변환은 모두 쌍대성의 개념을 이용한 것이다.
