@@ -14,6 +14,13 @@ tags: 통계학
 
 [//]: # (그림 1: 정규 분포의 유도 by parts)
 
+# prerequisites
+
+이 포스팅에 대해 이해하시려면 아래의 내용에 대해 알고오시는 것이 좋습니다.
+
+* 확률밀도함수의 개념과 특성
+* [가우스 적분](https://angeloyeo.github.io/2020/01/17/Gaussian_Integral.html)
+
 # $e^{-x^2}$의 꼴의 유도
 
 우선은 $f(x) \propto e^{-x^2}$의 꼴을 따른다는 과정을 유도해보고자 한다.
@@ -34,7 +41,7 @@ tags: 통계학
 
 3. 사각형까지의 거리가 같을 때 사각형의 넓이가 넓을 수록 맞을 확률이 높다.
 
-// 그림 3. ref 1에서의 Figure 1과 같은 그림을 그려서 가정 2, 3에 대한 부연 설명할 것.
+[//]: # (그림 3. ref 1에서의 Figure 1과 같은 그림을 그려서 가정 2, 3에 대한 부연 설명할 것.)
 
 ## 유도 과정
 
@@ -102,13 +109,13 @@ $$\Rightarrow f(x)f'(y)x = f(y)f'(x)y$$
 
 $$\Rightarrow \frac{xf(x)}{f'(x)}=\frac{yf(y)}{f'(y)}$$
 
-[//]: # (식 12)
+[//]: # (위는 식 12)
 
 식 (12)를 잘 보면 식 (12)가 의미하는 것은 양변에서 분자, 분모의 비율이 모두 일정하다는 것을 의미한다. 따라서 식 (12)의 양변의 값은 모두 어떤 상수 $C$와 같다고 할 수 있다.
 
 $$식(12) \Rightarrow \frac{xf(x)}{f'(x)}=\frac{yf(y)}{f'(y)} = C$$
 
-[//]: # (식 13)
+[//]: # (위는 식 13)
 
 이제 식 (13)에서 미분 방정식을 풀어주도록 하자. $x$나 $y$나 같은 결과를 내기 때문에 $x$에 대해서만 풀어주자.
 
@@ -126,21 +133,93 @@ $$\frac{1}{2}x^2=C ln(f(x)) + C'$$
 
 따라서 우리는 $f(x)$를 다음과 같이 쓸 수 있게 된다.
 
-$$\therefore f(x) = A_0 exp(\frac{1}{2}cx^2)$$
+$$\therefore f(x) = A_0 \exp\left(\frac{1}{2}cx^2\right)$$
 
-[//]: # (식 17)
+[//]: # (위는 식 17)
 
 그런데, 가정 2번에 따르면 표적 중앙으로부터 거리가 가까울수록 맞을 확률이 높다고 하였기 때문에 식 (17)의 exponential term 내부의 값은 음수가 되어야 한다.
 
 따라서, 식 (17)을 다음과 같이 서술하여 내부의 값이 음수임을 강조하도록 하자.
 
-$$식(17) \Rightarrow f(x) = A_0 exp(\frac{1}{2}-kx^2)\text{ where }k>0$$
+$$식(17) \Rightarrow f(x) = A_0 \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
 
-[//]: # (식 18)
+[//]: # (위는 식 18)
 
 # $1/\sigma\sqrt{2\pi}$의 유도
 
+이번 꼭지에서는 앞서 유도한 식 (18)에서 $A_0$의 값이 $1/\sigma\sqrt{2\pi}$라는 것을 유도해보고자 한다.
 
+확률밀도함수의 특성을 생각해보면 확률밀도함수의 전체면적은 1이 되어야 한다.
+
+$$\int_{-\infty}^{\infty}f(x)dx = 1$$
+
+따라서 다음 식이 만족되어야 한다.
+
+$$\int_{-\infty}^{\infty}A_0 \exp\left(\frac{1}{2}-kx^2\right)dx = 1$$
+
+여기서 $A_0$는 상수이므로,
+
+$$\Rightarrow \int_{-\infty}^{\infty}\exp\left(\frac{1}{2}-kx^2\right)dx = \frac{1}{A_0}$$
+
+[//]: # (위는 식 21)
+
+식 (21)의 값을 $I$라고 하면,
+
+$$\Rightarrow I^2 = \iint_{-\infty}^{\infty}\exp\left(-\frac{1}{2}k(x^2+y^2)\right)dxdy$$
+
+[//]: # (위는 식 22)
+
+인데, 중적분의 적분 domain을 직교좌표계에서 극좌표계로 바꿔써주면,
+
+$$\Rightarrow I^2 = \int_{\theta = 0}^{\theta = 2\pi}\int_{r = 0}^{r=\infty}\exp\left(-\frac{1}{2}kr^2\right)rdrd\theta$$
+
+[//]: # (위는 식 23)
+
+이 된다[^1].
+
+여기서 다음과 같이 치환해주자.
+
+$$-\frac{1}{2}kr^2 = u$$
+
+그러면,
+
+$$-krdr=du$$
+
+이고,
+
+$$rdr = -\frac{1}{k}du$$
+
+이다.
+
+따라서 식 (23)은 다음과 같이 쓸 수 있다.
+
+$$식(23) \Rightarrow I^2 = \int_{\theta = 0}^{\theta = 2\pi}\int_{u = 0}^{u=-\infty}\exp\left(u\right)(-\frac{1}{k}du)d\theta$$
+
+$$= -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}\int_{u = 0}^{u=-\infty}\exp\left(u\right)(du)d\theta$$
+
+$$=-\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}\left[e^u\right]_{0}^{-\infty}d\theta$$
+
+여기서 $\exp(-\infty) = 0$이고 $\exp(0)=1$이므로,
+
+$$\Rightarrow -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}(-1))d\theta$$
+
+$$=\frac{2\pi}{k}$$
+
+따라서, 이 값은 원래의 $I^2$과 같으므로, I의 값은 아래와 같다.
+
+$$I = \int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2dx\right)dx=\sqrt{\frac{2\pi}{k}}$$
+
+여기서 I의 값은 pdf의 넓이와 관련된 것이므로 항상 양수이기 때문에 I 의 값은 양의 값만을 가지게 된다.
+
+또, 식 (21)에서 $I$의 값은 $1/A_0$와도 같았으므로,
+
+$$A_0 = \sqrt{\frac{k}{2\pi}}$$
+
+이다.
+
+따라서, 식 (18)을 다시 쓰면 다음과 같다.
+
+$$식(18) =  A_0 \exp\left(\frac{1}{2}-kx^2\right) = \sqrt{\frac{k}{2\pi}} \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
 
 # exponential 내부의 식 유도
 
@@ -148,3 +227,5 @@ $$식(17) \Rightarrow f(x) = A_0 exp(\frac{1}{2}-kx^2)\text{ where }k>0$$
 
 * The Normal Distribution: A derivation from basic principles, Dan Teague, The North Carolina School of Science and Mathematics
 (https://www.alternatievewiskunde.nl/QED/normal.pdf)
+
+[^1]: 해당 과정의 자세한 설명은 [가우스 적분](https://angeloyeo.github.io/2020/01/17/Gaussian_Integral.html)편을 참고하길 바람.
