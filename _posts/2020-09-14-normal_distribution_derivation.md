@@ -221,6 +221,8 @@ $$A_0 = \sqrt{\frac{k}{2\pi}}$$
 
 $$식(18) =  A_0 \exp\left(\frac{1}{2}-kx^2\right) = \sqrt{\frac{k}{2\pi}} \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
 
+여기서 $k$에 대한 답을 얻어야 $A_0=\sqrt{1/\sigma 2\pi}$임을 알 수 있으므로 아래의 exponential 내부의 식 유도 부분에서 계속해서 식을 전개해보도록 하자.
+
 # exponential 내부의 식 유도
 
 # reference
