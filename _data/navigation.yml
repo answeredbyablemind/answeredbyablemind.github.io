@@ -144,6 +144,8 @@ docs-ko:
     children:
       - title:  가우스 적분
         url:    2020/01/17/Gaussian_Integral.html
+      - title:  정규분포 공식 유도
+        url:    2020/09/14/normal_distribution_derivation.html
       - title:  중심극한정리 증명
         url:    2020/01/10/CLT_proof.html
       - title:  통계적 추론 - Big Picture
