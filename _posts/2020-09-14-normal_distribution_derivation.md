@@ -12,7 +12,10 @@ tags: 통계학
 
 정규 분포의 공식은 꽤 복잡하기 때문에 아래의 그림과 같이 세 가지 파트로 나누어 유도해보도록 하자.
 
-[//]: # (그림 1: 정규 분포의 유도 by parts)
+<p align = "center">
+  <img src = "">
+  <br> 그림 1. 정규 분포의 공식과 포스팅에서의 유도 순서
+</p>
 
 # prerequisites
 
@@ -145,7 +148,7 @@ $$식(17) \Rightarrow f(x) = A_0 \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where
 
 [//]: # (위는 식 18)
 
-# $1/\sigma\sqrt{2\pi}$의 유도
+# $1/(\sigma\sqrt{2\pi})$의 유도
 
 이번 꼭지에서는 앞서 유도한 식 (18)에서 $A_0$의 값이 $1/\sigma\sqrt{2\pi}$라는 것을 유도해보고자 한다.
 
@@ -201,7 +204,9 @@ $$=-\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}\left[e^u\right]_{0}^{-\infty}d\
 
 여기서 $\exp(-\infty) = 0$이고 $\exp(0)=1$이므로,
 
-$$\Rightarrow -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}(-1))d\theta$$
+$$\Rightarrow -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}(-1)d\theta$$
+
+[//]: # (위는 식 30)
 
 $$=\frac{2\pi}{k}$$
 
@@ -209,7 +214,7 @@ $$=\frac{2\pi}{k}$$
 
 $$I = \int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2dx\right)dx=\sqrt{\frac{2\pi}{k}}$$
 
-여기서 I의 값은 pdf의 넓이와 관련된 것이므로 항상 양수이기 때문에 I 의 값은 양의 값만을 가지게 된다.
+여기서 $I$의 값은 확률밀도함수의 넓이와 관련된 것이므로 항상 양수이기 때문에 $I$ 의 값은 양의 값만을 가지게 된다.
 
 또, 식 (21)에서 $I$의 값은 $1/A_0$와도 같았으므로,
 
@@ -219,9 +224,9 @@ $$A_0 = \sqrt{\frac{k}{2\pi}}$$
 
 따라서, 식 (18)을 다시 쓰면 다음과 같다.
 
-$$식(18) =  A_0 \exp\left(\frac{1}{2}-kx^2\right) = \sqrt{\frac{k}{2\pi}} \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
+$$식(18) =  A_0 \exp\left(\frac{1}{2}(-kx^2)\right) = \sqrt{\frac{k}{2\pi}} \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
 
-여기서 $k$에 대한 답을 얻어야 $A_0=\sqrt{1/\sigma 2\pi}$임을 알 수 있으므로 아래의 exponential 내부의 식 유도 부분에서 계속해서 식을 전개해보도록 하자.
+여기서 $k$에 대한 답을 얻어야 $A_0=1/(\sigma \sqrt{2\pi})$임을 알 수 있으므로 아래의 exponential 내부의 식 유도 부분에서 계속해서 식을 전개해보도록 하자.
 
 # exponential 내부의 식 유도
 
