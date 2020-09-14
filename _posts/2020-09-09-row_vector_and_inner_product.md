@@ -22,8 +22,6 @@ tags: 선형대수
   그림 1. 행벡터의 기능과 역할은 무엇이며 이것이 벡터의 내적의 기하학적 의미와는 어떻게 연관되어 있을까?
 </p>
 
-위 그림 v1 v2 cos theta로 수정할 것.
-
 # 행벡터의 기능과 역할
 
 행렬과 행렬의 곱 혹은 행렬과 벡터의 곱에 대해 생각해보면 행렬의 곱을 해석할 수 있는 가장 기본적인 방법은 아래와 같이 곱해지는 행렬 중 왼쪽 행렬의 행 요소들과 오른쪽 행렬의 열 요소들의 값들을 순서대로 곱해주고 더해주는 방법이다.
@@ -60,11 +58,10 @@ $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right
 
 가령 $y=x^2$을 시각화 한다는 것은 시각화하기에 좋은 범위의 $x$, 가령 $-2\leq x \leq 2$ 에 대해 대응되는 $y=f(x)=x^2$ 값을 좌표 평면에 모두 나타낸 것이다.
 
-
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic3.png">
   <br>
-  그림 3. 
+  그림 3. 함수 $y=x^2$을 $-2\leq x \leq 2$ 의 범위에 대해 시각화 한 것
 </p>
 
 그렇다면 $\begin{bmatrix}2 & 1\end{bmatrix}$이라는 행벡터를 시각화 한다고 하면, 임의의 벡터 $\begin{bmatrix}x & y \end{bmatrix}^T$에 대해 함수의 출력을 좌표계에 나열하면 된다.
@@ -80,7 +77,7 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 <p align = "center">
   <img src = "https://mblogthumb-phinf.pstatic.net/20130512_173/rbtnddl123_1368334255943Lcw14_JPEG/%B5%EE%B0%ED%BC%B11.jpg?type=w2">
   <br>
-  그림 4. 등고선의 예시
+  그림 4. 등고선의 예시. 등고선은 같은 높이를 갖는 위치들을 곡선으로 이어 연결한 것이다.
   <br>
   <a href = "https://m.blog.naver.com/PostView.nhn?blogId=rbtnddl123&logNo=60191795215&proxyReferer=https:%2F%2Fwww.google.com%2F">그림 출처</a>
 </p>
@@ -102,7 +99,7 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic6.png">
   <br>
-  그림 6. row vector의 scaling에 따른 함수값 등고선의 변화
+  그림 6. 함수로써의 행벡터의 다양한 출력값에 대해, 각각의 출력값이 나오게 하는 입력 열벡터들의 예시.
 </p>
 
 가령, 그림 6의 가장 좌상단에서 볼 수 있는 출력값이 -3인 벡터들을 보면 모두 $2x+y=-3$인 점선 위에서 종점(end point)을 가지는 벡터들의 집합인 것을 알 수 있다.
@@ -112,12 +109,53 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 
 그렇다면 이쯤해서 벡터 간의 내적의 기하학적 의미에 대해 생각해보도록 하자.
 
-점선은 모두 행벡터에 수직. 왜냐면 행벡터가 점선의 함수에 대한 법선 벡터 역할을 하기 때문임. (<-이 때문에 정사영이 나오게 됨)
+가령 그림에서 출력 스칼라 값이 4가 되게 하는 경우에 대해 생각해보자. 이 때, 출력 스칼라 값이 4가 되게하는 임의의 벡터를 하나 생각해 그려보면 다음과 같다.
 
-실제로 길이를 구해보면 정사영 길이 * 행벡터의 길이 = 내적 값과 일치함.
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.png">
+  <br>
+  그림 7. 출력 스칼라 값이 4가 되게 하는 임의의 벡터 하나를 생각해보자.
+</p>
 
-그러면 내가 내적의 기하학적인 의미에 대해서 새로운 관점에서 구독자들에게 보여준 것은 무엇인가?
+여기서 출력 스칼라 값이 4라는 것은 어떤 의미일까? 우리는 행벡터에 해당하는 $[2, 1]$을 그려본 뒤, $2x+y=4$라는 점까지의 거리를 생각해보자.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic8.png">
+  <br>
+  그림 8. 행벡터 $[2, 1]$(진한 파란색)과 $2x+y=4$까지의 거리(빨간색)
+</p>
+
+생각해보면 $2x+y=c$에 해당하는 점선은 모두 행벡터 $[2, 1]$에 수직이다. 왜냐면 행벡터가 점선으로 표현한 함수들에 대한 법선 벡터 역할을 하기 때문이다.
+
+따라서, 그림 8에서 빨간색으로 표현한 길이는 다음과 같이 직각 삼각형의 높이를 계산함으로써 얻을 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic8.png">
+  <br>
+  그림 9. 행벡터 $[2, 1]$(진한 파란색)과 $2x+y=4$까지의 거리(빨간색)
+</p>
+
+즉, 
+
+$$4*2 = d*\sqrt{20}$$
+
+이므로,
+
+$$d= \frac{8}{\sqrt{20}}=\frac{4}{\sqrt{5}}$$
+
+이다.
+
+여기서 행벡터 $[2, 1]$의 길이는 $\sqrt{5}$인데, 이 길이를 $d$에 곱하면
+
+$$d\times\sqrt{5} = \frac{4}{\sqrt{5}} * \sqrt{5} = 4$$
+
+임을 알 수 있다.
+
+즉, 열벡터의 정사영 길이 * 행벡터의 길이 = 내적 값과 일치함을 알 수 있다.
+
+사실 그림 7에서 볼 수 있듯이 벡터의 내적을 계산할 때에는 $2x+y=4$의 점선 위에 있는 어떤 벡터를 고르더라도 행벡터 $[2, 1]$ 과의 내적 계산은 4가 되는 것을 알 수 있고,
+
+이것은 다시 말해 열벡터의 정사영 길이가 내적 계산에 이용되기 때문임을 기하학적으로 확인할 수 있는 것이다.
 
 # 행벡터와 행공간
 
@@ -171,3 +209,10 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 행공간은 ~라는 점에서 열공간의 쌍대공간(dual space)라고 볼 수 있다.
 
 지금까지 우리가 행벡터를 행벡터라고 불렀기 때문에 당연히 벡터라고 생각하고 있지만, 이렇듯 엄밀한 잣대를 들이댐으로써 새로운 개념의 벡터에 대해 생각해볼 수 있는 것이다.
+
+dual space의 엄밀한 정의는 다음과 같이 생각할 수 있다.
+
+
+| DEFINITION  Dual Space |
+| --------- |
+| Vector Space V의 선형 범함수들의 집합 <center><br>$$V*=\left\lbrace f:V\rightarrow \Bbb{R} | f(c\vec{a}+\vec{b})\text{ for all }\vec{a},\vec{b}\in V\right\rbrace$$</center><br>을 $V$의 dual space라고 한다.|

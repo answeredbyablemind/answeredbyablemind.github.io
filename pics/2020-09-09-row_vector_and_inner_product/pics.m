@@ -155,6 +155,109 @@ for i_onto = 1:length(ontos)
     ii=ii+1;
 end
 
+%% 스칼라 출력이 4인 경우에 대해 임의의 벡터 하나를 잡아보자.
+my_color = lines(6);
+figure('color','w','position',[680, 300, 480, 480]);
+hold on;
+set(gca,'Visible','off')
+xlim([-3, 3])
+ylim([-3, 3])
+
+Annotate(gca,'arrow', [-3, 3], [0, 0]);
+Annotate(gca,'arrow', [0, 0], [-3, 3]);
+
+for i = -3:2
+    if i~=0
+        line([i ,i], [-0.1, 0.1],'color','k')
+        text(i, -0.3, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+for i = -3:2
+    if i~= 0
+        line([-0.1, 0.1], [i ,i], 'color','k')
+        text(-0.3, i, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+% xlabel on original axis
+text(2.9228, -0.3, '$$x$$','interpreter','latex','fontsize',12);
+text(-0.3, 2.8105, '$$y$$','interpreter','latex','fontsize',12);
+
+% line들 그려주기
+xx = linspace(-6, 6, 100);
+
+for i = -3:4
+    plot(xx, -2 * xx + i,'k--');
+
+    text((i-2.5)/2  + 0.1, 2.5, num2str(i),'color',[1, 0, 0],'FontWeight','Bold');
+end
+
+onto = 4;
+
+x2see = linspace(-3, 3, 10);
+y2see = -2 * x2see + onto;
+
+for i2see = 1:length(x2see)
+    if abs(x2see(i2see)) <= 3 && abs(y2see(i2see)) <= 3
+        h = Annotate(gca,'arrow',[0, x2see(i2see)],[0, y2see(i2see)]);
+        %         h.Primitive.Color = [1, 0, 0];
+        h.Primitive.Color = my_color(6,:);
+        h.Primitive.LineWidth= 2;
+        break; % 처음에 나오는 가장 기울기가 높은 벡터 하나만 그리고 싶음.
+    end
+end
+
+% 행벡터와 y=-2x+4까지의 거리까지 plot하는 경우
+h = Annotate(gca,'arrow',[0, 2], [0, 1]);
+h.Primitive.Color = [0, 0, 1];
+h.Primitive.LineWidth = 2;
+
+h = Annotate(gca,'line', [0, 8/5],[0, 4/5]);
+h.Primitive.Color = [1, 0, 0];
+h.Primitive.LineWidth = 2;
+text(2.0087, 1.1816, '(2, 1)')
+% title 써주기
+text(0, 3.3, ['출력값이 ',num2str(onto),'인 벡터 중 하나'],'HorizontalAlignment','center','fontsize',12)
+
+%% 2x+y=4인 경우이고 x=0~2사이의 값만 표현한 그림하나 그릴 것.
+figure('color','w','position',[680, 300, 300, 480]);
+hold on;
+set(gca,'Visible','off')
+xlim([-1, 3])
+ylim([-1, 5])
+
+Annotate(gca,'arrow', [-1, 3], [0, 0]);
+Annotate(gca,'arrow', [0, 0], [-1, 5]);
+
+for i = 0:2
+    if i~=0
+        line([i ,i], [-0.1, 0.1],'color','k')
+        text(i, -0.3, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+for i = 0:4
+    if i~= 0
+        line([-0.1, 0.1], [i ,i], 'color','k')
+        text(-0.3, i, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+% xlabel on original axis
+text(2.9228, -0.3, '$$x$$','interpreter','latex','fontsize',12);
+text(-0.3, 4.8105, '$$y$$','interpreter','latex','fontsize',12);
+
+% 점선 2x+y=4 그려주기
+xx = linspace(0, 2, 100);
+plot(xx, -2 * xx + 4,'k--');
+
+h = Annotate(gca,'line', [0, 8/5],[0, 4/5]);
+h.Primitive.Color = [1, 0, 0];
+h.Primitive.LineWidth = 2;
+% title 써주기
+
+
 %% row vector 함수 시각화에서 scaling
 
 newVid = VideoWriter('pic3', 'MPEG-4'); % New
