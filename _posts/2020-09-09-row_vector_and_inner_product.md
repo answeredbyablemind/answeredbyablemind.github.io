@@ -189,9 +189,9 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 
 예를 들면, 아래의 좌변과 우변의 결과가 같다는 것을 쉽게 알 수 있다.
 
-$$\begin{bmatrix}2 & 1\end{bmatrix}\left(2\begin{bmatrix}3 \\ -4\end{bmarix}\right 
+$$\begin{bmatrix}2 & 1\end{bmatrix}\left(2\begin{bmatrix}3 \\ -4\end{bmatrix}\right)
 
-= 2\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3 \\ -4\end{bmarix}\right$$
+= 2\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3 \\ -4\end{bmatrix}\right)$$
 
 정리하자면 행벡터는 다음과 같은 기능과 성질을 갖는다.
 
