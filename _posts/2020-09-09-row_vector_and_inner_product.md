@@ -109,7 +109,13 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 
 그렇다면 이쯤해서 벡터 간의 내적의 기하학적 의미에 대해 생각해보도록 하자.
 
-가령 그림에서 출력 스칼라 값이 4가 되게 하는 경우에 대해 생각해보자. 이 때, 출력 스칼라 값이 4가 되게하는 임의의 벡터를 하나 생각해 그려보면 다음과 같다.
+우리는 그림 1의 오른쪽에서 볼 수 있듯이 임의의 두 벡터 $\vec{v}_1$과 $\vec{v}_2$에 대해 두 벡터의 사잇각이 $\theta$라면 벡터의 내적은 다음과 같이 계산된다는 것을 알고있다.
+
+$$\vec{v}_1\cdot\vec{v}_2 = |\vec{v}_1||\vec{v}_2|\cos\theta$$
+
+여기서 $|\vec{v}_2|\cos\theta$는 $\vec{v}_2$의 $\vec{v}_1$방향으로의 정사영이라는 점도 알 수 있을 것이다.
+
+우리는 그림 6의 여러 subplot 중에서 출력 스칼라 값이 4가 되게 하는 경우에 대해 생각해보자. 이 때, 출력 스칼라 값이 4가 되게하는 임의의 벡터를 하나 생각해 그려보면 다음과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic7.png">
@@ -130,7 +136,7 @@ $$\begin{bmatrix}2 & 1 \end{bmatrix}\left(\begin{bmatrix}x \\ y \end{bmatrix}\ri
 따라서, 그림 8에서 빨간색으로 표현한 길이는 다음과 같이 직각 삼각형의 높이를 계산함으로써 얻을 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic8.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-09-row_vector_and_inner_product/pic9.png">
   <br>
   그림 9. 행벡터 $[2, 1]$(진한 파란색)과 $2x+y=4$까지의 거리(빨간색)
 </p>
@@ -159,36 +165,42 @@ $$d\times\sqrt{5} = \frac{4}{\sqrt{5}} * \sqrt{5} = 4$$
 
 # 행벡터와 행공간
 
-연산자라는 것은 어떤 입력을 받아 출력을 내뱉는 함수라는 의미와 같으며, 여기서 '선형'이라는 말이 붙는 것은 벡터공간의 요소라면 가져야할 덧셈 법칙과 상수배(곱셈 법칙)이 적용되는 연산자라는 의미이다.
-
-이러한 선형성을 만족하는지 알아보는 것이 왜 중요할까?
+행벡터도 열벡터와 마찬가지로 [벡터의 정의](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#3-%EB%B2%A1%ED%84%B0%EB%9E%80-%EB%B2%A1%ED%84%B0-%EA%B3%B5%EA%B0%84%EC%9D%98-%EC%9B%90%EC%86%8C)를 만족하며 선형성을 갖는다. 그런데 이러한 선형성을 만족하는지 알아보는 것이 왜 중요할까?
 
 그것은 행벡터가 처리 대상인 '데이터'가 아니라 '함수'임에도 선형성을 갖는다면 일반적인 벡터에 적용할 수 있다고 알려진 모든 method들이 적용가능해지는 것이다.
 
-// 여기부터 추가 작성 할 것...
+우선은 행벡터는 아래와 같이 벡터 합의 연산이 성립한다.
 
-그리고 선형연산자이다.
+함수로써의 행벡터를 함수 $f$로 표현하고, 임의의 두 열벡터 $\vec{v}$와 $\vec{w}$에 대해 아래가 성립한다.
 
 $$f(\vec{v}+\vec{w}) = f(\vec{v}) + f(\vec{w})$$
 
-예시)
+예를 들면, 아래의 좌변과 우변의 결과는 같다는 것을 쉽게 알 수 있다.
 
 $$\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix} + \begin{bmatrix}1\\2\end{bmatrix}\right) 
 
 = \begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3\\-4\end{bmatrix}\right) + \begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}1\\2\end{bmatrix}\right)$$
 
+또, 상수배 연산이 성립한다.
+
+임의의 스칼라 $n$에 대해 다음이 성립한다.
+
 $$f(n\vec{w}) = nf(\vec{w})$$
 
-예시)
+예를 들면, 아래의 좌변과 우변의 결과가 같다는 것을 쉽게 알 수 있다.
 
-다시 말해 row vector는
+$$\begin{bmatrix}2 & 1\end{bmatrix}\left(2\begin{bmatrix}3 \\ -4\end{bmarix}\right 
+
+= 2\begin{bmatrix}2 & 1\end{bmatrix}\left(\begin{bmatrix}3 \\ -4\end{bmarix}\right$$
+
+정리하자면 행벡터는 다음과 같은 기능과 성질을 갖는다.
 
 * 열벡터를 입력으로 받아 스칼라(즉, 숫자)를 출력하는 함수
-* 선형연산자임. 
+* 또, 행벡터는 선형연산자이다.
 * 다시 말해 두 벡터를 더한 채로 함수 출력을 볼 때와 두 벡터의 함수 출력을 합한 것이 같음.
-* 또, 선형연산자이기 때문에 입력에 상수배를 해준 채로 함수를 출력할 때와 출력된 함수에 상수배를 해준 것의 결과는 같음.
-* 
-## 행벡터가 선형함수라는 것의 의미.
+* 또 다시 말해, 선형연산자이기 때문에 입력에 상수배를 해준 채로 함수를 출력할 때와 출력된 함수에 상수배를 해준 것의 결과는 같음.
+
+## 행벡터가 선형함수라는 것의 기하학적 의미.
 
 행벡터의 스칼라배
 
@@ -206,7 +218,9 @@ $$f(n\vec{w}) = nf(\vec{w})$$
 
 이 때, 덧셈 법칙과 곱셈 법칙이 정의된 행벡터들로 구성된 집합을 **행공간**이라고 부른다.
 
-행공간은 ~라는 점에서 열공간의 쌍대공간(dual space)라고 볼 수 있다.
+## 행공간은 열공간의 쌍대공간
+
+행공간은 ~라는 점에서 열공간의 쌍대공간(dual space)이라고 불린다.
 
 지금까지 우리가 행벡터를 행벡터라고 불렀기 때문에 당연히 벡터라고 생각하고 있지만, 이렇듯 엄밀한 잣대를 들이댐으로써 새로운 개념의 벡터에 대해 생각해볼 수 있는 것이다.
 
