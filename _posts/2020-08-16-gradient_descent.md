@@ -140,3 +140,7 @@ gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때�
   <br>
   그림 5. 실제로 얻고 싶은 값은 global maximum(빨간색)이지만, initialization이 우연히도 잘못 되면 local minima(노란색)에 빠지기도 한다.
 </p>
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ENnLNkBghhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
