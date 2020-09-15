@@ -60,9 +60,54 @@ $$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right
 
 정답부터 말하자면, 표본 추출이 무수히 많이 되는 경우 비로소 표본 평균의 분포가 정규분포에 수렴하게 된다.
 
+현실적으로 무한히 샘플 추출을 수행할 수는 없기 때문에 샘플 추출을 100번 시행해보도록 하자.
 
+<p align = "center">
+  <video width = "800" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-15-CLT_meaning/pic2.mp4">
+  </video>
+  <br>
+  그림 2. 크기 3인 표본을 100회 추출하면서 매 회 추출된 표본의 평균값을 histogram 형태로 도시한 것
+</p>
 
+# 모집단의 모양에 상관없이 중심극한정리는 성립
+
+한편, 그림 1과 2에서는 모집단의 형태가 정규분포의 형태와 유사했는데, 혹시 그래서 표본 평균의 분포가 정규 분포를 따르게 되는 것일까?
+
+정답은 '그렇지 않다'이다.
+
+중심극한정리가 강력한 이유는 모집단의 형태가 어떻든지 간에 상관없이 표본 평균의 분포는 정규분포를 따르게 된다는 점에 있다.
+
+아래는 모집단이 그림 1 혹은 그림 2와 전혀 다른 형태의 분포를 가지는 경우의 표본 평균의 histogram 예시이다.
+
+아래의 그림 3에서는 모집단의 분포가 uniform distribution을 따르는 경우를 상정하였다.
+
+<p align = "center">
+  <video width = "800" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-15-CLT_meaning/pic3.mp4">
+  </video>
+  <br>
+  그림 3. 모집단의 분포가 uniform distribution인 경우 매 회 추출된 표본의 평균값을 histogram 형태로 도시한 것
+</p>
+
+# 요약
+
+배운 내용을 요약하자면 다음과 같다.
+
+* 표본 평균의 분포는 정규 분포에 근사하게 된다.
+* 모집단의 모양이 어떻든 관계없이 중심극한 정리는 성립한다.
+* 심지어는 표본을 추출하는 모집단이 서로 독립적이라면 여러 모집단에서 추출한 표본이더라도 표본 평균의 분포는 정규분포에 근사하게 된다[^1].
+
+[^1]: 이러한 해석은 랴푸노프 중심극한정리라고 불린다.
+
+그렇다면 처음에 교과서 내용에서 언급한 자연현상이나 사회현상에서 종모양의 분포가 자주 보이는 이유는 무엇일까?
+
+필자의 사견으로는, 자연현상이나 사회현상들은 단독적인 특성만을 가지고 일어나는게 아니라 여러가지 특성들이 합쳐서 평균적인 결과로써 현상이 나오는것이기 때문에 그 현상은 이런 종모양을 따를 수 밖에 없지 않을까 생각한다.
+
+그리고, 또 한가지 우리가 중심극한정리에 초점을 맞춰 통계학을 공부하게 되는 이유는 우리는 대체적으로 표본을 비교할 때 평균에 대한 비교를 많이 하기 때문에 이와 관련된 현상인 중심극한정리를 염두해두고 얻어진 이론들을 많이 접하게 되기 때문이다.
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/iTNHQXGIEuU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+
+
