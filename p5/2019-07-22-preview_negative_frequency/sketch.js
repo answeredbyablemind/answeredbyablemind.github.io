@@ -8,7 +8,7 @@ var circle_x = [],
      circle_y = [];
 
 function setup() {
-     createCanvas(windowWidth, windowWidth / 2);
+     createCanvas(750, 750 / 2);
      scl = width / 8;
      for (let i = 0; i < 3; i += 1 / fs) {
           t.push(i)
