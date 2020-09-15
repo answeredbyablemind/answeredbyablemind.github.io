@@ -307,7 +307,7 @@ text(-0.25, 0.6,'$$\hat{j}$$','interpreter','latex','fontsize',12,'color','r','F
 % line들 그려주기
 xx = linspace(-6, 6, 100);
 
-spacing = [sin(linspace(0, pi/2, 50)), ones(1,50), sin(linspace(pi/2, 3*pi/2, 100)), ones(1,50)*(-1)]+1.001;
+spacing = [sin(linspace(0, pi/2, 50)), ones(1,25), sin(linspace(pi/2, 3*pi/2, 100)), ones(1,25)*(-1), sin(linspace(3*pi/2, 2*pi, 100))]+1.001;
 
 for k = 1:length(spacing)
     sp = spacing(k);
