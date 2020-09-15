@@ -8,7 +8,7 @@ key: 20190722
 tags: 신호처리 푸리에
 ---
 
-<p align="center"><iframe width = "800" src="https://angeloyeo.github.io/p5/2019-07-22-preview_negative_frequency/" frameborder = "0"></iframe>
+<p align="center"><iframe width = "800" height = "400" src="https://angeloyeo.github.io/p5/2019-07-22-preview_negative_frequency/" frameborder = "0"></iframe>
   <br>
   <b>음의 주파수가 의미하는 것: </b>
   <br>
