@@ -30,3 +30,39 @@ $$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right
 
 모집단에서부터 표본을 추출하는 과정을 잘 생각해보자.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-15-CLT_meaning/pic1.png">
+  <br>
+  그림 1. 모집단에서 크기가 3인 샘플을 2회 추출하여 각 추출 시 마다 평균을 계산하여 histogram으로 표현한 것
+</p>
+
+보통은 모집단이라 하면 굉장한 대규모 집단에 대한 특성을 확인하지만 이번에는 이해를 돕고자 매우 작은 크기의 모집단을 생각해보자.
+
+그림 1과 같이 3학년 1반 전체 학생의 키라는 특성에 대한 모집단을 생각해보자.
+
+여기서 샘플을 추출한다는 것은 이 30명의 전체 학생 중에서 일부를 임의로(랜덤하게) 선택하겠다는 뜻이다.
+
+또, 샘플 추출 시 필요한 과정이 하나 있다면 샘플의 크기를 정해주는 것인데, 이것은 연구자가 설정하기 나름이다. 그림 1의 경우에는 샘플의 크기가 3이 되도록 설정하였다.
+
+그림 1의 좌측에서 볼 수 있듯이 한 번 샘플을 추출 할 때 마다 3명씩 랜덤하게 선택하였다.
+
+또, 매 회 추출한 샘플들의 평균 키를 계산해 그림 1의 우측에 히스토그램 형식으로 표시할 수 있다.
+
+가령, 파란색으로 표시한 데이터들의 경우에는 세 개의 값들이 추출되었는데, 164, 166, 168이 추출되었으므로 평균값은 166이다.
+
+이 평균값은 그림 1의 우측에 histogram으로 표시한 것이다.
+
+# 표본 추출을 무수히 많이 하면?
+
+위의 꼭지에서는 표본 추출이 딱 두 번 시행되었다.
+
+그런데, 표본 추출이 2회가 아니라 무수히 많이 수행되면 그림 1의 우측에서 본 것과 같은 표본 평균의 분포가 어떤 형태를 갖게 될까?
+
+정답부터 말하자면, 표본 추출이 무수히 많이 되는 경우 비로소 표본 평균의 분포가 정규분포에 수렴하게 된다.
+
+
+
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/iTNHQXGIEuU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
