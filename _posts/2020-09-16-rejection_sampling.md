@@ -75,6 +75,11 @@ $$x = \lbrace x|-7\leq x \lt 17\rbrace$$
   그림 2. 타겟분포와 제안분포
 </p>
 
+그런 다음 제안 분포에 상수배($M$)를 취해주어 $y$ 축에서도 타겟 분포를 모두 포함할 수 있도록 해주자.
 
-
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic3.png">
+  <br>
+  그림 3. 타겟분포와 제안분포에 상수배를 취해주어 타겟 분포를 모두 포함할 수 있도록 한 것.
+</p>
 

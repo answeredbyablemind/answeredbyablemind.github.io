@@ -27,7 +27,7 @@ hold on;
 h2 = plot(xx, proposal(xx),'linewidth',2);
 
 xlabel('$$x$$','interpreter','latex');
-ylabel('$$f(x)$$','interpreter','latex');
+ylabel('$$f(x), g(x)$$','interpreter','latex');
 grid on;
 
 legend([h1, h2], 'target','proposal');
@@ -35,6 +35,26 @@ title('타겟 분포와 제안 분포');
 
 set(gca,'ytick',sort([0:0.1:8, 0.04]))
 set(gca,'xtick',sort([-10:5:20, -7, 17]))
+
+%% target distribution and proposal distribution
+
+proposal = @(x) double((x>=-7) & (x<17)) / (17-(-7)+1);
+
+figure('color','w');
+h1 = plot(xx, target(xx),'linewidth',2);
+hold on;
+h2 = plot(xx, proposal(xx) *25 * 0.7,'linewidth',2);
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$f(x), Mg(x)$$','interpreter','latex');
+grid on;
+
+legend([h1, h2], 'target','proposal x 상수','location','best');
+title('타겟 분포와 제안 분포의 상수배');
+
+% set(gca,'ytick',sort([0:0.1:8, 0.04]))
+set(gca,'xtick',sort([-10:5:20, -7, 17]))
+
 %% uniform을 이용하여 rejection sampling
 % 성능에 크게 차이는 없으나 reject되는 sample 수가 조금 차이가 있음.
 
