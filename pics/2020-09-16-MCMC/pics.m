@@ -37,6 +37,12 @@ for i_iter = 1:n_iter
         delete(t);
     end
 end
+
+for i = 1:30 % 마지막 장면에서 1.5초 더 대기할 수 있도록
+    writeVideo(newVid, getframe(gcf))
+end
+
+
 close(newVid)
 
 
