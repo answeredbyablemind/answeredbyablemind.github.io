@@ -7,6 +7,7 @@ xx = linspace(-10,20, 1000);
 % target distribution
 target = @(x) 0.3*exp(-0.2 * x.^2) + 0.7 * exp(-0.2 * (x - 10).^2);
 
+%% plotting target distribution
 figure('color','w');
 plot(xx, target(xx),'linewidth',2);
 
@@ -16,6 +17,24 @@ grid on;
 
 title('$$f(x) = 0.3 e^{-0.2x^2} + 0.7 e^{-0.2(x-10)^2}$$','interpreter','latex');
 
+%% target distribution and proposal distribution
+
+proposal = @(x) double((x>=-7) & (x<17)) / (17-(-7)+1);
+
+figure('color','w');
+h1 = plot(xx, target(xx),'linewidth',2);
+hold on;
+h2 = plot(xx, proposal(xx),'linewidth',2);
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$f(x)$$','interpreter','latex');
+grid on;
+
+legend([h1, h2], 'target','proposal');
+title('타겟 분포와 제안 분포');
+
+set(gca,'ytick',sort([0:0.1:8, 0.04]))
+set(gca,'xtick',sort([-10:5:20, -7, 17]))
 %% uniform을 이용하여 rejection sampling
 % 성능에 크게 차이는 없으나 reject되는 sample 수가 조금 차이가 있음.
 
