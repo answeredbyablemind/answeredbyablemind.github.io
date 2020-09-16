@@ -69,6 +69,15 @@ rejection sampling의 첫 단계는 제안 분포(proposal distribution)를 설�
 
 $$x = \lbrace x|-7\leq x \lt 17\rbrace$$
 
+그러면, 우리의 제안분포는 다음과 같다.
+
+$$g(x) = 
+  \begin{cases} 
+                1/24 & \text{if} -7 \leq x \lt 17 \\
+                0 & \text{otherwise}
+  \end{cases}
+$$
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic2.png">
   <br>
@@ -84,4 +93,10 @@ $$x = \lbrace x|-7\leq x \lt 17\rbrace$$
 </p>
 
 ## 샘플링 과정
+
+위의 과정에서처럼 제안분포와 적절한 상수를 정했다면 rejection sampling을 수행해보도록 하자.
+
+가장 먼저 해주어야 할 일은 제안분포 $g(x)$에서 샘플 하나($x_0$)를 추출하는 것이다.
+
+[//]: # (제안 분포에서 샘플 하나를 추출하는 그림 그릴 것)
 

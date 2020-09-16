@@ -19,7 +19,7 @@ title('$$f(x) = 0.3 e^{-0.2x^2} + 0.7 e^{-0.2(x-10)^2}$$','interpreter','latex')
 
 %% target distribution and proposal distribution
 
-proposal = @(x) double((x>=-7) & (x<17)) / (17-(-7)+1);
+proposal = @(x) double((x>=-7) & (x<17)) / 24;
 
 figure('color','w');
 h1 = plot(xx, target(xx),'linewidth',2);
@@ -33,17 +33,17 @@ grid on;
 legend([h1, h2], 'target','proposal');
 title('타겟 분포와 제안 분포');
 
-set(gca,'ytick',sort([0:0.1:8, 0.04]))
+set(gca,'ytick',sort([0:0.1:8, 1/24]))
 set(gca,'xtick',sort([-10:5:20, -7, 17]))
 
 %% target distribution and proposal distribution
 
-proposal = @(x) double((x>=-7) & (x<17)) / (17-(-7)+1);
+proposal = @(x) double((x>=-7) & (x<17)) / 24;
 
 figure('color','w');
 h1 = plot(xx, target(xx),'linewidth',2);
 hold on;
-h2 = plot(xx, proposal(xx) *25 * 0.7,'linewidth',2);
+h2 = plot(xx, proposal(xx) *24 * 0.7,'linewidth',2);
 
 xlabel('$$x$$','interpreter','latex');
 ylabel('$$f(x), Mg(x)$$','interpreter','latex');
