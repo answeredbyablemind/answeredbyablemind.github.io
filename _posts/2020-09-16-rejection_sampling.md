@@ -28,7 +28,7 @@ normal_sample = randn(1,1)
 
 가령 아래와 같은 확률 밀도 함수 $f(x)$를 생각해볼 수 있다.
 
-$$f(x) = 0.3\exp\left(-0.2x^2\right) + 0.7\exp\left(-0.2(x-10)^2\right)$$
+$$f(x) \propto 0.3\exp\left(-0.2x^2\right) + 0.7\exp\left(-0.2(x-10)^2\right)$$
 
 [//]:# (수식 1)
 
