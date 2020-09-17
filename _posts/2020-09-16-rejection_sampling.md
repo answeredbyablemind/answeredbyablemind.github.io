@@ -166,6 +166,8 @@ Rejection sample의 결과를 일부 표현하면 다음과 같다.
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic7.png">
   <br>
   그림 7. 타겟 분포 $f(x)$와 accept된 샘플들을 histogram으로 그린 것.
+  <br>
+  (다른 그림들과 $y$축의 높이가 다른 것에 주목하자.)
 </p>
 
 
