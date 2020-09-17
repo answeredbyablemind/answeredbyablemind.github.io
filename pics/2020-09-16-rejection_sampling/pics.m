@@ -73,7 +73,28 @@ coins = rand(1, length(crits));
 x_p_uniform = x_q(coins<crits);
 
 figure; h = histogram(x_p_uniform,'BinWidth',0.5, 'Normalization','probability');
-hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values))
+hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values),'linewidth',3,'color','r')
+
+xlabel('$$x$$','interpreter','latex');
+grid on;
+%% accept된 경우들과 기각된 경우들을 plot
+
+accepted = coins<crits;
+
+x_accepted = x_q(accepted);
+y_accepted = coins(accepted);
+
+x_rejected = x_q(~accepted);
+y_rejected = coins(~accepted);
+
+figure;
+idx = randperm(length(x_accepted), 500);
+h1 = plot(x_accepted(idx), y_accepted(idx),'o','markerfacecolor',lines(1),'markeredgecolor','none');
+hold on;
+idx = randperm(length(x_rejected), 500);
+h2 = plot(x_rejected(idx), y_rejected(idx),'o','markerfacecolor',[0.85, 0.325, 0.098],'markeredgecolor','none');
+
+legend([h1, h2], 'accepted','rejected');
 
 
 

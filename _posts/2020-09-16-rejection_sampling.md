@@ -8,8 +8,6 @@ key: 20200916
 tags: 통계학
 ---
 
-해당 포스팅은 [CHML 님의 포스팅](https://untitledtblog.tistory.com/134?category=823331)을 참고하여 작성하였습니다.
-
 # 확률 분포로부터 샘플 추출
 
 uniform distribution이나 정규분포의 샘플은 컴퓨터를 이용하면 코드 한 줄이면 추출할 수 있다.
@@ -31,6 +29,8 @@ normal_sample = randn(1,1)
 가령 아래와 같은 확률 밀도 함수 $f(x)$를 생각해볼 수 있다.
 
 $$f(x) = 0.3\exp\left(-0.2x^2\right) + 0.7\exp\left(-0.2(x-10)^2\right)$$
+
+[//]:# (수식 1)
 
 우리가 샘플을 추출하고자 하는 이 확률 분포를 '타겟 분포(target distribution)'라고 이름 붙이고, $f(x)$로 쓰도록 하자.
 
@@ -69,6 +69,8 @@ rejection sampling의 첫 단계는 제안 분포(proposal distribution)를 설�
 
 $$x = \lbrace x|-7\leq x \lt 17\rbrace$$
 
+[//]:# (수식 2)
+
 그러면, 우리의 제안분포는 다음과 같다.
 
 $$g(x) = 
@@ -77,6 +79,8 @@ $$g(x) =
                 0 & \text{otherwise}
   \end{cases}
 $$
+
+[//]:# (수식 3)
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic2.png">
@@ -98,5 +102,69 @@ $$
 
 가장 먼저 해주어야 할 일은 제안분포 $g(x)$에서 샘플 하나($x_0$)를 추출하는 것이다.
 
-[//]: # (제안 분포에서 샘플 하나를 추출하는 그림 그릴 것)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic4.png">
+  <br>
+  그림 4. 제안분포(여기서는 uniform distribution)에서 샘플 하나를 추출한다.
+</p>
 
+그런 다음, 타겟 분포($f(x)#)와 상수배를 취한 제안 분포($Mg(x)$)의 likelihood를 비교해준다.
+
+즉, 제안분포 $g(x)$로부터 추출한 $x_0$에 대해 $f(x_0)$와 $Mg(x_0)$의 함수 값을 비교해주는 것이다.
+
+이 때, 크기를 비교할 때에는 두 함수값을 나눠줘서 비교하는 방식으로 수행한다.
+
+즉, 아래와 같은 방법으로 비교를 수행하도록 하자.
+
+$$f(x_0)/(Mg(x_0))$$
+
+[//]:# (수식 4)
+
+식 (4)를 잘 생각해보면 타겟 분포의 크기가 $Mg(x)$만큼 높으면 1에 가까운 값이 나올 것이고 그렇지 않으면 작은 값이 나올 것이다.
+
+이제 식 (4)의 값을 아래와 같은 정의역으로 정의되는 uniform distribution의 샘플 값과 비교할 수 있도록 하자.
+
+$$x = \lbrace x| 0 \leq x \lt 1\rbrace$$
+
+즉, 이것을 그림으로 설명하면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic5.png">
+  <br>
+  그림 5. 주어진 $x_0$에 대해 likelihood ratio를 비교하여 샘플의 accept/reject 여부를 결정한다.
+</p>
+
+위의 그림 5에서와 같이 likelihood ratio를 uniform distribution의 출력값과 비교하게 되면 타겟 분포 $f(x)$의 높이가 $Mg(x)$만큼 높은 곳일 수록 accept될 확률이 높다는 것을 알 수 있다.
+
+특히, 비교를 위해 얻은 uniform distribution의 출력값은 0에서 1사이의 값이 랜덤하게 출력된다는 점에 주목해서 생각해보자.
+
+알고리즘을 간략하게 쓰면 다음과 같다.
+
+> Set $i = 1$
+> Repeat until $i=N$
+>   1. Sample $x^{(i)} \sim q(x)$ and $u\sim U_{(0,1)}$.
+>   2. If $u\lt \frac{f(x^{(i)})}{Mg(x^{(i)})}$, then accept $x^{(i)}$ and increment the counter $i$ by 1.
+>      Otherwise, reject.
+
+# Rejection sampling 결과
+
+Rejection sample의 결과를 일부 표현하면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic6.png">
+  <br>
+  그림 6. accept 된 샘플들과 reject 된 샘플들
+</p>
+
+그리고 최종적으로 얻어진 샘플들을 원래의 구하고자 했던 타겟 분포 $f(x)$와 함께 히스토그램으로 그리면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-16-rejection_sampling/pic7.png">
+  <br>
+  그림 7. 타겟 분포 $f(x)$와 accept된 샘플들을 histogram으로 그린 것.
+</p>
+
+
+# 참고 문헌
+
+* An introduction to MCMC for Maching Learning / C. Andrieu et al., Machine Learning, 50, 5-43, 2003
