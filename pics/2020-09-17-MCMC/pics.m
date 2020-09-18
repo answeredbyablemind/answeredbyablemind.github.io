@@ -144,3 +144,7 @@ for i = 1 : n_iter
     end
 end
 
+
+% °á°ú plot
+figure; h = histogram(x);
+hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values),'linewidth',2)
