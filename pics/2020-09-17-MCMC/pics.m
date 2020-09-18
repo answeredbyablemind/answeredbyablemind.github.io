@@ -148,3 +148,5 @@ end
 % °á°ú plot
 figure; h = histogram(x);
 hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values),'linewidth',2)
+
+%%
