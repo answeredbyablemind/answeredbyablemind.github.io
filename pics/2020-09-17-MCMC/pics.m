@@ -149,4 +149,20 @@ end
 figure; h = histogram(x);
 hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values),'linewidth',2)
 
-%%
+%% %%%%%%%%%%%%%%%%%%%%% Bayesian Estimation %%%%%%%%%%%%%%%%%%%%%%
+
+% 총 데이터는 5개가 있었다고 해보자.
+ 
+std_obs = 3.1591; % 계산해둔 것을 넣어두기.
+pop_mu = 10;
+pop_std = 3;
+
+data = randn(1, 5) * pop_std + pop_mu;
+
+xx = linspace(-10, 25, 1000);
+
+pdf_prev = normpdf(xx, 1, std_obs);
+
+figure;
+plot(xx, pdf_prev)
+normpdf(data, 1, std_obs)
