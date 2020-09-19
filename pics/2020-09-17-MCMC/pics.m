@@ -166,3 +166,60 @@ pdf_prev = normpdf(xx, 1, std_obs);
 figure;
 plot(xx, pdf_prev)
 normpdf(data, 1, std_obs)
+
+
+%% Likelihood 비교
+
+figure('color','w','position',[680, 340, 700, 400]);
+% line([-5, 10],[0, 0],'color','k')
+set(gca,'visible','off')
+% ylim([-0.05, 0.25])
+mArrow2(-2,0,6,0,{'color','k'});
+
+data = -1:5;
+hold on;
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[0.85, 0.32, 0.098],'markeredgecolor', lines(1),'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.05, num2str(data(i)),'fontsize',13);
+end
+
+text(20, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+xx = linspace(-1, 3, 100);
+yy = normpdf(xx, 1, 0.5);
+plot(xx, yy,'linewidth',3,'color',[0.4, 0.4, 0.4])
+xlim([-1.5 6])
+
+line([1, 1], [0, normpdf(1, 1, 0.5)],'color','k','linestyle','--')
+%% Likelihood 비교
+
+figure('color','w','position',[680, 340, 700, 400]);
+line([-5, 20],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-5,0,20,0,{'color','k'});
+
+data = [1,6,9,10, 13];
+hold on;
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[0.85, 0.32, 0.098],'markeredgecolor', lines(1),'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(20, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+xx = linspace(-7, 17, 100);
+yy = normpdf(xx, 1, 3.1591);
+plot(xx, yy,'linewidth',3)
+
+yy2 = normpdf(xx, 7, 3.1591);
+plot(xx, yy2,'linewidth',3,'color',lines(1))
+
+for i = 1:length(data)
+    line([data(i), data(i)], [0, normpdf(data(i), 7, 3.1591)],'color', lines(1),'linestyle','--','linewidth',2)
+
+    line([data(i), data(i)], [0, normpdf(data(i), 1, 3.1591)],'color', [0.85, 0.32, 0.098],'linestyle','--','linewidth',2)
+    
+end
