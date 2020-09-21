@@ -170,7 +170,7 @@ docs-ko:
         url:    2020/07/17/MLE.html
       - title:  Rejection sampling
         url:    2020/09/16/rejection_sampling.html
-      - title:  Monte Carlo Markov Chain
+      - title:  Markov Chain Monte Carlo
         url:    2020/09/17/MCMC.html
         
   - title:    복소수와 오일러 공식

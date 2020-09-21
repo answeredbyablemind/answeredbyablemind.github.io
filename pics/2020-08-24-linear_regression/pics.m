@@ -100,17 +100,6 @@ plot(xx, yy,'r','linewidth',2)
 saveas(gcf, 'pic6.png')
 
 %% pic 7
-
-load accidents
-x = hwydata(:,14)/10000; %Population of states
-y = hwydata(:,4); %Accidents per state
-
-figure; plot(x, y, 'o');
-xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
-title('한 주에서 발생한 교통사고 건수와 그 주의 인구');
-saveas(gcf,'pic7.png');
-
-%% pic 7
 rng(1)
 x = rand(1, 50) * 100 + 1; % 1~100 사이의 랜덤한 데이터 50개
 y = 3 * x + 1 + randn(size(x)) * 30;
