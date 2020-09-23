@@ -60,7 +60,7 @@ $$\Rightarrow\frac{\exp(-\theta^TX)X}{(1+\exp(-\theta^TX))(1+\exp(-\theta^TX))}$
 
 $$\Rightarrow \left(\frac{1}{1+\exp(-\theta^TX)}\right)\left(\frac{\exp(-\theta^TX)}{1+\exp(-\theta^TX)}\right)X$$
 
-여기서 두 번째 term은 +1 -1 을 해도 결과는 변화가 없으므로,
+여기서 두 번째 term은 1을 더하고 1을 빼도 결과는 변화가 없으므로,
 
 $$=\left(\frac{1}{1+\exp(-\theta^TX)}\right)\left(\frac{1+\exp(-\theta^TX)-1}{1+\exp(-\theta^TX)}\right)X$$
 
