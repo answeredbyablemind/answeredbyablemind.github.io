@@ -17,10 +17,14 @@ tags: 머신러닝
 
 [//]:# (선형회귀로 푼 경우 그림 그릴 것)
 
+[//]:# (범주형 데이터를 표현할 수 있는 함수 필요함을 어필할 것.)
+
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic2.png">
   <br>
 </p>
+
+[//]:# (왜 sigmoid 함수인가? --> 미분하기 쉽다. 또, 각 label에 대한 데이터의 분포가 정규분포라고 했을 때 Posterior를 계산하면 얻을 수 있는 결과임. 어려우니까 넘어가자.)
 
 # Error에 대한 gradient 계산
 
@@ -97,3 +101,12 @@ $$\therefore \frac{\partial E}{\partial a}=(P-y)x$$
 $$\frac{\partial E}{\partial b}=(P-y)$$
 
 이다.
+
+# 회귀 모델 구축 결과
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/picN.mp4">
+  </video>
+  <br>
+</p>
