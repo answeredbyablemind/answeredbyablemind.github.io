@@ -125,18 +125,18 @@ docs-ko:
 
   - title:      머신러닝
     children:
-      - title:  베이즈 정리의 의미
-        url:    2020/01/09/Bayes_rule.html
-      - title:  나이브 베이즈 분류기
-        url:    2020/08/04/naive_bayes.html
-      - title:  ROC curve
-        url:    2020/08/05/ROC.html
       - title:  경사하강법(Gradient Descent)
         url:    2020/08/16/gradient_descent.html
       - title:  선형회귀(linear regression)
         url:    2020/08/24/linear_regression.html
       - title:  로지스틱 회귀(logistic regression)
         url:    2020/09/23/logistic_regression.html
+      - title:  베이즈 정리의 의미
+        url:    2020/01/09/Bayes_rule.html
+      - title:  나이브 베이즈 분류기
+        url:    2020/08/04/naive_bayes.html
+      - title:  ROC curve
+        url:    2020/08/05/ROC.html
       - title:  헤시안 행렬의 기하학적 의미
         url:    2020/06/17/Hessian.html
       - title:  Layer-wise Relevance Propagation
