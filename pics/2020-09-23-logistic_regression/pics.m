@@ -117,7 +117,7 @@ newVid.FrameRate = 30;
 newVid.Quality = 100;
 open(newVid);
 
-figure;
+figure('color','w');
 hold on;
 ylim([-0.5, 1.5])
 grid on;
