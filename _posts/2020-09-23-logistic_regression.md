@@ -78,7 +78,7 @@ $$ = P(X,\theta)(1-P(X,\theta))X$$
 
 $$E(y, P) = -(y\log(P)+(1-y)\log(1-P))$$
 
-$$\frac{\partial E}{\partial \theta}=-\left(y\frac{\partial \log(P)}{\partial \theta}+(1-y)\frac{\log(1-P)}{\partial \theta}\right)$$
+$$\frac{\partial E}{\partial \theta}=-\left(y\frac{\partial \log(P)}{\partial \theta}+(1-y)\frac{\partial\log(1-P)}{\partial \theta}\right)$$
 
 $$\Rightarrow -\left(y\frac{\partial \log(P)}{\partial P}\frac{\partial P}{\partial \theta}+(1-y)\frac{\partial \log(1-P)}{\partial (1-P)}\frac{\partial(1-P)}{\partial P}\frac{\partial P}{\partial \theta}\right)$$
 
