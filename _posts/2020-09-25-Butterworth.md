@@ -418,41 +418,55 @@ $$H_a(s) = \frac{\Omega_c^3}{s^3 + 2\Omega_cs^2 + 2\Omega_c^2s + \Omega_c^3}$$
 
 여기까지 보면, 일반적으로 $N$이 홀수인 경우와 짝수인 경우의 pole값이 차이가 있다는 것을 알 수 있다. 만약 $N$이 홀수라면 $s$가 real number인 pole이 하나 있고 나머지는 모두 complex number이고, $N$이 짝수라면 모두 complex number의 pole을 갖는다는 것을 알 수 있다. 그 이유는 다음과 같다. 
 
-<img src="http://bit.ly/1Tnrpbu">에서 <img src="http://bit.ly/1nnnKhg">가 되는 지점이 반드시 생기기 때문인데, 그 $k$는 <img src="http://bit.ly/1nnnMpt">인 점이다. 
+$$s_k = -\sin\left(\frac{2k-1}{2N}\pi\right)+j\cos\left(\frac{2k-1}{2N}\pi\right)$$
 
-즉, N이 홀수 일 때 <img src="http://bit.ly/1nnnPl1">인 점에서는 $s_k$가 반드시 –1이 된다. 
+에서 
+
+$$\frac{2k-1}{2N}\pi = \frac{1}{2}\pi$$
+
+가 되는 지점이 반드시 생기기 때문인데, 그 $k$는 $k=(N+1)/2$인 점이다. 
+
+즉, $N$이 홀수 일 때 $k=(N+1)/2$ 인 점에서는 $s_k$가 반드시 $–1$이 된다. 
 
 더불어, 일반적으로
 
+$$\cos\left(\pi-\theta\right)=-\cos(\theta)$$
 
-<img src="http://bit.ly/1nnnSxl">
-
-<img src="http://bit.ly/1TnrD2j">
-
+$$\sin\left(\pi-\theta\right)=\sin(\theta)$$
 
 이기 때문에, 모든 $s_p$는 $s_{N-p+1}$와 complex conjugate를 이루게 된다. 
 
-그렇기 때문에, <img src="http://bit.ly/1TnrITF">라고 할 수 있다. 더불어, <img src="http://bit.ly/1TnrLyO">이고, <img src="http://bit.ly/1nnobYN">인 성질을 갖는다. 
-
-그렇기 때문에, <img src="http://bit.ly/1nnofIi">이므로, $H_a(s)$는 다음과 같이 생각할 수 있다. 
+그렇기 때문에, $S_{N-p+1} = s^*_p$라고 할 수 있다. 
 
 
-N이 짝수일 때,
+더불어, 
+
+$$s_p+s^*_p = 2\sin\left(\frac{2k-1}{2N}\pi\right)$$
+
+이고, 
+
+$$s_ps^*_p=1$$
+
+인 성질을 갖는다. 
+
+그렇기 때문에, 
+
+$$(s-s_p)(s-s^*_p)=s^2-s(s_p+s^*_p)+s_ps^*_p=s^2 +2s\sin\left(\frac{2p-1}{2N}\pi\right)+1$$
+
+이므로, $H_a(s)$는 다음과 같이 생각할 수 있다. 
 
 
-<img src="http://bit.ly/1nnoq6b">
+$N$이 짝수일 때,
 
-where <img src="http://bit.ly/1Tns4K3">
+$$H_a(s) = \Omega_c^N / \left\lbrace\prod_{k=1}^{N/2}\left(s^2 + b_k\Omega_c s + \Omega_c^2\right)\right\rbrace\notag$$
 
-
-
+$$\text{ where }b_k = 2\sin\left(\frac{2k-1}{2N}\pi\right)$$
 
 N이 홀수일 때,
 
+$$H_a(s) = \Omega_c^N / \left\lbrace(s+\Omega_c) \prod_{k=1}^{\frac{N-1}{2}}\left(s^2 + b_k\Omega_c s + \Omega_c^2\right)\right\rbrace\notag$$
 
-<img src="http://bit.ly/1nnoDXa">
-
-<img src="http://bit.ly/1Tns4K3">
+$$\text{ where }b_k = 2\sin\left(\frac{2k-1}{2N}\pi\right)$$
 
 이로써, 우리는 Butterworth Filter의 s-domain에서의 일반적인 transfer function을 구했다. 
 
@@ -461,31 +475,28 @@ N이 홀수일 때,
 
 종합하자면,
 
-<img src="http://bit.ly/1TnsuzX">
+$$N \geq
+\log_{10}\sqrt{\frac{\delta^{-2}_p-1}{\delta_s^{-2}-1}} 
+/ \log_{10}\left(\frac{\Omega_p}{\Omega_s}\right)$$
 
 이라는 식을 통해서 N을 구할 수 있고,
 
-<img src="http://bit.ly/1TnkqPI">
+$$\left(\frac{\Omega_p}{\Omega_c}\right)^{2N} = \delta_p^{-2}-1$$
+
 
 라는 식을 통해서 $\Omega_c$를 구할 수 있다. 
 
 
-N이 짝수일 때,
+거기에, N이 짝수일 때,
 
+$$H_a(s) = \Omega_c^N / \left\lbrace\prod_{k=1}^{N/2}\left(s^2 + b_k\Omega_c s + \Omega_c^2\right)\right\rbrace\notag$$
 
-<img src="http://bit.ly/1nnoq6b">
-
-where <img src="http://bit.ly/1Tns4K3">
-
-
-
+$$\text{ where }b_k = 2\sin\left(\frac{2k-1}{2N}\pi\right)$$
 
 N이 홀수일 때,
 
+$$H_a(s) = \Omega_c^N / \left\lbrace(s+\Omega_c) \prod_{k=1}^{\frac{N-1}{2}}\left(s^2 + b_k\Omega_c s + \Omega_c^2\right)\right\rbrace\notag$$
 
-<img src="http://bit.ly/1nnoDXa">
+$$\text{ where }b_k = 2\sin\left(\frac{2k-1}{2N}\pi\right)$$
 
-<img src="http://bit.ly/1Tns4K3">
-
-
-을 통해서 일반적인 s-domain에 Butterworth filter를 정의할 수 있게 된다.
+을 통해서 일반적인 $s$-domain에 대해 Butterworth filter를 정의할 수 있게 된다.
