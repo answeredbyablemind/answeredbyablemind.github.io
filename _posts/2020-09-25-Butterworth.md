@@ -8,6 +8,8 @@ key: 20200925
 tags: 신호처리
 ---
 
+본 포스팅은 IIT의 [S. C. Duta Roy 교수님의 강의](https://www.youtube.com/watch?v=vpPbaw9k8PY&ab_channel=nptelhrd)를 정리한 것임을 먼저 밝힙니다.
+
 # 1. Analog Filter
 
 ## 가. 일반적인 아날로그 시스템과 필터
@@ -96,9 +98,12 @@ all-pole 필터에도 zero가 존재한다. 단지 zero인 s는 모두 $\infty$�
 
 일반적으로 filter는 원하는 주파수 영역대를 살리고, 나오지 않아야하는 주파수 영역대는 죽여줘야 하는 사명을 갖고 태어나게 해야한다. 그것은 filter specification이라는 것을 통해서 요구할 수 있다. 가장 완벽한 필터는 transition의 기울기가 수직인, 통과시키고 싶은 부분의 주파수 요소만 통과시키는 필터이다. 하지만 이런 필터는 존재하지 않는다. 그 이유는 몇 가지로 생각해볼 수 있다. 
 
-<img src = "https://wikidocs.net/images/page/4066/20160123_220935.png">
+<p align = "center">
+  <img src = "https://wikidocs.net/images/page/4066/20160123_220935.png">
+  <br>
+</p>
 
- ideal filter는 위와 같이 생겼다. frequency 영역에서는 큰 문제가 없는 것처럼 단순하게 생겼지만 이것을 시간 영역으로 다시 역 푸리에 변환하게 되면, 실제로 이런 필터가 존재할 수 없다는 사실을 알게 된다. ideal filter를 역 푸리에 변환 하게 된 필터는 sinc function이기 때문이다. 먼저, 일반적인 sinc function은 causal하지 않고, impuse response의 길이가 무한하기 때문이다. 
+ideal filter는 위와 같이 생겼다. frequency 영역에서는 큰 문제가 없는 것처럼 단순하게 생겼지만 이것을 시간 영역으로 다시 역 푸리에 변환하게 되면, 실제로 이런 필터가 존재할 수 없다는 사실을 알게 된다. ideal filter를 역 푸리에 변환 하게 된 필터는 sinc function이기 때문이다. 일반적인 sinc function은 causal하지 않고, impuse response의 길이가 무한하기 때문이다. 
 
 어쨌든, 현실적인 필터 시스템을 만들기 위해서는 적절히 타협된 필터를 구성해내는 것이 더 중요하다고 할 수 있다. 그래서 데시벨을 이용해서 –2dB지점에서 passband frequency를 갖고, -40dB지점에서 stopband frequency를 가지는 filter를 구성해주세요! 라고 타협적으로 엔지니어에게 요구하게 되는 것이다. 이 요구 조건을 가지고 우리는 Butterworth filter의 차수를 어떻게 조절해야 하는지, cutoff frequency($\Omega_c$)는 어떻게 맞춰야 하는지 등등에 대해서 공부해보자.
 
@@ -139,7 +144,7 @@ $$|H_a(j\Omega)| = 1/\sqrt{1+\left(\frac{\Omega}{\Omega_c}\right)^{2N}}$$
 
 이므로, 
 
-$\lim_{\Omega\rightarrow \infty}|H_a(j\Omega)|$는 $\left(\frac{\Omega}{\Omega_c}\right)^{-N}$의 크기를 따르게 되므로, 0에 수렴하게 되는데 데시벨의 크기에서 한번 관찰해보면, 
+$\lim_{\Omega\rightarrow \infty}\|H_a(j\Omega)\|$는 $\left(\frac{\Omega}{\Omega_c}\right)^{-N}$의 크기를 따르게 되므로, 0에 수렴하게 되는데 데시벨의 크기에서 한번 관찰해보면, 
 
 $$\lim_{\Omega\rightarrow \infty}|H_a(j\Omega)| = -20N \log_{10}\left(\frac{\Omega}{\Omega_c}\right)$$
 
@@ -246,77 +251,93 @@ $$\left(\frac{\Omega_p}{\Omega_c}\right)^{2N} = \delta_p^{-2}-1$$
 # 5. Butterworth filter의 transfer function (s-domain)
 
 
- 먼저 우리는 식 (10)으로부터 Butterworth filter를 s-domain에 mapping 시켜보고, 그것 중 stable한 값을 가지는 $s$만을 취해서 일반적인 아날로그 필터인 $|H_a(s)|$를 도출하도록 하겠다. 그리고 그 $|H_a(s)|$의 일반식을 유도하는 과정을 알아보도록 하자.
+ 먼저 우리는 식 (10)으로부터 Butterworth filter를 s-domain에 mapping 시켜보고, 그것 중 stable한 값을 가지는 $s$만을 취해서 일반적인 아날로그 필터인 $\|H_a(s)\|$를 도출하도록 하겠다. 그리고 그 $\|H_a(s)\|$의 일반식을 유도하는 과정을 알아보도록 하자.
 
 먼저, $s=j\Omega$라는 transformation을 통해서 를 s-domain에 쉽게 표현할 수 있다. 즉, 다음의 식이 성립한다.
 
-<img src="http://bit.ly/1nnjb6y">
+$$|H_a(j\Omega)|^2 = H_a(s)H_a(-s)$$
 
 여기서 s 부분과 –s부분으로 굳이 나눈 이유는, 나중에 알게 되겠지만 s는 $\pm$의 복호로 나눠지게 되는데 이 때, 양의 값을 가지는 s만 stable하기 때문이다. 그러므로 
 
-<img src="http://bit.ly/1TnmgQA">
+$$H_a(s) H_a(-s) = 1/\left\lbrace 1+\left(\frac{-s^2}{\Omega_c^2}\right)^N\right\rbrace$$
 
 으로 일반화 할 수 있다.
 
-여기서 s로 표현되는 pole의 값들을 구하고 그 pole들로 s-domain의 일반화된 $|H_a(s)|$를 나타낼 수 있다면, 어떤 N에 대해서도 s-domain에서 표현되는 Butterworth filter의 Transfer function을 얻을 수 있다.
+여기서 $s$로 표현되는 pole의 값들을 구하고 그 pole들로 $s$-domain의 일반화된 $\|H_a(s)\|$를 나타낼 수 있다면, 어떤 N에 대해서도 s-domain에서 표현되는 Butterworth filter의 Transfer function을 얻을 수 있다.
 
 
 Pole은 분모의 값이 0이 되도록 하는 s의 값으로 정의되기 때문에, pole의 정의에 따르면,                                 
 
-<img src="http://bit.ly/1nnju1f">
+$$1+\left(\frac{-s^2}{\Omega_c^2}\right)^N = 0$$
 
 이 되는 s는 Butterworth Filter의 pole이라고 할 수 있다.  
 
-<img src="http://bit.ly/1nnjzSH">
+$$\Rightarrow \left(\frac{-s^2}{\Omega_c^2}\right)^N = (-1) = \exp\left(j(2k-1)\pi\right)\text{ for } k = 1, 2, \cdots, N$$
 
-<img src="http://bit.ly/1nnjBKg">
+$$\Rightarrow \left(\frac{-s^2}{\Omega_c^2}\right)=\exp\left(j\frac{2k-1}{N}\pi\right)$$
 
-<img src="http://bit.ly/1TnmN5g">
+$$s_k^2 = -\Omega_c^2\exp\left(j\frac{2k-1}{N}\pi\right)\text{ for }k= 1, 2, \cdots, N$$
 
-<img src="http://bit.ly/1TnmR50">
+$$\therefore s_k = \pm j\Omega_c^2\exp\left(j\frac{2k-1}{2N}\pi\right)\text{ for }k= 1, 2, \cdots, N$$
 
 
+즉, 여기서 $s_k$는 양의 값과 음의 값 두 가지로 나뉘게 된다. 하지만, $s_k$는 양의 값을 가질 때 그 값들이 모두 s-plane의 Left Hand Plane에 존재하게 되어서 양의 $s_k$만 stable한 시스템을 구성할 수 있다. [^1]
 
-즉, 여기서 $s_k$는 양의 값과 음의 값 두 가지로 나뉘게 된다. 하지만, $s_k$는 양의 값을 가질 때 그 값들이 모두 s-plane의 Left Hand Plane에 존재하게 되어서 양의 만 stable한 시스템을 구성할 수 있다. 그러므로, 양의 $s_k$가 항상 Left Hand Plane에 존재한다는 것을 증명하겠다. 여기서 양의 $s_k$가 항상 Left Hand Plane에 존재하기 때문에 음의 $s_k$는 항상 Right Hand Plane에 존재한다는 것을 알 수 있으므로, 증명은 생략하도록 하겠다.
+[^1]: 왜 s-plane의 왼편에 s가 존재해야 시스템이 stable한지에 대해서는 [라플라스 변환](https://angeloyeo.github.io/2019/08/12/Laplace_transform.html)편을 참고하도록 하자.
 
+그러므로, 양의 $s_k$가 항상 Left Hand Plane에 존재한다는 것을 증명하겠다. 여기서 양의 $s_k$가 항상 Left Hand Plane에 존재하기 때문에 음의 $s_k$는 항상 Right Hand Plane에 존재한다는 것을 알 수 있으므로, 증명은 생략하도록 하겠다.
 
 ---
-PROOF 1 : The location of positive $s_k$ in s-domain
 
-양의 <img src="http://bit.ly/1nnpnvk">에 대해서
+PROOF 1 : The location of positive $s_k$ in $s$-domain
 
+양의 $s_k$에 대해서
 
-<img src="http://bit.ly/1nnjYo3">
+$$ s_k^+= j\Omega_c\exp\left(j\frac{2k-1}{2N}\pi\right)\text{ for }k = 1, 2, \cdots, N$$
 
-<img src="http://bit.ly/1nnk5jr">
+$$=j\Omega_c\left(\cos\left(\frac{2k-1}{2N}\pi\right)+j\sin\left(\frac{2k-1}{2N}\pi\right)\right)$$
 
-
-
+$$=\Omega_c\left(j\cos\left(\frac{2k-1}{2N}\pi\right)-\sin\left(\frac{2k-1}{2N}\pi\right)\right)$$
 
 여기서 
 
-<img src="http://bit.ly/1TnniMp">
+$$\sin\left(\frac{2k-1}{2N}\pi\right) = 
+
+\left\lbrace \sin\left(\frac{1}{2N}\pi\right),
+
+\text{ } \sin\left(\frac{3}{2N}\pi\right),
+
+\text{ } \sin\left(\frac{5}{2N}\pi\right), \cdots,
+
+\text{ } \sin\left(\frac{2N-1}{2N}\pi\right)
+
+\right\rbrace$$
+
+라는 사실을 쉽게 알 수 있다. 
+
+그런데 모든 $\sin\left(\frac{2k-1}{2N}\pi\right)$는 1,2 사분면위에 위치하게 되고, 이 값들은 모두 양수이다. 그렇기 때문에 $s_k$의 실수부는 항상 음수의 값을 가지게 된다.
 
 
-라는 사실을 쉽게 알 수 있다. 그런데 모든 는 1,2 사분면위에 위치하게 되고, 이 값들은 모두 양수이다. 그렇기 때문에 $s_k$의 실수부는 항상 음수의 값을 가지게 된다.
-
-
-<img src="http://bit.ly/1nnkNgE">는 N의 값에 관계없이 항상 s-plane의 Left Hand Pole이다.
+따라서 $s_k^+=j\Omega_c\exp\left(j\frac{2k-1}{2N}\pi\right)$는 $N$의 값에 관계없이 항상 $s$-plane의 Left Hand Pole이다.
 
 
 Q.E.D.
 
 ---
 
-그렇기 때문에 일반적으로, <img src="http://bit.ly/1nnld6Q">이라는 pole 값을 이용한다면, stable Butterworth system을 만들 수 있게 된다.
+그렇기 때문에 일반적으로, 
 
-그렇기 때문에, 일반적으로 stable한 Butterworth Filter System은 s-domain에서 다음과 같이 정의될 수 있다.
+$$s_k = \Omega_c\left(-\sin\left(\frac{2k-1}{2N}\pi\right)+j\cos\left(\frac{2k-1}{2N}\pi\right)\right)\text{ for }k = 1, 2, \cdots, N$$
+
+이라는 pole 값을 이용한다면, stable Butterworth system을 만들 수 있게 된다.
+
+그렇기 때문에, 일반적으로 stable한 Butterworth Filter System은 $s$-domain에서 다음과 같이 정의될 수 있다.
 
 <img src="http://bit.ly/1Tnp7Jk">
 
 <img src="http://bit.ly/1nnlF4N">
 
-where<img src="http://bit.ly/1nnls1y">
+where <img src="http://bit.ly/1nnls1y">
 
 또는,
 
