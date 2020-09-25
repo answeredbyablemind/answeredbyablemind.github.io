@@ -230,5 +230,7 @@ docs-ko:
         url:    2020/07/23/laplace_and_z.html
       - title:  시간-주파수 불확정도
         url:    2020/01/16/time_frequency_uncertainty.html
+      - title:  버터워스 필터
+        url:    2020/09/25/Butterworth.html
         
 
