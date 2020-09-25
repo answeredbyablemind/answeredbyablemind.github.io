@@ -156,7 +156,7 @@ $$\lim_{\Omega\rightarrow \infty}|H_a(j\Omega)| = -20N \log_{10}\left(\frac{\Ome
 
 그러므로 위의 그림과 같은 Butterworth Filter의 모양과 같은 plot을 구상해 낼 수 있다.이로써, Butterworth filter의 모양을 수학적으로 생각해보았다. 하지만, 이것을 안다고 해서 filter specification을 맞출 수 있는 것은 아니다. filter의 specification에 대해서 이제 더 생각해보자. 
 
-<p align = "center"
+<p align = "center">
   <img src = "https://wikidocs.net/images/page/4066/20160127_131750.png">
   <br>
 </p>
@@ -351,67 +351,72 @@ $$\text{ where } s_k = -\sin\left(\frac{2k-1}{2N}\pi\right) + j\cos\left(\frac{2
 
 $N$=1 인 경우,
 
-
 $$H_a(s) = 1/\left(\frac{s}{\Omega_c}-s_1\right)\notag$$
 
-$$\text{ where }s_1 = -\sin\left(\frac{1}{2}\pi\right)+j\cos\left(\frac{1}{2}\pi\right)=-1+0j = -1\notag$$
+$$\text{ where }s_1 = -\sin\left(\frac{1}{2}\pi\right)+j\cos\left(\frac{1}{2}\pi\right)=-1+0j = -1$$
 
 $$\therefore H_a(s) = 1/\left(\frac{s}{\Omega_c}+1\right)=\frac{\Omega_c}{s+\Omega_c}$$
 
 $N$=2 인 경우,
 
-<img src="http://bit.ly/1Tnq04z">
+$$H_a(s) = 1/\left\lbrace\prod_{k=1}^{2}\left(\frac{s}{\Omega_c}-s_k\right)\right\rbrace = 
 
-where <img src="http://bit.ly/1Tnq4Bu">
+1/\left\lbrace\left(\frac{s}{\Omega_c}-s_1\right)
+\left(\frac{s}{\Omega_c}-s_2\right)\right\rbrace$$
 
-<img src="http://bit.ly/1nnmvi0">
+where
 
-<img src="http://bit.ly/1nnmzhG">
+$$s_1 = -\sin\left(\frac{1}{4}\pi\right)+j\cos\left(\frac{1}{4}\pi\right)$$
 
-<img src="http://bit.ly/1TnqasK">
+$$=-\frac{\sqrt{2}}{2}+j\frac{\sqrt{2}}{2}$$
 
-<img src="http://bit.ly/1TnqkQM">
+$$s_2 = -\sin\left(\frac{3}{4}\pi\right)+j\cos\left(\frac{3}{4}\pi\right)$$
 
-<img src="http://bit.ly/1nnmNFI">
-
-
-
-N=3
-
-이 쯤 오면 굉장히 지친다. 살짝 꼼수를 써보자. 먼저, $\Omega_c=1$이라고 한 다음, <img src="http://bit.ly/1nnmXgn">로 치환하면 같은 결과를 얻게 된다. 이 방법은 나중에 배우게 되는 Denormalization 방법이다.
+$$=-\frac{\sqrt{2}}{2}-j\frac{\sqrt{2}}{2}$$
 
 
+따라서,
 
+$$\therefore H_a(s) = 
+  \left\lbrace1/\left(\frac{s}{\Omega_c}+\frac{\sqrt{2}}{2}-j\frac{\sqrt{2}}{2}\right)\right\rbrace
+  \left\lbrace1/\left(\frac{s}{\Omega_c}+\frac{\sqrt{2}}{2}+j\frac{\sqrt{2}}{2}\right)\right\rbrace
+$$
 
-<img src="http://bit.ly/1TnqFDb">
+$$=\Omega_c^2 / \left(s^2 + \sqrt{2}s\Omega_c + \Omega_c^2\right)$$
 
-<img src="http://bit.ly/1TnqIim">
+$N$=3인 경우,
 
-<img src="http://bit.ly/1nnna33">
+이 쯤 오면 굉장히 지친다. 살짝 꼼수를 써보자. 먼저, $\Omega_c=1$이라고 한 다음, $s = \frac{s}{\Omega_c}$로 치환하면 같은 결과를 얻게 된다. 이 방법은 나중에 배우게 되는 Denormalization 방법이다.
 
-<img src="http://bit.ly/1TnqOGG">
+$$H_a(s)|_{\Omega_c = 1} = 1/\prod_{k=1}^{N}(s-s_k)$$
 
-<img src="http://bit.ly/1TnqW98">
+$$=\frac{1}{(s-s_1)(s-s_2)(s-s_3)}$$
 
+이고, 여기서
 
+$$s_1 = -\sin\left(\frac{1}{6}\pi\right)+j\cos\left(\frac{1}{6}\pi\right) = -\frac{1}{2}+j\frac{\sqrt{3}}{2}$$
+
+$$s_2 = -\sin\left(\frac{3}{6}\pi\right) + j \cos\left(\frac{3}{6}\pi\right) = -1$$
+
+$$s_3 = -\sin\left(\frac{5}{6}\pi\right)+j\cos\left(\frac{5}{6}\pi\right)=-\frac{1}{2}-j\frac{\sqrt{3}}{2}$$
 
 이다.
 
+따라서, $s_1$, $s_2$, $s-3$을 대입하면,
 
+$$H_a(s) = 1/\left[(s+1)\left\lbrace(s+\frac{1}{2})^2 + \frac{3}{4}\right\rbrace\right]$$
 
-<img src="http://bit.ly/1Tnr3kY">
+$$=\frac{1}{(s+1)(s^2 + s + 1)}$$
 
-<img src="http://bit.ly/1nnnqPI">
+$$=\frac{1}{s^3 + 2s^2 + 2s + 1}$$
 
-<img src="http://bit.ly/1nnnrTN">
+여기서 $s = s/\Omega_c$로 치환한다면,
 
+$$H_a(s) = \frac{\Omega_c^3}{s^3 + 2\Omega_cs^2 + 2\Omega_c^2s + \Omega_c^3}$$
 
+임을 알 수 있다.
 
-<img src="http://bit.ly/1nnmXgn">로 치환한다면,
-
-<img src="http://bit.ly/1nnnA9x">
-
-여기까지 보면, 일반적으로 N이 홀수인 경우와 짝수인 경우의 pole값이 차이가 있다는 것을 알 수 있다. 만약 N이 홀수라면 s가 real number인 pole이 하나 있고 나머지는 모두 complex number이고, N이 짝수라면 모두 complex number의 pole을 갖는다는 것을 알 수 있다. 그 이유는 다음과 같다. 
+여기까지 보면, 일반적으로 $N$이 홀수인 경우와 짝수인 경우의 pole값이 차이가 있다는 것을 알 수 있다. 만약 $N$이 홀수라면 $s$가 real number인 pole이 하나 있고 나머지는 모두 complex number이고, $N$이 짝수라면 모두 complex number의 pole을 갖는다는 것을 알 수 있다. 그 이유는 다음과 같다. 
 
 <img src="http://bit.ly/1Tnrpbu">에서 <img src="http://bit.ly/1nnnKhg">가 되는 지점이 반드시 생기기 때문인데, 그 $k$는 <img src="http://bit.ly/1nnnMpt">인 점이다. 
 
