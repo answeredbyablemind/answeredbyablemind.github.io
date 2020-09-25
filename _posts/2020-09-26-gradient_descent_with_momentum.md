@@ -36,9 +36,9 @@ $\quad$ 현재 batch에 대한 $dW$, $db$을 계산함.
 
 $\quad$ 그 뒤 아래의 term들을 계산함.
 
-$\quad$ $V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW$
+$\quad$$\quad$ $V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW$
 
-$\quad$ $V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db$
+$\quad$$\quad$ $V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db$
 
 $\quad$ Weight, bias 업데이트:
 
@@ -53,11 +53,13 @@ $\quad\quad$ $b:= b - \alpha V_{db(t)}$
 
 On iteration t:
 
-$\quad$ Compute $dW$, $db$ on current batch
+$\quad$ 현재 batch에 대한 $dW$, $db$을 계산함. 
 
-$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
+$\quad$ 그 뒤 아래의 term들을 계산함.
 
-$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
+$\quad$$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
+
+$\quad$$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
 
 $\quad$ Weight, bias 업데이트:
 
@@ -80,23 +82,23 @@ $\quad$ 현재 batch에 대한 $dW$, $db$을 계산함.
 
 $\quad$ 그 뒤 아래의 term들을 계산함.
 
-$\quad$ $V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW$
+$\quad$$\quad$ $V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW$
 
-$\quad$ $V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db$
+$\quad$$\quad$ $V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db$
 
-$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
+$\quad$$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
 
-$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
+$\quad$$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
 
 $\quad$ 아래와 같이 bias corretion 수행
 
-$\quad$ $V_{dw(t)}^{corrected} = V_{dw(t)}/(1-\beta_1^t)$
+$\quad$$\quad$ $V_{dw(t)}^{corrected} = V_{dw(t)}/(1-\beta_1^t)$
 
-$\quad$ $V_{db(t)}^{corrected} = V_{db(t)}/(1-\beta_1^t)$
+$\quad$$\quad$ $V_{db(t)}^{corrected} = V_{db(t)}/(1-\beta_1^t)$
 
-$\quad$ $S_{dw(t)}^{corrected} = S_{dw(t)}/(1-\beta_2^t)$
+$\quad$$\quad$ $S_{dw(t)}^{corrected} = S_{dw(t)}/(1-\beta_2^t)$
 
-$\quad$ $S_{db(t)}^{corrected} = S_{db(t)}/(1-\beta_2^t)$
+$\quad$$\quad$ $S_{db(t)}^{corrected} = S_{db(t)}/(1-\beta_2^t)$
 
 $\quad$ Weight, bias 업데이트:
 
