@@ -127,6 +127,8 @@ docs-ko:
     children:
       - title:  경사하강법(Gradient Descent)
         url:    2020/08/16/gradient_descent.html
+      - title:  Momentum 이용 최적화 기법 - ADAM
+        url:    2020/09/26/gradient_descent_with_momentum.html
       - title:  선형회귀(linear regression)
         url:    2020/08/24/linear_regression.html
       - title:  로지스틱 회귀(logistic regression)
