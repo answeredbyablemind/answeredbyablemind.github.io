@@ -333,40 +333,32 @@ $$s_k = \Omega_c\left(-\sin\left(\frac{2k-1}{2N}\pi\right)+j\cos\left(\frac{2k-1
 
 그렇기 때문에, 일반적으로 stable한 Butterworth Filter System은 $s$-domain에서 다음과 같이 정의될 수 있다.
 
-<img src="http://bit.ly/1Tnp7Jk">
+$$H_a(s) = 1/\left\lbrace1+\left(\frac{s}{\Omega_c}\right)^N\right\rbrace$$
 
-<img src="http://bit.ly/1nnlF4N">
+$$=\Omega_c / \left\lbrace\prod_{k=1}^{N}\left(\frac{s}{\Omega_c} - \hat{s}_k\right)\right\rbrace\notag$$
 
-where <img src="http://bit.ly/1nnls1y">
+$$\text{ where } \hat{s}_k = \Omega_c\left(-\sin\left(\frac{2k-1}{2N}\pi\right) + j\cos\left(\frac{2k-1}{2N}\right)\pi\right)$$
 
 또는,
 
-<img src="http://bit.ly/1nnlGFY">
+$$H_a(s) = 1/\prod_{k=1}^{N}\left(\frac{s}{\Omega_c}-s_k\right)\notag$$
 
-where <img src="http://bit.ly/1nnlnLe">
-
-
+$$\text{ where } s_k = -\sin\left(\frac{2k-1}{2N}\pi\right) + j\cos\left(\frac{2k-1}{2N}\pi\right)$$
 
 로 정의할 수 있다.
 
-그러므로, 각 N에 대하여 풀어서 생각해본다면 다음과 같다고도 할 수 있다.
+그러므로, 각 $N$에 대하여 풀어서 생각해본다면 다음과 같다고도 할 수 있다.
 
-N=1
-
-
-<img src="http://bit.ly/1nnlVkh">
-
-where <img src="http://bit.ly/1nnm5bw">
-
-<img src="http://bit.ly/1TnpLqg">
+$N$=1 인 경우,
 
 
-<img src="http://bit.ly/1TnpPq9">
+$$H_a(s) = 1/\left(\frac{s}{\Omega_c}-s_1\right)\notag$$
 
+$$\text{ where }s_1 = -\sin\left(\frac{1}{2}\pi\right)+j\cos\left(\frac{1}{2}\pi\right)=-1+0j = -1\notag$$
 
-N=2
+$$\therefore H_a(s) = 1/\left(\frac{s}{\Omega_c}+1\right)=\frac{\Omega_c}{s+\Omega_c}$$
 
-
+$N$=2 인 경우,
 
 <img src="http://bit.ly/1Tnq04z">
 
