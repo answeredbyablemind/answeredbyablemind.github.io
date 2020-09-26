@@ -46,6 +46,20 @@ plot(xx, yy,'linewidth',2)
 xlabel('x');
 ylabel('y');
 
+%% sigmoid function plot하기
+
+sigmoid = @(x) 1./(1+exp(-x));
+
+
+xx = linspace(-6, 6, 100);
+yy = sigmoid(xx);
+
+figure;
+plot(xx, yy,'linewidth',2)
+grid on;
+xlabel('x');
+ylabel('sigmoid(x)');
+title('sigmoid function: 1/(1+exp(-x))');
 %% model 만들기
 
 g = @(x, a, b) 1./(1+exp(-a*x-b));

@@ -36,17 +36,47 @@ tags: 머신러닝
   그림 2. 범주형 데이터의 예시. 특성값 $x$가 5보다 작으면 클래스 0, 5보다 크거나 같으면 클래스 1로 분류할 수 있다고 하자.
 </p>
 
+그런데 만약 이렇듯이 범주형 라벨을 가지는 데이터에 대해 선형회귀 메소드를 적용하면 다음과 같은 결과를 얻을 것이다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic2.png">
   <br>
+  그림 2. 범주형 데이터에 대해 선형회귀 모델을 적용하는 경우
 </p>
 
-[//]:# (범주형 데이터를 표현할 수 있는 함수 필요함을 어필할 것.)
+선형회귀 메소드를 적용했을 때에도 $\hat{y} = ax+b\geq 5$인 경우 1로 분류하고 아닌 경우 0으로 분류할 수 있다.
+
+하지만, 범주형 데이터에 대해 회귀분석을 한다고 하면 다음과 같은 함수를 이용하는게 더 좋은 결과를 얻을 수 있을 것이다.
+
+다시 말해, 선형 모델모다 범주형 데이터에 좀 더 어울리는 모델을 생각해보도록 하자.
+
+범주형 데이터에 대한 모델을 세우기 위해서 필요한 함수는 아래의 그림 3과 같이 어떤 값을 넘어가기 전에는 0, 넘어간 뒤에는 1의 값을 가지는 형태의 함수여야 한다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic3.png">
   <br>
+  그림 3. 범주형 데이터에 어울리는 함수의 형태는 S자 커브여야 한다.
+</p>
+
+이 S자 커브 함수에 대한 여러가지 후보가 있겠으나 우리는 sigmoid 함수를 사용하도록 하자.
+
+sigmoid함수 외에도 다른 함수를 쓸 수 있지만 굳이 sigmoid 함수를 쓰는 이유는 독립변수 $x$들의 각 클래스에 대한 분포가 정규분포를 따를 것으로 가정하기 때문인데,
+
+이에 대해선 추후에 다뤄보도록 하자.
+
+어찌되었건 sigmoid 함수의 형태는 아래와 같다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic4.png">
+  <br>
+  그림 4. sigmoid 함수의 형태
+</p>
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic5.png">
+  <br>
+  그림 5. Sigmoid 함수를 이용해 회귀모델을 만든 경우의 예시
 </p>
 
 [//]:# (왜 sigmoid 함수인가? --> 미분하기 쉽다. 또, 각 label에 대한 데이터의 분포가 정규분포라고 했을 때 Posterior를 계산하면 얻을 수 있는 결과임. 어려우니까 넘어가자.)
