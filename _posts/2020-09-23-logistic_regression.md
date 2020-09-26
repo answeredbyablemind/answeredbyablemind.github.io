@@ -8,19 +8,44 @@ key: 20200923
 tags: 머신러닝
 ---
 
-다음과 같이 범주형 데이터가 주어진다고 하자.
+# Prerequisites
+
+본 포스팅의 내용에 대해 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [경사하강법](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)
+* [선형회귀 (최적화 관점)](https://angeloyeo.github.io/2020/08/24/linear_regression.html#%EC%B5%9C%EC%A0%81%ED%99%94-%EB%AC%B8%EC%A0%9C-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D)
+
+# 회귀에서 분류로...
+
+[선형회귀 (최적화 관점)](https://angeloyeo.github.io/2020/08/24/linear_regression.html#%EC%B5%9C%EC%A0%81%ED%99%94-%EB%AC%B8%EC%A0%9C-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D) 편에서 확인한 데이터들은 라벨 값(즉, 아래의 그림 1에서 사고 발생 건수)이 연속적인 것이었다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic1.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic7.png">
   <br>
+  그림 1. 선형회귀 모델 구축 시 이용한 연속적 라벨을 가지는 데이터
 </p>
 
-[//]:# (선형회귀로 푼 경우 그림 그릴 것)
+
+하지만 어떤 경우에는 다음과 같이 라벨이 범주형일 수도 있다. 라벨이 범주형이라는 것은 가령 "남자, 여자" 혹은 "강아지, 고양이" 등의 연속적인 숫자로 나타내기 어려운 데이터들을 얘기하고 보통 0 혹은 1로 숫자로 치환해 생각한다.
+
+가령 아래와 같이 $x$라는 특성값이 5보다 작으면 클래스가 0으로, 5보다 같거나 크면 클래스가 1로 결정된다고 생각해보자.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic1.png">
+  <br>
+  그림 2. 범주형 데이터의 예시. 특성값 $x$가 5보다 작으면 클래스 0, 5보다 크거나 같으면 클래스 1로 분류할 수 있다고 하자.
+</p>
+
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic2.png">
+  <br>
+</p>
 
 [//]:# (범주형 데이터를 표현할 수 있는 함수 필요함을 어필할 것.)
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic2.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic3.png">
   <br>
 </p>
 

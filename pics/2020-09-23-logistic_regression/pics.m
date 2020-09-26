@@ -36,6 +36,16 @@ plot(x1, y1, 'bo');
 ylim([-0.5, 1.5])
 grid on;
 
+%% linear regression으로 푼 경우
+
+coef = fit(X', y', 'poly1');
+xx = linspace(-2, 14, 100);
+yy = coef.p1.* xx + coef.p2;
+
+plot(xx, yy,'linewidth',2)
+xlabel('x');
+ylabel('y');
+
 %% model 만들기
 
 g = @(x, a, b) 1./(1+exp(-a*x-b));
