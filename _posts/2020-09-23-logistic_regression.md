@@ -250,6 +250,8 @@ $$\frac{\partial E}{\partial b}=(P-y)$$
 
 # 회귀 모델 구축 결과
 
+이제 [선형회귀](https://angeloyeo.github.io/2020/08/24/linear_regression.html#gradient-descent%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%B5%9C%EC%86%8C-%EB%B9%84%EC%9A%A9%ED%95%A8%EC%88%98-%EA%B3%84%EC%82%B0)에서와 마찬가지로 [gradient descent](https://angeloyeo.github.io/2020/08/16/gradient_descent.html)를 이용해 최적의 $a$와 $b$를 구하면 우리의 데이터에 대한 적절한 sigmoid 함수의 형태와 위치를 얻을 수 있다.
+
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/picN.mp4">
@@ -257,4 +259,9 @@ $$\frac{\partial E}{\partial b}=(P-y)$$
   <br>
 </p>
 
+gradient descent를 이용한 logistic regression을 구현한 MATLAB 코드는 아래의 위치에서 다운 받을 수 있다.
+
+<p align = "center">
+  <a href = "https://github.com/angeloyeo/gongdols/blob/master/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/logistic_regression/main.m"> 소스 코드 확인하기 </a>
+</p>
 
