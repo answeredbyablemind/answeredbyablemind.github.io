@@ -144,6 +144,8 @@ $$E(y, P) = \begin{cases}-\log(P) &&\text{ if } y = 1 \\ -\log(1-P) &&\text{  if
 
 또, 반대로 $y=0$일 때는 $P$가 $0$으로 출력되면 $-\log(1-P)$는 $\log(1)$은 0이지만 $P$가 1로 출력되면 Error는 무한대이다.
 
+classification이라는 특성 상 $y$는 $0$ 또는 $1$의 값만 가지므로 식 (5)는 아래와 같이 한줄로 쓸 수도 있다.
+
 $$E(y, P) = -(y\log(P)+(1-y)\log(1-P))$$
 
 [//]:# (식 6)
@@ -200,21 +202,43 @@ $$ = P(X,\theta)(1-P(X,\theta))X$$
 
 $$E(y, P) = -(y\log(P)+(1-y)\log(1-P))$$
 
+[//]:# (식 18)
+
+이제 이를 $\theta$에 대해 편미분 해주도록 하자.
+
 $$\frac{\partial E}{\partial \theta}=-\left(y\frac{\partial \log(P)}{\partial \theta}+(1-y)\frac{\partial\log(1-P)}{\partial \theta}\right)$$
+
+chain rule을 이용해 위 식 (19)는 다음과 같이 쓸 수 있다.
 
 $$\Rightarrow -\left(y\frac{\partial \log(P)}{\partial P}\frac{\partial P}{\partial \theta}+(1-y)\frac{\partial \log(1-P)}{\partial (1-P)}\frac{\partial(1-P)}{\partial P}\frac{\partial P}{\partial \theta}\right)$$
 
+자연로그 $\log(x)$를 $x$에 대해 편미분하면 $1/x$이므로 다음과 같이 쓸 수 있다.
+
 $$\Rightarrow -\left(y\frac{1}{P}\frac{\partial P}{\partial \theta}+(1-y)\frac{1}{1-P}(-1)\frac{\partial P}{\partial \theta}\right)$$
+
+여기서 부호를 조금 정리해주면,
 
 $$\Rightarrow -y\frac{1}{P}\frac{\partial P}{\partial \theta}+(1-y)\frac{1}{1-P}\frac{\partial P}{\partial \theta}$$
 
+이제 $\partial P /\partial \theta$는 식 (17)을 이용해 다음과 같이 써줄 수 있게 된다.
+
 $$\Rightarrow -y\frac{1}{P}P(1-P)X+(1-y)\frac{1}{1-P}P(1-P)X$$
+
+위 식을 약분해서 조금 정리하면 다음과 같다.
 
 $$\Rightarrow -y(1-P)X + (1-y)PX$$
 
 $$=-Xy+PXy+PX-PXy$$
 
 $$=(P-y)X$$
+
+즉,
+
+$$\frac{\partial E}{\partial \theta} = (P-y)X$$
+
+이다.
+
+이제 $\theta$는 a와 b에 대해 말해주고 있는 것이므로, 우리의 파라미터 $a$와 $b$에 대한 편미분은 각각 다음과 같이 생각할 수 있는 것이다.
 
 $$\therefore \frac{\partial E}{\partial a}=(P-y)x$$
 
