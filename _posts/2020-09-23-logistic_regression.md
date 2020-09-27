@@ -100,7 +100,7 @@ $$S(x) = \frac{1}{\exp(-(ax+b))}$$
 $b$의 값은 sigmoid 함수를 좌우로 움직여주는 역할을 할 것이고 $a$값은 sigmoid 함수의 가파른 정도를 결정할 것이다.
 
 <p align = "center">
-     <iframe width ="660" height = "300" src="https://angeloyeo.github.io/p5/2020-09-23-logistic_regression/" frameborder = "0"></iframe>
+     <iframe width ="660" height = "310" src="https://angeloyeo.github.io/p5/2020-09-23-logistic_regression/" frameborder = "0"></iframe>
      <br>
      슬라이더를 움직여 보세요 ^^
 </p>
