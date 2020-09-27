@@ -18,7 +18,11 @@ tags: 머신러닝
 
 # Gradient Descent의 문제
 
-[//]:# (그림. Contour가 옆으로 퍼진 경우에 대해서)
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-26-gradient_descent_with_momentum/pic1.png">
+  <br>
+  그림 1. 
+</p>
 
 [//]:# (그림. Contour가 옆으로 퍼진 경우의 Gradient Descent 진행 방향, Gradient의 방향은 항상 등고선에 수직임을 명시할 것.)
 
