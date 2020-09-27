@@ -16,7 +16,7 @@ function setup() {
 
      slider1 = createSlider(-5, 5, 1, 0.1)
      slider1.position(10, 50)
-     slider2 = createSlider(-5, 5, 0, 0.1)
+     slider2 = createSlider(-10, 10, 0, 0.1)
      slider2.position(150, 50)
      
 
