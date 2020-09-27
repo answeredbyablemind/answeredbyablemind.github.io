@@ -99,6 +99,13 @@ $$S(x) = \frac{1}{\exp(-(ax+b))}$$
 
 $b$의 값은 sigmoid 함수를 좌우로 움직여주는 역할을 할 것이고 $a$값은 sigmoid 함수의 가파른 정도를 결정할 것이다.
 
+<p align = "center">
+     <iframe width ="660" height = "300" src="https://angeloyeo.github.io/p5/2020-09-23-logistic_regression/" frameborder = "0"></iframe>
+     <br>
+     슬라이더를 움직여 보세요 ^^
+</p>
+
+
 어찌되었건 우리가 정해야 하는 $a$와 $b$ 값이며 [선형회귀를 이용한 모델 구축 시](https://angeloyeo.github.io/2020/08/24/linear_regression.html#%EC%B5%9C%EC%A0%81%ED%99%94-%EB%AC%B8%EC%A0%9C-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D)와 마찬가지로 Error를 정의하고 이 Error를 최소화하는 방식으로 $a$와 $b$를 정할 수 있을 것이다.
 
 # Error 함수 정의
