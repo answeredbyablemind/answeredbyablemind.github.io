@@ -234,5 +234,8 @@ docs-ko:
         url:    2020/01/16/time_frequency_uncertainty.html
       - title:  버터워스 필터
         url:    2020/09/25/Butterworth.html
+      - title:  체비세브 필터
+        url:    2020/09/27/Chebyshev.html
+        
         
 
