@@ -22,7 +22,11 @@ $$x+iy = r\cos(\theta) + i r\sin(\theta)$$
 
 이다.
 
-[//]:# (그림 넣을 것. x, y를 r theta도 같이 표현)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-22-Euler_Formula_Differential_Equation/pic1.png">
+  <br>
+  그림 1. 복소평면 상의 점 하나는 복소수 하나를 표현한다.
+</p>
 
 
 여기서 $r=1$인 경우를 상정해 이 값을 $z$라고 하도록 하자.
@@ -33,8 +37,12 @@ $$z = \cos(\theta) + i \sin(\theta)$$
 
 이 $z$라는 값은 반지름이 1인 단위 원 상의 점이 된다.
 
-[//]:# (그림 넣을 것. 단위 원 하나 그리고 각도가 theta인 곳의 좌표 하나 찍을 것)
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-22-Euler_Formula_Differential_Equation/pic2.png">
+  <br>
+  그림 2. 복소평면 상의 단위원 위의 점 $z$. $z$는 $x$축 과의 각도가 $\theta$이다.
+</p>
 
 여기서 $z$를 $\theta$에 대해 미분해보면 그 값은 다음과 같다.
 
