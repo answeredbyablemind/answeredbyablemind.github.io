@@ -272,6 +272,8 @@ $$v(t) := v(t) / (1-\beta^t)$$
 
 [//]:# (이런식으로 보정해주는 이유 적을 것.)
 
+[//]:# (사실 시간이 길어지게 되면 보정 해주나마나 큰 차이가 없음에 대해서도 서술할 것.)
+
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-26-gradient_descent_with_momentum/picM.mp4">
