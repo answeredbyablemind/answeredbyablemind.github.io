@@ -210,18 +210,29 @@ $\quad$$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
 
 $\quad$$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
 
-$\quad$ 아래와 같이 bias corretion 수행
-
-$\quad$$\quad$ $V_{dw(t)}^{corrected} = V_{dw(t)}/(1-\beta_1^t)$
-
-$\quad$$\quad$ $V_{db(t)}^{corrected} = V_{db(t)}/(1-\beta_1^t)$
-
-$\quad$$\quad$ $S_{dw(t)}^{corrected} = S_{dw(t)}/(1-\beta_2^t)$
-
-$\quad$$\quad$ $S_{db(t)}^{corrected} = S_{db(t)}/(1-\beta_2^t)$
 
 $\quad$ Weight, bias 업데이트:
 
-$\quad\quad$ $W := W - \alpha V_{dw(t)}^{corrected}/\sqrt{S_{dw(t)}^{corrected}}$
+$\quad\quad$ $W := W - \alpha V_{dw(t)}/\sqrt{S_{dw(t)}}$
 
-$\quad\quad$ $b:= b - \alpha V_{db(t)}^{corrected}/\sqrt{S_{db(t)}^{corrected}}$
+$\quad\quad$ $b:= b - \alpha V_{db(t)}/\sqrt{S_{db(t)}}$
+
+
+# Bias Correction
+
+Exponentially Weighted Moving Average (EWMA) 라고 할 수 있음.
+
+EWMA의 예시. 
+
+beta값이 달라지면 어떻게 EWMA 결과가 바뀌는지 보여줄 것.
+
+초기값이 매우 작게 만들어지는 에러 있음.
+
+이 에러를 잡기 위해 각 iteration의 출력값($V_{dw(t)}$ 혹은 $S_{dw(t)}$)을 보정해줄 수 있음.
+
+[보정 식]
+
+[보정 전/후 그림 예시]
+
+
+
