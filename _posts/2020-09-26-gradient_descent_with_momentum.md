@@ -8,7 +8,11 @@ key: 20200926
 tags: 머신러닝
 ---
 
-본 포스팅은 [Andrew Ng 교수님의 강의](https://www.youtube.com/watch?v=JXQT_vxqwIs&ab_channel=Deeplearning.ai)를 정리한 것임을 밝힙니다.
+※ 본 포스팅은 [Andrew Ng 교수님의 강의](https://www.youtube.com/watch?v=JXQT_vxqwIs&ab_channel=Deeplearning.ai)를 정리한 것임을 밝힙니다.
+
+Python 라이브러리를 이용한 딥러닝 학습 알고리즘에 관련된 tutorial들에서 거의 대부분 optimization을 수행할 때 Gradient Descent 대신에 ADAM Optimizer를 이용해 Optimziation을 하라고 한다.
+
+과연 어떤 부분에서 ADAM이 Gradient Descent에 비해 좋길래 거의 대부분의 문헌에서 ADAM을 추천하고 있는지 그 배경에 대해 알아보도록 하자.
 
 # Prerequisites
 
@@ -20,7 +24,9 @@ tags: 머신러닝
 
 Gradient descent를 이용해 비용함수(혹은 Error)를 최소화해주고자 하면 어떤 경우에는 수렴 속도가 굉장히 느릴 때가 있다.
 
-이런 경우 step size(혹은 learning rate)을 키워주면 수렴 속도가 빨라지는 경우가 있지만, 어떤 경우는 종종 아래의 그림 1과 같이 비용함수의 형태 특성 상 특정 parameter에 대해 진동하면서 수렴하다보니 수렴 속도가 느려지는 경우가 있다. (아래 그림 1에서는 b라는 parameter에 대해 진동하면서 서서히 최솟값으로 수렴하고 있다.)
+이런 경우 step size(혹은 learning rate)을 키워주면 수렴 속도가 빨라지는 경우가 있지만, 어떤 경우는 종종 아래의 그림 1과 같이 비용함수의 형태 특성 상 특정 parameter에 대해 진동하면서 수렴하다보니 수렴 속도가 느려지는 경우가 있다. 이럴 때에는 자칫 잘못하면 비용함수가 발산해버리는 경우가 왕왕 생기기 때문에 학습 속도가 느리더라도 하는 수 없이 기다릴 수 밖에 없을 것이다.
+
+(그림 1에서는 b라는 parameter에 대해 진동하면서 서서히 최솟값으로 수렴하고 있다.)
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-26-gradient_descent_with_momentum/pic1.png">
@@ -163,19 +169,19 @@ Initialize $S_{dw(t)} = \vec{0}$, $S_{db(t)} = \vec{0}$
 
 On iteration $t$:
 
-$\quad$ 현재 batch에 대한 $dW$, $db$을 계산함. 
+$\quad$ 현재 batch에 대한 $dW_{(t)}$, $db_{(t)}$을 계산함. 
 
 $\quad$ 그 뒤 아래의 term들을 계산함.
 
-$$S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$$
+$$S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW_{(t)}^2$$
 
-$$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$$
+$$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db_{(t)}^2$$
 
 $\quad$ Weight, bias 업데이트:
 
-$$W := W - \alpha \frac{dW}{\sqrt{S_{dw(t)}}}$$
+$$W := W - \alpha \frac{dW_{(t)}}{\sqrt{S_{dw(t)}}}$$
 
-$$b:= b - \alpha \frac{db}{\sqrt{S_{db(t)}}}$$
+$$b:= b - \alpha \frac{db_{(t)}}{\sqrt{S_{db(t)}}}$$
 
 ---
 
@@ -183,12 +189,17 @@ Momentum 알고리즘과 RMSProp 알고리즘의 차이는 $S_dw$ 혹은 $S_db$�
 
 가령 그림 1과 같은 상황에서 RMSProp 알고리즘을 적용시켜준다고 하면, iteration이 진행됨에 따라 gradient의 크기가 $W$ 방향으로는 크지 않고 $b$ 방향으로는 큰 것을 알 수 있다.
 
-따라서, 초기의 iteration에서는 $S_{dw}$는 값이 작을 것이고 $S_{db}$는 값이 클 것임을 예상할 수 있다.
+따라서, $S_{dw}$는 값이 작을 것이고 $S_{db}$는 값이 클 것임을 예상할 수 있다.
 
-따라서, 
+그래서 식 (17)과 식 (18)에서 $S_{dw(t)}$와 $S_{db(t)}$로 나눠주는 과정은 $W$ 방향으로는 더 빨리 학습이 진행되고, $b$ 방향으로는 더 천천히 학습이 진행되도록 조정하는 과정인 것이다.
 
 # ADAM(Adaptive Moment Estimation)
 
+ADAM은 Momentum을 이용한 Gradient Descent와 RMSProp을 동시에 사용한 것이다.
+
+ADAM의 알고리즘을 보면 바로 이 말이 무엇인지 이해할 수 있을 것이다.
+
+---
 
 [ADAM 알고리즘]
 
@@ -202,21 +213,22 @@ $\quad$ 현재 batch에 대한 $dW$, $db$을 계산함.
 
 $\quad$ 그 뒤 아래의 term들을 계산함.
 
-$\quad$$\quad$ $V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW$
+$$V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW_{(t)}$$
 
-$\quad$$\quad$ $V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db$
+$$V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db_{(t)}$$
 
-$\quad$$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
+$$S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW_{(t)}^2$$
 
-$\quad$$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
+$$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db_{(t)}^2$$
 
 
 $\quad$ Weight, bias 업데이트:
 
-$\quad\quad$ $W := W - \alpha V_{dw(t)}/\sqrt{S_{dw(t)}}$
+$$W := W - \alpha V_{dw(t)}/\sqrt{S_{dw(t)}}$$
 
-$\quad\quad$ $b:= b - \alpha V_{db(t)}/\sqrt{S_{db(t)}}$
+$$b:= b - \alpha V_{db(t)}/\sqrt{S_{db(t)}}$$
 
+---
 
 # Bias Correction
 
