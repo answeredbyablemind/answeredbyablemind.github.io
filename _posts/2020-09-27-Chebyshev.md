@@ -7,7 +7,10 @@ aside:
 key: 20200927
 tags: 신호처리
 ---
- 목표
+
+본 포스팅은 IIT의 [S. C. Duta Roy 교수님의 강의](https://www.youtube.com/watch?v=2IZtWnGV-K4&ab_channel=nptelhrd)를 정리한 것임을 먼저 밝힙니다.
+
+# 목표
 
 1. Butterworth필터와 비교하여 Chebyshev 필터의 특징을 이해한다.
 2. Chebyshev Polynomial의 특징을 이해한다.
