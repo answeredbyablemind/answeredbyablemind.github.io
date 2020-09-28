@@ -147,6 +147,12 @@ $$식(13) \Rightarrow \sum_{i=1}^{k}\beta_1^{k-i}(1-\beta_1)V_{dw(i)}$$
 
 # RMSProp
 
+RMSProp 알고리즘은 Root Mean Square Propagation의 줄임말로써 Geoffrey Hinton이 제안한 알고리즘이다. Coursera의 강의 도중 처음으로 제안된 알고리즘으로도 유명한데, Academic paper로 공식적으로 발표한 적은 없지만 상당히 유명한 알고리즘으로 자리매김하고 있다.
+
+RMSProp은 Momentum을 이용한 Gradient와 사용 방식은 거의 유사한데, Gradient의 방향을 이용하지 않고 그 크기만을 이용해 업데이트 해주고자 하는 각 parameter에 대한 학습 속도를 조절한다.
+
+우선 RMSProp 알고리즘을 보도록 하자.
+
 ---
 
 [RMSProp 알고리즘]
@@ -155,7 +161,7 @@ Initialize $S_{dw(t)} = \vec{0}$, $S_{db(t)} = \vec{0}$
 
 (여기서 $S_{dw(0)}$의 차원은 $W$의 차원과 같고, $S_{db(0)}$의 차원은 $b$의 차원과 같음.)
 
-On iteration t:
+On iteration $t$:
 
 $\quad$ 현재 batch에 대한 $dW$, $db$을 계산함. 
 
@@ -173,6 +179,13 @@ $$b:= b - \alpha \frac{db}{\sqrt{S_{db(t)}}}$$
 
 ---
 
+Momentum 알고리즘과 RMSProp 알고리즘의 차이는 $S_dw$ 혹은 $S_db$라는 term에 있다고 할 수 있다.
+
+가령 그림 1과 같은 상황에서 RMSProp 알고리즘을 적용시켜준다고 하면, iteration이 진행됨에 따라 gradient의 크기가 $W$ 방향으로는 크지 않고 $b$ 방향으로는 큰 것을 알 수 있다.
+
+따라서, 초기의 iteration에서는 $S_{dw}$는 값이 작을 것이고 $S_{db}$는 값이 클 것임을 예상할 수 있다.
+
+따라서, 
 
 # ADAM(Adaptive Moment Estimation)
 
