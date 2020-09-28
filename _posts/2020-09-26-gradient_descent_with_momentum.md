@@ -253,7 +253,12 @@ beta값이 달라지면 어떻게 EWMA 결과가 바뀌는지 보여줄 것.
 
 [보정 식]
 
-[보정 전/후 그림 예시]
-
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-26-gradient_descent_with_momentum/picM.mp4">
+  </video>
+  <br>
+  그림 M. 보정 전(빨강) 보정 후(초록)
+</p>
 
 
