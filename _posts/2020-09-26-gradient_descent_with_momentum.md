@@ -238,6 +238,15 @@ EWMA의 예시.
 
 beta값이 달라지면 어떻게 EWMA 결과가 바뀌는지 보여줄 것.
 
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-26-gradient_descent_with_momentum/picN.mp4">
+  </video>
+  <br>
+  그림 N. 여러가지 beta값에 따른 EWMA의 결과
+</p>
+
+
 초기값이 매우 작게 만들어지는 에러 있음.
 
 이 에러를 잡기 위해 각 iteration의 출력값($V_{dw(t)}$ 혹은 $S_{dw(t)}$)을 보정해줄 수 있음.
