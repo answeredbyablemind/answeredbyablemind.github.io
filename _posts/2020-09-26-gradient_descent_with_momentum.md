@@ -86,6 +86,8 @@ $$b:= b - \alpha V_{db(t)}$$
 
 [//]:# (식 4)
 
+(여기서 $\alpha$는 learning rate이다.)
+
 ---
 
 Momentum 알고리즘의 핵심은 식 (1)과 식 (2)인데, 형태는 거의 같기 때문에 식 (1)을 조금 더 풀어서 생각해보도록 하자.
@@ -179,9 +181,11 @@ $$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db_{(t)}^2$$
 
 $\quad$ Weight, bias 업데이트:
 
-$$W := W - \alpha \frac{dW_{(t)}}{\sqrt{S_{dw(t)}}}$$
+$$W := W - \alpha \frac{dW_{(t)}}{\sqrt{S_{dw(t)}}+\epsilon}$$
 
-$$b:= b - \alpha \frac{db_{(t)}}{\sqrt{S_{db(t)}}}$$
+$$b:= b - \alpha \frac{db_{(t)}}{\sqrt{S_{db(t)}}+\epsilon}$$
+
+(여기서 $\epsilon$은 $S$가 매우 작아졌을 때 0으로 나누는 것을 방지하기 위한 값으로 1보다 매우 작은 양수이다.)
 
 ---
 
@@ -193,9 +197,11 @@ Momentum 알고리즘과 RMSProp 알고리즘의 차이는 $S_dw$ 혹은 $S_db$�
 
 그래서 식 (17)과 식 (18)에서 $S_{dw(t)}$와 $S_{db(t)}$로 나눠주는 과정은 $W$ 방향으로는 더 빨리 학습이 진행되고, $b$ 방향으로는 더 천천히 학습이 진행되도록 조정하는 과정인 것이다.
 
+다시 말해 RMSProp이 가지는 의의는 각 parameter 별로 적절히 learning rate의 크기를 조절해줄 수 있다는데 있다.
+
 # ADAM(Adaptive Moment Estimation)
 
-ADAM은 Momentum을 이용한 Gradient Descent와 RMSProp을 동시에 사용한 것이다.
+ADAM은 Gradient Descent with Momentum과 RMSProp을 동시에 사용한 것이다.
 
 ADAM의 알고리즘을 보면 바로 이 말이 무엇인지 이해할 수 있을 것이다.
 
@@ -224,19 +230,29 @@ $$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db_{(t)}^2$$
 
 $\quad$ Weight, bias 업데이트:
 
-$$W := W - \alpha V_{dw(t)}/\sqrt{S_{dw(t)}}$$
+$$W := W - \alpha V_{dw(t)}/\sqrt{S_{dw(t)}+\epsilon}$$
 
-$$b:= b - \alpha V_{db(t)}/\sqrt{S_{db(t)}}$$
+$$b:= b - \alpha V_{db(t)}/\sqrt{S_{db(t)}+\epsilon}$$
 
 ---
 
+[ADAM의 원래 논문(King & Ba, 2015)](https://arxiv.org/pdf/1412.6980.pdf)에서는 다음과 같이 $\beta_1$, $\beta_2$, $\epsilon$의 값을 추천해주고 있다.
+
+$$\begin{cases}\beta_1: 0.9 \\ \beta_2: 0.99 \\ \epsilon: 10^{-8}\end{cases}$$
+
 # Bias Correction
 
-Exponentially Weighted Moving Average (EWMA) 라고 할 수 있음.
+앞서 확인한 Gradient Descent with Momentum, RMSProp, ADAM은 모두 $beta<1$ 값을 이용해 이전 값들을 서서히 잊어가는 Exponentially Weighted Moving Average (EWMA)의 일종이라고 할 수 있다.
 
-EWMA의 예시. 
+EWMA는 일반적으로 아래와 같은 수식으로 쓸 수 있다.
 
-beta값이 달라지면 어떻게 EWMA 결과가 바뀌는지 보여줄 것.
+데이터 포인트를 $x(t)$라고 하고, $v(0)=0$이라고 했을 때,
+
+$$v(t) := \beta v(t-1) + (1-\beta)x(t)$$
+
+이다.
+
+일반적으로 $\beta$값은 1보다는 작은 값인데 1에 가까워질 수록 smoothing이 더 많이 된 것이라는 것을 알 수 있다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
@@ -246,12 +262,13 @@ beta값이 달라지면 어떻게 EWMA 결과가 바뀌는지 보여줄 것.
   그림 N. 여러가지 beta값에 따른 EWMA의 결과
 </p>
 
+위의 그림 N을 보면 알수있는 것이지만 smoothing이 많이 필요한 경우 $\beta$값을 키워주게 되면 초기 time의 smoothing 결과가 원래의 데이터 포인트들에 비해 낮게 나온다는 것을 알 수 있다.
 
-초기값이 매우 작게 만들어지는 에러 있음.
+이 에러를 잡기 위해 각 iteration의 출력값 $v(t)$을 보정해줄 수 있으며, 보정 식은 다음과 같다.
 
-이 에러를 잡기 위해 각 iteration의 출력값($V_{dw(t)}$ 혹은 $S_{dw(t)}$)을 보정해줄 수 있음.
+$$v(t) := v(t) / (1-\beta^t)$$
 
-[보정 식]
+여기서 $t$는 현재 iteration 혹은 time 이다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
@@ -261,4 +278,7 @@ beta값이 달라지면 어떻게 EWMA 결과가 바뀌는지 보여줄 것.
   그림 M. 보정 전(빨강) 보정 후(초록)
 </p>
 
+# 참고 문헌
+
+* ADAM: A Method for Stochastic Optimization, Kingma & Ba, ICLR, 2015
 
