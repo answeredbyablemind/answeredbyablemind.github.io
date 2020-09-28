@@ -270,6 +270,8 @@ $$v(t) := v(t) / (1-\beta^t)$$
 
 여기서 $t$는 현재 iteration 혹은 time 이다.
 
+[//]:# (이런식으로 보정해주는 이유 적을 것.)
+
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-26-gradient_descent_with_momentum/picM.mp4">
