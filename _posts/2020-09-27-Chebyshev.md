@@ -344,140 +344,69 @@ $N$ : even
 
 위 식을 통해서 다시 한번 알 수 있듯이, N이 짝수일 때에는 시작점이 $1/\sqrt{1+\epsilon^2}$이기 때문에 그 값이 분자에 곱해져 있다는 것을 알 수 있다. 각 상수 $c_0,b_k,c_k$에 대해서 설명하자면, 
 
-<center>
-<img src="http://bit.ly/1NCP28A"> (N의 크기에 따라 바뀌는 값)
+$$c_0 = y_N$$
 
-<img src="http://bit.ly/23vI3tT">
+$$c_k = y^2_N+\cos^2\left(\frac{2k-1}{2N}\pi\right)$$
 
-<img src="http://bit.ly/23vI4xP">
+$$b_k = 2y_N\sin\left(\frac{2k-1}{2N} \pi\right)$$
 
-<img src="http://bit.ly/23vIdS3">
-</center>
+$$y_N = \frac{1}{2}\left\lbrace
+
+  \left(\sqrt{1+\frac{1}{\epsilon^2}}+\frac{1}{\epsilon}\right)^{\frac{1}{N}}
+  -
+  \left(\sqrt{1+\frac{1}{\epsilon^2}}+\frac{1}{\epsilon}\right)^{-\frac{1}{N}}
+\right\rbrace$$
+
 
 와 같다고 할 수 있다. 이제 마지막으로 N과 $\epsilon$을 정하는 방법에 대해서 생각해보아야 할 것이다.
 
-## 다. N과 $\epsilon$을 결정하는 방법
+## 다. $N$과 $\epsilon$을 결정하는 방법
 
 일반적으로 필터를 구할 때에 받는 specification은 $\Omega_p, \Omega_s, \delta_p, \delta_s$라는 사실에 대해서 인지하고 있어야 한다. 이 값은 필터가 가졌으면 하는 요구조건이기 때문이다. 이것은 수학적으로 정해주는 것이 아니라, 필터의 설계자가 정하는 것이거나 요구하는 사장님이 정해주는 것이다. 
 
 일반적으로, specification의 관계를 표현하자면 다음과 같이 그릴 수 있다.
 
-
-<center>![](https://wikidocs.net/images/page/4067/20160128_222916.png)</center>
+<p align = "center"> 
+  <img src = "https://wikidocs.net/images/page/4067/20160128_222916.png">
+  <br> 그림 7. 필터 설계 시 주어지는 specifictaion
+</p>
 
 위에서 설명했던 것과 같이 $\delta_p$는 주어진 값이기 때문에,
 
-<center>
-<img src="http://bit.ly/23vIu7r">
+$$\delta_p = \frac{1}{\sqrt{1+\epsilon^2}}$$
 
-<img src="http://bit.ly/1QuJOAu">
-</center>
+$$\therefore \epsilon = \sqrt{\frac{1}{\delta^2_p-1}}$$
 
 와 같이 $\epsilon$을 정할 수 있다.
 
-N은 다음과 같이 정할 수 있다.
+$N$은 다음과 같이 정할 수 있다. 
 
-또한, $\delta_s$도 주어진 값이기 때문에,
+$\delta_s$도 주어진 값이라는 사실을 이용하면,
 
-<center>
-<img src="http://bit.ly/1QuK2HJ">
+$$1/\left\lbrace1+\epsilon^2 C_N\left(\frac{\Omega_s}{\Omega_p}\right)\right\rbrace=\delta_s^2$$
 
-<img src="http://bit.ly/1QuK7LI">
+$$\therefore\epsilon^2 C^2_N\left(\frac{\Omega_s}{\Omega_p}\right)=\frac{1}{\delta_s}-1$$
 
-<img src="http://bit.ly/1QuKtBT">
-</center>
+$$C_N\left(\frac{\Omega_s}{\Omega_p}\right)=\sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}$$
 
-이 때, <img src="http://bit.ly/23vIYL0">이므로,
+이 때, 
 
-<center>
+$$\left(\frac{\Omega_s}{\Omega_p}\right)\gt 1$$
 
-<img src="http://bit.ly/1QuKIwI">
+이므로,
 
-<img src="http://bit.ly/1QuKPZ7">
+$$C_N\left(\frac{\Omega_s}{\Omega_p}\right)=\cosh\left(N\cosh^{-1}\left(\frac{\Omega_s}{\Omega_p}\right)\right) = \sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}$$
 
-</center>
+$$N_C\geq\frac
+{\cosh^{-1}\left(\sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}\right)}
+{\cosh^{-1}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
 
-을 만족하는 $N_c$를 찾을 수 있다. (의 c는 Chebyshev를 의미하고자 했다.) 참고로, Butterworth filter의 차수 $N_B$는 다음과 같았다.
+을 만족하는 $N_C$를 찾을 수 있다. (여기서 $N_C$의 $C$는 Chebyshev를 의미하고자 했다.) 
 
-<center>
-<img src="http://bit.ly/1QuKZjc">
-</center>
+참고로, Butterworth filter의 차수 $N_B$는 다음과 같았다.
+
+$$N_B\geq \frac
+{\log_{10}\sqrt{\frac{1/\delta^2_s-1}{1/\delta^2_p-1}}}
+{\log_{10}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
 
 결국 Chebyshev 필터와 Butterworth 필터에서의 N을 구하는 방법은 매우 닮아있다고 할 수 있다.
-
-
-하지만, 몇 몇 계산기에서는 $cosh^{-1}(x)$의 값을 구할 수 없는 경우가 있다. 그럴 때에는 다음과 같은 방법을 사용하는 것도 alternative한 방법이다. 
-
-Chebyshev 필터의 식,
-
-<center>
-<img src="http://bit.ly/23vCH1R">
-</center>
-
-으로부터,
-
-<center>
-<img src="http://bit.ly/1QuLl9M">
-</center>
-
-이다.
-
-이 때, $\Omega_s$와 $\epsilon, \delta_s$를 모두 구할 수 있고, Chebyshev Polynomial의 식,
-
-<center>
-<img src="http://bit.ly/23vJDfk">
-</center>
-
-을 이용하여 N을 하나씩 높여가면서 아래의 식
-
-<center><img src="http://bit.ly/23vJJ6y"></center>
-
-을 만족하는 N을 구할 수 있다.
-
-
-세 번째 N을 구하는 방법은 또 이런 방법도 있다. $cosh^{-1}(x)$의 성질을 이용한 방법인데, $cosh^{-1}(x)$는 다음과 같이 생각할 수도 있다.
-
-
-<img src="http://bit.ly/23vJTel">로 정의되고, <img src="http://bit.ly/1QuLSZl">로 정의되는데, 
-
-일반적으로, <img src="http://bit.ly/1QuLXvT">로 돌려서 생각할 수 있다. 증명 과정은 다음과 같다. 
-
----
-
-PROOF on <img src="http://bit.ly/1QuLXvT">
-
-Proof)
-
-<img src="http://bit.ly/1QuLXvT">에 대하여,
-
-$cosh^{-1}y=\theta$라고 하면, $y=cosh\theta$라고 할 수 있다.
-
-그러면,
-
-<center>
-<img src="http://bit.ly/1QuM8Yd">
-
-<img src="http://bit.ly/23vK8pM">
-
-<img src="http://bit.ly/23vKbBP">
-
-<img src="http://bit.ly/1QuMpua">
-
-<img src="http://bit.ly/23vKk8q">
-</center>
-
-다시, $\theta=ln[y+\sqrt{y^2-1}]$
-
-또한, $y=cosh\theta$이고 $y+\sqrt{y^2-1}=e^\theta$이므로,
-
-<center><img src="http://bit.ly/1QuMCh5"></center>
-
-Q.E.D.
-
----
-
-그렇기 때문에 식
-
-<center><img src="http://bit.ly/23vKxZ6"></center>
-
-에서 $cosh^{-1}(y)=ln[y+\sqrt{y^2-1}]$로 치환해서 N을 구할 수도 있다.
