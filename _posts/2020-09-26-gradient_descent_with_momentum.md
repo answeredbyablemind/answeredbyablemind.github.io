@@ -147,7 +147,13 @@ $$식(13) \Rightarrow \sum_{i=1}^{k}\beta_1^{k-i}(1-\beta_1)V_{dw(i)}$$
 
 # RMSProp
 
+---
+
 [RMSProp 알고리즘]
+
+Initialize $S_{dw(t)} = \vec{0}$, $S_{db(t)} = \vec{0}$
+
+(여기서 $S_{dw(0)}$의 차원은 $W$의 차원과 같고, $S_{db(0)}$의 차원은 $b$의 차원과 같음.)
 
 On iteration t:
 
@@ -155,15 +161,18 @@ $\quad$ 현재 batch에 대한 $dW$, $db$을 계산함.
 
 $\quad$ 그 뒤 아래의 term들을 계산함.
 
-$\quad$$\quad$ $S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$
+$$S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW^2$$
 
-$\quad$$\quad$ $S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$
+$$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db^2$$
 
 $\quad$ Weight, bias 업데이트:
 
-$\quad\quad$ $W := W - \alpha \frac{dW}{\sqrt{S_{dw(t)}}}$
+$$W := W - \alpha \frac{dW}{\sqrt{S_{dw(t)}}}$$
 
-$\quad\quad$ $b:= b - \alpha \frac{db}{\sqrt{S_{db(t)}}}$
+$$b:= b - \alpha \frac{db}{\sqrt{S_{db(t)}}}$$
+
+---
+
 
 # ADAM(Adaptive Moment Estimation)
 
