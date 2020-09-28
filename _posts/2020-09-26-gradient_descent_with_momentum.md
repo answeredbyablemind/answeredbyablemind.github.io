@@ -48,39 +48,46 @@ Momentum의 개념을 도입한 Gradient Descent는 iteration에 따라 방향�
 
 또, subscript로 쓴 $(t)$는 $t$ 번째 iteration에서 계산한 것이라는 걸 말해준다고 하자.
 
----
 
-[Momentum 알고리즘]
+<div class = "Box">
+  <div class = "Box-header">
+    <h3 class = "Box-title">
+      [Momentum 알고리즘]
+    </h3>
 
-Initialize $V_{dw(0)} = \vec 0$, $V_{db(0)} = \vec 0$
+  </div>
 
-(여기서 $V_{dw(0)}$의 차원은 $W$의 차원과 같고, $V_{db(0)}$의 차원은 $b$의 차원과 같음.)
+  <div class = "Box-body">
 
-$t$ 번째 iteration에서:
+    Initialize $V_{dw(0)} = \vec 0$, $V_{db(0)} = \vec 0$
 
-$\quad$ 현재 batch에 대한 $dW_{(t)}$, $db_{(t)}$을 계산함. 
+    (여기서 $V_{dw(0)}$의 차원은 $W$의 차원과 같고, $V_{db(0)}$의 차원은 $b$의 차원과 같음.)
 
-$\quad$ 그 뒤 아래의 term들을 계산함.
+    $t$ 번째 iteration에서:
 
-$$V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW_{(t)}$$
+    $\quad$ 현재 batch에 대한 $dW_{(t)}$, $db_{(t)}$을 계산함. 
 
-[//]:# (식 1)
+    $\quad$ 그 뒤 아래의 term들을 계산함.
 
-$$V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db_{(t)}$$
+    $$V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW_{(t)}$$
 
-[//]:# (식 2)
+    [//]:# (식 1)
 
-$\quad$ Weight, bias 업데이트:
+    $$V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db_{(t)}$$
 
-$$W := W - \alpha V_{dw(t)}$$
+    [//]:# (식 2)
 
-[//]:# (식 3)
+    $\quad$ Weight, bias 업데이트:
 
-$$b:= b - \alpha V_{db(t)}$$
+    $$W := W - \alpha V_{dw(t)}$$
 
-[//]:# (식 4)
+    [//]:# (식 3)
 
----
+    $$b:= b - \alpha V_{db(t)}$$
+
+    [//]:# (식 4)
+  </div>
+</div>
 
 
 
