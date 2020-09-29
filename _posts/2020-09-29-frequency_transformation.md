@@ -121,7 +121,7 @@ center frequency $\Omega_0$과 passband edge $\Omega_{p1}$과 $\Omega_{p2}$ ($\O
 
 $$S\rightarrow \frac{Q(s^2+\Omega_0^2)}{\Omega_0\times s}$$
 
-where $Q$ is defined as
+where $Q$ and $B$ are defined as
 
 $$Q = \frac{\Omega_0}{B}$$
 
@@ -161,102 +161,82 @@ proof)
 
 Def. 3의 transformation 관계에 의해서, 
 
-<center>
-<img src="http://bit.ly/1m483KP">
+$$\frac{Q(s^2+\Omega_0^2)}{\Omega_0 \times s} = j$$
 
-<img src="http://bit.ly/1m488hN">
+$$\Rightarrow s^2 +\Omega_0^2 -j\frac{Q_0\times s}{Q} = 0$$
 
-<img src="http://bit.ly/23zG9bO">
+$$\Rightarrow s^2 - j\frac{\Omega_0}{Q}s+\Omega_0^2 = 0$$
 
-</center>
 
 2차 방정식의 근의 공식에 의해서,
 
-<center>
+$$\therefore s = \frac{j\Omega_0/Q\pm\sqrt{-\Omega_0^2/Q^2-4\Omega_0^2}}{2}$$
 
-<img src="http://bit.ly/1m48nJJ">
+$$=\frac{j\Omega\pm\Omega_0\sqrt{-(1+4Q^2)}}{2Q}$$
 
-<img src="http://bit.ly/23zGg7d">
+$$=\frac{j\Omega_0}{2Q}\left[1\pm\sqrt{1+4Q^2}\right]$$
 
-<img src="http://bit.ly/23zGkDS">
-
-</center>
-
-이 때, <img src="http://bit.ly/23zGmeY">이라는 것은 명백하기 때문에, s의 한 근은 양수, 한 근은 음수라는 것을 알 수 있다.
+이 때, $\sqrt{1+4Q^2}>1$이라는 것은 명백하기 때문에, s의 한 근은 양수, 한 근은 음수라는 것을 알 수 있다.
 
 ② $s=-j$ 일 때,
 
 마찬가지로, transformation의 식에 의해서,
 
-<center>
-<img src="http://bit.ly/1m48ViB">
+$$\frac{Q(s^2 + \Omega_0^2)}{\Omega_0\times s} = -j$$
 
-<img src="http://bit.ly/23zGyuO">
+$$s^2 + \Omega_0^2 + j\frac{\Omega_0\times s}{Q} = 0$$
 
-<img src="http://bit.ly/23zGz1R">
-</center>
+$$s^2 + j\frac{\Omega_0}{Q}s + \Omega_0^2 = 0$$
 
 2차 방정식의 1차 항의 계수만 부호가 바뀌었다는 것을 알 수 있다. 그렇기 때문에 간단하게, algebra를 생략하고 s를 바로 적을 수 있다.
 
-<center>
-<img src="http://bit.ly/1m49dWF">
-</center>
+$$s = j\frac{\Omega_0}{2Q}\left[-1\pm\sqrt{1+4Q^2}\right]$$
 
 즉, $s=-j$일 때에도 한 근은 양수이고 다른 한 근은 음수인 두 개의 근이 나온다.
 
-③중간 결론
+③ 중간 결론
 
 결론적으로, NLPF의 $\Omega_p=1$(or$S=\pm j$)에 의해서 DBPF는 네 개의 근이 발생한다는 것을 알 수 있다. 그리고 그 네 개의 근은 두 개의 양의 근과 두 개의 음의 근으로 구성되어 있다.
 
 ④ 근 사이의 관계(Relation between solutions)
 이 때, 두 양의 근을 생각하면 다음과 같다. (우리는 양의 frequency만 생각해도 괜찮기 때문이다.)
 
-<center><img src="http://bit.ly/1m49rx0"></center>
+$$s = j\frac{\Omega_0}{2Q}\left[\pm1+\sqrt{1+4Q^2}\right]$$
 
 즉, 다음과 같은 관계를 구할 수 있다.
 
-<center>
-<img src="http://bit.ly/23zGJpO">
+$$S = j \rightarrow s = \pm j\Omega_{p1, p2}$$
 
-<img src="http://bit.ly/1m49CbH">
+$$\Omega_{p1} = \frac{\Omega_0}{2Q}\left[\sqrt{1+4Q^2}-1\right]$$
 
-<img src="http://bit.ly/1m49F7q">
-</center>
+$$\Omega_{p2} = \frac{\Omega_0}{2Q}\left[\sqrt{1+4Q^2}+1\right]$$
 
 이 때, $\Omega_{p1}\times\Omega_{p2}=\Omega_0^2$라는 사실을 알 수 있다.
 
 ---
 
-1위 Derivation을 통해서 알 수 있었던 사실은 $\Omega_{p1}\times\Omega_{p2}=\Omega_0^2$이라는 사실이며, 이 사실은 Bandpass filter의 Center frequency를 정하거나, 역으로 Center Frequency를 통해서 Passband Edges를 구할 때 있어서 매우 중요한 사실이다. 다시 한번 정리하자면, center frequency는 두 passband edges의 산술평균이 아닌 기하평균이다. 
+위 Derivation을 통해서 알 수 있었던 사실은 $\Omega_{p1}\times\Omega_{p2}=\Omega_0^2$이라는 사실이며, 이 사실은 Bandpass filter의 Center frequency를 정하거나, 역으로 Center Frequency를 통해서 Passband Edges를 구할 때 있어서 매우 중요한 사실이다. 
+
+다시 한번 정리하자면, center frequency는 두 passband edges의 산술평균이 아닌 기하평균이다. 
 
 또한, 이 기하평균은 passband edges 만이 아니라 어떠한 대칭되는 두 frequency에 대해서도 성립한다. 그러므로, stopband edges $\Omega_{s1}$과 $\Omega_{s2}$에 대해서도 성립한다. 따라서, 
 
-<center>
+$$\Omega_0^2 = \Omega_{p1}\Omega_{p2}$$
 
-<img src="http://bit.ly/23zGSK0">
+$$\Omega_0^2 = \Omega_{s1}\Omega_{s2}$$
 
-<img src="http://bit.ly/1m49ZmI">
-</center>
 이고, passband edges와 stopband edges는 반드시 다음과 같은 관계가 성립되는 것들이어야 한다.
 
-<center><img src="http://bit.ly/1m4a3CX"></center>
+$$\Omega_0^2 = \Omega_{p1}\Omega_{p2} = \Omega_{s1}\Omega_{s2}$$
 
 그렇기 때문에, Butterworth filter를 설계할 때와 마찬가지로 $\Omega_p$와 $\Omega_s$를 모두 만족시키는 N을 구할 수 없듯이, consumer 가 요구하는 filter의 spec을 모두 만족시킬 수 있는 Bandpass filter는 존재하지 않을 수 있다. 
 
-그렇기 때문에, $\Omega_p$에 대해서는 exactly satisfy하면서 $\Omega_s$에 대해서는 over satisfy하는 bandpass filter를 설계할 수 밖에 없다. 하지만 <img src="http://bit.ly/1m4a3CX">는 반드시 만족시킬 수 있도록 그 $\Omega_{s1}$ or $\Omega_{s2}$를 조절해서 설계해야 할 것이다.
-
-위에서 했던 것과 마찬가지로 간단한 transformation을 해보자.
-
-<center>
-
-<img src="http://bit.ly/23zH6AM">
-
-<img src="http://bit.ly/23zHajY">
-
-</center>
+그렇기 때문에, $\Omega_p$에 대해서는 exactly satisfy하면서 $\Omega_s$에 대해서는 over satisfy하는 bandpass filter를 설계할 수 밖에 없다. 
 
 
-###4) NLPF $\rightarrow$ Denormalized BSF
+### 4) NLPF $\rightarrow$ Denormalized BSF
+
+이번엔 Bandstop filter를 설계해보자.
 
 ---
 
@@ -266,35 +246,35 @@ Normalized Lowpass Filter $\rightarrow$ Denormalized Bandpass Filter
 
 center frequency $\Omega_0$과 passband edge $\Omega_{p1}$과 $\Omega_{p2}$ ($\Omega_{p1}>\Omega_{p2}$)를 가지는 Denormalized Bandstop Filter를 Normalized Lowpass Filter로부터 얻으려면 다음과 같은 변형(transformation)을 적용할 수 있다.
 
-<center>
-<img src="http://bit.ly/23zHhfn">
+$$S\rightarrow \frac{\Omega_0\times s}{Q(s^2+\Omega_0^2)}$$
 
-where Q is defined as <img src="http://bit.ly/1m474KK">, <img src="http://bit.ly/23zFJ50">
-</center>
+where $Q$ and $B$ are defined as 
+
+$$Q = \frac{\Omega_0}{B}$$
+
+and
+
+$$B = \Omega_{p2}-\Omega_{p1}$$
+
 
 ---
 
 Bandstop Filter는 Bandpass Filter의 역수를 취한 값을 대입했다고 볼 수 있다. 위의 과정에서와 마찬가지로 몇 가지 값을 가지고 transformation의 타당성을 검증해보자.
 
-<center>
-<img src="http://bit.ly/1m4b9P8">
+$$S = 0 \rightarrow s = 0 \text{ or } \infty$$
 
-<img src="http://bit.ly/23zHmQn">
-</center>
+$$S = \infty \rightarrow s = \pm j\Omega_0$$
 
 그러므로, 다음과 같은 모양의 결과가 나온다는 것을 수식을 통해서 알 수 있다.
 
-
-
-<center>
-![](https://wikidocs.net/images/page/4068/20160130_200914.png)
-</center>
+<p align = "center">
+  <img src= "https://wikidocs.net/images/page/4068/20160130_200914.png">
+  <br>
+</p>
 
 BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다. 즉,
 
-<center> 
-<img src="http://bit.ly/1m4a3CX">
-</center>
+$$\Omega_0^2 = \Omega_{p1}\Omega_{p2}=\Omega_{s1}\Omega_{s2}$$
 
 이다.
 
@@ -302,9 +282,10 @@ BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다.
 
  우리는 지금까지 LPF외에 다른 종류의 필터를 설계 할 때에는 Normalized LPF를 통해서 설계가 가능하다는 사실을 공부했다. 그 방법은 Frequency Transformation이라는 방법이고 구체적인 내용은 다음과 같았다.
 
-<center>
-![](https://wikidocs.net/images/page/4068/20160130_201110.png)
-</center>
+<p align = "center">
+  <img src = "https://wikidocs.net/images/page/4068/20160130_201110.png">
+  <br>
+</p>
 
 여기서 Bandpass Filter와 Bandstop Filter는 
 
@@ -314,7 +295,7 @@ BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다.
 
 </center>
 
-을 만족해야한다. 이 관계는 $S=\pm j$일 때의 값을 찾는 2차 방정식의 해를 푸는 것과 관련잉 ㅣㅆ었다.
+을 만족해야한다. 이 관계는 $S=\pm j$일 때의 값을 찾는 2차 방정식의 해를 푸는 것과 관련이 있었다.
 
 이 때, Filter의 설계를 요구 받을 때에는 대부분 $\Omega_0$는 주어지지 않고, $\Omega_{p1},\Omega_{p2}$와 $\Omega_{s1},\Omega_{s2}$가 주어진다. 
 
