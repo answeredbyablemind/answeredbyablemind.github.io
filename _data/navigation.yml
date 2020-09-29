@@ -133,6 +133,8 @@ docs-ko:
         url:    2020/08/24/linear_regression.html
       - title:  로지스틱 회귀(logistic regression)
         url:    2020/09/23/logistic_regression.html
+      - title:  서포트 벡터 머신(SVM)
+        url:    2020/09/30/SVM.html
       - title:  베이즈 정리의 의미
         url:    2020/01/09/Bayes_rule.html
       - title:  나이브 베이즈 분류기
