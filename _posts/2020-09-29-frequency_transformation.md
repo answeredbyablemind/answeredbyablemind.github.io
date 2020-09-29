@@ -4,7 +4,7 @@ sidebar:
   nav: docs-ko
 aside:
   toc: true
-key: 20200927
+key: 20200929
 tags: 신호처리
 ---
 
@@ -276,6 +276,8 @@ BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다.
 
 $$\Omega_0^2 = \Omega_{p1}\Omega_{p2}=\Omega_{s1}\Omega_{s2}$$
 
+[//]:# (식 37)
+
 이다.
 
 # 2. Practical problems that arise in making BPF or BSF
@@ -289,51 +291,52 @@ $$\Omega_0^2 = \Omega_{p1}\Omega_{p2}=\Omega_{s1}\Omega_{s2}$$
 
 여기서 Bandpass Filter와 Bandstop Filter는 
 
-<center>
-
-<img src="http://bit.ly/1m4a3CX">$\cdots$식 (1)
-
-</center>
+$$\Omega_0^2 = \Omega_{p1}\Omega_{p2} = \Omega_{s1}\Omega_{s2}$$
 
 을 만족해야한다. 이 관계는 $S=\pm j$일 때의 값을 찾는 2차 방정식의 해를 푸는 것과 관련이 있었다.
 
 이 때, Filter의 설계를 요구 받을 때에는 대부분 $\Omega_0$는 주어지지 않고, $\Omega_{p1},\Omega_{p2}$와 $\Omega_{s1},\Omega_{s2}$가 주어진다. 
 
-이 때, 식(1)을 만족시킬 수 없는 $\Omega_{p1},\Omega_{p2}$와 $\Omega_{s1},\Omega_{s2}$라면 $\Omega_{s1}$ or $\Omega_{s2}$를 조절하여 stopband frequency에 대해서는 oversatisfying 하는 정상적인 (식 (1)을 만족시키는) Bandpass Filter 또는 Bandstop Filter를 구할 수 있다.
+이 때, 식(38)을 만족시킬 수 없는 $\Omega_{p1},\Omega_{p2}$와 $\Omega_{s1},\Omega_{s2}$라면 $\Omega_{s1}$ or $\Omega_{s2}$를 조절하여 stopband frequency에 대해서는 oversatisfying 하는 정상적인 (식 (38)을 만족시키는) Bandpass Filter 또는 Bandstop Filter를 구할 수 있다.
 
-### 가. $\Omega_{s1}\Omega_{s2}>\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우
+## 가. $\Omega_{s1}\Omega_{s2}>\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우
 
-이 때, 우리는 $\Omega_{s1}\Omega_{s2}$의 크기를 줄여주는 작업을 해주어야 한다. 그렇다면, $\Omega_{s1}$과 $\Omega_{s2}$중에서 어떤 것을 작게 만들어야 할까? 아래의 그림을 보면서 생각해보자.
+이 때, 우리는 $\Omega_{s1}\Omega_{s2}$의 크기를 줄여주는 작업을 해주어야 한다. 
 
-<center>![](https://wikidocs.net/images/page/4068/20160130_201805.png)</center>
+그렇다면, $\Omega_{s1}$과 $\Omega_{s2}$중에서 어떤 것을 작게 만들어야 할까? 아래의 그림을 보면서 생각해보자.
 
-다시 한번 말하자면, 우리는 $\Omega_{s1}\Omega_{s2}>\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우에 처해있다. 이 때, Filter의 Specification을 oversatisfying 하기 위해서는 $\Omega_{s2}$를 줄여주어야 한다. 
+<p align = "center">
+  <img src = "https://wikidocs.net/images/page/4068/20160130_201805.png">
+</p>
+
+다시 한번 말하자면, 우리는 $\Omega_{s1}\Omega_{s2}>\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우에 처해있다. 
+
+이 때, Filter의 Specification을 oversatisfying 하기 위해서는 $\Omega_{s2}$를 줄여주어야 한다. 
 
 왜냐면, $\Omega_{s1}$을 작게 만들어주게 된다면 그것은 filter의 specification을 만족시켜주지 못하는 필터가 되기 때문이다. 
 
- 그러므로, 새로 만들어지는 $\hat{\Omega}_{s2}$는 다음과 같이 될 것이다. 
+그러므로, 새로 만들어지는 $\hat{\Omega}_{s2}$는 다음과 같이 될 것이다. 
 
-<center>
-<img src="http://bit.ly/23zI9Rp">
-</center>
+$$\hat{\Omega}_{s2}=\frac{\Omega_0^2}{\Omega_{s1}}$$
 
-### 나. $\Omega_{s1}\Omega_{s2}<\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우
 
-이 경우는 $\Omega_{s1}\Omega_{s2}$의 크기를 키워주는 작업을 해야한다. 이 때 Filter의 Specification을 oversatisfying 하기 위해서는 $\Omega_{s1}$의 크기를 키워주어야 한다. 마찬가지로 새로 만들어지는 $\hat{\Omega}_{s1}$은 다음과 같을 것이다.
+## 나. $\Omega_{s1}\Omega_{s2}<\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우
 
-<center>
-<img src="http://bit.ly/23zIiEd">
-</center> 
+이 경우는 $\Omega_{s1}\Omega_{s2}$의 크기를 키워주는 작업을 해야한다. 
 
-### 다. Modifying $\Omega_s$ in NLPF
+이 때 Filter의 Specification을 oversatisfying 하기 위해서는 $\Omega_{s1}$의 크기를 키워주어야 한다. 마찬가지로 새로 만들어지는 $\hat{\Omega}_{s1}$은 다음과 같을 것이다.
+
+$$\hat{\Omega}_{s1}=\frac{\Omega_0^2}{\Omega_{s2}}$$
+
+[//]:# (식 40)
+
+## 다. Modifying $\Omega_s$ in NLPF
 
 이제 Bandpass Filter의 Stopband edges를 조절했다면, 문제는 해당되는 NLPF의 Spec에는 어떤 영향을 미치는지 생각해보는 것이다. 우리는 $\delta_p$와 $\delta_s$가 주어져 있고, $\Omega_p$에 대한 정보도 충분하기 때문에, 그것들을 이용해서 NLPF에서의 $\Omega_s$에 대해서도 생각해볼 수 있다.
 
 NLPF의 $\Omega_s$는 BPF로의 Transformation에 의해서 결정될 수 있다. 그것은, 
 
-<center>
-<img src="http://bit.ly/1m4dIAP">
-</center>
+$$S = \frac{s^2 +\Omega_0^2}{B\times s}$$
 
 와 같은 관계였다. 
 
@@ -341,31 +344,40 @@ NLPF의 $\Omega_s$는 BPF로의 Transformation에 의해서 결정될 수 있다
 
 그러므로, 다음의 식이 성립된다.
 
-<center>
-<img src="http://bit.ly/23zIy67"> 또는 <img src="http://bit.ly/23zIzqV">
-</center>
+$$j\Omega_s = \frac{-\Omega_{s1}^2 + \Omega_0^2}{Bj\Omega_{s1}}$$
 
-여기서
+또는
 
-<center>
+$$j\Omega_s = \frac{-\Omega_{s2}^2 + \Omega_0^2}{Bj\Omega_{s2}}$$
 
-<img src="http://bit.ly/1m4elKu"> 또는 <img src="http://bit.ly/1m4enSz">
+따라서 여기서
 
-</center>
+$$\Omega_s = \frac{\Omega_0^2-\Omega_{s1}^2}{B\Omega_{s1}}$$
 
-라는 것을 알 수 있다. 하지만 이 두 식에는 negative frequency를 말하고 있다는 것을 알 수 있다. 우리는 이 때, 조금 직관적인 방법을 통해서 positive frequency와 negative frequency는 그 부호만 반대일 뿐, 그 크기는 같은 값인 frequency라는 것을 알고 있다. 그렇기 때문에, 
+[//]:# (식 44)
 
-<center>
- <img src="http://bit.ly/23zIEL6"> 또는 <img src="http://bit.ly/1m4ey0n">
-</center>
+또는
 
-라고 써도 무방하다. (다시 한번 상기시키자면, $\pm\Omega_s$에는 $\pm\Omega_{s1}$과 $\pm\Omega_{s2}$의 총 4개의 frequency가 mapping 된다. 그렇기 때문에 위와 같은 방법으로 양의 frequency를 찾는 것은 수학적으로 오류가 없다고 할 수 있다.)
+$$\Omega_s = \frac{\Omega_0^2-\Omega_{s2}^2}{B\Omega_{s2}}$$
+
+[//]:# (식 45)
+
+라는 것을 알 수 있다. 하지만 이 두 식에는 negative frequency를 말하고 있다는 것을 알 수 있다. 우리는 이 때, 조금 직관적인 방법을 통해서 positive frequency와 negative frequency는 그 부호만 반대일 뿐, 그 크기는 같은 값인 frequency라는 것을 알고 있다. 
+
+그렇기 때문에, 식 (44) 혹은 식 (45)와 같이 써도 무방하다. 다시 한번 상기시키자면, $\pm\Omega_s$에는 $\pm\Omega_{s1}$과 $\pm\Omega_{s2}$의 총 4개의 frequency가 mapping 된다. 그렇기 때문에 위와 같은 방법으로 양의 frequency를 찾는 것은 수학적으로 오류가 없다고 할 수 있다.
 
 그러므로, $\Omega_{s1}$과 $\Omega_{s2}$중 $\Omega_{s1}$만 생각해보자면, 
 
-<center>
-![](https://wikidocs.net/images/page/4068/20160130_203011.png)
-</center>
+$$\Omega_{s(NLPF)}=\frac{\Omega_0^2-\Omega_{s1}^2}{B\Omega_{s1}}$$
+
+$$=\frac{\Omega_0^2}{B\Omega_{s1}}-\frac{\Omega_{s1}^2}{B\Omega_{s1}}$$
+
+$$=\frac{\Omega_{s1}\Omega_{s2}}{B\Omega_{s1}}-\frac{\Omega_{s1}^2}{B\Omega_{s1}}$$
+
+$$=\frac{\Omega_{s2}-\Omega_{s1}}{B}$$
+
+$$=\frac{\Omega_{s2}-\Omega_{s1}}{\Omega_{p2}-\Omega_{p1}}$$
+
 
 이다.
 
