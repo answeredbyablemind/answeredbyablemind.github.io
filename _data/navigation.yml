@@ -100,6 +100,8 @@ docs-ko:
         url:    2020/07/30/multiple_integral.html
       - title:  벡터장의 선적분
         url:    2020/08/17/line_integral.html
+      - title:  벡터장과 path independence
+        url:    2020/10/01/path_independence.html
       - title:  그린정리
         url:    2020/01/18/Green_theorem.html
       - title:  벡터장의 flux(2D)
