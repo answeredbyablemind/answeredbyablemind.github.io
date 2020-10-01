@@ -143,6 +143,8 @@ docs-ko:
         url:    2020/08/04/naive_bayes.html
       - title:  ROC curve
         url:    2020/08/05/ROC.html
+      - title:  Restricted Boltzmann Machine
+        url:    2020/10/02/RBM.html
       - title:  헤시안 행렬의 기하학적 의미
         url:    2020/06/17/Hessian.html
       - title:  Layer-wise Relevance Propagation
