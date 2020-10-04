@@ -97,3 +97,13 @@ $$=\frac{E \lbrace X_T(\omega)X_T^*(\omega)\rbrace}{2T}$$
 $$=\frac{1}{2T}\int_{-T}^{T}\int_{-T}^{T}E\left\lbrace X_T(t_1) X_T(t_2) \exp(-j\omega t_1) \exp(-j\omega t_2) dt_1 dt_2\right\rbrace$$
 
 $$=\frac{1}{2T}\int_{-T}^{T}\int_{-T}^{T}R_{XX}(t_1-t_2)\exp(-j\omega(t_1-t_2))dt_1 dt_2$$
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-04-Wiener_Khinchin/pic1.png">
+  <br>
+  그림 1.
+</p>
+
+여기서 위의 식 (15)는 그림 1에서처럼 $t_1 = \pm T$와 $t_2 = \pm T$로 둘러싸인 정사각형 영역에서의 면적을 구하는 과정의 일부로 볼 수 있다.
+
+식 (15)를 보면 $t_1-t_2$라는 식이 일괄적으로 들어가있기 때문에, $t_1-t_2=\tau$와 같이 치환해서 적분식을 풀어줄 수 있는데, 
