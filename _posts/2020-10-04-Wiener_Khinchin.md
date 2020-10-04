@@ -104,6 +104,48 @@ $$=\frac{1}{2T}\int_{-T}^{T}\int_{-T}^{T}R_{XX}(t_1-t_2)\exp(-j\omega(t_1-t_2))d
   그림 1.
 </p>
 
-여기서 위의 식 (15)는 그림 1에서처럼 $t_1 = \pm T$와 $t_2 = \pm T$로 둘러싸인 정사각형 영역에서의 면적을 구하는 과정의 일부로 볼 수 있다.
+여기서 위의 식 (15)는 그림 1에서처럼 $t_1 = \pm T$와 $t_2 = \pm T$로 둘러싸인 정사각형 영역의 면적을 구하는 과정으로 볼 수 있다.
 
-식 (15)를 보면 $t_1-t_2$라는 식이 일괄적으로 들어가있기 때문에, $t_1-t_2=\tau$와 같이 치환해서 적분식을 풀어줄 수 있는데, 
+식 (15)를 보면 $t_1-t_2$라는 식이 일괄적으로 들어가있기 때문에, $t_1-t_2=\tau$와 같이 치환해서 적분식을 풀어줄 수 있다. 
+
+$t_1-t_2 = \tau$라는 식은 잘 생각해보면 기울기가 1인 일차함수 중 하나임을 알 수 있는데, 결국 그림 1의 정사각형을 구하는 과정을 $\tau$가 $-2T$부터 $2T$까지 변해가면서 그림 1에 shade 표시한 띠의 미소 면적을 적분해주는 과정이라고 볼 수 있는 것이다. 따라서, 그림 1에 shade 표시한 미소 면적을 $dA$라고 한다면 식 (15)는 다음과 같이 쓸 수 있다.
+
+$$식(15)\Rightarrow \frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t) dA$$
+
+여기서 $dA$를 구하면 
+
+$$dA = (2T-|\tau|)d\tau - \frac{1}{2}(d\tau)^2$$
+
+이다. 이것은 두 삼각형의 넓이의 차를 이용해 구한 값이다.
+
+따라서 식 (16)을 계속해서 쓰면,
+
+$$\frac{E\lbrace X_T(\omega) X_T^*(\omega)\rbrace}{2T}$$
+
+$$=\frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t)\left\lbrace(2T-|\tau|)d\tau - \frac{1}{2}d\tau^2\right\rbrace$$
+
+
+$$=\frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t)
+\left\lbrace(2T-|\tau|) - \frac{1}{2}d\tau\right\rbrace d\tau$$
+
+
+$$=\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t)
+\left\lbrace \left(1-\frac{|\tau|}{2T}\right) -\frac{1}{4T}d\tau \right\rbrace d\tau$$
+
+[//]:# (식 21)
+
+여기서 $R_{XX}$가 적분가능하다면, $T$가 무한히 커지게 되면 식 (21)은 아래와 같다.
+
+$$\int_{-\infty}^{\infty}R_{XX}(\tau) \exp(-j\omega\tau)d\tau$$
+
+따라서 아래와 같은 관계를 확인할 수 있다.
+
+$$\lim_{T\rightarrow \infty}\frac{E\lbrace |X_T(\omega)|^2\rbrace}{2T} = \int_{-\infty}^{\infty}R_{XX}(\tau)\exp(-j\omega \tau)d\tau$$
+
+앞서 언급했듯이 위 식의 좌변은 Power Spectral Density $S_{XX}(\omega)$라고 부른다. 따라서,
+
+$$S_{XX}(\tau) = \int_{-\infty}^{\infty}R_{XX}(\tau)\exp(-j\omega \tau)d\tau$$
+
+그리고, 역푸리에 변환을 이용하면
+
+$$R_{XX}(\tau) = \frac{1}{2\pi}\int_{-\infty}^{\infty}S_{XX}(\omega)\exp(j\omega\tau)d\omega$$
