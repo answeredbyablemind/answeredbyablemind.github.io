@@ -144,7 +144,7 @@ $$\lim_{T\rightarrow \infty}\frac{E\lbrace |X_T(\omega)|^2\rbrace}{2T} = \int_{-
 
 앞서 언급했듯이 위 식의 좌변은 Power Spectral Density $S_{XX}(\omega)$라고 부른다. 따라서,
 
-$$S_{XX}(\tau) = \int_{-\infty}^{\infty}R_{XX}(\tau)\exp(-j\omega \tau)d\tau$$
+$$S_{XX}(\omega) = \int_{-\infty}^{\infty}R_{XX}(\tau)\exp(-j\omega \tau)d\tau$$
 
 그리고, 역푸리에 변환을 이용하면
 
