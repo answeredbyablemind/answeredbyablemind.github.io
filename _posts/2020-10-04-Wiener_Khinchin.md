@@ -62,3 +62,38 @@ $X_T(t)$의 푸리에 변환은 다음과 같을 것이다.
 
 $$X_T(\omega) = \int_{-T}^{T}X_t(t)\exp(-j\omega t) dt$$
 
+여기서 Parseval 정리를 이용해 신호의 energy를 정의해보자.
+
+$$\int_{-T}^{T}X^2_T(t)dt = \frac{1}{2\pi}\int_{-\infty}^{\infty}|X_T(\omega)|^2 d\omega$$
+
+또, 신호의 power는 신호의 energy에 신호 전체 길이를 나눠준 것이므로, 신호의 power는 다음과 같이 생각할 수 있다.
+
+$$\frac{1}{2T}\int_{-T}^{T}X^2_T(t)dt = \frac{1}{2T}\frac{1}{2\pi}\int_{-\infty}^{\infty}|X_T(\omega)|^2 d\omega$$
+
+그러면, power의 기댓값은 다음과 같다.
+
+$$\frac{1}{2T}E\left\lbrace\int_{-T}^{T}X_T^2(t)dt\right\rbrace$$
+
+$$=\frac{1}{2T}\frac{1}{2\pi}E\left\lbrace\int_{-\infty}^{\infty}|X_T(\omega)|^2 d\omega\right\rbrace$$
+
+$$=\frac{1}{2\pi}E\left\lbrace\int_{-\infty}^{\infty}\frac{|X_T(\omega)|^2}{2T}d\omega\right\rbrace$$
+
+여기서 $\frac{E\lbrace \|X_T(\omega)\|^2\rbrace}{2T}$는 주파수 $\omega$에서 파워의 기댓값에 기여한 기여도라고 볼 수 있으며, 이것이 $X_T(t)$의 Power Spectral Density(PSD)를 의미한다.
+
+따라서 우리는 Power Spectral Density를 다음과 같이 정의할 수 있다.
+
+$$S_{XX}(\omega) = \lim_{T\rightarrow \infty}\frac{E\lbrace |X_T(\omega)|^2\rbrace}{2T}$$
+
+# 3. Autocorrelation과 Power Spectral Density의 관계
+
+Autocorrelation과 PSD의 관계를 설명하는 이론은 Winer-Khinchin-Einstein 정리라고 불린다. 그 내용은 아래와 같으며 random process의 autocorrelation과 Power Spectral Density 간의 관계를 증명한다.
+
+PSD의 식에서,
+
+$$\frac{E \lbrace |X_T(\omega)|^2\rbrace}{2T}$$
+
+$$=\frac{E \lbrace X_T(\omega)X_T^*(\omega)\rbrace}{2T}$$
+
+$$=\frac{1}{2T}\int_{-T}^{T}\int_{-T}^{T}E\left\lbrace X_T(t_1) X_T(t_2) \exp(-j\omega t_1) \exp(-j\omega t_2) dt_1 dt_2\right\rbrace$$
+
+$$=\frac{1}{2T}\int_{-T}^{T}\int_{-T}^{T}R_{XX}(t_1-t_2)\exp(-j\omega(t_1-t_2))dt_1 dt_2$$
