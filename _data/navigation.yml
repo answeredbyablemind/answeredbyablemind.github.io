@@ -244,6 +244,8 @@ docs-ko:
         url:    2020/09/27/Chebyshev.html
       - title:  Frequency Transformation
         url:    2020/09/29/frequency_transformation.html
+      - title:  위너-킨친 정리
+        url:    2020/10/04/Wiener_Khinchin.html
         
         
         
