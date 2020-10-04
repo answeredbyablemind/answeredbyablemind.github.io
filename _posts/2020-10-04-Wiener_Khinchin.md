@@ -149,3 +149,5 @@ $$S_{XX}(\tau) = \int_{-\infty}^{\infty}R_{XX}(\tau)\exp(-j\omega \tau)d\tau$$
 그리고, 역푸리에 변환을 이용하면
 
 $$R_{XX}(\tau) = \frac{1}{2\pi}\int_{-\infty}^{\infty}S_{XX}(\omega)\exp(j\omega\tau)d\omega$$
+
+임 또한 생각해볼 수 있다.
