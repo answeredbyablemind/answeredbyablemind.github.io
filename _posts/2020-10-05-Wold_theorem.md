@@ -71,13 +71,13 @@ $$\Rightarrow \frac{T^2}{(2N+1)T}\sum_{n=-N}^{N}\sum_{l=-N}^{N} E\lbrace x(n)x(l
 
 Discrete time signal $x(n)$이 wide-sense stationary 하다고 가정한다면 다음이 성립한다.
 
-$$\Rightarrow \frac{T}{(2N+1)}\sum_{n=-N}^{N}\sum_{l=-N}^{N}R(n-l)\exp(-j2\pi f(n-l) T$$
+$$\Rightarrow \frac{T}{(2N+1)}\sum_{n=-N}^{N}\sum_{l=-N}^{N}R(n-l)\exp(-j2\pi f(n-l) T)$$
 
 여기서 $R(\cdot)$은 autocorrelation function이다.
 
 이제 
 
-$$\sum_{n=-N}^{N}\sum_{l=-N}^{N}R(n-l)\exp(-j2\pi f(n-l) T$$
+$$\sum_{n=-N}^{N}\sum_{l=-N}^{N}R(n-l)\exp(-j2\pi f(n-l) T)$$
 
 [//]:# (식 14)
 
@@ -106,13 +106,21 @@ $$-N \leq l \leq N$$
 그리고 $k$의 값이 $-2N$에서 $2N$으로 변하는 동안 더해야 할 $R(n-l)\exp(-j2\pi f(n-l)T)$의 값을 확인해보면 다음과 같다.
 
 $$k=2N \Rightarrow R(2N)\exp(-j2\pi f (2N) T)$$
+
 $$k=2N-1 \Rightarrow 2\times R(2N-1)\exp(-j2\pi f (2N-1) T)$$
+
 $$k=2N-2 \Rightarrow 3\times R(2N-2)\exp(-j2\pi f (2N-2) T)$$
+
 $$\vdots\notag$$
+
 $$k=0 \Rightarrow (2N+1)\times R(0)\exp(-j2\pi f (0) T)$$
+
 $$\vdots\notag$$
+
 $$k=-(2N-2) \Rightarrow 3\times R(2N-2)\exp(-j2\pi f (2N-2) T)$$
+
 $$k=-(2N-1) \Rightarrow 2\times R(2N-1)\exp(-j2\pi f (2N-1) T)$$
+
 $$k=-2N \Rightarrow R(2N)\exp(-j2\pi f (2N) T)$$
 
 따라서 모든 $k$에 대하여 $k=n-l$일 때 식 (14)의 값은 아래와 같이 표현할 수 있게 된다.
