@@ -14,7 +14,7 @@ tags: 신호처리
 
 $$G(\omega) = \int_{-\infty}^{\infty}g(t)\exp(-j\omega t)dt$$
 
-where $\exp(-j\omega t) = \cos\omega t + j \sin \omega t$
+where $\exp(-j\omega t) = \cos\omega t - j \sin \omega t$
 
 이 때, Fourier Transform $G(\omega)$가 존재할 수 있는 조건은 Dirichlet Condition이라고 불리며, 그 조건은 다음과 같다.
 
