@@ -246,6 +246,8 @@ docs-ko:
         url:    2020/09/29/frequency_transformation.html
       - title:  위너-킨친 정리
         url:    2020/10/04/Wiener_Khinchin.html
+      - title:  Wold's theorem
+        url:    2020/10/05/Wold_theorem.html
         
         
         
