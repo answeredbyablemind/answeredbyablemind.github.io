@@ -8,7 +8,7 @@ key: 20201005
 tags: 신호처리
 ---
 
-※ Wold's theorem은 위너-킨친 정리의 Discrete Time Signal 버전이라고 할 수 있다.
+※ Wold's theorem은 [위너-킨친 정리](https://angeloyeo.github.io/2020/10/04/Wiener_Khinchin.html)의 Discrete Time Random Signal 버전이라고 할 수 있다.
 
 # 1. Discrete Time Random Signal의 Power Spectrum Density (PSD)
 
@@ -55,5 +55,88 @@ Wold's theorem의 결과는 다음과 같다.
 
 $$S(f) = T\sum_{k=-\infty}^{\infty}R(k) \exp(-j2\pi fkT)$$
 
-위의 S(f)의 정의를 이용해 이를 증명해보도록 하자.
+[//]:# (식 10)
 
+위의 식 (9)와 같은 $S(f)$의 정의를 이용해 이를 증명해보도록 하자.
+
+식 (9)에서 극한 내의 값에 대해 조금 더 자세히 살펴보도록 하자.
+
+DTFT의 정의에 의해 다음이 성립한다.
+
+$$E\left\lbrace \frac{X_p(f)X^*_p(f)}{(2N+1)T}\right\rbrace = E\left\lbrace \frac{1}{(2N+1)T}\left(T\sum_{n=-N}^{N}x(n)\exp(-j 2\pi fnT)\right)\left(T\sum_{l=-N}^{N}x(l)\exp(-j 2\pi flT)\right)^*\right\rbrace$$
+
+여기서 선형 연산자를 정리하면 다음과 같다.
+
+$$\Rightarrow \frac{T^2}{(2N+1)T}\sum_{n=-N}^{N}\sum_{l=-N}^{N} E\lbrace x(n)x(l)\rbrace \exp(-j2\pi f(n-l) T)$$
+
+Discrete time signal $x(n)$이 wide-sense stationary 하다고 가정한다면 다음이 성립한다.
+
+$$\Rightarrow \frac{T}{(2N+1)}\sum_{n=-N}^{N}\sum_{l=-N}^{N}R(n-l)\exp(-j2\pi f(n-l) T$$
+
+여기서 $R(\cdot)$은 autocorrelation function이다.
+
+이제 
+
+$$\sum_{n=-N}^{N}\sum_{l=-N}^{N}R(n-l)\exp(-j2\pi f(n-l) T$$
+
+[//]:# (식 14)
+
+을 계산하는 방법에 대해 다음과 같이 생각해보도록 하자. $n$과 $l$을 독립변수라고 생각해보자. 이 때, $n$과 $l$은 다음과 같은 범위를 갖는다.
+
+$$-N\leq n \leq N$$
+
+$$-N \leq l \leq N$$
+
+또한, $n$과 $l$은 discrete 변수이고 interval은 1이다.
+
+따라서, 아래의 그림처럼 식 (14)를 생각할 수 있다. 이 때, 각각의 점들은 $n$과 $l$의 값이 얼망리 때 대응되는 $R(n-l) \exp(-j2\pi f(n-l)T)$의 값이다. 
+
+즉, 아래 그림에서 검은 동그라미를 모두 그리지는 않았지만 $-N\leq n \leq N$, $-N \leq n \leq N$의 내부에 검은 동그라미가 모두 꽉 찬 상태가 될 것이다. 
+
+그리고 각 검은 동그라미에 해당되는 $R(n-l) \exp(-j2\pi f(n-l)T)$의 값을 모두 더한 것이 식 (14)를 구한 것과 같은 결과를 얻을 수 있게 되는 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-05-Wold_theorem/pic1.png">
+  <br>
+  그림 1.
+</p>
+
+이 때, $k=n-l$이라고 하면 $l=n-k$가 되는 것이고 이것은 기울기가 1인 1차 함수가 된다. 그림에 따르면 $k$의 범위는 $-2N \lt k \lt 2N$이라는 것을 알 수 있다.
+
+그리고 $k$의 값이 $-2N$에서 $2N$으로 변하는 동안 더해야 할 $R(n-l)\exp(-j2\pi f(n-l)T)$의 값을 확인해보면 다음과 같다.
+
+$$k=2N \Rightarrow R(2N)\exp(-j2\pi f (2N) T)$$
+$$k=2N-1 \Rightarrow 2\times R(2N-1)\exp(-j2\pi f (2N-1) T)$$
+$$k=2N-2 \Rightarrow 3\times R(2N-2)\exp(-j2\pi f (2N-2) T)$$
+$$\vdots\notag$$
+$$k=0 \Rightarrow (2N+1)\times R(0)\exp(-j2\pi f (0) T)$$
+$$\vdots\notag$$
+$$k=-(2N-2) \Rightarrow 3\times R(2N-2)\exp(-j2\pi f (2N-2) T)$$
+$$k=-(2N-1) \Rightarrow 2\times R(2N-1)\exp(-j2\pi f (2N-1) T)$$
+$$k=-2N \Rightarrow R(2N)\exp(-j2\pi f (2N) T)$$
+
+따라서 모든 $k$에 대하여 $k=n-l$일 때 식 (14)의 값은 아래와 같이 표현할 수 있게 된다.
+
+$$\sum_{k=-2N}^{2N}(2N+1-|k|)R(k)\exp(-j2\pi fkT)$$
+
+그러므로, 우리가 구하고자 하는 식 (13)은
+
+$$식(13)\Rightarrow \frac{T}{(2N+1)}\sum_{k=-2N}^{2N}(2N+1-|k|)R(k)\exp(-j2\pi fkT)$$
+
+$$=T\sum_{k=-2N}^{2N}\left(1-\frac{|k|}{2N+1}\right)R(k)\exp(-j2\pi fkT)$$
+
+이 된다.
+
+따라서,
+
+$$S(f) = \lim_{N\rightarrow \infty}\sum_{k=-2N}^{2N}T\left(1-\frac{|k|}{2N+1}\right)R(k)\exp(-j2\pi fkT)$$
+
+$$=T\sum_{k=-\infty}^{\infty}R(k)\exp(-j2\pi fkT)$$
+
+가 된다.
+
+또한, DTFT의 정의에 따라
+
+$$R(k) =\int_{-1/2T}^{1/2T}S(f)\exp(j2\pi fkT)df$$
+
+이다.
