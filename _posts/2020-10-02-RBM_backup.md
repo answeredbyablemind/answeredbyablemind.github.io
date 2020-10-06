@@ -1,5 +1,5 @@
 ---
-title: Restricted Boltzmann Machine
+title: Restricted Boltzmann Machine (임시 백업)
 sidebar:
   nav: docs-ko
 aside:
