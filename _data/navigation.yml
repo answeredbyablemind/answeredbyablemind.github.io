@@ -145,6 +145,10 @@ docs-ko:
         url:    2020/08/05/ROC.html
       - title:  Restricted Boltzmann Machine
         url:    2020/10/02/RBM.html
+      - title:  Auto Encoder
+        url:    2020/10/10/autoencoder.html
+      - title:  Variational AutoEncoder
+        url:    2020/10/11/VAE.html
       - title:  헤시안 행렬의 기하학적 의미
         url:    2020/06/17/Hessian.html
       - title:  Layer-wise Relevance Propagation
