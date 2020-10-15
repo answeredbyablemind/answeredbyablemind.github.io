@@ -9,17 +9,21 @@ import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.datasets import fetch_openml
 import matplotlib.pyplot as plt
+import torch
+import torchvision.transforms as transforms
 
-mnist =  fetch_openml('mnist_784')
+mnist_transform = transforms.Compose([
+    transforms.ToTensor()
+    ])
 
-data = mnist.data/255.
+from torchvision.datasets import MNIST
 
-def f(x):
-    return np.int(x)
+download_root = './MNIST_DATASET'
+train_dataset = MNIST(download_root, transform = mnist_transform, train = True, download = True)
 
-f2 = np.vectorize(f)
+data = train_dataset.data.view(-1, 28*28).type(torch.FloatTensor)/255.
 
-target = f2(mnist.target)
+target = train_dataset.targets.numpy()
 
 #%% PCA 적용하기
 pca = PCA(n_components=2)

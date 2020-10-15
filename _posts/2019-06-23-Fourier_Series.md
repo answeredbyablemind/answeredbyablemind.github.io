@@ -137,7 +137,7 @@ Continuous Time Fourier Series의 정의는 아래와 같다.
 
 | DEFINITION 4. 연속시간 푸리에 급수 |
 | --------- |
-| x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다. <br> <center> $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$ <br> $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}\right)dt}$$</center>|
+| x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다. <br> <center> $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$ <br> $$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}t\right)dt}$$</center>|
 
 
 '나' 꼭지에서 설명한 것과 같이 orthogonality를 통해 얻게 되는 $x(t)$ 의 식이 갖고 있는 의미에 집중하자.

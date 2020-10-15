@@ -13,6 +13,7 @@ from torch.utils import data
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
+import numpy as np
 
 
 mnist_transform = transforms.Compose([
@@ -25,7 +26,7 @@ download_root = './MNIST_DATASET'
 train_dataset = MNIST(download_root, transform = mnist_transform, train = True, download = True)
 
 
-EPOCH = 10
+EPOCH = 100
 BATCH_SIZE = 64
 USE_CUDA = torch.cuda.is_available()
 DEVICE = torch.device("cuda" if USE_CUDA else "cpu")
@@ -46,8 +47,7 @@ class Net(nn.Module):
             nn.Linear(784, 2)
             )
         self.decoder = nn.Sequential(
-            nn.Linear(2, 784),
-            nn.Sigmoid()
+            nn.Linear(2, 784)
             )
         
     def forward(self, x):
@@ -57,7 +57,7 @@ class Net(nn.Module):
         return encoded, decoded
     
 model = Net().to(DEVICE)
-optimizer = optim.SGD(model.parameters(), lr = 0.01)
+optimizer = optim.Adam(model.parameters(), lr = 0.001)
 criterion = nn.MSELoss()
 
 def train(model, train_loader):
@@ -73,10 +73,16 @@ def train(model, train_loader):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+    
+    loss_history.append(loss.item())
+    print('LOSS: {}'.format(loss.item()))
+    return loss.item()
+
+loss_history = []
 for epoch in range(EPOCH):
-    train(model, train_loader)
     print('epoch: {}'.format(epoch))
+    loss = train(model, train_loader)
+    loss_history.append(loss)
     
 #%% evaluate
 model.eval()
@@ -93,7 +99,7 @@ data2visualize = encoded.cpu().detach().numpy()
 
 
 import matplotlib.pyplot as plt
-
+plt.figure()
 for i in range(10):
     idx = np.where(mnist_labels == i)[0]
     plt.plot(data2visualize[idx,0], data2visualize[idx,1],'o', label = str(i))
