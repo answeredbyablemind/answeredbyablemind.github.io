@@ -10,7 +10,7 @@ tags: 기계학습
 
 ※ 이 포스팅은 [미술관에 GAN 딥러닝 실전 프로젝트](http://www.yes24.com/Product/Goods/81538614)의 결과와 소스 코드를 이용해 작성한 것임을 밝힙니다.
 
-※ 이 포스팅의 소스 코드는 [이 링크](https://github.com/rickiepark/GDL_code)를 클릭하시면 확인하실 수 있습니다.
+※ 이 포스팅의 소스 코드는 [박해선 님의 깃허브 레포](https://github.com/rickiepark/GDL_code)에서 확인하실 수 있습니다.
 
 이번 시간에는 RBM과 함께 딥러닝 이론 구축의 근간이 되었던 개념 중 하나인 AutoEncoder(이하 AE)에 대해 알아보고자 한다.
 
@@ -114,12 +114,31 @@ MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에
 
 그렇다면 원래 AE의 역할인 '원래의 입력을 출력으로 내주는 것'의 기능은 충실히 다 할 수 있었을까?
 
+썩 만족할만한 성능은 아니지만, 어느정도는 원래의 이미지를 복원해주고 있다는 것을 알 수 있다.
+
 <p align ="center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic5.png">
   <br>
-  그림 4. 임의의 representation vector들을 디코딩("압축 해제")한 결과
+  그림 5. 입력을 재구성한 그림 예시
 </p>
 
+# AE와 딥러닝의 관계?
+
+딥러닝의 핵심적인 내용은 단순히 "뉴럴네트워크의 층이 깊다"정도에서 끝나는 것이 아니라, "층이 깊어질 때 어떤 좋은 효과가 있는가"에 있다.
+
+알려진 바에 따르면 뉴럴네트워크는 훈련이 잘 되었다고 가정했을 때, input에 가까운 layer에서는 단순한 pattern에 대한 feature를 추출하는 반면 층이 input에서 멀어질 수록(즉, 깊어질 수록) 더 추상적인 개념에 대해 학습하고 추상적인 feature를 추출할 수 있게 된다고 알려져 있다.
+
+이 때, AE는 input dataset의 representation vector를 얻는데, 이것을 관점을 바꿔 생각하면 데이터에 대한 추상화를 실시하고 있는 것이다. 데이터가 갖는 특성들을 작은 공간안에 우겨넣으려다보니 상징적인 특성들로 구성된 latent space를 생성해야 하는 것이다.
+
+이렇듯 AE를 이용해 더 깊은 층을 쌓는 것을 Stacked AutoEncoder라고 하며, 이렇게 얻어낸 입력 데이터의 추상적인 특성들을 fine-tuning하면 깊은 뉴럴네트워크를 훈련시킬 수 있을 것이라는 생각이 지금의 딥러닝 알고리즘을 있게한 것이라고 할 수 있다.
+
+<p align = "center">
+  <img src = "https://image.slidesharecdn.com/introductiontodeeplearning-160507133124/95/deep-learning-towards-general-artificial-intelligence-20-638.jpg?cb=1462627908">
+  <br>
+  그림 6. 딥-뉴럴네트워크는 더 깊은 층에서 더 추상적인 feature를 추출할 수 있도록 학습된다.
+  <br>
+  <a href = "https://www.slideshare.net/RukshanBatuwita/deep-learning-towards-general-artificial-intelligence"> 그림 출처 </a>
+</p>
 
 # 참고자료
 
