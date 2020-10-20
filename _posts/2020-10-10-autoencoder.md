@@ -42,16 +42,37 @@ tags: 기계학습
 
 이 표현 벡터를 직관적으로 잘 이해할 수 있는 방법 중 하나는 표현 벡터를 2차원 혹은 3차원 벡터로 받아 이 것을 직접 그려보는 것이다.
 
+이번 posting에서는 MNIST 데이터를 AE에 적용해 차원 압축을 시켜보고자 한다.
+
+MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에서 9까지의 숫자를 손으로 쓴 그림들을 포함하고 있는 데이터셋이다.
+
+각 그림은 28x28 픽셀의 크기로 구성되어 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic1.png">
+  <br>
+  그림 1. MNIST 데이터셋의 일부 샘플
+  <br>
+  <a href = "https://ko.wikipedia.org/wiki/MNIST_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4"> 그림 출처: Wikipedia MNIST 데이터베이스</a>
+</p>
+
 아래는 [MNIST 데이터](https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/tutorials/mnist/beginners/)를 이용해 784 차원의 데이터 (28 x 28)를 2차원으로 압축해 얻은 표현 벡터를 label 별로 색깔을 달리하여 표시한 것이다.
 
 <p align ="center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic2.png">
   <br>
-  그림 1. MNIST 데이터의 representation vector의 시각화
+  그림 2. MNIST 데이터의 representation vector의 시각화
 </p>
 
+그림 2를 보면 알 수 있는 것은 0으로 labeling이 된 데이터들(보라색)은 좌측 상단에 퍼져있듯이 위치하고 있는데, 다른 label의 숫자들과는 떨여져 있다는 것이다.
 
+또, 1로 labeling된 데이터들은 우측 하단에 퍼져있고, 다른 label의 숫자들과 떨어져 있다.
 
+반면 0과 1의 label이 아닌 데이터들은 중앙에 함께 퍼져서 위치하는 것을 알 수 있다.
+
+우선은 각 label별로 분리되지 않고 뭉쳐져서 representation vector가 표시되고 있는 것에 대해서는 크게 신경쓰지 말도록 하자. 이 결과에 대한 더 좋은 성능을 얻는 방법은 [Variational AutoEncoder 편](https://angeloyeo.github.io/2020/10/11/VAE.html)에서 추가로 다루도록 하겠다.
+
+어찌되었건 AE에서 인코더의 역할은 주어진 고차원의 데이터(여기선 784차원의 데이터)를 낮은 차원의 벡터(여기선 2차원)으로 압축시켜 표현할 수 있게 해준다는 것이다.
 
 # 압축 해제의 관점에서: 디코더의 역할
 
