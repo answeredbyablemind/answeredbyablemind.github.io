@@ -44,6 +44,12 @@ tags: 기계학습
 
 아래는 [MNIST 데이터](https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/tutorials/mnist/beginners/)를 이용해 784 차원의 데이터 (28 x 28)를 2차원으로 압축해 얻은 표현 벡터를 label 별로 색깔을 달리하여 표시한 것이다.
 
+<p align ="center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic1.png">
+  <br>
+  그림 1. MNIST 데이터의 representation vector의 시각화
+</p>
+
 
 
 
