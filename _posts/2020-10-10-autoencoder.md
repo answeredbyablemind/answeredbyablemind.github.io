@@ -8,6 +8,10 @@ key: 20201010
 tags: 기계학습
 ---
 
+※ 이 포스팅은 [미술관에 GAN 딥러닝 실전 프로젝트](http://www.yes24.com/Product/Goods/81538614)의 결과와 소스 코드를 이용해 작성한 것임을 밝힙니다.
+
+※ 이 포스팅의 소스 코드는 [이 링크](https://github.com/rickiepark/GDL_code)를 클릭하시면 확인하실 수 있습니다.
+
 이번 시간에는 RBM과 함께 딥러닝 이론 구축의 근간이 되었던 개념 중 하나인 AutoEncoder(이하 AE)에 대해 알아보고자 한다.
 
 [Restricted Boltzmann Machine](https://angeloyeo.github.io/2020/10/02/RBM.html)(이하 RBM)과 AE는 거의 유사한 목표를 갖고 있다. 둘의 목표는 모두 hidden layer에서 input layer(혹은 visible layer)의 데이터에 관한 latent factor들을 얻어내는 것이다.
@@ -74,18 +78,51 @@ MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에
 
 어찌되었건 AE에서 인코더의 역할은 주어진 고차원의 데이터(여기선 784차원의 데이터)를 낮은 차원의 벡터(여기선 2차원)으로 압축시켜 표현할 수 있게 해준다는 것이다.
 
-[//]:# (latent space라는 용어를 굳이 설명해야할까?)
+참고로 새로운 용어를 하나 더 언급하자면, 표현 벡터(representation vector)가 표시되어 있는 벡터 공간을 조금 어려운 말로 잠재 공간(latent space)이라고 부른다.
 
 # 압축 해제의 관점에서: 디코더의 역할
 
-# 파이썬 코드 예시
+이번엔 AE를 디코더 관점에서 생각해보도록 하자.
 
-# AE의 출력 결과
+디코더는 잠재 공간(latent space)안에 있는 임의의 representation vector를 주어주었을 때, 그것이 갖고 있는 원래의 의미를 "압축 해제"하여 원본 사이즈의 데이터 형태로 복원시키는 역할을 한다.
 
-<img src = "https://qph.fs.quoracdn.net/main-qimg-5fb85839f91f99cdfa19b80c252c0fc2">
+아래의 그림 3에서는 MNIST 데이터셋이 표현된 2차원 잠재 공간에서 임의의 representation vector를 샘플링하는 모습을 확인할 수 있다.
 
-<img src = "https://qph.fs.quoracdn.net/main-qimg-cbead8949d99b15d099ca073b1206a45">
+<p align ="center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic3.png">
+  <br>
+  그림 3. MNIST 데이터의 2차원 잠재 공간에서 임의의 representation vector를 샘플링(검은색 점)
+</p>
+
+이 때, 샘플링 된 점들에 대한 "압축 해제" 결과는 아래의 그림 4와 같다.
+
+<p align ="center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic4.png">
+  <br>
+  그림 4. 임의의 representation vector들을 디코딩("압축 해제")한 결과
+</p>
+
+그림 3에서 0과 1이 다른 label들의 숫자 데이터에서 뚜렷히 구분되어 떨어져 있는 것이 그림 4의 디코딩 결과에서도 일맥상통하게 확인되는 것을 알 수 있다.
+
+다시 말하면, 그림 4에서 0과 1은 가장 뚜렷하게 다른 숫자들과 구별되는 것을 알 수 있다.
+
+반면에 다른 숫자들은 어느정도 그 숫자의 형태가 뚜렷이 구분되는 것도 있는가하면 전혀 숫자처럼 보이지 않는 새로운 형태의 데이터들도 확인해볼 수 있다.
+
+또 한가지 재밌는 점은 그림 4의 가장 아래의 행을 보면 0, 2, 8, 1의 순서대로 그림의 형태가 부드럽게 transition 되는 것 또한 확인해볼 수 있다.
+
+# AE의 입출력 결과
+
+그렇다면 원래 AE의 역할인 '원래의 입력을 출력으로 내주는 것'의 기능은 충실히 다 할 수 있었을까?
+
+<p align ="center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic5.png">
+  <br>
+  그림 4. 임의의 representation vector들을 디코딩("압축 해제")한 결과
+</p>
+
 
 # 참고자료
 
 * [What is the difference between autoencoders and a restricted Boltzmann machine?](https://www.quora.com/What-is-the-difference-between-autoencoders-and-a-restricted-Boltzmann-machine)
+* [미술관에 GAN 딥러닝 실전 프로젝트, 한빛미디어](http://www.yes24.com/Product/Goods/81538614)
+* [펭귄브로의 3분 딥러닝 파이토치맛, 한빛미디어](http://www.yes24.com/Product/Goods/84768168)
