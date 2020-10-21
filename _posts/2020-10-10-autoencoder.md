@@ -34,7 +34,11 @@ tags: 기계학습
 
 이러한 두 가지 이유에 해당하는 일을 수행하는 것을 인코딩과 디코딩이라고 말한다. 즉, 압축 과정을 인코딩, 압축 해제 과정을 디코딩이라고 부른다. 그리고 이러한 일들을 수행하는 파트들을 각각 인코더, 디코더라고 부른다.
 
-[//]:# (AE의 구조 그림 넣을 것)
+<p align ="center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic1.png">
+  <br>
+  그림 1. 오토인코더의 구조와 역할
+</p>
 
 [//]:# (latent space에 대한 추가 설명 필요하지 않을까?)
 
@@ -55,9 +59,9 @@ MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에
 각 그림은 28x28 픽셀의 크기로 구성되어 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic2.png">
   <br>
-  그림 1. MNIST 데이터셋의 일부 샘플
+  그림 2. MNIST 데이터셋의 일부 샘플
   <br>
   <a href = "https://ko.wikipedia.org/wiki/MNIST_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4"> 그림 출처: Wikipedia MNIST 데이터베이스</a>
 </p>
@@ -65,9 +69,9 @@ MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에
 아래는 [MNIST 데이터](https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/tutorials/mnist/beginners/)를 이용해 784 차원의 데이터 (28 x 28)를 2차원으로 압축해 얻은 표현 벡터를 label 별로 색깔을 달리하여 표시한 것이다.
 
 <p align ="center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic3.png">
   <br>
-  그림 2. MNIST 데이터의 representation vector의 시각화
+  그림 3. MNIST 데이터의 representation vector의 시각화
 </p>
 
 그림 2를 보면 알 수 있는 것은 0으로 labeling이 된 데이터들(보라색)은 좌측 상단에 퍼져있듯이 위치하고 있는데, 다른 label의 숫자들과는 떨여져 있다는 것이다.
@@ -91,17 +95,17 @@ MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에
 아래의 그림 3에서는 MNIST 데이터셋이 표현된 2차원 잠재 공간에서 임의의 representation vector를 샘플링하는 모습을 확인할 수 있다.
 
 <p align ="center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic3.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic4.png">
   <br>
-  그림 3. MNIST 데이터의 2차원 잠재 공간에서 임의의 representation vector를 샘플링(검은색 점)
+  그림 4. MNIST 데이터의 2차원 잠재 공간에서 임의의 representation vector를 샘플링(검은색 점)
 </p>
 
 이 때, 샘플링 된 점들에 대한 "압축 해제" 결과는 아래의 그림 4와 같다.
 
 <p align ="center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic4.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic5.png">
   <br>
-  그림 4. 임의의 representation vector들을 디코딩("압축 해제")한 결과
+  그림 5. 임의의 representation vector들을 디코딩("압축 해제")한 결과
 </p>
 
 그림 3에서 0과 1이 다른 label들의 숫자 데이터에서 뚜렷히 구분되어 떨어져 있는 것이 그림 4의 디코딩 결과에서도 일맥상통하게 확인되는 것을 알 수 있다.
@@ -119,9 +123,9 @@ MNIST 데이터에 대해 짧게 설명하자면 아래의 그림과 같이 0에
 썩 만족할만한 성능은 아니지만, 어느정도는 원래의 이미지를 복원해주고 있다는 것을 알 수 있다.
 
 <p align ="center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic5.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-10-autoencoder/pic6.png">
   <br>
-  그림 5. 입력을 재구성한 그림 예시
+  그림 6. 입력을 재구성한 그림 예시
 </p>
 
 # AE와 딥러닝의 관계?
