@@ -250,6 +250,8 @@ docs-ko:
         url:    2020/09/27/Chebyshev.html
       - title:  Frequency Transformation
         url:    2020/09/29/frequency_transformation.html
+      - title:  사비츠키-골레이 필터
+        url:    2020/10/21/Savitzky_Golay.html
       - title:  위너-킨친 정리
         url:    2020/10/04/Wiener_Khinchin.html
       - title:  Wold's theorem
