@@ -8,6 +8,8 @@ key: 20201021
 tags: 신호처리
 ---
 
+<img src = "https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTY3/MDAxNTA0MjcwMzQ3MTE4.ulj3_6yPCHT3XoZpv38aaLp_D-BqflmTAOdpWuP4TiEg.ChgYtoqC4vnpdWoSNrRSk3q5YVJ6qA0eDW5rOo1WcqAg.JPEG.mecury0605/Screenshot_20170806-010238.jpg?type=w800">
+
 # Prerequisites
 
 이번 포스팅을 이해하기 위해선 다음의 지식이 선행 학습되어야 합니다.
