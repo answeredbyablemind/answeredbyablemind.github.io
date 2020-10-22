@@ -15,7 +15,57 @@ tags: 신호처리
 * FIR 필터
 * 행렬 연산에 관한 기초 지식 (행렬곱, 역행렬 등)
 
+# 다항 회귀 모델을 이용한 신호 스무딩(smoothing)
+
+신호의 smoothing 방법에는 여러가지가 있다.
+
+대표적인 smoothing 방법은 moving average로 시계열이 나열되어 있을 때 전체 데이터의 평균이 아니라 windowing을 통해 전체 데이터의 일부분을 순차적으로 평균을 구해서 평균값을 해당 윈도우의 대푯값으로 표시해 줌으로써 데이터를 smoothing 하는 방법을 말한다.
+
+[//]:# (moving average 그림으로 표현할 것)
+
+moving average를 취한다는 것은 아래와 같은 impulse response를 신호와 convolution 시켜준다는 것을 의미한다고도 생각할 수 있다. 가령 M차 moving average라면 impulse response는 다음과 같다.
+
+$$h[n] = \begin{cases}
+1/M && \text{ for } n = 0, 1, \cdots, M-1 \\
+0 && \text{otherwise}
+
+\end{cases}$$
+
+여기서 moving average의 단점에 대해 금방 캐치할 수 있는 것은 moving average는 평균값을 이용한다는 점인데, 평균값은 outlier에 굉장히 취약하게 반응한다는 것이 잘 알려져 있다. 이런 이유로 어떤 application에서는 평균값 대신에 중위값(median)을 사용하는 경우도 왕왕 있다.
+
+그래서 moving average는 구현이 쉽다는 장점이 있지만 순간적인 peak 등에 취약한 한계점을 보인다.
+
+이를 보완하기 위한 방법 중 하나로 시계열에 적용시키는 window 내의 짧은 신호 구간에 대해 다항 회귀 모델을 구축함으로써 smoothing 하는 방법이 있을 수 있다.
+
+<p align = "center">
+  <img src ="https://upload.wikimedia.org/wikipedia/commons/8/89/Lissage_sg3_anim.gif">
+  <br>
+  다항 회귀모델을 이용한 신호의 smoothing 과정
+  <br>
+  <a href = "https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter"> 그림 출처: 위키피디아 Savitzky Golay filter</a>
+</p>
+
+위 그림에서는 짧은 구간의 window 내에서 다항 회귀모델을 만들어 신호를 smoothing하는 과정을 보여주고 있다. 
+
+아무리 다항회귀모델을 이용해서 신호를 smoothing 해준다는 것이 말인된다 한들 다항회귀모델을 이용한 smoothing의 경우 매 구간마다 회귀식을 계산해줘야한다는 매우 time-consuming한 과정일 것이고 매우 비효율적으로 보일지도 모르겠다.
+
+Savitzky-Golay filter(S-G filter)는 이러한 회귀모델을 이용한 smoothing을 수행함에 있어 매 time step의 윈도우 내에서 회귀모델을 계산하지 않고도 특정한 impulse response를 마련함으로써 수학적으로 정확히 다항회귀모델을 이용한 smoothing을 대체할 수 있음을 말해주고 있다.
+
+다시 말해, 적절히 계산된 impulse response를 이용하면 매 time step의 window 마다 회귀모델을 계산하는 것과 같은 효과를 얻을 수 있도록 필터를 설계할 수 있으며 이것이 S-G filter가 말해주고 있는 것이다.
+
+<p align = "center">
+  <img src = "https://geekoverdose.files.wordpress.com/2017/05/sg1.png">
+  <br>
+  이동평균 필터와 S-G filter의 결과 비교
+  <br>
+  <a href = "https://geekoverdose.wordpress.com/2017/08/06/savitzky-golay-filters-approximating-time-series-with-polygons/"> 그림 출처</a>
+</p>
+
 # 유도 과정
+
+우리가 원하는 것은 $-M\leq n \leq M$의 신호 $x[n]$을 적절한 $N$차 회귀모델 $p(n)=\sum_{k=0}^{N}a_kn^k$으로 대체하는 것이다.
+
+그리고 가장 적절한 회귀모델 $p(n)$은 아래와 같이 원래의 신호와의 에러를 가장 작게 해줄 수 있는 계수 $a_k \text{ where }k =0 ,1 ,\cdots, N$들로 구성될 것이다.
 
 $$\epsilon_N = \sum_{n=-M}^{M}\left(p(n)-x[n]\right)^2$$
 
