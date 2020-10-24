@@ -18,7 +18,9 @@ tags: 신호처리
 
 이번 포스팅을 이해하기 위해선 다음의 지식이 선행 학습되어야 합니다.
 
-* impulse response에 대한 개념
+* [Discrete Time 신호의 Convolution](https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html)
+  * Convolution 연산
+  * impulse response에 대한 개념
 * FIR 필터
 * 행렬 연산에 관한 기초 지식 (행렬곱, 역행렬 등)
 
@@ -29,6 +31,10 @@ tags: 신호처리
 필요한 경우 짧게나마 impulse response에 대해 이해한 뒤, 해당 posting을 계속 읽어보도록 하자.
 
 impulse response에 대한 이해가 충분하다고 생각된다면 이 파트는 건너뛰어도 무관하다.
+
+임의의 이산신호 $x[n]$가 다음과 같은 형태의 신호라고 생각해보자.
+
+
 
 # 다항 회귀 모델을 이용한 신호 스무딩(smoothing)
 
