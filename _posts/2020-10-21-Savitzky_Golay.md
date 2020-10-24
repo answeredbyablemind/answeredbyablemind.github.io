@@ -1,5 +1,5 @@
 ---
-title: 사비츠키-골레이 필터
+title: 사비츠키-골레이(Savitzky-Golay) 필터
 sidebar:
   nav: docs-ko
 aside:
@@ -11,15 +11,26 @@ tags: 신호처리
 <p align = "center"
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic1.png">
   <br>
-  smoothing 효과가 있는 Savitzky-Golay 필터! (진지)
+  그림 1. smoothing 효과가 있는 Savitzky-Golay 필터! (진지)
 </p>
 
 # Prerequisites
 
 이번 포스팅을 이해하기 위해선 다음의 지식이 선행 학습되어야 합니다.
 
+* impulse response에 대한 개념
 * FIR 필터
 * 행렬 연산에 관한 기초 지식 (행렬곱, 역행렬 등)
+
+# impulse response와 신호의 합성곱(convolution)
+
+본 포스팅을 이해하기 위해선 impulse response에 대한 이해가 매우 필수적이다.
+
+필요한 경우 짧게나마 impulse response에 대해 이해한 뒤, 해당 posting을 계속 읽어보도록 하자.
+
+impulse response에 대한 이해가 충분하다고 생각된다면 이 파트는 건너뛰어도 무관하다.
+
+
 
 # 다항 회귀 모델을 이용한 신호 스무딩(smoothing)
 
@@ -27,7 +38,11 @@ tags: 신호처리
 
 대표적인 smoothing 방법은 moving average로 시계열이 나열되어 있을 때 전체 데이터의 평균이 아니라 windowing을 통해 전체 데이터의 일부분을 순차적으로 평균을 구해서 평균값을 해당 윈도우의 대푯값으로 표시해 줌으로써 데이터를 smoothing 하는 방법을 말한다.
 
-[//]:# (moving average 그림으로 표현할 것)
+<p align = "center"
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic2.png">
+  <br>
+  그림 2. moving average의 작동 원리
+</p>
 
 moving average를 취한다는 것은 아래와 같은 impulse response를 신호와 convolution 시켜준다는 것을 의미한다고도 생각할 수 있다. 가령 M차 moving average라면 impulse response는 다음과 같다.
 
@@ -46,7 +61,7 @@ $$h[n] = \begin{cases}
 <p align = "center">
   <img src ="https://upload.wikimedia.org/wikipedia/commons/8/89/Lissage_sg3_anim.gif">
   <br>
-  다항 회귀모델을 이용한 신호의 smoothing 과정
+  그림 3. 다항 회귀모델을 이용한 신호의 smoothing 과정
   <br>
   <a href = "https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter"> 그림 출처: 위키피디아 Savitzky Golay filter</a>
 </p>
@@ -67,11 +82,19 @@ Savitzky-Golay filter(S-G filter)는 이러한 회귀모델을 이용한 smoothi
   <a href = "https://geekoverdose.wordpress.com/2017/08/06/savitzky-golay-filters-approximating-time-series-with-polygons/"> 그림 출처</a>
 </p>
 
+
+
 # 유도 과정
+
+지금부터 다루는 신호들은 모두 디지털 신호라고 가정하고, 시간 샘플을 앞으로 $n$이라고 표현하도록 하자.
 
 우리가 원하는 것은 $-M\leq n \leq M$의 신호 $x[n]$을 적절한 $N$차 회귀모델 $p(n)=\sum_{k=0}^{N}a_kn^k$으로 대체하는 것이다.
 
-그리고 가장 적절한 회귀모델 $p(n)$은 아래와 같이 원래의 신호와의 에러를 가장 작게 해줄 수 있는 계수 $a_k \text{ where }k =0 ,1 ,\cdots, N$들로 구성될 것이다.
+이게 무슨 말인가 하면, 시간 샘플 $0$을 중심으로 왼쪽으로 $-M$개, 오른쪽으로 $+M$개의 신호를 획득하고, 이 $2M+1$의 길이의 신호를 $N$차 회귀모델로 대체하겠다는 것이다.
+
+굳이 시간 샘플이 $0$인 값을 중심으로 하는 신호에 대해 분석하고자 하는 것은 이후 적절히 얻은 impulse response를 convolution 취해주면 되기 때문이다.
+
+이제 이 $2M+1$ 길이의 신호를 모델링 해 줄 가장 적절한 회귀모델 $p(n)$은 아래와 같이 원래의 신호와의 에러를 가장 작게 해줄 수 있는 계수 $a_k \text{ where }k =0 ,1 ,\cdots, N$들로 구성될 것이다.
 
 $$\epsilon_N = \sum_{n=-M}^{M}\left(p(n)-x[n]\right)^2$$
 
@@ -169,6 +192,12 @@ $$\vec{a} = (A^TA)^{-1}A^Tx$$
 $$(A^TA)^{-1}A^Tx = Hx$$
 
 [^2]: 잘 보면 이 결과는 normal equation의 해와 같다.
+
+따라서, 첫 번째 계수 $a_0$는 다음과 같이 계산할 수 있을 것이다.
+
+$$a_0 = H_{(1,:)}\cdot \vec{x}=\sum_{m=-M}^{M}h_{1, m}x[m]$$
+
+여기서 $H_{(1,:)}$는 $H$의 첫 번째 행을 의미한다.
 
 # MATLAB 코드
 
