@@ -8,7 +8,7 @@ key: 20201021
 tags: 신호처리
 ---
 
-<p align = "center"
+<p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic1.png">
   <br>
   그림 1. smoothing 효과가 있는 Savitzky-Golay 필터! (진지)
@@ -30,15 +30,13 @@ tags: 신호처리
 
 impulse response에 대한 이해가 충분하다고 생각된다면 이 파트는 건너뛰어도 무관하다.
 
-
-
 # 다항 회귀 모델을 이용한 신호 스무딩(smoothing)
 
 신호의 smoothing 방법에는 여러가지가 있다.
 
 대표적인 smoothing 방법은 moving average로 시계열이 나열되어 있을 때 전체 데이터의 평균이 아니라 windowing을 통해 전체 데이터의 일부분을 순차적으로 평균을 구해서 평균값을 해당 윈도우의 대푯값으로 표시해 줌으로써 데이터를 smoothing 하는 방법을 말한다.
 
-<p align = "center"
+<p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic2.png">
   <br>
   그림 2. moving average의 작동 원리
