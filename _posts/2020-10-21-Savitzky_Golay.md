@@ -8,7 +8,11 @@ key: 20201021
 tags: 신호처리
 ---
 
-<img src = "https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTY3/MDAxNTA0MjcwMzQ3MTE4.ulj3_6yPCHT3XoZpv38aaLp_D-BqflmTAOdpWuP4TiEg.ChgYtoqC4vnpdWoSNrRSk3q5YVJ6qA0eDW5rOo1WcqAg.JPEG.mecury0605/Screenshot_20170806-010238.jpg?type=w800">
+<p align = "center"
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic1.png">
+  <br>
+  smoothing 효과가 있는 Savitzky-Golay 필터! (진지)
+</p>
 
 # Prerequisites
 
