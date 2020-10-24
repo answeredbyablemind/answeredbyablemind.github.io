@@ -74,7 +74,9 @@ $$y[n] = O_n(x[n])$$
 
 $$\Rightarrow O_n\left(\sum_{k=-\infty}^\infty x[k]\delta[n-k]\right)$$
 
-$$=\sum_{k=-\infty}^{\infty}x[k]O_n\left(\delta[n-k]\right)$$
+여기서 $O_n{\cdot}$은 $n$에 대한 선형연산자이므로 $x[k]$는 상수로 취급할 수 있다. 따라서,
+
+$$\Rightarrow \sum_{k=-\infty}^{\infty}x[k]O_n\left(\delta[n-k]\right)$$
 
 여기서 $O_n(\delta[n])$을 $h[n]$이라고 정의하자.
 
@@ -92,7 +94,7 @@ $$h[n] = \begin{cases}
   h[n] && \text{ if } -M\leq n \leq M \\ 0 && \text{otherwise}
 \end{cases}$$
 
-그러면 다음과 같이도 식 (7)의 $y[n]$을 쓸 수 있게 된다.
+그러면 다음과 같이 식 (7)의 $y[n]$을 쓸 수 있게 된다.
 
 $$y[n] = \sum_{k=-M}^{M}x[k]h[n-k]$$
 
@@ -187,9 +189,9 @@ $$\sum_{n=-M}^{M}n^i\sum_{k=0}^{N}a_kn^k-\sum_{n=-M}^{M}n^ix[n] = 0$$
 
 $$\Rightarrow \sum_{n=-M}^{N}\sum_{k=0}^{N}n^{i+k}a_k=\sum_{n=-M}^{M}n^ix[n]$$
 
-[//]:# (식 x)
+[//]:# (식 15)
 
-이제 식 (x)를 행렬을 이용해 표현하기 위해 아래와 같은 행렬 $A$를 정의하자.
+이제 식 (15)를 행렬을 이용해 표현하기 위해 아래와 같은 행렬 $A$를 정의하자.
 
 $(2M+1)\times(N+1)$의 dimension을 갖는 어떤 행렬 $A$를 다음과 같이 정의하도록 하자.
 
@@ -213,7 +215,7 @@ $$A = \begin{bmatrix}
 
 [^1]: 잘 보면 행렬 A는 전형적인 [반데르몽드 행렬](https://en.wikipedia.org/wiki/Vandermonde_matrix)이다.
 
-또, 식 (x)를 행렬을 이용해 표현하기 위해 필요한 벡터들을 추가로 몇개 쓰자면,
+또, 식 (15)를 행렬을 이용해 표현하기 위해 필요한 벡터들을 추가로 몇개 쓰자면,
 
 $$\vec a = [a_0, a_1, a_N]^T$$
 
@@ -223,9 +225,9 @@ $$\vec x = [x[-M], \cdots, x[-1], x[0], x[1], \cdots, x[M]]^T$$
 
 이제 $A, \vec{a}, \vec{x}$를 이용해 식 (x)를 행렬로 쓰면 다음과 같다.
 
-$$식(x)\Rightarrow A^TA\vec{a} = A^T \vec{x}$$
+$$식(15)\Rightarrow A^TA\vec{a} = A^T \vec{x}$$
 
-[//]:# (식 y)
+[//]:# (식 20)
 
 이 과정을 잘 이해하기 위해 $A^TA$를 계산해보면, $A^T$의 $i$번째 행, $A$의 $k$번째 열은 각각
 
@@ -258,7 +260,7 @@ $$=\sum_{n=-M}^{M}\begin{bmatrix}n^0 \\n^1 \\ \vdots \\ n^N \end{bmatrix}x[n]$$
 임을 알 수 있다.
 
 
-그러면 식 (y)를 통해 계수 벡터 $\vec{a}$를 계산할 수 있다[^2].
+그러면 식 (20)을 통해 계수 벡터 $\vec{a}$를 계산할 수 있다[^2].
 
 $$\vec{a} = (A^TA)^{-1}A^Tx$$
 
@@ -272,7 +274,17 @@ $$(A^TA)^{-1}A^Tx = Hx$$
 
 $$a_0 = H_{(1,:)}\cdot \vec{x}=\sum_{m=-M}^{M}h_{1, m}x[m]$$
 
+[//]:# (식 29)
+
 여기서 $H_{(1,:)}$는 $H$의 첫 번째 행을 의미한다.
+
+이제, 식 (29)에 대해 다시 한번 생각해보면 식 (29)는 결국 유한한 길이의 신호 $x[n] \text{ for } -M\leq n \leq M$에 대한 $n = 0$일 때의 출력값 $y[n]$과 같다는 것을 알 수 있다.
+
+즉,
+
+$$식 (29)\Rightarrow y_0 = a_0 = \sum_{m=-M}^{M}h[0-m]x[m]$$
+
+이다. 식 (30)과 Finite Impulse Response를 갖는 시스템의 입출력에 관한 식인 식(9)를 비교해보면 결국 우리가 구한 $H$의 첫번째 행이 결국 Savitzky-Golay 필터의 impulse response라는 것을 알 수 있다.
 
 # MATLAB 코드
 
@@ -311,7 +323,7 @@ end
 
 H = (A'*A)\A';
 
-sgolay_filter_calculated = H(1,:);
+sgolay_filter_calculated = H(1,:); % H의 첫번째 행이 S-G filter의 impulse response이다.
 
 my_smtlb_calculated = conv(mtlb, sgolay_filter_calculated,'same');
 
