@@ -64,6 +64,8 @@ $$\delta[n] =
   \\ 0 && \text{otherwise }
   \end{cases} $$
 
+[//]:# (식 3)
+
 여기서 우리가 어떤 선형 시스템을 생각한다고 하자. 이 시스템의 입력이 $x[n]$, 출력이 $y[n]$이라고 해보자. 출력과 입력의 관계를 연결시켜주는 선형시스템을 선형연산자 $O_n(\cdot)$로 대체해 생각한다면 입출력 관계는 다음과 같이 생각할 수 있다. (여기서 $O_n$의 아랫첨자 $n$은 이 연산자가 $n$에 대한 연산자라는 의미이다.)
 
 $$y[n] = O_n(x[n])$$
@@ -82,15 +84,19 @@ $$=\sum_{k=-\infty}^{\infty}x[k]O_n\left(\delta[n-k]\right)$$
 
 $$\Rightarrow \sum_{k=-\infty}^{\infty}x[k]h[n-k]$$
 
+[//]:# (식 7)
+
 만약 impulse response $h[n]$의 길이가 다음과 같이 유한하다고 생각해보자.
 
 $$h[n] = \begin{cases}
   h[n] && \text{ if } -M\leq n \leq M \\ 0 && \text{otherwise}
 \end{cases}$$
 
-그러면 다음과 같이도 $y[n]$을 쓸 수 있게 된다.
+그러면 다음과 같이도 식 (7)의 $y[n]$을 쓸 수 있게 된다.
 
 $$y[n] = \sum_{k=-M}^{M}x[k]h[n-k]$$
+
+[//]:# (식 9)
 
 이렇듯 Impulse Response의 길이가 유한한 경우의 시스템을 Finite Impulse Response (FIR) 시스템이라고 한다.
 
@@ -155,7 +161,7 @@ Savitzky-Golay filter(S-G filter)는 이러한 회귀모델을 이용한 smoothi
 
 이게 무슨 말인가 하면, 시간 샘플 $0$을 중심으로 왼쪽으로 $-M$개, 오른쪽으로 $+M$개의 신호를 획득하고, 이 $2M+1$의 길이의 신호를 $N$차 회귀모델로 대체하겠다는 것이다.
 
-굳이 시간 샘플이 $0$인 값을 중심으로 하는 신호에 대해 분석하고자 하는 것은 이후 적절히 얻은 impulse response를 convolution 취해주면 되기 때문이다.
+굳이 시간 샘플이 $0$인 값을 중심으로 하는 신호에 대해 분석하고자 하는 것은 우리가 결국 하고 싶은 것은 회귀모델을 가지고 smoothing 해주려고 할 때 필요한 impulse response 이기 때문이다. impulse response를 이용해서 원래의 신호에 convolution을 해주면 결국 smoothing을 수행할 수 있다.
 
 이제 이 $2M+1$ 길이의 신호를 모델링 해 줄 가장 적절한 회귀모델 $p(n)$은 아래와 같이 원래의 신호와의 에러를 가장 작게 해줄 수 있는 계수 $a_k \text{ where }k =0 ,1 ,\cdots, N$들로 구성될 것이다.
 
