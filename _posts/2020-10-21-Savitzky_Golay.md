@@ -34,6 +34,65 @@ impulse response에 대한 이해가 충분하다고 생각된다면 이 파트�
 
 임의의 이산신호 $x[n]$가 다음과 같은 형태의 신호라고 생각해보자.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic_discrete_time_signal.png">
+  <br>
+  그림 2. 임의의 이산신호 $x[n]$
+</p>
+
+참고로 빨간색의 파선은 시간샘플링이 수행되기 전의 원래 함수라고 생각하면 될 것이다.
+
+이 이산신호 $x[n]$은 모든 정수 $n$에 대한 $x[n]$값을 나열한 것이라고도 볼 수 있다. 그런데, 이 값들은 시간 순서대로 나와야 하므로, 아래 그림과 같이 각각의 함수 값($x[n]$)들을 가지는 impulse 들이 선형적으로 합해진 것으로도 볼 수 있을 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic.png">
+  <br>
+  그림 3. 임의의 이산신호 $x[n]$
+</p>
+
+그림 3을 수식으로 표현하면 다음과 같다.
+
+$$x[n] = \cdots + x[-2]\delta[n+2]+ x[-1]\delta[n+1] + x[0]\delta[n+0] + x[1]\delta[n-1] + + x[2]\delta[n-2]+\cdots$$
+
+$$=\sum_{k=-\infty}^\infty x[k]\delta[n-k]$$
+
+여기서 $\delta[n]$은 아래와 같이 정의되는 함수이다.
+
+$$\delta[n] = 
+  \begin{cases}
+     1 && \text{ if}\quad n = 0
+  \\ 0 && \text{otherwise }
+  \end{cases} $$
+
+여기서 우리가 어떤 선형 시스템을 생각한다고 하자. 이 시스템의 입력이 $x[n]$, 출력이 $y[n]$이라고 해보자. 출력과 입력의 관계를 연결시켜주는 선형시스템을 선형연산자 $O_n(\cdot)$로 대체해 생각한다면 입출력 관계는 다음과 같이 생각할 수 있다. (여기서 $O_n$의 아랫첨자 $n$은 이 연산자가 $n$에 대한 연산자라는 의미이다.)
+
+$$y[n] = O_n(x[n])$$
+
+식 (4)에 식 (1)을 대입하면,
+
+$$\Rightarrow O_n\left(\sum_{k=-\infty}^\infty x[k]\delta[n-k]\right)$$
+
+$$=\sum_{k=-\infty}^{\infty}x[k]O_n\left(\delta[n-k]\right)$$
+
+여기서 $O_n(\delta[n])$을 $h[n]$이라고 정의하자.
+
+이 때 $h[n]$을 impulse response라고 부른다.
+
+그러면,
+
+$$\Rightarrow \sum_{k=-\infty}^{\infty}x[k]h[n-k]$$
+
+만약 impulse response $h[n]$의 길이가 다음과 같이 유한하다고 생각해보자.
+
+$$h[n] = \begin{cases}
+  h[n] && \text{ if } -M\leq n \leq M \\ 0 && \text{otherwise}
+\end{cases}$$
+
+그러면 다음과 같이도 $y[n]$을 쓸 수 있게 된다.
+
+$$y[n] = \sum_{k=-M}^{M}x[k]h[n-k]$$
+
+이렇듯 Impulse Response의 길이가 유한한 경우의 시스템을 Finite Impulse Response (FIR) 시스템이라고 한다.
 
 
 # 다항 회귀 모델을 이용한 신호 스무딩(smoothing)
