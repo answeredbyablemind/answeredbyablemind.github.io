@@ -145,16 +145,6 @@ Savitzky-Golay filter(S-G filter)는 이러한 회귀모델을 이용한 smoothi
 
 다시 말해, 적절히 계산된 impulse response를 이용하면 매 time step의 window 마다 회귀모델을 계산하는 것과 같은 효과를 얻을 수 있도록 필터를 설계할 수 있으며 이것이 S-G filter가 말해주고 있는 것이다.
 
-<p align = "center">
-  <img src = "https://geekoverdose.files.wordpress.com/2017/05/sg1.png">
-  <br>
-  이동평균 필터와 S-G filter의 결과 비교
-  <br>
-  <a href = "https://geekoverdose.wordpress.com/2017/08/06/savitzky-golay-filters-approximating-time-series-with-polygons/"> 그림 출처</a>
-</p>
-
-
-
 # 유도 과정
 
 지금부터 다루는 신호들은 모두 디지털 신호라고 가정하고, 시간 샘플을 앞으로 $n$이라고 표현하도록 하자.
@@ -336,6 +326,12 @@ plot(t, my_smtlb_calculated);
 plot(t, smtlb_MATLAB);
 ```
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic3.png">
+  <br>
+  그림 4. 위 MATLAB 코드의 실행 결과
+</p>
+
 # Moving Average와의 비교
 
 S-G filter는 moving average 필터에 비해서 파형의 전체적인 trend를 잘 살려주는 것으로 알려져 있다.
@@ -346,6 +342,8 @@ S-G filter는 moving average 필터에 비해서 파형의 전체적인 trend를
 
 <p align = "center">
   <img src = "https://www.researchgate.net/profile/Gianfranco_Miele/publication/301888741/figure/fig6/AS:668524762656788@1536400132558/Comparison-of-the-filtering-effects-of-the-Moving-Aaverage-MA-and-Savitzky-Golay-SG.png">
+  <br>
+  그림 5. Moving Average와 S-G filter의 smoothing 결과 비교
   <br>
   그림 출처: <a href = "https://www.researchgate.net/publication/301888741_On_Employing_a_Savitzky-Golay_Filtering_Stage_to_Improve_Performance_of_Spectrum_Sensing_in_CR_Applications_Concerning_VDSA_Approach"> On Employing a Savitzky-Golay Filtering Stage to Improve Performance of Spectrum Sensing in CR Applications Concerning VDSA Approach </a>
 </p>
