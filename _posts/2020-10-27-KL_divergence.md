@@ -26,6 +26,9 @@ KL divergence는 쿨백-라이블러(Kullback-Leibler) 발산을 줄여서 쓴 �
 
 KL divergence는 확률 분포를 비교할 때 사용되는데, 이 때 정보 엔트로피를 이용해 비교가 진행되다 보니 relative entropy라고 부르기도 한다.
 
+가령, 우리의 목적이 확률 분포 $P$를 정확히 모델링하는 것이라고 하자.
+
+
 이산확률분포 $P$와 $Q$가 동일한 샘플 공간 $\chi$에서 정의된다고 하면 KL divergence는 다음과 같다.
 
 $$D_{KL}(P\|Q) = \sum_{x\in \chi}P(x)\log\left(\frac{P(x)}{Q(x)}\right)$$
