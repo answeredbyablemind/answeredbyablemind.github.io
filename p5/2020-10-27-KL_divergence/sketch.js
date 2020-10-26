@@ -71,17 +71,18 @@ function draw() {
      translate((10+400)/2, height - 40) // 0,0 좌표
      scale(1, -1)
 
-     var my_color = color(255, 100, 200)
+     my_color = color(100, 100, 255)
      my_color.setAlpha(alpha_val)
      fill(my_color)
-
+     
      beginShape()
      for(var i = 0; i<xx.length; i++){
           vertex(xx[i] * scl, yy1[i] * scl * height_scl_factor)
      }
      endShape()
 
-     my_color = color(100, 100, 255)
+
+     var my_color = color(255, 100, 200)
      my_color.setAlpha(alpha_val)
      fill(my_color)
 

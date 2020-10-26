@@ -39,7 +39,7 @@ $$=-\sum_{x\in\chi}P(x)\log Q(x) + \sum_{x\in\chi}P(x)\log P(x)$$
 <p align = "center">
   <iframe width ="880" height = "340" src="https://angeloyeo.github.io/p5/2020-10-27-KL_divergence/" frameborder = "0"></iframe>
     <br>
-    KL-divergence의 시각화. 파란색 함수와 빨간색 함수를 각각 P(x), Q(x)라고 했을 때, 노란색 함수에 대한 넓이 합이 KL-divergence 값을 의미한다.
+    KL-divergence의 시각화. 파란색 함수와 빨간색 함수를 각각 $P(x)$, $Q(x)$라고 했을 때, 초록색 함수에 대한 넓이 합이 KL-divergence 값 $D_{KL}(P\|\|Q)$을 의미한다.
 </p>
 
 # 참고 자료
