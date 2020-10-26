@@ -52,7 +52,7 @@ function draw() {
      fill(255)
      textAlign(CENTER)
      // 왼쪽 패널 제목 적어주기
-     text('distributions for classes', 200, 30)
+     text('확률 분포 P(x)와 Q(x)', 200, 30)
      // 오른쪽 패널 제목 적어주기
      
      // text('KL divergence', 430+145, 30)
@@ -122,7 +122,7 @@ function draw() {
           div += D_KL[i]
      }
 
-     let my_arr = ['KL-발산값 =', str(round(div, 2))]
+     let my_arr = ['D_{KL}(P\\|Q) =', str(round(div, 2))]
      let separator = ' '
      katex.render(
           join(my_arr, separator)
