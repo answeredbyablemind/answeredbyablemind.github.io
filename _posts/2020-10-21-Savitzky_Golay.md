@@ -318,12 +318,13 @@ sgolay_filter_calculated = H(1,:); % H의 첫번째 행이 S-G filter의 impulse
 my_smtlb_calculated = conv(mtlb, sgolay_filter_calculated,'same');
 
 figure;
-plot(t, mtlb);
+h1 = plot(t, mtlb);
 axis([0.2 0.22 -3 2])
 hold on;
-plot(t, smtlb);
-plot(t, my_smtlb_calculated);
-plot(t, smtlb_MATLAB);
+% plot(t, smtlb);
+h2 = plot(t, my_smtlb_calculated,'r', 'linewidth',2);
+% plot(t, smtlb_MATLAB);
+legend([h1, h2], '원형 파형','S-G filter 적용')
 ```
 
 <p align = "center">
