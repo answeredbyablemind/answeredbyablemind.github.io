@@ -9,9 +9,6 @@ var alpha_val = 175
 var mySlider
 var newScl = 200
 
-var dragged = false; // 마우스가 dragged 되고 있는가?
-var rollover = false; // 마우스가 threshold bar 위에 위치해 있는가?
-var bar_center = (400+10)/2
 var n_xx = 200
 var D_KL
 
