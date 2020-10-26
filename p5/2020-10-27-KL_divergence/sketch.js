@@ -69,12 +69,15 @@ function draw() {
      // gaussian distribution 두 개 그려주기
      push()
      translate((10+400)/2, height - 40) // 0,0 좌표
-     scale(1, -1)
-
+     
      my_color = color(100, 100, 255)
      my_color.setAlpha(alpha_val)
      fill(my_color)
      
+     textSize(32)
+     text('P(x)', mu1 * scl, -0.4*scl * height_scl_factor)
+
+     scale(1, -1)
      beginShape()
      for(var i = 0; i<xx.length; i++){
           vertex(xx[i] * scl, yy1[i] * scl * height_scl_factor)
@@ -85,7 +88,12 @@ function draw() {
      var my_color = color(255, 100, 200)
      my_color.setAlpha(alpha_val)
      fill(my_color)
+     scale(1, -1)
 
+     textSize(32)
+     text('Q(x)', mu2 * scl, -0.4*scl * height_scl_factor)
+
+     scale(1, -1)
      beginShape()
      for(var i = 0; i<xx.length; i++){
           vertex(xx[i] * scl, yy2[i] * scl * height_scl_factor)
