@@ -53,7 +53,7 @@ docs-ko:
     children:
       - title:  벡터의 기본 연산(상수배, 덧셈)
         url:    2020/09/07/basic_vector_operation.html
-      - title:  행렬 곱에 대한 새로운 이해
+      - title:  행렬 곱에 대한 또 다른 시각
         url:    2020/09/08/matrix_multiplication.html
       - title:  행벡터의 의미와 벡터의 내적
         url:    2020/09/09/row_vector_and_inner_product.html
