@@ -248,3 +248,7 @@ $$A=\begin{bmatrix}
 이 내용에 대해서는 [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)편에서 자세히 다루었으므로 해당 포스트를 참고하는 것도 좋을 것 같다.
 
 이러한 관점을 이용한 선형대수학에서의 응용은 [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html), [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html), [특이값 분해(SVD)](https://angeloyeo.github.io/2019/08/01/SVD.html) 등이 있다.
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/X564toU2riA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
