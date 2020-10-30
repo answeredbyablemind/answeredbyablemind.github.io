@@ -9,7 +9,7 @@ tags: 통계학 머신러닝
 ---
 
 <p align = "center">
-  <img src = "https://lh3.googleusercontent.com/proxy/-GwVQcne6_Lbqa30qyR_PGhEt0ap10_QIwcTT645HaeN7H5Bxr7vifeRoV3OLnLkpYUEPEs0bdLKggqhSLgBuzGATzT6yRxvmekiM7uz-oBkpedoZD9VO9BFLTthwcqbBxhk5NMG1m6_LMlTUjQfVZHgVJbUQBl4ywPQusVE570cFmqNnXo">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-27-KL_divergence/pic1.png">
   <br>
   KL divergence가 말하는 것: 이상과 현실 간의 괴리
 </p>
@@ -24,7 +24,14 @@ tags: 통계학 머신러닝
 
 KL divergence는 쿨백-라이블러(Kullback-Leibler) 발산을 줄여서 쓴 말인데, 쿨백과 라이블러 모두 사람이름인 것으로 확인된다. 
 
-KL divergence는 확률 분포를 비교할 때 사용되는데, 이 때 정보 엔트로피를 이용해 비교가 진행되다 보니 relative entropy라고 부르기도 한다.
+그러니까, KL divergence를 생각할 때는 "divergence"라는 말에만 주목하면 된다는 것인데, 이 divergence의 의미는 [벡터장의 발산](https://angeloyeo.github.io/2019/08/25/divergence.html) 같은 개념이 아니라, 그저 "차이"를 다른 말로 쓴 것일 뿐이다는 것을 명심해야 한다.
+
+특히, 여기서 "차이"라고 말하는 것은 두 확률 분포를 비교한다는 말이다.
+
+이 때 정보 엔트로피를 이용해 비교가 진행되다 보니 KL divergence를 또 다른 말로 relative entropy라고 부르기도 한다.
+
+
+[//]:# (굳이 entropy의 개념을 끌어들이는 이유는 뭘까? 다른 개념을 이용할 수도 있지 않을까? 가령 기초적인 빼기 같은 것 말이다.)
 
 가령, 우리의 목적이 확률 분포 $P$를 정확히 모델링하는 것이라고 하자.
 
