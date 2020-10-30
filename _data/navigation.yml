@@ -195,20 +195,20 @@ docs-ko:
         
   - title:    복소수와 오일러 공식
     children:
-      - title:  호도법과 각도법
+      - title:  허수의 존재 의미에 대하여
+        url:    2019/06/15/imaginary_number.html  
+      - title:  허근의 위치
+        url:    2019/06/16/imaginary_root.html
+      - title:  각도법과 호도법의 의미
         url:    2019/06/04/2-1-angle_rad.html
       - title:  자연상수 e의 의미
         url:    2019/09/04/natural_number_e.html
-      - title:  허수의 존재 의미에 대하여
-        url:    2019/06/15/imaginary_number.html  
-      - title:  밑이 음수인 지수함수
-        url:    2019/09/12/negative_base_exponential.html
-      - title:  허근의 위치
-        url:    2019/06/16/imaginary_root.html
       - title:  미분방정식을 이용한 오일러 공식 유도
         url:    2020/09/22/Euler_Formula_Differential_Equation.html
       - title:  오일러 공식의 기하학적 의미
         url:    2020/07/07/Euler_Formula.html
+      - title:  밑이 음수인 지수함수
+        url:    2019/09/12/negative_base_exponential.html
       - title:  페이저 (phasor)
         url:    2019/06/18/phasor.html
 
