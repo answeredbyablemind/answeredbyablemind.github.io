@@ -100,9 +100,9 @@ $$=ad-bc = det(A)$$
 
 그러므로, 역행렬에서는 $1/det(A)$라는 요소가 들어가게 되는 것이다.
 
-
-<center><iframe width="420" height="315" src="https://www.youtube.com/embed/EI1btogsxZA" frameborder="0" allowfullscreen></iframe></center>
-
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/2bv_7QzBS4Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 
 
