@@ -29,13 +29,13 @@ $$\begin{pmatrix} \cos(\pi/2) & -\sin(\pi/2) \\ \sin(\pi/2) & \cos(\pi/2) \end{p
 
 [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)편에서 얘기했던 것의 핵심은 다음과 같았다.
 
-고유벡터와 고윳값이 물어보는 것은 
-
 <center>
 
-<b>“벡터 x에 어떠한 선형변환 A를 했을 때, 그 크기만 변하고 원래 벡터와 평행한 벡터 x는 무엇인가요?”
+<b>
+“벡터 x에 어떠한 선형변환 A를 했을 때, 그 크기만 변하고 원래 벡터와 평행한 벡터 x는 무엇인가요?”
 <br><br>
-“그렇다면, 그 크기는 얼마만큼 변했나요?”</b>
+“그렇다면, 그 크기는 얼마만큼 변했나요?”
+</b>
 
 </center>
 
@@ -169,12 +169,36 @@ $$\vec{x}=\begin{bmatrix}-i\\1\end{bmatrix}$$
 
 하지만, 그 근본적인 의미는 '곱셈'에 있다고 할 수 있다.
 
-[허수의 존재 의미](https://angeloyeo.github.io/2019/06/15/imaginary_number.html) 편에서 언급했던 것 처럼 
+[허수의 존재 의미](https://angeloyeo.github.io/2019/06/15/imaginary_number.html) 편에서 언급했던 것 처럼 곱셈은 방향성을 갖는다. 
 
-복소수를 곱한다는 것은 회전을 의미한다.
+음수를 곱한다는 것은 반대 방향으로의 변환을 의미하고, 복소수를 곱한다는 것은 '회전'을 의미한다.
+
+<p align="center">
+  <iframe  src="https://angeloyeo.github.io/p5/imaginary_number_1_to_minus_1/" width="420" height = "320" frameborder="0"></iframe>
+  <br>
+  복소수(여기선 순 허수)를 곱한다는 것의 기하학적 의미  
+</p>
+
+또, [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)편에서는
+
+$$\exp(i\theta) = \cos(\theta) + i \sin(\theta)$$
+
+라는 복소수가 가지는 의미는 1이라는 숫자를 복소평면 상에서 $\theta$ 라디안 만큼 회전시켜준 것임을 알아보았었다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/various_n_Euler_discretely.gif">
+  <br>
+  오일러 공식의 기하학적 의미를 알아가는 과정. n의 값이 커질 수록 복소 평면 상의 $\cos(\theta)$, $\sin(\theta)$라는 점으로 변환 후의 점이 이동한다.
+  <br>
+  좀 더 자세한 내용은 <a href = "https://angeloyeo.github.io/2020/07/07/Euler_Formula.html">오일러 공식의 기하학적 의미 편</a>을 참고할 것
+</p>
+
+결국, 복소 고윳값이 가지는 의미는 벡터의 길이가 줄어들거나 늘어나는 것이 아닌 '복소수 곱셈을 통한 벡터의 회전'에 있는 것이다.
+
+## 복소 고유벡터의 시각화
+
+한편, 우리가 회전행렬에 대해 얻은 복소 고유벡터는 어떻게 생각해야할까?
 
 
 
-# 복소 고유벡터의 시각화
-
-# 
+## 복소 고윳갑과 고유벡터의 상호작용
