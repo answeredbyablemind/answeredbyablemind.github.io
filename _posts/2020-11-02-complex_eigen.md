@@ -247,13 +247,13 @@ $$v_2 = \begin{bmatrix} -i \\ 1 \end{bmatrix}$$
 $$A=\begin{bmatrix}\cos(\theta) && -\sin(\theta) \\ \sin(\theta) && \cos(\theta)\end{bmatrix}$$
 
 <p align="center">
-  <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen1/" width="420" height = "320" frameborder="0"></iframe>
+  <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen1/" width="400" height = "400" frameborder="0"></iframe>
   <br>
   그림 6. $\lambda_1 = \exp(i\theta)$에 대한 고윳값과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
 </p>
 
 <p align="center">
-  <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen2/" width="420" height = "320" frameborder="0"></iframe>
+  <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen2/" width="400" height = "400" frameborder="0"></iframe>
   <br>
   그림 7. $\lambda_2 = \exp(-i\theta)$에 대한 고윳값과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
 </p>
