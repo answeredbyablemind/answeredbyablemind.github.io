@@ -25,7 +25,10 @@ $$A=\begin{bmatrix}\cos(\theta) && -\sin(\theta) \\ \sin(\theta) && \cos(\theta)
 
 $$\begin{pmatrix} \cos(\pi/2) & -\sin(\pi/2) \\ \sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe></p>
+<p align="center">
+  <iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe>
+  <br> 그림 1. 시계반대방향으로 회전하는 선형변환의 시각화
+</p>
 
 [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)편에서 얘기했던 것의 핵심은 다음과 같았다.
 
@@ -159,7 +162,7 @@ $$\vec{x}=\begin{bmatrix}-i\\1\end{bmatrix}$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
   <br>
-  고유벡터에 선형변환이 작용되면 딱 고윳값 만큼만 상수배 해주게 된다.
+  그림 2. 고유벡터에 선형변환이 작용되면 딱 고윳값 만큼만 상수배 해주게 된다.
 </p>
 
 
@@ -176,7 +179,7 @@ $$\vec{x}=\begin{bmatrix}-i\\1\end{bmatrix}$$
 <p align="center">
   <iframe  src="https://angeloyeo.github.io/p5/imaginary_number_1_to_minus_1/" width="420" height = "320" frameborder="0"></iframe>
   <br>
-  복소수(여기선 순 허수)를 곱한다는 것의 기하학적 의미  
+  그림 3. 복소수(여기선 순 허수)를 곱한다는 것의 기하학적 의미  
 </p>
 
 또, [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)편에서는
@@ -188,7 +191,7 @@ $$\exp(i\theta) = \cos(\theta) + i \sin(\theta)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/various_n_Euler_discretely.gif">
   <br>
-  오일러 공식의 기하학적 의미를 알아가는 과정. n의 값이 커질 수록 복소 평면 상의 $\cos(\theta)$, $\sin(\theta)$라는 점으로 변환 후의 점이 이동한다. 좀 더 자세한 내용은 <a href = "https://angeloyeo.github.io/2020/07/07/Euler_Formula.html">오일러 공식의 기하학적 의미 편</a>을 참고할 것
+  그림 4. 오일러 공식의 기하학적 의미를 알아가는 과정. n의 값이 커질 수록 복소 평면 상의 $\cos(\theta)$, $\sin(\theta)$라는 점으로 변환 후의 점이 이동한다. 좀 더 자세한 내용은 <a href = "https://angeloyeo.github.io/2020/07/07/Euler_Formula.html">오일러 공식의 기하학적 의미 편</a>을 참고할 것
 </p>
 
 결국, 복소 고윳값이 가지는 의미는 벡터의 길이가 줄어들거나 늘어나는 것이 아닌 '복소수 곱셈을 통한 벡터의 회전'에 있는 것이다.
@@ -213,7 +216,44 @@ $$v_2 = \begin{bmatrix} -i \\ 1 \end{bmatrix}$$
 
 각각의 복소벡터를 시각화 하면 다음과 같이 표현할 수 있을 것이다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-02-complex_eigen/pic.png">
+  <br>
+  그림 5. 복소벡터 $v_1$과 $v_2$를 시각화 한 것. 그림 안에서 $c_1$과 $c_2$는 각각 각 벡터 내의 첫번째와 두 번째 원소들을 의미한다.
+</p>
 
+위 그림에서 가장 주목했으면 하는 부분은 $\vec{v}_1$과 $\vec{v}_2$가 두 개의 화살표로 표현되어 있지만 이 두 개의 화살표를 하나로 묶어 벡터로 보자는 것이다.
 
+중요하다고 생각하기 때문에 다시 말하자면 <u>두 개의 화살표가 하나의 복소 벡터를 표현하는 것</u>이다.
 
-## 복소 고윳갑과 고유벡터의 상호작용
+## 복소 고윳값과 고유벡터의 상호작용
+
+그럼 이제, 아래의 문구에 대해 다시 한번 생각해보자.
+
+<center>
+<b>
+"고유벡터에 대한 선형변환은 딱 고윳값 만큼만 상수배 해주게 된다."
+</b>
+</center>
+
+그림 5에서 표현한 복소 벡터 $\vec{v}_1$과 $\vec{v}_2$에 대해 고윳값만큼 상수배 해준다는 것은 어떤 의미일까?
+
+고윳값은 $\exp(i\theta)$와 $\exp(-i\theta)$이므로 반시계방향 혹은 시계방향으로의 $\theta$ 라디안 만큼의 회전을 의미한다.
+
+즉, 그림 5에서 표현한 복소 벡터 $\vec{v}_1$과 $\vec{v}_2$에 대해 고윳값만큼 상수배 해준다는 것의 의미는 고유벡터를 반시계방향 혹은 시계방향으로 $\theta$ 라디안 만큼 회전시킨다는 의미를 갖는다.
+
+아래의 그림 6과 7에 대해서 슬라이더를 움직여가며 회전행렬에 포함된 $\theta$에 대응하는 고윳값과 고유벡터의 상호작용에 대해 시각적으로 확인해보자.
+
+$$A=\begin{bmatrix}\cos(\theta) && -\sin(\theta) \\ \sin(\theta) && \cos(\theta)\end{bmatrix}$$
+
+<p align="center">
+  <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen1/" width="420" height = "320" frameborder="0"></iframe>
+  <br>
+  그림 6. $\lambda_1 = \exp(i\theta)$에 대한 고윳값과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
+</p>
+
+<p align="center">
+  <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen2/" width="420" height = "320" frameborder="0"></iframe>
+  <br>
+  그림 7. $\lambda_2 = \exp(-i\theta)$에 대한 고윳값과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
+</p>
