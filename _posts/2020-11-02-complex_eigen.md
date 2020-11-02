@@ -157,9 +157,9 @@ $$\vec{x}=\begin{bmatrix}-i\\1\end{bmatrix}$$
 </center>
 
 <p align = "center">
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
-<br>
-고유벡터에 선형변환이 작용되면 딱 고윳값 만큼만 상수배 해주게 된다.
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
+  <br>
+  고유벡터에 선형변환이 작용되면 딱 고윳값 만큼만 상수배 해주게 된다.
 </p>
 
 
@@ -188,9 +188,7 @@ $$\exp(i\theta) = \cos(\theta) + i \sin(\theta)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/various_n_Euler_discretely.gif">
   <br>
-  오일러 공식의 기하학적 의미를 알아가는 과정. n의 값이 커질 수록 복소 평면 상의 $\cos(\theta)$, $\sin(\theta)$라는 점으로 변환 후의 점이 이동한다.
-  <br>
-  좀 더 자세한 내용은 <a href = "https://angeloyeo.github.io/2020/07/07/Euler_Formula.html">오일러 공식의 기하학적 의미 편</a>을 참고할 것
+  오일러 공식의 기하학적 의미를 알아가는 과정. n의 값이 커질 수록 복소 평면 상의 $\cos(\theta)$, $\sin(\theta)$라는 점으로 변환 후의 점이 이동한다. 좀 더 자세한 내용은 <a href = "https://angeloyeo.github.io/2020/07/07/Euler_Formula.html">오일러 공식의 기하학적 의미 편</a>을 참고할 것
 </p>
 
 결국, 복소 고윳값이 가지는 의미는 벡터의 길이가 줄어들거나 늘어나는 것이 아닌 '복소수 곱셈을 통한 벡터의 회전'에 있는 것이다.
@@ -198,6 +196,11 @@ $$\exp(i\theta) = \cos(\theta) + i \sin(\theta)$$
 ## 복소 고유벡터의 시각화
 
 한편, 우리가 회전행렬에 대해 얻은 복소 고유벡터는 어떻게 생각해야할까?
+
+복소 고유벡터를 시각적으로 표현하거나 이해하기 어려운 이유는 복소수 자체가 이미 2차원의 수이기 때문이다.
+
+조금 더 풀어쓰자면 복소수는 "실수부"와 "허수부"에 들어갈 두 개의 숫자가 있다.
+
 
 
 
