@@ -261,3 +261,7 @@ $$A=\begin{bmatrix}\cos(\theta) && -\sin(\theta) \\ \sin(\theta) && \cos(\theta)
 다시 말하지만, 그림 6과 7의 결과는 결국 벡터가 상수배 되는 것이 복소수의 수준에서는 이렇게 표현될 수 있다는 것을 보여주는 것이다.
 
 특히, 여기서는 고윳값과 고유벡터라는 특수한 경우에 한해서 얘기하는 것이지만 말이다.
+
+# 참고 자료
+
+* [Visualizing the eigenvectors of a rotation](http://twistedoakstudios.com/blog/Post7254_visualizing-the-eigenvectors-of-a-rotation) / Twisted Oak Studios
