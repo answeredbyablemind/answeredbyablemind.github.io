@@ -64,7 +64,7 @@ docs-ko:
       - title:  고윳값과 고유벡터
         url:    2019/07/17/eigen_vector.html
       - title:  복소 고윳값과 고유벡터의 의미
-        url:    20200/11/02/complex_eigen.html
+        url:    2020/11/02/complex_eigen.html
       - title:  주성분분석(PCA)
         url:    2019/07/27/PCA.html
       - title:  특이값분해(SVD)
