@@ -135,7 +135,7 @@ $$Var[X_1+X_2] = Var[X_1] + Var[X_2]$$
 
 $$식(2) = \frac{1}{n^2}Var\left[X_1+X_2+\cdots+X_n\right]$$
 
-$$ =\frac{1}{n^2} = \times n\times Var[X] = \frac{1}{n}Var[X]$$
+$$ =\frac{1}{n^2} \times n\times Var[X] = \frac{1}{n}Var[X]$$
 
 즉, 모분산을 $\sigma^2$라고 하면, 표본 평균의 표준 편차는 
 
