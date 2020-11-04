@@ -271,7 +271,9 @@ $$\Rightarrow \frac{1}{y}dy = dx$$
 
 $$\Rightarrow \int \frac{1}{y}dy = \int dx$$
 
-여기서 $\ln(y)$의 정의가 바로 $\int\frac{1}{y}dy$이므로,
+여기서 $\ln(y)$의 정의가 바로 $\int\frac{1}{y}dy$이므로[^1],
+
+[^1]: 엄밀한 증명이라고 할 수 있을지 모르겠지만 이해에 도움될만한 링크를 첨부한다. [링크](https://m.blog.naver.com/PostView.nhn?blogId=tjdals8895&logNo=150125124559&proxyReferer=https:%2F%2Fwww.google.com%2F)
 
 $$\Rightarrow \ln(y) = x$$
 
