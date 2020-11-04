@@ -203,9 +203,11 @@ $$식 (18) = \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=f(x)$$
 
 이렇게까지 썼지만 식 (19)에서 갖는 극한이 어려워 보이기 때문에 $h=1$인 경우부터 차근히 생각해보자.
 
-## $h=1$인 경우
+## 1. 식 (16)이 정말 연속 성장을 의미하는가?
 
-$$\Rightarrow \frac{f(x+1)-f(x)}{1} = f(x)$$
+### $h=1$인 경우
+
+$$식(19)\Rightarrow \frac{f(x+1)-f(x)}{1} = f(x)$$
 
 [//]:# (식 20)
 
@@ -215,6 +217,71 @@ $$\Rightarrow f(x+1) = 2f(x)$$
 
 식 (21)이 말하는 것은 뭔가? 바로 $f(x) = 2^x$라는 뜻이다. 그림으로 그리면 다음과 같다.
 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-04_natural_number_e/pic4.png">
+  <br>
+  $f=2^x$에서 매 $x$의 성장률은 자기 자신이다.
+</p>
+
+즉, $h=1$일 때 식 (18)의 의미를 조금 자세히 볼 수 있다. 변화율이 자기 자신이라는 것이다.
+
+다시 말해 다음번 $x$에서는 지금의 함수 크기만큼 키워준다는 뜻이기도 하다.
+
+### $h=0.5$인 경우
+
+이번에는 식 (19)에 대해 $h=0.5$인 경우에 대해 생각해보자.
+
+$$식(19) \Rightarrow \frac{f(x+0.5)-f(x)}{0.5}=f(x)$$
+
+$$\Rightarrow f(x+0.5) = 1.5 f(x)$$
+
+이런 식으로 $h$가 매우 작은 경우에 대해서도 생각해볼 수 있을 것이다.
+
+### $h=0.00001$인 경우
+
+$$식(19)\Rightarrow \frac{f(x+0.00001)- f(x)}{0.00001}=f(x)$$
+
+$$\Rightarrow f(x+0.00001) = 1.00001f(x)$$
+
+[//]:# (식 25)
+
+식 (25)가 말하는 것은 무엇인가? 그것은 바로
+
+<center><b>
+  "지금 값 $f(x)$에서 진짜 조금만 키운 $1.00001 f(x)$ 값이 바로 다음 함수 값 $f(x+0.00001)$이다"
+  </b>
+</center>
+
+라는 것이다.
+
+
+다시 말해 매번 아주 작은 스텝에서 매우 조금씩 크게 만들겠다는 것이고 이것은 다시 말하면 연속 성장이다.
+
+## 2. 식 (16)에서 지수함수의 밑이 $e$여야 하는가
+
+식 (18)을 다시 써보자.
+
+$$\frac{dy}{dx}=y \notag$$
+
+식 (18)의 미분방정식을 풀기 위해 y는 모두 좌변으로, x는 모두 우변으로 옮기면 다음과 같다.
+
+$$\Rightarrow \frac{1}{y}dy = dx$$
+
+이 때 양변에 모두 적분을 취해주자.
+
+$$\Rightarrow \int \frac{1}{y}dy = \int dx$$
+
+여기서 $\ln(y)$의 정의가 바로 $\int\frac{1}{y}dy$이므로,
+
+$$\Rightarrow \ln(y) = x$$
+
+따라서,
+
+$$y=e^x$$
+
+이다.
+
+즉, 식 (18)에서의 함수는 지수함수이면서 밑은 $e$인 지수함수이다.
 
 <p align= "center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_EY8QUKWrhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
