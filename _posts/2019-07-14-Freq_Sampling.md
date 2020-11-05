@@ -244,7 +244,45 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 
 또, 내적의 의미는 '닮음'이기도 한데, 
 
+
+
 ## 푸리에 행렬이 가져다주는 의미
+
+[//]:# (exp j\theta의 의미에 대해 다시 언급하고 그림으로 표현할 것)
+
+$N=8$인 경우의 푸리에 행렬을 예시로 확인해보자.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic1.png">
+  <br>
+  그림 1.
+</p>
+
+푸리에 행렬의 phase를 cosine 함수에 대해 생각해보면,
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
+  <br>
+  그림 2.
+</p>
+
+푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
+  <br>
+  그림 3.
+</p>
+
+즉, DFT를 계산한다는 것은,
+
+## 푸리에 행렬의 열벡터
+
+unitary 행렬임을 보일 것.
+
+각 열벡터들이 orthogonal 함을 보일 것.
+
+벡터 공간의 기저가 가져다주는 의미
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/5dXiaE7bIoA" frameborder="0" allowfullscreen></iframe></center>
 
