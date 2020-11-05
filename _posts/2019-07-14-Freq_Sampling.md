@@ -87,6 +87,11 @@ $$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$
 
 이다.
 
+| DEFINITION: inverse Discrete Fourier Transform (iDFT) |
+| --------- |
+| 전체 신호의 길이가 N인 이산 주파수 성분 $X[k]$ 에 대하여 <br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
+
+
 ## 예제를 통해  DFT를 조금 더 자세히 알아보자.
 
 Ex) 다음의 이산신호 $x[n]$ 에 대하여 DFT $X[k]$ 를 구하시오.
@@ -180,6 +185,66 @@ $$x_s[n] = \sum_{l=-\infty}^{\infty}x[n-lM]$$
 
  즉, 위의 결과에 따르면 inverse DFT $x[n]$ 은 M을 주기로 하는 주기함수라는 것을 알 수 있다. 또한, Discrete Time Domain에서 표현되는 샘플의 갯수가 N인 $x[n]$ 의 aliasing을 방지하기 위해선 연속주파수를 sampling 할 때, $N\leq M$ 인 $M$ 개의 이산 주파수로 나눠야 한다는 것도 알 수 있다.
 
+# 푸리에 행렬을 이용한 DFT의 이해
+
+DFT를 이해하는 또 다른 방법은 신호를 벡터화 하고, 푸리에 변환은 푸리에 행렬을 통한 [선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)으로 보는 방법이다.
+
+우선 DFT와 iDFT의 정의를 살펴보자.
+
+| DEFINITION: DFT and iDFT|
+| --------- |
+| 전체 신호의 길이가 N인 이산 신호 $X[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
+
+생각해보면 길이가 $N$인 신호 $x[n]$은 $N$차원 열벡터로 생각할 수 있으며, 여기에 마찬가지로 길이가 $N$인 이산 주파수 성분 $X[k]$역시 마찬가지로 $N$차원 열벡터로 생각할 수 있을 것이다.
+
+즉, 신호는
+
+$$\begin{bmatrix}x[0]\\ x[1] \\ \vdots \\ x[n] \\ \vdots \\ x[N-1]\end{bmatrix}$$
+
+이고, 이를 적절시 선형변환 시켜 얻은 주파수 성분은
+
+$$\begin{bmatrix}X[0]\\ X[1] \\ \vdots \\ X[k] \\ \vdots \\ X[N-1]\end{bmatrix}$$
+
+와 같이 벡터화 시켜 생각해볼 수 있다. ($x[n]$과 $X[k]$의 대문자와 소문자 구별에 주의할 것.)
+
+그렇다면 신호 벡터에 어떤 행렬(여기서 푸리에 행렬)을 통해 주파수 성분 벡터를 얻었다고 볼 수 있을 것이다. 이를 알기 위해 $k=0,1,\cdots, N-1$일 때의 $X[k]$ 값을 하나하나 계산해보자.
+
+$$X[0] = x[0]\exp\left(-j\frac{2\pi 0}{N}0\right) + x[1]\exp\left(-j\frac{2\pi 0}{N}1\right)+\cdots +x[N-1]\exp\left(-j\frac{2\pi 0}{N}(N-1)\right)$$
+
+$$=x[0]\cdot 1 + x[1]\cdot 1 + \cdots + x[N-1] \cdot 1$$
+
+$$X[1] = x[0]\exp(\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp(\left(-j\frac{2\pi 1}{N}1\right)+x[N-1]\exp(\left(-j\frac{2\pi 1}{N}(N-1)\right)$$
+
+여기서 표기의 단순화를 위해 
+
+$$w = \exp\left(-j\frac{2\pi}{N}\right)$$
+
+이라고 하자.
+
+그러면,
+
+$$\Rightarrow x[0]w^0 + x[1] w^1 + \cdots + x[n-1]w^{N-1}$$
+
+이런 방식으로 $i$번째 주파수 성분 $X[i]$는 다음과 같이 계산할 수 있음을 알 수 있다.
+
+$$X[i] = x[0]w^0 + x[1]w^{i\times1}+\cdots+x[j]w^{i\times j}+\cdots +x[n-1]w^{i\times(n-1)}$$
+
+즉, 이런 과정을 거치게 되면 DFT를 다음과 같이 벡터와 행렬의 관계로 표현할 수 있다는 것을 알 수 있다.
+
+$$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} = 
+\begin{bmatrix} 
+  1 && 1 && 1 && \cdots  && 1 \\ 
+  1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
+  1 && \vdots && \vdots && \ddots  && \vdots \\
+  1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[N-1]\end{bmatrix}$$
+
+[행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)편에서는 행렬이 일종의 선형변환이라고 말했고,
+
+[행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서는 일반적인 행렬의 곱은 왼쪽에 곱해지는 행렬의 행과 오른쪽에 곱해지는 행렬의 한 열 간의 내적이라고 말한 바 있다.
+
+또, 내적의 의미는 '닮음'이기도 한데, 
+
+## 푸리에 행렬이 가져다주는 의미
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/5dXiaE7bIoA" frameborder="0" allowfullscreen></iframe></center>
 
