@@ -277,10 +277,20 @@ $$w = \exp\left(-\frac{2\pi}{N}\right)$$
 
 이와 같은 $w$의 의미를 생각하면서 $N=8$인 경우의 푸리에 행렬을 예시로 그 의미를 확인해보자.
 
+$N=8$인 경우 푸리에 행렬에 들어가는 $w$의 값은 $w=-\exp\left(\frac{2\pi}{8}\right)$이다. 이것을 복소평면에 표시하면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/20201106_150356.png">
+  <br>
+  그림 3. $\exp(-j 2\pi/8)$을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
+</p>
+
+그림 3과 같이 $w$의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 4와 같을 것이다.
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
   <br>
-  그림 3. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
+  그림 4. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
 </p>
 
 푸리에 행렬의 phase를 cosine 함수에 대해 생각해보면,
@@ -288,7 +298,7 @@ $$w = \exp\left(-\frac{2\pi}{N}\right)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
   <br>
-  그림 4.
+  그림 5.
 </p>
 
 푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
@@ -296,7 +306,7 @@ $$w = \exp\left(-\frac{2\pi}{N}\right)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic4.png">
   <br>
-  그림 4.
+  그림 6.
 </p>
 
 즉, DFT를 계산한다는 것은,
