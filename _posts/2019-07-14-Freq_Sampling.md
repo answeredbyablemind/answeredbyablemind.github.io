@@ -277,7 +277,7 @@ $$w = \exp\left(-\frac{2\pi}{N}\right)$$
 
 이와 같은 $w$의 의미를 생각하면서 $N=8$인 경우의 푸리에 행렬을 예시로 그 의미를 확인해보자.
 
-$N=8$인 경우 푸리에 행렬에 들어가는 $w$의 값은 $w=-\exp\left(\frac{2\pi}{8}\right)$이다. 이것을 복소평면에 표시하면 다음과 같다.
+$N=8$인 경우 푸리에 행렬에 들어가는 $w$의 값은 $w=\exp\left(-j\frac{2\pi}{8}\right)$이다. 이것을 복소평면에 표시하면 다음과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/20201106_150356.png">
