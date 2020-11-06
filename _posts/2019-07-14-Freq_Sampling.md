@@ -238,6 +238,8 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
   1 && \vdots && \vdots && \ddots  && \vdots \\
   1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[N-1]\end{bmatrix}$$
 
+[//]:# (식 40)
+
 [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)편에서는 행렬이 일종의 선형변환이라고 말했고,
 
 [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서는 일반적인 행렬의 곱은 왼쪽에 곱해지는 행렬의 행과 오른쪽에 곱해지는 행렬의 한 열 간의 내적이라고 말한 바 있다.
@@ -247,20 +249,38 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic1.png">
   <br>
-  그림 1.
+  그림 1. 주파수 성분 벡터는 푸리에 행렬의 행과 시계열 벡터가 얼마나 닮았는지를 봄으로써 얻을 수 있는 것이다.
 </p>
 
+그렇다면, 푸리에 행렬의 각각의 행이 가져다주는 의미는 무엇일까?
 
 ## 푸리에 행렬이 가져다주는 의미
 
-[//]:# (exp j\theta의 의미에 대해 다시 언급하고 그림으로 표현할 것)
+[오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)편에서는 아래와 같은 공식의 의미에 대해 다룬 적이 있다.
 
-$N=8$인 경우의 푸리에 행렬을 예시로 확인해보자.
+$$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
+
+[//]:# (식 41)
+
+식 (41)의 의미를 파악하기 위해 우변의 값을보면, 이는 복소평면에서 원점으로부터 $\theta$ 라디안만큼 회전한 호(弧, arc)의 좌표를 의미한다는 것을 알 수 있다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/pic1.png">
+  <br> 그림 2. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
+</p>
+
+다시 말해 식 (40)에 있는 $w$는 다음과 같이 계산하는데,
+
+$$w = \exp\left(-\frac{2\pi}{N}\right)$$
+
+이 말인 즉슨, 시계 방향으로 한 바퀴 도는 원 위의 점을 $N$ 등분 한 첫 번째 점의 위치라는 의미이다.
+
+이와 같은 $w$의 의미를 생각하면서 $N=8$인 경우의 푸리에 행렬을 예시로 그 의미를 확인해보자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
   <br>
-  그림 2.
+  그림 3. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
 </p>
 
 푸리에 행렬의 phase를 cosine 함수에 대해 생각해보면,
@@ -268,7 +288,7 @@ $N=8$인 경우의 푸리에 행렬을 예시로 확인해보자.
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
   <br>
-  그림 3.
+  그림 4.
 </p>
 
 푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
@@ -281,7 +301,7 @@ $N=8$인 경우의 푸리에 행렬을 예시로 확인해보자.
 
 즉, DFT를 계산한다는 것은,
 
-## 푸리에 행렬의 열벡터
+## 푸리에 행렬의 벡터공간
 
 unitary 행렬임을 보일 것.
 
