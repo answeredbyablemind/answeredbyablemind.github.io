@@ -271,7 +271,7 @@ $$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
 
 다시 말해 식 (40)에 있는 $w$는 다음과 같이 계산하는데,
 
-$$w = \exp\left(-\frac{2\pi}{N}\right)$$
+$$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
 이 말인 즉슨, 시계 방향으로 한 바퀴 도는 원 위의 점을 $N$ 등분 한 첫 번째 점의 위치라는 의미이다.
 
