@@ -57,12 +57,12 @@ fs = 500;
 t = 0:1/fs:1;
 
 for i = 0:7
-    x = sin(2*pi*i*t);
+    x = -sin(2*pi*i*t);
     t2 = 0:1/8:1;
     t2(end) = [];
-    x2 = sin(2*pi*i*t2);
+    x2 = -sin(2*pi*i*t2);
     
-    figure('position', [680, 871, 250, 50])
+    figure('position', [600, 400, 250, 50])
     plot(t,x,'color',lines(1), 'linewidth',2);
     hold on;
     plot(t2, x2 ,'o','markerfacecolor','r','markeredgecolor','none');
