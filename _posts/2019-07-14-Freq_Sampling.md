@@ -242,8 +242,13 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 
 [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서는 일반적인 행렬의 곱은 왼쪽에 곱해지는 행렬의 행과 오른쪽에 곱해지는 행렬의 한 열 간의 내적이라고 말한 바 있다.
 
-또, 내적의 의미는 '닮음'이기도 한데, 
+또, 내적의 의미는 '닮음'이기도 한데, 그 말인 즉슨, 신호 벡터에 푸리에 행렬을 곱해준다는 것은 푸리에 행렬의 행과 신호 벡터가 얼마나 닮았는지를 확인해봄으로써 주파수 성분을 얻을 수 있다는 것을 말한다고 할 수 있다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic1.png">
+  <br>
+  그림 1.
+</p>
 
 
 ## 푸리에 행렬이 가져다주는 의미
@@ -253,25 +258,25 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 $N=8$인 경우의 푸리에 행렬을 예시로 확인해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic1.png">
-  <br>
-  그림 1.
-</p>
-
-푸리에 행렬의 phase를 cosine 함수에 대해 생각해보면,
-
-<p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
   <br>
   그림 2.
 </p>
 
-푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
+푸리에 행렬의 phase를 cosine 함수에 대해 생각해보면,
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
   <br>
   그림 3.
+</p>
+
+푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic4.png">
+  <br>
+  그림 4.
 </p>
 
 즉, DFT를 계산한다는 것은,
