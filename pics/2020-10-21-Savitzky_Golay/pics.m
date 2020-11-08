@@ -1,61 +1,45 @@
 clear; close all; clc;
 
-%% Impulse response
-close all;
-t = 0:1:10;
-x = sin(t) + 3*cos(t/3) + 4* sin(t/4);
-stem(t, x,'color','k', 'linewidth', 1.5)
+M = 10; % 필터의 길이는 2M+1 = 21
+N = 9; % 다항식의 차수는 9
 
-t2 = linspace(-0.5,10.5,100);
-x2 = sin(t2) + 3*cos(t2/3) + 4* sin(t2/4);
-hold on;
-plot(t2, x2, 'r--')
+% 테스트용 신호
+load mtlb
+t = (0:length(mtlb)-1)/Fs;
 
-xlabel('n (time sample) (bin)');
-ylabel('x[n]');
-grid on;
-xlim([-0.5 10.5])
+%% MATLAB으로 계수만 얻은 것
+b = sgolay(N, 2*M+1);
 
-%% 신호를 분해하자
-close all;
+sgolay_filter = b((size(b,1)+1)/2,:);
 
-for i = 1:11
-    figure;
-    hold on;
-    plot(t2, x2, 'r--')
-    
-    xlabel('n (time sample) (bin)');
-    ylabel('x[n]');
-    grid on;
-    xlim([-0.5 10.5])
-    x = sin(t(i)) + 3*cos(t(i)/3) + 4* sin(t(i)/4);
-    stem(t(i), x,'color','k', 'linewidth', 1.5)
+smtlb = conv(mtlb, sgolay_filter,'same');
+
+%% MATLAB으로 직접 convolution까지 한 것
+smtlb_MATLAB = sgolayfilt(mtlb, N, 2*M+1);
+
+%% 직접 S-G filter의 계수까지도 계산
+A = zeros(2*M+1, N+1);
+
+n_range = -M:M; % 원래 논문에서 n
+i_range = 0:N; % 원래 논문에서 i
+for i = 1:size(A,1)
+    for j = 1:size(A,2)
+        A(i,j)= n_range(i)^i_range(j);
+    end
 end
 
+% matrix H = (A^TA)^{-1}*A^T
 
+H = (A'*A)\A';
 
+sgolay_filter_calculated = H(1,:); % H의 첫번째 행이 S-G filter의 impulse response이다.
 
-
-%% Moving Average
-
-rng(2);
-a = rand(1,20);
-sig = a+0.1*(1:20);
-
-% calculating moving average
-M=5;
-sig_MA = nan(1, length(sig));
-
-for i = M:length(a)
-    sig_MA(i) = mean(sig(i-(M-1):i));
-end
+my_smtlb_calculated = conv(mtlb, sgolay_filter_calculated,'same');
 
 figure;
-subplot(2,1,1);
-plot(sig,'o-')
-ylim([0, 3])
-title('원래의 신호')
-subplot(2,1,2)
-plot(sig_MA,'o-')
-xlim([0, 20]); ylim([0, 3])
-title('moving average 신호')
+plot(t, mtlb);
+axis([0.2 0.22 -3 2])
+hold on;
+plot(t, smtlb);
+plot(t, my_smtlb_calculated);
+plot(t, smtlb_MATLAB);
