@@ -273,6 +273,8 @@ $$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
 
 $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
+[//]:# (식 42)
+
 이 말인 즉슨, 시계 방향으로 한 바퀴 도는 원 위의 점을 $N$ 등분 한 첫 번째 점의 위치라는 의미이다.
 
 이와 같은 $w$의 의미를 생각하면서 $N=8$인 경우의 푸리에 행렬을 예시로 그 의미를 확인해보자.
@@ -323,13 +325,78 @@ cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개�
   그림 7. 푸리에 행렬 내의 값들은 모두 복소수이며, 실수부와 허수부는 각각 cosine, sine 함수로 구성되어 있다는 것을 알 수 있다.
 </p>
 
-## 푸리에 행렬의 벡터공간
+## 푸리에 행렬의 열공간
 
-unitary 행렬임을 보일 것.
+이번에는 푸리에 행렬의 열공간의 특성을 파악해보자.
 
-각 열벡터들이 orthogonal 함을 보일 것.
+우리는 간단한 방법으로 푸리에 행렬의 각 열들이 직교한다는 것을 확인할 수 있다.
 
-벡터 공간의 기저가 가져다주는 의미
+가장 쉬운 방법으로는 푸리에 행렬 $F$에 Hermitian 연산[^1]을 취한 뒤 곱해보는 것이다.
+
+[^1]: Hermitian 연산자 = Transpose + complex conjugate 이다.
+
+즉,
+
+$$F^HF = \begin{bmatrix} 
+  1 && 1 && 1 && \cdots  && 1 \\ 
+  1 && w^{*1} && w^{*2} && \cdots  && w^{*(N-1)} \\ 
+  1 && \vdots && \vdots && \ddots  && \vdots \\
+  1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}
+  \begin{bmatrix} 
+  1 && 1 && 1 && \cdots  && 1 \\ 
+  1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
+  1 && \vdots && \vdots && \ddots  && \vdots \\
+  1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}$$
+
+[//]:# (식 43)
+
+$$=N\begin{bmatrix}1 && 0 && \cdots && 0 \\ 0 && 1 && \cdots && 0 \\ \vdots && \vdots && \ddots && \vdots \\ 0 && 0 && \cdots && 1\end{bmatrix} = N\cdot I$$
+
+[//]:# (식 44)
+
+여기서 superscript '*'은 complex conjugate이다.
+
+식 (44)의 결과와 같이 푸리에 행렬 $F$의 각 열들은 각 열 자신과 내적 시에는 $N$이라는 값을 갖고 이외의 열과 내적했을 때는 0이라는 결과를 얻어주게 되므로, 각각의 열들은 서로 직교한다는 것을 알 수 있다.
+
+한편, [행렬 곱에 대한 새로운 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html) 편에서 열공간에 기반한 해석 파트를 다시 한번 생각해보자.
+
+예를 들어 아래와 같은 행렬은,
+
+$$\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
+
+연립방정식을 풀면 쉽게 알 수 있다.
+
+$$\begin{cases}
+x+2y = 3 \\
+3x+4y = 5
+\end{cases}$$
+
+$$\Rightarrow x=-1, \text{ }y=2$$
+
+하지만, 이번엔 이 식을 아래와 같이 생각해보자.
+
+$$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\4\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
+
+위 식에 대한 해석은 아래와 같이 할 수도 있다고 [행렬 곱에 대한 새로운 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html) 편에서 언급한 바가 있다.
+
+<center>
+
+  "두 벡터 $\begin{bmatrix}1\\3\end{bmatrix}$과 $\begin{bmatrix}2\\4\end{bmatrix}$로부터 생성된  벡터공간 내에 벡터 $\begin{bmatrix}3\\5\end{bmatrix}$가 존재하는가? 
+
+</center>
+
+<center>
+
+  만약 그렇다면,  $\begin{bmatrix}1\\3\end{bmatrix}$과 $\begin{bmatrix}2\\4\end{bmatrix}$을 어떻게 조합해야 $\begin{bmatrix}3\\5\end{bmatrix}$을 구할 수 있을까??"
+
+</center>
+
+이 얘기를 푸리에 행렬에 그대로 적용해본다면 우리의 푸리에 행렬 $F$를 이용해 주파수 분석을 한다는 것은 
+
+
+
+
+
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/5dXiaE7bIoA" frameborder="0" allowfullscreen></iframe></center>
 
