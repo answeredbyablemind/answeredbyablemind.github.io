@@ -38,13 +38,29 @@ KL divergence는 쿨백-라이블러(Kullback-Leibler) 발산을 줄여서 쓴 �
 
 이산확률분포 $P$와 $Q$가 동일한 샘플 공간 $\chi$에서 정의된다고 하면 KL divergence는 다음과 같다.
 
-$$D_{KL}(P\|Q) = \sum_{x\in \chi}P(x)\log\left(\frac{P(x)}{Q(x)}\right)$$
+$$D_{KL}(P\|Q) = \sum_{x\in \chi}P(x)\log_b\left(\frac{P(x)}{Q(x)}\right)$$
 
-$$=-\sum_{x\in \chi}P(x)\log\left(\frac{Q(x)}{P(x)}\right)$$
+여기서 로그의 밑 $b$는 2, 10 혹은 $e$ 중 하나로 보통 많이 사용하며, 이 때 각각을 이용했을 때의 정보량 단위는 bit, dit, nit 이다.
 
-$$=-\sum_{x\in\chi}P(x)\log Q(x) + \sum_{x\in\chi}P(x)\log P(x)$$
+식을 조금 더 전개하면,
 
+$$\Rightarrow-\sum_{x\in \chi}P(x)\log_b\left(\frac{Q(x)}{P(x)}\right)$$
 
+$$=-\sum_{x\in\chi}P(x)\log_b Q(x) + \sum_{x\in\chi}P(x)\log_b P(x)$$
+
+[//]:# (식 3)
+
+여기서 식 (3)을 잘 보면 두 개의 summation을 포함한 term들은 모두 기댓값으로 치환해 생각해 볼 수 있음을 알 수 있다.
+
+$$\Rightarrow -E_P[\log_bQ(x)]+E_P[\log_bP(x)]$$
+
+여기서 기댓값 연산자 $E$에 붙은 subscript 'P'는 $P(x)$라는 확률분포에 대한 기댓값 연산임을 의미한다.
+
+식 (4)를 조금만 더 전개하면,
+
+$$\Rightarrow H_P(Q) - H(P)$$
+
+라고 쓸 수 있는데, $H_P(Q)$는 $P$의 기준으로 봤을 때의 $Q$에 대한 크로스 엔트로피를 의미하고 $H(P)$는 $P$에 대한 정보 엔트로피를 의미한다.
 
 <p align = "center">
   <iframe width ="880" height = "340" src="https://angeloyeo.github.io/p5/2020-10-27-KL_divergence/" frameborder = "0"></iframe>
