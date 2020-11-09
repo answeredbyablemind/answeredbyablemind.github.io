@@ -16,13 +16,32 @@ tags: 선형대수 신호처리
 * [벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
 * [행렬 곱에 대한 새로운 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
 
-# 푸리에 변환이란 무엇인지?
+# 푸리에 변환이란?
+
+푸리에 변환은 신호의 주파수 분석을 수행할 때 이용된다.
+
+조금 쉽게 예를 들면 톤이 매우 낮은 남자와 톤이 높은 여자가 동시에 말을 한다고 생각해보자.
+
+이 때 우리가 듣게 되는 소리는 낮은 음과 높은 음이 섞인 신호 일 것이다.
+
+여기서 우리가 알고싶은 정보는 다음과 같다.
+
+* 낮은 음과 높은 음의 주파수 값은 어떻게 될까? (즉, 얼마나 높고 낮은지를 수치화 하고싶다는 의미)
+* 낮은 음과 높은 음의 신호 크기 비율은 어떻게 될까? (한마디로, 둘의 목소리가 얼마나 컸나)
 
 ## 사용 예시
 
-MATLAB을 이용해 두 개의 주파수 성분을 가진 시계열에 대한 Fourier Transform 수행하고, 결과를 시각적으로 보여준 뒤 결과에 대한 설명해줄 것.
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-08-linear_algebra_and_Fourier_transform/pic1.png">
+  <br>
+  그림 1. 50Hz 및 120 Hz의 정현파가 섞여있는 신호
+</p>
 
-그리고, 푸리에 변환이 왜 유용한지에 대해 설명함으로써 motivation 심어줄 것.
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-08-linear_algebra_and_Fourier_transform/pic2.png">
+  <br>
+  그림 2. 푸리에 변환 결과 50Hz, 120Hz의 두 주파수 성분이 포함되어 있는 신호임을 역으로 추정할 수 있다.
+</p>
 
 # 무한 차원 벡터 공간
 
