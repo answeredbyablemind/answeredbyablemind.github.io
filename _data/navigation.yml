@@ -83,8 +83,6 @@ docs-ko:
         url:    2020/08/24/linear_regression.html
       - title:  선형대수와 푸리에 변환
         url:    2020/11/08/linear_algebra_and_Fourier_transform.html
-      - title:  선형대수와 미분방정식
-        url:    2020/11/09/linear_algebra_and_differential_equation.html
       - title:  선형대수와 이미지 프로세싱
         url:    2020/11/10/linear_algebra_and_image_processing.html
 
