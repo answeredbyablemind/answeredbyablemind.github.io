@@ -121,22 +121,6 @@ $$X[k] = \begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1] \end{bmatrix}$$
 | --------- |
 | 전체 신호의 길이가 N인 이산 신호 $X[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
 
-생각해보면 길이가 $N$인 신호 $x[n]$은 $N$차원 열벡터로 생각할 수 있으며, 여기에 마찬가지로 길이가 $N$인 이산 주파수 성분 $X[k]$역시 마찬가지로 $N$차원 열벡터로 생각할 수 있을 것이다.
-
-즉, 신호는
-
-$$\begin{bmatrix}x[0]\\ x[1] \\ \vdots \\ x[n] \\ \vdots \\ x[N-1]\end{bmatrix}$$
-
-[//]:# (식 5)
-
-이고, 이를 적절시 선형변환 시켜 얻은 주파수 성분은
-
-$$\begin{bmatrix}X[0]\\ X[1] \\ \vdots \\ X[k] \\ \vdots \\ X[N-1]\end{bmatrix}$$
-
-[//]:# (식 6)
-
-와 같이 벡터화 시켜 생각해볼 수 있다. ($x[n]$과 $X[k]$의 대문자와 소문자 구별에 주의할 것.)
-
 그렇다면 신호 벡터에 어떤 행렬(여기서 푸리에 행렬)을 통해 주파수 성분 벡터를 얻었다고 볼 수 있을 것이다. 이를 알기 위해 $k=0,1,\cdots, N-1$일 때의 $X[k]$ 값을 하나하나 계산해보자.
 
 $$X[0] = x[0]\exp\left(-j\frac{2\pi 0}{N}0\right) + x[1]\exp\left(-j\frac{2\pi 0}{N}1\right)+\cdots +x[N-1]\exp\left(-j\frac{2\pi 0}{N}(N-1)\right)$$
@@ -149,7 +133,7 @@ $$X[1] = x[0]\exp(\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp(\left(-j\frac{2\pi 1
 
 $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
-[//]:# (식 10)
+[//]:# (식 8)
 
 이라고 하자.
 
@@ -180,7 +164,7 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic1.png">
   <br>
-  그림 1. 주파수 성분 벡터는 푸리에 행렬의 행과 시계열 벡터가 얼마나 닮았는지를 봄으로써 얻을 수 있는 것이다.
+  그림 3. 주파수 성분 벡터는 푸리에 행렬의 행과 시계열 벡터가 얼마나 닮았는지를 봄으로써 얻을 수 있는 것이다.
 </p>
 
 그렇다면, 푸리에 행렬의 각각의 행이 가져다주는 의미는 무엇일까?
@@ -191,20 +175,20 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 
 $$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
 
-[//]:# (식 41)
+[//]:# (식 12)
 
-식 (41)의 의미를 파악하기 위해 우변의 값을보면, 이는 복소평면에서 원점으로부터 $\theta$ 라디안만큼 회전한 호(弧, arc)의 좌표를 의미한다는 것을 알 수 있다.
+식 (12)의 의미를 파악하기 위해 우변의 값을보면, 이는 복소평면에서 원점으로부터 $\theta$ 라디안만큼 회전한 호(弧, arc)의 좌표를 의미한다는 것을 알 수 있다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/pic1.png">
-  <br> 그림 2. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
+  <br> 그림 4. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
 </p>
 
 다시 말해 식 (40)에 있는 $w$는 다음과 같이 계산하는데,
 
 $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
-[//]:# (식 42)
+[//]:# (식 13)
 
 이 말인 즉슨, 시계 방향으로 한 바퀴 도는 원 위의 점을 $N$ 등분 한 첫 번째 점의 위치라는 의미이다.
 
@@ -215,15 +199,15 @@ $N=8$인 경우 푸리에 행렬에 들어가는 $w$의 값은 $w=\exp\left(-j\f
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/20201106_150356.png">
   <br>
-  그림 3. $\exp(-j 2\pi/8)$을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
+  그림 5. $\exp(-j 2\pi/8)$을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
 </p>
 
-그림 3과 같이 $w$의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 4와 같을 것이다.
+그림 5과 같이 $w$의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 6와 같을 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
   <br>
-  그림 4. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
+  그림 6. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
 </p>
 
 cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개념이므로 회전시 phase의 값은 모두 cosine 혹은 sine 함수의 값으로 바꿔 생각해볼 수 있다.
@@ -233,27 +217,27 @@ cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개�
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
   <br>
-  그림 5. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
+  그림 7. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
 </p>
 
-위의 그림 5에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 cosine 함수를 표현하고 있는 것을 알 수 있다.
+위의 그림 7에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 cosine 함수를 표현하고 있는 것을 알 수 있다.
 
 또, 푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic4.png">
   <br>
-  그림 6. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
+  그림 8. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
 </p>
 
-위의 그림 6에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 sine 함수도 함께 표현하고 있는 것을 알 수 있다.
+위의 그림 8에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 sine 함수도 함께 표현하고 있는 것을 알 수 있다.
 
 즉, DFT를 계산할 때 사용하는 푸리에 행렬은 fundamental frequency의 배수로 구성된 cosine, sine 함수들이며, 이 함수들이 실수부와 허수부를 구성하며, 원래의 시간 신호와 하나 하나 내적되어 결과를 얻어주는 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic5.png">
   <br>
-  그림 7. 푸리에 행렬 내의 값들은 모두 복소수이며, 실수부와 허수부는 각각 cosine, sine 함수로 구성되어 있다는 것을 알 수 있다.
+  그림 9. 푸리에 행렬 내의 값들은 모두 복소수이며, 실수부와 허수부는 각각 cosine, sine 함수로 구성되어 있다는 것을 알 수 있다.
 </p>
 
 ## 푸리에 행렬의 특성
@@ -281,19 +265,19 @@ $$F^HF = \begin{bmatrix}
   1 && \vdots && \vdots && \ddots  && \vdots \\
   1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}$$
 
-[//]:# (식 43)
+[//]:# (식 14)
 
 $$=N\begin{bmatrix}1 && 0 && \cdots && 0 \\ 0 && 1 && \cdots && 0 \\ \vdots && \vdots && \ddots && \vdots \\ 0 && 0 && \cdots && 1\end{bmatrix} = N\cdot I$$
 
-[//]:# (식 44)
+[//]:# (식 15)
 
 여기서 superscript '*'은 complex conjugate이다.
 
-식 (44)의 결과와 같이 푸리에 행렬 $F$의 각 열들은 각 열 자신과 내적 시에는 $N$이라는 값을 갖고 이외의 열과 내적했을 때는 0이라는 결과를 얻어주게 되므로, 각각의 열들은 서로 직교한다는 것을 알 수 있다.
+식 (15)의 결과와 같이 푸리에 행렬 $F$의 각 열들은 각 열 자신과 내적 시에는 $N$이라는 값을 갖고 이외의 열과 내적했을 때는 0이라는 결과를 얻어주게 되므로, 각각의 열들은 서로 직교한다는 것을 알 수 있다.
 
 ### 2. 푸리에 행렬의 역행렬과 역푸리에 변환
 
-또, 식 (43)과 식 (44)를 통해 푸리에 행렬의 역행렬은 
+또, 식 (14)과 식 (15)를 통해 푸리에 행렬의 역행렬은 
 
 $$F^{-1}=\frac{1}{N}F^H$$
 
