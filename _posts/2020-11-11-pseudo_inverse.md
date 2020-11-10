@@ -75,13 +75,41 @@ $$\Rightarrow
 
 $$식 (3) \Rightarrow A^+Ax=A^+b$$
 
+[//]:# (식 5)
+
 이며, 우리가 알고있는 식 (1)의 left inverse의 공식을 이용해 $A^+$을 계산해보면,
 
 $$A^+ = (A^TA)^{-1}A^T=\begin{bmatrix}-1 && 0.5 && 0.5 \\ 0 && 0.5 && 0.5\end{bmatrix}$$
+
+[//]:# (식 6)
 
 이므로 식 (5)를 직접 계산해보면 아래와 같이 $x_1$과 $x_2$의 값을 계산할 수 있게 된다.
 
 $$식(5)\Rightarrow \begin{bmatrix}-1 & 0.5 & 0.5 \\ 0 & 0.5 & 0.5\end{bmatrix}\begin{bmatrix}-1 & 1 \\ 0 & 1\\ 0 & 1\end{bmatrix}\begin{bmatrix}x_1 \\ x_2\end{bmatrix}=\begin{bmatrix}-1 & 0.5 & 0.5 \\ 0 & 0.5 & 0.5\end{bmatrix}\begin{bmatrix}0 \\ 1 \\ 3 \end{bmatrix}$$
 
+[//]:# (식 7)
+
 $$\Rightarrow \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}2\\2\end{bmatrix}$$
+
+[//]:# (식 8)
+
+그런데, 여기서 이상한 점이 하나 있다.
+
+이 $x_1$과 $x_2$를 원래의 식에 대입해보면 식이 성립하지 않는다는 점이다.
+
+다시 말해 식 (4)에 대해 식 (4)의 좌변 값을 계산해보면 아래와 같은데,
+
+$$\text{식(4)의 좌변}\Rightarrow 
+  \begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}
+  \begin{bmatrix}2 \\ 2 \end{bmatrix} = 
+  \begin{bmatrix}0 \\ 2 \\ 2\end{bmatrix}
+$$
+
+[//]:# (식 9)
+
+식 (9)의 결과는 식 (4)의 우변과 같지 않다.
+
+그렇다면, 왜 의사역행렬은 식 (1)과 같은 공식을 갖게 되었으며, 식 (9)의 결과가 식 (4)의 우변과 같지 않다는 것은 어떤 의미를 갖고 있을까?
+
+# 의사역행렬의 기하학적 의미
 
