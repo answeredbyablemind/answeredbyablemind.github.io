@@ -75,6 +75,13 @@ $$\Rightarrow
 
 $$식 (3) \Rightarrow A^+Ax=A^+b$$
 
-이며, 우리가 알고있는 left inverse의 공식을 이용해 $A^+$을 계산해보면,
+이며, 우리가 알고있는 식 (1)의 left inverse의 공식을 이용해 $A^+$을 계산해보면,
 
-$$A^+ = (A^TA)^{-1}A^T$$
+$$A^+ = (A^TA)^{-1}A^T=\begin{bmatrix}-1 && 0.5 && 0.5 \\ 0 && 0.5 && 0.5\end{bmatrix}$$
+
+이므로 식 (5)를 직접 계산해보면 아래와 같이 $x_1$과 $x_2$의 값을 계산할 수 있게 된다.
+
+$$식(5)\Rightarrow \begin{bmatrix}-1 & 0.5 & 0.5 \\ 0 & 0.5 & 0.5\end{bmatrix}\begin{bmatrix}-1 & 1 \\ 0 & 1\\ 0 & 1\end{bmatrix}\begin{bmatrix}x_1 \\ x_2\end{bmatrix}=\begin{bmatrix}-1 & 0.5 & 0.5 \\ 0 & 0.5 & 0.5\end{bmatrix}\begin{bmatrix}0 \\ 1 \\ 3 \end{bmatrix}$$
+
+$$\Rightarrow \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}2\\2\end{bmatrix}$$
+
