@@ -104,12 +104,14 @@ $$\Rightarrow \begin{bmatrix}-i\sin(\theta) && -\sin(\theta) \\ \sin(\theta) && 
 
 즉, 위의 행렬과 벡터의 곱은 아래의 선형연립방정식을 푸는 것과 같다고 할 수 있다.
 
-벡터 $\vec{x} = \begin{bmatrix}x_1 \\ x_2\end{bmatrix}$라고 하면,
+벡터 $\vec{x} = \begin{bmatrix}x_1, x_2\end{bmatrix}^T$라고 하면,
 
 $$\begin{cases}
   -i\sin(\theta) x_1 - \sin(\theta)x_2 =0 \\ 
   \sin(\theta)x_1 - i\sin(\theta)x_2 =0  
 \end{cases}$$
+
+이며,
 
 여기서 모든 방정식을 $\sin(\theta)$로 나누면[^1],
 
