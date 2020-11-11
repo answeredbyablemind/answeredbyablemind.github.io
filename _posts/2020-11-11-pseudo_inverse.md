@@ -245,8 +245,6 @@ $Ax=b$라는 방정식에서 적절한 term을 좌변에 곱해 $\hat{x}$를 계
 
 다시 말해, 우리가 얻은 $(A^TA)^{-1}A^T$라는 term이 바로 우리가 구하고자 하는 의사역행렬임을 알 수 있다.
 
-# Pseudo-inverse의 MATLAB 계산 비교
-
 # SVD를 이용한 의사역행렬의 표현
 
 임의의 행렬 $A\in\Bbb{R}^{m\times n}\text{ where } m\gt n$을 [특이값 분해](https://angeloyeo.github.io/2019/08/01/SVD.html)하면 다음과 같이 쓸 수 있다.
