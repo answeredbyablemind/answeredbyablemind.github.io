@@ -18,8 +18,6 @@ tags: 선형대수 머신러닝
 </center>
 
 
-# Linear regression의 문제의식
-
 # 선형대수학의 관점에서 본 회귀분석
 
 ※ 최적화 문제 관련 내용으로 궁금한 사람은 $\lt$선형대수학의 관점에서 본 회귀분석 $\gt$ 파트를 건너뛰어도 무관함.
@@ -28,10 +26,8 @@ tags: 선형대수 머신러닝
 
 이 내용에 대해 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
-* 벡터의 스칼라곱과 벡터의 합
-* 벡터의 내적
-* 벡터의 생성공간(span)
-* 벡터 공간(열공간, 행공간)
+* [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
+* [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html)
 
 ## 선형연립방정식을 이용한 solution 찾기
 
