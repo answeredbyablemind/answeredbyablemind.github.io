@@ -239,6 +239,70 @@ $$\therefore \hat{x}=(A^TA)^{-1}A^T\vec{b}$$
 
 우리가 지금까지 수행한 일은 무엇인가?
 
-$Ax=b$라는 방정식에서 적절한 $A^+$를 찾아 좌, 우항의 왼쪽에 $A^+$를 곱하고 
+$Ax=b$라는 방정식에서 적절한 term을 좌변에 곱해 $\hat{x}$를 계산한 것이다.
+
+즉, 여기서 찾아진 적절한 term을 $A^+$라 할 때, $A^+A = I$라는 사실을 알 수 있는 것이다.
+
+다시 말해, 우리가 얻은 $(A^TA)^{-1}A^T$라는 term이 바로 우리가 구하고자 하는 의사역행렬임을 알 수 있다.
 
 # Pseudo-inverse의 MATLAB 계산 비교
+
+# SVD를 이용한 의사역행렬의 표현
+
+임의의 행렬 $A\in\Bbb{R}^{m\times n}\text{ where } m\gt n$을 [특이값 분해](https://angeloyeo.github.io/2019/08/01/SVD.html)하면 다음과 같이 쓸 수 있다.
+
+$$A=U\Sigma V^T$$
+
+여기서 $U\in\Bbb{R}^{m\times m}$, $\Sigma\in\Bbb{R}^{m\times n}$, $V\in\Bbb{R}^{n\times n}$의 크기를 가지는 행렬이며, $U$, $V$는 orthogonal matrix, $\Sigma$는 diagonal matrix이다.
+
+여기서 $\Sigma$는 singluar value $\lambda$가 대각성분에 위치하는 행렬이다.
+
+$$\Sigma = diag_{m,n}(\lambda_1, \cdots, \lambda_{min\lbrace m,n\rbrace})$$
+
+특히 orthogonal matrix의 성질은 다음과 같다.
+
+$$UU^T = U^TU = I$$
+
+$$V^TV=V^TV = I$$
+
+또, diagonal matrix의 성질은 다음과 같다.
+
+$$\Sigma^T = \Sigma$$
+
+특이값 분해된 $A$에 전치연산(transpose)을 취해주면 다음과 같이 계산할 수 있다.
+
+$$A^T = V\Sigma^T U^T=V\Sigma U^T$$
+
+따라서,
+
+$$A^TA = V\Sigma U^T U \Sigma V^T$$
+
+$$=V\Sigma^2 V^T$$
+
+이다.
+
+그러므로, $A^TA$의 역행렬을 계산해보면,
+
+$$(A^TA)^{-1} = (V\Sigma^2V^T)^{-1} = V(\Sigma^2)^{-1}V^T$$
+
+이다.
+
+위 식에서 식을 전개할 때 $V^{-1} = V^T$라는 orthogonal 행렬 $V$의 특성을 이용하였다.
+
+이제 식 (1)의 좌측역행렬을 계산해보면 다음과 같이 계산할 수 있다.
+
+$$A^+ = (A^TA)^{-1}A^T =  V(\Sigma^2)^{-1} V^TV\Sigma U^T$$
+
+여기서 $V^TV= I$ 이고 $(\Sigma^2)^{-1}\Sigma = \Sigma^{-1}$이므로 SVD를 이용한 좌측역행렬은
+
+$$\Rightarrow V\Sigma^{-1}U^T$$
+
+이다.
+
+여기서 $\Sigma^{-1}$은 다음과 같은 행렬이다.
+
+$$\Sigma^{-1}=diag_{n,m}(\lambda_1^+, \cdots, \lambda^+_{min\lbrace m,n\rbrace})$$
+
+where
+
+$$\lambda^+=\begin{cases}\lambda^{-1} && \lambda \neq 0 \\ 0 && \lambda = 0 \end{cases}$$
