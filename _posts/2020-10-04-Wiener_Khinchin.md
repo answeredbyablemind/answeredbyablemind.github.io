@@ -110,7 +110,7 @@ $$=\frac{1}{2T}\int_{-T}^{T}\int_{-T}^{T}R_{XX}(t_1-t_2)\exp(-j\omega(t_1-t_2))d
 
 $t_1-t_2 = \tau$라는 식은 잘 생각해보면 기울기가 1인 일차함수 중 하나임을 알 수 있는데, 결국 그림 1의 정사각형을 구하는 과정을 $\tau$가 $-2T$부터 $2T$까지 변해가면서 그림 1에 shade 표시한 띠의 미소 면적을 적분해주는 과정이라고 볼 수 있는 것이다. 따라서, 그림 1에 shade 표시한 미소 면적을 $dA$라고 한다면 식 (15)는 다음과 같이 쓸 수 있다.
 
-$$식(15)\Rightarrow \frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t) dA$$
+$$식(15)\Rightarrow \frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega \tau) dA$$
 
 여기서 $dA$를 구하면 
 
@@ -122,14 +122,14 @@ $$dA = (2T-|\tau|)d\tau - \frac{1}{2}(d\tau)^2$$
 
 $$\frac{E\lbrace X_T(\omega) X_T^*(\omega)\rbrace}{2T}$$
 
-$$=\frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t)\left\lbrace(2T-|\tau|)d\tau - \frac{1}{2}d\tau^2\right\rbrace$$
+$$=\frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega \tau)\left\lbrace(2T-|\tau|)d\tau - \frac{1}{2}d\tau^2\right\rbrace$$
 
 
-$$=\frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t)
+$$=\frac{1}{2T}\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega \tau)
 \left\lbrace(2T-|\tau|) - \frac{1}{2}d\tau\right\rbrace d\tau$$
 
 
-$$=\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega t)
+$$=\int_{-2T}^{2T}R_{XX}(\tau)\exp(-j\omega \tau)
 \left\lbrace \left(1-\frac{|\tau|}{2T}\right) -\frac{1}{4T}d\tau \right\rbrace d\tau$$
 
 [//]:# (식 21)
