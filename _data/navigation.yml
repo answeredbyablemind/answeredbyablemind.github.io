@@ -85,6 +85,8 @@ docs-ko:
         url:    2020/11/11/pseudo_inverse.html
       - title:  선형대수와 푸리에 변환
         url:    2020/11/08/linear_algebra_and_Fourier_transform.html
+      - title:  4개의 주요 부분 공간의 관계
+        url:    2020/11/17/four_fundamental_subspaces.html
 
   - title:      미적분학
     children:
