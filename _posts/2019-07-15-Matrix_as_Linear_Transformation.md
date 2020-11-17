@@ -60,10 +60,10 @@ $T$ 가 선형변환이라면, 벡터 $\begin{bmatrix}x \\ y \end{bmatrix}$ 는 
 
 예를 들어, 행렬
 
-$$A=\begin{pmatrix}
+$$A=\begin{bmatrix}
  2 & -3 \\
  1 & 1
- \end{pmatrix} $$
+ \end{bmatrix} $$
 
  를 이용해 벡터
 
@@ -72,10 +72,10 @@ $$A=\begin{pmatrix}
  를 변환시켜 보면,
 
 
- $$A\vec x =\begin{pmatrix}
+ $$A\vec x =\begin{bmatrix}
  2 & -3 \\
  1 & 1
- \end{pmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix}=\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$
+ \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix}=\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$
 
 
  임을 알 수 있는데, 아래의 영상에서 처럼 이 값은 새로운 두 기저벡터의 1배와 1배의 합으로
@@ -116,33 +116,33 @@ $$A=\begin{pmatrix}
 
 ### shearing
 
-$$\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} $$
+$$\begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/shear/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
 ### rotation
 
-$$\begin{pmatrix} \cos(\pi/2) & -\sin(\pi/2) \\ \sin(\pi/2) & \cos(\pi/2) \end{pmatrix} $$
+$$\begin{bmatrix} \cos(\pi/2) & -\sin(\pi/2) \\ \sin(\pi/2) & \cos(\pi/2) \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 ### permutation
 
-$$\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} $$
+$$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/permutation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
 ### projection on x-axis
 
-$$\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} $$
+$$\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/projection_on_x/" width="325" height = "260" frameborder="0"></iframe></p>
 
 ### projection on a vector $\begin{bmatrix} 1 \\ 2 \end{bmatrix}$
 
-$$\begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} $$
+$$\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/projection_on_vector/" width="325" height = "260" frameborder="0"></iframe></p>
 
