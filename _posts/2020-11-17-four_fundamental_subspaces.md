@@ -52,6 +52,8 @@ DEFINITION 1만 보면 조금 어렵게 들릴 수 있기 때문에 그림으로
   그림 2. 함수는 정의역의 각 원소를 정확히 하나의 공역 원소에 대응시킨다.
   <br>
   여기서 함수 $f$의 정의역 $X$, 공역 $Y$, 치역 $f(X)$이다.
+  <br>
+  출처: <a href = "https://ko.wikipedia.org/wiki/%ED%95%A8%EC%88%98">위키피디아, 함수</a>
 </p>
 
 그림 2에서 함수 $f$의 정의역 $X$, 공역 $Y$, 치역 $f(X)$이며 각각 빨간색, 파란색, 노란색으로 표시하였다.
@@ -116,9 +118,13 @@ $$A\vec{x} = 0$$
 
 그러면, 우선 $A$라는 선형변환이 어떻게 작동하는지 시각적으로 생각해보자.
 
-$$\begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
+$$A = \begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/linear_transformation_of_A/" width="325" height = "260" frameborder="0"></iframe></p>
+<p align="center">
+  <iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/linear_transformation_of_A/" width="325" height = "260" frameborder="0"></iframe>
+  <br>
+  애니메이션 1. 행렬 A의 선형 변환  
+</p>
 
 위 애니메이션에서 눈여겨볼 점은 2차원 벡터 공간상에 있던 모든 점들(즉, 벡터들)이 열공간으로 이동한다는 점이다.
 
@@ -132,7 +138,11 @@ $$\begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
 
 아래의 애니메이션에서는 영공간을 노란색 선으로 표시하였다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/visualizing_null_space_of_A/" width="325" height = "260" frameborder="0"></iframe></p>
+<p align="center">
+  <iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/visualizing_null_space_of_A/" width="325" height = "260" frameborder="0"></iframe>
+  <br>
+  애니메이션 2. 행렬 A의 선형변환과 영공간(노란색 선)의 선형변환
+</p>
 
 재밌는 점은 행공간과 영공간은 서로 직교하는 공간이라는 점이다.
 
@@ -148,15 +158,18 @@ $$\begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
 
 <p align = "center">
   <b>
-  ※ Fundamental theorem of linear algebra가 말하는 것: 행렬이 함수라면 그 함수의 근본적 의미인 집합 간의 관계를 어떻게 정의할 것인가? ※
+  ※ Fundamental theorem of linear algebra가 말하는 것:
+  <br> 행렬이 함수라면 그 함수의 근본적 의미인 집합 간의 관계를 어떻게 정의할 것인가? ※
   </b>
 </p>
 
-벡터 공간은 기본적으로 벡터들의 '집합'이다. 그리고, 그 집합에는 추가적으로 상수배와 덧셈 연산이 정의되어 있다.
+Fundamental Theorem of Linear Algebra는 이 포스트에서 지금까지 설명한 주요 부분 공간들의 관계를 정립하는 것이며,
 
-즉, Fundamental theorem of linear algebra는 벡터 공간 간의 관계를 정의한다.
+이 관계를 함수의 관점에서 어떻게 볼 것인가를 설명하고 있는 것이다.
 
-임의의 행렬 $A\in\Bbb{R}^{m\times n}$라는 함수가 보여주는 벡터 공간 상의 관계는 무엇인가?
+조금 더 자세하게는 정의역과 공역 집합을 벡터 공간으로 봤을 때, $m\times n$ 차원의 행렬이라면 $n$차원 벡터 공간이 정의역이 되고 $m$차원 벡터 공간이 공역이 되는 것이다.
+
+즉, 만약에 $A\in \Bbb{R}^{m\times n}$이라면 이 행렬은 다음과 같은 함수이다.
 
 $$f: \Bbb{R}^n \rightarrow \Bbb{R}^m$$
 
@@ -166,18 +179,40 @@ $$f: \Bbb{R}^n \rightarrow \Bbb{R}^m$$
 
 $n$ 차원 실수 공간 상의 어떤 벡터라도 row space와 null space 상의 벡터들의 선형조합으로 표현할 수 있다.
 
+무슨 말일까? 가령 $2\times 2$ 차원의 행렬, 우리가 지금까지 다뤄왔던 행렬 $A=[2, 1;4, 2]$에 대해 생각해보자면,
+
+가령 (2,3)이라는 벡터는 행공간 위의 점(벡터)도 아니고, 영공간 위의 점(벡터)도 아니다.
+
+다만, 행공간과 영공간이 서로 직교한다는 사실을 이용해 (2,3)이라는 벡터를 행공간과 영공간의 기저들의 선형결합으로서 표현할 수 있게 되는 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic7.png">
+  <br>
+  그림 7. 정의역에 포함되는 벡터는 행공간과 영공간을 모두 이용하면 표현할 수 있다.
+</p>
+
 ## 출력(치역): 모든 것이 column space로
 
-[행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html) 편에서 행렬과 벡터의 곱은 열벡터의 선형결합으로 ...
+애니메이션 2에서 보았던 것 처럼 모든 정의역에 있는 벡터들은 열공간위의 점으로 변환되게 된다.
 
-애니메이션 만들 것.
+그 이유는 [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html) 편에서 보았던 것 처럼 행렬과 벡터의 곱은 열벡터의 선형결합으로 표현될 수 있기 때문이다.
+
+또 다른 해석은 정의역의 벡터들은 모두 행공간의 기저와 영공간의 기저의 선형결합으로 구성되는데, 영공간의 기저로 표현되었던 벡터의 원소들은 모두 선형 변환 후 그 크기가 0으로 줄어들기 때문에 선형 변환 후에 모든 벡터들이 열공간 위에 위치하게 되는 것이다.
 
 ## 공역: m 차원 실수 공간
 
 선형 변환의 치역은 column space이다. 공역에서 치역을 뺀 것이 left nullspace이다.
 
-즉, 공역은 column space + left null space이다.
+선형변환이라는 함수에서 공역은 column space + left null space이며, column space와 left nullspace는 서로 직교한다.
+
+left nullspace는 선형 변환 과정에서 시각화 할 수는 없지만 열공간과 서로 직교하므로 다음과 같이 표현할 수는 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic8.png">
+  <br>
+  그림 8. 공역은 column space와 left nullspace로 구성되어 있으며 두 부분 공간은 서로 직교한다.
+</p>
 
 # 참고 자료
 
-* [What is the relationship between the null space and the column space?](https://math.stackexchange.com/questions/456025/what-is-the-relationship-between-the-null-space-and-the-column-space)
+* [Introduction to Linear Algebra, Gilbert Strang](https://math.mit.edu/~gs/linearalgebra/)
