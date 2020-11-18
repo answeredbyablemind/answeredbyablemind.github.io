@@ -101,7 +101,7 @@ $$A = \begin{bmatrix}2 && 1 \\ 4 && 2\end{bmatrix}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic5.png">
   <br>
-  그림 5. 행렬 A의 행벡터들의 선형결합으로 구성되는 열공간
+  그림 5. 행렬 A의 열벡터들의 선형결합으로 구성되는 열공간
 </p>
 
 ## 영공간(null space)
@@ -120,14 +120,37 @@ $$\begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/linear_transformation_of_A/" width="325" height = "260" frameborder="0"></iframe></p>
 
-여기서 특정 선 위에 있는 벡터들은 모두 선형 변환 후에 (0, 0)이라는 점으로 이동하게 된다.
+위 애니메이션에서 눈여겨볼 점은 2차원 벡터 공간상에 있던 모든 점들(즉, 벡터들)이 열공간으로 이동한다는 점이다.
+
+그림 5에서 보았던 열공간과 위 애니메이션에 있는 선형 변환 후의 결과를 비교해보자.
+
+그렇다면, 여기서 선형 변환 후에 (0, 0)이라는 점으로 이동하는 벡터들을 모두 잡아낼 수 있을까?
+
+거의 대부분의 점들이 열공간 상으로 이동하는데, 어떤 점들은 열공간 중 (0,0)이라는 점으로 이동할 것이다.
+
+그 점들(즉, 벡터들)의 집합이 바로 영공간(null space)이다.
+
+아래의 애니메이션에서는 영공간을 노란색 선으로 표시하였다.
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/visualizing_null_space_of_A/" width="325" height = "260" frameborder="0"></iframe></p>
 
+재밌는 점은 행공간과 영공간은 서로 직교하는 공간이라는 점이다.
+
+바로 위 애니메이션에서 찾은 노란색 벡터 공간(즉, 원점을 통과하는 직선)과 행공간을 함께 도시해보면 서로 직교한다는 것을 알 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic6.png">
+  <br>
+  그림 6. 행렬 A의 행공간과 영공간은 서로 직교한다
+</p>
 
 # Fundamental theorem of linear algebra
 
-Fundamental theorem of linear algebra가 말하는 것: 행렬이 함수라면 그 함수의 근본적 의미인 집합 간의 관계를 어떻게 정의할 것인가?
+<p align = "center">
+  <b>
+  ※ Fundamental theorem of linear algebra가 말하는 것: 행렬이 함수라면 그 함수의 근본적 의미인 집합 간의 관계를 어떻게 정의할 것인가? ※
+  </b>
+</p>
 
 벡터 공간은 기본적으로 벡터들의 '집합'이다. 그리고, 그 집합에는 추가적으로 상수배와 덧셈 연산이 정의되어 있다.
 
@@ -136,12 +159,6 @@ Fundamental theorem of linear algebra가 말하는 것: 행렬이 함수라면 �
 임의의 행렬 $A\in\Bbb{R}^{m\times n}$라는 함수가 보여주는 벡터 공간 상의 관계는 무엇인가?
 
 $$f: \Bbb{R}^n \rightarrow \Bbb{R}^m$$
-
-이 post에서는 시각화를 통해 이해의 편의를 도모하고자 singular인 $2\times 2$ 행렬을 이용함.
-
-우리가 이용하고자 하는 행렬 $A$는 다음과 같다.
-
-$$A = \begin{bmatrix}2 && 1 \\ 4 && 2\end{bmatrix}$$
 
 ## 입력(정의역): row space + null space = $\Bbb{R}^n$
 
