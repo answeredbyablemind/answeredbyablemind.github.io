@@ -123,6 +123,8 @@ $$\begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/linear_transformation_of_A/" width="325" height = "260" frameborder="0"></iframe></p>
 
+여기서 특정 선 위에 있는 벡터들은 모두 선형 변환 후에 (0, 0)이라는 점으로 이동하게 된다.
+
 
 
 # Fundamental theorem of linear algebra
