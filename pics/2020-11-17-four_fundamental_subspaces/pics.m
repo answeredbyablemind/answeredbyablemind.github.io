@@ -135,9 +135,11 @@ h.Primitive.LineWidth = 2;
 xx = linspace(-5,5,100);
 yy1 = 1/2 * xx;
 plot(xx, yy1,'r');
-% yy2 = -2 * xx;
-% plot(xx, yy2, 'r--');
+yy2 = -2 * xx;
+plot(xx, yy2, 'r--');
 
+yy1 = 2 * xx;
+plot(xx, yy1,'b:'); % 열공간
 %% column space 그릴 것
 
 figure('color','w','position',[680, 300, 480, 480]);
