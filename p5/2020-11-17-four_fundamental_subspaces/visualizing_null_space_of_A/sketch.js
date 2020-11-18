@@ -17,6 +17,12 @@ let redDot = [],
      newRedDot = [];
 let time;
 
+let xx = []
+let null_vec_stt = []
+let null_vec_end = []
+let new_null_vec_stt = []
+let new_null_vec_end = []
+
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
@@ -50,6 +56,14 @@ function setup() {
                [i]
           ]);
      }
+     null_vec_stt = [
+          [-3.5],
+          [7]
+     ]
+     null_vec_end = [
+          [-1 * null_vec_stt[0]],
+          [-1 * null_vec_stt[1]]
+     ]
 
      // // slider 만들기
      // slider1 = createSlider(0, 1, 0, 0.01);
@@ -110,6 +124,8 @@ function draw() {
      newBasisVecX = math.multiply(mtx2Apply, basisVecX)
      newBasisVecY = math.multiply(mtx2Apply, basisVecY)
 
+     new_null_vec_stt = math.multiply(mtx2Apply, null_vec_stt)
+     new_null_vec_end = math.multiply(mtx2Apply, null_vec_end)
      // 새로운 grid line 그리기. 이 grid는 선형변환이 apply 될 것임.
      plotNewGrid(new_vu, new_vd, new_hl, new_hr);
      // noLoop();
@@ -120,6 +136,18 @@ function draw() {
      newRedDot = math.multiply(mtx2Apply, redDot)
 
      drawRedDot();
+
+     // null space의 변화 그려주기
+     
+     push();
+     translate(width / 2, height / 2);
+     scale(1, -1); // 결과는 같아 보이지만, 의도한 것이 문제없이 표현되도록...
+     stroke(236, 245, 66);
+     strokeWeight(3);
+
+     line(new_null_vec_stt._data[0] * scl, new_null_vec_stt._data[1] * scl, new_null_vec_end._data[0] * scl, new_null_vec_end._data[1] * scl);
+     pop();
+
 
      fill(255);
      textSize(12)
@@ -231,3 +259,14 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
      pop();
 }
 
+function linspace(stt, end, steps){
+     var res = []
+     for(i=stt; i<=end; i+=((end-stt)/(steps-1))){
+          res.push(
+               i
+          )
+     }
+
+     res.push(end) // 마지막 원소가 왜 end로 끝나지 않을까?
+     return res
+}
