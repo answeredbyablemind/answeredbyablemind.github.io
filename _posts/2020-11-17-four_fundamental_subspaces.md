@@ -90,6 +90,14 @@ $$A = \begin{bmatrix}2 && 1 \\ 4 && 2\end{bmatrix}$$
 
 그러면, 행공간은 벡터 $\begin{bmatrix} 2 & 1 \end{bmatrix}$와 $\begin{bmatrix} 4 & 2 \end{bmatrix}$의 선형 결합으로 이루어진 선 상에 있는 모든 벡터들의 집합이다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic4.png">
+  <br>
+  그림 4. 행렬 A의 행벡터들의 선형결합으로 구성되는 행공간
+</p>
+
+또, 열공간은 벡터 $\begin{bmatrix} 2 & 4 \end{bmatrix}^T$와 $\begin{bmatrix} 1 & 2 \end{bmatrix}^T$의 선형 결합으로 이루어진 선 상에 있는 모든 벡터들의 집합이다.
+
 
 
 # null space의 시각화

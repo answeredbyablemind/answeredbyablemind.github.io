@@ -87,7 +87,7 @@ h.Primitive.LineWidth = 2;
 
 xx = linspace(-5,5,100);
 yy1 = 2 * xx;
-plot(xx, yy1,'b:');
+plot(xx, yy1,'b');
 % yy2 = -1/2 * xx;
 % plot(xx, yy2, 'b--');
 
