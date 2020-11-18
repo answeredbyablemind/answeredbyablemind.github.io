@@ -82,6 +82,9 @@ DEFINITION 1만 보면 조금 어렵게 들릴 수 있기 때문에 그림으로
   출처: [정보통신기술용어해설, Subspace, Vector Subspace](http://www.ktword.co.kr/abbr_view.php?m_temp1=4775&id=585&nav=2&m_search=S)
 </p>
 
+
+## 행공간과 열공간
+
 이런 관점에서 보았을 때, 우리에게 주어진 임의의 행렬 $A$의 모든 행 혹은 모든 열들의 선형결합으로 구성된(즉, span) 벡터공간은 부분 공간이며 각각을 행공간(row space), 열공간(column space)이라고 부른다.
 
 예를 들어 행렬 A가 아래와 같이 주어져있다고 해보자.
@@ -98,13 +101,24 @@ $$A = \begin{bmatrix}2 && 1 \\ 4 && 2\end{bmatrix}$$
 
 또, 열공간은 벡터 $\begin{bmatrix} 2 & 4 \end{bmatrix}^T$와 $\begin{bmatrix} 1 & 2 \end{bmatrix}^T$의 선형 결합으로 이루어진 선 상에 있는 모든 벡터들의 집합이다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic5.png">
+  <br>
+  그림 5. 행렬 A의 행벡터들의 선형결합으로 구성되는 열공간
+</p>
 
+## 영공간(null space)
 
-# null space의 시각화
+행렬 A에서 즉각적으로 인지하긴 어렵지만 영공간(null space)라는 부분 공간도 존재한다.
 
-null space도 부분공간이라는 점 강조할 것.
+영공간은 아래와 같은 조건을 만족하는 $\vec{x}$들의 집합이다.
 
-null space는 선형 변환 후의 값이 0이 되는 solution들을 모두 모아둔 것.
+$$A\vec{x} = 0$$
+
+즉, $A$라는 선형 변환 후에 모두 0을 출력하게 만들어주는 입력 벡터 $x$들인 것이다.
+
+그러면, 우선 $A$라는 선형변환이 어떻게 작동하는지 시각적으로 생각해보자.
+
 
 행렬 $A$의 null space를 시각화 할 것.
 
