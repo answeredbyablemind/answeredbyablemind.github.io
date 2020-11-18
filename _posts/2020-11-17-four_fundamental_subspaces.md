@@ -1,5 +1,5 @@
 ---
-title: 4개의 주요 부분 공간의 관계
+title: 4개 주요 부분 공간의 관계
 sidebar:
   nav: docs-ko
 aside:
