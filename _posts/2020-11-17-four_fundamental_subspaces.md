@@ -119,8 +119,10 @@ $$A\vec{x} = 0$$
 
 그러면, 우선 $A$라는 선형변환이 어떻게 작동하는지 시각적으로 생각해보자.
 
+$$\begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} $$
 
-행렬 $A$의 null space를 시각화 할 것.
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-17-four_fundamental_subspaces/linear_transformation_of_A/" width="325" height = "260" frameborder="0"></iframe></p>
+
 
 
 # Fundamental theorem of linear algebra
