@@ -75,13 +75,10 @@ DEFINITION 1만 보면 조금 어렵게 들릴 수 있기 때문에 그림으로
 가령, 2차원 실수 공간에서 부분 공간을 하나 생각해보자면 원점을 지나는 직선 상에 있는 모든 벡터들의 집합은 1차원 부분 공간을 이룬다.
 
 <p align = "center">
-  <img src = "http://www.ktword.co.kr/img_data/4775_1.jpg">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-17-four_fundamental_subspaces/pic3.png">
   <br>
   그림 3. 2차원 실수 공간 내의 1차원 부분공간
-  <br>
-  출처: [정보통신기술용어해설, Subspace, Vector Subspace](http://www.ktword.co.kr/abbr_view.php?m_temp1=4775&id=585&nav=2&m_search=S)
 </p>
-
 
 ## 행공간과 열공간
 
