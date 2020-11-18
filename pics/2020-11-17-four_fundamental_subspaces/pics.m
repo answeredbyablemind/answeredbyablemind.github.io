@@ -43,9 +43,9 @@ h.Primitive.LineWidth = 2;
 
 xx = linspace(-5,5,100);
 yy1 = 1/2 * xx;
-plot(xx, yy1,'r:');
-yy2 = -2 * xx;
-plot(xx, yy2, 'r--');
+plot(xx, yy1,'r');
+% yy2 = -2 * xx;
+% plot(xx, yy2, 'r--');
 
 %% column space ±×¸± °Í
 

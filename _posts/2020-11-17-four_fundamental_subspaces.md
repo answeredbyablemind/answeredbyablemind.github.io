@@ -10,41 +10,87 @@ tags: 선형대수
 
 ※ 시각화와 이해의 편의를 도모하기 위해 벡터와 행렬이 정의되는 체(field)는 실수(real number)로 한정함.
 
-맨 앞부분: The big picture of Linear Algebra 그림 넣을 것.
+<p align = "center">
+  <img width = "600" src = "https://openlab.citytech.cuny.edu/gangulimat2580spring2013-/files/2013/05/foursubspaces.jpg">
+  <br>
+  Fundamental Matrix Subspaces / Introduction to Linear Algebra(Gilbert Strang, 1993)
+</p>
+
+# 행렬은 선형변환이다
+
+선형대수학과 관련해서 지금까지 다루어 왔던 많은 논의들은 "[행렬은 선형변환이다](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)"라는 내용을 기반으로 하여 구성되었다.
+
+잠깐 복습하자면, 행렬은 벡터를 변환시켜 다른 벡터를 출력해준다[^1].
+
+<p align = "center">
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic1.png">
+<br>
+그림 1. 행렬은 벡터를 변환시켜주는 연산자이다.
+</p>
+
+조금 다른 말로 하자면, 행렬이라는 것은 벡터를 입력 받아 벡터를 출력해주는 함수임을 말하고 있다.
+
+그렇다면, 우리가 여기서 질문해볼 수 있는 것은 정말 선형 변환이 함수라면 함수의 근본적인 정의를 만족할 수 있는 것일까? 라는 점이다.
+
+다시 말해, 입력과 출력이 있다고 해서 다 함수라고 말할 수는 없는 것 처럼 우리가 말하는 **'선형 변환'이 함수라고 엄밀하게 부를 수 있는 것일까** 하는 점이다.
 
 # 함수(function)의 가장 근본적인 정의
 
-함수는 집합 간의 mapping.
+함수는 집합 간의 mapping으로 정의된다.
 
-함수의 정의
+엄밀한 함수에 대한 정의를 알아보면 다음과 같다.
 
-==> 집합 X, Y에 대해 각각을 정의역, 공역이라고 부르자.
+| DEFINITION 1. 함수|
+| --------- |
+| 집합 $X$, $Y$에 대해 각각을 정의역 공역이라고 부르자. 또, graph $f$는 곱집합 $X\times Y$의 부분집합이며, 이를 $f$의 그래프라고 하자.<br> 이 때, 임의의 $x\in X$에 대하여, $(x,y)\in\text{ graph } f$인 $y\in Y$가 유일하게 존재한다면, 이러한 $y$를 $f(x)$라고 쓴다.|
 
-또, graph $f$는 곱집합 $X\times Y$의 부분집합이며, 이를 $f$의 그래프라고 하자.
+DEFINITION 1만 보면 조금 어렵게 들릴 수 있기 때문에 그림으로 표현하면 다음과 같다.
 
-이 때, 임의의 $x\in X$에 대하여, $(x,y)\in\text{ graph } f$인 $y\in Y$가 유일하게 존재한다면, 이러한 $y$를 $f(x)$라고 쓴다.
+<p align = "center">
+  <img width = "400" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Codomain2.SVG/1280px-Codomain2.SVG.png">
+  <br>
+  그림 2. 함수는 정의역의 각 원소를 정확히 하나의 공역 원소에 대응시킨다.
+  <br>
+  여기서 함수 $f$의 정의역 $X$, 공역 $Y$, 치역 $f(X)$이다.
+</p>
 
+그림 2에서 함수 $f$의 정의역 $X$, 공역 $Y$, 치역 $f(X)$이며 각각 빨간색, 파란색, 노란색으로 표시하였다.
 
-함수가 하는 일은 정의역(domain) 에서 치역(range)으로의 사상.
+즉, 우리가 선형변환을 함수로 생각할 수 있다고 한다면, 엄밀하게는 함수의 근본적인 의미인 정의역->치역의 사상(mapping)에 대해 생각해볼 수 있어야 한다.
 
-그림으로 보면,
+그렇다면 선형변환에서 말하는 정의역, 공역, 치역은 각각 어떤 것일까?
 
-[//]:# (그림으로 그릴 것)
-
-여기서 정의역과 치역, 공역은 각각 ~색, ~색, ~색으로 표시하였다.
-
-
-즉, 선형변환을 함수로 생각할 수 있다고 하면 함수의 근본적인 의미인 정의역->치역의 사상(mapping)에 대해 생각해볼 수 있을 것이며, 선형변환의 정의역, 공역, 치역이 각각 어떤 것인지 생각해볼 수 있게 된다.
-
-그것이 바로 네 개의 주요 부분공간이 의미하는 바이다.
+그것이 바로 네 개의 주요 부분공간(row space, null space, column space, left null space)이 의미하는 바이다.
 
 # 부분공간(subspace)이란?
 
-정의 적어주고, 2차원 평면 상에서 1차원 직선으로 구성된 subspace 시각화 할 것.
+[벡터 공간](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html#3-%EB%B2%A1%ED%84%B0%EB%9E%80-%EB%B2%A1%ED%84%B0-%EA%B3%B5%EA%B0%84%EC%9D%98-%EC%9B%90%EC%86%8C)은 기본적으로 벡터를 원소로 하는 집합(set)이다.
 
-부분 공간은 부분 집합의 개념을 그대로 가져온 것. 다만, 부분 공간도 벡터 공간이기 때문에 벡터 공간의 성질을 만족해야 함.
+이 때, 벡터 공간에서는 단순히 원소만을 모아둔 것을 넘어 두 가지 연산(상수배와 덧셈)이 정의되어야 한다는 점이 단순 집합의 개념에서 조금 더 확장된 것이라는 점 또한 알아보았다.
 
-여기서 column space와 row space에 대한 내용 한번 더 언급할 것.
+부분 공간이라는 것은 부분 집합의 개념을 벡터 공간에 접목시킨 것으로 볼 수 있다.
+
+즉, 집합에서 부분 집합이 있는 것 처럼 벡터 공간에서도 벡터 공간의 기본 구조를 그대로 유지하는 작은 벡터 공간, 즉 부분 공간이 있다.
+
+가령, 2차원 실수 공간에서 부분 공간을 하나 생각해보자면 원점을 지나는 직선 상에 있는 모든 벡터들의 집합은 1차원 부분 공간을 이룬다.
+
+<p align = "center">
+  <img src = "http://www.ktword.co.kr/img_data/4775_1.jpg">
+  <br>
+  그림 3. 2차원 실수 공간 내의 1차원 부분공간
+  <br>
+  출처: [정보통신기술용어해설, Subspace, Vector Subspace](http://www.ktword.co.kr/abbr_view.php?m_temp1=4775&id=585&nav=2&m_search=S)
+</p>
+
+이런 관점에서 보았을 때, 우리에게 주어진 임의의 행렬 $A$의 모든 행 혹은 모든 열들의 선형결합으로 구성된(즉, span) 벡터공간은 부분 공간이며 각각을 행공간(row space), 열공간(column space)이라고 부른다.
+
+예를 들어 행렬 A가 아래와 같이 주어져있다고 해보자.
+
+$$A = \begin{bmatrix}2 && 1 \\ 4 && 2\end{bmatrix}$$
+
+그러면, 행공간은 벡터 $\begin{bmatrix} 2 & 1 \end{bmatrix}$와 $\begin{bmatrix} 4 & 2 \end{bmatrix}$의 선형 결합으로 이루어진 선 상에 있는 모든 벡터들의 집합이다.
+
+
 
 # null space의 시각화
 
