@@ -225,7 +225,9 @@ $\because sgn(f)$는 0에 대해 symmetric function이기 때문
 
 ## Signal의 Envelope
 <p align = "center">
-  <img src = "http://www.expertsmind.com/CMSImages/2091_Detection%20of%20AM%20signals.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-09_Hilbert_Transform/pic2.png">
+  <br>
+  그림 2. Signal의 envelope이 말하는 것.
   <br>
   (출처 : http://www.expertsmind.com/CMSImages/2091_Detection%20of%20AM%20signals.png)
 </p>
