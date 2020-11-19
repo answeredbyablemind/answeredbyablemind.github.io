@@ -12,9 +12,21 @@ tags: 신호처리
 
 # Kronecker Delta function
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic1.png">
+  <br>
+  그림 1. 크로네커 델타 함수
+</p>
+
 # Discrete Time Convoltuion의 유도과정
 
 ## DT domain에서의 convolution
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic2.png">
+  <br>
+  그림 2. 임의의 이산함수 $x[n]$
+</p>
 
 개인적인 생각으론 convolution의 개념은 Digital Signal에서 출발하지 않았을까 싶다. Digital Signal에서 convolution의 개념을 파악해보는 것이 더 쉽다. 즉, 임의의 DT signal $x[n]$ 은 다음과 같다고 할 수 있다.
 
@@ -28,7 +40,15 @@ $$
 x[n]=\cdots + x[n+2]\delta[-2]+x[n+1]\delta[-1]+x[n]\delta[0]+x[n-1]\delta[1]+x[n-2]\delta[2]+\cdots
 $$
  
-식 (1)과 (2)를 통해서 알 수 있는 것은 무엇인가? 그것은 $x[n]$ 이라는 임의의 함수를 $\delta [n-k]$ 라는 함수를 이용해서 분해해 생각해 볼 수 있다는 것이었다. 즉, $x[n]$ 은 다음과 같이 써도 무방할 것이다.
+식 (1)과 (2)를 통해서 알 수 있는 것은 무엇인가? 그것은 $x[n]$ 이라는 임의의 함수를 $\delta [n-k]$ 라는 함수를 이용해서 분해해 생각해 볼 수 있다는 것이었다. 
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic3.png">
+  <br>
+  그림 3. 임의의 이산함수 $x[n]$는 크로네커 델타 함수를 이용해 분해해 생각할 수 있다.
+</p>
+
+즉, $x[n]$ 은 다음과 같이 써도 무방할 것이다.
 
 $$
 x[n]= \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\delta[k]
