@@ -20,7 +20,7 @@ tags: 선형대수
 
 ## 행렬은 벡터들의 모음
 
-$n$개의 $n$차원 벡터 $a_i\in \Bbb{R}^n \text{ for } i = 1, 2, \cdots, n$이 있다고 생각해보자.
+$n$개의 $n$차원 벡터 $a_i\in \Bbb{R}^{n/times 1} \text{ for } i = 1, 2, \cdots, n$이 있다고 생각해보자.
 
 그러면 우리는 이 $n$개의 벡터들을 모아 $n\times n$ 차원의 행렬을 구성할 수 있다.
 
