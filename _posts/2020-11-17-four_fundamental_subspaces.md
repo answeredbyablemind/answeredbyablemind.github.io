@@ -16,6 +16,14 @@ tags: 선형대수
   Fundamental Matrix Subspaces / Introduction to Linear Algebra(Gilbert Strang, 1993)
 </p>
 
+# Prerequisites
+
+해당 post를 이해하기 위해선 다음의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [벡터의 기본 연산 (상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
+* [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
+* [행렬과 선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
+ 
 # 행렬은 선형변환이다
 
 선형대수학과 관련해서 지금까지 다루어 왔던 많은 논의들은 "[행렬은 선형변환이다](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)"라는 내용을 기반으로 하여 구성되었다.
