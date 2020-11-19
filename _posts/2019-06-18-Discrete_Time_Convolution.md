@@ -10,9 +10,11 @@ tags: 신호처리
 
 아래의 과정은 모두 LTI system에서 생각하는 것임을 명기한다.
 
-# 1. Discrete Time Convoltuion의 유도과정
+# Kronecker Delta function
 
-## 1.1 DT domain에서의 convolution
+# Discrete Time Convoltuion의 유도과정
+
+## DT domain에서의 convolution
 
 개인적인 생각으론 convolution의 개념은 Digital Signal에서 출발하지 않았을까 싶다. Digital Signal에서 convolution의 개념을 파악해보는 것이 더 쉽다. 즉, 임의의 DT signal $x[n]$ 은 다음과 같다고 할 수 있다.
 
@@ -35,7 +37,7 @@ $$
 한편, 식 (3)을 XY 좌표 평면에서 생각해보자. impulse train $( p[n]=\sum_{k=-\infty}^{\infty}{\delta [n-k]} )$ 을 생각해볼 때, 식 (3)은 각각의 impulse에 $x[k]$ 라는 weight factor를 곱해주어 더해진 것이라고도 생각해 볼 수 있다. 그것은 $k$가 정수일 때, $x[k]$ 는 일정한 값을 가지는 상수이기 때문이다.
 
 
-## 1.2 Impulse response와 convolution의 관계
+## Impulse response와 convolution의 관계
 
 또 한편, 입력 $x[n]$ 과 출력 $y[n]$ 의 관계를 다음과 같이 생각해보자.
 
