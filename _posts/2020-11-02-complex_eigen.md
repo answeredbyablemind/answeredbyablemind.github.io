@@ -228,7 +228,7 @@ $$v_2 = \begin{bmatrix} -i \\ 1 \end{bmatrix}$$
 
 중요하다고 생각하기 때문에 다시 말하자면 <u>두 개의 화살표가 하나의 복소 벡터를 표현하는 것</u>이다.
 
-## 복소 고윳값과 고유벡터의 상호작용
+## 회전 행렬과 고유벡터의 상호작용
 
 그럼 이제, 아래의 문구에 대해 다시 한번 생각해보자.
 
@@ -244,20 +244,20 @@ $$v_2 = \begin{bmatrix} -i \\ 1 \end{bmatrix}$$
 
 즉, 그림 5에서 표현한 복소 벡터 $\vec{v}_1$과 $\vec{v}_2$에 대해 고윳값만큼 상수배 해준다는 것의 의미는 고유벡터를 반시계방향 혹은 시계방향으로 $\theta$ 라디안 만큼 회전시킨다는 의미를 갖는다.
 
-아래의 그림 6과 7에 대해서 슬라이더를 움직여가며 회전행렬에 포함된 $\theta$에 대응하는 고윳값과 고유벡터의 상호작용에 대해 시각적으로 확인해보자.
+아래의 그림 6과 7에서 두 개의 서로 다른 고윳값에 대해 슬라이더를 움직여가며 회전 행렬과 고유벡터의 상호작용에 대해 시각적으로 확인해보자.
 
 $$A=\begin{bmatrix}\cos(\theta) && -\sin(\theta) \\ \sin(\theta) && \cos(\theta)\end{bmatrix}$$
 
 <p align="center">
   <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen1/" width="400" height = "400" frameborder="0"></iframe>
   <br>
-  그림 6. $\lambda_1 = \exp(i\theta)$에 대한 고윳값과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
+  그림 6. $\lambda_1 = \exp(i\theta)$인 경우의 회전행렬과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
 </p>
 
 <p align="center">
   <iframe  src="https://angeloyeo.github.io/p5/2020-11-02-complex_eigen/eigen2/" width="400" height = "400" frameborder="0"></iframe>
   <br>
-  그림 7. $\lambda_2 = \exp(-i\theta)$에 대한 고윳값과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
+  그림 7. $\lambda_2 = \exp(-i\theta)$인 경우의 회전행렬과 고유벡터의 상호작용. 우측 상단에 있는 흰색 호(arc)는 회전 각도에 해당.
 </p>
 
 다시 말하지만, 그림 6과 7의 결과는 결국 벡터가 상수배 되는 것이 복소수의 수준에서는 이렇게 표현될 수 있다는 것을 보여주는 것이다.
