@@ -267,3 +267,7 @@ $$A=\begin{bmatrix}\cos(\theta) && -\sin(\theta) \\ \sin(\theta) && \cos(\theta)
 # 참고 자료
 
 * [Visualizing the eigenvectors of a rotation](http://twistedoakstudios.com/blog/Post7254_visualizing-the-eigenvectors-of-a-rotation) / Twisted Oak Studios
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QWZXf3ChoxI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
