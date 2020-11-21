@@ -198,3 +198,19 @@ $$A = Q\Lambda Q^T$$
 
 따라서, 대칭 행렬의 고유벡터를 모아 얻은 행렬 $Q$는 회전행렬과 유사한 의미를 갖는다.
 
+
+$$Q = \begin{bmatrix}. & . \\ . & .\end{bmatrix}\notag$$
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_V/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 6. 선형변환 Q</p>
+
+$$\Lambda = \begin{bmatrix}. & . \\ . & .\end{bmatrix}\notag$$
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_D/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 7. 선형변환 $\Lambda$</p>
+
+$$Q^T = \begin{bmatrix}. & . \\ . & .\end{bmatrix}\notag$$
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_Vinv/" width="325" height = "260" frameborder="0"></iframe> <br> 애니메이션 8. 선형변환 $Q^T$</p>
+
+$V$, $\Lambda$, $V^{-1}$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_A_decomposed/" width="325" height = "280" frameborder="0"></iframe><br> 애니메이션 9. 선형변환 $Q$, $\Lambda$, $Q^T$을 독립적으로 적용 시켜보자.</p>
