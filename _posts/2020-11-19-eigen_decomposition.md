@@ -150,19 +150,44 @@ $$A = \begin{bmatrix}1.2 & -0.5 \\ -1.5 & 1.7\end{bmatrix}$$
 
 우선 행렬 $A$의 선형변환을 시각화하면 아래와 같다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="325" height = "260" frameborder="0"></iframe></p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="325" height = "260" frameborder="0"></iframe><br>
+애니메이션 1. 행렬 A의 선형변환</p>
 
 위 행렬의 고윳값 고유벡터는 아래와 같다.
 
-$$\lambda = \frac{\mp5\sqrt{13}+29}{20}$$
+$$\lambda = 0.5486 \text{ or } 2.3514$$
 
-$$\vec{v} = \begin{bmatrix}\frac{\pm\sqrt{13}+1}{6} \\ 1\end{bmatrix}$$
+$$\vec{v}_1 = \begin{bmatrix}0.6089 \\ 0.7933\end{bmatrix}$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_V/" width="325" height = "260" frameborder="0"></iframe></p>
+$$\vec{v}_2 = \begin{bmatrix}-0.3983 \\ 0.9172\end{bmatrix}$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_D/" width="325" height = "260" frameborder="0"></iframe></p>
+행렬 $A$의 고윳값과 고유벡터를 이용해 식 (10)과 같이 행렬 $A$를 분해하기 위한 행렬들을 써보면 아래와 같다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_Vinv/" width="325" height = "260" frameborder="0"></iframe></p>
+$$V = \begin{bmatrix}0.6089 & -0.3983 \\ 0.7933 & 0.9172\end{bmatrix}$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_decomposed/" width="325" height = "260" frameborder="0"></iframe></p>
+$$\Lambda = \begin{bmatrix}0.5486 & 0 \\ 0 & 2.3514\end{bmatrix}$$
+
+$$V^{-1} = \begin{bmatrix}1.0489 & 0.4555 \\ -0.9072 & 0.6963\end{bmatrix}$$
+
+그리고 행렬 $A$는 아래와 같이 쪼개서 생각해줄 수 있는 것이다.
+
+$$A = V\Lambda V^{-1} \notag$$
+
+$$\Rightarrow \begin{bmatrix}1.2 & -0.5 \\ -1.5 & 1.7\end{bmatrix}=\begin{bmatrix}0.6089 & -0.3983 \\ 0.7933 & 0.9172\end{bmatrix} \begin{bmatrix}0.5486 & 0 \\ 0 & 2.3514\end{bmatrix}\begin{bmatrix}1.0489 & 0.4555 \\ -0.9072 & 0.6963\end{bmatrix}$$
+
+$$V = \begin{bmatrix}0.6089 & -0.3983 \\ 0.7933 & 0.9172\end{bmatrix}\notag$$
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_V/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 2. 선형변환 V</p>
+
+$$\Lambda = \begin{bmatrix}0.5486 & 0 \\ 0 & 2.3514\end{bmatrix}\notag$$
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_D/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 3. 선형변환 $\Lambda$</p>
+
+$$V^{-1} = \begin{bmatrix}1.0489 & 0.4555 \\ -0.9072 & 0.6963\end{bmatrix}\notag$$
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_Vinv/" width="325" height = "260" frameborder="0"></iframe> <br> 애니메이션 4. 선형변환 $V^{-1}$</p>
+
+$V$, $\Lambda$, $V^{-1}$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_decomposed/" width="325" height = "280" frameborder="0"></iframe><br> 애니메이션 5. 선형변환 $V$, $\Lambda$, $V^{-1}$을 독립적으로 적용 시켜보자.</p>
 
