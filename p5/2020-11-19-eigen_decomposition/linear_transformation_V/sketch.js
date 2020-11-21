@@ -56,8 +56,8 @@ function setup() {
 
      // matrix 설정하기
      myMtx = [
-          [1.2, -0.5],
-          [-1.5, 1.7]
+          [0.6089, -0.3983],
+          [0.7933, 0.9172]
      ];
 
      myMtx = math.add(myMtx, math.matrix([

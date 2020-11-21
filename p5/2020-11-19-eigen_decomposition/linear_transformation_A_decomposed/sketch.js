@@ -8,14 +8,22 @@ let new_vu = [],
      new_hl = [],
      new_hr = [];
 // let slider1;
-let myMtx = [];
 let basisVecX = [],
      basisVecY = [],
      newBasisVecX = [],
      newBasisVecY = [];
 let redDot = [],
      newRedDot = [];
-let time;
+
+var slider1
+var slider2
+var slider3
+
+var V = []
+var D = []
+var Vinv = []
+
+let myMtx = [];
 
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
@@ -55,12 +63,33 @@ function setup() {
      // slider1 = createSlider(0, 1, 0, 0.01);
 
      // matrix 설정하기
-     myMtx = [
-          [1.2, -0.5],
-          [-1.5, 1.7]
-     ];
 
-     myMtx = math.add(myMtx, math.matrix([
+     V = [
+          [0.6089, -0.3983],
+          [0.7933, 0.9172]
+     ]
+
+     D = [
+          [0.5486, 0],
+          [0, 2.3514]
+     ]
+
+     Vinv = [
+          [1.0489, 0.4555],
+          [-0.9072, 0.6963]
+     ]
+
+     V = math.add(V, math.matrix([
+          [-1, 0],
+          [0, -1]
+     ]))
+
+     D = math.add(D, math.matrix([
+          [-1, 0],
+          [0, -1]
+     ]))
+
+     Vinv = math.add(Vinv, math.matrix([
           [-1, 0],
           [0, -1]
      ]))
@@ -77,7 +106,15 @@ function setup() {
           [1],
           [1]
      ]
-     time = 0;
+     
+     slider1 = createSlider(0,1,0,0.01)
+     slider2 = createSlider(0,1,0,0.01)
+     slider3 = createSlider(0,1,0,0.01)
+
+     slider1.style('width', '95px')
+     slider2.style('width', '95px')
+     slider3.style('width', '95px')
+
 
 }
 
@@ -86,16 +123,26 @@ function draw() {
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
-     // a = slider1.value();
-     a = 1/(1+Math.exp(-(time-6)))
-     time += 0.05;
-     if (time > 13){
-          time = 0;
-     }
-     mtx2Apply = math.add(math.matrix([
+     a1 = slider1.value()
+     a2 = slider2.value()
+     a3 = slider3.value()
+
+     mtx2Apply1 = math.add(math.matrix([
           [1, 0],
           [0, 1]
-     ]), math.multiply(a, myMtx));
+     ]), math.multiply(a1, V));
+
+     mtx2Apply2 = math.add(math.matrix([
+          [1, 0],
+          [0, 1]
+     ]), math.multiply(a2, D));
+     
+     mtx2Apply3 = math.add(math.matrix([
+          [1, 0],
+          [0, 1]
+     ]), math.multiply(a3, Vinv));
+
+     mtx2Apply = math.multiply(mtx2Apply1, math.multiply(mtx2Apply2, mtx2Apply3))
 
      for (let i = 0; i < vu.length; i++) {
           new_vu[i] = math.multiply(mtx2Apply, vu[i]);
