@@ -115,7 +115,7 @@ $$A = \begin{bmatrix}1.2 & -0.5 \\ -1.5 & 1.7\end{bmatrix}$$
 
 우선 행렬 $A$의 선형변환을 시각화하면 아래와 같다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="325" height = "260" frameborder="0"></iframe><br>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="300" height = "240" frameborder="0"></iframe><br>
 애니메이션 1. 행렬 A의 선형변환</p>
 
 위 행렬의 고윳값 고유벡터는 아래와 같다.
