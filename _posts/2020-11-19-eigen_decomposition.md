@@ -1,5 +1,5 @@
 ---
-title: 고윳값 분해(eigen-decomposition)
+title: 고윳값 분해(eigen-value decomposition)
 sidebar:
   nav: docs-ko
 aside:

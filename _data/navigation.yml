@@ -67,7 +67,7 @@ docs-ko:
         url:    2020/11/02/complex_eigen.html
       - title:  주성분분석(PCA)
         url:    2019/07/27/PCA.html
-      - title:  고윳값 분해(eigen-decomposition)
+      - title:  고윳값 분해(EVD)
         url:    2020/11/19/eigen_decomposition.html
       - title:  특이값분해(SVD)
         url:    2019/08/01/SVD.html
