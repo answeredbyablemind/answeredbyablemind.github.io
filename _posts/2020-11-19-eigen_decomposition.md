@@ -109,6 +109,8 @@ $$A = V\Lambda V^{-1}$$
 
 ## 고윳값 분해의 기하학적 의미
 
+고윳값 분해는 기하학적으로 행렬로 표현되는 선형변환은 '돌리고', '늘리고', '돌리고' 하는 세 가지의 과정을 통해 분해할 수 있음을 보여준다.
+
 고윳값 분해의 기하학적 의미를 이해하기 위해 아래와 같은 행렬 A를 고윳값 분해 해보도록 하자.
 
 $$A = \begin{bmatrix}1.2 & -0.5 \\ -1.5 & 1.7\end{bmatrix}$$
@@ -140,24 +142,36 @@ $$A = V\Lambda V^{-1} \notag$$
 
 $$\Rightarrow \begin{bmatrix}1.2 & -0.5 \\ -1.5 & 1.7\end{bmatrix}=\begin{bmatrix}0.6089 & -0.3983 \\ 0.7933 & 0.9172\end{bmatrix} \begin{bmatrix}0.5486 & 0 \\ 0 & 2.3514\end{bmatrix}\begin{bmatrix}1.0489 & 0.4555 \\ -0.9072 & 0.6963\end{bmatrix}$$
 
+아래는 고유벡터로 구성된 행렬 $V$의 선형 변환이다.
+
+자세히 보면 행렬 $V$의 선형변환은 회전과 유사한 형태를 보인다. 다만 변환 후의 기저 벡터의 길이가 모두 같은 것은 아니라는 점과 변환 시 뒤집어 지면서 변환 할 가능성이 있기 때문에 완전히 회전 변환과 같다고는 할 수 없다.
+
 $$V = \begin{bmatrix}0.6089 & -0.3983 \\ 0.7933 & 0.9172\end{bmatrix}\notag$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_V/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 2. 선형변환 V</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_V/" width="300" height = "240" frameborder="0"></iframe><br> 애니메이션 2. 선형변환 V</p>
+
+아래는 고윳값을 대각성분에 구성한 행렬 $\Lambda$의 선형변환이다. 대각성분만 존재하기 때문에 위 아래 혹은 양 옆으로 늘어나거나 줄어드는 변환만 보이는 것을 알 수 있다.
 
 $$\Lambda = \begin{bmatrix}0.5486 & 0 \\ 0 & 2.3514\end{bmatrix}\notag$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_D/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 3. 선형변환 $\Lambda$</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_D/" width="300" height = "240" frameborder="0"></iframe><br> 애니메이션 3. 선형변환 $\Lambda$</p>
+
+아래는 고유벡터로 구성된 행렬 $V$의 역행렬 $V^{-1}$의 선형 변환이다.
+
+$V^{-1}$의 선형변환도 $V$와 비슷하게 회전과 유사한 형태를 보인다. 다만 $V$와의 회전 방향과는 반대인 것을 알 수 있다.
 
 $$V^{-1} = \begin{bmatrix}1.0489 & 0.4555 \\ -0.9072 & 0.6963\end{bmatrix}\notag$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_Vinv/" width="325" height = "260" frameborder="0"></iframe> <br> 애니메이션 4. 선형변환 $V^{-1}$</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_Vinv/" width="300" height = "240" frameborder="0"></iframe> <br> 애니메이션 4. 선형변환 $V^{-1}$</p>
 
 $V$, $\Lambda$, $V^{-1}$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_decomposed/" width="325" height = "280" frameborder="0"></iframe><br> 애니메이션 5. 선형변환 $V$, $\Lambda$, $V^{-1}$을 독립적으로 적용 시켜보자.</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_decomposed/" width="320" height = "265" frameborder="0"></iframe><br> 애니메이션 5. 선형변환 $V$, $\Lambda$, $V^{-1}$을 독립적으로 적용 시켜보자.</p>
 
 
 # 대칭 행렬의 고윳값 분해
+
+대칭 행렬의 고윳값 분해는 일반 정방 행렬의 고윳값 분해와 비교했을 때 약간 특이한 점이 있다. 대칭 행렬의 경우 고유벡터가 서로 직교하는 성질을 보이기 때문이다.
 
 대칭 행렬은 아래와 같은 성질을 만족하는 행렬이다.
 
@@ -201,8 +215,8 @@ $$A = \begin{bmatrix}2 & 1 \\ 1 & 2\end{bmatrix}$$
 
 우선 행렬 $A$의 선형변환을 시각화하면 아래와 같다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_A/" width="325" height = "260" frameborder="0"></iframe><br>
-애니메이션 1. 행렬 A의 선형변환</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_A/" width="300" height = "240" frameborder="0"></iframe><br>
+애니메이션 6. 행렬 A의 선형변환</p>
 
 위 행렬의 고윳값 고유벡터는 아래와 같다.
 
@@ -228,18 +242,24 @@ $$Q^T = \begin{bmatrix}0.7071 & -0.7071 \\ 0.7071 & 0.7071\end{bmatrix}$$
 
 따라서, 대칭 행렬의 고유벡터를 모아 얻은 행렬 $Q$는 회전행렬과 유사한 의미를 갖는다.
 
+아래는 행렬 $Q$의 선형변환이다.
+
 $$Q = \begin{bmatrix}0.7071 & 0.7071 \\ -0.70713 & 0.7071\end{bmatrix}\notag$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_V/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 6. 선형변환 Q</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_V/" width="300" height = "240" frameborder="0"></iframe><br> 애니메이션 7. 선형변환 Q</p>
+
+아래는 고윳값을 대각성분에 구성한 행렬 $\Lambda$의 선형변환이다. 대각성분만 존재하기 때문에 위 아래 혹은 양 옆으로 늘어나거나 줄어드는 변환만 보이는 것을 알 수 있다.
 
 $$\Lambda \begin{bmatrix}1 & 0 \\ 0 & 3\end{bmatrix}\notag$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_D/" width="325" height = "260" frameborder="0"></iframe><br> 애니메이션 7. 선형변환 $\Lambda$</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_D/" width="300" height = "240" frameborder="0"></iframe><br> 애니메이션 8. 선형변환 $\Lambda$</p>
+
+아래는 행렬 $Q^T$의 선형변환이다. $Q^T$의 변환은 $Q$가 보여준 회전과 완전히 반대 방향으로 진행된다.
 
 $$Q^T = \begin{bmatrix}0.7071 & -0.7071 \\ 0.7071 & 0.7071\end{bmatrix}$$
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_Vinv/" width="325" height = "260" frameborder="0"></iframe> <br> 애니메이션 8. 선형변환 $Q^T$</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_Vinv/" width="300" height = "240" frameborder="0"></iframe> <br> 애니메이션 9. 선형변환 $Q^T$</p>
 
 $Q$, $\Lambda$, $Q^T$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_A_decomposed/" width="325" height = "280" frameborder="0"></iframe><br> 애니메이션 9. 선형변환 $Q$, $\Lambda$, $Q^T$을 독립적으로 적용 시켜보자.</p>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_A_decomposed/" width="320" height = "265" frameborder="0"></iframe><br> 애니메이션 10. 선형변환 $Q$, $\Lambda$, $Q^T$을 독립적으로 적용 시켜보자.</p>
