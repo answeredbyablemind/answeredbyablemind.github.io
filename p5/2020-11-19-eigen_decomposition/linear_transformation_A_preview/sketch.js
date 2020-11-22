@@ -111,10 +111,10 @@ function draw() {
      plotDimGrid();
      a1 = 1/(1+Math.exp(-(time-5)))
      a2 = 1/(1+Math.exp(-(time-12)))
-     a3 = 1/(1+Math.exp(-(time-20)))
+     a3 = 1/(1+Math.exp(-(time-18)))
 
      time += 0.05;
-     if (time > 30){
+     if (time > 26){
           time = 0;
      }
 
