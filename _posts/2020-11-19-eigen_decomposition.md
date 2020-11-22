@@ -231,7 +231,7 @@ $$\vec{q}_2 = \begin{bmatrix}0.7071 \\ 0.7071\end{bmatrix}$$
 
 행렬 $A$의 고윳값과 고유벡터를 이용해 식 (10)과 같이 행렬 $A$를 분해하기 위한 행렬들을 써보면 아래와 같다.
 
-$$Q = \begin{bmatrix}0.7071 & 0.7071 \\ -0.70713 & 0.7071\end{bmatrix}$$
+$$Q = \begin{bmatrix}0.7071 & 0.7071 \\ -0.7071 & 0.7071\end{bmatrix}$$
 
 $$\Lambda = \begin{bmatrix}1 & 0 \\ 0 & 3\end{bmatrix}$$
 
