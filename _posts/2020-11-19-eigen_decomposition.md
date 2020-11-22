@@ -10,7 +10,7 @@ tags: 선형대수
 
 ※ 시각화와 이해의 편의를 도모하기 위해 벡터와 행렬이 정의되는 체(field)는 실수(real number)로 한정함.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="300" height = "240" frameborder="0"></iframe> <br> 원래의 선형변환 A <br> <iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_preview/" width="300" height = "240" frameborder="0"></iframe><br>EVD를 이용해 세 개의 단계로 분해한 선형변환 A<br><br><b>EVD는 기존의 선형변환을 '돌리기','늘리기','돌리기'의 세 과정으로 분해해서 생각할 수 있게 해준다.</b><br>
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="300" height = "240" frameborder="0"></iframe> <br> 원래의 선형변환 $A$ <br> <iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_preview/" width="300" height = "240" frameborder="0"></iframe><br>EVD를 이용해 세 개의 단계로 분해한 선형변환 $A$<br><br><b>EVD는 기존의 선형변환을 '돌리기','늘리기','돌리기'의 세 과정으로 분해해서 생각할 수 있게 해준다.</b><br>
 </p>
 
 # Prerequisites
@@ -244,24 +244,6 @@ $$Q^T = \begin{bmatrix}0.7071 & -0.7071 \\ 0.7071 & 0.7071\end{bmatrix}$$
 (여기서 '회전 시켜 놓은 것 같은'이라고 말하는 것은 행렬 $Q$의 열벡터의 위치에 따라 기저벡터가 뒤집혀서 선형변환 될 수도 있기 때문이다.)
 
 따라서, 대칭 행렬의 고유벡터를 모아 얻은 행렬 $Q$는 회전행렬과 유사한 의미를 갖는다.
-
-아래는 행렬 $Q$의 선형변환이다.
-
-$$Q = \begin{bmatrix}0.7071 & 0.7071 \\ -0.70713 & 0.7071\end{bmatrix}\notag$$
-
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_V/" width="300" height = "240" frameborder="0"></iframe><br> 애니메이션 7. 선형변환 Q</p>
-
-아래는 고윳값을 대각성분에 구성한 행렬 $\Lambda$의 선형변환이다. 대각성분만 존재하기 때문에 위 아래 혹은 양 옆으로 늘어나거나 줄어드는 변환만 보이는 것을 알 수 있다.
-
-$$\Lambda \begin{bmatrix}1 & 0 \\ 0 & 3\end{bmatrix}\notag$$
-
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_D/" width="300" height = "240" frameborder="0"></iframe><br> 애니메이션 8. 선형변환 $\Lambda$</p>
-
-아래는 행렬 $Q^T$의 선형변환이다. $Q^T$의 변환은 $Q$가 보여준 회전과 완전히 반대 방향으로 진행된다.
-
-$$Q^T = \begin{bmatrix}0.7071 & -0.7071 \\ 0.7071 & 0.7071\end{bmatrix}$$
-
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_Vinv/" width="300" height = "240" frameborder="0"></iframe> <br> 애니메이션 9. 선형변환 $Q^T$</p>
 
 $Q$, $\Lambda$, $Q^T$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
 
