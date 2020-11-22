@@ -109,9 +109,9 @@ function draw() {
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
-     a1 = 1/(1+Math.exp(-(time-5)))
+     a3 = 1/(1+Math.exp(-(time-5)))
      a2 = 1/(1+Math.exp(-(time-12)))
-     a3 = 1/(1+Math.exp(-(time-18)))
+     a1 = 1/(1+Math.exp(-(time-18)))
 
      time += 0.05;
      if (time > 26){
