@@ -132,6 +132,8 @@ $$proj_A = A(A^TA)^{-1}A^T$$
 
 $$proj_a = a\frac{a^T}{a^Ta}$$
 
+[//]:# (aa^T의 추가적인 의미가 있을까? --> 작성 할 것)
+
 # Gram-Schmidt 과정
 
 # QR 분해
