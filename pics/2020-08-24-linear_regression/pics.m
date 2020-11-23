@@ -114,8 +114,8 @@ XLIMs = xlim;
 
 xx = linspace(XLIMs(1), XLIMs(2), 100);
 yy = c1.p1 * xx + c1.p2;
-hold on;
-plot(xx, yy, 'r','linewidth',2)
+% hold on;
+% plot(xx, yy, 'r','linewidth',2)
 
 saveas(gcf, 'pic7.png')
 
