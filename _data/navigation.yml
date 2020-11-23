@@ -77,7 +77,7 @@ docs-ko:
         url:    2020/11/23/gram_schmidt.html
       - title:  4개 주요 부분 공간의 관계
         url:    2020/11/17/four_fundamental_subspaces.html
-      - title:  특이값분해(SVD)
+      - title:  특이값 분해(SVD)
         url:    2019/08/01/SVD.html
       - title:  선형대수와 푸리에 변환
         url:    2020/11/08/linear_algebra_and_Fourier_transform.html
