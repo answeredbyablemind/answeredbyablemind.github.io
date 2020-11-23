@@ -138,7 +138,7 @@ $$y(t) = O_n\{x(t)\}$$
 
 그렇다면, 앞서 확인한 연속신호 컨볼루션의 정의에 의해
 
-$$ = O_n\{\int_{-\infty}^{\infty}{x(k) \delta(t-k)dk}\}$$
+$$ = O_n\left\lbrace\int_{-\infty}^{\infty}{x(k) \delta(t-k)dk}\right\rbrace$$
 
 LTI system의 성질에 의해,
 
