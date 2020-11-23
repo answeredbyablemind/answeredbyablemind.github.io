@@ -14,6 +14,7 @@ tags: 선형대수
 
 본 post를 잘 이해하기 위해서는 아래의 내용에 대해 알고 오시는 것을 추천드립니다.
 
+* [벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
 * [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
 * [선형회귀(선형대수학의 관점)](https://angeloyeo.github.io/2020/08/24/linear_regression.html)
 
@@ -39,11 +40,19 @@ tags: 선형대수
 
 또 한가지 그림을 보자.
 
-[//]:# (직교 기저 좌표계와 비직교 기저 좌표계)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic2.png">
+  <br>
+  그림 2. 직교 기저와 비직교 기저
+  <br>
+  <a href = "https://en.wikipedia.org/wiki/Vector_space"> 그림 출처: 위키피디아, Vector space </a>
+</p>
+
+위의 그림 2를 보면 동일한 벡터 $v$를 직교 좌표계와 비직교 좌표계를 이용해 표현하였다.
 
 우리에게 익숙한 좌표계는 직교좌표계이다. 그 중에서도 정규 표준 기저를 기반으로 하는 좌표계를 이용할 때 가장 편하게 데이터를 표현할 수 있을 것이다.
 
-
+그렇다면, 우리가 비직교 좌표계의 기저벡터(그림 2에서 $f_1$과 $f_2$)를 받았을 때 이를 이용해 직교 좌표계로 변환시킬 수 있다면 편리한 점들이 많이 있을 것이다.
 
 ## 직교 행렬
 
@@ -84,10 +93,10 @@ $$Q^T = Q^{-1}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic5.png">
 <br>
-그림 2. 행렬 $A$의 열공간과 그 공간에 속하지 않는 벡터 $b$, 그리고, 벡터 $b$를 열공간에 정사영하여 얻은 벡터 $p$
+그림 3. 행렬 $A$의 열공간과 그 공간에 속하지 않는 벡터 $b$, 그리고, 벡터 $b$를 열공간에 정사영하여 얻은 벡터 $p$
 </p>
 
-[선형회귀(선형대수학의 관점)](https://angeloyeo.github.io/2020/08/24/linear_regression.html) 편에서는 그림 2의 $p$ 벡터 보다는 행렬 $A$와 벡터 $e$의 관계에 대해 관심을 가졌지만, 이번에는 벡터 $p$에 좀 더 관심을 가져보자.
+[선형회귀(선형대수학의 관점)](https://angeloyeo.github.io/2020/08/24/linear_regression.html) 편에서는 그림 3의 $p$ 벡터 보다는 행렬 $A$와 벡터 $e$의 관계에 대해 관심을 가졌지만, 이번에는 벡터 $p$에 좀 더 관심을 가져보자.
 
 행렬 $A$의 행의 개수가 열의 개수보다 많은 경우 우리는 최적의 해를 다음과 같이 찾을 수 있었다.
 
