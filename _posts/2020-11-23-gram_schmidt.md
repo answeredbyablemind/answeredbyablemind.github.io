@@ -89,10 +89,42 @@ $$\vec{p} = A\hat{x} = A(A^TA)^{-1}A^Tb$$
 
 일반적으로, 임의의 벡터 $\vec{b}$를 $A$의 열공간으로 투영(projection)해주는 행렬은
 
-$$proj_A = A(A^TA)^{-1}A^T = A\frac{A^T}{A^TA}$$
+$$proj_A = A(A^TA)^{-1}A^T$$
 
 이다.
+
+만약 $A$가 열벡터 하나라면 다음과 같이 쓸 수도 있을 것이다.
+
+$$proj_a = a\frac{a^T}{a^Ta}$$
 
 # Gram-Schmidt 과정
 
 # QR 분해
+
+$$A = QR$$
+
+$$\begin{bmatrix}
+  | & | & \text{ } & | \\ 
+  a_1 & a_2 &\cdots & a_n \\ 
+  | & | & \text{ } & | \end{bmatrix} =
+  \begin{bmatrix}
+  | & | & \text{ } & | \\ 
+  q_1 & q_2 &\cdots & q_n \\ 
+  | & | & \text{ } & | \end{bmatrix}
+  \begin{bmatrix}
+  a_1\cdot q_1 & a_2\cdot q_1 & \cdots & a_n\cdot q_1 \\
+  a_1\cdot q_2 & a_2\cdot q_2 & \cdots & a_n\cdot q_2 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_1\cdot q_n & a_2\cdot q_n & \cdots & a_n\cdot q_n \\
+  \end{bmatrix}$$
+
+$$=\begin{bmatrix}
+  | & | & \text{ } & | \\ 
+  q_1 & q_2 &\cdots & q_n \\ 
+  | & | & \text{ } & | \end{bmatrix}
+  \begin{bmatrix}
+  a_1\cdot q_1 & a_2\cdot q_1 & \cdots & a_n\cdot q_1 \\
+  0 & a_2\cdot q_2 & \cdots & a_n\cdot q_2 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & \cdots & a_n\cdot q_n \\
+  \end{bmatrix}$$
