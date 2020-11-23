@@ -10,7 +10,9 @@ tags: 선형대수
 
 ※ 시각화와 이해의 편의를 도모하기 위해 벡터와 행렬이 정의되는 체(field)는 실수(real number)로 한정함.
 
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A/" width="300" height = "240" frameborder="0"></iframe> <br> 원래의 선형변환 $A$ <br> <iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_preview/" width="300" height = "240" frameborder="0"></iframe><br>EVD를 이용해 세 개의 단계로 분해한 선형변환 $A$<br><br><b>EVD는 기존의 선형변환을 '돌리기','늘리기','돌리기'의 세 과정으로 분해해서 생각할 수 있게 해준다.</b><br>
+<p align="center">
+<img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-19-eigen_decomposition/pic0.png"><br>
+EVD는 기존의 선형변환을 '돌리기','늘리기','돌리기'의 세 과정으로 분해해서 생각할 수 있게 해준다.
 </p>
 
 # Prerequisites
@@ -147,7 +149,15 @@ $$\Rightarrow \begin{bmatrix}1.2 & -0.5 \\ -1.5 & 1.7\end{bmatrix}=\begin{bmatri
 
 아래는 고유벡터로 구성된 행렬 $V$의 선형 변환이다.
 
-자세히 보면 행렬 $V$의 선형변환은 회전과 유사한 형태를 보인다. 다만 변환 후의 기저 벡터의 길이가 모두 같은 것은 아니라는 점과 변환 시 뒤집어 지면서 변환 할 가능성이 있기 때문에 완전히 회전 변환과 같다고는 할 수 없다.
+자세히 보면 행렬 $V$의 선형변환은 회전과 유사한 형태를 보인다. 
+
+왜냐하면 $V$에 들어간 열벡터들은 모두 고유벡터인데 고유벡터는 방향만을 표시하므로 그 길이는 1이 되기 때문이다.
+
+따라서, 원점에서부터 시작하는 길이가 1인 벡터들이 두 개가 서로 다른 방향을 보여주고 있으니 회전 변환과 유사한 역할을 할 수 있다.
+
+다만 변환 후의 기저 벡터의 길이가 모두 같은 것은 아니라는 점과 변환 시 뒤집어 지면서 변환 할 가능성이 있기 때문에 완전히 회전 변환과 같다고는 할 수 없다.
+
+또, V의 변환 후 기저벡터들의 각도가 90도를 이루지 않는다는 점도 주의해야 할 점이다.
 
 $$V = \begin{bmatrix}0.6089 & -0.3983 \\ 0.7933 & 0.9172\end{bmatrix}\notag$$
 
@@ -167,7 +177,9 @@ $$V^{-1} = \begin{bmatrix}1.0489 & 0.4555 \\ -0.9072 & 0.6963\end{bmatrix}\notag
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_Vinv/" width="300" height = "240" frameborder="0"></iframe> <br> 애니메이션 4. 선형변환 $V^{-1}$</p>
 
-$V$, $\Lambda$, $V^{-1}$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
+$V^{-1}$, $\Lambda$, $V$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
+
+아래의 Applet에서 세 개의 슬라이드는 각각 $V$, $\Lambda$, $V^{-1}$에 해당한다.
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_A_decomposed/" width="320" height = "265" frameborder="0"></iframe><br> 애니메이션 5. 선형변환 $V$, $\Lambda$, $V^{-1}$을 독립적으로 적용 시켜보자.</p>
 
@@ -245,7 +257,9 @@ $$Q^T = \begin{bmatrix}0.7071 & -0.7071 \\ 0.7071 & 0.7071\end{bmatrix}$$
 
 따라서, 대칭 행렬의 고유벡터를 모아 얻은 행렬 $Q$는 회전행렬과 유사한 의미를 갖는다.
 
-$Q$, $\Lambda$, $Q^T$의 각각의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
+$Q^T$, $\Lambda$, $Q$의 선형 변환을 차례대로 적용하면 원래의 선형 변환 $A$와 같은 것을 알 수 있다.
+
+아래의 Applet에서 세 개의 슬라이드는 각각 $Q$, $\Lambda$, $Q^T$에 해당한다.
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2020-11-19-eigen_decomposition/linear_transformation_sym_A_decomposed/" width="320" height = "265" frameborder="0"></iframe><br> 애니메이션 7. 선형변환 $Q$, $\Lambda$, $Q^T$을 독립적으로 적용 시켜보자.</p>
 
