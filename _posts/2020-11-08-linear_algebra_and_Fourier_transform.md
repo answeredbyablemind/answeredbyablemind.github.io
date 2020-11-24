@@ -151,7 +151,7 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 \begin{bmatrix} 
   1 && 1 && 1 && \cdots  && 1 \\ 
   1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
-  1 && \vdots && \vdots && \ddots  && \vdots \\
+  \vdots && \vdots && \vdots && \ddots  && \vdots \\
   1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[N-1]\end{bmatrix}$$
 
 
@@ -257,12 +257,12 @@ cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개�
 $$F^HF = \begin{bmatrix} 
   1 && 1 && 1 && \cdots  && 1 \\ 
   1 && w^{*1} && w^{*2} && \cdots  && w^{*(N-1)} \\ 
-  1 && \vdots && \vdots && \ddots  && \vdots \\
+  \vdots && \vdots && \vdots && \ddots  && \vdots \\
   1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}
   \begin{bmatrix} 
   1 && 1 && 1 && \cdots  && 1 \\ 
   1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
-  1 && \vdots && \vdots && \ddots  && \vdots \\
+  \vdots && \vdots && \vdots && \ddots  && \vdots \\
   1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}$$
 
 [//]:# (식 14)
@@ -272,6 +272,20 @@ $$=N\begin{bmatrix}1 && 0 && \cdots && 0 \\ 0 && 1 && \cdots && 0 \\ \vdots && \
 [//]:# (식 15)
 
 여기서 superscript '*'은 complex conjugate이다.
+
+이를 확인하기 위해 $F^HF$의 계산 결과의 $m$ 번째 행, $n$ 번째 열을 생각해보자.
+
+$$F^H_{m,:}F_{:,n} = \begin{bmatrix}1 & w^{*\cdot m \cdot 1} & \cdots & w^{*\cdot m \cdot (N-1)}\end{bmatrix}\cdot \begin{bmatrix}1\\w^{1\cdot n} \\ \vdots \\ w^{(N-1)\cdot n}\end{bmatrix}$$
+
+$$=1+w^{*\cdot m\cdot 1}w^{1\cdot n}+\cdots+w^{*\cdot m\cdot (N-1)}w^{(N-1)\cdot n}$$
+
+$$=\sum_{k=0}^{N-1}w^{*m\cdot k}w^{k\cdot n}$$
+
+$$=\sum_{k=0}^{N-1}\exp\left(j\frac{2\pi}{N}m\cdot k\right)\exp\left(-j\frac{2\pi}{N}n\cdot k\right)$$
+
+$$=\sum_{k=0}^{N-1}\exp\left(j\frac{2\pi}{N}(m-n)\cdot k\right)$$
+
+따라서 $m=n$인 경우 $F^H_{m,:}F_{:,n}=N$이고, $m\neq n$인 경우 $F^H_{m,:}F_{:,n}=0$이다.
 
 식 (15)의 결과와 같이 푸리에 행렬 $F$의 각 열들은 각 열 자신과 내적 시에는 $N$이라는 값을 갖고 이외의 열과 내적했을 때는 0이라는 결과를 얻어주게 되므로, 각각의 열들은 서로 직교한다는 것을 알 수 있다.
 
@@ -289,7 +303,7 @@ $$\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[n-1]\end{bmatrix} =
 \frac{1}{N}\begin{bmatrix} 
   1 && 1 && 1 && \cdots  && 1 \\ 
   1 && w^{*1} && w^{*2} && \cdots  && w^{*(N-1)} \\ 
-  1 && \vdots && \vdots && \ddots  && \vdots \\
+  \vdots && \vdots && \vdots && \ddots  && \vdots \\
   1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix}$$
 
 이며, 이것은 inverse DFT의 식과 같다는 것 또한 쉽게 알 수 있을 것이다.
