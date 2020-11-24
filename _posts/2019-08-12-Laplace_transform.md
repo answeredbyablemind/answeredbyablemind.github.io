@@ -43,9 +43,9 @@ tags: 신호처리
 상수부분 $\exp(-\sigma t)$는 감쇄를, 허수부분 $\exp(-j\omega t)$는 오일러 공식에 의해 정현파 형태로 표현되게 된다. 이 실수부와 허수부를 곱하게 되면 감쇄하는 진동운동이 표현되는 것이다.
 
 <p align = "center">
-  <img width = "600" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/DampedSine.png/525px-DampedSine.png">
+  <img width = "400" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/DampedSine.png/525px-DampedSine.png">
   <br>
-  그림 1. 진동하며 감쇄하는 운동의 표현. y=(e^-x)(cos(2*pi*x))을 그린 것. 출처: Wikipedia
+  그림 1. 진동하며 감쇄하는 운동의 표현. $y=(e^{-x})(\cos(2*\pi*x))$을 그린 것. 출처: Wikipedia
 </p>
 
 거기에 라플라스 변환을 이용해서 분석하게 되는 시스템은 대부분 causal system이다. Causal System이 의미하는 것은 무언인가? 그것은 input signal이 $t\geq 0$ 에서 시작된다는 것을 의미하거나 또는 $t<0$에서 input signal 값이 0인 경우를 의미한다. 
