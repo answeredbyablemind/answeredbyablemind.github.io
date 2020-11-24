@@ -127,7 +127,7 @@ $$X[0] = x[0]\exp\left(-j\frac{2\pi 0}{N}0\right) + x[1]\exp\left(-j\frac{2\pi 0
 
 $$=x[0]\cdot 1 + x[1]\cdot 1 + \cdots + x[N-1] \cdot 1$$
 
-$$X[1] = x[0]\exp(\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp(\left(-j\frac{2\pi 1}{N}1\right)+x[N-1]\exp(\left(-j\frac{2\pi 1}{N}(N-1)\right)$$
+$$X[1] = x[0]\exp(\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp\left(-j\frac{2\pi 1}{N}1\right)+\cdots +x[N-1]\exp(\left(-j\frac{2\pi 1}{N}(N-1)\right)$$
 
 여기서 표기의 단순화를 위해 
 
@@ -139,7 +139,7 @@ $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
 그러면,
 
-$$\Rightarrow x[0]w^0 + x[1] w^1 + \cdots + x[n-1]w^{N-1}$$
+$$X[1]\Rightarrow x[0]w^0 + x[1] w^1 + \cdots + x[n-1]w^{N-1}$$
 
 이런 방식으로 $i$번째 주파수 성분 $X[i]$는 다음과 같이 계산할 수 있음을 알 수 있다.
 
@@ -258,8 +258,8 @@ $$F^HF = \begin{bmatrix}
   1 && 1 && 1 && \cdots  && 1 \\ 
   1 && w^{*1} && w^{*2} && \cdots  && w^{*(N-1)} \\ 
   \vdots && \vdots && \vdots && \ddots  && \vdots \\
-  1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}
-  \begin{bmatrix} 
+  1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}\times\notag$$
+  $$\begin{bmatrix} 
   1 && 1 && 1 && \cdots  && 1 \\ 
   1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
   \vdots && \vdots && \vdots && \ddots  && \vdots \\
