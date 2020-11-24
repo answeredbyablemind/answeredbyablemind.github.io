@@ -184,7 +184,7 @@ $$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
   <br> 그림 4. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
 </p>
 
-다시 말해 식 (40)에 있는 $w$는 다음과 같이 계산하는데,
+다시 말해 식 (8)에 있는 $w$는 다음과 같이 계산하는데,
 
 $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
