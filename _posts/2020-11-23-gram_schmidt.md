@@ -1,5 +1,5 @@
 ---
-title: 그람-슈미트 과정(Gram-Schmidt process)
+title: QR 분해
 sidebar:
   nav: docs-ko
 aside:

@@ -73,7 +73,7 @@ docs-ko:
         url:    2020/08/24/linear_regression.html
       - title:  의사역행렬의 기하학적 의미
         url:    2020/11/11/pseudo_inverse.html
-      - title:  그람-슈미트 과정
+      - title:  QR 분해
         url:    2020/11/23/gram_schmidt.html
       - title:  4개 주요 부분 공간의 관계
         url:    2020/11/17/four_fundamental_subspaces.html
