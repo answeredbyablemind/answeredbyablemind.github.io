@@ -66,15 +66,25 @@ $$H(s) = \frac
 
 $$H(s) = \frac{1}{s-p_l}$$
 
-$$\Rightarrow \mathfrak{L}\left[k_l\exp(p_l t)\right] =\int_{0}^{\infty}k_l\exp(p_l t) \times \exp(-st)$$
+$$\Rightarrow \mathfrak{L}\left[k_l\exp(p_l t)\right] =\int_{0}^{\infty}k_l\exp(p_l t) \exp(-st) dt$$
 
 $$=\int_{0}^{\infty}k_l \exp\left((p_l-s)t\right)dt$$
 
-$$ = \frac{k_l}{p_l-s}\exp\left((p_l-s)t\right)\big|_{0}^{\infty}$$
+[//]:# (식 5)
 
-$$=\frac{k_l}{p_l-s}(0-1) = \frac{k_l}{s-p_l}$$
+$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\exp\left((p_l-s)t\right)|^{b}_{0}$$
 
-여기서 $(p_l-s) < 0$임을 가정하였음.
+$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\left\lbrace\exp\left((p_l-s)b\right)- 1\right\rbrace$$
+
+$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\left\lbrace\exp\left(p_lb-sb\right)- 1\right\rbrace$$
+
+$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\left\lbrace\exp(p_lb)\cdot \exp(-sb) - 1\right\rbrace$$
+
+$$=\frac{k_l}{p_l-s}\left\lbrace 0 - 1\right\rbrace$$
+
+[//]:# (식 10)
+
+$$ = \frac{k_l}{s-p_l}$$
 
 이 때, $p_l$은 pole의 위치를 의미하게 된다.
 
@@ -84,7 +94,7 @@ $$p_l = \sigma_l + j\omega$$
 
 $$\therefore \exp(p_l t) =\exp(\sigma_l t+ j\omega t) = \exp(\sigma_l t) \times \exp(j\omega t)$$
 
-식 (9)에서 $\exp(j\omega t)$가 의미하는 것은 각속도 $\omega$로 회전하는 원의 표현이며, $\omega$의 크기가 커질 수록 빠르게 회전하는 것을 의미한다.
+식 (13)에서 $\exp(j\omega t)$가 의미하는 것은 각속도 $\omega$로 회전하는 원의 표현이며, $\omega$의 크기가 커질 수록 빠르게 회전하는 것을 의미한다.
 
 
 한편, $\exp(\sigma_l t)$는 원의 반지름이 시간에 따라 어떻게 변하는가를 의미하는데, $\sigma_l < 0$인 경우 원의 반지름은 시간이 지나갈 수록 줄어들게 되며, $\sigma_l = 0$인 경우 원의 반지름은 그대로 유지되며, $\sigma_l > 0$인 경우 원의 반지름은 시간이 지나갈수록 커진다는 뜻이다. 따라서 입력신호 $k_l \exp(p_l t)$의 $p_l$의 실수부의 값의 부호에 따라 입력 신호는 다음과 같이 표현될 수 있다. 
@@ -127,7 +137,7 @@ $$\mathfrak{L}\left[f(t)\right] = \mathfrak{F}\left[\exp(-\sigma t)f(t)\right]$$
 [^2]: 그래서 우리가 배우는 과목 이름이 Signals and System이고 주인공들이 푸리에 변환과 라플라스 변환이다. 물론 Continuous Time Domain에 한해서...
 
 <p align = "center">
-  <img width = "600" height = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
   <br>
   그림 4. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
 </p>
@@ -135,11 +145,11 @@ $$\mathfrak{L}\left[f(t)\right] = \mathfrak{F}\left[\exp(-\sigma t)f(t)\right]$$
 그림 4에서는 s-plane과 Fourier transform domain과의 관계도 표현하고 있다. 즉, 전달함수 $X(s)$를 구한 뒤 $s=j\omega$를 대입하면 주파수 응답을 얻을 수 있다는 것이다. 그것을 그림으로 표현한 것은 다음과 같다. 
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic5.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic5.png">
   <br>
   그림 5. 복소평면(특히, s 평면) 상에 표현된 라플라스 변환과 푸리에 변환의 관계
   <br>
-  출처: https://www.quora.com/Signal-Processing-What-are-the-differences-between-Laplace-and-Fourier-Transform
+  <a href = "https://www.quora.com/Signal-Processing-What-are-the-differences-between-Laplace-and-Fourier-Transform"> 그림 출처: Quora의 라플라스 변환과 푸리에 변환의 차이점 </a>
 </p>
 
 예를 들어 다음과 같은 lowpass filter의 transfer function을 얻었다고 하자.
