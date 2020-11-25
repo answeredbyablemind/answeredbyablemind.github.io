@@ -54,7 +54,7 @@ tags: 통계학 머신러닝
 그렇다면, 삼색이 고양이를 봤다고 하면 높은 확률로 암컷이라고 생각하지 않을까?
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic1.jpg">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-04-naive_bayes/pic1.jpg">
   <br>
   그림 1. 성염색체와 관련된 이유로 삼색이 고양이는 99%가 암컷이라 알려져 있다.
 </p>

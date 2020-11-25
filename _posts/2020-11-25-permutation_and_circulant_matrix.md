@@ -1,11 +1,11 @@
 ---
-title: 치환행렬과 순환행렬을 이용한 신호 표현
+title: 순환행렬과 컨볼루션
 sidebar:
   nav: docs-ko
 aside:
   toc: true
 key: 20201125
-tags: 선형대수
+tags: 선형대수 신호처리
 ---
 
 # Prerequisites
@@ -14,9 +14,7 @@ tags: 선형대수
 
 * [이산 시간 컨볼루션](https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html)
 
-# 치환행렬을 이용한 신호의 분해
-
-## cyclic permutation matrix 소개
+# cyclic permutation matrix 소개
 
 치환행렬은 행의 순서를 바꿔주는 행렬이다.
 
@@ -66,19 +64,25 @@ $$P^2 = \begin{bmatrix}
 
 행을 $n$ 번 shift 시켜주기 위해선 $P$ 행렬을 $n$ 번 곱해줄 수 있다.
 
-## 신호(벡터)의 분해
+# 순환 행렬을 이용한 신호(벡터)의 분해
 
 신호(벡터)의 분해를 생각하기 위해 신호의 분해의 기초가 되는 discrete unit sample function을 생각해보자. discrete unit sample function의 기호는 $\delta$로 쓰도록 하자.
 
 $$\delta =\begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix}$$
 
-식 (1)과 같은 임의의 벡터 $x$는 discrete unit sample function $\delta$와 cyclic permutation matrix $P$를 이용해 다음과 같이 쓸 수 있다.
+[//]:# (식 6)
+
+임의의 벡터에 대해서,
 
 $$\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix}
 
 = x_1 \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix} + x_2 \begin{bmatrix}0\\1\\ \vdots \\ 0\end{bmatrix} + \cdots + x_n \begin{bmatrix}0\\0\\ \vdots \\ 1\end{bmatrix}$$
 
 [//]:# (식 7)
+
+즉, 식 (7)이 말하는 것은 어떤 벡터라도 표준정규기저에 상수배해준 것의 합으로 표현해줄 수 있음을 말하고 있다.
+
+한편, 식 (7)의 임의의 벡터 $x$는 discrete unit sample function $\delta$와 cyclic permutation matrix $P$를 이용해 다음과 같이도 쓸 수 있다.
 
 $$ = x_1 \delta + x_2 P\delta + x_3P^2\delta+\cdots x_n P^{n-1}\delta$$
 
@@ -110,5 +114,82 @@ $$\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix} =  \begin{bmatrix}
 
 과 같이 쓸 수 있음을 알 수 있다.
 
+여기서 식 (11)에 $\delta$ 앞에 곱해진 행렬을 일반적으로 **순환 행렬(circulant matrix)** 이라고 부른다.
 
+앞으로는 순환행렬의 기호는 $C$로 쓸 것이며 식 (11)을 일반화해서 다음과 같이 쓸 수 있다.
 
+$$\vec{x} = C\delta$$
+
+## 순환행렬과 이산컨볼루션의 관계
+
+신호처리 이론에서 Kronecker delta 함수는 다음과 같이 정의된다.
+
+$$\delta[n] = \begin{cases}1 && \text{ if }n=0 \\ 0 && \text{otherwise}\end{cases}$$
+
+[//]:# (식 13)
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic1.png">
+  <br>
+  그림 1. 크로네커 델타 함수
+</p>
+
+우리는 크로네커 델타 함수를 이용해 임의의 이산 신호를 다음과 같이 분해할 수 있음을 알 수 있다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic3.png">
+  <br>
+  그림 2. 임의의 이산함수 $x[n]$는 크로네커 델타 함수를 이용해 분해해 생각할 수 있다.
+</p>
+
+이것을 수식으로 쓰면 아래와 같은데,
+
+$$
+x[n]=\cdots + x[-2]\delta[n+2]+x[-1]\delta[n+1]+x[0]\delta[n]+x[1]\delta[n-1]+x[2]\delta[n-2]+\cdots
+$$
+
+[//]:# (식 14)
+
+또는 이렇게도 볼 수 있겠다.
+
+$$
+x[n]=\cdots + x[n+2]\delta[-2]+x[n+1]\delta[-1]+x[n]\delta[0]+x[n-1]\delta[1]+x[n-2]\delta[2]+\cdots
+$$
+
+[//]:# (식 15)
+
+식 (15)는 다음과 같이 쓸 수 있다.
+
+$$x[n] = \sum_{k=-\infty}^{\infty}x[n-k]\delta[k]$$
+
+[//]:# (식 16)
+
+이 식에 대해 $0\leq k \leq N-1$에 대해서만 생각해보면 다음과 같다.
+
+$$x[n] = \sum_{k=0}^{N-1}x[n-k]\delta[k]$$
+
+[//]:# (식 17)
+
+$0\leq n \leq N-1$에 대해 식 (16)을 다시 풀어 쓰면,
+
+$$x[0] = x[0]\cdot 1 + x[0-1]\cdot 0 + \cdots + x[0-(N-1)]\cdot 0$$
+
+$$x[1] = x[1]\cdot 1 + x[1-1]\cdot 0 + \cdots + x[1-(N-1)]\cdot 0$$
+
+$$\vdots \notag$$
+
+$$x[N-1] = x[N-1]\cdot 1 + x[(N-1)-1]\cdot 0 + \cdots + x[(N-1)-(N-1)]\cdot 0$$
+
+과 같이 쓸 수 있는데, 식 (18)에서 식 (20)까지를 모두 합쳐서 행렬로 표현하면 다음과 같이 쓸 수도 있다.
+
+$$\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[N-1]\end{bmatrix} =  \begin{bmatrix}
+  x[0] & x[N-1] & \cdots & x[1-(N-1)] & x[0-(N-1)] \\ 
+  x[1] & x[0] &\cdots & x[2-(N-1)] & x[1-(N-1)] \\
+  x[2] & \ddots &\ddots & \vdots & \vdots \\
+  \vdots & \ddots & \ddots & x[0] & x_n \\
+  x[N-1] & \cdots & x[2] & x[1] & x[0]
+\end{bmatrix} \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix}$$
+
+즉, 이것은 식 (11)에서 본 circulant matrix로 표현한 벡터의 분해와 같은 것이라 할 수 있다.
+
+결론적으로 circulant matrix를 이용해 벡터를 표현하는 것은 신호처리 이론에서 컨볼루션을 이용해 신호를 분해하는 것과 같은 일을 해주는 것이라 할 수 있다.
