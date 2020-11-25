@@ -27,7 +27,7 @@ tags: 선형대수
 그 중 처음 두 가지는 '벡터란 화살표 같은 것'이라는 점과 '벡터란 숫자를 순서대로 나열한 것'이었다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic1.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic1.png">
   <br>
   그림 1. 좌표계의 변화에 대해 불변하는 벡터의 기하학적 특성
 </p>
@@ -130,11 +130,32 @@ $$proj_A = A(A^TA)^{-1}A^T$$
 
 만약 $A$가 열벡터 하나라면 다음과 같이 쓸 수도 있을 것이다.
 
-$$proj_a = a\frac{a^T}{a^Ta}$$
+$$proj_a = \frac{aa^T}{a^Ta}$$
 
 [//]:# (aa^T의 추가적인 의미가 있을까? --> 작성 할 것)
 
 # Gram-Schmidt 과정
+
+
+<p align = "center">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif">
+  <br>
+  그림 4. Gram-Schmidt 직교화 과정을 표현한 animation
+  <br>
+  <a href = "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%8C-%EC%8A%88%EB%AF%B8%ED%8A%B8_%EA%B3%BC%EC%A0%95"> 출처: 위키피디아, 그람-슈미트 과정</a>
+</p>
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic5.png">
+  <br>
+  그림 5. 그람 슈미트 과정의 기본 원리
+  <br>
+  <a href = "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%8C-%EC%8A%88%EB%AF%B8%ED%8A%B8_%EA%B3%BC%EC%A0%95"> 출처: 위키피디아, 그람-슈미트 과정</a>
+</p>
+
+Gram-schmidt 직교화 과정을 수식으로 표현하면 아래와 같다.
+
+주어진 벡터 $v_1, \cdots, v_k$에 대해 
 
 # QR 분해
 
