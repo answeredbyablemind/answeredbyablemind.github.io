@@ -174,7 +174,9 @@ $$e_i = \frac{u_i}{||u_i||}$$
   그림 5. 그람 슈미트 과정의 수식이 말해주는 것
 </p>
 
+서로 직교하는 벡터를 구성해내기 위해서는 각각이 차지하고 있는 성분만큼을 빼주어야 한다는 말이다.
 
+다시 한번 그림으로 보면 아래의 그림 6과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic6.png">
