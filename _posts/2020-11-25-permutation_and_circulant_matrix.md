@@ -186,10 +186,10 @@ $$\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[N-1]\end{bmatrix} =  \begin{bmatrix}
   x[0] & x[N-1] & \cdots & x[1-(N-1)] & x[0-(N-1)] \\ 
   x[1] & x[0] &\cdots & x[2-(N-1)] & x[1-(N-1)] \\
   x[2] & \ddots &\ddots & \vdots & \vdots \\
-  \vdots & \ddots & \ddots & x[0] & x_n \\
+  \vdots & \ddots & \ddots & x[0] & x[N-1] \\
   x[N-1] & \cdots & x[2] & x[1] & x[0]
 \end{bmatrix} \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix}$$
 
-즉, 이것은 식 (11)에서 본 circulant matrix로 표현한 벡터의 분해와 같은 것이라 할 수 있다.
+이 식을 생각할 때 $x[n]$이 $N$의 주기를 갖는 주기함수라 보면 이것은 식 (11)에서 본 circulant matrix로 표현한 벡터의 분해와 같은 것이라 할 수 있다.
 
 결론적으로 circulant matrix를 이용해 벡터를 표현하는 것은 신호처리 이론에서 컨볼루션을 이용해 신호를 분해하는 것과 같은 일을 해주는 것이라 할 수 있다.
