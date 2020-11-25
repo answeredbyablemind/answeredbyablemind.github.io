@@ -79,6 +79,10 @@ docs-ko:
         url:    2020/11/17/four_fundamental_subspaces.html
       - title:  특이값 분해(SVD)
         url:    2019/08/01/SVD.html
+      - title:  치환행렬과 순환행렬을 이용한 신호 표현
+        url:    2020/11/25/permutation_and_circulant_matrix.html
+      - title:  순환행렬의 고유벡터, 그리고 푸리에 행렬
+        url:    2020/11/26/circulant_matrix_eigen_fourier.html
       - title:  선형대수와 푸리에 변환
         url:    2020/11/08/linear_algebra_and_Fourier_transform.html
       - title:  상관계수는 벡터의 내적이다
