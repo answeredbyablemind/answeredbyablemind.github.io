@@ -146,30 +146,30 @@ $$\text{proj}_a = \frac{aa^T}{a^Ta}$$
 
 Gram-schmidt 직교화 과정을 수식으로 표현하면 아래와 같다.
 
-벡터 공간 $V$상에서 주어진 벡터 $v_1, \cdots, v_k$를 이용하여 다음과 같이 정규직교기저를 구할 수 있다.
+벡터 공간 $V$상에서 주어진 일차 독립인 벡터 $a_1, \cdots, a_k$를 이용하여 다음과 같이 정규직교기저를 구할 수 있다.
 
-$$u_1 = v_1$$
+$$u_1 = a_1$$
 
-$$u_2 = v_2 - \text{proj}_{u_1}(v_2)$$
+$$u_2 = a_2 - \text{proj}_{u_1}(a_2)$$
 
-$$u_3 = v_3 - \text{proj}_{u_1}(v_3) - \text{proj}_{u_2}(v_3)$$
+$$u_3 = a_3 - \text{proj}_{u_1}(a_3) - \text{proj}_{u_2}(a_3)$$
 
 $$\vdots \notag$$
 
-$$u_k = v_k -\sum_{j=1}^{k-1}\text{proj}_{u_j}(v_k)$$
+$$u_k = a_k -\sum_{j=1}^{k-1}\text{proj}_{u_j}(a_k)$$
 
 이렇게 생성한 벡터의 집합 $\lbrace u_1, u_2, \cdots, u_k \rbrace$는 직교적인데, 여기서 각각의 벡터들의 크기(norm)로 나누어주어 정규직교화 시키자.
 
 즉, 
 
-$$e_i = \frac{u_i}{||u_i||}$$
+$$q_i = \frac{u_i}{||u_i||}$$
 
-로 정의하면 벡터 공간 $V$의 정규 직교 기저 $\lbrace e_1, e_2, \cdots, e_k \rbrace$를 얻을 수 있다.
+로 정의하면 벡터 공간 $V$의 정규 직교 기저 $\lbrace q_1, q_2, \cdots, q_k \rbrace$를 얻을 수 있다.
 
 수식으로 쓰면 조금 어려워 보이지만, 수식의 본질적인 의미는 아래와 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic5.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic5.png">
   <br>
   그림 5. 그람 슈미트 과정의 수식이 말해주는 것
 </p>
@@ -182,12 +182,15 @@ $$e_i = \frac{u_i}{||u_i||}$$
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic6.png">
   <br>
   그림 6. 그람 슈미트 과정의 기본 원리
-  <br>
-  <a href = "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%8C-%EC%8A%88%EB%AF%B8%ED%8A%B8_%EA%B3%BC%EC%A0%95"> 출처: 위키피디아, 그람-슈미트 과정</a>
 </p>
 
+그람-슈미트 과정은 이런 방식으로 iterative하게 주어진 벡터 집합에 대한 새로운 정규직교기저 벡터를 찾아낼 수 있게 해준다.
 
 # QR 분해
+
+QR 분해는 그람-슈미트 과정을 이용해 찾아낸 정규직교기저 벡터를 이용해 행렬을 분해하는 과정이다.
+
+그람-슈미트 과정을 통해 얻어낸 정규직교기저를 $q_1, \cdots, q_n$이라고 하고 이들을 모아둔 행렬을 $Q$라고 하면 다음이 성립한다.
 
 $$A = QR$$
 
@@ -206,6 +209,14 @@ $$\begin{bmatrix}
   a_1\cdot q_n & a_2\cdot q_n & \cdots & a_n\cdot q_n \\
   \end{bmatrix}$$
 
+여기서 $a_1\cdot q_2$를 생각해보면 $q_2$는 $a_1$ 혹은 $q_1$의 성분이 모두 제거되었기 대문에 값이 0이다.
+
+마찬가지 이유로 $a_i\cdot q_j$에 대해 $i\lt j$인 경우 $a_i\cdot q_j=0$이다. 
+
+왜냐면 $j$ 번째 정규직교기저 $q_j$에서는 $a_i \text{ where } i\lt j$의 성분들을 모두 다 빼버렸기 때문이다.
+
+따라서 아래의 식이 성립한다.
+
 $$=\begin{bmatrix}
   | & | & \text{ } & | \\ 
   q_1 & q_2 &\cdots & q_n \\ 
@@ -216,3 +227,5 @@ $$=\begin{bmatrix}
   \vdots & \vdots & \ddots & \vdots \\
   0 & 0 & \cdots & a_n\cdot q_n \\
   \end{bmatrix}$$
+
+이것을 QR 분해라고 부른다.
