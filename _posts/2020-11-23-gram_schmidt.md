@@ -124,18 +124,17 @@ $$\vec{p} = A\hat{x} = A(A^TA)^{-1}A^Tb$$
 
 일반적으로, 임의의 벡터 $\vec{b}$를 $A$의 열공간으로 투영(projection)해주는 행렬은
 
-$$proj_A = A(A^TA)^{-1}A^T$$
+$$\text{proj}_A = A(A^TA)^{-1}A^T$$
 
 이다.
 
 만약 $A$가 열벡터 하나라면 다음과 같이 쓸 수도 있을 것이다.
 
-$$proj_a = \frac{aa^T}{a^Ta}$$
+$$\text{proj}_a = \frac{aa^T}{a^Ta}$$
 
 [//]:# (aa^T의 추가적인 의미가 있을까? --> 작성 할 것)
 
 # Gram-Schmidt 과정
-
 
 <p align = "center">
   <img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif">
@@ -145,17 +144,46 @@ $$proj_a = \frac{aa^T}{a^Ta}$$
   <a href = "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%8C-%EC%8A%88%EB%AF%B8%ED%8A%B8_%EA%B3%BC%EC%A0%95"> 출처: 위키피디아, 그람-슈미트 과정</a>
 </p>
 
+Gram-schmidt 직교화 과정을 수식으로 표현하면 아래와 같다.
+
+벡터 공간 $V$상에서 주어진 벡터 $v_1, \cdots, v_k$를 이용하여 다음과 같이 정규직교기저를 구할 수 있다.
+
+$$u_1 = v_1$$
+
+$$u_2 = v_2 - \text{proj}_{u_1}(v_2)$$
+
+$$u_3 = v_3 - \text{proj}_{u_1}(v_3) - \text{proj}_{u_2}(v_3)$$
+
+$$\vdots \notag$$
+
+$$u_k = v_k -\sum_{j=1}^{k-1}\text{proj}_{u_j}(v_k)$$
+
+이렇게 생성한 벡터의 집합 $\lbrace u_1, u_2, \cdots, u_k \rbrace$는 직교적인데, 여기서 각각의 벡터들의 크기(norm)로 나누어주어 정규직교화 시키자.
+
+즉, 
+
+$$e_i = \frac{u_i}{||u_i||}$$
+
+로 정의하면 벡터 공간 $V$의 정규 직교 기저 $\lbrace e_1, e_2, \cdots, e_k \rbrace$를 얻을 수 있다.
+
+수식으로 쓰면 조금 어려워 보이지만, 수식의 본질적인 의미는 아래와 같다.
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic5.png">
   <br>
-  그림 5. 그람 슈미트 과정의 기본 원리
+  그림 5. 그람 슈미트 과정의 수식이 말해주는 것
+</p>
+
+
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic6.png">
+  <br>
+  그림 6. 그람 슈미트 과정의 기본 원리
   <br>
   <a href = "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%8C-%EC%8A%88%EB%AF%B8%ED%8A%B8_%EA%B3%BC%EC%A0%95"> 출처: 위키피디아, 그람-슈미트 과정</a>
 </p>
 
-Gram-schmidt 직교화 과정을 수식으로 표현하면 아래와 같다.
-
-주어진 벡터 $v_1, \cdots, v_k$에 대해 
 
 # QR 분해
 
