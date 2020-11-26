@@ -112,11 +112,11 @@ $$v = \begin{bmatrix}1 \\ (-i) \\ (-i)^2 \\ (-i)^3 \end{bmatrix}$$
 
 [^1]: 아래의 Lambda의 exponential 안의 부호는 '+' 나 '-' 모두 관계없으나 뒤에서 서술할 푸리에 행렬과의 관계를 고려해 부호를 '-'로 설정하였음.
 
-$$\lambda_k = \exp\left(-j\frac{2\pi}{n}k\right)\text{ where } k = 0, 1, \cdots n-1$$
+$$\lambda_k = \exp\left(-j\frac{2\pi}{n}k\right)\text{ for } k = 0, 1, \cdots ,n-1$$
 
 그리고 각 고윳값에 대응되는 고유벡터는 다음과 같다.
 
-$$v_k = \begin{bmatrix}(\lambda_k)^0 \\ (\lambda_k)^1\\ \vdots \\ (\lambda_k)^{n-1}\end{bmatrix}\text{ where } k = 0, 1, \cdots n-1$$
+$$v_k = \begin{bmatrix}(\lambda_k)^0 \\ (\lambda_k)^1\\ \vdots \\ (\lambda_k)^{n-1}\end{bmatrix}\text{ for } k = 0, 1, \cdots ,n-1$$
 
 # 순환행렬의 고유벡터
 
