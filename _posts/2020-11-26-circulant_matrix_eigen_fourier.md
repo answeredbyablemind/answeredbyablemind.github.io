@@ -8,8 +8,6 @@ key: 20201126
 tags: 선형대수
 ---
 
-
-
 # Prerequisites
 
 본 포스트를 잘 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것이 좋습니다.
@@ -34,15 +32,91 @@ $$P = \begin{bmatrix}
   0 & \cdots & 0 & 1 & 0
 \end{bmatrix}$$
 
-일반적인 $n\times n$ 크기의 행렬 $P$에 대해서 고윳값을 구하는 것은 어려울 수 있기 때문에 $4\times 4$ 크기의 치환 행렬 $P_4$의 고윳값, 고유벡터를 계산해보자.
+일반적인 $n\times n$ 크기의 행렬 $P$에 대해서 고윳값, 고유벡터를 구하는 것은 어려울 수 있기 때문에 $4\times 4$ 크기의 치환 행렬 $P_4$의 고윳값, 고유벡터를 계산해보자.
 
 먼저 $P_4$의 고윳값을 계산하기 위해 특성방정식을 써보면 다음과 같을 것이다.
 
 $$det(P_4-\lambda I) = 0$$
 
-$$=det\left(\begin{bmatrix}0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0\end{bmatrix}-\lambda I\right)$$
+$$\Rightarrow det\left(\begin{bmatrix}0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0\end{bmatrix}-\lambda I\right)=0$$
 
-$$=det\left(\begin{bmatrix}-\lambda & 0 & 0 & 1 \\ 1 & -\lambda & 0 & 0 \\ 0 & 1 & -\lambda & 0 \\ 0 & 0 & 1 & -\lambda\end{bmatrix}\right)$$
+$$\Rightarrow det\left(\begin{bmatrix}-\lambda & 0 & 0 & 1 \\ 1 & -\lambda & 0 & 0 \\ 0 & 1 & -\lambda & 0 \\ 0 & 0 & 1 & -\lambda\end{bmatrix}\right)=0$$
+
+$3\times 3$ 크기 이상의 행렬식은 수반행렬을 이용해 계산할 수 있다.
+
+즉,
+
+$$\Rightarrow 1\times (-\lambda)\times det\left(\begin{bmatrix}-\lambda & 0 & 0 \\ 0 & -\lambda & 0 \\ 0 & 0 & -\lambda \end{bmatrix}\right)-1\times(1)\times det\left(\begin{bmatrix} 1 & -\lambda & 0 \\ 0 & 1 & -\lambda \\ 0 & 0 & 1 \end{bmatrix}\right) = 0$$
+
+$$\Rightarrow \lambda^4 - 1 = 0$$
+
+따라서, $P_4$의 고윳값은 $\lambda = 1, -1, i, -i$이다.
+
+이를 이용해 고유벡터를 계산해보자.
+  
+1) $\lambda = 1$인 경우
+
+$P_4v=\lambda v$를 만족해야 하므로,
+
+$$(P_4-\lambda I)v = (P_4-I)v = 0$$
+
+이고, $v = [v_1, v_2, v_3, v_4]^T$라 했을 때
+
+$$\begin{bmatrix}
+  -1 & 0 & 0 & 1 \\ 
+  1 & -1 & 0 & 0 \\ 
+  0 & 1 & -1& 0 \\ 
+  0 & 0 & 1 & -1\end{bmatrix}\begin{bmatrix}v_1\\v_2\\v_3\\v_4\end{bmatrix} = 0$$
+
+이어야 하므로, 
+
+$v_1=v_4$, $v_1 = v_2$, $v_2=v_3$, $v_3 = v_4$의 관계를 만족하는 고유벡터 $v$는 
+
+$$v=\begin{bmatrix}1\\1\\1\\1\end{bmatrix}$$
+
+이다.
+
+2) $\lambda = -1$인 경우
+
+$\lambda = 1$인 경우와 유사한 방법을 통해 생각하면,
+
+$$\begin{bmatrix}
+  1 & 0 & 0 & 1 \\ 
+  1 & 1 & 0 & 0 \\ 
+  0 & 1 & 1& 0 \\ 
+  0 & 0 & 1 & 1\end{bmatrix}\begin{bmatrix}v_1\\v_2\\v_3\\v_4\end{bmatrix} = 0$$
+
+을 만족하는 고유벡터는 
+
+$v_1=-v_4$, $v_1 = -v_2$, $v_2=-v_3$, $v_3 = -v_4$의 관계를 만족하는 고유벡터 $v$는 
+
+$$v=\begin{bmatrix}1\\-1\\1\\-1\end{bmatrix}$$
+
+3) $\lambda = i$인 경우
+
+이 경우의 고유벡터는 위의 두 가지 방법과 유사한 방법을 통해
+
+$$v = \begin{bmatrix}1 \\ i \\ i^2 \\ i^3 \end{bmatrix}$$
+
+임을 알 수 있다.
+
+4) $\lambda = -i$인 경우
+
+이 경우의 고유벡터는 위의 두 가지 방법과 유사한 방법을 통해
+
+$$v = \begin{bmatrix}1 \\ (-i) \\ (-i)^2 \\ (-i)^3 \end{bmatrix}$$
+
+임을 알 수 있다.
+
+일반적으로 $n\times n$ 크기의 치환행렬의 고윳값은 $\lambda^n-1=0$을 만족하는 $\lambda$라고 할 수 있는데, 이 값을 일반적으로 쓰자면 다음과 같다[^1].
+
+[^1]: 아래의 Lambda의 exponential 안의 부호는 '+' 나 '-' 모두 관계없으나 뒤에서 서술할 푸리에 행렬과의 관계를 고려해 부호를 '-'로 설정하였음.
+
+$$\lambda_k = \exp\left(-j\frac{2\pi}{n}k\right)\text{ where } k = 0, 1, \cdots n-1$$
+
+그리고 각 고윳값에 대응되는 고유벡터는 다음과 같다.
+
+$$v_k = \begin{bmatrix}(\lambda_k)^0 \\ (\lambda_k)^1\\ \vdots \\ (\lambda_k)^{n-1}\end{bmatrix}\text{ where } k = 0, 1, \cdots n-1$$
 
 # 순환행렬의 고유벡터
 
