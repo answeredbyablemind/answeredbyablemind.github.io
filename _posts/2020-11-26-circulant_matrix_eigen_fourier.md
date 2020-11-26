@@ -20,6 +20,12 @@ tags: 선형대수
 
 # 치환행렬의 고윳값, 고유벡터
 
+순환행렬의 고윳값, 고유벡터는 치환행렬의 고윳값, 고유벡터와 밀접한 관련이 있다.
+
+따라서, 우리는 치환행렬의 고윳값, 고유벡터를 먼저 계산해보도록 하자.
+
+우리가 사용하는 치환행렬은 치환행렬은 [순환행렬과 컨볼루션](https://angeloyeo.github.io/2020/11/25/permutation_and_circulant_matrix.html) 편에서 보았던 것과 마찬가지로 아래와 같이 cyclic permutation을 수행해주는 행렬이다.
+
 $$P = \begin{bmatrix}
   0 & 0 & \cdots & 0 & 1 \\ 
   1 & 0 &\cdots & 0 & 0 \\
@@ -27,6 +33,16 @@ $$P = \begin{bmatrix}
   \vdots & \ddots & \ddots & 0 & 0 \\
   0 & \cdots & 0 & 1 & 0
 \end{bmatrix}$$
+
+일반적인 $n\times n$ 크기의 행렬 $P$에 대해서 고윳값을 구하는 것은 어려울 수 있기 때문에 $4\times 4$ 크기의 치환 행렬 $P_4$의 고윳값, 고유벡터를 계산해보자.
+
+먼저 $P_4$의 고윳값을 계산하기 위해 특성방정식을 써보면 다음과 같을 것이다.
+
+$$det(P_4-\lambda I) = 0$$
+
+$$=det\left(\begin{bmatrix}0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0\end{bmatrix}-\lambda I\right)$$
+
+$$=det\left(\begin{bmatrix}-\lambda & 0 & 0 & 1 \\ 1 & -\lambda & 0 & 0 \\ 0 & 1 & -\lambda & 0 \\ 0 & 0 & 1 & -\lambda\end{bmatrix}\right)$$
 
 # 순환행렬의 고유벡터
 
