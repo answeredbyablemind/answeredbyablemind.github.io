@@ -153,6 +153,14 @@ $$\therefore \hat{x}=(A^TA)^{-1}A^T\vec{b}$$
 
 이라는 것을 알 수 있다.
 
+### 기본 부분공간들을 이용한 설명
+
+그림 5의 $\vec{e}$는 column space 상에 있는 모든 벡터들과 직교한다.
+
+이것을 [4개 주요 부분 공간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)편에서 본 내용을 토대로 생각하면 $\vec{e}$는 left nullspace에 있는 벡터임을 알 수 있다.
+
+
+
 ### 실제 계산
 
 MATLAB으로 아래와 같이 $A$, $b$를 설정하고 $\hat{x}$를 구할 수 있다.
