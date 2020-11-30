@@ -28,6 +28,7 @@ tags: 선형대수 머신러닝
 
 * [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
 * [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html)
+* [4개 주요 부분 공간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)
 
 ## 선형연립방정식을 이용한 solution 찾기
 
@@ -153,6 +154,27 @@ $$\therefore \hat{x}=(A^TA)^{-1}A^T\vec{b}$$
 
 이라는 것을 알 수 있다.
 
+### 기본 부분공간들을 이용한 설명
+
+그림 5의 $\vec{e}$는 column space 상에 있는 모든 벡터들과 직교한다.
+
+이것을 [4개 주요 부분 공간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)편에서 본 내용을 토대로 생각하면 $\vec{e}$는 left nullspace에 있는 벡터임을 알 수 있다.
+
+다시 말해 벡터 $\vec{b}$는 column space 상에서 만들 수 있는 기저벡터들과 left null space 상에서 만들 수 있는 기저벡터들을 합친 기저벡터들로만 구성할 수 있는 공간에 위치하고 있으며 $\vec{p}$는 그 중 가장 가까운 column space 상에 있는 벡터, $\vec{e}$는 null space 상에 있는 벡터를 의미하게 된다.
+
+그림으로 표시하면 아래와 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic13.png">
+  <br>
+  그림 6. 선형대수학적으로 생각하는 선형회귀에 대한 기본 공간들간의 관계
+  <br>
+  그림 출처: Introduction to Linear Algebra, Gilbert Strang
+  </p>
+
+여기서 null space가 ${0}$인 것은 만약 null space가 영공간이 아니라면 함수의 형태는 완전 세로 방향으로 가는 모양일 것이기 때문인데, 이 때는 함수가 정의될 수 없기 때문에(즉, 기울기가 무한히 커지는 상태) 선형회귀 모델을 이용해 풀어서 어떤 함수를 얻고자 한다면 null space가 영공간이 아닌 경우는 제외하는 것이기 때문이다. 
+
+
 ### 실제 계산
 
 MATLAB으로 아래와 같이 $A$, $b$를 설정하고 $\hat{x}$를 구할 수 있다.
@@ -174,12 +196,12 @@ x_hat =
 ```
 이다.
 
-즉, 아래의 그림 6에서 표현된 것과 같은 기울기가 2이고 절편이 2인 직선이 그림 1, 3에서 본 세 점의 트렌드를 제일 잘 설명해줄 수 있는 점이라는 의미이다.
+즉, 아래의 그림 7에서 표현된 것과 같은 기울기가 2이고 절편이 2인 직선이 그림 1, 3에서 본 세 점의 트렌드를 제일 잘 설명해줄 수 있는 점이라는 의미이다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic6.png">
   <br>
-  그림 6. 그림 1과 그림 3에서 본 데이터에 대한 최적의 회귀식
+  그림 7. 그림 1과 그림 3에서 본 데이터에 대한 최적의 회귀식
 </p>
 
 # 최적화 문제 관점에서 본 회귀분석
@@ -202,7 +224,7 @@ x_hat =
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic7.png">
   <br>
-  그림 7. 서로 상관관계를 가지고 있는 특성(feature)쌍
+  그림 8. 서로 상관관계를 가지고 있는 특성(feature)쌍
 </p>
 
 이 데이터는 특정 주(states)의 인구수와 각 주에서 일어난 교통사고 건수를 각각 x, y 축에 표시한 것이다.
@@ -220,7 +242,7 @@ $$y = f(x) = ax+b$$
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic8.png">
   <br>
-  그림 8. 어떤 모델이 이 데이터의 특성(feature)쌍의 관계를 제일 잘 설명해주는 걸까?
+  그림 9. 어떤 모델이 이 데이터의 특성(feature)쌍의 관계를 제일 잘 설명해주는 걸까?
 </p>
 
 ## 비용 함수 정의하기
@@ -240,7 +262,7 @@ $$e_i = \hat{y_i} - y_i$$
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic9.png">
   <br>
-  그림 9. 선형 모델의 예측값과 실제 데이터 간의 차이
+  그림 10. 선형 모델의 예측값과 실제 데이터 간의 차이
 </p>
 
 여기서 오차의 부호에 대한 고민 자체를 애초에 하지 않으려면 오차를 다음과 같이 정의하는 것도 좋을 것이다.
@@ -274,18 +296,18 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 $E$를 최소화해주는 $a$와 $b$를 찾는 문제로 바꿔 생각할 수 있다. 즉, $E$의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
 
-이것을 시각화해보자면 아래의 그림 10에서와 같이 slope(즉, 위에서 $a$에 해당)와 intercept(즉, 위에서 $b$에 해당)가 정의역인 공간에서 cost function $E$가 스칼라 함수로 존재한다고 할 수 있다.
+이것을 시각화해보자면 아래의 그림 11에서와 같이 slope(즉, 위에서 $a$에 해당)와 intercept(즉, 위에서 $b$에 해당)가 정의역인 공간에서 cost function $E$가 스칼라 함수로 존재한다고 할 수 있다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic10.mp4">
   </video>
   <br>
-  그림 10. slope와 intercept가 정의역인 공간에서 cost function과 그 최솟값(별표)
+  그림 11. slope와 intercept가 정의역인 공간에서 cost function과 그 최솟값(별표)
   <br> ※ 비용 함수의 parameter들은 모두 normalize하여 시각화하였음.
 </p>
 
-즉, 그림 10에서 볼 수 있는 최소값을 찾기 위해선 어떻게 하는 것이 좋을까?
+즉, 그림 11에서 볼 수 있는 최소값을 찾기 위해선 어떻게 하는 것이 좋을까?
 
 ## Gradient Descent를 이용한 최소 비용함수 계산
 
@@ -300,7 +322,7 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic11.png">
   <br>
-  그림 11. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서의 gradient 방향은 함수값이 커지는 방향이다.
+  그림 12. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서의 gradient 방향은 함수값이 커지는 방향이다.
 </p>
 
 따라서 gradient의 방향은 함수가 '커지는' 방향이므로 우리는 이 반대 방향으로 한 스텝, 한 스텝 $a$와 $b$의 위치를 업데이트 해간다면 결국은 비용함수 $E=f(a,b)$의 최소값(별표) 위치까지 $a$, $b$를 옮겨갈 수 있을 것이다.
@@ -308,7 +330,7 @@ $$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic12.png">
   <br>
-  그림 12. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서 gradient의 반대방향으로 $a$와 $b$의 위치를 업데이트 해간다면 결국 비용함수가 최소가 되는 $a$와 $b$를 찾아갈 수 있을 것이다.
+  그림 13. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서 gradient의 반대방향으로 $a$와 $b$의 위치를 업데이트 해간다면 결국 비용함수가 최소가 되는 $a$와 $b$를 찾아갈 수 있을 것이다.
 </p>
 
 즉, 우리가 구하고자 하는 함수 $f(a,b)$에서 파라미터 $a$, $b$를 임의의 값으로 설정한 뒤 업데이트 해줄 수 있다.
@@ -330,6 +352,6 @@ $$b := b - \alpha \frac{\partial f}{\partial b}$$
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic13.mp4">
   </video>
   <br>
-  그림 13. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
+  그림 14. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
   <br> ※ 비용 함수의 parameter들은 모두 normalize하여 시각화하였음.
 </p>
