@@ -185,3 +185,5 @@ $$\begin{bmatrix}x_0\\x_1\\ \vdots \\ x_{n-1}\end{bmatrix}
 한편, 지금까지 확인한 내용에 따르면 어떤 벡터든 circulant matrix $C$와 $\delta$ 벡터의 곱으로 생각할 수 있는데, 이 말은 다시 말해 어떤 신호던지 $\delta$벡터가 변환되어서 얻어진 결과로 지금의 데이터를 볼 수 있다는 말이기도 하다.
 
 $$\vec{x} = C\delta=\left(\sum_{i=0}^{n-1}x_i P^{i}\right)\delta$$
+
+(작성 중입니다...)
