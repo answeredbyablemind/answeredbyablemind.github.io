@@ -12,8 +12,10 @@ tags: 선형대수
 
 본 포스트를 잘 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것이 좋습니다.
 
+* [벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
 * [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 * [선형대수와 푸리에 변환](https://angeloyeo.github.io/2020/11/08/linear_algebra_and_Fourier_transform.html)
+* [고윳값 분해(EVD)](https://angeloyeo.github.io/2020/11/19/eigen_decomposition.html)
 * [순환행렬과 컨볼루션](https://angeloyeo.github.io/2020/11/25/permutation_and_circulant_matrix.html)
 
 # 치환행렬의 고윳값, 고유벡터
@@ -150,10 +152,36 @@ $$=\left(\sum_{i=0}^{n-1}x_i\lambda^i\right)v = \xi v$$
 
 ## 기저의 변환에 기반한 푸리에 행렬의 이해
 
+벡터를 표현하는 '기저'에 대해 생각해보도록 하자.
+
+[벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html) 편에서는 벡터의 특성에 대해 잠깐 언급한 적이 있었다.
+
+그 중 처음 두 가지는 '벡터란 화살표 같은 것'이라는 점과 '벡터란 숫자를 순서대로 나열한 것'이었다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic1.png">
+  <br>
+  그림 1. 좌표계의 변화에 대해 불변하는 벡터의 기하학적 특성
+</p>
+
+그림 1을 통해서 알 수 있는 것은 하나의 벡터를 표현하기 위해 전혀 다른 좌표계를 이용해서 표현할 수 있다는 것이다.
+
+또, 어떤 좌표계를 이용하면 벡터를 표현하는 숫자의 나열들이 간결한데 비해, 또 어떤 좌표계를 선택하면 숫자의 나열들이 복잡해진다.
+
+그래서 우리는 적절한 좌표계를 선정함으로써 쉽게 데이터(즉, 벡터)를 다룰 수 있다.
+
+여기서 말하는 '좌표계'의 기본 단위가 '기저(basis)'라고 말 할 수 있는데, 다시 말하자면, 우리의 목적에 맞는 기저를 선택하면 같은 벡터(즉, 주어진 데이터)를 좀 더 쉽거나 유용하게 표현할 수 있다.
+
+우리가 일반적으로 사용해오던 기저는 standard basis라고 할 수 있다. 가령, 아래와 같은 벡터 $\vec{x}$에 대해서,
+
 $$\vec{x} = \begin{bmatrix}x_0\\x_1\\ \vdots \\ x_{n-1}\end{bmatrix}$$
+
+standard  basis를 사용한다는 것은 아래와 같이 1 하나와 나머지는 0으로 채워진 기저벡터를 이용해 벡터 $\vec{x}$를 표현한 것이라고 할 수 있다.
 
 $$\begin{bmatrix}x_0\\x_1\\ \vdots \\ x_{n-1}\end{bmatrix}
 
 = x_0 \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix} + x_1 \begin{bmatrix}0\\1\\ \vdots \\ 0\end{bmatrix} + \cdots + x_{n-1} \begin{bmatrix}0\\0\\ \vdots \\ 1\end{bmatrix}$$
+
+한편, 지금까지 확인한 내용에 따르면 어떤 벡터든 circulant matrix $C$와 $\delta$ 벡터의 곱으로 생각할 수 있는데, 이 말은 다시 말해 어떤 신호던지 $\delta$벡터가 변환되어서 얻어진 결과로 지금의 데이터를 볼 수 있다는 말이기도 하다.
 
 $$\vec{x} = C\delta=\left(\sum_{i=0}^{n-1}x_i P^{i}\right)\delta$$
