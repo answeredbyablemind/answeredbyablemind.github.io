@@ -100,6 +100,7 @@ function draw() {
 
      // 희미한 grid line 그리기: scale 간격으로.
      plotDimGrid();
+     // a=0
      // a = slider1.value();
      a = 1/(1+Math.exp(-(time-6)))
      time += 0.05;
