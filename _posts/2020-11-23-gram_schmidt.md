@@ -179,7 +179,7 @@ $$q_i = \frac{u_i}{||u_i||}$$
 다시 한번 그림으로 보면 아래의 그림 6과 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic6.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic6.png">
   <br>
   그림 6. 그람 슈미트 과정의 기본 원리
 </p>

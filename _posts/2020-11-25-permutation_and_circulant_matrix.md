@@ -22,11 +22,11 @@ tags: 선형대수 신호처리
 
 다시 말해, 어떤 벡터 $x$에 대해서,
 
-$$\vec{x} = \begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix}$$
+$$\vec{x} = \begin{bmatrix}x_0\\x_1\\ \vdots \\ x_{n-1}\end{bmatrix}$$
 
 cyclic permutation을 수행해준다는 것은 다음과 같은 연산이 수행된다는 것을 말한다. permutation 행렬을 $P$라고 할 때,
 
-$$P\vec{x} = \begin{bmatrix}x_n\\x_1\\ x_2 \\ \vdots \\ x_{n-1}\end{bmatrix}$$
+$$P\vec{x} = \begin{bmatrix}x_{n-1}\\x_0\\ x_1 \\ \vdots \\ x_{n-2}\end{bmatrix}$$
 
 이러한 연산을 수행해주기 위해서는 다음과 같이 cyclic permutation 행렬이 정의되어야 한다.
 
@@ -46,7 +46,7 @@ cyclic permutation 행렬의 재밌는 점은 $P$를 두 번 적용시켜주면 
 
 다시 말해,
 
-$$P\cdot P\vec{x} = P^2\vec{x} = \begin{bmatrix}x_{n-1}\\x_n\\ x_1 \\ \vdots \\ x_{n-2}\end{bmatrix}$$
+$$P\cdot P\vec{x} = P^2\vec{x} = \begin{bmatrix}x_{n-2}\\x_{n-1}\\ x_0 \\ \vdots \\ x_{n-1}\end{bmatrix}$$
 
 이다.
 
@@ -74,9 +74,9 @@ $$\delta =\begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix}$$
 
 임의의 벡터에 대해서,
 
-$$\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix}
+$$\begin{bmatrix}x_0\\x_1\\ \vdots \\ x_{n-1}\end{bmatrix}
 
-= x_1 \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix} + x_2 \begin{bmatrix}0\\1\\ \vdots \\ 0\end{bmatrix} + \cdots + x_n \begin{bmatrix}0\\0\\ \vdots \\ 1\end{bmatrix}$$
+= x_0 \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix} + x_1 \begin{bmatrix}0\\1\\ \vdots \\ 0\end{bmatrix} + \cdots + x_{n-1} \begin{bmatrix}0\\0\\ \vdots \\ 1\end{bmatrix}$$
 
 [//]:# (식 7)
 
@@ -84,17 +84,17 @@ $$\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix}
 
 한편, 식 (7)의 임의의 벡터 $x$는 discrete unit sample function $\delta$와 cyclic permutation matrix $P$를 이용해 다음과 같이도 쓸 수 있다.
 
-$$ = x_1 \delta + x_2 P\delta + x_3P^2\delta+\cdots x_n P^{n-1}\delta$$
+$$ = x_0 \delta + x_1 P\delta + x_2P^2\delta+\cdots x_{n-1} P^{n-1}\delta$$
 
 [//]:# (식 8)
 
 여기서 $\delta = I\delta$라고도 쓸 수 있으므로,
 
-$$식 (8) \Rightarrow = x_1 I \delta + x_2 P\delta + x_3P^2\delta+\cdots x_n P^{n-1}\delta$$
+$$식 (8) \Rightarrow = x_0 I \delta + x_1 P\delta + x_2P^2\delta+\cdots x_{n-1} P^{n-1}\delta$$
 
 [//]:# (식 9)
 
-$$ = \left(x_1 I + x_2 P + x_3P^2+\cdots x_n P^{n-1}\right)\delta$$
+$$ = \left(x_0 I + x_1 P + x_2P^2+\cdots x_{n-1} P^{n-1}\right)\delta$$
 
 [//]:# (식 10)
 
@@ -102,12 +102,12 @@ $$ = \left(x_1 I + x_2 P + x_3P^2+\cdots x_n P^{n-1}\right)\delta$$
 
 여기서 $P$, $P^2$ 등의 행렬을 직접 써서 다시 식 (10)을 써보면,
 
-$$\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix} =  \begin{bmatrix}
-  x_1 & x_n & \cdots & x_3 & x_2 \\ 
-  x_2 & x_1 &\cdots & x_4 & x_3 \\
-  x_3 & \ddots &\ddots & \vdots & \vdots \\
-  \vdots & \ddots & \ddots & x_1 & x_n \\
-  x_n & \cdots & x_3 & x_2 & x_1
+$$\begin{bmatrix}x_0\\x_1\\ \vdots \\ x_{n-1}\end{bmatrix} =  \begin{bmatrix}
+  x_0 & x_{n-1} & \cdots & x_2 & x_1 \\ 
+  x_1 & x_1 &\cdots & x_3 & x_2 \\
+  x_2 & \ddots &\ddots & \vdots & \vdots \\
+  \vdots & \ddots & \ddots & x_0 & x_{n-1} \\
+  x_{n-1} & \cdots & x_2 & x_1 & x_0
 \end{bmatrix} \begin{bmatrix}1\\0\\ \vdots \\ 0\end{bmatrix}$$
 
 [//]:# (식 11)
@@ -118,7 +118,7 @@ $$\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix} =  \begin{bmatrix}
 
 앞으로는 순환행렬의 기호는 $C$로 쓸 것이며 식 (11)을 일반화해서 다음과 같이 쓸 수 있다.
 
-$$\vec{x} = C\delta$$
+$$\vec{x} = C\delta=\left(\sum_{i=0}^{n-1}x_i P^{i}\right)\delta$$
 
 ## 순환행렬과 이산컨볼루션의 관계
 

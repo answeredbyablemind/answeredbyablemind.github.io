@@ -69,22 +69,22 @@ docs-ko:
         url:    2019/07/27/PCA.html
       - title:  고윳값 분해(EVD)
         url:    2020/11/19/eigen_decomposition.html
+      - title:  4개 주요 부분 공간의 관계
+        url:    2020/11/17/four_fundamental_subspaces.html
       - title:  선형회귀(linear regression)
         url:    2020/08/24/linear_regression.html
       - title:  의사역행렬의 기하학적 의미
         url:    2020/11/11/pseudo_inverse.html
       - title:  QR 분해
         url:    2020/11/23/gram_schmidt.html
-      - title:  4개 주요 부분 공간의 관계
-        url:    2020/11/17/four_fundamental_subspaces.html
       - title:  특이값 분해(SVD)
         url:    2019/08/01/SVD.html
+      - title:  선형대수와 푸리에 변환
+        url:    2020/11/08/linear_algebra_and_Fourier_transform.html
       - title:  순환행렬과 컨볼루션
         url:    2020/11/25/permutation_and_circulant_matrix.html
       - title:  순환행렬의 고유벡터, 그리고 푸리에 행렬
         url:    2020/11/26/circulant_matrix_eigen_fourier.html
-      - title:  선형대수와 푸리에 변환
-        url:    2020/11/08/linear_algebra_and_Fourier_transform.html
       - title:  상관계수는 벡터의 내적이다
         url:    2019/08/20/correlation_and_inner_product.html
       - title:  가우스-행렬 소거법의 기하학적 의미

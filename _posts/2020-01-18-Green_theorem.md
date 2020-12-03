@@ -27,7 +27,7 @@ $$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
 
 | THEOREM 1. 그린 정리 |
 | --------- |
-| 벡터장이 $F(x,y) = P(x,y)\hat{i} + Q(x,y)\hat{j}$로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, <br><center>$$\iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\partial A}\left(Pdx - Qdy\right)$$ </center>|
+| 벡터장이 $F(x,y) = P(x,y)\hat{i} + Q(x,y)\hat{j}$로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, <br><center>$$\iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\partial A}\left(Pdx + Qdy\right)$$ </center>|
 
 위 식에서 볼 수 있듯이 좌변에는 중적분, 우변에는 선적분의 결과가 있으며 두 결과 값이 같다는 것을 보여주고 있다.
 
@@ -66,7 +66,7 @@ $$=\oint_C P(x,y)dx + Q(x,y)dy$$
 
 한번에 적분식을 계산하기에는 식 (5)가 복잡하기 때문에, 식 (5)의 적분을 계산할 때 $x$ 성분에 대한 결과와 $y$ 성분에 대한 결과를 각각 계산해서 더해주는 방식으로 계산을 진행하자. 
 
-## x 성분에 대한 적분
+## $x$ 성분에 대한 적분
 
 그림 1의 왼쪽 타원을 보면 닫힌곡선 C에서 $x$는 $a$에서 $b$까지 바뀌며, 그 때 따라가는 곡선은 $y_l$과 $y_u$로 나눠서 생각해볼 수 있다.
 
@@ -100,7 +100,7 @@ $$=-\iint_A\frac{\partial P}{\partial y}dxdy$$
 
 ([푸비니의 정리](https://ko.wikipedia.org/wiki/%ED%91%B8%EB%B9%84%EB%8B%88%EC%9D%98_%EC%A0%95%EB%A6%AC)로 중적분 시 $dx$와 $dy$의 순서가 바뀌어도 상관이 없다.)
 
-## y 성분에 대한 적분
+## $y$ 성분에 대한 적분
 
 이번엔 $y$성분에 대한 적분을 해보도록 하자.
 

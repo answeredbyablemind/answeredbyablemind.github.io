@@ -320,3 +320,70 @@ yy1 = 2 * xx;
 plot(xx, yy1,'b');
 yy2 = -1/2 * xx;
 plot(xx, yy2, 'b--');
+
+%% 3차원인 경우의 null space 도시하기
+
+% A = [1,2,3; 1,2,1;3,5,4];
+% A = [1 2 3;2,1,4;3,4,1]; % shear
+% A = [1,0,0;0,2,0;0,0,3]; % scaling
+% A = [0,1,0; 1,0,0; 0,0,1] % xy permutation
+% A = [1,0,0; 0,0,1; 0,1,0] % yz permutation
+% A = [0,0,1; 0,1,0; 1,0,0] % xz permutation
+% angle = pi/4; A = [1,0,0;0,cos(angle),-sin(angle);0,sin(angle),cos(angle)]; % rotation around x
+% A=[1,0,0;0,1,0;0,0,0]; % projection on xy plane
+
+vector1 = [-1,2,1]'; vector2 = [1,1,1]'; 
+T = [vector1/norm(vector1) vector2/norm(vector2)]; % projection onto a plane defined with vectors 1 & 2
+A = T*inv(T'*T)*T';
+null_vec = null(A);
+
+null_line1 = null_vec/null_vec(1) * 0.5;
+null_line2 = null_line1 * (-1);
+
+% animation with dots
+[X,Y,Z] = ndgrid(-1:0.3:1);
+n_steps = 100;
+n_cam=50;
+step_mtx = eye(3);
+newXYZ=A*[X(:), Y(:), Z(:)]';
+xyz_min=min(min(min([newXYZ(:),newXYZ(:),newXYZ(:)]')))*1.5;
+xyz_max=max(max(max([newXYZ(:),newXYZ(:),newXYZ(:)]')))*1.5;
+LIMS = [xyz_min, xyz_max];
+
+dot_colors = jet(length(X(:)));
+
+figure(2)
+scatter3(X(:),Y(:),Z(:),30,dot_colors,'filled');
+xlim(LIMS); ylim(LIMS); zlim(LIMS);
+% axis off
+grid on;
+hold on;
+line([xyz_min, xyz_max], [0,0], [0,0],'linewidth',3)
+line([0,0], [xyz_min, xyz_max], [0,0],'linewidth',3)
+line([0,0], [0,0], [xyz_min, xyz_max],'linewidth',3)
+xlabel('x'); ylabel('y'); zlabel('z')
+line([null_line1(1), null_line2(1)], [null_line1(2), null_line2(2)], [null_line1(3), null_line2(3)],'color','r','linewidth',3)
+
+hold off;
+pause;
+for i_steps = 1:n_steps
+    step_mtx = (A-eye(3))/n_steps*i_steps;
+    
+    new_xyz = (eye(3)+step_mtx)*[X(:), Y(:), Z(:)]';
+    new_null_line1 = (eye(3)+step_mtx) * null_line1;
+    new_null_line2 = (eye(3)+step_mtx) * null_line2;
+    scatter3(new_xyz(1,:), new_xyz(2,:), new_xyz(3,:),30,dot_colors,'filled');
+    grid on; hold on;
+    
+    line([xyz_min, xyz_max], [0,0], [0,0],'linewidth',1)
+    line([0,0], [xyz_min, xyz_max], [0,0],'linewidth',1)
+    line([0,0], [0,0], [xyz_min, xyz_max],'linewidth',1)
+    
+    line([new_null_line1(1), new_null_line2(1)], [new_null_line1(2), new_null_line2(2)], [new_null_line1(3), new_null_line2(3)],'color','r','linewidth',2)
+    
+    hold off;
+    xlim(LIMS); ylim(LIMS); zlim(LIMS);
+    xlabel('x'); ylabel('y'); zlabel('z')  
+    pause(0.01);
+end
+
