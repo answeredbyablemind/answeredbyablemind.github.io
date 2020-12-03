@@ -224,3 +224,7 @@ left nullspace는 선형 변환 과정에서 시각화 할 수는 없지만 열�
 # 참고 자료
 
 * [Introduction to Linear Algebra, Gilbert Strang](https://math.mit.edu/~gs/linearalgebra/)
+
+<center>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/VYKbaSoj_Z4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
