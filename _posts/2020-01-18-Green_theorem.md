@@ -27,7 +27,7 @@ $$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
 
 | THEOREM 1. 그린 정리 |
 | --------- |
-| 벡터장이 $F(x,y) = P(x,y)\hat{i} + Q(x,y)\hat{j}$로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, <br><center>$$\iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\partial A}\left(Pdx - Qdy\right)$$ </center>|
+| 벡터장이 $F(x,y) = P(x,y)\hat{i} + Q(x,y)\hat{j}$로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, <br><center>$$\iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\partial A}\left(Pdx + Qdy\right)$$ </center>|
 
 위 식에서 볼 수 있듯이 좌변에는 중적분, 우변에는 선적분의 결과가 있으며 두 결과 값이 같다는 것을 보여주고 있다.
 
