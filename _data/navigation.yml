@@ -79,6 +79,8 @@ docs-ko:
         url:    2020/11/23/gram_schmidt.html
       - title:  특이값 분해(SVD)
         url:    2019/08/01/SVD.html
+      - title:  기저의 변환
+        url:    2020/12/07/change_of_basis.html
       - title:  선형대수와 푸리에 변환
         url:    2020/11/08/linear_algebra_and_Fourier_transform.html
       - title:  순환행렬과 컨볼루션
