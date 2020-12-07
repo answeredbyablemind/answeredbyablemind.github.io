@@ -40,6 +40,56 @@ for i = -2:4
     end
 end
 
+h_vec = Annotate(gca,'arrow', [0, 1], [0, 1]);
+h_vec.Primitive.LineWidth = 2;
+h_vec.Primitive.Color = [0, 0.447, 0.741];
+
+h_vec = Annotate(gca,'arrow', [0, -1], [0, 1]);
+h_vec.Primitive.LineWidth = 2;
+h_vec.Primitive.Color = [0.85, 0.325, 0.098];
+
+% xlabel on original axis
+text(4.6429, 0.34082, '$$x$$','interpreter','latex','fontsize',12);
+text(0.24194, 5.051, '$$y$$','interpreter','latex','fontsize',12);
+
+%% pic1
+
+% x 축 원래 axis
+
+new_basis = [1, -1;1, 1];
+new_basis_inv = inv(new_basis);
+
+x_cha_stt = new_basis * [-1.5; 0];
+x_cha_end = new_basis * [5; 0];
+y_cha_stt = new_basis * [0; -1.5];
+y_cha_end = new_basis * [0; 5];
+
+vec_ori = [2; 2];
+vec_changed = new_basis_inv * vec_ori;
+
+figure('color','w');
+hold on;
+set(gca,'Visible','off')
+xlim([-5, 5])
+ylim([-2, 5])
+
+Annotate(gca,'arrow', [-5, 5], [0, 0]);
+Annotate(gca,'arrow', [0, 0], [-2, 5]);
+
+for i = -5:4
+    if i~=0
+        line([i ,i], [-0.1, 0.1],'color','k')
+        text(i, -0.3, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
+for i = -2:4
+    if i~= 0
+        line([-0.1, 0.1], [i ,i], 'color','k')
+        text(-0.3, i, num2str(i),'HorizontalAlignment','center');
+    end
+end
+
 % 새로운 좌표계 상에 눈금 그리기
 for i = -4:1
     if i~=0
