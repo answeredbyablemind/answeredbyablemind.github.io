@@ -68,3 +68,38 @@ $$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\beg
 
 $$\mathscr{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic1.png">
+  <br>
+  그림 3. 임의의 새로운 기저 벡터 집합 $\mathscr{B}$의 두 기저 벡터
+</p>
+
+기저 집합 $\mathscr{B}$를 이용하여 새로운 좌표계를 생각하고, 임의의 벡터를 새로운 기저를 이용해 표현해보자.
+
+가령, 표준 기저를 이용해 표현한 벡터 (2, 2)를 놓고 생각해보자.
+
+원래의 데카르트 좌표계와 새로운 좌표계를 동시에 놓고 생각해본다면 다음의 그림 4와 같을 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic2.png">
+  <br>
+  그림 4. 표준 기저로 표현한 벡터 (2,2)에 대한 원래 좌표계와 새로운 좌표계에서의 관찰
+</p>
+
+그림 4에서 볼 수 있듯이 표준 기저에서는 (2, 2)로 표현되던 좌표 (빨간색 화살표)가 새로운 좌표게에서는 (2, 0)으로 표현하면 충분할 것으로 보인다.
+
+앞으로 기저가 변경되는 경우 벡터를 표현할 때 아랫첨자로 기저가 되는 벡터 집합의 이름을 기재하도록 하자.
+
+가령, 표준 기저에서 표현되는 (2,2) 벡터는
+
+$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathscr{e}}$$
+
+라고 표현하고, 새로운 기저 $\mathscr{B}$를 기반으로 하여 표현되는 벡터 (1, 0)은 
+
+$$\begin{bmatrix}2, 0\end{bmatrix}_{\mathscr{B}}$$
+
+라고 쓰자.
+
+그렇다면, 그림 4에서 보았던 것 처럼 다음과 같은 관계를 확인할 수 있다.
+
+$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathscr{e}} = \begin{bmatrix}2, 0\end{bmatrix}_{\mathscr{B}}$$
