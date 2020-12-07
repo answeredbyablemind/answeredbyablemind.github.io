@@ -62,4 +62,9 @@ $$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\beg
 
 ## 신규 기저를 이용한 좌표 표현
 
-만약, 우리가 
+만약 표준 기저가 아닌 전혀 새로운 기저를 이용해 좌표계를 구성한다고 하면 임의의 벡터를 어떻게 다시 표현할 수 있을까?
+
+아래와 같은 새로운 기저 벡터들의 집합을 생각해보자.
+
+$$\mathscr{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
+
