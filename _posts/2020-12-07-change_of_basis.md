@@ -38,6 +38,7 @@ tags: 선형대수
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/Cartesian-coordinate-system.png">
   <br>
   그림 2. 데카르트 좌표계의 2차원 실수 공간 상의 좌표 평면
+  <br> 그림 출처: <a href = "https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%B9%B4%EB%A5%B4%ED%8A%B8_%EC%A2%8C%ED%91%9C%EA%B3%84"> 위키피디아, 데카르트 좌표계 </a>
 </p>
 
 일반적인 데카르트 좌표계에서 이용되는 기저 벡터는 $(1,0)$과 $(0,1)$을 가르키는 벡터를 이용하고, 각각을
