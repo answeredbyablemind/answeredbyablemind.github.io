@@ -30,11 +30,36 @@ tags: 선형대수
 
 # 새로운 좌표계 = 새로운 기저의 도입
 
+## 표준 기저를 이용한 좌표 표현
+
 좌표평면 상의 어떤 점(즉 벡터)을 표현할 때 우리가 보통 사용하는 좌표계는 cartesian coordinate이다.
 
 <p align = "center">
-  <img width = "400" src = "https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%B9%B4%EB%A5%B4%ED%8A%B8_%EC%A2%8C%ED%91%9C%EA%B3%84#/media/%ED%8C%8C%EC%9D%BC:Cartesian-coordinate-system.svg">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/Cartesian-coordinate-system.png">
   <br>
   그림 2. 데카르트 좌표계의 2차원 실수 공간 상의 좌표 평면
 </p>
 
+일반적인 데카르트 좌표계에서 이용되는 기저 벡터는 $(1,0)$과 $(0,1)$을 가르키는 벡터를 이용하고, 각각을
+
+$$\hat{i} = \begin{bmatrix}1 \\0 \end{bmatrix}$$
+
+과
+
+$$\hat{j} = \begin{bmatrix}0\\1\end{bmatrix}$$
+
+로 쓴다.
+
+다시 말해, 기저 벡터란 해당 좌표계를 구성하는 가로 세로 눈금 한 칸을 얼마만큼의 길이로 정할것인지를 정해주는 것이라고 생각할 수 있다.
+
+또한 데카르트 좌표계 상의 임의의 점, 가령 (2,3)이라는 점은 두 기저 벡터의 선형결합으로 표현할 수 있는데, 다시 말해
+
+$$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\begin{bmatrix}0\\1 \end{bmatrix} = 2\hat{i} + 3\hat{j}$$
+
+라고 쓸 수 있다는 점이다.
+
+여기서 우리는 용어를 하나 정의하고자 하는데, 앞으로는 데카르트의 좌표계의 기저벡터들($\hat{i}, \hat{j}$)을 표준 기저(standard basis)라고 부르도록 하자.
+
+## 신규 기저를 이용한 좌표 표현
+
+만약, 우리가 
