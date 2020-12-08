@@ -67,15 +67,15 @@ $$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\beg
 
 아래와 같은 새로운 기저 벡터들의 집합을 생각해보자.
 
-$$\mathscr{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
+$$\mathcal{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic1.png">
   <br>
-  그림 3. 임의의 새로운 기저 벡터 집합 $\mathscr{B}$의 두 기저 벡터
+  그림 3. 임의의 새로운 기저 벡터 집합 $\mathcal{B}$의 두 기저 벡터
 </p>
 
-기저 집합 $\mathscr{B}$를 이용하여 새로운 좌표계를 생각하고, 임의의 벡터를 새로운 기저를 이용해 표현해보자.
+기저 집합 $\mathcal{B}$를 이용하여 새로운 좌표계를 생각하고, 임의의 벡터를 새로운 기저를 이용해 표현해보자.
 
 가령, 표준 기저를 이용해 표현한 벡터 (2, 2)를 놓고 생각해보자.
 
@@ -93,14 +93,47 @@ $$\mathscr{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-
 
 가령, 표준 기저에서 표현되는 (2,2) 벡터는
 
-$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathscr{e}}$$
+$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathcal{E}}$$
 
-라고 표현하고, 새로운 기저 $\mathscr{B}$를 기반으로 하여 표현되는 벡터 (1, 0)은 
+라고 표현하고, 새로운 기저 $\mathcal{B}$를 기반으로 하여 표현되는 벡터 (1, 0)은 
 
-$$\begin{bmatrix}2, 0\end{bmatrix}_{\mathscr{B}}$$
+$$\begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
 
 라고 쓰자.
 
 그렇다면, 그림 4에서 보았던 것 처럼 다음과 같은 관계를 확인할 수 있다.
 
-$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathscr{e}} = \begin{bmatrix}2, 0\end{bmatrix}_{\mathscr{B}}$$
+$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
+
+[//]:# (식 7)
+
+즉, 위 식은 다음과 같이 해석할 수 있다.
+
+$\Rightarrow \mathcal{B}$라는 기저를 가지고 만든 좌표계에서의 [2, 0]은 표준좌표계에서는 [2, 2]로 쓸 수 있다.
+
+---
+
+그렇다면 표준좌표계의 임의의 벡터에 대해서 임의의 기저 $\mathcal{C}$로 구성된 좌표계의 좌표는 어떻게 계산할 수 있을까?
+
+표준 좌표계에서의 임의의 벡터를 $x$라고 하자.
+
+$$x=\begin{bmatrix}x_1 \\ x_2\end{bmatrix}_{\mathcal{E}}$$
+
+그리고 기저 $\mathcal{C}$를 다음과 같이 생각하자.
+
+$$\mathcal{C}=\left\lbrace\begin{bmatrix}| \\ c_1 \\ |\end{bmatrix}, \begin{bmatrix} | \\ c_2 \\ | \end{bmatrix}\right\rbrace$$
+
+그리고 벡터 $x$에 대해서 기저 $\mathcal{C}$로 구성된 좌표계에서의 좌표를 다음과 같이 생각하자.
+
+$$y=\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
+
+그렇다면 다음과 같은 관계를 생각할 수 있다.
+
+$$\begin{bmatrix}x_1\\x_2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}| & | \\ c_1 & c_2 \\ | & |\end{bmatrix}\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
+
+[//]:# (식 11) 
+
+
+예를 들어, 그림 4에서 보았던 내용을 식 (11)을 이용해 쓰자면 다음과 같다.
+
+$$\begin{bmatrix}2\\2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}\begin{bmatrix}2\\0\end{bmatrix}_{\mathcal{B}}$$
