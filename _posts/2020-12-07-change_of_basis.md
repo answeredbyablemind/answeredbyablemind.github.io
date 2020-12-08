@@ -136,4 +136,4 @@ $$\begin{bmatrix}x_1\\x_2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}| & | \\ c
 
 예를 들어, 그림 4에서 보았던 내용을 식 (11)을 이용해 쓰자면 다음과 같다.
 
-$$\begin{bmatrix}2\\2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}\begin{bmatrix}2\\0\end{bmatrix}_{\mathcal{B}}$$
+$$\begin{bmatrix}2\\2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}_{\mathcal{B}}^{\mathcal{E}}\begin{bmatrix}2\\0\end{bmatrix}_{\mathcal{B}}$$
