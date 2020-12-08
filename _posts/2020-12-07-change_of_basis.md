@@ -101,9 +101,9 @@ $$\begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
 
 라고 쓰자.
 
-그렇다면, 그림 4에서 보았던 것 처럼 다음과 같은 관계를 확인할 수 있다.
+그렇다면, 그림 4에서 보았던 것 처럼 아래의 두 벡터 표현은 동일한 벡터에 대한 다른 표현임을 알 수 있다.
 
-$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
+$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathcal{E}}, \begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
 
 [//]:# (식 7)
 
