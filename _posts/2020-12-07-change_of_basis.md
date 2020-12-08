@@ -13,7 +13,8 @@ tags: 선형대수
 해당 post를 잘 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것을 추천드립니다.
 
 * [벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
-
+* [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
+  
 # 벡터의 불변성과 가변성
 
 [벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)에서는 벡터가 무엇인가에 대해 다룰 때 벡터란 "화살표 같은 것"이면서 동시에 "숫자를 순서대로 나열한 것"이라는 두 가지의 특징에 대해 설명한 바 있다.
@@ -93,27 +94,49 @@ $$\mathcal{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-
 
 가령, 표준 기저에서 표현되는 (2,2) 벡터는
 
-$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathcal{E}}$$
+$$\begin{bmatrix}2\\ 2\end{bmatrix}_{\mathcal{E}}$$
 
 라고 표현하고, 새로운 기저 $\mathcal{B}$를 기반으로 하여 표현되는 벡터 (1, 0)은 
 
-$$\begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
+$$\begin{bmatrix}2\\ 0\end{bmatrix}_{\mathcal{B}}$$
 
 라고 쓰자.
 
 그렇다면, 그림 4에서 보았던 것 처럼 아래의 두 벡터 표현은 동일한 벡터에 대한 다른 표현임을 알 수 있다.
 
-$$\begin{bmatrix}2, 2\end{bmatrix}_{\mathcal{E}}, \begin{bmatrix}2, 0\end{bmatrix}_{\mathcal{B}}$$
+$$\begin{bmatrix}2\\ 2\end{bmatrix}_{\mathcal{E}}, \begin{bmatrix}2\\ 0\end{bmatrix}_{\mathcal{B}}$$
 
 [//]:# (식 7)
 
 즉, 위 식은 다음과 같이 해석할 수 있다.
 
-$\Rightarrow \mathcal{B}$라는 기저를 가지고 만든 좌표계에서의 [2, 0]은 표준좌표계에서는 [2, 2]로 쓸 수 있다.
+$\Rightarrow \mathcal{B}$라는 기저를 가지고 만든 좌표계에서의 (2, 0)은 표준 좌표계에서는 (2, 2)로 쓸 수 있다.
+
+그런데, 식 (6)에서의 기저 $\mathcal{B}$를 이용해 표현한 (2,0)라는 좌표값은 어떻게 얻을 수 있었을까?
+
+원래의 표준 좌표계에서의 좌표 $(2,2)$를 새로운 기저들을 이용해 표현한다고 하고, 새로운 기저를 이용해 표현한 좌표는 $(k_1, k_2)$라고 하자.
+
+즉 표준좌표계에서의 좌표 (2,2)와 새로운 기저를 이용해 표현한 좌표 $(k_1, k_2)$는 아래와 같은 관계식을 만족해야 한다.
+
+$$\begin{bmatrix}2\\2\end{bmatrix}=k_1\begin{bmatrix}| \\ b_1 \\ |\end{bmatrix}+k_2\begin{bmatrix}| \\ b_2 \\ |\end{bmatrix}$$
+
+위 식을 보면 바로 떠오를 수 있는 것은 [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 보았던 것 처럼 위 식의 우변은 행렬과 벡터의 곱의 해석 중 '열벡터의 선형 결합'을 이용해 아래와 같이 다시 쓸 수 있다는 것이다.
+
+$$\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}| & | \\ b_1 & b_2 \\ | & |\end{bmatrix}\begin{bmatrix}k_1\\k_2\end{bmatrix}$$
+
+우리에게 주어진 $\mathcal{B}$의 기저는 아래와 같으므로,
+
+$$\mathcal{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
+
+$$\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}1 & -1 \\1 & 1\end{bmatrix}\begin{bmatrix}k_1\\k_2\end{bmatrix}$$
+
+를 만족하는 $k_1$과 $k_2$를 구하면 (2,0)이라는 답을 얻을 수 있는 것이다.
+
+$$\therefore \begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}^{-1}\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}2\\0\end{bmatrix}$$
 
 ---
 
-그렇다면 표준좌표계의 임의의 벡터에 대해서 임의의 기저 $\mathcal{C}$로 구성된 좌표계의 좌표는 어떻게 계산할 수 있을까?
+이 결과를 일반화해보면, 표준좌표계의 임의의 벡터에 대해서 임의의 기저 $\mathcal{C}$로 구성된 좌표계의 좌표는 다음과 같이 얻을 수 있다.
 
 표준 좌표계에서의 임의의 벡터를 $x$라고 하자.
 
@@ -131,9 +154,3 @@ $$y=\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
 
 $$\begin{bmatrix}x_1\\x_2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}| & | \\ c_1 & c_2 \\ | & |\end{bmatrix}\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
 
-[//]:# (식 11) 
-
-
-예를 들어, 그림 4에서 보았던 내용을 식 (11)을 이용해 쓰자면 다음과 같다.
-
-$$\begin{bmatrix}2\\2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}_{\mathcal{B}}^{\mathcal{E}}\begin{bmatrix}2\\0\end{bmatrix}_{\mathcal{B}}$$
