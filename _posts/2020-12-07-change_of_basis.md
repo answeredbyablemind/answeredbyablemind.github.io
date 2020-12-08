@@ -68,7 +68,7 @@ $$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\beg
 
 아래와 같은 새로운 기저 벡터들의 집합을 생각해보자.
 
-$$\mathcal{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
+$$\mathcal{B} = \left\lbrace \vec{b_1}, \vec{b_2} \right\rbrace = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic1.png">
@@ -114,7 +114,7 @@ $\Rightarrow \mathcal{B}$라는 기저를 가지고 만든 좌표계에서의 (2
 
 그런데, 식 (6)에서의 기저 $\mathcal{B}$를 이용해 표현한 (2,0)라는 좌표값은 어떻게 얻을 수 있었을까?
 
-원래의 표준 좌표계에서의 좌표 $(2,2)$를 새로운 기저들을 이용해 표현한다고 하고, 새로운 기저를 이용해 표현한 좌표는 $(k_1, k_2)$라고 하자.
+원래의 표준 좌표계에서의 좌표 $(2,2)$를 $\mathcal{B}$의 기저들을 이용해 표현한다고 하고, 기저 $\mathcal{B}$를 이용해 표현한 좌표는 $(k_1, k_2)$라고 하자.
 
 즉 표준좌표계에서의 좌표 (2,2)와 새로운 기저를 이용해 표현한 좌표 $(k_1, k_2)$는 아래와 같은 관계식을 만족해야 한다.
 
@@ -132,7 +132,7 @@ $$\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}1 & -1 \\1 & 1\end{bmatrix}\
 
 를 만족하는 $k_1$과 $k_2$를 구하면 (2,0)이라는 답을 얻을 수 있는 것이다.
 
-$$\therefore \begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}^{-1}\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}2\\0\end{bmatrix}$$
+$$\therefore \begin{bmatrix}k_1\\k_2\end{bmatrix}=\begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}^{-1}\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}2\\0\end{bmatrix}$$
 
 ---
 
