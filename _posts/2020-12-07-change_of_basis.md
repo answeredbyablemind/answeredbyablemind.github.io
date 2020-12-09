@@ -154,3 +154,40 @@ $$y=\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
 
 $$\begin{bmatrix}x_1\\x_2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}| & | \\ c_1 & c_2 \\ | & |\end{bmatrix}\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
 
+# 임의의 기저 간의 변환
+
+2차원 실수 공간 $\Bbb{R}^2$의 두 개의 기저 $\mathcal{B}=\lbrace v_1, v_2\rbrace$와 $\mathcal{C}=\lbrace w_1, w_2\rbrace$를 생각해보자.
+
+$\Bbb{R}^2$의 모든 벡터들은 $v_1$과 $v_2$에 대한 일차결합으로 표현할 수 있으므로 다음과 같이 나타낼 수 있다.
+
+$$w_1 = a v_1 + b v_2$$
+
+$$w_2 = c v_1 + d v_2$$
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic3.png">
+  <br>
+  그림 5.
+</p>
+
+그림 5에서 벡터 $v=l_1 w_1 + l_2 w_2$를 $v_1$과 $v_2$로 나타내면,
+
+$$v = l_1 w_1 + l_2 w_2$$
+
+$$=l_1(a v_1 + b v_2) + l_2 (cv_1 +dv_2)$$
+
+$$=(a l_1 + cl_2)v_1 + (bl_1 + d l_2)v_2$$
+
+$$=k_1v_1 + k_2v_2$$
+
+이므로, 좌표 벡터와 행렬을 이용하면
+
+$$[v]_{\mathcal{B}} = \begin{bmatrix}k_1 \\ k_2\end{bmatrix} = \begin{bmatrix}al_1 + cl_2 \\ bl_1 + dl_2\end{bmatrix} = \begin{bmatrix}a & c \\ b & d\end{bmatrix}\begin{bmatrix}l_1 \\ l_2\end{bmatrix}=\begin{bmatrix}a & c \\ b & d\end{bmatrix}[v]_{\mathcal{C}}$$
+
+이라 할 수 있다.
+
+이 때 벡터 $v$의 $\mathcal{C}$- 표현 $[v]_{\mathcal{C}}$를 $\mathcal{B}$-표현 $[v]_{\mathcal{B}}$로 바꾸어주는 행렬 
+
+$$\begin{bmatrix}a & c \\ b & d\end{bmatrix}$$
+
+을 기저변환행렬(transition matrix) 혹은 추이행렬이라고 한다.
