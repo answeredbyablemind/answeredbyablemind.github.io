@@ -186,7 +186,15 @@ $$[v]_{\mathcal{B}} = \begin{bmatrix}k_1 \\ k_2\end{bmatrix} = \begin{bmatrix}al
 
 이라 할 수 있다.
 
-이 때 벡터 $v$의 $\mathcal{C}$- 표현 $[v]_{\mathcal{C}}$를 $\mathcal{B}$-표현 $[v]_{\mathcal{B}}$로 바꾸어주는 행렬 
+이 때 벡터 $v$의 $\mathcal{C}$ 표현 
+
+$$[v]_{\mathcal{C}}$$
+
+를 $\mathcal{B}$ 표현 
+
+$$[v]_{\mathcal{B}}$$
+
+로 바꾸어주는 행렬 
 
 $$\begin{bmatrix}a & c \\ b & d\end{bmatrix}$$
 
