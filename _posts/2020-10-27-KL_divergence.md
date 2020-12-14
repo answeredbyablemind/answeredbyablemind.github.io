@@ -50,13 +50,47 @@ $$BCE = -y\log(\hat y) - (1-y) \log(1-\hat y)$$
 
 이 경우는 타겟값을 정확히 모델이 맞추었는데, BCE 값을 보면 0이 출력됨을 알 수 있다.
 
-$$BCE = -y\log(\hat y) - (1-y) \log(1-\hat y)$$
+$$BCE = -y\log(\hat y) - (1-y) \log(1-\hat y)\notag$$
 
 $$=1\cdot \log(1) - 0 \cdot \log(0) = 0$$
 
+② $y=1$, $\hat y = 0$ 인 경우
 
+이 경우는 타겟값을 맞추지 못했다. 이 때 BCE의 값은 $\infty$인 것을 알 수 있다.
 
+$$BCE = -y\log(\hat y) - (1-y) \log(1-\hat y)\notag$$
 
+$$=-1\cdot \log(0) -0\cdot \log(1) = \infty$$
+
+③ $y=0$, $\hat y = 1$인 경우
+
+위의 경우와 마찬가지로 타겟값을 맞추지 못했고, BCE의 값은 마찬가지로 $\infty$이다.
+
+$$BCE = -y\log(\hat y) - (1-y) \log(1-\hat y)\notag$$
+
+$$=-0\cdot \log(1) - (1)\cdot\log(0) = \infty$$
+
+④ $y=0$, $\hat y = 0$인 경우
+
+타겟 값을 정확히 맞춘 경우로 BCE의 값은 0이 된다.
+
+$$BCE = -y\log(\hat y) - (1-y) \log(1-\hat y)\notag$$
+
+$$=-0\cdot\log(0) - (1)\log(1) = 0$$
+
+## 여러가지 출력 case를 가지는 경우의 Cross Entrpy
+
+Binary Cross Entropy에 대해서 보았을 때 알 수 있는 것은 Cross Entropy는 타겟값과 모델의 출력값이 얼마나 다른지를 표현한 것임을 알 수 있다.
+
+즉, BCE의 식은 이렇게도 쓸 수 있다.
+
+$$BCE = \sum_{x\in{0, 1}}\left(-P(x)\log(Q(x))\right)$$
+
+여기서 $P(x)$는 희망하는 타겟에 대한 결괏값이고, $Q(x)$는 모델에서 출력한 출력값이라고 볼 수 있는 것이다.
+
+이를 조금 더 일반화하면, 다음과 같이 여러가지 출력 case를 갖는 경우에 대한 cross entropy를 정의할 수 있을 것이다.
+
+$$CE = \sum_{x\in\chi}\left(-P(x)\log(Q(x))\right)$$
 
 
 # KL divergence: 정보 엔트로피의 상대적 비교
