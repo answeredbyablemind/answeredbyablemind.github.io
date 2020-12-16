@@ -131,9 +131,15 @@ $$식(1) = \frac
 
 식(1) 혹은 식(14)로 표현되는 t-value는 실험 상의 가정이나 세팅에 따라 여러가지 변형이 존재하는데 결국은 "pooled standard deviation을 사용하는가?"가 핵심이다.
 
+pooled standard deviation (혹은 pooled variance)라는 것은 두 집단의 표준편차가 같다고 가정하고 하나의 표준편차 값으로 두 집단의 표준 편차를 대체하겠다는 의미를 갖는다.
+
+두 집단의 표준편차(혹은 분산)이 같은 경우에 대해서 (즉, pooled standard deviation을 사용한다고 했을 때), 두 가지의 케이스를 생각해볼 수 있다.
+
 첫번째로 두 표본 집단의 n 수가 $n_1=n_2=n$으로 동일하고 두 표본 집단의 분산이 같다고 가정할 수 있는 경우에는 다음과 같이 $s_{\bar{X_1} - \bar{X_2}}$을 쓸 수 있다.
 
-$$식(1) = \frac
+$$식(1) \Rightarrow \frac{\bar{X_1} - \bar{X_2}}
+{\sqrt{\frac{s_p^2}{n}+\frac{s_p^2}{n}}}
+=\frac
 {\bar{X_1} - \bar{X_2}}
 {s_p\sqrt{\frac{2}{n}}}\quad\text{where}\quad s_p=\sqrt{\frac{s_1^2+s_2^2}{2}}$$
 
@@ -141,7 +147,9 @@ $$식(1) = \frac
 
 두 번째로 두 표본 집단의 n수는 다르지만 두 표본 집단의 분산은 같다고 가정할 수 있는 경우에는 t-value를 다음과 같이 쓸 수 있다.
 
-$$식(1) = \frac
+$$식(1) \Rightarrow \frac{\bar{X_1} - \bar{X_2}}
+{\sqrt{\frac{s_p^2}{n_1}+\frac{s_p^2}{n_2}}}
+= \frac
 {\bar{X_1} - \bar{X_2}}
 {s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\quad\text{where}\quad s_p=\sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}}$$
 
