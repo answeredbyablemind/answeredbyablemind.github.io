@@ -8,6 +8,12 @@ key: 20200213
 tags: 통계학
 ---
 
+# Prerequisites
+
+이 포스트를 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [표본과 표준 오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)
+
 # 전반적인 내용
 
 이번 article에서 정리하게 될 내용은 대략적으로 다음과 같다.
