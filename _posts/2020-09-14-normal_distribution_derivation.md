@@ -220,9 +220,9 @@ $$\Rightarrow -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}(-1)d\theta$$
 
 $$=\frac{2\pi}{k}$$
 
-따라서, 이 값은 원래의 $I^2$과 같으므로, I의 값은 아래와 같다.
+따라서, 이 값은 원래의 $I^2$과 같으므로, $I$의 값은 아래와 같다.
 
-$$I = \int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2dx\right)dx=\sqrt{\frac{2\pi}{k}}$$
+$$I = \int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2\right)dx=\sqrt{\frac{2\pi}{k}}$$
 
 여기서 $I$의 값은 확률밀도함수의 넓이와 관련된 것이므로 항상 양수이기 때문에 $I$ 의 값은 양의 값만을 가지게 된다.
 
