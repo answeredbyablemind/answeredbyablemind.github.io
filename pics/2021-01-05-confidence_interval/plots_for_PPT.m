@@ -6,12 +6,28 @@ load('data.mat')
 
 %% Fig. 3 세 번 표본 추출
 
-for i_smpl = 1:100
+n_sample = 6;
+n_iter = 100;
+SEM = zeros(1, n_iter);
+mns = zeros(1, n_iter);
+for i_smpl = 1:n_iter
     n_randperm = randperm(150);
     
-    n_randperm(
+    data_sampled = data(n_randperm(1:n_sample));
+
+    mns(i_smpl) = mean(data_sampled);
+    SEM(i_smpl) = std(data_sampled)/sqrt(n_sample);
 end
 
+figure;
+line([1, 100], ones(1, 2) * mean(data), 'color', 'r', 'linestyle', '--')
+line([1, 100], ones(1, 2) * (mean(data) +2*std(data)/sqrt(n_sample)), 'color', 'b', 'linestyle', '--')
+line([1, 100], ones(1, 2) * (mean(data) -2*std(data)/sqrt(n_sample)), 'color', 'b', 'linestyle', '--')
+hold on;
+for i = 1:n_iter
+    plot(i, mns(i), 'o', 'markerfacecolor','k');
+    line([i i], [mns(i) - SEM(i), mns(i) + SEM(i)], 'color','k')
+end
 
 %% Fig 4. 무수히 많은 표본 추출 & 평균
 
