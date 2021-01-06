@@ -30,7 +30,8 @@ for i_data = 1:length(k_data)
     end
 end
 
-samples2choose = [2, 30, 49, 54, 101, 137];
+rng(3)
+samples2choose = randperm(150,20);
 
 data_sort = sort(data);
 
@@ -42,7 +43,7 @@ ylim([0, 40])
 grid on;
 xlabel('height(cm)');
 ylabel('count');
-title('150명 중 6명 sample 추출');
+title('150명 중 20명 sample 추출');
 text(9.5, 22, ['SAMPLE n = ',num2str(length(samples2choose))],'fontsize',fsize)
 set(gca,'fontsize',fsize);
 
@@ -62,24 +63,24 @@ for i_data = 1:length(k_data)
         hold on;
     end
 end
-ylim([0.5, 4]);
+ylim([0.5, 9]);
 xlim([8, 22]);
 xlabel('height(cm)');
 ylabel('count');
 grid on;
 
 % 평균값 그려주기
-plot(mean(data2plot),3.5,'o','MarkerFaceColor','r', 'markersize', mksize/1.5,'MarkerEdgeColor','none');
+plot(mean(data2plot),8,'o','MarkerFaceColor','r', 'markersize', mksize/1.5,'MarkerEdgeColor','none');
 
 % std 그려주기
-plot([mean(data2plot) - 2 * std(data2plot)/sqrt(6), mean(data2plot) + 2 * std(data2plot)/sqrt(6)], [3.5, 3.5], 'color', 'r','linewidth',2);
+plot([mean(data2plot) - 2 * std(data2plot)/sqrt(6), mean(data2plot) + 2 * std(data2plot)/sqrt(6)], [8, 8], 'color', 'r','linewidth',2);
 %     set(gca,'fontsize',fsize);
 % title([num2str(i_smpl),'번째 표본 그룹']);
 
 
 %% Fig. 100번 샘플링 했을 때 모평균이 몇 번 들어오는지
-rng(1)
-n_sample = 10;
+rng(3)
+n_sample = 20;
 n_iter = 100;
 SEM = zeros(1, n_iter);
 mns = zeros(1, n_iter);
@@ -108,7 +109,7 @@ for i = 1:n_iter
 end
 line([1, n_iter], ones(1, 2) * mean(data), 'color', 'r', 'linestyle', '--','linewidth',2)
 
-ylim([10, 20])
+ylim([12, 18])
 % disp(num2str(count))
 grid on;
 xlabel('반복 추출 횟수');
