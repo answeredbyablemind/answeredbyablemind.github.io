@@ -4,9 +4,82 @@ clear; close all; clc;
 % data = round(randn(1,150)* 2 + 15);
 load('data.mat')
 
-%% Fig. 3 세 번 표본 추출
+%%
+close all;
+k_data = unique(data);
+my_order = [];
 
-n_sample = 6;
+for i_data = 1:length(k_data)
+    idx = data == k_data(i_data);
+    for i_idx = 1:sum(idx)
+        my_order = [my_order, i_idx];
+    end
+end
+
+mksize = 8;
+fsize= 12;
+
+k_data = unique(data);
+
+for i_data = 1:length(k_data)
+    idx = data == k_data(i_data);
+    
+    for i_idx = 1:sum(idx)
+        plot(k_data(i_data), i_idx,'o','markersize',mksize,'markerfacecolor',ones(1,3) * 0.5, 'markeredgecolor','none');
+        hold on;
+    end
+end
+
+samples2choose = [2, 30, 49, 54, 101, 137];
+
+data_sort = sort(data);
+
+plot(data_sort(samples2choose), my_order(samples2choose),'o','markersize',mksize,'markerfacecolor','r',...
+    'markeredgecolor','none');
+
+xlim([8 22])
+ylim([0, 40])
+grid on;
+xlabel('height(cm)');
+ylabel('count');
+title('150명 중 6명 sample 추출');
+text(9.5, 22, ['SAMPLE n = ',num2str(length(samples2choose))],'fontsize',fsize)
+set(gca,'fontsize',fsize);
+
+%% 표본 추출
+close all;
+mksize = 8;
+fsize= 12;
+
+figure('position',[680, 738, 350, 240])
+data2plot = data_sort(samples2choose);
+k_data = unique(data2plot);
+for i_data = 1:length(k_data)
+    idx = data2plot == k_data(i_data);
+    
+    for i_idx = 1:sum(idx)
+        plot(k_data(i_data), i_idx,'o','markersize',mksize,'markerfacecolor','r', 'markeredgecolor','none');
+        hold on;
+    end
+end
+ylim([0.5, 4]);
+xlim([8, 22]);
+xlabel('height(cm)');
+ylabel('count');
+grid on;
+
+% 평균값 그려주기
+plot(mean(data2plot),3.5,'o','MarkerFaceColor','r', 'markersize', mksize/1.5,'MarkerEdgeColor','none');
+
+% std 그려주기
+plot([mean(data2plot) - 2 * std(data2plot)/sqrt(6), mean(data2plot) + 2 * std(data2plot)/sqrt(6)], [3.5, 3.5], 'color', 'r','linewidth',2);
+%     set(gca,'fontsize',fsize);
+% title([num2str(i_smpl),'번째 표본 그룹']);
+
+
+%% Fig. 100번 샘플링 했을 때 모평균이 몇 번 들어오는지
+rng(1)
+n_sample = 10;
 n_iter = 100;
 SEM = zeros(1, n_iter);
 mns = zeros(1, n_iter);
@@ -14,20 +87,32 @@ for i_smpl = 1:n_iter
     n_randperm = randperm(150);
     
     data_sampled = data(n_randperm(1:n_sample));
-
+    
     mns(i_smpl) = mean(data_sampled);
     SEM(i_smpl) = std(data_sampled)/sqrt(n_sample);
 end
 
-figure;
-line([1, 100], ones(1, 2) * mean(data), 'color', 'r', 'linestyle', '--')
-line([1, 100], ones(1, 2) * (mean(data) +2*std(data)/sqrt(n_sample)), 'color', 'b', 'linestyle', '--')
-line([1, 100], ones(1, 2) * (mean(data) -2*std(data)/sqrt(n_sample)), 'color', 'b', 'linestyle', '--')
+figure('position',[680, 550, 1200, 420]);
 hold on;
+count = 0;
 for i = 1:n_iter
-    plot(i, mns(i), 'o', 'markerfacecolor','k');
-    line([i i], [mns(i) - SEM(i), mns(i) + SEM(i)], 'color','k')
+    
+    line([i i], [mns(i) - 2* SEM(i), mns(i) + 2 * SEM(i)], 'color','k','linewidth',2)
+    plot(i, mns(i), 'o', 'markerfacecolor',[0.8, 0.8, 0.8],'markeredgecolor','k');
+    if ((mns(i) - 2*SEM(i)) > mean(data)) || ((mns(i) + 2*SEM(i)) < mean(data))
+        
+        line([i i], [mns(i) - 2* SEM(i), mns(i) + 2 * SEM(i)], 'color','r','linewidth',2)
+        plot(i, mns(i), 'o', 'markerfacecolor','r','markeredgecolor','k');
+        count = count + 1;
+    end
 end
+line([1, n_iter], ones(1, 2) * mean(data), 'color', 'r', 'linestyle', '--','linewidth',2)
+
+ylim([10, 20])
+% disp(num2str(count))
+grid on;
+xlabel('반복 추출 횟수');
+ylabel('평균값');
 
 %% Fig 4. 무수히 많은 표본 추출 & 평균
 
@@ -61,10 +146,10 @@ for i = 1:n_step
     title('금성에 사는 외계인 150명의 키');
     
     data_sort = sort(data);
-
+    
     plot(data_sort(idx_perm), my_order(idx_perm),'o','markersize',mksize,'markerfacecolor','r',...
         'markeredgecolor','none');
-
+    
     subplot(1,2,2);
     
     k_data = unique(mns2draw);
@@ -109,7 +194,7 @@ for i = 1:n_step
     title('n=6인 샘플을 100회 뽑고 각각의 평균을 도시한 것');
     
     drawnow;
-%     pause;
+    %     pause;
     
     if i < n_step
         subplot(1,2,1); cla;
