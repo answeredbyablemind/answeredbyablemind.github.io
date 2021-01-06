@@ -63,12 +63,12 @@ p-value는 treatment effect의 size 뿐만 아니라 sample size에도 영향을
 
 [표본과 표준오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html) 편에서 보았던 예시를 다시 가져와 살펴보도록 하자.
 
-아래 그림은 150명의 금성 외계인의 키(회색)를 표시한 것이고, 임의로 6명 외계인을 선별하여 키를 조사한 것을 표시(빨간색)한 그림이다.
+아래 그림은 150명의 금성 외계인의 키(회색)를 표시한 것이고, 임의로 20명 외계인을 선별하여 키를 조사한 것을 표시(빨간색)한 그림이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-12-standard_error/pic2.png">
   <br>
-  그림 3. 150명의 모집단에서 6명의 표본을 추출한 경우. (표본은 빨간색으로 표시)
+  그림 3. 150명의 모집단에서 30명의 표본을 추출한 경우. (표본은 빨간색으로 표시)
 </p>
 
 그런데, 그림 3에서 볼 수 있는 표본 (빨간색)이 유일하게 우리가 뽑을 수 있는 표본일까?
