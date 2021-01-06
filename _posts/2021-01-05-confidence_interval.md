@@ -103,7 +103,6 @@ $$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 
 ## 샘플링과 신뢰구간 설정
 
-[//]:# (sample 수가 6개로 너무 작기 때문에 2 * SEM을 쓰기는 어려움. 내용 수정할 것.)
 
 한편, 정규분포에서 평균값을 중심으로 2 * 표준편차의 범위는 약 95%의 면적을 차지한다. 
 
@@ -119,6 +118,8 @@ $$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 
 "모평균은 2 * 표준 오차 (SEM) 범위 안에 95% 확률로 들어오게 된다."
 
+[//]:# (그림 7의 sample 수가 6개로 너무 작기 때문에 2 * SEM을 쓰기는 어려움. 내용 수정할 것.)
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic7.png">
   <br>
@@ -128,6 +129,8 @@ $$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 조금 더 풀어서 생각해보았을 때, 95% 확률로 들어오게 된다는 말은 무슨 의미일까?
 
 그것은 100번 정도 반복 샘플링을 해 보았을 때 95번 가량은 2 * 표준 오차안에 모평균이 들어있다는 뜻이다.
+
+[//]:# (그림 8도 마찬가지로 sample수 늘린 다음 다시 그릴 것)
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic8.png">
