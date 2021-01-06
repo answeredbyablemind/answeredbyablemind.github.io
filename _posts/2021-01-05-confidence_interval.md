@@ -105,18 +105,33 @@ $$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 
 한편, 정규분포에서 평균값을 중심으로 2 * 표준편차의 범위는 약 95%의 면적을 차지한다. 
 
-[//]:# (정규분포 2SD 넓이 보여주는 그림 그릴 것)
+<p align = "center">
+  <img src = "https://loonylabs.files.wordpress.com/2019/09/variance-2.png?w=590">
+  <br>
+  그림 6. 정규분포는 평균으로부터 ±2 SD 만큼 떨어진 곳 까지의 넓이는 약 0.95이다.
+  <br>
+  <a href = "https://loonylabs.org/2019/09/12/day24-365doa/">그림 출처 </a>
+</p>
 
 이를 바탕으로 위 세 가지 사실을 종합하면 다음과 같은 결론을 이끌어낼 수 있다.
 
-"모평균은 2 * 표준 오차 범위 안에 95% 확률로 들어오게 된다."
+"모평균은 2 * 표준 오차 (SEM) 범위 안에 95% 확률로 들어오게 된다."
 
-[//]:# (샘플 추출 --> 샘플 평균과 SEM * 2 의 범의 그려주고 --> 이 안에 모평균이 들어있을 확률 95%라는 것을 그림으로 그려줄 것)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic7.png">
+  <br>
+  그림 7. 모평균은 ± 2 * 표준 오차 범위 안에 95% 확률로 포함되어 있다.
+</p>
 
 조금 더 풀어서 생각해보았을 때, 95% 확률로 들어오게 된다는 말은 무슨 의미일까?
 
 그것은 100번 정도 반복 샘플링을 해 보았을 때 95번 가량은 2 * 표준 오차안에 모평균이 들어있다는 뜻이다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic8.png">
+  <br>
+  그림 8. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
+</p>
 
 
 
