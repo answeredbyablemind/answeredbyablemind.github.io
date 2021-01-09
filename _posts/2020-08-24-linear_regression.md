@@ -204,6 +204,10 @@ x_hat =
   그림 7. 그림 1과 그림 3에서 본 데이터에 대한 최적의 회귀식
 </p>
 
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FOKbnQdho0Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 # 최적화 문제 관점에서 본 회귀분석
 
 ※ 선형대수학 관련 내용으로 궁금한 사람은 $\lt$최적화 문제 관점에서 본 회귀분석$\gt$ 파트를 건너뛰어도 무관함.
@@ -355,3 +359,7 @@ $$b := b - \alpha \frac{\partial f}{\partial b}$$
   그림 14. 경사하강법(gradient descent)을 이용해 비용함수의 최솟값을 찾는 과정
   <br> ※ 비용 함수의 parameter들은 모두 normalize하여 시각화하였음.
 </p>
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/THi6ZBoAKQY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
