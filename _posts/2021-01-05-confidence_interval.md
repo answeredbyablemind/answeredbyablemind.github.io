@@ -101,7 +101,15 @@ p-value는 treatment effect의 size 뿐만 아니라 sample size에도 영향을
 
 $$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 
-## 샘플링과 신뢰구간 설정
+## 모평균과 표본평균의 관계
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic7.png">
+  <br>
+  그림 6. 정규분포는 평균으로부터 ±2 SD 만큼 떨어진 곳 까지의 넓이는 약 0.95이다.
+  <br>
+  <a href = "https://loonylabs.org/2019/09/12/day24-365doa/">그림 출처 </a>
+</p>
+
 
 한편, 정규분포에서 평균값을 중심으로 2 * 표준편차의 범위는 약 95%의 면적을 차지한다[^1]. 
 
