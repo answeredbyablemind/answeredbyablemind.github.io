@@ -72,10 +72,20 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 <p align = "center">
   <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic3.png">
   <br>
-  그림 3. 모집단에서 표본을 추출해 표본의 통계량을 계산하는 과정
+  그림 3. 표본 평균은 모평균으로부터 ±2SEM 범위 안에 95% 확률로 포함되어 있다.
 </p>
 
-[//]:# (근데, 우리는 모평균은 모른다는 얘기 넣을 것.)
+그런데, 여기서 아주 큰 문제가 있다. 우리는 모평균을 모른다는 것이다.
+
+만약 우리가 모평균을 알았다면 굳이 이렇게 표본을 뽑아가면서 표본 평균을 계산해야 했을 이유도 없었을 것이다.
+
+그래서 우리는 조금 색다른 방식의 관점에서 표본 평균과 모평균의 관계를 생각해 보도록 하자.
+
+<p align = "center">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic4.png">
+  <br>
+  그림 4. 
+</p>
 
 
 <p align = "center">
