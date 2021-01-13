@@ -84,24 +84,19 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 <p align = "center">
   <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic4.png">
   <br>
-  그림 4. 
+  그림 4. 표본 평균으로부터 ±2 표준오차 안에 모평균이 포함되어 있을 확률은 95%라고 말할 수 있다.
 </p>
 
-
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic7.png">
-  <br>
-  그림 7. 모평균은 ± 2 * 표준 오차 범위 안에 95% 확률로 포함되어 있다.
-</p>
+그림 4에서 볼 수 있듯이 우리가 만약 모평균으로부터 ±2 SEM 만큼 떨어진 구간을 표본 평균을 중심으로 할 수 있게 이동시킨다면, 모평균이 표본 평균으로부터 ±2 SEM 만큼 떨어진 곳에 95% 확률로 들어온다는 것을 알 수 있다. 
 
 조금 더 풀어서 생각해보았을 때, 95% 확률로 들어오게 된다는 말은 무슨 의미일까?
 
 그것은 100번 정도 반복 샘플링을 해 보았을 때 95번 가량은 2 * 표준 오차안에 모평균이 들어있다는 뜻이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic8.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic5.png">
   <br>
-  그림 8. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
+  그림 5. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
 </p>
 
 여기서 "이 구간 (평균 ± 2 SEM) 안에 95% 확률로 모평균이 들어있다"라는 말을 조금 어려운 말로 "이 구간 (평균 ± 2 SEM)은 95% 신뢰구간이다"라고 한다.
