@@ -9,7 +9,7 @@ tags: 통계학
 ---
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic0.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic0.jpg">
   <br>
   일상 생활에서도 종종 사용되는 신뢰 구간의 예시
 </p>
