@@ -160,7 +160,7 @@ t-test를 수행할 때의 가설은 다음과 같았다.
 왜냐하면 t-value는 아래 그림 7과 같이 표본 평균간의 차이가 분자에 오도록 정의되어 있기 때문에 평균간의 거리가 멀 수록 t-value가 커지기 때문이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic1.png">
   <br>
   그림 7. t-value의 기존 정의
 </p>
@@ -168,6 +168,12 @@ t-test를 수행할 때의 가설은 다음과 같았다.
 그런데, 이번 시간에는 t-value에 대한 새로운 정의를 생각해보도록 하자. 두 표본이 서로 다른 모평균을 갖는 집단에서 추출되었다고 새롭게 가정해보는 것이다.
 
 이런 식으로 t-test에 대한 기존의 가정을 뒤집는 것은 앞서 표본 평균의 신뢰 구간을 정할 때 모평균을 생각함으로써 신뢰 구간의 개념을 얻어낸 방식을 그대로 차용하기 위해서이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic8.png">
+  <br>
+  그림 8.
+</p>
 
 [//]:# (그림 그려줄 것. 두 모집단에서 파랭이, 초록이 졸라맨들이 뽑아지고, 각각이 표본 평균 집단 안에 있는 임의의 평균이 됨. 그리고 그평균들 끼리 비교한 것--> 차이 분포를 그려주고 그걸 t-분포와 비교)
 
