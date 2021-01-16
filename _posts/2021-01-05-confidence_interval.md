@@ -33,13 +33,10 @@ tags: 통계학
 * [중심극한정리의 의미](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)
 * [표본과 표준 오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)
 * [귀무가설과 대립가설의 의미](https://angeloyeo.github.io/2020/03/25/hypothesis.html)
+* [t-value와 스튜던트의 t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)
 * [p-value의 의미](https://angeloyeo.github.io/2020/03/29/p_value.html)
 
 # t-분포 복습
-
-* 자유도에 따른 t-분포의 형태 확인할 것
-* t-분포의 넓이에 대해서. 어떤 t-값에 어떤 넓이가 대응되는지 확인할 것.
-* 그래서 아래의 내용에서 2 SEM이라고 적은 것들을 모두 t 값으로 적절히 수정하는 것이 바람직함.
 
 우리는 앞서 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)에서 t-분포에 대해 알아본 바 있다.
 
@@ -88,12 +85,17 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
 
 보통 추정을 위한 통계학에서 사용하는 주요한 확률값은 0.95와 0.99정도라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
 
+<p align = "center">
+  <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic04.png">
+  <br>
+  그림 04. 표준정규분포와 t-분포의 형태 비교
+</p>
 
+* t-value가 1이라는 말은 두 표본 평균이 정확히 SEM 만큼 떨어져있다는 의미.
 
-
-
-한편, 자유도가 20인 경우에는 t-값이 0에서 1사이로 얻어질 확률은 그 값이 다를 수 있는데, 앞서 그림 02에서 설명했던 것 처럼 자유도가 달라지면 함수의 형태가 달라지기 때문이다.
-
+* 자유도에 따른 t-분포의 형태 확인할 것
+* t-분포의 넓이에 대해서. 어떤 t-값에 어떤 넓이가 대응되는지 확인할 것.
+* 그래서 아래의 내용에서 2 SEM이라고 적은 것들을 모두 t 값으로 적절히 수정하는 것이 바람직함.
 
 
 # 모평균과 표본 평균 간의 관계
