@@ -1,5 +1,26 @@
 clear; close all; clc;
 
+%% t-분포와 정규분포의 비교
+
+dof = 2;
+xx = linspace(-3,3,100);
+pdf_norm = pdf('normal',xx, 0, 1);
+pdf_t = pdf('T', xx, dof);
+
+figure;
+h(1) = plot(xx, pdf_norm,'linewidth',2);
+hold on;
+h(2) = plot(xx, pdf_t,'linewidth',2);
+[~, icons] = legend(h, '표준정규분포', ['t-분포 (자유도: ',num2str(dof),')']);
+icons = findobj(icons,'Type','line'); % Type은 line이면서 Marker는 없지는 않는 것을 찾아야 함.
+set(icons, 'linewidth', 5)
+grid on;
+
+xlabel('x');
+ylabel('P(x)');
+%%
+
+
 % rng(4)
 % data = round(randn(1,150)* 2 + 15);
 load('data.mat')
