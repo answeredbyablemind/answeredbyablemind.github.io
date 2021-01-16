@@ -49,7 +49,7 @@ grid on;
 xlabel('x');
 ylabel('P(x)');
 
-%% pdf의 면적과 확률에 대하여.
+%% pdf의 면적과 확률에 대하여 (0~1 사이의 넓이)
 clear pdf_t
 
 xx = linspace(-3,3,100);
@@ -67,6 +67,44 @@ ylabel('P(x)');
 grid on;
 
 tcdf(1, 10) - tcdf(0, 10)
+
+%% pdf의 면적과 확률에 대하여 (0.95 넓이)
+clear pdf_t
+
+xx = linspace(-3,3,100);
+xx2 = linspace(-2.228, 2.228,100);
+pdf_t = pdf('T', xx, 10);
+pdf_t2 = pdf('T', xx2, 10);
+
+figure;
+plot(xx, pdf_t,'linewidth',2)
+hold on;
+area(xx2, pdf_t2,'facecolor',[0.2, 0.8, 0.2],'edgecolor','none','facealpha',0.5)
+
+xlabel('x');
+ylabel('P(x)');
+grid on;
+
+tcdf(2.228, 10)
+
+%% pdf의 면적과 확률에 대하여 (0.99 넓이)
+clear pdf_t
+
+xx = linspace(-3,3,100);
+xx2 = linspace(-2.764, 2.764,100);
+pdf_t = pdf('T', xx, 10);
+pdf_t2 = pdf('T', xx2, 10);
+
+figure;
+plot(xx, pdf_t,'linewidth',2)
+hold on;
+area(xx2, pdf_t2,'facecolor',[0.2, 0.5, 0.8],'edgecolor','none','facealpha',0.5)
+
+xlabel('x');
+ylabel('P(x)');
+grid on;
+
+tcdf(2.764, 10)
 %%
 
 
