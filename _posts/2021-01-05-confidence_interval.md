@@ -88,8 +88,10 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
 <p align = "center">
   <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic04.png">
   <br>
-  그림 04. 표준정규분포와 t-분포의 형태 비교
+  그림 04. 자유도가 10인 경우의 t-분포에 대해 넓이가 0.95 혹은 0.99인 경우에 해당하는 양끝의 t-value
 </p>
+
+그림 04를 보면 
 
 * t-value가 1이라는 말은 두 표본 평균이 정확히 SEM 만큼 떨어져있다는 의미.
 
