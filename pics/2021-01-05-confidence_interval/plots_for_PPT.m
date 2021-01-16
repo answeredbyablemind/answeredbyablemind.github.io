@@ -21,7 +21,6 @@ ylabel('P(x)');
 
 %% 자유도에 따른 t-분포와 정규분포 비교
 
-
 xx = linspace(-3,3,100);
 pdf_norm = pdf('normal',xx, 0, 1);
 
@@ -50,6 +49,24 @@ grid on;
 xlabel('x');
 ylabel('P(x)');
 
+%% pdf의 면적과 확률에 대하여.
+clear pdf_t
+
+xx = linspace(-3,3,100);
+xx2 = linspace(0,1,100);
+pdf_t = pdf('T', xx, 10);
+pdf_t2 = pdf('T', xx2, 10);
+
+figure;
+plot(xx, pdf_t,'linewidth',2)
+hold on;
+area(xx2, pdf_t2,'facecolor','r','edgecolor','none','facealpha',0.5)
+
+xlabel('x');
+ylabel('P(x)');
+grid on;
+
+tcdf(1, 10) - tcdf(0, 10)
 %%
 
 
