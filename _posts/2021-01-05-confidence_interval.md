@@ -9,7 +9,7 @@ tags: 통계학
 ---
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic0.jpg">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic0.png">
   <br>
   일상 생활에서도 종종 사용되는 신뢰 구간의 예시
 </p>
@@ -54,7 +54,7 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
 생긴 것을 직접 비교하면 아래와 같다.
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic01.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic01.png">
   <br>
   그림 01. 표준정규분포와 t-분포의 형태 비교
 </p>
@@ -66,7 +66,7 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
 그리고, 그림 01의 우측 상단의 범례를 보면 알 수 있지만 '자유도'라는 개념이 있다. 자유도는 표본수와 직접적인 관련이 있는 값으로, t-분포의 형태를 결정한다. 자유도는 값이 클 수록 정규분포의 모양에 가까워진다.
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic02.png">
+  <img  width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic02.png">
   <br>
   그림 02. 표준정규분포와 t-분포의 형태 비교
 </p>
