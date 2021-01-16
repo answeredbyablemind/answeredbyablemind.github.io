@@ -18,6 +18,38 @@ grid on;
 
 xlabel('x');
 ylabel('P(x)');
+
+%% 자유도에 따른 t-분포와 정규분포 비교
+
+
+xx = linspace(-3,3,100);
+pdf_norm = pdf('normal',xx, 0, 1);
+
+dofs = [1, 2, 5, 10];
+
+for i_dof = 1:length(dofs)
+    dof = dofs(i_dof);
+    pdf_t(i_dof,:) = pdf('T', xx, dof);
+end
+
+clear h
+figure;
+h(1) = plot(xx, pdf_norm,'linewidth',2);
+hold on;
+for i = 1:length(dofs)
+    h(i+1) = plot(xx, pdf_t(i,:),'linewidth',2);
+end
+
+[~, icons] = legend(h, ...
+    '표준정규분포', 't-분포 (자유도: 1)', 't-분포 (자유도: 2)', 't-분포 (자유도: 5)', 't-분포 (자유도: 10)');
+
+icons = findobj(icons,'Type','line'); % Type은 line이면서 Marker는 없지는 않는 것을 찾아야 함.
+set(icons, 'linewidth', 5)
+grid on;
+
+xlabel('x');
+ylabel('P(x)');
+
 %%
 
 

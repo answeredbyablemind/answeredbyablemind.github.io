@@ -35,7 +35,7 @@ tags: 통계학
 * [귀무가설과 대립가설의 의미](https://angeloyeo.github.io/2020/03/25/hypothesis.html)
 * [p-value의 의미](https://angeloyeo.github.io/2020/03/29/p_value.html)
 
-# t-분포에 대한 복습
+# t-분포 복습
 
 * 자유도에 따른 t-분포의 형태 확인할 것
 * t-분포의 넓이에 대해서. 어떤 t-값에 어떤 넓이가 대응되는지 확인할 것.
@@ -63,8 +63,13 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
 
 그림 01에서 볼 수 있듯이 표준정규분포나 t-분포나 생긴건 별반 다를게 없다.
 
-그리고, 그림 01의 우측 상단의 범례를 보면 알 수 있지만 '자유도'라는 개념이 있다. 자유도는 t-분포의 특징을 결정하는 것으로 
+그리고, 그림 01의 우측 상단의 범례를 보면 알 수 있지만 '자유도'라는 개념이 있다. 자유도는 표본수와 직접적인 관련이 있는 값으로, t-분포의 형태를 결정한다. 자유도는 값이 클 수록 정규분포의 모양에 가까워진다.
 
+<p align = "center">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic02.png">
+  <br>
+  그림 02. 표준정규분포와 t-분포의 형태 비교
+</p>
 
 # 모평균과 표본 평균 간의 관계
 
