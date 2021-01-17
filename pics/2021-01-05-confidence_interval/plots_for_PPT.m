@@ -71,7 +71,7 @@ tcdf(1, 10) - tcdf(0, 10)
 %% pdf의 면적과 확률에 대하여 (0.95 넓이)
 clear pdf_t
 
-xx = linspace(-3,3,100);
+xx = linspace(-4,4,100);
 xx2 = linspace(-2.228, 2.228,100);
 pdf_t = pdf('T', xx, 10);
 pdf_t2 = pdf('T', xx2, 10);
@@ -90,8 +90,8 @@ tcdf(2.228, 10)
 %% pdf의 면적과 확률에 대하여 (0.99 넓이)
 clear pdf_t
 
-xx = linspace(-3,3,100);
-xx2 = linspace(-2.764, 2.764,100);
+xx = linspace(-4,4,100);
+xx2 = linspace(-3.169, 3.169,100);
 pdf_t = pdf('T', xx, 10);
 pdf_t2 = pdf('T', xx2, 10);
 
@@ -104,7 +104,7 @@ xlabel('x');
 ylabel('P(x)');
 grid on;
 
-tcdf(2.764, 10)
+tcdf(3.169, 10)
 %%
 
 

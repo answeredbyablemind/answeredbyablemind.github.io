@@ -46,9 +46,9 @@ tags: 통계학
 
 [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 따르면 표본의 크기가 커질 수록 표본 평균의 분포는 정규 분포에 가까워지게 된다.
 
-t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우에 해당하는 표본 평균의 분포라고 할 수 있다.
+t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우에 해당하는 표본 평균의 분포라고 할 수 있다 (다만 모집단의 분포는 정규분포를 따르긴 해야 한다.).
 
-생긴 것을 직접 비교하면 아래와 같다.
+정규분포와 t-분포의 모양을 직접 비교하면 아래와 같다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic01.png">
@@ -83,13 +83,26 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
 
 (만약 't-값을 얻는다'라는 말의 의미를 잘 이해하지 못하고 있다면 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)을 꼭 한번 보고 오는 것을 추천한다.)
 
-보통 추정을 위한 통계학에서 사용하는 주요한 확률값은 0.95와 0.99정도라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
+보통 추정을 위한 통계학에서 사용하는 주요한 확률값은 0.95와 0.99가 대표적이라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
 
 <p align = "center">
   <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic04.png">
   <br>
   그림 04. 자유도가 10인 경우의 t-분포에 대해 넓이가 0.95 혹은 0.99인 경우에 해당하는 양끝의 t-value
 </p>
+
+그림 04에서 볼 수 있듯이 자유도가 10인 경우에 t-분포의 넓이가 0.95 혹은 0.99인 경우에 해당하는 t-value는 각각 ±2.228, ±3.169이다.
+
+이와 같은 조사를 여러 자유도에 대해 작성해둔 것이 t-value table이다.
+
+<p align = "center">
+  <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic05.png">
+  <br>
+  그림 05. 
+</p>
+
+
+
 
 그림 04를 보면 
 
