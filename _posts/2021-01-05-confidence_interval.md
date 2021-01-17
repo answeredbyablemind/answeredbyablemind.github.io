@@ -99,6 +99,8 @@ t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우�
   <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic05.png">
   <br>
   그림 05. 
+  <br>
+  <a href = "http://www.ttable.org/"> 그림 출처 </a>
 </p>
 
 
