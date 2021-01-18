@@ -62,8 +62,8 @@ plot(xx, pdf_t,'linewidth',2)
 hold on;
 area(xx2, pdf_t2,'facecolor','r','edgecolor','none','facealpha',0.5)
 
-xlabel('x');
-ylabel('P(x)');
+xlabel('t-value');
+ylabel('P(t)');
 grid on;
 
 tcdf(1, 10) - tcdf(0, 10)
@@ -81,8 +81,8 @@ plot(xx, pdf_t,'linewidth',2)
 hold on;
 area(xx2, pdf_t2,'facecolor',[0.2, 0.8, 0.2],'edgecolor','none','facealpha',0.5)
 
-xlabel('x');
-ylabel('P(x)');
+xlabel('t-value');
+ylabel('P(t)');
 grid on;
 
 tcdf(2.228, 10)
@@ -100,8 +100,8 @@ plot(xx, pdf_t,'linewidth',2)
 hold on;
 area(xx2, pdf_t2,'facecolor',[0.2, 0.5, 0.8],'edgecolor','none','facealpha',0.5)
 
-xlabel('x');
-ylabel('P(x)');
+xlabel('t-value');
+ylabel('P(t)');
 grid on;
 
 tcdf(3.169, 10)
