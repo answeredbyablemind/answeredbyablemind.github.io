@@ -251,9 +251,9 @@ t-test를 수행할 때의 가설은 다음과 같았다.
 그림 8에서는 서로 다른 두 모집단에서 표본을 추출한 뒤 각 표본 평균을 계산하였다. 그 뒤에 평균값의 차이에 관한 분포에 지금 뽑은 두 표본 평균의 차이를 표시하였다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic15.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic14.png">
   <br>
-  그림 15. 
+  그림 14. 
 </p>
 
 그렇다면, 우리의 t-value는 다음과 같이 새롭게 정의할 수 있다.
@@ -261,9 +261,9 @@ t-test를 수행할 때의 가설은 다음과 같았다.
 $$t=\frac{(\bar{X}_1-\bar{X}_2)-(\mu_1 - \mu_2)}{s_{\bar{X}_1-\bar{X}_2}}$$
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic14.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic15.png">
   <br>
-  그림 14. 
+  그림 15. 
 </p>
 
 
