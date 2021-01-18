@@ -8,6 +8,8 @@ key: 20210105
 tags: 통계학
 ---
 
+[//]:# (교과서가 아니고서야 쉬운 설명이 더 좋은 설명이다.)
+
 <p align = "center">
   <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic0.png">
   <br>
@@ -38,103 +40,43 @@ tags: 통계학
 * [t-value와 스튜던트의 t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)
 * [p-value의 의미](https://angeloyeo.github.io/2020/03/29/p_value.html)
 
-# t-분포 복습
-
-우리는 앞서 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)에서 t-분포에 대해 알아본 바 있다.
-
-이번 시간에는 t-분포를 이용해 신뢰 구간에 대해 설명해보고자 한다. 이를 위해 t-분포의 특성에 대해 다시 한번 생각해보도록 하자. (굳이 t-분포를 이용하는 것은 샘플 수가 적은 경우에 한해서 설명하기 때문이다. 또, 최대 두 개의 표본 집단의 비교에 대해 설명하기 위함이다. 그러나, 아래에서 서술할 과정을 이해하면 다른 분포에도 신뢰 구간의 개념을 그대로 도입할 수 있다.)
-
-먼저, t-분포를 보면 바로 알 수 있는 것은 t-분포는 정규분포와 닮았다는 점이다. 왜 그럴까? 그 이유는 정규 분포나 t-분포나 모두 평균에 관련된 분포이기 때문이다. [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 따르면 표본의 크기가 커질 수록 표본 평균의 분포는 정규 분포에 가까워지게 된다. t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우에 해당하는 표본 평균의 분포라고 할 수 있다 (다만 모집단의 분포는 정규분포를 따르긴 해야 한다.). 정규분포와 t-분포의 모양을 직접 비교하면 아래와 같다.
-
-<p align = "center">
-  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic1.png">
-  <br>
-  그림 1. 표준정규분포와 t-분포의 형태 비교
-</p>
-
-그림 1에서 볼 수 있듯이 표준정규분포와 t-분포의 형태를 보면 생긴건 별반 다를게 없다는 걸 알 수 있다. 다만 t-분포가 $x = 0$ 일 때의 peak 부분의 높이가 좀 낮은 대신 양 끝의 값(보통 tail이라고 부른다)이 조금 높아 보인다.
-
-두 번째로, 그림 1의 우측 상단의 범례를 보면 알 수 있지만 '자유도'라는 개념이 있다. 자유도는 표본수와 직접적인 관련이 있는 값으로, t-분포의 형태를 결정한다. 그림 2에서 볼 수 있듯이 자유도 값이 클 수록 t-분포의 형태는 정규분포의 형태에 가까워진다.
-
-<p align = "center">
-  <img  width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic2.png">
-  <br>
-  그림 2. 표준정규분포와 t-분포의 형태 비교
-</p>
-
-마지막으로 t-분포에 대해 짚고 넘어가고자 하는 것은 t-분포의 넓이에 관한 것이다. 이 부분이 이번 t-분포 복습에 관한 내용 중 가장 중요한 부분이니 꼭 이해하고 넘어가길 바란다. 확률밀도함수를 가지고 특정 사건에 대한 확률을 계산할 때는 특정 정의역에 대한 확률밀도함수의 그래프 아래의 넓이를 이용해 계산할 수 있다.
-
-가령, 자유도가 10인 t-분포에 대해서 t 값이 0~1 사이인 경우의 그래프 아래의 넓이를 표시하면 아래의 그림 3의 붉은색으로 표시한 영역과 같은데 이 영역의 넓이를 계산해보면 0.3296이다.
-
-<p align = "center">
-  <img  width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic3.png">
-  <br>
-  그림 3. 표준정규분포와 t-분포의 형태 비교
-</p>
-
-이 때, 이 넓이 0.3296이 의미하는 바는 자유도가 10인 경우에는 t-값이 0에서 1사이로 얻어질 확률이 0.3296이라는 의미이다.
-
-(만약 't-값을 얻는다'라는 말의 의미를 잘 이해하지 못하고 있다면 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)을 꼭 한번 보고 오는 것을 추천한다.)
-
-보통 추정을 위한 통계학에서 사용하는 주요한 확률값(즉, 분포의 넓이)은 0.95와 0.99가 대표적이라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
-
-<p align = "center">
-  <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic4.png">
-  <br>
-  그림 4. 자유도가 10인 경우의 t-분포에 대해 넓이가 0.95 혹은 0.99인 경우에 해당하는 양끝의 t-value
-</p>
-
-그림 4에서 볼 수 있듯이 자유도가 10인 경우에 t-분포의 넓이가 0.95 혹은 0.99인 경우에 해당하는 t-value는 각각 ±2.228, ±3.169이다.
-
-이와 같은 조사를 여러 자유도에 대해 작성해둔 것이 t-value table이다.
-
-<p align = "center">
-  <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic5.png">
-  <br>
-  그림 5. t-value table. 주어진 degree of freedom 값과 원하는 넓이를 얻기 위한 t-value 값들을 확인할 수 있다.
-  <br>
-  <a href = "http://www.ttable.org/"> 그림 출처 </a>
-</p>
-
-t-value table을 보면 가장 왼쪽에 df라고 되어 있고 1부터 1000까지 숫자가 쓰여 있다. 이것이 degree of freedom, 즉, 자유도 이다. 그림 3이나 그림 4에서 사용되었던 t-분포는 모두 자유도가 10인 경우였다. 따라서, 그림 5에 있는 t-value table을 이용해 우리가 찾고자하는 t-value를 찾으려면 df = 10인 경우에 해당하는 행(row)을 보아야 한다. 
-
-그런 다음, 우리가 찾고자 하는 열(column)을 찾아야 하는데, 그림 5의 가장 윗쪽 행에 보면 t.975라고 되어 있고 two-tails 0.05라고 되어 있는 값을 하나 볼 수 있다. 이 값이 바로 넓이 0.95에 해당하는 t-value이다. two-tails라는 말은 좌우 대칭으로 크기는 같고 부호만 반대인 t-value를 설정하여 t-분포에 대해 적분한 넓이를 계산해주자는 의미이다.
-
-그렇게 해서 적절한 자유도와 원하는 넓이에 대한 t-value를 확인하면 2.228과 3.169를 얻을 수 있다는 것을 알 수 있다.
-
-지금까지 얘기한 것을 나열하면 다음과 같다. t-분포의 형태 특성과 t-분포의 특성 중 하나인 자유도에 대해 얘기했다. 또한, 확률밀도함수의 넓이를 계산하여 확률을 계산할 수 있다고도 얘기하였다.
-
-또한, 이 post에서는 앞으로 "양 옆으로 tail을 잘라 0.95라는 넓이를 얻을 수 있는 t-value"를 $t_{0.95}$와 같이 쓰고자 한다. 또한, 이를 일반화하여 "양 옆으로 tail을 잘라 $\alpha$라는 넓이를 얻을 수 있는 t-value"는 $t_\alpha$로 쓸 것이다.
-
 # 모평균과 표본 평균 간의 관계
 
-이제부터는 본격적으로 신뢰 구간에 대해 다룬다. 이를 위해 모평균과 표본 평균에 대해 다시 한번 짚고 넘어가보도록 하자.
+이번 post에서는 신뢰 구간에 대해 다룬다. 앞서 카카오톡의 예시에서 보여주었듯이 신뢰구간이란 불확실한 정도를 구간으로써 표현해준 것이다. 불확실성은 sampling에서 기인하는데, 이를 조금더 자세하게 이해하기 위해 모평균과 표본 평균에 대해 다시 한번 짚고 넘어가보도록 하자.
 
 이 내용은 [표본과 표준오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)에서 본 내용과 본질적으로 같지만, 약간은 다른 관점으로 접근하게 될 것이다.
 
 아래의 그림을 보도록 하자. 아래의 그림 6은 모집단에서 표본을 추출해 표본 평균을 획득한 과정을 나타낸 것이다.
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic6.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic1.png">
   <br>
-  그림 6. 모집단에서 표본을 추출해 표본의 통계량을 계산하는 과정
+  그림 1. 모집단에서 표본을 추출해 표본의 통계량을 계산하는 과정
 </p>
 
-그림 6의 왼쪽에서는 모집단이 표현되어 있는데, 만약 수백명 사람의 키에 대해서 우리가 관심이 있다고 생각해보자.
+그림 1의 왼쪽에서는 모집단이 표현되어 있다. 모집단은 가령 수백명 사람의 키라고 할 수 있다.
 
-우리는 이 때 왼쪽 모집단에서 임의의 표본(sample)을 선택할 수 있고 이들 키의 평균값을 계산할 수 있다.
+우리는 이 때 왼쪽 모집단에서 임의의 표본(sample)을 선택할 수 있고 이 키 값들의 평균값을 계산할 수 있다.
 
-이 때 생각해볼 수 있는 것은 '우리가 임의로 선정한 표본의 평균(오른쪽 분포에서 빨간색)이 특별한 의미를 가지는 것인가'이다. 잘 생각해보면 이 샘플들은 특별한 의미를 가지는 표본 평균 값은 아니다. 표본의 선정은 랜덤하기 때문이다.
+이 때 생각해볼 수 있는 것은 '우리가 임의로 선정한 표본의 평균(오른쪽 분포에서 빨간색)이 특별한 의미를 가지는 것인가'라는 것인데, 절대 특별한 의미를 가지는 표본 평균 값은 아니다. 표본의 선정은 랜덤했기 때문이다.
 
-따라서, 표본 선정에 관한 무수한 경우의 수가 있을 것이며, 해당 다른 경우에 대한 평균값을 모두 모아보면 그림 6의 오른쪽에 있는 것 처럼 표본 평균들의 분포를 생각해낼 수 있게 될 것이다[^1].
+따라서, 표본 선정에 관한 무수한 경우의 수가 있을 것이며, 해당 다른 경우에 대한 평균값을 모두 모아보면 그림 1의 오른쪽에 있는 표본 평균의 분포와  모양을 띄게 될 것이다[^1].
 
 [^1]: 해당 내용이 잘 이해되지 않는다면 [표본과 표준오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)의 내용을 한번 더 복습하고 오는 것을 추천한다.
 
-그림 6 오른쪽의 표본 평균 분포 모양을 잘 보면 정규분포와 유사한 모양을 하고 있는 것을 알 수 있다. 표본 평균 분포의 정확한 형태는 샘플수에 따라 결정되는데 샘플 수가 충분히 많은 경우에는 정규분포를 따르지만, 샘플 수가 충분하지 못한 경우[^2]는 t-분포에 비례하는 형태를 띈다. 
+그림 1의 표본 평균 분포 모양을 잘 보면 정규분포 모양을 하고 있는 것을 알 수 있는데[^2], 정규분포에서 평균값을 중심으로 2 * 표준편차의 범위는 약 95%의 면적을 차지한다는 것 또한 잘 알려진 사실이다[^3]. 
 
-[^2]: 문헌에 따라 다르지만 샘플 수가 대략 30 이하인 경우
+[^2]: 왜 표본 평균의 분포가 정규분포를 따르는지 알기 위해선 [중심극한정리의 의미](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)를 이해하는 것이 좋다.
 
+[^3]: 정확히는 2가 아니라 1.96으로 쓰는게 맞으며, 1.96이라는 숫자도 표본의 크기가 대략 20이상일 때 이 말이 성립한다. 그 이유는 표본의 크기가 그 보다 작으면 t-분포를 사용해야 하기 때문이다. 표본의 크기가 20보다 작을 때 엄밀한 계산을 위해서는 자유도에 맞는 적절한 t-value를 선택해서 곱해주어야 한다. 이에 대해선 글 후반부에서 조금더 자세히 다루도록 하자.
 
+<p align = "center">
+  <img src = "https://loonylabs.files.wordpress.com/2019/09/variance-2.png?w=590">
+  <br>
+  그림 2. 정규분포는 평균으로부터 ±2 SD 만큼 떨어진 곳 까지의 넓이는 약 0.95이다.
+  <br>
+  <a href = "https://loonylabs.org/2019/09/12/day24-365doa/">그림 출처 </a>
+</p>
 
 그러면 표본 평균 분포에서 표준 편차는 어떻게 계산되는가?
 
@@ -151,9 +93,9 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 "내가 지금 추출한 표본 평균은 모평균으로부터 2 * 표준 오차 (SEM) 범위 안에 95% 확률로 들어온다." 
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic8.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic3.png">
   <br>
-  그림 8. 표본 평균은 모평균으로부터 ±2SEM 범위 안에 95% 확률로 포함되어 있다.
+  그림 3. 표본 평균은 모평균으로부터 ±2SEM 범위 안에 95% 확률로 포함되어 있다.
 </p>
 
 그런데, 여기서 아주 큰 문제가 있다. 우리는 모평균을 모른다는 것이다.
@@ -163,9 +105,9 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 그래서 우리는 조금 색다른 방식의 관점에서 표본 평균과 모평균의 관계를 생각해 보도록 하자.
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic9.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic4.png">
   <br>
-  그림 9. 표본 평균으로부터 ±2 표준오차 안에 모평균이 포함되어 있을 확률은 95%라고 말할 수 있다.
+  그림 4. 표본 평균으로부터 ±2 표준오차 안에 모평균이 포함되어 있을 확률은 95%라고 말할 수 있다.
 </p>
 
 그림 4에서 볼 수 있듯이 우리가 만약 모평균으로부터 ±2 SEM 만큼 떨어진 구간을 표본 평균을 중심으로 할 수 있게 이동시킨다면, 모평균이 표본 평균으로부터 ±2 SEM 만큼 떨어진 곳에 95% 확률로 들어온다는 것을 알 수 있다. 
@@ -175,9 +117,9 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 표본 추출은 무수하게 많은 조합으로 추출할 수 있으므로, 100번 정도 반복 샘플링을 해 보았을 때 95번 가량은 2 * 표준 오차안에 모평균이 들어있다는 뜻이라고 생각할 수도 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic10.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic5.png">
   <br>
-  그림 10. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
+  그림 5. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
   <br>
   여기서 빨간색 수평 점선은 모평균값을 의미하며, 수평선과 겹치는 검은색 수직 신뢰 구간에는 모평균이 포함된다. 또, 빨간색 수직 신뢰 구간에는 모평균이 포함되지 않는다.
 </p>
@@ -189,7 +131,7 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 <p align = "center">
   <img src = "https://thumb.mt.co.kr/06/2019/11/2019111809473930485_1.jpg/dims/optimize/">
   <br>
-  그림 11. 선거가 있을 때 마다 보게 되는 문구. '신뢰 수준'
+  그림 6. 선거가 있을 때 마다 보게 되는 문구. '신뢰 수준'
   <br>
   <a href = "https://news.mt.co.kr/mtview.php?no=2019111809473930485"> 그림 출처: 머니투데이 </a>
 </p>
@@ -203,6 +145,74 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 이로써 왜 100% 신뢰 수준이라는 말을 쓰지 않는지도 알 수 있다. 100% 신뢰 수준을 갖기 위해서는 신뢰 구간이 전체 실선(real number line)이 되어야 하기 때문이다. 신뢰 수준이 100%라는 말은 우리나라 남성 평균 키에 관한 추정에 대해 다음과 같이 말하는 것이라고도 할 수 있다.
 
 "우리나라 남성들의 평균 키는 $-\infty$에서 $+\infty$ 사이에 있어!"
+
+# t-분포 복습
+
+우리는 앞서 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)에서 t-분포에 대해 알아본 바 있다.
+
+이번 시간에는 t-분포를 이용해 신뢰 구간에 대해 설명해보고자 한다. 이를 위해 t-분포의 특성에 대해 다시 한번 생각해보도록 하자. (굳이 t-분포를 이용하는 것은 샘플 수가 적은 경우에 한해서 설명하기 때문이다. 또, 최대 두 개의 표본 집단의 비교에 대해 설명하기 위함이다. 그러나, 아래에서 서술할 과정을 이해하면 다른 분포에도 신뢰 구간의 개념을 그대로 도입할 수 있다.)
+
+먼저, t-분포를 보면 바로 알 수 있는 것은 t-분포는 정규분포와 닮았다는 점이다. 왜 그럴까? 그 이유는 정규 분포나 t-분포나 모두 평균에 관련된 분포이기 때문이다. [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 따르면 표본의 크기가 커질 수록 표본 평균의 분포는 정규 분포에 가까워지게 된다. t-분포는 이 과정에서 표본의 크기가 매우 크지는 못한 경우에 해당하는 표본 평균의 분포라고 할 수 있다 (다만 모집단의 분포는 정규분포를 따르긴 해야 한다.). 정규분포와 t-분포의 모양을 직접 비교하면 아래와 같다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic01.png">
+  <br>
+  그림 01. 표준정규분포와 t-분포의 형태 비교
+</p>
+
+그림 1에서 볼 수 있듯이 표준정규분포와 t-분포의 형태를 보면 생긴건 별반 다를게 없다는 걸 알 수 있다. 다만 t-분포가 $x = 0$ 일 때의 peak 부분의 높이가 좀 낮은 대신 양 끝의 값(보통 tail이라고 부른다)이 조금 높아 보인다.
+
+두 번째로, 그림 1의 우측 상단의 범례를 보면 알 수 있지만 '자유도'라는 개념이 있다. 자유도는 표본수와 직접적인 관련이 있는 값으로, t-분포의 형태를 결정한다. 그림 2에서 볼 수 있듯이 자유도 값이 클 수록 t-분포의 형태는 정규분포의 형태에 가까워진다.
+
+<p align = "center">
+  <img  width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic02.png">
+  <br>
+  그림 02. 표준정규분포와 t-분포의 형태 비교
+</p>
+
+마지막으로 t-분포에 대해 짚고 넘어가고자 하는 것은 t-분포의 넓이에 관한 것이다. 이 부분이 이번 t-분포 복습에 관한 내용 중 가장 중요한 부분이니 꼭 이해하고 넘어가길 바란다. 확률밀도함수를 가지고 특정 사건에 대한 확률을 계산할 때는 특정 정의역에 대한 확률밀도함수의 그래프 아래의 넓이를 이용해 계산할 수 있다.
+
+가령, 자유도가 10인 t-분포에 대해서 t 값이 0~1 사이인 경우의 그래프 아래의 넓이를 표시하면 아래의 그림 3의 붉은색으로 표시한 영역과 같은데 이 영역의 넓이를 계산해보면 0.3296이다.
+
+<p align = "center">
+  <img  width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic03.png">
+  <br>
+  그림 03. 표준정규분포와 t-분포의 형태 비교
+</p>
+
+이 때, 이 넓이 0.3296이 의미하는 바는 자유도가 10인 경우에는 t-값이 0에서 1사이로 얻어질 확률이 0.3296이라는 의미이다.
+
+(만약 't-값을 얻는다'라는 말의 의미를 잘 이해하지 못하고 있다면 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)을 꼭 한번 보고 오는 것을 추천한다.)
+
+보통 추정을 위한 통계학에서 사용하는 주요한 확률값(즉, 분포의 넓이)은 0.95와 0.99가 대표적이라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
+
+<p align = "center">
+  <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic04.png">
+  <br>
+  그림 04. 자유도가 10인 경우의 t-분포에 대해 넓이가 0.95 혹은 0.99인 경우에 해당하는 양끝의 t-value
+</p>
+
+그림 4에서 볼 수 있듯이 자유도가 10인 경우에 t-분포의 넓이가 0.95 혹은 0.99인 경우에 해당하는 t-value는 각각 ±2.228, ±3.169이다.
+
+이와 같은 조사를 여러 자유도에 대해 작성해둔 것이 t-value table이다.
+
+<p align = "center">
+  <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic05.png">
+  <br>
+  그림 05. t-value table. 주어진 degree of freedom 값과 원하는 넓이를 얻기 위한 t-value 값들을 확인할 수 있다.
+  <br>
+  <a href = "http://www.ttable.org/"> 그림 출처 </a>
+</p>
+
+t-value table을 보면 가장 왼쪽에 df라고 되어 있고 1부터 1000까지 숫자가 쓰여 있다. 이것이 degree of freedom, 즉, 자유도 이다. 그림 3이나 그림 4에서 사용되었던 t-분포는 모두 자유도가 10인 경우였다. 따라서, 그림 5에 있는 t-value table을 이용해 우리가 찾고자하는 t-value를 찾으려면 df = 10인 경우에 해당하는 행(row)을 보아야 한다. 
+
+그런 다음, 우리가 찾고자 하는 열(column)을 찾아야 하는데, 그림 5의 가장 윗쪽 행에 보면 t.975라고 되어 있고 two-tails 0.05라고 되어 있는 값을 하나 볼 수 있다. 이 값이 바로 넓이 0.95에 해당하는 t-value이다. two-tails라는 말은 좌우 대칭으로 크기는 같고 부호만 반대인 t-value를 설정하여 t-분포에 대해 적분한 넓이를 계산해주자는 의미이다.
+
+그렇게 해서 적절한 자유도와 원하는 넓이에 대한 t-value를 확인하면 2.228과 3.169를 얻을 수 있다는 것을 알 수 있다.
+
+지금까지 얘기한 것을 나열하면 다음과 같다. t-분포의 형태 특성과 t-분포의 특성 중 하나인 자유도에 대해 얘기했다. 또한, 확률밀도함수의 넓이를 계산하여 확률을 계산할 수 있다고도 얘기하였다.
+
+또한, 이 post에서는 앞으로 "양 옆으로 tail을 잘라 0.95라는 넓이를 얻을 수 있는 t-value"를 $t_{0.95}$와 같이 쓰고자 한다. 또한, 이를 일반화하여 "양 옆으로 tail을 잘라 $\alpha$라는 넓이를 얻을 수 있는 t-value"는 $t_\alpha$로 쓸 것이다.
 
 # t-test에서 신뢰구간 설정
 
