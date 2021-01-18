@@ -77,7 +77,7 @@ tags: 통계학
 
 (만약 't-값을 얻는다'라는 말의 의미를 잘 이해하지 못하고 있다면 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)을 꼭 한번 보고 오는 것을 추천한다.)
 
-보통 추정을 위한 통계학에서 사용하는 주요한 확률값은 0.95와 0.99가 대표적이라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
+보통 추정을 위한 통계학에서 사용하는 주요한 확률값(즉, 분포의 넓이)은 0.95와 0.99가 대표적이라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
 
 <p align = "center">
   <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic04.png">
@@ -92,35 +92,33 @@ tags: 통계학
 <p align = "center">
   <img  width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic05.png">
   <br>
-  그림 05. 
+  그림 05. t-value table. 주어진 degree of freedom 값과 원하는 넓이를 얻기 위한 t-value 값들을 확인할 수 있다.
   <br>
   <a href = "http://www.ttable.org/"> 그림 출처 </a>
 </p>
 
+t-value table을 보면 가장 왼쪽에 df라고 되어 있고 1부터 1000까지 숫자가 쓰여 있다. 이것이 degree of freedom, 즉, 자유도 이다. 그림 03이나 그림 04에서 사용되었던 t-분포는 모두 자유도가 10인 경우였다. 따라서, 그림 05에 있는 t-value table을 이용해 우리가 찾고자하는 t-value를 찾으려면 df = 10인 경우에 해당하는 행(row)을 보아야 한다. 
 
+그런 다음, 우리가 찾고자 하는 열(column)을 찾아야 하는데, 그림 05의 가장 윗쪽 행에 보면 t.975라고 되어 있고 two-tails 0.05라고 되어 있는 값을 하나 볼 수 있다. 이 값이 바로 넓이 0.95에 해당하는 t-value이다. two-tails라는 말은 좌우 대칭으로 크기는 같고 부호만 반대인 t-value를 설정하여 t-분포에 대해 적분한 넓이를 계산해주자는 의미이다.
 
+그렇게 해서 적절한 자유도와 원하는 넓이에 대한 t-value를 확인하면 2.228과 3.169를 얻을 수 있다는 것을 알 수 있다.
 
-그림 04를 보면 
+지금까지 얘기한 것을 나열하면 다음과 같다. t-분포의 형태 특성과 t-분포의 특성 중 하나인 자유도에 대해 얘기했다. 또한, 확률밀도함수의 넓이를 계산하여 확률을 계산할 수 있다고도 얘기하였다.
 
-* t-value가 1이라는 말은 두 표본 평균이 정확히 SEM 만큼 떨어져있다는 의미.
-
-* 자유도에 따른 t-분포의 형태 확인할 것
-* t-분포의 넓이에 대해서. 어떤 t-값에 어떤 넓이가 대응되는지 확인할 것.
-* 그래서 아래의 내용에서 2 SEM이라고 적은 것들을 모두 t 값으로 적절히 수정하는 것이 바람직함.
-
+또한, 이 post에서는 앞으로 "양 옆으로 tail을 잘라 0.95라는 넓이를 얻을 수 있는 t-value"를 $t_{0.95}$와 같이 쓰고자 한다. 또한, 이를 일반화하여 "양 옆으로 tail을 잘라 $\alpha$라는 넓이를 얻을 수 있는 t-value"는 $t_\alpha$로 쓸 것이다.
 
 # 모평균과 표본 평균 간의 관계
 
-본격적으로 신뢰 구간(confidence interval)에 대해 다루기 위해 모평균과 표본 평균에 대해 다시 한번 짚고 넘어가보도록 하자.
+이제부터는 본격적으로 신뢰 구간에 대해 다룬다. 이를 위해 모평균과 표본 평균에 대해 다시 한번 짚고 넘어가보도록 하자.
 
 이 내용은 [표본과 표준오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)에서 본 내용과 본질적으로 같지만, 약간은 다른 관점으로 접근하게 될 것이다.
 
-아래의 그림을 보도록 하자. 아래의 그림 1은 모집단에서 표본을 추출해 표본 평균을 획득한 과정을 나타낸 것이다.
+아래의 그림을 보도록 하자. 아래의 그림 6은 모집단에서 표본을 추출해 표본 평균을 획득한 과정을 나타낸 것이다.
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic1.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic6.png">
   <br>
-  그림 1. 모집단에서 표본을 추출해 표본의 통계량을 계산하는 과정
+  그림 6. 모집단에서 표본을 추출해 표본의 통계량을 계산하는 과정
 </p>
 
 그림 1의 왼쪽에서는 모집단이 표현되어 있는데, 만약 수백명 사람의 키에 대해서 우리가 관심이 있다고 생각해보자.
@@ -142,7 +140,7 @@ tags: 통계학
 <p align = "center">
   <img src = "https://loonylabs.files.wordpress.com/2019/09/variance-2.png?w=590">
   <br>
-  그림 2. 정규분포는 평균으로부터 ±2 SD 만큼 떨어진 곳 까지의 넓이는 약 0.95이다.
+  그림 7. 정규분포는 평균으로부터 ±2 SD 만큼 떨어진 곳 까지의 넓이는 약 0.95이다.
   <br>
   <a href = "https://loonylabs.org/2019/09/12/day24-365doa/">그림 출처 </a>
 </p>
@@ -162,9 +160,9 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 "내가 지금 추출한 표본 평균은 모평균으로부터 2 * 표준 오차 (SEM) 범위 안에 95% 확률로 들어온다." 
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic3.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic8.png">
   <br>
-  그림 3. 표본 평균은 모평균으로부터 ±2SEM 범위 안에 95% 확률로 포함되어 있다.
+  그림 8. 표본 평균은 모평균으로부터 ±2SEM 범위 안에 95% 확률로 포함되어 있다.
 </p>
 
 그런데, 여기서 아주 큰 문제가 있다. 우리는 모평균을 모른다는 것이다.
@@ -174,9 +172,9 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 그래서 우리는 조금 색다른 방식의 관점에서 표본 평균과 모평균의 관계를 생각해 보도록 하자.
 
 <p align = "center">
-  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic4.png">
+  <img  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic9.png">
   <br>
-  그림 4. 표본 평균으로부터 ±2 표준오차 안에 모평균이 포함되어 있을 확률은 95%라고 말할 수 있다.
+  그림 9. 표본 평균으로부터 ±2 표준오차 안에 모평균이 포함되어 있을 확률은 95%라고 말할 수 있다.
 </p>
 
 그림 4에서 볼 수 있듯이 우리가 만약 모평균으로부터 ±2 SEM 만큼 떨어진 구간을 표본 평균을 중심으로 할 수 있게 이동시킨다면, 모평균이 표본 평균으로부터 ±2 SEM 만큼 떨어진 곳에 95% 확률로 들어온다는 것을 알 수 있다. 
@@ -188,12 +186,12 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic5.png">
   <br>
-  그림 5. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
+  그림 10. 95% 확률로 모평균이 ± 2 SEM 안에 들어있다는 것은 100번 반복 샘플링 시 95번 가량은 모평균이 ± 2 SEM 안에 포함되어 있다는 것을 의미한다.
   <br>
   여기서 빨간색 수평 점선은 모평균값을 의미하며, 수평선과 겹치는 검은색 수직 신뢰 구간에는 모평균이 포함된다. 또, 빨간색 수직 신뢰 구간에는 모평균이 포함되지 않는다.
 </p>
 
-추가로, 그림 4에서 볼 수 있는 것 처럼 "이 구간 (평균 ± 2 SEM) 안에 95% 확률로 모평균이 들어있다"라는 표현에서의 이 구간을 신뢰구간이라고도 부른다.
+추가로, 그림 9에서 볼 수 있는 것 처럼 "이 구간 (평균 ± 2 SEM) 안에 95% 확률로 모평균이 들어있다"라는 표현에서의 이 구간을 신뢰구간이라고도 부른다.
 
 # 신뢰 수준이란 무엇일까?
 
