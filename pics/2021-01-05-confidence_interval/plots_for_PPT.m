@@ -235,3 +235,24 @@ y = pdf(pd, x);
 figure;
 plot(x, y, 'color','k','linewidth',2)
 set(gca,'visible','off')
+
+%% p-value 관련 문제 그림
+
+mn1 = 81;
+sd1 = 11;
+mn2 = 85;
+sd2 = 9;
+
+n = 100;
+rng(3)
+xx1 = randn(1,n) * sd1/10 + mn1;
+xx2 = randn(1,n) * sd2/10 + mn2;
+
+figure;
+clear h;
+h(1) = histogram(xx1,20); hold on;
+h(2) = histogram(xx2,20);
+legend(h, '치료군', '대조군')
+xlabel('이완기 혈압 (mmHg)');
+ylabel('count');
+grid on;
