@@ -55,7 +55,7 @@ cosine과 닮은 정도는 $A cos(\phi)$만큼으로 표현되고 sine과 닮은
 
 위에서 간단히 적은 내용을 직접 수식적으로 확인해보자.
 
-$$\mathfrak{F}[A\cos(2\pi f_0 t + \phi)] = \mathfrak{F}[\cos(2\pi f_0 t)\cos(\phi) - \sin(2\pi f_0 t)\sin(\phi)]$$
+$$\mathfrak{F}[A\cos(2\pi f_0 t + \phi)] = \mathfrak{F}[A\cos(2\pi f_0 t)\cos(\phi) - A\sin(2\pi f_0 t)\sin(\phi)]$$
 
 
 잠시 여기서 정현파의 푸리에 변환을 생각해보면,

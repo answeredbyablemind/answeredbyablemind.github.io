@@ -4,6 +4,24 @@ clear; close all; clc;
 my_color = lines(3);
 my_color(3,:) = [0.494, 0.184, 0.556];
 
+%% pic0: 두 점을 통과하는 직선 찾기 문제
+figure; hold on;
+xlim([-2, 3])
+ylim([-2, 7])
+line([0, 0], ylim)
+line(xlim, [0, 0])
+plot(-1, 0,'o','markerfacecolor',my_color(1,:),'markeredgecolor','none','markersize',12);
+% plot(0, 1,'o','markerfacecolor',my_color(2,:),'markeredgecolor','none','markersize',12);
+plot(0, 3,'o','markerfacecolor',my_color(3,:),'markeredgecolor','none','markersize',12);
+grid on;
+
+set(gcf,'color','w')
+xlabel('$$x$$','interpreter','latex')
+ylabel('$$y$$','interpreter','latex')
+
+text(-1.2, 0.71574, '(-1, 0)','fontsize',12)
+% text(0.2, 1.2143, '(0, 1)','fontsize',12)
+text(0.2, 3.3397, '(0, 3)','fontsize',12)
 %% pic1
 figure; hold on;
 xlim([-2, 3])
