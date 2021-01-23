@@ -16,8 +16,8 @@ icons = findobj(icons,'Type','line'); % Type은 line이면서 Marker는 없지는 않는 �
 set(icons, 'linewidth', 5)
 grid on;
 
-xlabel('x');
-ylabel('P(x)');
+xlabel('t-value');
+ylabel('pdf');
 
 %% 자유도에 따른 t-분포와 정규분포 비교
 
@@ -46,8 +46,8 @@ icons = findobj(icons,'Type','line'); % Type은 line이면서 Marker는 없지는 않는 �
 set(icons, 'linewidth', 5)
 grid on;
 
-xlabel('x');
-ylabel('P(x)');
+xlabel('t-value');
+ylabel('pdf');
 
 %% pdf의 면적과 확률에 대하여 (0~1 사이의 넓이)
 clear pdf_t
