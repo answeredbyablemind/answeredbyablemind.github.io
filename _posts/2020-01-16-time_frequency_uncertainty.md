@@ -101,7 +101,7 @@ $$G(f) = C\exp\left(-2\pi^2\sigma^2f^2\right)
 
 이 때, 적분상수 C를 구해보면
 
-$$G(0) = C = \frac{1}{2\sqrt{2\pi}}\int_{-\infty}^{\infty}
+$$G(0) = C = \frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}
     \exp\left(-\frac{t^2}{2\sigma^2}\right)\exp\left(-j2\pi\cdot0\cdot t\right)
 dt\notag$$
 
