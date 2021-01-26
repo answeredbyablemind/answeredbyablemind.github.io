@@ -197,7 +197,7 @@ coins = rand(1, length(crits));
 
 x_p_uniform = x_q(coins<crits);
 
-figure; h = histogram(x_p_uniform,'BinWidth',0.5, 'Normalization','probability');
+figure; h = histogram(x_p_uniform,'BinWidth',0.5, 'Normalization','pdf');
 hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values))
 
 ```
