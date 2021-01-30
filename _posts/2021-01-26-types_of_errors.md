@@ -78,3 +78,8 @@ tags: 통계학
 
 표로 요약하면 다음과 같은 결과를 확인할 수 있다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-26-types_of_errors/pic2.png">
+  <br>
+  그림 2. 1종 오류와 2종 오류에 대한 정보 요약
+</p>
