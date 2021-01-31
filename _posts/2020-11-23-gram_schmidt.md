@@ -44,9 +44,33 @@ $$\vec{a}\cdot\vec{b} = |\vec{a}||\vec{b}|\cos\theta$$
 
 $$|\vec{b}|\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}=\text{comp}_{\vec{a}}\vec{b}$$
 
+[//]:# (식 3)
 
+한편 $\text{comp}_{\vec{a}}\vec{b}$는 스칼라 값이다. $|vec{b}|$나 $\cos\theta$ 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
+
+만약 우리가 $\vec{b}$의 $\vec{a}$ 방향 컴포넌트를 구하되, 스칼라가 아니라 벡터 값을 얻고 싶다면 어떻게 하는게 좋을까?
+
+바로 $\text{comp}_{\vec{a}}\vec{b}$ 뒤에 $\vec{a}$ 방향으로의 단위 벡터만을 곱해주면 된다.
+
+만약 $\vec{b}$의 $\vec{a}$ 방향으로의 정사영 벡터를 $\text{proj}_{\vec{a}}\vec{b}$라고 한다면, 그 값은 다음과 같다.
+
+$$\text{proj}_{\vec{a}}\vec{b} = \text{comp}_{\vec{a}}\vec{b} \cdot \frac{\vec{a}}{|\vec{a}|} = |\vec{b}|\cos\theta\cdot \frac{\vec{a}}{|\vec{a}|}$$
+
+한편, 식 (3)에 의해서,
+
+$$\Rightarrow \text{proj}_{\vec{a}}\vec{b}=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}\cdot \frac{\vec{a}}{|\vec{a}|}$$
+
+$$=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a}=\frac{\vec{a}\cdot\vec{b}}{\vec{a}\cdot\vec{a}}\vec{a}$$
+
+와 같다는 것을 알 수 있다.
 
 # Gram-Schmidt 과정
+
+[//]:# (그람-슈미트 과정에 대해 소개할 때 미리 주어진 벡터셋 a1~a_n에 대해 다시 차근히 소개할 것)
+
+## Gram-Schmidt 과정의 목표 의식
+
+## Gram-Schmidt 과정의 프로세스
 
 <p align = "center">
   <img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif">
