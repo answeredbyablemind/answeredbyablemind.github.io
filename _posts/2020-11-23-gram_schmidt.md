@@ -24,7 +24,25 @@ tags: 선형대수
 
 정사영의 개념이 성립하기 위해선 두 개의 벡터가 필요하다.
 
-아래의 그림에서는 벡터 $a$와 벡터 $b$ 사이의 정사영에 대해 표현하고 있다.
+아래의 그림에서는 벡터 $a$와 벡터 $b$ 사이의 관계에 대해 표현하고 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic1.png">
+  <br>
+  그림 1. 두 벡터 중 하나의 벡터에 대해, 또 다른 벡터로 향하는 방향으로의 컴포넌트는 코사인 값을 이용해 표현할 수 있다.
+</p>
+
+가령, 그림 1에서 처럼 벡터 $\vec{b}$를 표현할 때 벡터 $\vec{a}$를 이용한다고 하면 벡터 $\vec{b}$의 $\vec{a}$ 방향의 컴포넌트는 두 벡터 사이의 사잇각을 이용해서 다음과 같이 표현할 수 있다.
+
+$$\text{comp}_{\vec{a}}\vec{b}=|\vec{b}|\cos\theta$$
+
+한편, 두 벡터 간의 내적은 다음과 같은데,
+
+$$\vec{a}\cdot\vec{b} = |\vec{a}||\vec{b}|\cos\theta$$
+
+여기서 $|\vec{b}|\cos\theta$의 값은 다음과도 같이 표현할 수 있다는 것을 확인할 수 있다.
+
+$$|\vec{b}|\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}=\text{comp}_{\vec{a}}\vec{b}$$
 
 
 
