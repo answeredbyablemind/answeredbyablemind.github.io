@@ -40,13 +40,13 @@ $$\text{comp}_{\vec{a}}\vec{b}=|\vec{b}|\cos\theta$$
 
 $$\vec{a}\cdot\vec{b} = |\vec{a}||\vec{b}|\cos\theta$$
 
-여기서 $|\vec{b}|\cos\theta$의 값은 다음과도 같이 표현할 수 있다는 것을 확인할 수 있다.
+여기서 $\|\vec{b}\|\cos\theta$의 값은 다음과도 같이 표현할 수 있다는 것을 확인할 수 있다.
 
 $$|\vec{b}|\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}=\text{comp}_{\vec{a}}\vec{b}$$
 
 [//]:# (식 3)
 
-한편 $\text{comp}_{\vec{a}}\vec{b}$는 스칼라 값이다. $|vec{b}|$나 $\cos\theta$ 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
+한편 $\text{comp}_{\vec{a}}\vec{b}$는 스칼라 값이다. $\|vec{b}\|$나 $\cos\theta$ 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
 
 만약 우리가 $\vec{b}$의 $\vec{a}$ 방향 컴포넌트를 구하되, 스칼라가 아니라 벡터 값을 얻고 싶다면 어떻게 하는게 좋을까?
 
