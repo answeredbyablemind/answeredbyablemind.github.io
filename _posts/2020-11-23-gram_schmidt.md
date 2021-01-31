@@ -64,6 +64,12 @@ $$=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a}=\frac{\vec{a}\cdot\vec{b}}{\ve
 
 와 같다는 것을 알 수 있다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic2.png">
+  <br>
+  그림 2. 두 벡터 중 하나의 벡터에 대해, 또 다른 벡터로 향하는 방향으로의 컴포넌트는 코사인 값을 이용해 표현할 수 있다.
+</p>
+
 # Gram-Schmidt 과정
 
 [//]:# (그람-슈미트 과정에 대해 소개할 때 미리 주어진 벡터셋 a1~a_n에 대해 다시 차근히 소개할 것)
