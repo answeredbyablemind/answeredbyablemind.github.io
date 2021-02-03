@@ -46,7 +46,7 @@ $$|\vec{b}|\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}=\text{comp}_{\vec{
 
 [//]:# (식 3)
 
-한편 $\text{comp}_{\vec{a}}\vec{b}$는 스칼라 값이다. $\|vec{b}\|$나 $\cos\theta$ 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
+한편 $\text{comp}_{\vec{a}}\vec{b}$는 스칼라 값이다. $\|\vec{b}\|$나 $\cos\theta$ 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
 
 만약 우리가 $\vec{b}$의 $\vec{a}$ 방향 컴포넌트를 구하되, 스칼라가 아니라 벡터 값을 얻고 싶다면 어떻게 하는게 좋을까?
 
@@ -75,6 +75,14 @@ $$=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a}=\frac{\vec{a}\cdot\vec{b}}{\ve
 [//]:# (그람-슈미트 과정에 대해 소개할 때 미리 주어진 벡터셋 a1~a_n에 대해 다시 차근히 소개할 것)
 
 ## Gram-Schmidt 과정의 목표 의식
+
+Gram-Schmidt 과정이 수행해주는 일은 기본적으로 다음과 같다.
+
+"linearly independent한 벡터들이 주어졌을 때 이들을 적절히 변형하여 orthogonal basis로 만들어주자"
+
+그림을 곁들여 설명하면 이런 내용이라고 할 수 있다.
+
+
 
 ## Gram-Schmidt 과정의 프로세스
 
