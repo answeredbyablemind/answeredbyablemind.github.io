@@ -82,7 +82,33 @@ Gram-Schmidt 과정이 수행해주는 일은 기본적으로 다음과 같다.
 
 그림을 곁들여 설명하면 이런 내용이라고 할 수 있다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic3.png">
+  <br>
+  그림 3. Gram-Schmidt 과정은 왼쪽 그림과 같이 주어진 두 개의 벡터를 오른쪽 그림과 같이 직교하는 두 벡터로 변형시키는 과정이다.
+</p>
 
+직교하는 벡터셋을 얻게 되면 여러가지로 편리한 점이 많지만 특히 중요한 것은 직교하지 않는 기저에 비해 직교하는 기저를 얻게 되면 얻는 이점이 있기 때문이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic4.png">
+  <br>
+  그림 4. 왼쪽: 직교하지 않는 기저를 이용해 생성한 벡터 공간. 오른쪽: 직교하는 기저를 이용해 생성한 벡터 공간
+</p>
+
+만약 선형독립인 두 벡터 $\lbrace v_1, v_2 \rbrace$가 2차원 실수 공간 상의 기저라고 해보자. 이 때, 두 벡터는 서로 직교하지 않아도 된다. 
+
+그렇다면, 2차원 실수 공간 안에 있는 임의의 벡터 $v\in \Bbb{R}^2$는 $v_1$과 $v_2$의 선형 결합으로 표현될 수 있다. 다시 말해,
+
+$$v = x_1v_1 + x_2 v_2 \text{ where } x_1, x_2 \in \Bbb{R}$$
+
+와 같이 $v_1$과 $v_2$를 이용해 $v$를 표현할 수 있게 된다.
+
+그런데, 만약 두 벡터 $\lbrace w_1, w_2\rbrace$가 2차원 실수 공간 상의 직교하는 기저라고 한다면, 2차원 실수 공간 상에 있는 임의의 벡터 $v \in \Bbb{R}^2$는 다음과 같이 쓸 수 있게 된다.
+
+$$v = (v\cdot w_1)w_1 + (v\cdot w_2)w_2$$
+
+이로써 $v$를 $v_1$과 $v_2$의 선형결합으로 표현하기 위한 계수를 쉽게 얻을 수 있게 된다.
 
 ## Gram-Schmidt 과정의 프로세스
 
