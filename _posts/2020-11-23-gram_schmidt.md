@@ -266,19 +266,13 @@ $$e_2 = \frac{u_2}{\|u_2\|}=\sqrt{\frac{2}{3}}\left(\frac{1}{2},-\frac{1}{2}, 1\
 
 $$e_3 = \frac{u_3}{\|u_3\|}=\frac{1}{\sqrt{3\cdot(2/3)^2}}\left(-\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)=\left(-\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)$$
 
-따라서,
+따라서, $e_1$, $e_2$, $e_3$을 $A=QR$에서의 $q_1$, $q_2$, $q_3$에 대응시켜 생각하면 아래와 같이 QR 분해할 수 있다.
 
 $$A = QR =\begin{bmatrix}
   1/\sqrt{2} & 1/\sqrt{6}  & -1/\sqrt{3} \\
   1/\sqrt{2} & -1/\sqrt{6} & 1/\sqrt{3} \\
-  0          & 2/\sqrt{6}  & 1/\sqrt{3}
-\end{bmatrix}
+  0          & 2/\sqrt{6}  & 1/\sqrt{3}\end{bmatrix}
 \begin{bmatrix}
 2/\sqrt{2} & 1/\sqrt{2} & 1/\sqrt{2} \\
 0          & 3/\sqrt{6} & 1/\sqrt{6} \\
-0          & 0          & 2/\sqrt{3}
-
-\end{bmatrix}
-
-$$
-와 같이 QR 분해할 수 있다.
+0          & 0          & 2/\sqrt{3}\end{bmatrix}$$
