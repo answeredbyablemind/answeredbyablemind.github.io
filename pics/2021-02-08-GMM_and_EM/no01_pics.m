@@ -45,8 +45,8 @@ t = text(-27, 0.08, 'the first initialization','fontsize',12);
 pause;
 delete(t);
 delete(h);
-% GMM iteration
 
+% GMM iteration
 n_iter = 100;
 for i_iter = 1:n_iter
     
