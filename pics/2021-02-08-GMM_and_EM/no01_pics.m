@@ -15,7 +15,8 @@ for i_data = 1:n_data
     end
 end
 
-figure; histogram(X, 50,'Normalization','pdf')
+figure('position',[628, 334, 774, 577],'color','w'); 
+histogram(X, 50,'Normalization','pdf')
 
 xx = linspace(-30, 30, 100);
 yy1 = normpdf(xx, mu(1), sqrt(vars(1)));
@@ -28,6 +29,15 @@ xlabel('x');
 ylabel('pdf');
 
 %% GMM
+% Video Settings
+
+newVid = VideoWriter('pic1', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+
+%
 clear h
 my_normal = @(x, mu, sigma) 1/(sigma * sqrt(2*pi)).*exp(-1 * (x-mu).^2/(2*sigma^2));
 % random initialization
@@ -40,14 +50,21 @@ est_phi = [0.5, 0.5];
 est_yy1 = normpdf(xx, est_mu(1), sqrt(est_vars(1)));
 est_yy2 = normpdf(xx, est_mu(2), sqrt(est_vars(2)));
 
-h = plot(xx, est_yy1 * est_phi(1) + est_yy2 * est_phi(2), 'r','linewidth',2);
-t = text(-27, 0.08, 'the first initialization','fontsize',12);
-pause;
+
+h1 = plot(xx, est_yy1 * est_phi(1), 'r','linewidth',4);
+h2 = plot(xx, est_yy2 * est_phi(2), 'g','linewidth',4);
+t = text(-27, 0.075, 'the first initialization','fontsize',12);
+
+for i = 1:15 % 첫장면 750 ms 대기
+    writeVideo(newVid, getframe(gcf))
+end
+
 delete(t);
-delete(h);
+delete(h1);
+delete(h2);
 
 % GMM iteration
-n_iter = 100;
+n_iter = 50;
 for i_iter = 1:n_iter
     
     for i_data = 1:n_data
@@ -68,14 +85,24 @@ for i_iter = 1:n_iter
     est_yy1 = normpdf(xx, est_mu(1), sqrt(est_vars(1)));
     est_yy2 = normpdf(xx, est_mu(2), sqrt(est_vars(2)));
     
-    h = plot(xx, est_yy1 * est_phi(1) + est_yy2 * est_phi(2), 'r','linewidth',2);
-    t = text(-27, 0.08,  ['Epoch: ',num2str(i_iter),' / 100'],'fontsize',12);
-    pause;
-    
+    h1 = plot(xx, est_yy1 * est_phi(1), 'r','linewidth',4);
+    h2 = plot(xx, est_yy2 * est_phi(2), 'g','linewidth',4);
+    t = text(-27, 0.075,  ['Epoch: ',num2str(i_iter),' / ',num2str(n_iter)],'fontsize',12);
+%     pause;
+
+    writeVideo(newVid, getframe(gcf))
+    drawnow;
     if i_iter < n_iter
         delete(t);
-        delete(h);
+        delete(h1);
+        delete(h2);
     end
     
     
 end
+
+for i = 1:30 % 마지막 장면에서 1.5초 더 대기할 수 있도록
+    writeVideo(newVid, getframe(gcf))
+end
+
+close(newVid)
