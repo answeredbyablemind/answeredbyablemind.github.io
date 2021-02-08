@@ -175,8 +175,8 @@ docs-ko:
         url:    2019/08/17/Layerwise_Relevance_Propagation.html
       - title:  k-means 알고리즘
         url:    2021/02/07/k_means.html
-      - title:  GMM 알고리즘
-        url:    2021/02/08/GMM.html
+      - title:  GMM과 EM 알고리즘
+        url:    2021/02/08/GMM_and_EM.html
       
   - title:      확률과 통계
     children:
@@ -210,8 +210,8 @@ docs-ko:
         url:    2020/01/09/Bayes_rule.html
       - title:  최대우도법(MLE)
         url:    2020/07/17/MLE.html
-      - title:  EM 알고리즘
-        url:    2021/02/09/EM.html
+      - title:  GMM과 EM 알고리즘
+        url:    2021/02/08/GMM_and_EM.html
       - title:  Rejection sampling
         url:    2020/09/16/rejection_sampling.html
       - title:  Markov Chain Monte Carlo
