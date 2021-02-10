@@ -16,7 +16,7 @@ for i = 1:length(data)
     text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
 end
 
-text(20, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+text(25, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
 
 data = [1,4,5,6,9]+10;
 hold on;
@@ -42,7 +42,7 @@ for i = 1:length(data)
     text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
 end
 
-text(20, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+text(25, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
 
 pd = fitdist(data', 'Normal');
 xx = linspace(-3, 13, 100);
