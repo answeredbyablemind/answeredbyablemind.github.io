@@ -1,5 +1,76 @@
 clear; close all; clc;
 
+%% MLE와 비교 설명
+
+figure('color','w','position',[680, 588, 700, 400]);
+line([-5, 25],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-5,0,25,0,{'color','k'});
+
+data = [1,4,5,6,9];
+hold on;
+plot(data, zeros(1,5), 'o','markerfacecolor',[0.85, 0.32, 0.098],'markeredgecolor', lines(1),'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(20, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+data = [1,4,5,6,9]+10;
+hold on;
+plot(data, zeros(1,5), 'o','markerfacecolor',[0, 0.447, 0.741],'markeredgecolor', lines(1),'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+%% MLE와 비교 설명
+
+figure('color','w','position',[680, 588, 700, 400]);
+line([-5, 25],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-5,0,25,0,{'color','k'});
+
+data = [1,4,5,6,9];
+hold on;
+plot(data, zeros(1,5), 'o','markerfacecolor',[0.85, 0.32, 0.098],'markeredgecolor', lines(1),'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(20, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+pd = fitdist(data', 'Normal');
+xx = linspace(-3, 13, 100);
+yy = pdf(pd,xx);
+plot(xx, yy,'linewidth',3)
+
+data = [1,4,5,6,9]+10;
+hold on;
+plot(data, zeros(1,5), 'o','markerfacecolor',[0, 0.447, 0.741],'markeredgecolor', lines(1),'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+pd2 = fitdist(data', 'Normal');
+xx2 = linspace(5, 23, 100);
+yy2 = pdf(pd2,xx2);
+plot(xx2, yy2,'linewidth',3,'color',lines(1))
+
+
+data = [1,4,5,6,9];
+hold on;
+plot(data, zeros(1,5), 'o','markerfacecolor',[0.85, 0.32, 0.098],'markeredgecolor', lines(1),'markersize',10)
+
+data = [1,4,5,6,9]+10;
+hold on;
+plot(data, zeros(1,5), 'o','markerfacecolor',[0, 0.447, 0.741],'markeredgecolor', lines(1),'markersize',10)
+
 %% Make Synthetic Data
 rng(1)
 mu = [0, 15];
