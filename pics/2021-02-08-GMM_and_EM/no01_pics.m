@@ -65,6 +65,31 @@ yy2 = pdf(pd2,xx2);
 plot(xx2, yy2,'linewidth',3,'color',lines(1))
 xlim([-2, 32])
 
+%% MLE와 비교 설명
+
+figure('color','w','position',[680, 588, 700, 400]);
+line([-1 30],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-1,0,31,0,{'color','k'});
+
+data1 = [1,4,5,6,9];
+data2 = [19, 21, 24, 26, 29];
+
+data = [data1, data2];
+
+hold on;
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+xlim([-2, 32])
+
+
 %% Make Synthetic Data
 rng(1)
 mu = [0, 15];
