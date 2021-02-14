@@ -65,7 +65,37 @@ yy2 = pdf(pd2,xx2);
 plot(xx2, yy2,'linewidth',3,'color',lines(1))
 xlim([-2, 32])
 
-%% MLE와 비교 설명
+%% label이 주어져있지 않은 경우
+
+figure('color','w','position',[680, 588, 700, 400]);
+line([-1 30],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-1,0,31,0,{'color','k'});
+
+data1 = [1,4,5,6,9];
+data2 = [19, 21, 24, 26, 29];
+
+data = [data1, data2];
+
+hold on;
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+xlim([-2, 32])
+
+my_gaussian = @(x, mu, sigma) 1/(sigma*sqrt(2*pi))*exp(-1*(x-mu).^2./(2 * sigma^2));
+% 여기부터 ... 랜덤하게 mu 값을 지정해둔 경우를 상정해 그림 그릴 것.
+% 그리고 각 데이터들에 대해 likelihood 비교하여 label 주어줄 것.
+xx2 = linspace(12, 32, 100);
+yy2 = pdf(pd2,xx2);
+plot(xx2, yy2,'linewidth',3,'color',lines(1))
+%% label이 주어져있지는 않지만 각 그룹별 평균값과 분산 값이 먼저 주어진 경우
 
 figure('color','w','position',[680, 588, 700, 400]);
 line([-1 30],[0, 0],'color','k')
