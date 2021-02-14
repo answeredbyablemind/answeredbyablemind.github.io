@@ -3,10 +3,10 @@ clear; close all; clc;
 %% MLE와 비교 설명
 
 figure('color','w','position',[680, 588, 700, 400]);
-line([-5, 25],[0, 0],'color','k')
+line([-1 30],[0, 0],'color','k')
 set(gca,'visible','off')
 ylim([-0.05, 0.25])
-mArrow2(-5,0,25,0,{'color','k'});
+mArrow2(-1,0,31,0,{'color','k'});
 
 data = [1,4,5,6,9];
 hold on;
@@ -16,15 +16,17 @@ for i = 1:length(data)
     text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
 end
 
-text(25, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
 
-data = [1,4,5,6,9]+10;
+data = [-1,1,4,6,9]+20;
 hold on;
 plot(data, zeros(1,5), 'o','markerfacecolor',[0, 0.447, 0.741],'markeredgecolor', lines(1),'markersize',10)
 
 for i = 1:length(data)
     text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
 end
+
+xlim([-2, 32])
 
 %% MLE와 비교 설명
 
