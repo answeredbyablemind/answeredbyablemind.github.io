@@ -95,6 +95,7 @@ my_gaussian = @(x, mu, sigma) 1/(sigma*sqrt(2*pi))*exp(-1*(x-mu).^2./(2 * sigma^
 xx2 = linspace(12, 32, 100);
 yy2 = pdf(pd2,xx2);
 plot(xx2, yy2,'linewidth',3,'color',lines(1))
+
 %% label이 주어져있지는 않지만 각 그룹별 평균값과 분산 값이 먼저 주어진 경우
 
 figure('color','w','position',[680, 588, 700, 400]);
@@ -118,6 +119,30 @@ end
 text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
 
 xlim([-2, 32])
+
+my_mu = [8, 15];
+my_std= [3, 3];
+
+my_normal = @(x, mu, sigma) 1/(sigma * sqrt(2*pi)).*exp(-1 * (x-mu).^2/(2*sigma^2));
+
+for i_data = 1:n_data
+    l1 = my_normal(X(i_data), est_mu(1), sqrt(est_vars(1)));
+    l2 = my_normal(X(i_data), est_mu(2), sqrt(est_vars(2)));
+    
+    est_w(i_data, 1) = (l1 * est_phi(1)) / (l1 * est_phi(1) + l2 * est_phi(2));
+    est_w(i_data, 2) = (l2 * est_phi(2)) / (l1 * est_phi(1) + l2 * est_phi(2));
+end
+
+est_phi = 1/n_data * sum(est_w, 1);
+est_mu(1) = (X * est_w(:,1))/sum(est_w(:,1));
+est_mu(2) = (X * est_w(:,2))/sum(est_w(:,2));
+
+est_vars(1) = sum(est_w(:,1)'.*(X-est_mu(1)).^2)/sum(est_w(:,1));
+est_vars(2) = sum(est_w(:,2)'.*(X-est_mu(2)).^2)/sum(est_w(:,2));
+
+est_yy1 = normpdf(xx, est_mu(1), sqrt(est_vars(1)));
+est_yy2 = normpdf(xx, est_mu(2), sqrt(est_vars(2)));
+
 
 
 %% Make Synthetic Data
