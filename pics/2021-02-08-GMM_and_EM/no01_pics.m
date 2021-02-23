@@ -94,19 +94,54 @@ my_gaussian = @(x, mu, sigma) 1/(sigma*sqrt(2*pi))*exp(-1*(x-mu).^2./(2 * sigma^
 % 여기부터 ... 랜덤하게 mu 값을 지정해둔 경우를 상정해 그림 그릴 것.
 % 그리고 각 데이터들에 대해 likelihood 비교하여 label 주어줄 것.
 xx = linspace(-5, 32, 100);
-yy1 = my_gaussian(xx, 7, std(data1));
-yy2 = my_gaussian(xx, 15, std(data2));
+yy1 = my_gaussian(xx, 3, std(data1));
+yy2 = my_gaussian(xx, 10, std(data2));
+plot(xx, yy1,'linewidth',3,'color',[0. 0.447, 0.741])
+plot(xx, yy2,'linewidth',3,'color',[0.85, 0.325, 0.098])
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
+
+
+%% label이 주어져있지 않은 경우
+
+figure('color','w','position',[680, 588, 700, 400]);
+line([-1 30],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-1,0,31,0,{'color','k'});
+
+data1 = [1,4,5,6,9];
+data2 = [19, 21, 24, 26, 29];
+
+data = [data1, data2];
+
+hold on;
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+xlim([-2, 32])
+
+my_gaussian = @(x, mu, sigma) 1/(sigma*sqrt(2*pi))*exp(-1*(x-mu).^2./(2 * sigma^2));
+
+% 여기부터 ... 랜덤하게 mu 값을 지정해둔 경우를 상정해 그림 그릴 것.
+% 그리고 각 데이터들에 대해 likelihood 비교하여 label 주어줄 것.
+xx = linspace(-5, 32, 100);
+yy1 = my_gaussian(xx, 3, std(data1));
+yy2 = my_gaussian(xx, 10, std(data2));
 plot(xx, yy1,'linewidth',3,'color',[0. 0.447, 0.741])
 plot(xx, yy2,'linewidth',3,'color',[0.85, 0.325, 0.098])
 
-line([9, 9],[0, my_gaussian(9, 7, std(data1))],'color','k','linestyle','--')
-line([9, 9],[0, my_gaussian(9, 7, std(data1))],'color','k','linestyle','--')
-line([-2, 9],my_gaussian(9, 7, std(data1))*[1, 1],'color','k','linestyle','--')
-line([9, 32],my_gaussian(9, 15, std(data2))*[1, 1],'color','k','linestyle','--')
-plot(9, my_gaussian(9, 7, std(data1)),'o','markerfacecolor','r','markeredgecolor','k')
-plot(9, my_gaussian(9, 15, std(data2)),'o','markerfacecolor','r','markeredgecolor','k')
+line([9, 9],[0, my_gaussian(9, 3, std(data1))],'color','k','linestyle','--')
+line([9, 9],[0, my_gaussian(9, 10, std(data2))],'color','k','linestyle','--')
+line([-2, 9],my_gaussian(9, 3, std(data1))*[1, 1],'color','k','linestyle','--')
+line([9, 32],my_gaussian(9, 10, std(data2))*[1, 1],'color','k','linestyle','--')
+plot(9, my_gaussian(9, 3, std(data1)),'o','markerfacecolor','r','markeredgecolor','k')
+plot(9, my_gaussian(9, 10, std(data2)),'o','markerfacecolor','r','markeredgecolor','k')
 plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
-
 %% label이 주어져있지는 않지만 각 그룹별 평균값과 분산 값이 먼저 주어진 경우
 
 figure('color','w','position',[680, 588, 700, 400]);
