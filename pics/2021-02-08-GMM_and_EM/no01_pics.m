@@ -142,7 +142,8 @@ line([9, 32],my_gaussian(9, 10, std(data2))*[1, 1],'color','k','linestyle','--')
 plot(9, my_gaussian(9, 3, std(data1)),'o','markerfacecolor','r','markeredgecolor','k')
 plot(9, my_gaussian(9, 10, std(data2)),'o','markerfacecolor','r','markeredgecolor','k')
 plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
-%% label이 주어져있지는 않지만 각 그룹별 평균값과 분산 값이 먼저 주어진 경우
+
+%% 위의 분포를 통해 새로운 label을 획득
 
 figure('color','w','position',[680, 588, 700, 400]);
 line([-1 30],[0, 0],'color','k')
@@ -154,43 +155,17 @@ data1 = [1,4,5,6,9];
 data2 = [19, 21, 24, 26, 29];
 
 data = [data1, data2];
+new_label = zeros(1, length(data));
 
-hold on;
-plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
-
-for i = 1:length(data)
-    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
-end
-
-text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
-
-xlim([-2, 32])
-
-my_mu = [8, 15];
-my_std= [3, 3];
-
-my_normal = @(x, mu, sigma) 1/(sigma * sqrt(2*pi)).*exp(-1 * (x-mu).^2/(2*sigma^2));
-
-for i_data = 1:n_data
-    l1 = my_normal(X(i_data), est_mu(1), sqrt(est_vars(1)));
-    l2 = my_normal(X(i_data), est_mu(2), sqrt(est_vars(2)));
+for i_data = 1:length(data)
+    x = data(i_data);
+    y1 = my_gaussian(x, 3, std(data1));
+    y2 = my_gaussian(x, 10, std(data2));
     
-    est_w(i_data, 1) = (l1 * est_phi(1)) / (l1 * est_phi(1) + l2 * est_phi(2));
-    est_w(i_data, 2) = (l2 * est_phi(2)) / (l1 * est_phi(1) + l2 * est_phi(2));
+    new_label(i_data) = y2>y1;
 end
 
-est_phi = 1/n_data * sum(est_w, 1);
-est_mu(1) = (X * est_w(:,1))/sum(est_w(:,1));
-est_mu(2) = (X * est_w(:,2))/sum(est_w(:,2));
-
-est_vars(1) = sum(est_w(:,1)'.*(X-est_mu(1)).^2)/sum(est_w(:,1));
-est_vars(2) = sum(est_w(:,2)'.*(X-est_mu(2)).^2)/sum(est_w(:,2));
-
-est_yy1 = normpdf(xx, est_mu(1), sqrt(est_vars(1)));
-est_yy2 = normpdf(xx, est_mu(2), sqrt(est_vars(2)));
-
-
-
+    
 %% Make Synthetic Data
 rng(1)
 mu = [0, 15];
