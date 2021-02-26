@@ -1,4 +1,5 @@
 clear; close all; clc;
+my_color = lines(2);
 
 %% MLE와 비교 설명
 
@@ -96,8 +97,8 @@ my_gaussian = @(x, mu, sigma) 1/(sigma*sqrt(2*pi))*exp(-1*(x-mu).^2./(2 * sigma^
 xx = linspace(-5, 32, 100);
 yy1 = my_gaussian(xx, 3, std(data1));
 yy2 = my_gaussian(xx, 10, std(data2));
-plot(xx, yy1,'linewidth',3,'color',[0. 0.447, 0.741])
-plot(xx, yy2,'linewidth',3,'color',[0.85, 0.325, 0.098])
+plot(xx, yy1,'linewidth',3,'color',my_color(2,:))
+plot(xx, yy2,'linewidth',3,'color',my_color(1,:))
 plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
 
 
@@ -132,8 +133,8 @@ my_gaussian = @(x, mu, sigma) 1/(sigma*sqrt(2*pi))*exp(-1*(x-mu).^2./(2 * sigma^
 xx = linspace(-5, 32, 100);
 yy1 = my_gaussian(xx, 3, std(data1));
 yy2 = my_gaussian(xx, 10, std(data2));
-plot(xx, yy1,'linewidth',3,'color',[0. 0.447, 0.741])
-plot(xx, yy2,'linewidth',3,'color',[0.85, 0.325, 0.098])
+plot(xx, yy1,'linewidth',3,'color',my_color(2,:))
+plot(xx, yy2,'linewidth',3,'color',my_color(1,:))
 
 line([9, 9],[0, my_gaussian(9, 3, std(data1))],'color','k','linestyle','--')
 line([9, 9],[0, my_gaussian(9, 10, std(data2))],'color','k','linestyle','--')
@@ -147,6 +148,7 @@ plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor
 
 figure('color','w','position',[680, 588, 700, 400]);
 line([-1 30],[0, 0],'color','k')
+hold on;
 set(gca,'visible','off')
 ylim([-0.05, 0.25])
 mArrow2(-1,0,31,0,{'color','k'});
@@ -163,8 +165,18 @@ for i_data = 1:length(data)
     y2 = my_gaussian(x, 10, std(data2));
     
     new_label(i_data) = y2>y1;
+    
+    if y2>y1
+        plot(x, 0, 'o','markerfacecolor',my_color(1,:),'markeredgecolor', [0, 0, 0], 'markersize',10)
+    else
+        plot(x, 0, 'o','markerfacecolor',my_color(2,:),'markeredgecolor', [0, 0, 0], 'markersize',10)
+    end
+    
 end
 
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
     
 %% Make Synthetic Data
 rng(1)
