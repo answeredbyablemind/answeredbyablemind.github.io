@@ -177,6 +177,44 @@ end
 for i = 1:length(data)
     text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
 end
+
+
+%% label이 주어져있지 않은 경우
+
+figure('color','w','position',[680, 588, 700, 400]);
+line([-1 30],[0, 0],'color','k')
+set(gca,'visible','off')
+ylim([-0.05, 0.25])
+mArrow2(-1,0,31,0,{'color','k'});
+
+data1 = [1,4,5,6,9];
+data2 = [19, 21, 24, 26, 29];
+
+data = [data1, data2];
+
+hold on;
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
+
+for i = 1:length(data)
+    text(data(i)-0.2, -0.02, num2str(data(i)),'fontsize',13);
+end
+
+text(32, -0.01, '$$x$$','Interpreter','latex','fontsize',13);
+
+xlim([-2, 32])
+
+idx0 = new_label == 0;
+idx1 = new_label == 1;
+% 여기부터 ... 랜덤하게 mu 값을 지정해둔 경우를 상정해 그림 그릴 것.
+% 그리고 각 데이터들에 대해 likelihood 비교하여 label 주어줄 것.
+xx = linspace(-5, 32, 100);
+yy1 = my_gaussian(xx, mean(data(idx0)), std(data(idx0)));
+yy2 = my_gaussian(xx, mean(data(idx1)), std(data(idx1)));
+plot(xx, yy1,'linewidth',3,'color',my_color(2,:))
+plot(xx, yy2,'linewidth',3,'color',my_color(1,:))
+
+plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor', [0, 0, 0], 'markersize',10)
+
     
 %% Make Synthetic Data
 rng(1)
