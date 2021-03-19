@@ -1,5 +1,34 @@
 clear; close all; clc;
+%% inverse CDF
+rng(1)
+addpath('D:\angeloyeo.github.io\pics\')
+x = linspace(-3,3,100);
+p = normcdf(x);
 
+plot(x,p)
+n = 15;
+yy = linspace(eps, 1-eps, n);
+xx = norminv(yy);
+xx(xx < -3) = -3;
+xx(xx > 3 ) = 3;
+
+for i = 1:n
+    mArrow2(xx(i),normcdf(xx(i)), xx(i),-0.1,{'color','r'})
+    mArrow2(-3,normcdf(xx(i)), xx(i),normcdf(xx(i)),{'color','r'})
+%     line([xx(i), xx(i)], [0, normcdf(xx(i))],'color','r','linestyle','--');
+%     line([-3, xx(i)], [normcdf(xx(i)), normcdf(xx(i))],'color','r','linestyle','--')
+end
+
+xlim([-3.1, 3.1])
+ylim([-0.1, 1.1])
+xlabel('x');
+ylabel('F(x)');
+
+figure;
+histogram(xx,7)
+xlabel('x');
+ylabel('frequency')
+%%
 rng(1)
 n = 50000;
 xx = linspace(-10,20, 1000);
