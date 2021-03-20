@@ -205,3 +205,7 @@ hold on; plot(xx, target(xx)/max(target(xx))*max(h.Values))
 # 참고 문헌
 
 * An introduction to MCMC for Maching Learning / C. Andrieu et al., Machine Learning, 50, 5-43, 2003
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7wtVFfwAps4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
