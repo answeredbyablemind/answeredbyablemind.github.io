@@ -144,7 +144,7 @@ plot(data, zeros(1,length(data)), 'o','markerfacecolor',[1,1,1],'markeredgecolor
 
 %% 여러 스텝에 걸친 비디오 만들어주기
 %
-h_record = 0;
+h_record = 1;
 n_iter = 10;
 
 if h_record
