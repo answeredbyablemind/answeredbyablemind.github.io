@@ -21,6 +21,18 @@ ylabel('signal s(t)')
 grid on;
 xlim([0, 0.3])
 title('신호의 일부 구간을 확대한 그림');
+
+%% 50 Hz, 120Hz 신호의 소리 들려주기. 50 + 120 Hz 신호 소리 들려주기.
+
+% 50 Hz 소리
+sound(0.7*sin(2*pi*50*t), Fs)
+
+% 120 Hz 소리
+sound(1.0*sin(2*pi*120*t), Fs)
+
+% 50 Hz 소리 + 120 Hz 소리
+sound(0.7*sin(2*pi*50*t) + 1.0*sin(2*pi*120*t),  Fs)
+
 %% FFT 
 Y = fft(S);
 P2 = abs(Y/L);
