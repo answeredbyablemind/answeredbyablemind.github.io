@@ -139,11 +139,11 @@ $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
 그러면,
 
-$$X[1]\Rightarrow x[0]w^0 + x[1] w^1 + \cdots + x[n-1]w^{N-1}$$
+$$X[1]\Rightarrow x[0]w^0 + x[1] w^1 + \cdots + x[N-1]w^{N-1}$$
 
 이런 방식으로 $i$번째 주파수 성분 $X[i]$는 다음과 같이 계산할 수 있음을 알 수 있다.
 
-$$X[i] = x[0]w^0 + x[1]w^{i\times1}+\cdots+x[j]w^{i\times j}+\cdots +x[n-1]w^{i\times(n-1)}$$
+$$X[i] = x[0]w^0 + x[1]w^{i\times1}+\cdots+x[j]w^{i\times j}+\cdots +x[N-1]w^{i\times(N-1)}$$
 
 즉, 이런 과정을 거치게 되면 DFT를 다음과 같이 벡터와 행렬의 관계로 표현할 수 있다는 것을 알 수 있다.
 
