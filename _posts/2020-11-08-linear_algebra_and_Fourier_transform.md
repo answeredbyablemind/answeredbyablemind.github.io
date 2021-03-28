@@ -81,7 +81,7 @@ tags: 선형대수 신호처리
 
 $$x[n] = \begin{bmatrix}x[0]\\x[1] \\ \vdots \\ x[N-1]\end{bmatrix}$$
 
-[벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html) 편에서 소개한 바와 같이 기본 연산(상수배와 벡터 간의 덧셈)을 음성 신호는 만족한다고 볼 수 있으므로 음성 신호 역시도 벡터의 일종으로 볼 수 있으며, 이 때 위의 $x(t)$ 벡터의 차원은 $N$ 차원임을 알 수 있다.
+[벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html) 편에서 소개한 바와 같이 기본 연산(상수배와 벡터 간의 덧셈)을 음성 신호는 만족한다고 볼 수 있으므로 음성 신호 역시도 벡터의 일종으로 볼 수 있으며, 이 때 위의 $x[n]$ 벡터의 차원은 $N$ 차원임을 알 수 있다.
 
 # 주파수 성분 역시도 벡터
 
@@ -119,7 +119,7 @@ $$X[k] = \begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1] \end{bmatrix}$$
 
 | DEFINITION: DFT and iDFT|
 | --------- |
-| 전체 신호의 길이가 N인 이산 신호 $X[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
+| 전체 신호의 길이가 N인 이산 신호 $x[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
 
 그렇다면 신호 벡터에 어떤 행렬(여기서 푸리에 행렬)을 통해 주파수 성분 벡터를 얻었다고 볼 수 있을 것이다. 이를 알기 위해 $k=0,1,\cdots, N-1$일 때의 $X[k]$ 값을 하나하나 계산해보자.
 
