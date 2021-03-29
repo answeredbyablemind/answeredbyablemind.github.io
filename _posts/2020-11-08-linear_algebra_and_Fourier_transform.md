@@ -181,7 +181,7 @@ $$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/pic1.png">
-  <br> 그림 4. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
+  <br> 그림 4. 복소 평면 상에서 표현한 $x+iy$. 삼각함수로 표현하면 $x$축으로부터의 각도를 $\theta$ 라디안이라 했을 때 $\cos\theta + i \sin\theta$이다.
 </p>
 
 다시 말해 식 (8)에 있는 $w$는 다음과 같이 계산하는데,
