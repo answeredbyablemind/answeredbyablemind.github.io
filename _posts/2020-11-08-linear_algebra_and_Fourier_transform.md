@@ -217,7 +217,7 @@ cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개�
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
   <br>
-  그림 7. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
+  그림 7. 푸리에 행렬 내의 각 복소수 원소들의 phase를 cosine 함수로 치환해 생각해본 경우
 </p>
 
 위의 그림 7에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 cosine 함수를 표현하고 있는 것을 알 수 있다.
