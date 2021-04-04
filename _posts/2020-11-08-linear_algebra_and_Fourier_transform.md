@@ -354,5 +354,6 @@ $$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\4\end{bmatrix}=\begin{bma
 즉, 모든 시계열들은 정현파의 합으로 구성할 수 있으며, 정현파를 어떻게 조합하는가에 따라 시계열의 형태가 달라진다는 것을 다시 한번 방증하는 것이다.
 
 
-
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cczgJiqpslU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
