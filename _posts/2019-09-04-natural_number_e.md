@@ -273,13 +273,39 @@ $$\Rightarrow \frac{1}{y}dy = dx$$
 
 $$\Rightarrow \int \frac{1}{y}dy = \int dx$$
 
-여기서 $\ln(y)$의 정의가 바로 $\int\frac{1}{y}dy$이므로[^1],
+여기서 $\ln(y)$의 정의가 바로 $\int\frac{1}{y}dy$이므로 좌변의 값은 $\ln(y)$와 같다.
 
-[^1]: 엄밀한 증명이라고 할 수 있을지 모르겠지만 이해에 도움 될만한 링크를 첨부한다. [링크](https://m.blog.naver.com/PostView.nhn?blogId=tjdals8895&logNo=150125124559&proxyReferer=https:%2F%2Fwww.google.com%2F)
+이것의 증명은 아래와 같이 $\ln(x)$의 미분이 $1/x$임을 보임으로써 확인할 수 있다.
+
+다시 말해,
+
+$$\frac{d}{dx}\ln(x) = \frac{1}{x}$$
+
+이므로 미적분학의 기본정리에 의해,
+
+$$\int \frac{1}{x}dx = \ln(x)+C$$
+
+$$\text{여기서 }C\text{는 적분상수}\notag$$
+
+임을 알 수 있는 것이다.
+
+이를 확인해보자면,
+
+$$\frac{d}{dx}\ln(x) = \lim_{h\rightarrow 0}\frac{\ln(x+h)-\ln(x)}{h}$$
+
+$$=\lim_{h\rightarrow 0}\frac{\ln\left(\frac{x+h}{h}\right)}{h}$$
+
+$$=\lim_{h\rightarrow 0}\ln\left(\frac{x+h}{h}\right)^{\frac{1}{h}}$$
+
+$$=\lim_{h\rightarrow 0}\ln\left(1+\frac{x}{h}\right)^{\frac{h}{x}\cdot\frac{1}{x}}$$
+
+$$=\ln(e^{\frac{1}{x}})=\frac{1}{x}$$
+
+따라서 식 (27)은 다음과 같이 쓸 수 있다.
 
 $$\Rightarrow \ln(y) = x$$
 
-따라서,
+그러므로
 
 $$y=e^x$$
 
