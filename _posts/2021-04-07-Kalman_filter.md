@@ -14,6 +14,12 @@ tags: 통계학 신호처리
   칼만필터를 이용한 마우스 움직임 Tracking. 만약 내 손이 심하게 떨고 있을 때, 칼만 필터는 떨지 않았을 경우의 마우스 궤적을 추정해주는데 쓰일 수 있다.
 </center>
 
+# Prerequisites
+
+본 페이지에서 소개하는 칼만필터를 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [베이즈 정리의 의미](https://angeloyeo.github.io/2020/01/09/Bayes_rule.html)
+
 # 베이즈 정리, 실재론, 그리고 칼만 필터
 
 칼만 필터: 어제보다 나은 오늘의 나
@@ -56,3 +62,17 @@ $$x_{k+1} = \Phi x_k + w_k$$
 
 # 칼만 필터에서의 Update과정
 
+$$P(\hat{x}_k)=\frac{P(z_k|\hat{x}_k')P(\hat{x}_k')}{P(z_k)}$$
+
+$$=\frac{P(z_k|\hat{x}_k')P(\hat{x}_k')}{\int P(z_k|\hat{x}_k')P(\hat{x}_k') d\hat{x}_k'}$$
+
+$$=\frac{1}{Z}P(z_k|\hat{x}_k')P(\hat{x}_k')$$
+
+$$\mathcal{N}$$
+
+
+# 참고 문헌
+
+* [Tutorial: The Kalman Filter, Tony Lacey, MIT](http://web.mit.edu/kirtley/kirtley/binlustuff/literature/control/Kalman%20filter.pdf)
+* [Understanding Kalman Filters, Melda Ulusoy, Mathworks](https://kr.mathworks.com/videos/series/understanding-kalman-filters.html)
+* [Product and convolutions of Gaussian Probability Density Functions](http://www.lucamartino.altervista.org/2003-003.pdf)
