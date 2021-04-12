@@ -14,6 +14,8 @@ tags: 통계학 신호처리
   칼만필터를 이용한 마우스 움직임 Tracking. 만약 내 손이 심하게 떨고 있을 때, 칼만 필터는 떨지 않았을 경우의 마우스 궤적을 추정해주는데 쓰일 수 있다.
 </center>
 
+[//]:# (어떤 부분에 포커를 맞춰 설명할지 계속 고민해볼 것...)
+
 # Prerequisites
 
 본 페이지에서 소개하는 칼만필터를 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것이 좋습니다.
@@ -74,7 +76,7 @@ $$\mathcal{N}(x, \mu_0, \sigma_0)\cdot\mathcal{N}(x, \mu_1, \sigma_1) = \mathcal
 
 $$\mu' = \mu_0 +\frac{\sigma_0^2(\mu_1-\mu_0)}{\sigma_0^2 + \sigma_1^2}$$
 
-$$\sigma'^2=\sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
+$$\sigma'^2 = \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
 
 여기서 $\mu'$과 $\sigma'^2$에 공통적으로 포함된 부분을 아래와 같이 새로운 변수로 설정해보자.
 
@@ -91,6 +93,11 @@ $$=(1-k)\mu_0 +k \mu_1$$
 다시 말해 $\sigma_0^2$가 크면 클 수록 $\mu'$는 $\mu_1$의 값을 더 많이 가져오고, $\sigma_0^2$가 작아지면 작아질 수록 $\mu'$는 $\mu_0$의 값을 더 많이 가져온다는 의미를 가진다.
 
 
+$$\sigma'^2= \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
+
+$$=\sigma_0^2 - k\sigma_0^2 = (1-k)\sigma_0^2$$
+
+즉, Posterior의 분산은 Prior 보다는 작아진다.
 
 
 # 참고 문헌
