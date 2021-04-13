@@ -77,9 +77,15 @@ $$=\frac{P(z|H\hat{x})P(H\hat{x})}{\int P(z|H\hat{x})P(H\hat{x}) dH\hat{x}}$$
 
 $$=\frac{1}{Z}P(z|H\hat{x})P(H\hat{x})$$
 
----
+여기서 $Z$는 measurement에 대한 확률값을 나타낸 것인데, 이 값의 역할은 Posterior, P(Hx)를 정규화해 줌으로써 전체 면적이 1이될 수 있도록 해주는 역할만을 수행해주는 것이다.
 
-놀라운 사실이지만, 정규분포와 정규분포를 곱해주면 또 다른 정규분포가 얻어진다.
+그런데, 만약 이 정규화 과정을 수행해주지 않았다고 P(Hx)에서 말해주는 평균값의 위치가 변할까? 그리고, 분산 값이 변할까? 전혀 그렇지 않을 것이다. 정규화 과정이 해주는 일은 확률 분포 함수의 높이만을 조정해주는 것이지 그 함수의 파라미터까지 수정하는 것은 아니기 때문이다.
+
+따라서, 우리가 원하는 것이 Posterior의 파라미터만을 아는 것이라면 Prior와 Likelihood의 곱만을 이용해서 Posterior의 파라미터를 구하면 충분할 것이다.
+
+칼만필터에서는 Prior, Likelihood, Posterior 모두 정규분포를 따른다고 가정한다.
+
+그런데, 놀랍게도, 정규분포와 정규분포를 곱해주면 또 다른 정규분포가 얻어진다고 알려져 있다.
 
 다음과 같이 평균, 분산이 각각 $(\mu_0, \sigma_0^2), (\mu_1, \sigma_1^2)$인 두 정규분포가 곱해져서 얻어지는 정규분포의 평균, 분산이 $(\mu_2, \sigma_2^2)$라고 하면 다음과 같은 관계로 표현할 수 있다.
 
@@ -91,19 +97,21 @@ $$\mu_2 = \mu_1 +\frac{\sigma_0^2(\mu_1-\mu_0)}{\sigma_0^2 + \sigma_1^2}$$
 
 $$\sigma_2^2 = \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
 
-위 공식을 활용하여 ...
+위 공식을 활용하여 우리가 풀고자하는 문제의 변수로 치환하면 다음과 같이 치환해야 한다.
 
-$$\mu_0 \Rightarrow H\hat{x}$$
+* $\mu_0 \Rightarrow H\hat{x}$
 
-$$\sigma_0^2 \Rightarrow H\sigma_{\hat{x}}^2$$
+* $\sigma_0^2 \Rightarrow H\sigma_{\hat{x}}^2$
 
-$$\mu_1 \Rightarrow z$$
+* $\mu_1 \Rightarrow z$
 
-$$\sigma_1^2 \Rightarrow \sigma_{z}^2$$
+* $\sigma_1^2 \Rightarrow \sigma_{z}^2$
 
-$$\mu_2 \Rightarrow Hx$$
+* $\mu_2 \Rightarrow Hx$
 
-$$\sigma_2^2 \Rightarrow H\sigma_{x}^2$$
+* $\sigma_2^2 \Rightarrow H\sigma_{x}^2$
+
+그러면 원래의 두 정규분포의 곱과 그의 결과에 대한 식을 다음과 같이 쓸 수 있다.
 
 $$\mathcal{N}(r, H\hat{x}, H\sigma_{\hat{x}}^2)\cdot\mathcal{N}(r, z, \sigma_1^2) = \mathcal{N}(r, Hx, H\sigma_{x}^2)$$
 
@@ -119,7 +127,7 @@ $$k=\frac{\sigma_{\hat{x}}^2}{H\sigma_{\hat{x}}^2 + \sigma_{x}^2}$$
 
 $$Hx = H\hat{x} + kH(z - H\hat{x})$$
 
-여기서 양변을 H로 나눠주면,
+여기서 양변을 $H$로 나눠주면,
 
 $$\Rightarrow x = \hat{x} + k(z - H\hat{x})$$
 
