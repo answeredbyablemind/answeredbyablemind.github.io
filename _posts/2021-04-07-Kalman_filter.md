@@ -42,73 +42,99 @@ $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 
 ## 시스템(system)과 측정(measurement)
 
-$$z_k = Hx_k$$
+$$z = Hx$$
 
-$x_k$는 물자체. 우리가 보지 못하는 것이 들어있을 수도 있다.
+$x$는 물자체. 우리가 보지 못하는 것이 들어있을 수도 있다.
 
 여기있는 어떤 것을 우리가 예측해야 할 수도 있다. 가령, Applet의 마우스의 속도는 우리가 보지 못하는 것일 수 있다.
 
-$z_k$는 현상. 우리가 측정할 수 있는 것. 가령, 마우스의 위치는 측정할 수 있다.
+$z$는 현상. 우리가 측정할 수 있는 것. 가령, 마우스의 위치는 측정할 수 있다.
 
 $H$는 물자체를 현상으로 매개해주는 변환 과정을 행렬로 나타낸 것이라고 생각할 수 있다.
 
 현재 마우스의 위치와 속도를 알면 다음번 마우스의 위치를 정확하게 계산할 수 있게 된다.
 
-$$z_k = Hx_k+v_k$$
+$$z = Hx+v$$
 
-$v_k$는 측정 에러이며, 평균이 0인 가우시안 분포를 따른다고 가정함.
+$v$는 측정 에러이며, 평균이 0인 가우시안 분포를 따른다고 가정함.
 
-## 카르마(업보)의 연쇄
+## 다음번 타임스텝의 state vector $x$
 
-$$x_{k+1} = \Phi x_k + w_k$$
+$$\hat{x}_{\text{next}} := Ax + w$$
 
 현재가 어떻게 미래에 영향을 미치는가?
 
 혹은 현재는 어떻게 과거로부터 영향을 받는가?
 
+마코프 체인의 개념이 들어가 있음.
+
 # 칼만 필터에서의 Update과정
 
 
-$$P(H\hat{x}_k)=\frac{P(z_k|H\hat{x}'_k)P(H\hat{x}'_k)}{P(z_k)}$$
+$$P(Hx)=\frac{P(z|H\hat{x})P(H\hat{x})}{P(z)}$$
 
-$$=\frac{P(z_k|H\hat{x}_k')P(H\hat{x}_k')}{\int P(z_k|H\hat{x}_k')P(H\hat{x}_k') dH\hat{x}_k'}$$
+$$=\frac{P(z|H\hat{x})P(H\hat{x})}{\int P(z|H\hat{x})P(H\hat{x}) dH\hat{x}}$$
 
-$$=\frac{1}{Z}P(z_k|H\hat{x}_k')P(H\hat{x}_k')$$
+$$=\frac{1}{Z}P(z|H\hat{x})P(H\hat{x})$$
 
 ---
 
 놀라운 사실이지만, 정규분포와 정규분포를 곱해주면 또 다른 정규분포가 얻어진다.
 
-$$\mathcal{N}(r, H\hat{x}'_k, H\sigma_0^2)\cdot\mathcal{N}(r, z_k, \sigma_1^2) = \mathcal{N}(r, H\hat{x}_k, H\sigma'^2)$$
+다음과 같이 평균, 분산이 각각 $(\mu_0, \sigma_0^2), (\mu_1, \sigma_1^2)$인 두 정규분포가 곱해져서 얻어지는 정규분포의 평균, 분산이 $(\mu_2, \sigma_2^2)$라고 하면 다음과 같은 관계로 표현할 수 있다.
 
-$$H\hat{x}_k = H\hat{x}'_k +\frac{H\sigma_0^2(z_k-H\hat{x}'_k)}{H\sigma_0^2 + \sigma_1^2}$$
+$$\mathcal{N}(\mu_0, \sigma_0^2)\cdot\mathcal{N}(\mu_1, \sigma_1^2) = \mathcal{N}(\mu_2, \sigma_2^2)$$
 
-$$H\sigma'^2 = H\sigma_0^2 -\frac{H^2\sigma_0^4}{H\sigma_0^2 + \sigma_1^2}$$
+<center>where</center>
 
-여기서 $H\hat{x}_k$과 $H\sigma'^2$에 공통적으로 포함된 부분을 아래와 같이 새로운 변수로 설정해보자.
+$$\mu_2 = \mu_1 +\frac{\sigma_0^2(\mu_1-\mu_0)}{\sigma_0^2 + \sigma_1^2}$$
 
-$$k=\frac{\sigma_0^2}{H\sigma_0^2 + \sigma_1^2}$$
+$$\sigma_2^2 = \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
 
-그러면 $H\hat{x}_k$에 관한 식은 아래와 같이 쓸 수 있다.
+위 공식을 활용하여 ...
 
-$$H\hat{x}_k = H\hat{x}'_k + kH(z_k - H\hat{x}'_k)$$
+$$\mu_0 \Rightarrow H\hat{x}$$
+
+$$\sigma_0^2 \Rightarrow H\sigma_{\hat{x}}^2$$
+
+$$\mu_1 \Rightarrow z$$
+
+$$\sigma_1^2 \Rightarrow \sigma_{z}^2$$
+
+$$\mu_2 \Rightarrow Hx$$
+
+$$\sigma_2^2 \Rightarrow H\sigma_{x}^2$$
+
+$$\mathcal{N}(r, H\hat{x}, H\sigma_{\hat{x}}^2)\cdot\mathcal{N}(r, z, \sigma_1^2) = \mathcal{N}(r, Hx, H\sigma_{x}^2)$$
+
+$$Hx = H\hat{x} +\frac{H\sigma_{\hat{x}}^2(z-H\hat{x})}{H\sigma_{\hat{x}}^2 + \sigma_1^2}$$
+
+$$H\sigma_{x}^2 = H\sigma_{\hat{x}}^2 -\frac{H^2\sigma_0^4}{H\sigma_{\hat{x}}^2 + \sigma_1^2}$$
+
+여기서 $Hx$과 $H\sigma_{x}^2$에 공통적으로 포함된 부분을 아래와 같이 새로운 변수로 설정해보자.
+
+$$k=\frac{\sigma_{\hat{x}}^2}{H\sigma_{\hat{x}}^2 + \sigma_{x}^2}$$
+
+그러면 $Hx$에 관한 식은 아래와 같이 쓸 수 있다.
+
+$$Hx = H\hat{x} + kH(z - H\hat{x})$$
 
 여기서 양변을 H로 나눠주면,
 
-$$\Rightarrow \hat{x}_k = \hat{x}'_k + k(z_k - H\hat{x}'_k)$$
+$$\Rightarrow x = \hat{x} + k(z - H\hat{x})$$
 
-$$=(1-k)H\hat{x}'_k +k z_k$$
+$$=(1-k)H\hat{x} +k z$$
 
-다시 말해 새로운 $\hat{x}_k$는 $\hat{x}'_k$와 $z_k$를 적절히 섞은 것으로 생각할 수 있으며, $k$가 클 수록 $z_k$의 값을 더 많이 섞어준다는 의미이다. (생각해보면 $k$는 최대 1일 것이다.)
+다시 말해 새로운 $x$는 $\hat{x}$와 $z$를 적절히 섞은 것으로 생각할 수 있으며, $k$가 클 수록 $z$의 값을 더 많이 섞어준다는 의미이다. (생각해보면 $k$는 최대 1일 것이다.)
 
-다시 말해 $H\sigma_0^2$가 크면 클 수록 $H\hat{x}_k$는 $z_k$의 값을 더 많이 가져오고, $H\sigma_0^2$가 작아지면 작아질 수록 $H\hat{x}_k$는 $\mu_0$의 값을 더 많이 가져온다는 의미를 가진다.
+다시 말해 $H\sigma_{\hat{x}}^2$가 크면 클 수록 $Hx$는 $z$의 값을 더 많이 가져오고, $H\sigma_{\hat{x}}^2$가 작아지면 작아질 수록 $Hx$는 $\mu_0$의 값을 더 많이 가져온다는 의미를 가진다.
 
 
-$$H\sigma'^2= H\sigma_0^2 -\frac{H^2\sigma_0^4}{H\sigma_0^2 + \sigma_1^2}$$
+$$H\sigma_{x}^2= H\sigma_{\hat{x}}^2 -\frac{H^2\sigma_{\hat{x}}^4}{H\sigma_{\hat{x}}^2 + \sigma_{x}^2}$$
 
-$$=H\sigma_0^2 -H^2k\sigma_0^2$$
+$$=H\sigma_{\hat{x}}^2 -H^2k\sigma_{\hat{x}}^2$$
 
-$$\Rightarrow \sigma'^2 = \sigma_0^2 - kH\sigma_0^2$$
+$$\Rightarrow \sigma'^2 = \sigma_{\hat{x}}^2 - kH\sigma_{\hat{x}}^2=(1-kH)\sigma_{\hat{x}}^2$$
 
 즉, Posterior의 분산은 Prior 보다는 작아진다.
 
