@@ -40,9 +40,9 @@ $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 
 # 신호 획득 과정 모델링
 
-## 물자체와 현상
+## 시스템(system)과 측정(measurement)
 
-$$z_k = Hx_k + v_k$$
+$$z_k = Hx_k$$
 
 $x_k$는 물자체. 우리가 보지 못하는 것이 들어있을 수도 있다.
 
@@ -66,41 +66,45 @@ $$x_{k+1} = \Phi x_k + w_k$$
 
 # 칼만 필터에서의 Update과정
 
-$$P(\hat{x}_k)=\frac{P(z_k|\hat{x}_k')P(\hat{x}_k')}{P(z_k)}$$
 
-$$=\frac{P(z_k|\hat{x}_k')P(\hat{x}_k')}{\int P(z_k|\hat{x}_k')P(\hat{x}_k') d\hat{x}_k'}$$
+$$P(H\hat{x}_k)=\frac{P(z_k|H\hat{x}'_k)P(H\hat{x}'_k)}{P(z_k)}$$
 
-$$=\frac{1}{Z}P(z_k|\hat{x}_k')P(\hat{x}_k')$$
+$$=\frac{P(z_k|H\hat{x}_k')P(H\hat{x}_k')}{\int P(z_k|H\hat{x}_k')P(H\hat{x}_k') dH\hat{x}_k'}$$
+
+$$=\frac{1}{Z}P(z_k|H\hat{x}_k')P(H\hat{x}_k')$$
 
 ---
 
-$$\mathcal{N}(x, \mu_0, \sigma_0)\cdot\mathcal{N}(x, \mu_1, \sigma_1) = \mathcal{N}(x, \mu', \sigma')$$
+$$\mathcal{N}(r, H\hat{x}'_k, H\sigma_0)\cdot\mathcal{N}(r, z_k, \sigma_1) = \mathcal{N}(r, H\hat{x}_k, H\sigma')$$
 
-$$\mu' = \mu_0 +\frac{\sigma_0^2(\mu_1-\mu_0)}{\sigma_0^2 + \sigma_1^2}$$
+$$H\hat{x}_k = H\hat{x}'_k +\frac{H\sigma_0^2(z_k-H\hat{x}'_k)}{H\sigma_0^2 + \sigma_1^2}$$
 
-$$\sigma'^2 = \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
+$$H\sigma'^2 = H\sigma_0^2 -\frac{H^2\sigma_0^4}{H\sigma_0^2 + \sigma_1^2}$$
 
-여기서 $\mu'$과 $\sigma'^2$에 공통적으로 포함된 부분을 아래와 같이 새로운 변수로 설정해보자.
+여기서 $H\hat{x}_k$과 $H\sigma'^2$에 공통적으로 포함된 부분을 아래와 같이 새로운 변수로 설정해보자.
 
-$$k=\frac{\sigma_0^2}{\sigma_0^2 + \sigma_1^2}$$
+$$k=\frac{\sigma_0^2}{H\sigma_0^2 + \sigma_1^2}$$
 
-그러면 $\mu'$에 관한 식은 아래와 같이 쓸 수 있다.
+그러면 $H\hat{x}_k$에 관한 식은 아래와 같이 쓸 수 있다.
 
-$$\mu' = \mu_0 + k(\mu_1 - \mu_0)$$
+$$H\hat{x}_k = H\hat{x}'_k + kH(z_k - H\hat{x}'_k)$$
 
-$$=(1-k)\mu_0 +k \mu_1$$
+$$\Rightarrow \hat{x}_k = \hat{x}'_k + k(z_k - H\hat{x}'_k)$$
 
-다시 말해 새로운 $\mu'$는 $\mu_0$와 $\mu_1$를 적절히 섞은 것으로 생각할 수 있으며, $k$가 클 수록 $\mu_1$의 값을 더 많이 섞어준다는 의미이다. (생각해보면 $k$는 최대 1일 것이다.)
+$$=(1-k)H\hat{x}'_k +k z_k$$
 
-다시 말해 $\sigma_0^2$가 크면 클 수록 $\mu'$는 $\mu_1$의 값을 더 많이 가져오고, $\sigma_0^2$가 작아지면 작아질 수록 $\mu'$는 $\mu_0$의 값을 더 많이 가져온다는 의미를 가진다.
+다시 말해 새로운 $\hat{x}_k$는 $\hat{x}'_k$와 $z_k$를 적절히 섞은 것으로 생각할 수 있으며, $k$가 클 수록 $z_k$의 값을 더 많이 섞어준다는 의미이다. (생각해보면 $k$는 최대 1일 것이다.)
+
+다시 말해 $H\sigma_0^2$가 크면 클 수록 $H\hat{x}_k$는 $z_k$의 값을 더 많이 가져오고, $H\sigma_0^2$가 작아지면 작아질 수록 $H\hat{x}_k$는 $\mu_0$의 값을 더 많이 가져온다는 의미를 가진다.
 
 
-$$\sigma'^2= \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
+$$H\sigma'^2= H\sigma_0^2 -\frac{H^2\sigma_0^4}{H\sigma_0^2 + \sigma_1^2}$$
 
-$$=\sigma_0^2 - k\sigma_0^2 = (1-k)\sigma_0^2$$
+$$=H\sigma_0^2 -H^2k\sigma_0^2$$
+
+$$\Rightarrow \sigma'^2 = \sigma_0^2 - kH\sigma_0^2$$
 
 즉, Posterior의 분산은 Prior 보다는 작아진다.
-
 
 # 참고 문헌
 
