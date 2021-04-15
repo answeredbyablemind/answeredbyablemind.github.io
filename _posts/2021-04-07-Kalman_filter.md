@@ -24,7 +24,19 @@ tags: 통계학 신호처리
 
 * [베이즈 정리의 의미](https://angeloyeo.github.io/2020/01/09/Bayes_rule.html)
 
+# 칼만 필터가 해주는 일
+
+다음번 위치가 어디가 될 지 예상해준다는 식의 내용 포함 필요.
+
+공의 궤적에 대한 추정. 빨간색 원의 크기가 클 수록 다음 번 스텝에 대한 예측이 불확실하다는 것을 의미함.
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/MxwVwCuBEDA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 # 정규 분포
+
+칼만 필터는 불확실성을 정규분포를 이용해 표현함.
 
 ## 두 정규 분포의 곱(product)
 
