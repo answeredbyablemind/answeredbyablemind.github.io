@@ -1,5 +1,5 @@
 ---
-title: 베이즈 정리로 이해하는 칼만 필터
+title: 칼만 필터
 sidebar:
   nav: docs-ko
 aside:
@@ -24,51 +24,38 @@ tags: 통계학 신호처리
 
 * [베이즈 정리의 의미](https://angeloyeo.github.io/2020/01/09/Bayes_rule.html)
 
-# 베이즈 정리, 실재론, 그리고 칼만 필터
+# 정규 분포
 
-칼만 필터: 어제보다 나은 오늘의 나
+## 두 정규 분포의 곱(product)
 
-# 베이즈 정리
+[Products and Convolutions of Gaussian Probability Density Functions](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.583.3007&rep=rep1&type=pdf)
 
-기존의 앎($H$), 새로운 가르침($E$), 깨달음($H\|E$).
+## 두 정규 분포의 합성곱(convolution)
+
+The full result is that if $F$ is the gaussian distribution with mean $\mu$ and variance $\sigma^2$, and $G$ is the gaussian distribution with mean $\nu$ and variance $\tau^2$, then $F*G$ is the gaussian distribution with mean $\mu+\nu$ and variance $\sigma^2+\tau^2$
+.
+
+# 베이즈 정리: Update Rule
 
 $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 
-공부라는 것이 기존에 알고 있던 것에 새로운 가르침이 내려오면 그것을 바탕으로 깨닫고 한발 더 나아갈 수 있다.
+# 위치 추정과 이동
 
-가르침에 100% 다가가지는 못할 수 있지만, 나의 앎은 점점 더 나은 상태로 도달할 것으로 믿을 수 있다.
+## 정규분포를 이용한 불확실도의 표현
 
-# 신호 획득 과정 모델링
+정규 분포의 parameter는 평균, 분산 두 가지로 구성되어 있다.
 
-## 시스템(system)과 측정(measurement)
+위치에 대한 불확실도와 이동에 대한 불확실도. 모두 가우시안으로 표현할 수 있음.
 
-$$z = Hx$$
+확률적인 위치 추정 = Gaussian 분포로 표현
 
-$x$는 물자체. 우리가 보지 못하는 것이 들어있을 수도 있다.
+## 이동 = Convolution
 
-여기있는 어떤 것을 우리가 예측해야 할 수도 있다. 가령, Applet의 마우스의 속도는 우리가 보지 못하는 것일 수 있다.
+# Kalman filter의 작동 과정
 
-$z$는 현상. 우리가 측정할 수 있는 것. 가령, 마우스의 위치는 측정할 수 있다.
+## Predict the next position
 
-$H$는 물자체를 현상으로 매개해주는 변환 과정을 행렬로 나타낸 것이라고 생각할 수 있다.
-
-현재 마우스의 위치와 속도를 알면 다음번 마우스의 위치를 정확하게 계산할 수 있게 된다.
-
-$$z = Hx+v$$
-
-$v$는 측정 에러이며, 평균이 0인 가우시안 분포를 따른다고 가정함.
-
-## 다음번 타임스텝의 state vector $x$
-
-$$\hat{x}_{\text{next}} := Ax + w$$
-
-현재가 어떻게 미래에 영향을 미치는가?
-
-혹은 현재는 어떻게 과거로부터 영향을 받는가?
-
-마코프 체인의 개념이 들어가 있음.
-
-# 칼만 필터에서의 Update과정
+## Additional Measure & Update
 
 
 $$P(Hx)=\frac{P(z|H\hat{x})P(H\hat{x})}{P(z)}$$
