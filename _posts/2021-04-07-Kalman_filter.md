@@ -71,7 +71,7 @@ tags: 통계학 신호처리
 
 ## 두 정규 분포의 곱(product)
 
-첫 번째로 이용될 상태 변화 연산은 두 정규 분포의 곱이다.
+첫 번째로 이용될 상태 변화 연산은 두 정규 분포의 곱(product)이다.
 
 아래와 같이 두 개의 정규 분포가 있다고 해보자.
 
@@ -83,7 +83,11 @@ $$\mathcal{N}_2(x;\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2\pi \sigma_2^2}}\exp\left
 
 위 두 정규 분포를 곱하면 어떤 결과가 얻어질까? 놀랍게도 정규 분포 두 개를 곱하면 결과는 정규 분포이다.
 
-만약, 곱셈 결과로 얻어진 정규 분포를 $\mathcal{N}_{new}(x; \mu_{new}, \sigma_{new}^2)$라고 하면 $\mu_{new}$와 $\sigma_{new}^2$은 다음과 같이 결정된다.
+만약, 곱셈 결과로 얻어진 정규 분포를 
+
+$$\mathcal{N}_{new}(x; \mu_{new}, \sigma_{new}^2)\notag$$
+
+라고 하면 $\mu_{new}$와 $\sigma_{new}^2$은 다음과 같이 결정된다.
 
 $$\mu_{new} = \frac{\mu_1\sigma_2^2 + \mu_2\sigma_1^2}{\sigma_1^2+\sigma_2^2}$$
 
@@ -97,11 +101,18 @@ $$\sigma_{new}^2 = \frac{1}{1/\sigma_1^2+1/\sigma_2^2}=\frac{\sigma_1^2\sigma_2^
   그림 2. 두 정규 분포의 곱
 </p>
 
-
 ## 두 정규 분포의 합성곱(convolution)
 
-The full result is that if $F$ is the gaussian distribution with mean $\mu$ and variance $\sigma^2$, and $G$ is the gaussian distribution with mean $\nu$ and variance $\tau^2$, then $F*G$ is the gaussian distribution with mean $\mu+\nu$ and variance $\sigma^2+\tau^2$
-.
+두 번째로 이용될 상태 변화 연산은 두 정규 분포의 합성곱(convolution)이다.
+
+곱(product)에 대해 확인했을 때와 마찬가지로 아래와 같은 두 정규 분포에 대해서,
+
+$$\mathcal{N}_1(x;\mu_1, \sigma_1^2)\text{ , }\mathcal{N}_2(x;\mu_2, \sigma_2^2)\notag$$
+
+합성곱 결과는 다음과 같다.
+
+$$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1^2 +\sigma_2^2)$$
+
 
 # 베이즈 정리: Update Rule
 
