@@ -26,7 +26,13 @@ tags: 통계학 신호처리
 
 # 칼만 필터가 해주는 일
 
-칼만필터를 이용하면 물체를 추적 할 때 지금까지의 궤적에 기반해 다음번 물체의 위치를 추정할 수 있다.
+칼만필터를 이용하면 물체를 추적 할 때 지금까지의 궤적에 기반해 다음번 물체의 위치를 추정하는데 사용할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic1.png">
+  <br>
+  그림 1. 지금까지(t=3)의 궤적에 따르면 t=4에서는 어떤 곳에 위치할 확률이 가장 높을까?
+</p>
 
 아래 영상에서는 칼만 필터를 이용한 공의 궤적에 대한 추정을 보여주고 있다. 빨간색 원의 크기가 클 수록 다음 번 스텝에 대한 예측이 불확실하다는 것을 의미한다.
 
@@ -55,12 +61,12 @@ tags: 통계학 신호처리
 정규 분포의 모양은 아래와 같은 종 모양(bell curve)이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic2.png">
   <br>
-  그림 1. 정규 분포의 형태
+  그림 2. 정규 분포의 형태
 </p>
 
-그림 1은 정규 분포를 이용해서 현재 $x=0$에 있을 확률이 가장 높고, 그 주변으로 갈 수록 확률이 조금씩은 낮은 상태를 기술한 것으로 해석할 수 있다.
+그림 2는 정규 분포를 이용해서 현재 $x=0$에 있을 확률이 가장 높고, 그 주변으로 갈 수록 확률이 조금씩은 낮은 상태를 기술한 것으로 해석할 수 있다.
 
 한편, 우리가 다루고자 하는 <u>칼만필터는 정규 분포를 이용해 모든 상태와 동작을 서술한다.</u>
 
@@ -99,9 +105,9 @@ $$\sigma_{new}^2 = \frac{1}{1/\sigma_1^2+1/\sigma_2^2}=\frac{\sigma_1^2\sigma_2^
 그림으로 보면 다음과 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic3.png">
   <br>
-  그림 2. 두 정규 분포의 곱(product)
+  그림 3. 두 정규 분포의 곱(product)
 </p>
 
 ## 두 정규 분포의 합성곱(convolution)
@@ -117,9 +123,9 @@ $$\mathcal{N}_1(x;\mu_1, \sigma_1^2)\text{ , }\mathcal{N}_2(x;\mu_2, \sigma_2^2)
 $$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1^2 +\sigma_2^2)$$
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic3.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic4.png">
   <br>
-  그림 3. 두 정규 분포의 합성곱(convolution)
+  그림 4. 두 정규 분포의 합성곱(convolution)
 </p>
 
 # 위치 추정과 이동
