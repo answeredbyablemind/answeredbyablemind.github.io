@@ -98,7 +98,7 @@ $$\sigma_{new}^2 = \frac{1}{1/\sigma_1^2+1/\sigma_2^2}=\frac{\sigma_1^2\sigma_2^
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic2.png">
   <br>
-  그림 2. 두 정규 분포의 곱
+  그림 2. 두 정규 분포의 곱(product)
 </p>
 
 ## 두 정규 분포의 합성곱(convolution)
@@ -113,10 +113,11 @@ $$\mathcal{N}_1(x;\mu_1, \sigma_1^2)\text{ , }\mathcal{N}_2(x;\mu_2, \sigma_2^2)
 
 $$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1^2 +\sigma_2^2)$$
 
-
-# 베이즈 정리: Update Rule
-
-$$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic3.png">
+  <br>
+  그림 3. 두 정규 분포의 합성곱(convolution)
+</p>
 
 # 위치 추정과 이동
 
@@ -129,6 +130,10 @@ $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 확률적인 위치 추정 = Gaussian 분포로 표현
 
 ## 이동 = Convolution
+
+# 베이즈 정리: Update Rule
+
+$$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 
 # Kalman filter의 작동 과정
 
