@@ -28,10 +28,14 @@ tags: 통계학 신호처리
 
 칼만필터를 이용하면 물체를 추적 할 때 지금까지의 궤적에 기반해 다음번 물체의 위치를 추정하는데 사용할 수 있다.
 
+쉽게 설명하면, 아래 그림에서 볼 수 있듯이 지금까지 t = 0, 1, 2이라는 시간 순서에 따라 궤적을 얻었따고 해보자.
+
+그러면 t = 3 일 때는 물체가 어디에 있다고 보는 것이 가장 타당할까?
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic1.png">
   <br>
-  그림 1. 지금까지(t=3)의 궤적에 따르면 t=4에서는 어떤 곳에 위치할 확률이 가장 높을까?
+  그림 1. 지금까지의 궤적에 따르면 t=3에서는 어떤 곳에 위치할 확률이 가장 높을까?
 </p>
 
 아래 영상에서는 칼만 필터를 이용한 공의 궤적에 대한 추정을 보여주고 있다. 빨간색 원의 크기가 클 수록 다음 번 스텝에 대한 예측이 불확실하다는 것을 의미한다.
@@ -51,7 +55,7 @@ tags: 통계학 신호처리
 이런 식으로 생각하면 현재 친구가 위치 해 있을 수 있는 곳들에 대해 확률을 이용해 서술할 수 있다. 가령, 아래와 같이 표로 정리해볼 수 도 있을 것이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/table1.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/table1.png">
   <br>
   표 1. 만나기로 한 친구가 위치해 있을 수 있는 장소들에 대한 확률 분포
 </p>
@@ -146,9 +150,9 @@ $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 
 # Kalman filter의 작동 과정
 
-## Predict the next position
+## Predict
 
-## Additional Measure & Update
+## Update
 
 
 $$P(Hx)=\frac{P(z|H\hat{x})P(H\hat{x})}{P(z)}$$
