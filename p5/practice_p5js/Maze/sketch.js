@@ -1,8 +1,10 @@
 var rows, cols
 var grid = []
-var w = 40
+var w = 10
 
 var current
+
+var stack = []
 
 function setup() {
   createCanvas(400, 400);
@@ -17,7 +19,7 @@ function setup() {
   }
 
   current = grid[0]
-  frameRate(5)
+//   frameRate(5)
 }
 
 function draw() {
@@ -35,13 +37,22 @@ function draw() {
 
   if (next) {
      next.visited = true
+     // Step 2
+     stack.push(current)
 
      // Step 3
      removeWalls(current, next)
 
      // Step 4
      current = next;
+  } else if (stack.length > 0) {
+     current = stack.pop()
   }
+
+//   for (var i =0; i < stack.length; i ++) {
+//        fill(255, 0, 0)
+//        rect(stack[i].i * w + w*0.1, stack[i].j * w + w*0.1, w * 0.8, w * 0.8)
+//   }
 
 }
 
