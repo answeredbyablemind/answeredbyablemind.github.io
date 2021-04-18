@@ -17,6 +17,7 @@ function setup() {
   }
 
   current = grid[0]
+  frameRate(5)
 }
 
 function draw() {
@@ -26,10 +27,23 @@ function draw() {
   }
 
   current.visited = true
-  current.checkNeighbors()
+  var next = current.checkNeighbors()
+
+  if (next) {
+     next.visited = true
+     current = next;
+  }
 
 }
 
+function index(i,j){
+
+     if (i < 0 ||  j < 0 || i > cols -1 || j > rows - 1){
+          return -1;
+     }
+
+     return i + j * cols
+}
 class Cell {
      constructor(i, j) {
           this.i = i;
@@ -64,7 +78,35 @@ class Cell {
      }
 
      checkNeighbors(){
+          var neighbors = []
+
+          var top    = grid[index(this.i  , this.j-1)]
+          var right  = grid[index(this.i+1, this.j)]
+          var bottom = grid[index(this.i  , this.j+1)]
+          var left   = grid[index(this.i-1, this.j)]
+
+          if (top && !top.visited){
+               neighbors.push(top)
+          }
           
+          if (right && !right.visited){
+               neighbors.push(right)
+          }
+          
+          if (bottom && !bottom.visited){
+               neighbors.push(bottom)
+          }
+          
+          if (left && !left.visited){
+               neighbors.push(left)
+          }
+
+          if (neighbors.length> 0){
+               var r = floor(random(0, neighbors.length))
+               return neighbors[r]
+          } else {
+               return undefined
+          }
      }
 
 
