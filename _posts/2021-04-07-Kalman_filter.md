@@ -48,51 +48,17 @@ tags: 통계학 신호처리
   <iframe width="560" height="315" src="https://www.youtube.com/embed/MxwVwCuBEDA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-# 정규 분포를 이용한 확률적 상태 서술과 상태의 변화
+# 정규 분포에 관한 두 가지 연산: 곱과 합성곱
 
-칼만 필터를 이해하려면 확률 분포에 대해서 조금 짚고 넘어가는 것이 좋을 수 있다.
+우리가 다루고자 하는 칼만필터는 <u>정규 분포를 이용해 모든 상태와 동작을 서술한다.</u>
 
-확률 분포를 이용하면 '불확실도' 개념을 활용해 현재 위치를 확률적으로 서술할 수 있다.
+또, 칼만 필터는 <u>"시간에 따른 상태의 변화"</u>에 대해 다루고 있기 때문에 우리는 정규 분포로 표현한 상태의 변화에 대해 미리 알아둘 필요가 있으며,
 
-가령 친구와 서초역 3번 출구에서 만나기로 했다고 하자. 그럼 이 친구는 서초역 3번 출구의 바로 앞에 있을 가능성이 굉장히 높다.
+상태의 변화는 합성곱(convolution)과 곱(product) 이라는 두 연산을 통해 표현할 수 있다. (자세한 논의는 아래에서 더 진행하도록 하겠다.)
 
-그런데, 혹시 그 앞 교회에 가 있을 가능성도 있고, 혹시 다른 출구로 나왔을 확률도 있다.
+두 연산 과정에 대해 자세한 증명은  [Products and Convolutions of Gaussian Probability Density Functions](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.583.3007&rep=rep1&type=pdf)라는 문헌에서 참고하길 바라며, 우리는 이 연산들의 결과에 대해서만 확인하고자 한다.
 
-이런 식으로 생각하면 현재 친구가 위치 해 있을 수 있는 곳들에 대해 확률을 이용해 서술할 수 있다. 가령, 아래와 같이 표로 정리해볼 수 도 있을 것이다.
-
-<p align = "center">
-  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/table1.png">
-  <br>
-  표 1. 만나기로 한 친구가 위치해 있을 수 있는 장소들에 대한 확률 분포
-</p>
-
-우리가 보통 많이 사용하는 분포 중 하나는 정규 분포인데, 정규 분포를 이용해서 현재 위치를 서술한다고 생각해보자.
-
-정규 분포의 모양은 아래와 같은 종 모양(bell curve)이다.
-
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic2.png">
-  <br>
-  그림 2. 정규 분포의 형태
-</p>
-
-그림 2는 정규 분포를 이용해서 현재 $x=0$에 있을 확률이 가장 높고, 그 주변으로 갈 수록 확률이 조금씩은 낮은 상태를 기술한 것으로 해석할 수 있다.
-
-한편, 우리가 다루고자 하는 <u>칼만필터는 정규 분포를 이용해 모든 상태와 동작을 서술한다.</u>
-
-또, 칼만 필터는 <u>"시간에 따른 상태의 변화"</u>에 대해 다루고 있기 때문에 우리는 정규 분포로 표현한 상태의 변화에 대해 미리 알아둘 필요가 있다.
-
-상태의 변화는 곱(product)과 합성곱(convolution)이라는 연산을 통해 표현할 수 있다.
-
-두 연산 과정에 대한 자세한 논의는 [Products and Convolutions of Gaussian Probability Density Functions](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.583.3007&rep=rep1&type=pdf)라는 논문에서 찾아볼 수 있으며, 증명도 아주 상세하게 되어 있기 때문에 자세한 과정이 궁금한 분들은 참고해볼 수도 있을 것 같다. 
-
-우리는 이 두 연산 과정에 대한 결과만을 확인해서 사용할 것이다.
-
-## 두 정규 분포의 곱(product)
-
-첫 번째로 이용될 상태 변화 연산은 두 정규 분포의 곱(product)이다.
-
-아래와 같이 두 개의 정규 분포가 있다고 해보자.
+합성곱과 곱 모두 두 정규분포에 대해 다루고 있기 때문에 각각의 정규분포 함수를 다음과 같이 정의하고자 한다.
 
 $$\mathcal{N}_1(x;\mu_1, \sigma_1^2) = \frac{1}{\sqrt{2\pi \sigma_1^2}}\exp\left(-\frac{(x-\mu_1)^2}{2\sigma_1^2}\right)$$
 
@@ -100,7 +66,33 @@ $$\mathcal{N}_2(x;\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2\pi \sigma_2^2}}\exp\left
 
 참고로, 앞으로는 정규 분포를 표현할 때는 $\mathcal{N}$이라는 기호를 이용하겠으며, $\mathcal{N}(x;\mu_1, \sigma_1^2)$라고 되어 있으면, 정의역이 $x$이고 파라미터는 $\mu_1, \sigma_1^2$와 같이 평균, 분산이 주어진 것이라는 의미로 사용하고자 한다.
 
-위 두 정규 분포를 곱하면 어떤 결과가 얻어질까? 놀랍게도 정규 분포 두 개를 곱하면 결과는 정규 분포이다.
+## 두 정규 분포의 합성곱(convolution)
+
+먼저 확인해 볼 상태 변화 연산은 두 정규 분포의 합성곱(convolution)이다.
+
+아래와 같은 두 정규 분포에 대해서,
+
+$$\mathcal{N}_1(x;\mu_1, \sigma_1^2)\text{ , }\mathcal{N}_2(x;\mu_2, \sigma_2^2)\notag$$
+
+합성곱 결과는 다음과 같다.
+
+$$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1^2 +\sigma_2^2)$$
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic2.png">
+  <br>
+  그림 2. 두 정규 분포의 합성곱(convolution)
+</p>
+
+합성곱은 수행 시 출력되는 함수 역시 정규분포를 따르되, 평균과 분산이 입력으로 사용된 두 정규분포의 평균과 분산의 합으로 계산된다.
+
+그래서, 합성곱을 수행하면 항상 출력값의 분산은 입력값의 두 정규분포 보다 커진다.
+
+## 두 정규 분포의 곱(product)
+
+두 번째로 이용될 상태 변화 연산은 두 정규 분포의 곱(product)이다.
+
+두 정규 분포를 곱하면 어떤 결과가 얻어질까? 놀랍게도 정규 분포 두 개를 곱하면 결과는 정규 분포이다.
 
 만약, 곱셈 결과로 얻어진 정규 분포를 
 
@@ -129,24 +121,6 @@ $\mu_{new}$와 $\sigma_{new}^2$의 수식을 보아 알 수 있는 것은 다음
 $$\sigma_{new}^2=\sigma_1^2\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}=\sigma_2^2\frac{\sigma_1^2}{\sigma_1^2 + \sigma_2^2}$$
 
 이를 통해 확인할 수 있는 것은 새로운 $sigma_{new}^2$의 값은 $\sigma_1^2$ 혹은 $\sigma_2^2$ 보다 항상 작다는 것이다.
-
-## 두 정규 분포의 합성곱(convolution)
-
-두 번째로 이용될 상태 변화 연산은 두 정규 분포의 합성곱(convolution)이다.
-
-곱(product)에 대해 확인했을 때와 마찬가지로 아래와 같은 두 정규 분포에 대해서,
-
-$$\mathcal{N}_1(x;\mu_1, \sigma_1^2)\text{ , }\mathcal{N}_2(x;\mu_2, \sigma_2^2)\notag$$
-
-합성곱 결과는 다음과 같다.
-
-$$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1^2 +\sigma_2^2)$$
-
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic4.png">
-  <br>
-  그림 4. 두 정규 분포의 합성곱(convolution)
-</p>
 
 # 위치 추정과 이동
 
