@@ -65,7 +65,7 @@ set(gca,'fontname','나눔고딕')
 %% 두 가우시안의 합성곱 애니메이션으로
 
 newVid = VideoWriter('pic_conv', 'MPEG-4'); % New
-newVid.FrameRate = 20;
+newVid.FrameRate = 40;
 newVid.Quality = 100;
 open(newVid);
 
@@ -90,7 +90,7 @@ for i_tau = 1:length(tautau)
     
     yy3(i_tau) = sum(yy3_temp) * (tautau(2)-tautau(1));
     plot(xx(1:i_tau), yy3(1:i_tau),'k','linewidth',2)
-    text(tau-0.5, -0.01, ['↑\tau=',num2str(tau)],'fontsize',15)
+    text(tau-0.5, -0.01, ['↑\tau=',sprintf('%.2f',tau)],'fontsize',15)
     grid on;
     xlabel('x');
     ylabel('pdf');
@@ -106,6 +106,10 @@ for i_tau = 1:length(tautau)
     end
 end
 
+
+for i = 1:20
+    writeVideo(newVid, getframe(gcf))
+end
 
 close(newVid)
 %% 분산이 다른 두 gaussian 분포
