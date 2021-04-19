@@ -79,7 +79,7 @@ $$\mathcal{N}_2(x;\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2\pi \sigma_2^2}}\exp\left
 
 합성곱(convolution)은 임의의 두 함수 $f(t)$와 $g(t)$에 대해 다음과 같이 정의되는 연산이다.
 
-$$f(t) \circledast g(t) = \int_{-\infty}^{-\infty}f(t)g(\tau-t)d\tau$$
+$$f(t) \circledast g(t) = \int_{-\infty}^{-\infty}f(\tau)g(t-\tau)d\tau$$
 
 수식을 설명하자면, 합성곱은 하나의 함수와 또 다른 함수를 반전 이동한 값을 곱한 다음, 구간에 대해 적분하여 새로운 함수를 얻는 수학 연산자라고 할 수 있는데,
 

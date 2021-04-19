@@ -78,26 +78,27 @@ xx = linspace(-10, 25, 250);
 yy1 = normpdf(xx, mu1, sigma1);
 yy3 = zeros(1, length(xx));
 tautau = linspace(-10, 25, 250);
+clear h
 figure('color','w');
 for i_tau = 1:length(tautau)
     tau = tautau(i_tau);
-    plot(xx, yy1,'linewidth',2); hold on;
+    h(1) = plot(xx, yy1,'linewidth',2); hold on;
     xlim([-5, 20])
     yy2 = normpdf(xx, -mu2+tau, sigma2);
-    plot(xx, yy2,'linewidth',2);
+    h(2) = plot(xx, yy2,'linewidth',2);
     yy3_temp = yy1.*yy2; % multiplication of the moment
     plot(xx, yy3_temp,'linewidth',2);
-    patch(xx, yy3_temp,[0, 1, 0])
+    h(3) = patch(xx, yy3_temp,[0, 1, 0]);
     
     yy3(i_tau) = sum(yy3_temp) * (tautau(2)-tautau(1));
-    plot(xx(1:i_tau), yy3(1:i_tau),'color',[0.9290, 0.6940, 0.1250],'linewidth',2)
+    h(4) = plot(xx(1:i_tau), yy3(1:i_tau),'color',[0.9290, 0.6940, 0.1250],'linewidth',2);
     text(tau-0.5, -0.01, ['¡è\tau=',sprintf('%.2f',tau)],'fontsize',15)
     grid on;
     xlabel('x');
     ylabel('pdf');
     set(gca,'fontname','³ª´®°íµñ');
     title('µÎ Á¤±Ô ºÐÆ÷ÀÇ ÇÕ¼º°ö');
-    
+    legend(h,'f(\tau)','f(t-\tau)','Area under f(\tau)g(t-\tau)','(f*g)(t)')
     writeVideo(newVid, getframe(gcf))
 
     drawnow;
