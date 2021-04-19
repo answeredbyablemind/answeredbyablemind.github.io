@@ -62,7 +62,52 @@ ylabel('pdf');
 title('두 가우시안 분포의 합성곱(conv)');
 set(gca,'fontname','나눔고딕')
 
+%% 두 가우시안의 합성곱 애니메이션으로
 
+newVid = VideoWriter('pic_conv', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+mu1 = 3;
+mu2 = 5;
+sigma1 = 1;
+sigma2 = 2;
+xx = linspace(-10, 25, 250);
+
+yy1 = normpdf(xx, mu1, sigma1);
+yy3 = zeros(1, length(xx));
+tautau = linspace(-10, 25, 250);
+figure('color','w');
+for i_tau = 1:length(tautau)
+    tau = tautau(i_tau);
+    plot(xx, yy1,'linewidth',2); hold on;
+    yy2 = normpdf(xx, -mu2+tau, sigma2);
+    plot(xx, yy2,'linewidth',2);
+    yy3_temp = yy1.*yy2; % multiplication of the moment
+    plot(xx, yy3_temp,'linewidth',2);
+    patch(xx, yy3_temp,[0, 1, 0])
+    
+    yy3(i_tau) = sum(yy3_temp) * (tautau(2)-tautau(1));
+    plot(xx(1:i_tau), yy3(1:i_tau),'k','linewidth',2)
+    text(tau-0.5, -0.01, ['↑\tau=',num2str(tau)],'fontsize',15)
+    grid on;
+    xlabel('x');
+    ylabel('pdf');
+    set(gca,'fontname','나눔고딕');
+    title('두 정규 분포의 합성곱');
+    
+    writeVideo(newVid, getframe(gcf))
+
+    drawnow;
+    
+    if tau < tautau(end)
+        cla;
+    end
+end
+
+
+close(newVid)
 %% 분산이 다른 두 gaussian 분포
 xx = linspace(-5, 5, 1000);
 yy1 = normpdf(xx, 0, 1);

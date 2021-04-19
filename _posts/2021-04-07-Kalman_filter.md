@@ -111,6 +111,14 @@ $$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1
 
 그래서, 합성곱을 수행하면 항상 출력값의 분산은 입력값의 두 정규분포 보다 커진다.
 
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic_conv.png">
+  </video>
+  <br>
+  그림 xx.
+</p>
+
 ## 두 정규 분포의 곱(product)
 
 두 번째로 이용될 상태 변화 연산은 두 정규 분포의 곱(product)이다.
