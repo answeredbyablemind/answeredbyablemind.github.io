@@ -201,14 +201,78 @@ $$\sigma_{new}^2=\sigma_1^2\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}=\sigma_2^2
 
 # 베이즈 정리: Update Rule
 
+베이즈 정리는 조건부 확률에 관한 정리 중 하나로 다음과 같이 쓴다.
+
 $$P(H|E) = \frac{P(E|H)P(H)}{P(E)}$$
 
-# Kalman filter의 작동 과정
+여기서 H는 Hypothesis, E는 Evidence라는 의미를 가진다.
+
+베이즈 정리에서 중요한 점은 사전 확률과 사후 확률 간의 관계이다.
+
+베이즈 정리는 확률에 대한 관점을 바꿔 이해해야 비로소 그 핵심을 이해할 수 있는데,
+
+베이지안 주의에서 본 확률이란 '주장에 대한 신뢰도'이다. 베이즈 정리는 기존의 주장에 대한 신뢰도를 증거를 관찰함으로써 갱신하는 업데이트 룰에 대해 말하고 있다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-09-Bayes_rule/pic1.png">
+  <br>
+  그림 7. 베이즈 정리에서 중요한 두 가지 확률 (사전확률, 사후확률)
+</p>
+
+베이즈 정리를 이해할 때의 또 다른 핵심 중 하나는 베이즈 정리의 식의 우변의 분모는 사후 확률 값을 '확률'로 만들어주는 정규화 과정에 불과하다는 것을 이해하는 것이다.
+
+즉, 베이즈 정리가 아무리 복잡해보여도 $P(E)$는 단순히 확률값에 불과할 뿐이며, 이것은 정규화를 위한 과정일 뿐이라는 것이다.
+
+따라서, 베이즈 정리의 식은 다음과 같이 써버릴 수도 있다.
+
+$$P(H|E) = \frac{1}{Z}P(E|H)P(H)$$
+
+즉, 사후확률은 사전확률($P(H)$)과 likelihood($P(E|H)$)의 곱에 비례하는 값이라는 점이다.
+
+# 매우 단순화시킨 칼만 필터의 작동 과정
+
+칼만필터는 Predict와 Update라는 두 가지 과정을 거쳐가면서 작동해간다.
+
+<p align = "center">
+  <img src = "https://www.codeproject.com/KB/recipes/865935/cycle.png">
+  <br>
+  그림 8. 칼만 필터의 작동 단계는 Predict와 Update 두 가지로 구성되어 있다 (그림에서는 predict와 Correct로 적혀있음)
+  <br>
+  <a href = "https://www.codeproject.com/Articles/865935/Object-Tracking-Kalman-Filter-with-Ease"> 그림 출처: Object tracking Kalman fil lter with ease </a>
+</p>
 
 ## Predict
 
+Predict 단계에서는 현재 위치에서 다음 위치로 넘어가는 과정을 기술한 것이다.
+
+다시 말해, 바로 이전 위치에서 현재 step으로의 이동을 수행하는 것이다. 여기서 현재 위치와 이동 모두 위치 추정과 이동 편에서 보았던 것 처럼 정규 분포를 이용해 표현되며, movement의 수행 과정은 합성곱(convolution)을 이용해 수행된다.
+
 ## Update
 
+Update 단계에서는 Predict를 통해 계산한 예측된 위치를 갱신해주는 과정을 거친다.
+
+이 때 Bayes 정리와 정규 분포의 곱(product)이 이용되는데, Predict 단계에서 예측해보았던 확률 분포($P(H)$)와 실제 측정해본 위치에 관한 확률 분포($P(E|H)$)를 곱함으로써 갱신된 현재 위치에 관한 확률 분포($P(H|E)$)를 계산할 수 있게 된다.
+
+이 때 정규 분포의 곱(product)를 이용해 갱신된 갱신된 현재 위치에 관한 확률 분포(사후 확률 분포)를 계산해내며,
+
+정규분포의 곱 과정에서 보았듯이 곱해진 결과로써의 정규분포는 계속해서 분산이 줄어들기 때문에 일정한 법칙을 따라 predict 할 수 있다고 가정하면
+
+사후확률의 분산값은 특정 값에서 수렴할 수 있게 된다. 다시 말해, measure만큼 정확한 위치에서 예측할 수 있게 된다.
+
+## 단순한 칼만 필터의 작동 과정
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic_kalman_main.mp4">
+  </video>
+  <br>
+  그림 yy.
+</p>
+
+
+# 좀 더 복잡한 칼만 필터
+
+(작성 예정 ㅠㅠ)
 
 $$P(Hx)=\frac{P(z|H\hat{x})P(H\hat{x})}{P(z)}$$
 
