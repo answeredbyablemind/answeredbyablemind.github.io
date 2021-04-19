@@ -1,17 +1,5 @@
 clear; close all; clc;
 
-%% gaussian 분포
-xx = linspace(-5, 5, 1000);
-yy = normpdf(xx, 0, 1);
-
-figure('color','w');
-plot(xx, yy,'linewidth',2);
-xlabel('x'); ylabel('f(x)');
-ylim([0, 0.45])
-xlim([-5, 5])
-title('표준 정규 분포');
-grid on;
-
 %% 두 가우시안 분포의 곱
 xx = linspace(-10, 20, 1000);
 
@@ -74,3 +62,60 @@ ylabel('pdf');
 title('두 가우시안 분포의 합성곱(conv)');
 set(gca,'fontname','나눔고딕')
 
+
+%% 분산이 다른 두 gaussian 분포
+xx = linspace(-5, 5, 1000);
+yy1 = normpdf(xx, 0, 1);
+yy2 = normpdf(xx, 0, 2);
+
+figure('color','w');
+plot(xx, yy1,'linewidth',2);
+hold on;
+plot(xx, yy2,'linewidth',2)
+xlabel('x'); ylabel('f(x)');
+ylim([0, 0.45])
+xlim([-5, 5])
+title('분산이 다른 두 정규 분포');
+grid on;
+set(gca,'xtick',-5:5)
+set(gca,'fontname','나눔고딕')
+
+%% 불확실한 이동을 표현한 것
+xx = linspace(-5, 15, 1000);
+yy1 = normpdf(xx, 4, 1);
+
+figure('color','w');
+plot(xx, yy1,'linewidth',2);
+hold on;
+line([4, 4], [0, 0.5],'color','k','linestyle','--','linewidth',1.5)
+xlabel('x'); ylabel('f(x)');
+ylim([0, 0.5])
+t = text(4.8, 0.42, '$$x=4$$','interpreter','latex','fontsize',15,'BackgroundColor','w','edgecolor','k');
+grid on;
+title('x=4 만큼의 불확실한 이동')
+set(gca,'fontname','나눔고딕')
+
+%% 물체의 이동
+xx = linspace(-5, 15, 1000);
+yy1 = normpdf(xx, 0, 1);
+yy2 = normpdf(xx, 4, 2);
+yy3 = normpdf(xx, 8, 3);
+
+figure('color','w');
+plot(xx, yy1,'linewidth',2);
+hold on;
+plot(xx, yy2,'linewidth',2);
+plot(xx, yy3,'linewidth',2);
+xlabel('x'); ylabel('f(x)');
+ylim([0, 0.5])
+
+line([0, 0], [0, 0.5],'color',0.4*ones(1,3),'linestyle','--','linewidth',1.5)
+line([4, 4], [0, 0.5],'color',0.4*ones(1,3),'linestyle','--','linewidth',1.5)
+line([8, 8], [0, 0.5],'color',0.4*ones(1,3),'linestyle','--','linewidth',1.5)
+
+text(0.8, 0.42, '$$x=0$$','interpreter','latex','fontsize',15,'BackgroundColor','w','edgecolor',0.4*ones(1,3));
+text(4.8, 0.22, '$$x=4$$','interpreter','latex','fontsize',15,'BackgroundColor','w','edgecolor',0.4*ones(1,3));
+text(8.8, 0.17, '$$x=8$$','interpreter','latex','fontsize',15,'BackgroundColor','w','edgecolor',0.4*ones(1,3));
+grid on;
+title('x=0에서 x=4만큼 씩 불확실한 이동 2회 수행 시')
+set(gca,'fontname','나눔고딕')

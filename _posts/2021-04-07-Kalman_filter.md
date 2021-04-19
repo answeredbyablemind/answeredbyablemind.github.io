@@ -23,8 +23,15 @@ tags: 통계학 신호처리
 본 페이지에서 소개하는 칼만필터를 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것이 좋습니다.
 
 * [베이즈 정리의 의미](https://angeloyeo.github.io/2020/01/09/Bayes_rule.html)
+* 합성곱(convolution)의 의미
 
-# 칼만 필터 예시: 물체의 궤적 추정
+# 칼만 필터 소개
+
+## 칼만 필터란?
+
+- 소개 필요
+
+## 칼만 필터 예시: 물체의 궤적 추정
 
 칼만 필터에 대해 수학적으로 논의하기에 앞서 칼만 필터를 이용해 무엇을 할 수 있는지 알아보도록 하자.
 
@@ -48,7 +55,7 @@ tags: 통계학 신호처리
   <iframe width="560" height="315" src="https://www.youtube.com/embed/MxwVwCuBEDA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-# 정규 분포에 관한 두 가지 연산: 곱과 합성곱
+# 정규 분포에 관한 두 가지 연산: 합성곱과 곱
 
 우리가 다루고자 하는 칼만필터는 <u>정규 분포를 이용해 모든 상태와 동작을 서술한다.</u>
 
@@ -56,7 +63,7 @@ tags: 통계학 신호처리
 
 상태의 변화는 합성곱(convolution)과 곱(product) 이라는 두 연산을 통해 표현할 수 있다. (자세한 논의는 아래에서 더 진행하도록 하겠다.)
 
-두 연산 과정에 대해 자세한 증명은  [Products and Convolutions of Gaussian Probability Density Functions](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.583.3007&rep=rep1&type=pdf)라는 문헌에서 참고하길 바라며, 우리는 이 연산들의 결과에 대해서만 확인하고자 한다.
+두 연산 과정에 대해 자세한 증명은 [Products and Convolutions of Gaussian Probability Density Functions](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.583.3007&rep=rep1&type=pdf)라는 문헌에서 참고하길 바라며, 우리는 이 연산들의 결과에 대해서만 확인하고자 한다.
 
 합성곱과 곱 모두 두 정규분포에 대해 다루고 있기 때문에 각각의 정규분포 함수를 다음과 같이 정의하고자 한다.
 
@@ -69,6 +76,22 @@ $$\mathcal{N}_2(x;\mu_2, \sigma_2^2) = \frac{1}{\sqrt{2\pi \sigma_2^2}}\exp\left
 ## 두 정규 분포의 합성곱(convolution)
 
 먼저 확인해 볼 상태 변화 연산은 두 정규 분포의 합성곱(convolution)이다.
+
+합성곱(convolution)은 임의의 두 함수 $f(t)$와 $g(t)$에 대해 다음과 같이 정의되는 연산이다.
+
+$$f(t) \circledast g(t) = \int_{-\infty}^{-\infty}f(t)g(\tau-t)d\tau$$
+
+수식을 설명하자면, 합성곱은 하나의 함수와 또 다른 함수를 반전 이동한 값을 곱한 다음, 구간에 대해 적분하여 새로운 함수를 얻는 수학 연산자라고 할 수 있는데,
+
+그림으로 보자면 다음과 같이 어떤 함수에 다른 함수를 슬라이딩해가면서 곱해 얻은 결과 값들을 가지고 새로운 함수를 얻는 것이라고 할 수 있다.
+
+좀 더 자세한 논의는 위키피디아를 참고해보는 것도 좋을 것 같다(https://en.wikipedia.org/wiki/Convolution).
+
+<p align = "center">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/b/b9/Convolution_of_spiky_function_with_box2.gif">
+  <br>
+  Convolution의 기하학적 의미 (출처: 위키피디아 Convolution)
+</p>
 
 아래와 같은 두 정규 분포에 대해서,
 
@@ -124,7 +147,49 @@ $$\sigma_{new}^2=\sigma_1^2\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}=\sigma_2^2
 
 # 위치 추정과 이동
 
-앞서 배운 정규 분포를 이용하면 불확실도를 포함해 현재 위치를 표현할 수 있음을 알 수 있었다.
+칼만 필터에서는 '상태'를 모두 정규 분포를 이용해서 표현한다고 하였다. 
+
+칼만 필터에서는 현재 위치와, 이동량을 모두 정규 분포를 이용해 표현할 수 있다. 
+
+이 때, 정규분포를 굳이 이용해 표현하면 얻을 수 있는 이점은 '불확실도'를 포함해 현재의 위치 혹은 이동량을 표현할 수 있다는 것이다.
+
+가령, 위치를 측정하고자 하는 물체가 현재 $x=0$에 있을 가능성이 높다고 생각해보자. 
+
+여기서 서로 다른 두 개의 방법으로 위치를 측정한다고 했을 때, 불확실도가 다르다면 다음과 같이 정규분포의 분산을 달리하여 표현할 수 있는 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic4.png">
+  <br>
+  그림 4. 불확실도(분산)가 다른 두 정규분포의 비교
+</p>
+
+즉, 파란색으로 표시한 정규분포에 비해 주황색으로 표시한 정규분포는 $x=0$에 물체가 있을 것이라고 말하는 것에 대한 불확실도가 더 높다고 생각할 수 있다.
+
+한편, 이동량 역시 정규 분포를 이용해 표현할 수 있다. 가령, 다음번 스텝에서 $x=4$만큼 오른쪽으로 이동하는 물체가 있다고 생각해보자.
+
+하지만, 정확히 $x=4$ 만큼 이동할지에 대해서는 불확실도가 있기 때문에 다음과 같이 정규분포로 표현할 수 있는 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic5.png">
+  <br>
+  그림 5. x=4만큼 이동하지만, 불확실하게 이동하는 것을 정규분포로 표현할 수 있다.
+</p>
+
+그러면 $x=0$에 있던 물체를 매 스텝마다 $x=4$만큼 오른쪽으로 이동하게 된다면, 그 물체의 위치와 불확실도는 매 스텝마다 어떻게 변할까?
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic6.png">
+  <br>
+  그림 6. x=0에 위치하던 물체를 x=4만큼 두 번 이동시켰을 때, 각 위치에서의 불확실도는 정규분포의 분산값으로 표현할 수 있다.
+</p>
+
+위 그림에서 물체가 이동할 때마다 불확실도가 커지는 것을 확인할 수 있다.
+
+이것은 물체를 이동은 '원래 위치를 표현하던 정규분포'와 '이동에 관한 정규분포'의 두 식을 합성곱(convolution)처리해줌으로써 얻을 수 있는 것이기 때문이다.
+
+정리하자면, 물체의 이동은 물체의 현재 위치와 물체의 이동에 관한 정규분포를 합성곱하여 표현할 수 있으며, 매 번 합성곱할 때 마다 위치에 관한 불확실도는 커지게 된다.
+
+(이동에 관한 정규분포에 포함된 불확실도가 더 해져가기 때문이다.)
 
 # 베이즈 정리: Update Rule
 
