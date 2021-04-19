@@ -266,7 +266,7 @@ Update 단계에서는 Predict를 통해 계산한 예측된 위치를 갱신해
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic_kalman_main.mp4">
   </video>
   <br>
-  그림 yy.
+  그림 y.
 </p>
 
 
