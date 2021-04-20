@@ -204,3 +204,39 @@ text(8.8, 0.17, '$$x=8$$','interpreter','latex','fontsize',15,'BackgroundColor',
 grid on;
 title('x=0에서 x=4만큼 씩 불확실한 이동 2회 수행 시')
 set(gca,'fontname','나눔고딕')
+
+%% 가우시안 분포 하나만 그린 것 (칼만필터 process 도시용)
+close all;
+
+figure('color','w');
+xx = linspace(-3,3,200);
+yy = normpdf(xx, 0, 1);
+plot(xx, yy,'linewidth',3);
+patch(xx, yy, lines(1),'edgecolor','none')
+alpha(0.3)
+set(gca,'visible','off')
+
+figure('color','w','position',[680, 558, 726, 243]);
+xx = linspace(-3,3,200);
+yy = normpdf(xx, 0, 1);
+plot(xx, yy,'linewidth',3,'color','k');
+patch(xx, yy, 0.3 * ones(1,3),'edgecolor','none')
+alpha(0.3)
+set(gca,'visible','off')
+
+figure('color','w','position',[680, 316, 355, 485]);
+xx = linspace(-3,3,200);
+yy = normpdf(xx, 0, 1);
+plot(xx, yy,'linewidth',3,'color',[0.85, 0.325, 0.098]);
+patch(xx, yy, [0.85, 0.325, 0.098],'edgecolor','none')
+alpha(0.7)
+set(gca,'visible','off')
+
+
+figure('color','w');
+xx = linspace(-3,3,200);
+yy = normpdf(xx, 0, 1);
+plot(xx, yy,'linewidth',3);
+patch(xx, yy, lines(1),'edgecolor','none')
+alpha(0.7)
+set(gca,'visible','off')

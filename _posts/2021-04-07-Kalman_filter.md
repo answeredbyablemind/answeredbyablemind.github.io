@@ -234,11 +234,9 @@ $$P(H|E) = \frac{1}{Z}P(E|H)P(H)$$
 칼만필터는 Predict와 Update라는 두 가지 과정을 거쳐가면서 작동해간다.
 
 <p align = "center">
-  <img src = "https://www.codeproject.com/KB/recipes/865935/cycle.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic8.png">
   <br>
-  그림 8. 칼만 필터의 작동 단계는 Predict와 Update 두 가지로 구성되어 있다 (그림에서는 predict와 Correct로 적혀있음)
-  <br>
-  <a href = "https://www.codeproject.com/Articles/865935/Object-Tracking-Kalman-Filter-with-Ease"> 그림 출처: Object tracking Kalman fil lter with ease </a>
+  그림 8. 칼만 필터의 작동 단계는 Predict와 Update 두 가지로 구성되어 있다 
 </p>
 
 ## Predict
