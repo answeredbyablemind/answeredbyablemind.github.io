@@ -87,12 +87,6 @@ $$f(t) \circledast g(t) = \int_{-\infty}^{-\infty}f(\tau)g(t-\tau)d\tau$$
 
 좀 더 자세한 논의는 위키피디아를 참고해보는 것도 좋을 것 같다(https://en.wikipedia.org/wiki/Convolution).
 
-<p align = "center">
-  <img src = "https://upload.wikimedia.org/wikipedia/commons/b/b9/Convolution_of_spiky_function_with_box2.gif">
-  <br>
-  Convolution의 기하학적 의미 (출처: 위키피디아 Convolution)
-</p>
-
 아래와 같은 두 정규 분포에 대해서,
 
 $$\mathcal{N}_1(x;\mu_1, \sigma_1^2)\text{ , }\mathcal{N}_2(x;\mu_2, \sigma_2^2)\notag$$
@@ -111,12 +105,13 @@ $$\mathcal{N}_1 \circledast \mathcal{N}_2 = \mathcal{N}(x; \mu_1+\mu_2, \sigma_1
 
 그래서, 합성곱을 수행하면 항상 출력값의 분산은 입력값의 두 정규분포 보다 커진다.
 
+두 정규분포에 대한 합성곱이 수행되는 과정은 아래와 같이 영상에서 확인해볼 수 있다.
+
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic_conv.mp4">
   </video>
   <br>
-  그림 xx.
 </p>
 
 ## 두 정규 분포의 곱(product)
