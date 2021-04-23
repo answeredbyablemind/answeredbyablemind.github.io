@@ -22,9 +22,6 @@ tags: 통계학 신호처리
 
 본 페이지에서 소개하는 칼만필터를 이해하기 위해서는 다음의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [베이즈 정리의 의미](https://angeloyeo.github.io/2020/01/09/Bayes_rule.html)
-* 합성곱(convolution)의 의미
-
 # 칼만 필터 소개
 
 ## 칼만 필터란?
@@ -262,8 +259,12 @@ Update 단계에서는 Predict를 통해 계산한 예측된 위치를 갱신해
   그림 y.
 </p>
 
-
 # 좀 더 복잡한 칼만 필터
+
+## state vector & state equation
+
+
+
 
 (작성 예정 ㅠㅠ)
 
