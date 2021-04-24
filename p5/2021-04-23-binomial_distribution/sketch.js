@@ -3,9 +3,9 @@ var n, p, k;
 // p: 발생확률. 0<=p<=1
 // k: 실현 횟수
 
-var Pr = []
-var scl_w, scl_h;
 
+var scl_w, scl_h;
+let Pr = []
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
@@ -26,12 +26,12 @@ function draw() {
      background(0);
      n = slider_n.value()
      p = slider_p.value()
-
+     Pr = []
      for(let k =0; k<n; k++){
           Pr[k]= binomial(k,n,p)
      }
 
-     scl_w = width / (n+2)
+     scl_w = width / (n*1.2)
      scl_h = height * 3
 
      let array = ['n =', String(n)]
@@ -53,7 +53,7 @@ function draw() {
      translate(50, 450)
      scale(1, -1)
 
-     for(let k =0; k<=n; k++){
+     for(let k =0; k<n; k++){
           stroke(0,114,189)
           strokeWeight(4)
           line(k * scl_w, 0, k * scl_w, Pr[k] * scl_h)
