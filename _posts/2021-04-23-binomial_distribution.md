@@ -134,7 +134,7 @@ $\quad$ (물론 반복 회수는 많을 수록 선험적 확률 분포와 더 �
 
 <p align = "center">
   <video width = "700" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-24-binomial_distribution/pic2.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-23-binomial_distribution/pic2.mp4">
   </video>
   <br>
   그림 2. 시뮬레이션을 통해 획득한 이항 분포의 형태

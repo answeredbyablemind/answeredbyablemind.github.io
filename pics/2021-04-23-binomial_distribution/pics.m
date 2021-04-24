@@ -41,7 +41,7 @@ histogram(res_sim);
 
 
 newVid = VideoWriter('pic2', 'MPEG-4'); % New
-newVid.FrameRate = 20;
+newVid.FrameRate = 10;
 newVid.Quality = 100;
 open(newVid);
 
