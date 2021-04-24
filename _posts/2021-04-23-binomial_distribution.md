@@ -9,7 +9,7 @@ tags: 통계학
 ---
 
 <center>
-  <iframe width = "550" height = "550" frameborder = "0" src="https://angeloyeo.github.io/p5/2021-04-23-binomial_distribution/"></iframe>
+  <iframe width = "500" height = "500" frameborder = "0" src="https://angeloyeo.github.io/p5/2021-04-23-binomial_distribution/"></iframe>
   <br>
   파라미터 n, p를 수정해가며 다양한 경우의 이항분포의 생김새에 대해 확인해보자. 
   <br>
