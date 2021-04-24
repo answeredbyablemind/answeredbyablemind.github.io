@@ -102,7 +102,11 @@ $$Pr(K=k) = [0.0010, 0.0098, 0.0439, 0.1172, 0.2051, 0.2461, 0.2051, 0.1172, 0.0
 
 숫자로만 보면 어려워 보일 수 있기 때문에 이 결과를 그림으로 그려보면 다음과 같다는 것을 쉽게 알 수 있다.
 
-
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-23-binomial_distribution/pic1.png">
+  <br>
+  그림 1. 총 시행횟수 10, 성공확률 0.5인 경우의 다양한 성공 횟수에 대한 확률을 나타낸 이항분포의 형태 
+</p>
 
 
 ## 컴퓨터 시뮬레이션으로 이항분포 histogram 그리기

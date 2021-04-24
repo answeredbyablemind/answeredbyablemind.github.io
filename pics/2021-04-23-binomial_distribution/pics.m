@@ -10,8 +10,8 @@ f = @(x, n, p) factorial(n)./(factorial(x).*factorial(n-x)) .* p.^x .* (1-p).^(n
 
 my_color = lines(3);
 stem(x, f(x, n, p), 'o' ,'markerfacecolor',my_color(1,:),'linewidth',2);
-xlabel('x');
-ylabel('probability');
+xlabel('¼º°ø È½¼ö(k)');
+ylabel('probability, Pr(K=k)');
 grid on;
 title(['binomial distribution PMF',' / n: ',num2str(n),', p: ',num2str(p)]);
 
