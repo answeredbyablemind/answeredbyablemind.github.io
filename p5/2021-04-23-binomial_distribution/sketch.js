@@ -27,7 +27,7 @@ function draw() {
      n = slider_n.value()
      p = slider_p.value()
      Pr = []
-     for(let k =0; k<n; k++){
+     for(let k =0; k<=n; k++){
           Pr[k]= binomial(k,n,p)
      }
 
@@ -53,7 +53,7 @@ function draw() {
      translate(50, 450)
      scale(1, -1)
 
-     for(let k =0; k<n; k++){
+     for(let k =0; k<Pr.length; k++){
           stroke(0,114,189)
           strokeWeight(4)
           line(k * scl_w, 0, k * scl_w, Pr[k] * scl_h)
