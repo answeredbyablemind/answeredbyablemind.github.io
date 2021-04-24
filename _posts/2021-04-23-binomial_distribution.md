@@ -12,6 +12,7 @@ tags: 통계학
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-23-binomial_distribution/pic0.jpg">
   <br>
   동전 던지기는 이항분포를 이해하기에 아주 좋은 예시 중 하나이다.
+  <br>
   <a href = "https://www.bellevuerarecoins.com/history-coin-flip/">출처: History of coin flip, Bellevue Rare Coins</a>
 </p>
 
@@ -28,7 +29,27 @@ tags: 통계학
 
 # 이항 분포의 정의
 
+<center>
+  <iframe width = "550" height = "550" frameborder = "0" src="https://angeloyeo.github.io/p5/2021-04-23-binomial_distribution/"></iframe>
+  <br>
+</center>
+
 위키피디아에 따르면, 이항 분포(二項分布, binomial distribution)는 연속된 $n$번 독립적 시행에서 각 시행이 확률 $p$를 가질 때의 이산확률분포라고 정의하고 있다.
+
+이항분포의 확률질량함수의 수식은 다음과 같이 정의되어 있다.
+
+$$Pr(K=k) = % 확률에 대한 값이라는 뜻.
+\binom n k % binomial n k
+p^k(1-p)^{n-k} % k번 성공, (n-k)번 실패
+$$
+
+여기서 $K=0, 1, 2, \cdots, n$이고 
+
+$$\binom n k=\frac{n!}{k!(n-k)!}$$
+
+는 이항계수 ${}_n\mathrm{ C }_k$ 이다.
+
+$k$번의 성공($p^k$)과 $n-k$번의 실패($(1-p)^{n-k}$)를 원한다. 그러나, $k$번의 성공은 $n$번의 시도 중 어디서든지 발생할 수 있고, 또한 $k$번의 성공을 가지는 분포는 ${}_n\mathrm{ C }_k$개가 있다.
 
 ## 예시를 통한 이항 분포에 대한 이해
 

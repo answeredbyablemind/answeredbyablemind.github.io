@@ -18,6 +18,7 @@ title(['binomial distribution PMF',' / n: ',num2str(n),', p: ',num2str(p)]);
 %% 이항 분포 시뮬레이션
 
 n_sim = 10^4;
+% n_sim = 1000;
 res_sim = zeros(1, n_sim);
 
 for i_sim = 1:n_sim
@@ -34,37 +35,18 @@ figure; histogram(res_sim,'Normalization','pdf');
 hold on;
 stem(x, f(x, n, p), 'o' ,'markerfacecolor',my_color(1,:));
 
-%% 실제 코인 flip을 그리려면?
-n= 3;
-res = zeros(2^n, n);
+%% simulation + discrete histogram으로 ...
+figure;
+hold on;
+count = zeros(1, 11);
+stem(x, f(x, n, p) * n_sim, 'o' ,'markerfacecolor',my_color(1,:),'linewidth',2);
 
-h_up = false;
-for i_col = 1:size(res,2)
-    count2switch= 2^(n-i_col);
+for i_data = 1:length(res_sim)
+    count(res_sim(i_data)+1) = count(res_sim(i_data)+1) + 1;
     
-    count = 0;
-    
-    for i_row = 1:size(res,1)
-        
-        if h_up
-            res(i_row, i_col) = 1;
-        end
-        
-        count = count + 1;
-        
-        if count == count2switch
-            h_up = true;
-            count= 0;
-        end
-        
-    end
+    plot(res_sim(i_data), count(res_sim(i_data)+1),'o','markerfacecolor',0.8 * ones(1,3),'markeredgecolor','k');
+%     pause(0.1);
 end
-
-
-
-
-
-
 
 
 
