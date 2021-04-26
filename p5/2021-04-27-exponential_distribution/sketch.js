@@ -13,10 +13,10 @@ function setup() {
      // n = 50
      // p = 0.5;
 
-     slider_lambda = createSlider(0, 50, 4, 1)
+     slider_lambda = createSlider(0, 2, 1, 0.01)
 
      slider_lambda.position(width-150, 80)
-     n = 50; // x축에 표기할 최대값
+     n = 5; // x축에 표기할 최대값
 }
 
 function draw() {
@@ -24,16 +24,17 @@ function draw() {
      background(0);
      lambda = slider_lambda.value()
      Pr = []
-     for(let k =0; k<=n; k++){
-          Pr[k]= Poisson(k,lambda)
+     xx = linspace(0, 5, 1000)
+     for(let k =0; k<=xx.length; k++){
+          Pr[k]= exp_dist(xx[k],lambda)
      }
 
      scl_w = width / (n*1.2)
-     scl_h = height * 3
+     scl_h = height * 0.3
 
      textSize(20)
      textAlign(CENTER)
-     text('<λ값에 따른 포아송 분포>', width/2, 50)
+     text('<λ값에 따른 지수 분포>', width/2, 50)
      array = ['λ =', String(lambda)]
      separator = ' '
      message = join(array, separator)
@@ -49,13 +50,17 @@ function draw() {
      translate(50, 450)
      scale(1, -1)
 
+     beginShape()
+     xx = linspace(0, 5, 1000)
+     noFill()
      for(let k =0; k<Pr.length; k++){
           stroke(0,114,189)
           strokeWeight(4)
-          line(k * scl_w, 0, k * scl_w, Pr[k] * scl_h)
-          circle(k * scl_w, Pr[k] * scl_h, 7)
+          // line(k * scl_w, 0, k * scl_w, Pr[k] * scl_h)
+          // circle(k * scl_w, Pr[k] * scl_h, 7)
+          vertex(xx[k] * scl_w, Pr[k] * scl_h)
      }
-          
+     endShape()
      pop()
 
      fill(255); 
@@ -75,8 +80,13 @@ function factorial(n) {
 
 }
 
-function Poisson(n, lambda) {
-     return lambda ** n * exp(-lambda) / factorial(n)
+function exp_dist(x, lambda) {
+     if (x<0){
+          return 0
+     }
+     else {
+          return lambda * exp(-lambda * x)
+     }
 }
 
 function plotAxes(){     
@@ -100,14 +110,15 @@ function plotAxes(){
      }
 
      noStroke()
-     text('k', width/2+20, height-13)
+     text('x', width/2+20, height-13)
 
      // vertical axis
      stroke(255)
      line(50, 0, 50, height)
 
      // yy = linspace(0, max(Pr), 7)
-     yy = linspace(0, 0.25, 7)
+     // yy = linspace(0, 2.5, 10)
+     let yy = range(0, 2, 0.20)
 
      for (let i = 1; i < yy.length; i++){
           noStroke()
@@ -119,7 +130,15 @@ function plotAxes(){
           line(50-5, 450 - my_num * scl_h, 50 + 5, 450 - my_num * scl_h)
      }
      noStroke()
-     text('Pr(K=k)',40, 40)
+     text('Pr(X=x)',40, 40)
+}
+function range(start, stop, interval = 0.1){
+     let res = []
+
+     for (i =0;i<=stop; i+=interval){
+          res.push(i.toFixed(2))
+     }
+     return res
 }
 
 function linspace(start, stop, num, endpoint = true) {
