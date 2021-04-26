@@ -34,16 +34,21 @@ function draw() {
      scl_w = width / (n*1.2)
      scl_h = height * 3
 
+     textSize(20)
+     textAlign(CENTER)
+     text('<n, p 값에 따른 이항 분포>', width/2, 30)
+
+     textSize(15)
      let array = ['n =', String(n)]
      let separator = ' '
      let message = join(array, separator)
      textSize(14)
-     text(message, 400, 45)
+     textAlign(LEFT)
+     text(message, 350, 45)
      
-
      array = ['p =', String(Math.round(p*100)/100)]
      message = join(array, separator)
-     text(message, 400, 78)
+     text(message, 350, 78)
 
      // xy 축 그려주기
      plotAxes()
