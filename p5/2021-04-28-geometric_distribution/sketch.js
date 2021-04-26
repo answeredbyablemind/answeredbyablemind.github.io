@@ -13,34 +13,37 @@ function setup() {
      // n = 50
      // p = 0.5;
 
-     slider_lambda = createSlider(0, 2, 1, 0.01)
+     slider_p = createSlider(0, 1, 0.5, 0.01)
+     slider_p.position(width-150, 80)
 
-     slider_lambda.position(width-150, 80)
-     n = 5; // x축에 표기할 최대값
+     n = 25 // 최대 수행 횟수 (실제로는 n은 무한까지일 것임)
+
 }
 
 function draw() {
      
      background(0);
-     lambda = slider_lambda.value()
+     p = slider_p.value()
      Pr = []
-     xx = linspace(0, 5, 1000)
-     for(let k =0; k<=xx.length; k++){
-          Pr[k]= exp_dist(xx[k],lambda)
+     for(let k =0; k<=n; k++){
+          Pr[k]= geometric(k, p)
      }
 
      scl_w = width / (n*1.2)
-     scl_h = height * 0.3
+     scl_h = height / 1.5
 
      textSize(20)
      textAlign(CENTER)
-     text('<λ값에 따른 지수 분포>', width/2, 50)
-     array = ['λ =', String(lambda)]
-     separator = ' '
-     message = join(array, separator)
-     textAlign(RIGHT)
-     text(message, 450, 70)
+     text('<p 값에 따른 기하 분포>', width/2, 50)
 
+     textSize(15)
+     let separator = ' '     
+
+     array = ['p =', String(Math.round(p*100)/100)]
+     message = join(array, separator)
+     textAlign(LEFT)
+
+     text(message, 355, 75)
 
      // xy 축 그려주기
      plotAxes()
@@ -50,17 +53,13 @@ function draw() {
      translate(50, 450)
      scale(1, -1)
 
-     beginShape()
-     xx = linspace(0, 5, 1000)
-     noFill()
-     for(let k =0; k<Pr.length; k++){
+     for(let k =1; k<Pr.length; k++){
           stroke(0,114,189)
           strokeWeight(4)
-          // line(k * scl_w, 0, k * scl_w, Pr[k] * scl_h)
-          // circle(k * scl_w, Pr[k] * scl_h, 7)
-          vertex(xx[k] * scl_w, Pr[k] * scl_h)
+          line(k * scl_w, 0, k * scl_w, Pr[k] * scl_h)
+          circle(k * scl_w, Pr[k] * scl_h, 7)
      }
-     endShape()
+          
      pop()
 
      fill(255); 
@@ -80,13 +79,8 @@ function factorial(n) {
 
 }
 
-function exp_dist(x, lambda) {
-     if (x<0){
-          return 0
-     }
-     else {
-          return lambda * exp(-lambda * x)
-     }
+function geometric(k, p) {
+     return (1-p) ** (k-1) * p
 }
 
 function plotAxes(){     
@@ -100,8 +94,8 @@ function plotAxes(){
      stroke(255)
      line(0, 450, width, 450)
      
-     xx = linspace(0, n, 11, endpoint = true)
-     for (let i = 1; i < xx.length; i++){
+     xx = range(1, 25, 2)
+     for (let i = 0; i < xx.length; i++){
           noStroke()
           let xpos = round(xx[i])
           text(xpos, 50 + xpos * scl_w, 450+18)
@@ -110,15 +104,14 @@ function plotAxes(){
      }
 
      noStroke()
-     text('t', width/2+20, height-13)
+     text('k', width/2+20, height-13)
 
      // vertical axis
      stroke(255)
      line(50, 0, 50, height)
 
      // yy = linspace(0, max(Pr), 7)
-     // yy = linspace(0, 2.5, 10)
-     let yy = range(0, 2, 0.20)
+     let yy = range(0, 1, 0.20)
 
      for (let i = 1; i < yy.length; i++){
           noStroke()
@@ -130,12 +123,12 @@ function plotAxes(){
           line(50-5, 450 - my_num * scl_h, 50 + 5, 450 - my_num * scl_h)
      }
      noStroke()
-     text('Pr(T=t)',40, 40)
+     text('Pr(K=k)',40, 40)
 }
 function range(start, stop, interval = 0.1){
      let res = []
 
-     for (i =start;i<=stop; i+=interval){
+     for (i = start;i<=stop; i+=interval){
           res.push(i.toFixed(2))
      }
      return res
