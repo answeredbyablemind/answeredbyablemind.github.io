@@ -11,21 +11,3 @@ figure;
 stem(1:100, f_poisson(1:100, 10))
 % hold on;
 % stem(0:540, f_binomial(0:540, 540, 0.003))
-
-%%
-
-
-my_sum = 0;
-
-for i = 0:3
-    my_sum = my_sum + f_poisson(i, 2);
-end
-
-
-my_sum = 0;
-
-for i = 0:4
-    my_sum = my_sum + f_poisson(i, 2);
-end
-
-1-my_sum
