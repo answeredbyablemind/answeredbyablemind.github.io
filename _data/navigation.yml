@@ -182,6 +182,8 @@ docs-ko:
     children:
       - title:  이항 분포
         url:    2021/04/23/binomial_distribution.html
+      - title:  포아송 분포
+        url:    2021/04/26/Poisson_distribution.html
       - title:  가우스 적분
         url:    2020/01/17/Gaussian_Integral.html
       - title:  정규분포 공식 유도
