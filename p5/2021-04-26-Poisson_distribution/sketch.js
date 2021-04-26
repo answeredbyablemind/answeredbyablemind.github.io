@@ -13,37 +13,33 @@ function setup() {
      // n = 50
      // p = 0.5;
 
-     slider_n = createSlider(0, 100, 50, 1)
-     slider_p = createSlider(0, 1, 0.5, 0.01)
+     slider_lambda = createSlider(0, 50, 4, 1)
 
-     slider_n.position(width-150, 50)
-     slider_p.position(width-150, 80)
-
+     slider_lambda.position(width-150, 80)
+     n = 50; // x축에 표기할 최대값
 }
 
 function draw() {
      
      background(0);
-     n = slider_n.value()
-     p = slider_p.value()
+     lambda = slider_lambda.value()
      Pr = []
      for(let k =0; k<=n; k++){
-          Pr[k]= binomial(k,n,p)
+          Pr[k]= Poisson(k,lambda)
      }
 
      scl_w = width / (n*1.2)
      scl_h = height * 3
 
-     let array = ['n =', String(n)]
-     let separator = ' '
-     let message = join(array, separator)
-     textSize(14)
-     text(message, 400, 45)
-     
-
-     array = ['p =', String(Math.round(p*100)/100)]
+     textSize(20)
+     textAlign(CENTER)
+     text('<λ값에 따른 포아송 분포>', width/2, 50)
+     array = ['λ =', String(lambda)]
+     separator = ' '
      message = join(array, separator)
-     text(message, 400, 78)
+     textAlign(RIGHT)
+     text(message, 450, 70)
+
 
      // xy 축 그려주기
      plotAxes()
@@ -79,8 +75,8 @@ function factorial(n) {
 
 }
 
-function binomial(k, n, p) {
-     return factorial(n)/(factorial(k)*factorial(n-k)) * p**k * (1-p)**(n-k)
+function Poisson(n, lambda) {
+     return lambda ** n * exp(-lambda) / factorial(n)
 }
 
 function plotAxes(){     
