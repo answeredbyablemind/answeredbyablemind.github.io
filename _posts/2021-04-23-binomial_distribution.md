@@ -213,15 +213,11 @@ $$\sigma_n^2 = \sum_{i=1}^n \sigma^2 = np(1-p)$$
 그런데, 어떤 경우에는, 가령 $n$이 너무 작거나 $p$가 너무 작거나 한 경우 이항 분포의 형태는 정규분포와 비슷하다고 말하기는 어렵다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-23-binomial_distribution/pic4.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-23-binomial_distribution/pic4.png">
   <br>
   그림 4. 이항 분포의 형태가 정규분포와 유사하다고 보기 힘든 세 가지 경우
 </p>
 
-수학자들은 이항 분포가 정규분포의 형태와 유사해질 수 있다고 볼 수 있는 기준을 
+그림 4를 보면 $n$도 커야하지만 $p$도 어지간히 0.5 주변에 있어야만 정규분포의 모습을 따를 것이라는 것을 알 수 있다.
 
-$np$와 $\sqrt{np(1-p)}$가 5보다 클 때로 정의하고 있고, 이 때
-
-$$Z = \frac{X-np}{\sqrt{np(1-p)}}$$
-
-가 근사적으로 정규분포를 따른다고 볼 수 있다.
+수학자들은 이항 분포가 정규분포의 형태와 유사해질 수 있다고 볼 수 있는 기준을 $np$와 $\sqrt{np(1-p)}$가 5보다 클 때로 보고 있고, 이 때 평균이 $np$이고 분산이 $np(1-p)$인 정규분포를 따른다고 볼 수 있다.
