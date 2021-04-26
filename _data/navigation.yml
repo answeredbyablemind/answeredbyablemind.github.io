@@ -182,6 +182,8 @@ docs-ko:
     children:
       - title:  이항 분포
         url:    2021/04/23/binomial_distribution.html
+      - title:  기하 분포
+        url:    2021/04/28/geometric_distribution.html
       - title:  포아송 분포
         url:    2021/04/26/Poisson_distribution.html
       - title:  지수 분포
