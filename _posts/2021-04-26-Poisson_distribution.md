@@ -11,7 +11,7 @@ tags: 통계학
 <center>
   <iframe width = "500" height = "500" frameborder = "0" src="https://angeloyeo.github.io/p5/2021-04-26-Poisson_distribution/"></iframe>
   <br>
-  파라미터 λ를 수정해가며 다양한 경우의 이항분포의 생김새에 대해 확인해보자. 
+  파라미터 λ를 수정해가며 다양한 경우의 포아송분포의 생김새에 대해 확인해보자. 
   <br>
   포아송분포에서 x 축에 있는 k가 갖는 것은 어떤 의미일까? 
   <br>
@@ -29,6 +29,14 @@ tags: 통계학
 포아송 분포를 잘 이해하기 위해서는 아래의 내용에 대해 알고오시는 것이 좋습니다.
 
 * [이항 분포](https://angeloyeo.github.io/2021/04/23/binomial_distribution.html)
+
+# 포아송 분포의 정의
+
+정해진 시간 안에 어떤 사건이 일어날 횟수에 대한 기댓값을 $\lambda$라고 했을 때, 그 사건이 $n$회 일어날 확률은 다음과 같다.
+
+$$f(n;\lambda) = \frac{\lambda^n e^{-\lambda}}{n!}$$
+
+여기서 $e$는 자연상수이다.
 
 # 포아송 분포가 필요한 이유?
 

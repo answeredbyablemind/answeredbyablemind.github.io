@@ -110,7 +110,7 @@ function plotAxes(){
      }
 
      noStroke()
-     text('x', width/2+20, height-13)
+     text('t', width/2+20, height-13)
 
      // vertical axis
      stroke(255)
@@ -130,7 +130,7 @@ function plotAxes(){
           line(50-5, 450 - my_num * scl_h, 50 + 5, 450 - my_num * scl_h)
      }
      noStroke()
-     text('Pr(X=x)',40, 40)
+     text('Pr(T=t)',40, 40)
 }
 function range(start, stop, interval = 0.1){
      let res = []
