@@ -9,7 +9,7 @@ tags: 미분방정식
 ---
 
 <center>
-  <iframe width = "1215" height = "730" frameborder = "0" src="https://homepages.bluffton.edu/~nesterd/apps/slopefields.html"></iframe>
+  <iframe style="border-width:2px; border-color:black; border-style:solid;" width = "1215" height = "730" frameborder = "0" src="https://homepages.bluffton.edu/~nesterd/apps/slopefields.html"></iframe>
   <br>
   slope and direction fields / Bluffton University
   <br>
