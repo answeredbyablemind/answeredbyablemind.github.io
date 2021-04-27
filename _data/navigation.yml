@@ -300,13 +300,3 @@ docs-ko:
         url:    2020/10/05/Wold_theorem.html
       - title:  칼만 필터
         url:    2021/04/07/Kalman_filter.html
-        
-  - title:      테스트용
-    children:
-      - title:  테스트용 2 카테고리
-        children:
-          - title:  이산시간 컨볼루션
-            url:    2019/06/18/Discrete_Time_Convolution.html
-        
-        
-
