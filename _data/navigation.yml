@@ -298,7 +298,7 @@ docs-ko:
         url:    2020/10/04/Wiener_Khinchin.html
       - title:  Wold's theorem
         url:    2020/10/05/Wold_theorem.html
-      - title:  베이즈 정리로 이해하는 칼만 필터
+      - title:  칼만 필터
         url:    2021/04/07/Kalman_filter.html
         
         

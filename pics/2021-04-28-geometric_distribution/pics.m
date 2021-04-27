@@ -26,3 +26,4 @@ ylim([-0.05, 0.85])
 title('기하 분포의 확률질량함수')
 legend(h, 'p = 0.2', 'p = 0.5', 'p = 0.8');
 set(gca,'fontname','나눔고딕');
+set(gca,'xtick',0:10)
