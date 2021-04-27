@@ -107,14 +107,14 @@ docs-ko:
 
   - title:      기초 미적분학
     children:
-      - title:  $\frac{dx}{dy}$는 $\frac{dy}{dx}$의 역수인가?
-        url:    2020/09/02/is_dxdy_inverse_of_dydx.html
-      - title:  $\int x^{dx}-1=$?
-        url:    2020/09/01/int_x_to_the_dx_minus_1.html
       - title:  테일러 급수의 유도와 의미
         url:    2019/09/02/Taylor_Series.html
       - title:  로피탈 정리의 기하학적 의미
         url:    2019/09/08/LHopital_rule.html
+      - title:  $\frac{dx}{dy}$는 $\frac{dy}{dx}$의 역수인가?
+        url:    2020/09/02/is_dxdy_inverse_of_dydx.html
+      - title:  $\int x^{dx}-1=$?
+        url:    2020/09/01/int_x_to_the_dx_minus_1.html
 
   - title:      다변수 미적분학
     children:
