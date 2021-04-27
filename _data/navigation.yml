@@ -183,7 +183,7 @@ docs-ko:
       - title:  GMM과 EM 알고리즘
         url:    2021/02/08/GMM_and_EM.html
       
-  - title:    확률 분포 (기초 통계)
+  - title:    확률/통계 기초와 확률 분포
     children:
       - title:  이항 분포
         url:    2021/04/23/binomial_distribution.html
