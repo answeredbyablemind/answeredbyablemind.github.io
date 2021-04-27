@@ -8,7 +8,7 @@ key: 20210429
 tags: 미분방정식
 ---
 <center>
-  <iframe style="border-width:2px; border-color:black; border-style:solid;" width = "1200" height = "710"frameborder = "0" src="https://homepages.bluffton.edu/~nesterd/apps/slopefields.html"></iframe>
+  <iframe width = "1200" height = "710"frameborder = "0" src="https://homepages.bluffton.edu/~nesterd/apps/slopefields.html"></iframe>
   <br>
   slope and direction fields / Bluffton University
   <br>
