@@ -1,16 +1,21 @@
 clear; close all; clc;
 
-%% ì›ì„ í¼ì³ ë†“ìœ¼ë©´ ë‘˜ë ˆê°€ ë˜ëŠ” ê²ƒ í™•ì¸
+%% 
+
+newVid = VideoWriter('pic1', 'MPEG-4'); % New
+newVid.FrameRate = 100;
+newVid.Quality = 100;
+open(newVid);
 
 dtheta = 1/50;
 theta = -pi/2:dtheta:3/2*pi;
 r = 0.5;
 
-figure('position',[1001, 559, 1167, 420])
+figure('color','w','position',[1001, 559, 1167, 420])
 
 clear h
 for i = 1:length(theta)
-    hor_dest = r * (theta(i) + pi/2); % horizontal destination: r*theta = í˜¸ì˜ ê¸¸ì´
+    hor_dest = r * (theta(i) + pi/2); % horizontal destination: r*theta = È£ÀÇ ±æÀÌ
     h(1) = line([0, hor_dest], [0, 0], 'color','k','linewidth',2);
     hold on;
     x = r * cos(theta(1:end-i+1)) + hor_dest;
@@ -20,6 +25,8 @@ for i = 1:length(theta)
     xlim([-1, 4])
     ylim([-0.5, 1.5])
     grid on;
+        writeVideo(newVid, getframe(gcf))
+
     drawnow;
     
     if i < length(theta)
@@ -27,7 +34,17 @@ for i = 1:length(theta)
     end
 end
 
-%% ë°˜ì§€ë¦„ì´ ë‹¤ë¥¸ 10ê°œì˜ ë™ì‹¬ì› ê·¸ë¦¬ê¸°
+for i = 1:30 % ¸¶Áö¸· Àå¸é¿¡¼­ 1.5ÃÊ ´õ ´ë±âÇÒ ¼ö ÀÖµµ·Ï
+    writeVideo(newVid, getframe(gcf))
+end
+
+close(newVid)
+%% 
+
+newVid = VideoWriter('pic2', 'MPEG-4'); % New
+newVid.FrameRate = 3;
+newVid.Quality = 100;
+open(newVid);
 
 rs = linspace(0, 1, 10);
 theta = linspace(0, 2*pi, 1000);
@@ -47,13 +64,24 @@ for i_r = 1:length(rs)
     r = rs(i_r);
     plot(r * cos(theta), r* sin(theta),'linewidth',2,'color',my_color(i_r,:),'linewidth',5)
     plot(1 * cos(theta), 1* sin(theta),'k','linewidth',2);
-    
+            writeVideo(newVid, getframe(gcf))
+
     pause(4/length(rs));
 end
 
+for i = 1:4 % ¸¶Áö¸· Àå¸é¿¡¼­ 1.5ÃÊ ´õ ´ë±âÇÒ ¼ö ÀÖµµ·Ï
+    writeVideo(newVid, getframe(gcf))
+end
 
-%% ë°˜ì§€ë¦„ì´ ë‹¤ë¥¸ ì—¬ëŸ¬ ë™ì‹¬ì›ì„ ê·¸ë ¤ì„œ í•˜ë‚˜ì˜ ì›ì˜ ë„“ì´ë¥¼ êµ¬ì„±í•œë‹¤ëŠ” ê²ƒì„ ë³´ì—¬ì£¼ê¸°
+close(newVid)
 
+%% 
+
+
+newVid = VideoWriter('pic3', 'MPEG-4'); % New
+newVid.FrameRate = 3;
+newVid.Quality = 100;
+open(newVid);
 
 theta = linspace(0, 2*pi, 1000);
 
@@ -76,7 +104,8 @@ for i_rs = 1:length(k_rs)
         plot(r * cos(theta), r* sin(theta),'linewidth',2,'color',my_color(i_r,:))
         plot(1 * cos(theta), 1* sin(theta),'k','linewidth',2);
     end
-    
+                writeVideo(newVid, getframe(gcf))
+
     pause(4/length(rs));
     
     if i_rs < length(k_rs)
@@ -85,4 +114,9 @@ for i_rs = 1:length(k_rs)
 end
 
 
+for i = 1:4 % ¸¶Áö¸· Àå¸é¿¡¼­ 1.5ÃÊ ´õ ´ë±âÇÒ ¼ö ÀÖµµ·Ï
+    writeVideo(newVid, getframe(gcf))
+end
+
+close(newVid)
 
