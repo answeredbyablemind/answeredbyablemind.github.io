@@ -49,7 +49,7 @@ header:
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
 docs-ko:
-  - title:      선형대수학
+  - title:      기초 선형대수학 이론
     children:
       - title:  벡터의 기본 연산(상수배, 덧셈)
         url:    2020/09/07/basic_vector_operation.html
@@ -63,14 +63,19 @@ docs-ko:
         url:    2019/08/06/determinant.html
       - title:  고윳값과 고유벡터
         url:    2019/07/17/eigen_vector.html
-      - title:  복소 고윳값과 고유벡터의 의미
-        url:    2020/11/02/complex_eigen.html
+      - title:  4개 주요 부분 공간의 관계
+        url:    2020/11/17/four_fundamental_subspaces.html
+      - title:  기저의 변환
+        url:    2020/12/07/change_of_basis.html
+
+  - title:      선형대수학 응용
+    children:
       - title:  주성분분석(PCA)
         url:    2019/07/27/PCA.html
       - title:  고윳값 분해(EVD)
         url:    2020/11/19/eigen_decomposition.html
-      - title:  4개 주요 부분 공간의 관계
-        url:    2020/11/17/four_fundamental_subspaces.html
+      - title:  복소 고윳값과 고유벡터의 의미
+        url:    2020/11/02/complex_eigen.html
       - title:  선형회귀(linear regression)
         url:    2020/08/24/linear_regression.html
       - title:  의사역행렬의 기하학적 의미
@@ -79,8 +84,12 @@ docs-ko:
         url:    2020/11/23/gram_schmidt.html
       - title:  특이값 분해(SVD)
         url:    2019/08/01/SVD.html
-      - title:  기저의 변환
-        url:    2020/12/07/change_of_basis.html
+      - title:  NMF(Non-negative Matrix Factorization)
+        url:    2020/10/15/NMF.html
+      - title:  자코비안 행렬의 기하학적 의미
+        url:    2020/07/24/Jacobian.html
+      - title:  헤시안 행렬의 기하학적 의미
+        url:    2020/06/17/Hessian.html
       - title:  선형대수와 푸리에 변환
         url:    2020/11/08/linear_algebra_and_Fourier_transform.html
       - title:  순환행렬과 컨볼루션
@@ -95,10 +104,8 @@ docs-ko:
         url:    2019/10/10/Wronskian.html
       - title:  독립성분분석(ICA)
         url:    2020/07/14/ICA.html
-      - title:  NMF(Non-negative Matrix Factorization)
-        url:    2020/10/15/NMF.html
 
-  - title:      미적분학
+  - title:      기초 미적분학
     children:
       - title:  $\frac{dx}{dy}$는 $\frac{dy}{dx}$의 역수인가?
         url:    2020/09/02/is_dxdy_inverse_of_dydx.html
@@ -108,6 +115,9 @@ docs-ko:
         url:    2019/09/02/Taylor_Series.html
       - title:  로피탈 정리의 기하학적 의미
         url:    2019/09/08/LHopital_rule.html
+
+  - title:      다변수 미적분학
+    children:
       - title:  스칼라장의 기울기(gradient)
         url:    2019/08/25/gradient.html
       - title:  벡터장의 발산(divergence)
@@ -136,14 +146,13 @@ docs-ko:
         url:    2020/08/22/stokes_theorem.html
       - title:  발산정리(3D)
         url:    2020/08/23/divergence_theorem_3D.html  
+
+  - title:      미분방정식
+    children:
       - title:  열방정식/파동방정식의 의미
         url:    2019/08/29/Heat_Wave_Equation.html
       - title:  라플라스 방정식의 의미
         url:    2019/08/31/Laplace_Equation.html
-      - title:  자코비안 행렬의 기하학적 의미
-        url:    2020/07/24/Jacobian.html
-      - title:  헤시안 행렬의 기하학적 의미
-        url:    2020/06/17/Hessian.html
 
   - title:      머신러닝
     children:
@@ -157,8 +166,6 @@ docs-ko:
         url:    2020/09/23/logistic_regression.html
       - title:  서포트 벡터 머신(SVM)
         url:    2020/09/30/SVM.html
-      - title:  베이즈 정리의 의미
-        url:    2020/01/09/Bayes_rule.html
       - title:  나이브 베이즈 분류기
         url:    2020/08/04/naive_bayes.html
       - title:  ROC curve
@@ -169,8 +176,6 @@ docs-ko:
         url:    2020/10/10/autoencoder.html
       - title:  Variational AutoEncoder
         url:    2020/10/11/VAE.html
-      - title:  헤시안 행렬의 기하학적 의미
-        url:    2020/06/17/Hessian.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation.html
       - title:  k-means 알고리즘
@@ -178,7 +183,7 @@ docs-ko:
       - title:  GMM과 EM 알고리즘
         url:    2021/02/08/GMM_and_EM.html
       
-  - title:      확률과 통계
+  - title:    확률 분포 (기초 통계)
     children:
       - title:  이항 분포
         url:    2021/04/23/binomial_distribution.html
@@ -196,6 +201,9 @@ docs-ko:
         url:    2020/09/15/CLT_meaning.html
       - title:  중심극한정리 증명
         url:    2020/01/10/CLT_proof.html
+
+  - title:    통계적 추론
+    children:
       - title:  통계적 추론 - Big Picture
         url:    2020/02/11/big_picture_stats_infer.html
       - title:  표본과 표준오차의 의미
@@ -214,18 +222,26 @@ docs-ko:
         url:    2021/01/05/confidence_interval.html
       - title:  1종 오류와 2종 오류
         url:    2021/01/26/types_of_errors.html
+
+  - title:    베이즈 통계학
+    children:
       - title:  베이즈 정리의 의미
         url:    2020/01/09/Bayes_rule.html
       - title:  최대우도법(MLE)
         url:    2020/07/17/MLE.html
       - title:  GMM과 EM 알고리즘
         url:    2021/02/08/GMM_and_EM.html
+      - title:  나이브 베이즈 분류기
+        url:    2020/08/04/naive_bayes.html
       - title:  칼만 필터
         url:    2021/04/07/Kalman_filter.html
       - title:  Rejection sampling
         url:    2020/09/16/rejection_sampling.html
       - title:  Markov Chain Monte Carlo
         url:    2020/09/17/MCMC.html
+
+  - title:    정보 이론
+    children:
       - title:  정보 엔트로피(information entropy)
         url:    2020/10/26/information_entropy.html
       - title:  KL divergence
@@ -250,7 +266,7 @@ docs-ko:
       - title:  페이저 (phasor)
         url:    2019/06/18/phasor.html
 
-  - title:      신호처리 이론
+  - title:      신호 처리 기초
     children:
       - title:  임펄스 응답 (impulse response)
         url:    2019/06/18/impulse_response.html
@@ -258,6 +274,30 @@ docs-ko:
         url:    2019/06/18/Discrete_Time_Convolution.html
       - title:  연속시간 컨볼루션
         url:    2019/07/01/Continuous_Time_Convolution.html
+      - title:  라플라스 변환
+        url:    2019/08/12/Laplace_transform.html
+      - title:  Z-변환
+        url:    2019/08/13/Z_transform.html
+      - title:  라플라스 변환과 z-변환
+        url:    2020/07/23/laplace_and_z.html
+      - title:  힐버트 변환
+        url:    2019/08/09/Hilbert_Transform.html
+
+  - title:      신호 필터링
+    children:
+      - title:  버터워스 필터
+        url:    2020/09/25/Butterworth.html
+      - title:  체비세브 필터
+        url:    2020/09/27/Chebyshev.html
+      - title:  주파수 변환
+        url:    2020/09/29/frequency_transformation.html
+      - title:  사비츠키-골레이 필터
+        url:    2020/10/21/Savitzky_Golay.html
+      - title:  칼만 필터
+        url:    2021/04/07/Kalman_filter.html
+
+  - title:      푸리에 해석
+    children:
       - title:  연속시간 푸리에 급수 (CTFS)
         url:    2019/06/23/Fourier_Series.html
       - title:  연속시간 푸리에 변환 (CTFT)
@@ -276,27 +316,9 @@ docs-ko:
         url:    2019/07/22/Negative_Frequency.html
       - title:  time window 길이와 주파수 해상도
         url:    2019/10/12/Frequency_Resolution.html
-      - title:  힐버트 변환
-        url:    2019/08/09/Hilbert_Transform.html
-      - title:  라플라스 변환
-        url:    2019/08/12/Laplace_transform.html
-      - title:  Z-변환
-        url:    2019/08/13/Z_transform.html
-      - title:  라플라스 변환과 z-변환
-        url:    2020/07/23/laplace_and_z.html
       - title:  시간-주파수 불확정도
         url:    2020/01/16/time_frequency_uncertainty.html
-      - title:  버터워스 필터
-        url:    2020/09/25/Butterworth.html
-      - title:  체비세브 필터
-        url:    2020/09/27/Chebyshev.html
-      - title:  Frequency Transformation
-        url:    2020/09/29/frequency_transformation.html
-      - title:  사비츠키-골레이 필터
-        url:    2020/10/21/Savitzky_Golay.html
       - title:  위너-킨친 정리
         url:    2020/10/04/Wiener_Khinchin.html
       - title:  Wold's theorem
         url:    2020/10/05/Wold_theorem.html
-      - title:  칼만 필터
-        url:    2021/04/07/Kalman_filter.html
