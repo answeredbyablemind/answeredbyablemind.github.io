@@ -176,3 +176,25 @@ $$f(x) = \frac{1}{2}x^2$$
   <br>
   그림 4. 그림 1~3에서 표현된 점화식 solution과 true solution 간의 비교
 </p>
+
+그림 4를 보면 $h$의 값이 작을 수록 점화식으로 계산한 solution과 true solution은 비슷한 결과를 보여준다는 것을 알 수 있다.
+
+# Euler's method
+
+위의 내용에서 step by step으로 설명한 방법이 오일러 방법이다.
+
+<p align = "center">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Euler_method.png">
+  <br>
+  그림 5. 오일러 방법에 대한 시각적 설명
+  <br>
+  그림 출처: <a href = "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%EB%B0%A9%EB%B2%95"> 위키피디아: 오일러 방법 </a>
+</p>
+
+오일러 방법은 미분방정식을 수치해법으로 풀어주는 방법인데, 우리에게 몇 가지 점을 시사해준다.
+
+1. 미분방정식의 solution을 구한다는 것은 미분방정식을 만족해주는 f(x)를 구하는 것이다.
+2. 미분 방정식은 함수값의 변화에 대해 얘기해주고 있으며, 이것은 지금 포인트와 다음 포인트에서의 함수값 차이를 말해준다.
+3. 시작점만 하나 특정할 수 있다면 미분방정식에서 말해주는 함수값 변화 룰에 따라 solution curve 하나를 구할 수 있다.
+4. 지금 포인트와 다음 포인트 간의 간격이 좁을 수록 solution curve는 true solution에 가까워진다.
+
