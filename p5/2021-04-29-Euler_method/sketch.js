@@ -13,12 +13,12 @@ function setup() {
      // p = 0.5;
 
      slider_h = createSlider(0.01, 3, 0.5, 0.01)
-     slider_h.position(width/2-50, 80)
+     slider_h.position(width/2+30, 80)
 
-     f_xx = linspace(0, 8, n_fun)
+     f_xx = linspace(-20, 20, n_fun)
 
      for(let i = 0; i<n_fun; i++){
-          f.push(exp(f_xx[i]))
+          f.push(0.5*f_xx[i]**2)
      }
 
 }
@@ -30,25 +30,32 @@ function draw() {
      f_approx = []
      f_approx_xx = []
 
-     f_approx.push(f[0])
-     f_approx_xx.push(f_xx[0])
+     array1 = range(0, 20, h)
+     array2 = range(-20, 0, h)
 
-     while(1){
-          
-          if(f_approx_xx[f_approx_xx.length-1] > f_xx[f_xx.length-1]){
-               break
-          }
+     f_approx_xx = array2.concat(array1)
+     // let find_0 = f_approx_xx.findIndex(element => element == 0)
+     let temp = []
+     for(let i = 0; i< f_approx_xx.length; i++){
+          temp.push(Math.abs(f_approx_xx[i]))
+     }
+     find_0 = indexOfSmallest(temp)
 
-          f_approx_xx.push(
-               f_approx_xx[f_approx_xx.length-1] + h
-          )
-          f_approx.push(
-               (1+h) * f_approx[f_approx.length - 1]
-          )
+     f_approx[find_0] = 0
+
+     // 양의 x에 대해서
+
+     for(i=find_0; i < f_approx_xx.length - 1; i ++){
+          f_approx[i+1]= h * f_approx_xx[i] + f_approx[i]
      }
 
-     scl_w = width / 6.5
-     scl_h = scl_w / 8
+     // 음의 x에 대해서
+     for(i=find_0; i > 0; i --){
+          f_approx[i-1]= f_approx[i] - h * f_approx_xx[i-1]
+     }
+     
+     scl_w = width / 22
+     scl_h = height / 50
 
      textSize(15)
      let separator = ' '     
@@ -57,14 +64,14 @@ function draw() {
      message = join(array, separator)
      textAlign(LEFT)
 
-     text(message, 250, 75)
+     text(message, 325, 75)
 
      // xy 축 그려주기
      plotAxes()
 
      // plot from (0, 0) point
      push()
-     translate(50, 450)
+     translate(width/2, 450)
      scale(1, -1)
      noFill()
      stroke(0, 114, 189)
@@ -100,6 +107,13 @@ function draw() {
      noStroke()
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.98)
 }
+function indexOfSmallest(a) {
+     var lowest = 0;
+     for (var i = 1; i < a.length; i++) {
+      if (a[i] < a[lowest]) lowest = i;
+     }
+     return lowest;
+}
 
 function plotAxes(){     
 
@@ -107,18 +121,18 @@ function plotAxes(){
      // 0 써주기
      textAlign(CENTER, CENTER)
      noStroke()
-     text(0, 50-8, 450+10)
+     // text(0, 50-8, 450+10)
      // horizontal axis
      stroke(255)
      line(0, 450, width, 450)
      
-     let xx = range(1, 5, 1)
+     let xx = range(-10, 10, 1)
      for (let i = 0; i < xx.length; i++){
           noStroke()
           let xpos = round(xx[i])
-          text(xpos, 50 + xpos * scl_w, 450+18)
+          text(xpos, width/2 + xpos * scl_w, 450+18)
           stroke(255)
-          line(50 + xpos * scl_w, 450-5, 50 + xpos * scl_w, 450+5)
+          line(width/2 + xpos * scl_w, 450-5, width/2 + xpos * scl_w, 450+5)
      }
 
      noStroke()
@@ -126,7 +140,7 @@ function plotAxes(){
 
      // vertical axis
      stroke(255)
-     line(50, 0, 50, height)
+     line(width/2, 0, width/2, height)
 
      // yy = linspace(0, max(Pr), 7)
      let yy = range(0, 42, 3)
@@ -136,9 +150,9 @@ function plotAxes(){
           let my_num = round(yy[i])
           my_num_str = String(my_num)
           
-          text(my_num_str, 30, 450 - my_num * scl_h)
+          text(my_num_str, width/2-20, 450 - my_num * scl_h)
           stroke(255)
-          line(50-5, 450 - my_num * scl_h, 50 + 5, 450 - my_num * scl_h)
+          line(width/2-5, 450 - my_num * scl_h, width/2 + 5, 450 - my_num * scl_h)
      }
      noStroke()
      // text('Pr(K=k)',40, 40)
