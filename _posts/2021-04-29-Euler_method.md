@@ -181,7 +181,9 @@ $$f(x) = \frac{1}{2}x^2$$
 
 # Euler's method
 
-위의 내용에서 step by step으로 설명한 방법이 오일러 방법이다.
+위의 내용에서 step by step으로 설명한 방법이 오일러 방법이다[^1].
+
+[^1]: 좀 더 정확히는 [테일러 급수](https://angeloyeo.github.io/2019/09/02/Taylor_Series.html)를 이용해 유도할 수 있다.
 
 <p align = "center">
   <img src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Euler_method.png">
