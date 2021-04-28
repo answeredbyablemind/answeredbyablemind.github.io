@@ -15,6 +15,14 @@ tags: 미분방정식
   <br>
 </center>
 
+# Prerequisites
+
+미분방정식의 방향장에 대해서 이해하기 위해선 다음의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [오일러 방법](https://angeloyeo.github.io/2021/04/29/Euler_method.html)
+
+# 
+
 ```{MATLAB}
 function dirfield(func,tval,yval)
 
