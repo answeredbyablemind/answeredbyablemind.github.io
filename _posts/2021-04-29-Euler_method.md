@@ -186,7 +186,7 @@ $$f(x) = \frac{1}{2}x^2$$
 [^1]: 좀 더 정확히는 [테일러 급수](https://angeloyeo.github.io/2019/09/02/Taylor_Series.html)를 이용해 유도할 수 있다.
 
 <p align = "center">
-  <img src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Euler_method.png">
+  <img width = "600" src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Euler_method.png">
   <br>
   그림 5. 오일러 방법에 대한 시각적 설명
   <br>
@@ -195,7 +195,7 @@ $$f(x) = \frac{1}{2}x^2$$
 
 오일러 방법은 미분방정식을 수치해법으로 풀어주는 방법인데, 우리에게 몇 가지 점을 시사해준다.
 
-1. 미분방정식의 solution을 구한다는 것은 미분방정식을 만족해주는 f(x)를 구하는 것이다.
+1. 미분방정식의 solution을 구한다는 것은 미분방정식을 만족해주는 $f(x)$를 구하는 것이다.
 2. 미분 방정식은 함수값의 변화에 대해 얘기해주고 있으며, 이것은 지금 포인트와 다음 포인트에서의 함수값 차이를 말해준다.
 3. 시작점만 하나 특정할 수 있다면 미분방정식에서 말해주는 함수값 변화 룰에 따라 solution curve 하나를 구할 수 있다.
 4. 지금 포인트와 다음 포인트 간의 간격이 좁을 수록 solution curve는 true solution에 가까워진다.
