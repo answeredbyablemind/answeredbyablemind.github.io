@@ -143,3 +143,36 @@ $$\Rightarrow f(x-0.5)= f(x)  - 0.5 (x-0.5) % 식 (19)$$
   <br>
   그림 2. 식 (18) 점화식의 solution을 그래프에 옮긴 것
 </p>
+
+## $h=0.1$인 경우
+
+$h=0.1$인 경우에도 위의 방법을 그대로 따라가서 점화식을 만들면 아래와 같으며,
+
+$$식(5)\Rightarrow \frac{f(x+0.1)-f(x)}{0.1} = x % 식 (20)$$
+
+같은 방법을 통해 그래프로 점화식의 solution을 그리면 다음과 같다.
+
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic5.png">
+  <br>
+  그림 3. 식 (20) 점화식의 solution을 그래프에 옮긴 것
+</p>
+
+## 식 (4)의 진짜 solution과 그림 1-3의 비교
+
+그런데, 식 (4)는 다시 이렇게도 쓸 수 있는 것이다.
+
+$$식(4) \Rightarrow f'(x)= x % 식 (21) $$
+
+식 (21)은 양변을 적분하고 $f(0)=0$이라는 초기값을 넣어주면 다음과 같은 결과를 얻을 수 있다.
+
+$$f(x) = \frac{1}{2}x^2$$
+
+즉, $f(x)$는 $\frac{1}{2}x^2$가 정답이었다고 할 수 있는데, 이 값을 그림 1~3에서 그린 값과 비교해보자.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic6.png">
+  <br>
+  그림 4. 그림 1~3에서 표현된 점화식 solution과 true solution 간의 비교
+</p>

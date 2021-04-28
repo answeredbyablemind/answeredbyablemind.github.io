@@ -53,3 +53,4 @@ grid on;
 title('$$f(x+0.5) = 0.5x + f(x)$$','interpreter','latex')
 set(gca,'fontsize',12)
 set(gca,'xtick', -10:1:10)
+
