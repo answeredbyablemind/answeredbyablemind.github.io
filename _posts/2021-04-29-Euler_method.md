@@ -76,43 +76,70 @@ $$\Rightarrow f(x+1) = x + f(x) % 식 (7)$$
 즉, 식 (7)이 말하는 것은 일종의 점화식이다. 만약, $f(0)=0$이라는 초기값을 설정해보면 다음과 같이 $f(1), f(2), \cdots$을 구할 수 있다.
 
 
-$$f(1) = 0 + f(0) = 0 + 0 = 0$$
+$$f(1) = 0 + f(0) = 0 + 0 = 0 % 식 (8)$$
 
-$$f(2) = 1 + f(1) = 1+ 0 = 1$$
+$$f(2) = 1 + f(1) = 1+ 0 = 1 % 식 (9)$$
 
-$$f(3) = 2 + f(2) = 2 + 1 = 3$$
+$$f(3) = 2 + f(2) = 2 + 1 = 3 % 식 (10)$$
 
-$$f(4) = 3 + f(3) = 3 + 3 = 6$$
+$$f(4) = 3 + f(3) = 3 + 3 = 6 % 식 (11)$$
 
 $$\vdots\notag$$
 
 반대로 f(-1)과 같은 값들도 구할 수 있다. 식 (7)을 $x$를 좌변으로 옮겨 다시 써주면,
 
-$$f(x) = f(x+1) - x$$
+$$f(x) = f(x+1) - x % 식 (12)$$
 
 이므로,
 
-$$\Rightarrow f(x-1) = f(x) - (x-1)$$
+$$\Rightarrow f(x-1) = f(x) - (x-1) % 식 (13)$$
 
 이다. 따라서,
 
-$$f(-1) = f(0) - (-1) = 0 + 1 = 1$$
+$$f(-1) = f(0) - (-1) = 0 + 1 = 1 % 식 (14)$$
 
-$$f(-2) = f(-1) - (-2) = 1 + 2 = 3$$
+$$f(-2) = f(-1) - (-2) = 1 + 2 = 3  % 식 (15)$$
 
-$$f(-3) = f(-2) - (-3) = 3 + 3 = 6$$
+$$f(-3) = f(-2) - (-3) = 3 + 3 = 6  % 식 (16)$$
 
-표로 $x$와 $f(x)$의 값을 쓰면 다음과 같다.
+일부 값을 표로 정리하면 다음과 같다.
 
-$$\begin{array} {|r|r|}\hline 
-  x & -4 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & 4 & 5 & \cdots \\ \hline 
-  f(x) & 10 & 6 & 3 & 1 & 0 & 0 & 1 & 3 & 6 & 10 & \cdots \\ \hline  \end{array}$$
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic2.png">
+</p>
 
 그리고 이것을 그래프로 그리면 다음과 같다.
-
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic1.png">
   <br>
-  그림 1. 식 (7)의 점화식의 solution을 그래프에 옮긴 것
+  그림 1. 식 (7) 점화식의 solution을 그래프에 옮긴 것
+</p>
+
+## $h = 0.5$인 경우
+
+$h=0.5$라면 식 (5)는 다음과 같이 변하게 될 것이다.
+
+$$식(5)\Rightarrow \frac{f(x+0.5)-f(x)}{0.5} = x % 식 (17)$$
+
+$$\Rightarrow f(x+0.5) = 0.5x + f(x) % 식 (18)$$
+
+식 (7)과 마찬가지로 식 (18)역시도 점화식의 개념으로 생각해볼 수 있으며 $f(0)=0$이라는 초기 조건을 이용하면 $f(0.5), f(1), f(1.5)$ 등의 값을 얻을 수 있다.
+
+마찬가지로 아래와 같이 식 (18)을 조금 조정하면 $f(-0.5), f(-1)$ 등의 값 또한 얻을 수 있다.
+
+$$\Rightarrow f(x-0.5)= f(x)  - 0.5 (x-0.5) % 식 (19)$$
+
+일부 값을 표로 정리하면 아래와 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic3.png">
+</p>
+
+그리고 이것을 그래프로 그리면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic4.png">
+  <br>
+  그림 2. 식 (18) 점화식의 solution을 그래프에 옮긴 것
 </p>
