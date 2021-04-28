@@ -67,7 +67,7 @@ $$식(4) \Rightarrow \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=x % 식 (5)$$
 
 오히려 더 복잡해진 것 같다. 그런데, 여기서도 극한기호도 떼버리고 생각해보자. $h$는 매우 작아지는 값이라는 의미에서 극한 기호를 적어놓았는데, 우리는 조금 큰 $h$부터 점점 $h$를 줄여가면서 식 (5)의 의미를 생각해보자.
 
-$h=1$인 경우
+## $h=1$인 경우
 
 $$식(5)\Rightarrow f(x+1)-f(x) = x % 식 (6)$$
 
@@ -86,7 +86,33 @@ $$f(4) = 3 + f(3) = 3 + 3 = 6$$
 
 $$\vdots\notag$$
 
+반대로 f(-1)과 같은 값들도 구할 수 있다. 식 (7)을 $x$를 좌변으로 옮겨 다시 써주면,
+
+$$f(x) = f(x+1) - x$$
+
+이므로,
+
+$$\Rightarrow f(x-1) = f(x) - (x-1)$$
+
+이다. 따라서,
+
+$$f(-1) = f(0) - (-1) = 0 + 1 = 1$$
+
+$$f(-2) = f(-1) - (-2) = 1 + 2 = 3$$
+
+$$f(-3) = f(-2) - (-3) = 3 + 3 = 6$$
+
+표로 $x$와 $f(x)$의 값을 쓰면 다음과 같다.
 
 $$\begin{array} {|r|r|}\hline 
-  x & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & \cdots \\ \hline 
-  f(x) & 0 & 0 & 1 & 3 & 6 & 10 & 15 & 21 & 28 & 36 & \cdots \\ \hline  \end{array}$$
+  x & -4 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & 4 & 5 & \cdots \\ \hline 
+  f(x) & 10 & 6 & 3 & 1 & 0 & 0 & 1 & 3 & 6 & 10 & \cdots \\ \hline  \end{array}$$
+
+그리고 이것을 그래프로 그리면 다음과 같다.
+
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic1.png">
+  <br>
+  그림 1. 식 (7)의 점화식의 solution을 그래프에 옮긴 것
+</p>
