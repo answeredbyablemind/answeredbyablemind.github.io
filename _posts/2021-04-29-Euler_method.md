@@ -61,11 +61,23 @@ $$\frac{dy}{dx} = x \notag$$
 
 그런데, 식 (4)에는 미분 계수 $dy/dx$가 들어있다보니 식이 어려워 보일 수 있다. 미분 계수를 원래의 정의대로 돌려놓고 생각해보자.
 
-$y=f(x)$라고 했을 때,
+다시 말해, $y=f(x)$라고 했을 때,
 
 $$식(4) \Rightarrow \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=x % 식 (5)$$
 
-오히려 더 복잡해진 것 같다. 그런데, 여기서도 극한기호도 떼버리고 생각해보자. $h$는 매우 작아지는 값이라는 의미에서 극한 기호를 적어놓았는데, 우리는 조금 큰 $h$부터 점점 $h$를 줄여가면서 식 (5)의 의미를 생각해보자.
+와 같이 풀어 쓸 수 있다.
+
+이 식에 대해 기하학적으로 생각해보면 다음의 그림 1과 같이 생각할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic7.png">
+  <br>
+  그림 1. 미분 방정식의 기하학적 의미
+</p>
+
+다시 말해, 미분 방정식에서의 미분 계수를 통해 바로 옆 정의역의 값에 대한 함수를 예측할 수 있게 된다.
+
+이것에 대한 의미를 조금 더 생각해보기 위해 $h$가 1인 경우부터 조금씩 값을 줄여나가보자.
 
 ## $h=1$인 경우
 
@@ -113,7 +125,7 @@ $$f(-3) = f(-2) - (-3) = 3 + 3 = 6  % 식 (16)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic1.png">
   <br>
-  그림 1. 식 (7) 점화식의 solution을 그래프에 옮긴 것
+  그림 2. 식 (7) 점화식의 solution을 그래프에 옮긴 것
 </p>
 
 ## $h = 0.5$인 경우
@@ -141,7 +153,7 @@ $$\Rightarrow f(x-0.5)= f(x)  - 0.5 (x-0.5) % 식 (19)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic4.png">
   <br>
-  그림 2. 식 (18) 점화식의 solution을 그래프에 옮긴 것
+  그림 3. 식 (18) 점화식의 solution을 그래프에 옮긴 것
 </p>
 
 ## $h=0.1$인 경우
@@ -156,10 +168,10 @@ $$식(5)\Rightarrow \frac{f(x+0.1)-f(x)}{0.1} = x % 식 (20)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic5.png">
   <br>
-  그림 3. 식 (20) 점화식의 solution을 그래프에 옮긴 것
+  그림 4. 식 (20) 점화식의 solution을 그래프에 옮긴 것
 </p>
 
-## 식 (4)의 진짜 solution과 그림 1-3의 비교
+## 식 (4)의 진짜 solution과 그림 2-4의 비교
 
 그런데, 식 (4)는 다시 이렇게도 쓸 수 있는 것이다.
 
@@ -174,10 +186,10 @@ $$f(x) = \frac{1}{2}x^2$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic6.png">
   <br>
-  그림 4. 그림 1~3에서 표현된 점화식 solution과 true solution 간의 비교
+  그림 5. 그림 1~3에서 표현된 점화식 solution과 true solution 간의 비교
 </p>
 
-그림 4를 보면 $h$의 값이 작을 수록 점화식으로 계산한 solution과 true solution은 비슷한 결과를 보여준다는 것을 알 수 있다.
+그림 5를 보면 $h$의 값이 작을 수록 점화식으로 계산한 solution과 true solution은 비슷한 결과를 보여준다는 것을 알 수 있다.
 
 # Euler's method
 
@@ -188,7 +200,7 @@ $$f(x) = \frac{1}{2}x^2$$
 <p align = "center">
   <img width = "600" src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Euler_method.png">
   <br>
-  그림 5. 오일러 방법에 대한 시각적 설명
+  그림 6. 오일러 방법에 대한 시각적 설명
   <br>
   그림 출처: <a href = "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%EB%B0%A9%EB%B2%95"> 위키피디아: 오일러 방법 </a>
 </p>
