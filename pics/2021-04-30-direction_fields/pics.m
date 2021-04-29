@@ -1,15 +1,58 @@
 clear; close all; clc;
 
 dydx = @(x,y) x;
-
-fun_dirfield(dydx, -2:0.4:2, -4:0.4:4)
+fun_dirfield(dydx, -4:0.4:4, -3:0.4:3)
 grid on;
 xlabel('$$x$$','interpreter','latex');
 ylabel('$$y$$','interpreter','latex');
 title('$$\frac{dy}{dx}=x$$','interpreter','latex')
 set(gca,'fontsize',12)
-set(gcf,'position',[680, 343, 565, 635])
-xx = linspace(-2, 2, 100);
+set(gcf,'position',[680   498   622   480])
+xx = linspace(-4, 4, 100);
+
 yy = 1/2 * xx.^2;
 hold on;
-plot(xx, yy,'k','linewidth',2)
+
+plot(xx, yy,'linewidth',2,'color',[0.494, 0.184, 0.556])
+
+
+ylim([-3, 3])
+
+%% ±×¸² 2
+
+fun_dirfield(dydx, -4:0.4:4, -3:0.4:3)
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+title('$$\frac{dy}{dx}=x$$','interpreter','latex')
+set(gca,'fontsize',12)
+set(gcf,'position',[680   498   622   480])
+xx = linspace(-4, 4, 100);
+my_color = lines(6);
+ii=1;
+for i = -3:2
+    yy = 1/2 * xx.^2 + i;
+    hold on;
+    
+    plot(xx, yy,'linewidth',2,'color',my_color(ii,:))
+    ii=ii+1;
+end
+ylim([-3, 3])
+
+%%
+
+dydx = @(x,y) y./(x+eps);
+fun_dirfield(dydx, -4:0.4:4, -3:0.4:3)
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+title('$$x \frac{dy}{dx}=y$$','interpreter','latex')
+set(gca,'fontsize',12)
+set(gcf,'position',[680   498   622   480])
+
+hold on;
+
+plot(0,0,'o','markeredgecolor','r','markerfacecolor','w','linewidth',2)
+
+
+ylim([-3, 3])
