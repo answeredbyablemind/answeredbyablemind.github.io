@@ -109,6 +109,7 @@ $$식(9)\Rightarrow P(t) = P_0e^{kt} % 식 (11)$$
 <p align = "center">
   <img width = "500" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic1.png">
   <br>
+  그림 1. 페트리 디쉬 안에 있는 박테리아는 개체수에 한계가 있어 logistic growth 형태를 따라 성장해간다.
   
 </p>
 
@@ -125,10 +126,27 @@ $$식 (8) \Rightarrow \frac{dP}{dt}=kP(1-\frac{P}{N}) % 식 (12)$$
 
 이와 같은 모델의 솔루션은
 
-$$P=\frac{N}{Ce^{-kt}+1}$$
+$$P=\frac{N}{Ce^{-kt}+1} % 식 (13)$$
 
-라고 알려져 있다.
+라고 알려져 있다. (식 (13)이 식 (12)에 대한 solution임은 직접 확인해보도록 하자.)
+
+$N, C, k$에 적절한 값을 넣었을 때 그래프의 형태는 아래와 같다.
+
+아래의 그래프에서는 $N=1000$이라는 값을 넣었는데, 이것이 말하는 것은 최대 수용 인구수가 1000이라는 뜻이다. 그래서 시간이 지날 수록 인구수는 1000에 수렴한 뒤 변화가 없는 것을 알 수 있다.
 
 <p align = "center">
   <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic2.png">
+  <br>
+  그림 2. logistic growth의 예시 그래프 중 하나
 </p>
+
+# 스프링의 움직임에 관한 현상
+
+후크의 법칙이라고 알려진 스프링의 움직임에 관한 식은 다음과 같다.
+
+$$F = -kx$$
+
+여기서 음수가 붙은 것은 스프링이 늘어난 방향과 이 때 작용하는 힘의 방향이 반대라는 의미이다.
+
+이러한 관계식은 다음과 같은 현상을 관찰하여 알게된 사실을 기반으로 한다.
+
