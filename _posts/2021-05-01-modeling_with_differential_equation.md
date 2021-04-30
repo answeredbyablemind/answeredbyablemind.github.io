@@ -153,7 +153,7 @@ $$F = -kx % 식 (14)$$
 <p align = "center">
   <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic3.png">
   <br>
-  그림 3. logistic growth의 예시 그래프 중 하나
+  그림 3. 후크의 법칙 유도 과정
   <br>
   <a href ="https://ko.wikipedia.org/wiki/%ED%9B%85_%EB%B2%95%EC%B9%99"> 그림 출처: 훅 법칙 위키피디아</a>
 </p>
@@ -166,4 +166,12 @@ $$m\frac{d^2x}{dt^2}=-kx % 식 (15)$$
 
 즉, 식 (15)를 보면 후크의 법칙은 2계 미분방정식이었다는 것을 알 수 있다.
 
+이 미분방정식에 대한 solution은 다음과 같다.
 
+$$x(t) = A\cos(t) + B \sin(t) % 식 (16) $$
+
+만약 $m=1$이고 $k=1$이라고 하고, $x(0) = 0$, $x'(0) = 1$이라는 조건을 부여했을 때 식(16)은
+
+$$x(t) = sin(t) % 식 (17)$$
+
+라는 것을 알 수 있다.
