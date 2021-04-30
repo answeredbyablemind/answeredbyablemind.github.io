@@ -104,7 +104,14 @@ $$식(9)\Rightarrow P(t) = P_0e^{kt} % 식 (11)$$
 
 자원의 한계가 있기 때문이다.
 
-저금통에 들어있는 동전이 자연스럽게 개수가 많아진다고 하더라도, 저금통의 크기 이상으로는 커지기 어려울 것이다.
+페트리 디쉬에 있는 박테리아는 아무리 그 숫자가 많아지더라도 페트리 디쉬의 크기 이상을 벗어나기 힘든 것과 마찬가지이다.
+
+<p align = "center">
+  <img width = "500" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic1.png">
+  <br>
+  
+</p>
+
 
 식 (8)을 조금 수정해서 성장할 수 있는 최대치에 가까워질 수록 성장량이 더뎌지는 모델을 만들어보자.
 
@@ -121,3 +128,7 @@ $$식 (8) \Rightarrow \frac{dP}{dt}=kP(1-\frac{P}{N}) % 식 (12)$$
 $$P=\frac{N}{Ce^{-kt}+1}$$
 
 라고 알려져 있다.
+
+<p align = "center">
+  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic2.png">
+</p>
