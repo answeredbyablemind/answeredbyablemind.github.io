@@ -135,7 +135,7 @@ $N, C, k$에 적절한 값을 넣었을 때 그래프의 형태는 아래와 같
 아래의 그래프에서는 $N=1000$이라는 값을 넣었는데, 이것이 말하는 것은 최대 수용 인구수가 1000이라는 뜻이다. 그래서 시간이 지날 수록 인구수는 1000에 수렴한 뒤 변화가 없는 것을 알 수 있다.
 
 <p align = "center">
-  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic2.png">
+  <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic2.png">
   <br>
   그림 2. logistic growth의 예시 그래프 중 하나
 </p>
@@ -153,7 +153,7 @@ $$F = -kx % 식 (14)$$
 이러한 관계식은 다음과 같은 현상을 관찰하여 알게된 사실을 기반으로 한다.
 
 <p align = "center">
-  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic3.png">
+  <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic3.png">
   <br>
   그림 3. 후크의 법칙 유도 실험
   <br>
@@ -181,7 +181,7 @@ $$x(t) = \sin(t) % 식 (17)$$
 후크의 법칙으로부터 유도되는 이 움직임은 보통 undamped spring-mass system의 움직임이라고 하고 때때로 harmonic motion이라고도 불린다.
 
 <p align = "center">
-  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic4.png">
+  <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic4.png">
   <br>
   그림 4. damping이 없다고 가정한 경우의 스프링의 움직임은 sine 함수로 주어진다.
 </p>
@@ -273,7 +273,7 @@ $$식(27)\Rightarrow x(t) = e^{-t}-e^{-2t} % 식 (34)$$
 식 (34)의 경우를 그림으로 그려보면 
 
 <p align = "center">
-  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic5.png">
+  <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic5.png">
   <br>
   그림 5. spring의 힘에 비해 damping이 더 크게 주어진 경우. over-damped spring-mass system의 solution curve
 </p>
@@ -312,7 +312,7 @@ $$x(t) = \frac{1}{6}e^{-\frac{3t}{2}}\sin(6t)$$
 
 
 <p align = "center">
-  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic6.png">
+  <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-01-modeling_with_differential_equation/pic6.png">
   <br>
   그림 6. damping에 비해 spring의 힘이 더 크게 주어진 경우. under-damped spring-mass system의 solution curve
 </p>
