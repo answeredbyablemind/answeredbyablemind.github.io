@@ -1,5 +1,5 @@
 ---
-title: 방향장과 오일러 방법
+title: 변수분리법
 sidebar:
   nav: docs-ko
 aside:
