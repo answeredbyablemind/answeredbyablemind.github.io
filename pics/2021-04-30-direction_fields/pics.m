@@ -69,3 +69,25 @@ plot(0,0,'o','markeredgecolor','r','markerfacecolor','w','linewidth',2)
 
 
 ylim([-3, 3])
+
+%%
+dydx = @(x,y) x./(y-x.^2.*y+eps);
+fun_dirfield(dydx, -10:0.4:10, -10:0.4:10)
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+title('$$x \frac{dy}{dx}=y$$','interpreter','latex')
+set(gca,'fontsize',12)
+set(gcf,'position',[680   498   622   480])
+
+hold on;
+
+xx = linspace(-10, 10, 100);
+
+yy = sqrt(3-log(abs(1-xx.^2)));
+hold on;
+
+plot(xx, yy,'linewidth',2,'color',[0.494, 0.184, 0.556])
+
+
+ylim([-3, 3])
