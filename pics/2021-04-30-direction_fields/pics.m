@@ -1,5 +1,18 @@
 clear; close all; clc;
 
+%% dydx = x+y
+dydx = @(x,y) x;
+fun_dirfield(dydx, -4:0.4:4, -3:0.4:3)
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+title('$$\frac{dy}{dx}=x$$','interpreter','latex')
+set(gca,'fontsize',12)
+set(gcf,'position',[680   498   622   480])
+
+ylim([-3, 3])
+
+%%
 dydx = @(x,y) x;
 fun_dirfield(dydx, -4:0.4:4, -3:0.4:3)
 grid on;

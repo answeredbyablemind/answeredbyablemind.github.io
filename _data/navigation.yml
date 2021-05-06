@@ -151,8 +151,6 @@ docs-ko:
     children:
       - title:  미분방정식을 이용한 현상 모델링
         url:    2021/05/01/modeling_with_differential_equation.html
-      - title:  오일러 방법
-        url:    2021/04/29/Euler_method.html
       - title:  방향장(direction field)
         url:    2021/04/30/direction_fields.html
       - title:  열방정식/파동방정식의 의미
