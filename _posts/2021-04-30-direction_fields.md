@@ -71,7 +71,7 @@ $$식(2) \Rightarrow \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=x % 식 (3)$$
 이 식에 대해 기하학적으로 생각해보면 다음의 그림 2와 같이 생각할 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic7.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic7.png">
   <br>
   그림 2. 미분 방정식의 기하학적 의미
 </p>
@@ -126,7 +126,7 @@ $$f(-3) = f(-2) - (-3) = 3 + 3 = 6  % 식 (14)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic1.png">
   <br>
-  그림 2. 식 (5) 점화식의 solution을 그래프에 옮긴 것
+  그림 3. 식 (5) 점화식의 solution을 그래프에 옮긴 것
 </p>
 
 ## $h = 0.5$인 경우
@@ -154,7 +154,7 @@ $$\Rightarrow f(x-0.5)= f(x)  - 0.5 (x-0.5) % 식 (17)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic4.png">
   <br>
-  그림 3. 식 (16) 점화식의 solution을 그래프에 옮긴 것
+  그림 4. 식 (16) 점화식의 solution을 그래프에 옮긴 것
 </p>
 
 ## $h=0.1$인 경우
@@ -168,7 +168,7 @@ $$식(3)\Rightarrow \frac{f(x+0.1)-f(x)}{0.1} = x % 식 (18)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic5.png">
   <br>
-  그림 4. 식 (18) 점화식의 solution을 그래프에 옮긴 것
+  그림 5. 식 (18) 점화식의 solution을 그래프에 옮긴 것
 </p>
 
 ## 식 (2)의 진짜 solution과 그림 2-4의 비교
@@ -184,12 +184,12 @@ $$f(x) = \frac{1}{2}x^2$$
 즉, $f(x)=\frac{1}{2}x^2$가 식 (2)를 만족시키는 해라고 할 수 있는데, 이 값을 그림 2~4에서 그린 값과 비교해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic6.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-29-Euler_method/pic6.png">
   <br>
-  그림 5. 그림 2~4에서 표현된 점화식 solution과 true solution 간의 비교
+  그림 6. 그림 2~4에서 표현된 점화식 solution과 true solution 간의 비교
 </p>
 
-그림 5를 보면 $h$의 값이 작을 수록 점화식으로 계산한 solution과 true solution은 비슷한 결과를 보여준다는 것을 알 수 있다.
+그림 6를 보면 $h$의 값이 작을 수록 점화식으로 계산한 solution과 true solution은 비슷한 결과를 보여준다는 것을 알 수 있다.
 
 # Euler's method
 
@@ -200,7 +200,7 @@ $$f(x) = \frac{1}{2}x^2$$
 <p align = "center">
   <img width = "600" src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Euler_method.png">
   <br>
-  그림 6. 오일러 방법에 대한 시각적 설명
+  그림 7. 오일러 방법에 대한 시각적 설명
   <br>
   그림 출처: <a href = "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%EB%B0%A9%EB%B2%95"> 위키피디아: 오일러 방법 </a>
 </p>
@@ -237,21 +237,21 @@ $$\frac{dy}{dx}=x$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-30-direction_fields/pic1.png">
   <br>
-  그림 7. dy/dx = x에 대한 기울기장과 솔루션 중 하나인 y = 1/2 * x^2
+  그림 8. dy/dx = x에 대한 기울기장과 솔루션 중 하나인 y = 1/2 * x^2
 </p>
 
 여기서 빨간색으로 그려진 막대기가 각 $(x, y)$ 좌표에서의 기울기를 뜻한다.
 
-또 그림 7에서 보라색으로 칠해진 라인은 식 (2)의 솔루션 중 하나인 $y=1/2 x^2$을 의미한다.
+또 그림 8에서 보라색으로 칠해진 라인은 식 (2)의 솔루션 중 하나인 $y=1/2 x^2$을 의미한다.
 
-여기서 생각해봐야 할 것은 그림 7의 보라색 라인은 $y(0) = 0$이라는 초기값에 따라 결정된 line이다.
+여기서 생각해봐야 할 것은 그림 8의 보라색 라인은 $y(0) = 0$이라는 초기값에 따라 결정된 line이다.
 
 만약 초기값이 다르다면 아래의 그림과 같이 다른 솔루션을 결과값으로 내줄 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-30-direction_fields/pic2.png">
   <br>
-  그림 8. 다양한 초기값에 대한 dy/dx = x에 대한 솔루션
+  그림 9. 다양한 초기값에 대한 dy/dx = x에 대한 솔루션
 </p>
 
 # 해의 존재성과 유일성
@@ -283,5 +283,5 @@ $y'=y/x$이고 $x=0$일 때 미분계수가 정의될 수 없기 때문이다.
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-30-direction_fields/pic3.png">
   <br>
-  그림 9. xy'=y에 대한 방향장과 $y(0)=0$ 조건에서의 solution
+  그림 10. xy'=y에 대한 방향장과 $y(0)=0$ 조건에서의 solution
 </p>
