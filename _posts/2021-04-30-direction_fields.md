@@ -191,7 +191,7 @@ $$f(x) = \frac{1}{2}x^2$$
 
 그림 6를 보면 $h$의 값이 작을 수록 점화식으로 계산한 solution과 true solution은 비슷한 결과를 보여준다는 것을 알 수 있다.
 
-# Euler's method
+## 정리하면,
 
 위의 내용에서 step by step으로 설명한 방법이 오일러 방법이다[^1].
 
