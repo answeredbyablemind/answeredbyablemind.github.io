@@ -150,3 +150,8 @@ $$\therefore C = 80, k = -0.0253$$
 
 따라서, 이 물체의 온도 변화를 그래프로 그려보면 다음과 같다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-06-separable_differential_equations/pic1.png">
+  <br>
+  그림 1. 뉴턴의 냉각법칙을 적용한 물체의 냉각 현상 curve
+</p>
