@@ -136,5 +136,8 @@ $$C = -250 * 500^9=-\frac{1}{2}\times 500^{10}$$
 
 물탱크의 물은 500분 후에 가득채워질텐데 이 때 까지의 소금양에 관한 그래프를 그려보면 다음과 같을 것이다.
 
-
-
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-08-first_order_linear_equations/pic1.png">
+  <br>
+  그림 1. 물이 새는 물탱크에 소금물을 서서히 채워넣어 줄 때 물탱크 내의 소금양의 변화
+</p>
