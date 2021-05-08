@@ -293,11 +293,11 @@ $$\text{여기서 }C\text{는 적분상수}\notag$$
 
 $$\frac{d}{dx}\ln(x) = \lim_{h\rightarrow 0}\frac{\ln(x+h)-\ln(x)}{h}$$
 
-$$=\lim_{h\rightarrow 0}\frac{\ln\left(\frac{x+h}{h}\right)}{h}$$
+$$=\lim_{h\rightarrow 0}\frac{\ln\left(\frac{x+h}{x}\right)}{h}$$
 
-$$=\lim_{h\rightarrow 0}\ln\left(\frac{x+h}{h}\right)^{\frac{1}{h}}$$
+$$=\lim_{h\rightarrow 0}\ln\left(\frac{x+h}{x}\right)^{\frac{1}{h}}$$
 
-$$=\lim_{h\rightarrow 0}\ln\left(1+\frac{x}{h}\right)^{\frac{h}{x}\cdot\frac{1}{x}}$$
+$$=\lim_{h\rightarrow 0}\ln\left(1+\frac{h}{x}\right)^{\frac{x}{h}\cdot\frac{1}{x}}$$
 
 $$=\ln(e^{\frac{1}{x}})=\frac{1}{x}$$
 
