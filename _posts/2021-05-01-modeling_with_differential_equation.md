@@ -8,6 +8,8 @@ key: 20210501
 tags: 미분방정식
 ---
 
+※ 본 포스팅의 내용은 Thomas Judson의 [The ordinary differential equations project](http://faculty.sfasu.edu/judsontw/ode/)에서 많은 부분을 차용하였음을 밝힙니다.
+
 미분방정식은 방정식 안에 미분계수가 포함되어 있는 것을 말한다.
 
 이 때, 미분 계수의 미분 횟수는 1회에서 그치지 않고 여러회 반복될 수 있는데,

@@ -8,6 +8,9 @@ key: 20210506
 tags: 미분방정식
 ---
 
+※ 본 포스팅의 내용은 Thomas Judson의 [The ordinary differential equations project](http://faculty.sfasu.edu/judsontw/ode/)에서 많은 부분을 차용하였음을 밝힙니다.
+
+
 # 변수분리형 1차 미분방정식
 
 미분방정식의 주된 목적은 방정식의 해를 구하는 것이다.
