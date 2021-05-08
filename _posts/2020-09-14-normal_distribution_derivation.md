@@ -118,7 +118,7 @@ $$\Rightarrow \frac{df}{dx}(-y)f(y) + f(x)\frac{df}{dy}x = 0$$
 
 $$\Rightarrow f(x)f'(y)x = f(y)f'(x)y$$
 
-이제 이 식은 상미분방정식임이 확실히 보이는데, 변수분리 방법으로 풀어주기 위해 좌변과 우변을 $x$와 $y$에 대한 식으로만 나타내보자.
+이제 이 식은 상미분방정식임이 확실히 보이는데, [변수분리법](https://angeloyeo.github.io/2021/05/06/separable_differential_equations.html)으로 풀어주기 위해 좌변과 우변을 $x$와 $y$에 대한 식으로만 나타내보자.
 
 $$\Rightarrow \frac{xf(x)}{f'(x)}=\frac{yf(y)}{f'(y)}$$
 
