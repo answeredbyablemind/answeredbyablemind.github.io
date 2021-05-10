@@ -51,7 +51,7 @@ ylim([-3, 3])
 %% phase plane
 
 figure;
-A = [-2, 0;0, 2];
+A = [1, 0;0, 1];
 fun_dirfield_system(@(x,y) -2*x, @(x,y) 2*y,-3:0.3:3)
 
 [V,D] = eig(A);
