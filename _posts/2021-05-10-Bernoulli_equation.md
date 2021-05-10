@@ -44,7 +44,7 @@ $$\frac{du}{dt}=(1-n)x^{-n}\frac{dx}{dt} % 식(4)$$
 
 $$식(3)\Rightarrow \frac{1}{1-n}\frac{du}{dt}+p(t)u=q(t) % 식 (5)$$
 
-다시 말하면, 베르누이 방정식에 치환을 적절히 적용하면 일반적인 1차 선형미분방정식으로 바꿔줄 수 있게 된다.
+다시 말하면, 베르누이 방정식에 치환을 적절히 적용하면 일반적인 [1차 선형미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)으로 바꿔줄 수 있게 된다.
 
 # 예제
 
@@ -96,6 +96,8 @@ $$\Rightarrow \frac{u}{t} = -\int t dt + C=-\frac{1}{2}t^2+C$$
 
 $$\therefore u = -\frac{1}{2}t^3+Ct$$
 
-원래 $u=1/y$라고 하였으므로,
+원래 $u=1/x$라고 하였으므로, 
 
-$$\therefore y = \frac{1}{-0.5t^3+Ct}$$
+$$\therefore x = \frac{1}{-0.5t^3+Ct}$$
+
+이다.
