@@ -38,7 +38,27 @@ fun_dirfield_system(@(x,y) x+3*y, @(x,y) x-y,-3:0.3:3)
 line([0, V(1,1)],[0, V(2,1)])
 line([0, V(1,2)],[0, V(2,2)])
 
-dzdt = @(t,z) fun_phase_plane(z);
+dzdt = @(t,z) fun_phase_plane(z, A);
+[t, z] = ode45(dzdt, [0, 10], [1; 0]);
+hold on;
+plot(z(:,1), z(:,2))
+[t, z] = ode45(dzdt, [0, 10], [1; -2]);
+hold on;
+plot(z(:,1), z(:,2))
+xlim([-3, 3])
+ylim([-3, 3])
+
+%% phase plane
+
+figure;
+A = [-2, 0;0, 2];
+fun_dirfield_system(@(x,y) -2*x, @(x,y) 2*y,-3:0.3:3)
+
+[V,D] = eig(A);
+line([0, V(1,1)],[0, V(2,1)])
+line([0, V(1,2)],[0, V(2,2)])
+
+dzdt = @(t,z) fun_phase_plane(z, A);
 [t, z] = ode45(dzdt, [0, 10], [1; 0]);
 hold on;
 plot(z(:,1), z(:,2))
