@@ -94,10 +94,10 @@ $$식(11)\Rightarrow \frac{d}{dt}\left(\frac{u}{t}\right)=-t$$
 
 $$\Rightarrow \frac{u}{t} = -\int t dt + C=-\frac{1}{2}t^2+C$$
 
-$$\therefore u = -\frac{1}{2}t^3+Ct$$
+$$\therefore u(t) = -\frac{1}{2}t^3+Ct$$
 
 원래 $u=1/x$라고 하였으므로, 
 
-$$\therefore x = \frac{1}{-0.5t^3+Ct}$$
+$$\therefore x(t) = \frac{1}{-0.5t^3+Ct}$$
 
 이다.
