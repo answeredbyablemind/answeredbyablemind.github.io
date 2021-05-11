@@ -159,6 +159,8 @@ docs-ko:
         url:    2021/05/08/first_order_linear_equations.html
       - title:  베르누이 방정식
         url:    2021/05/10/Bernoulli_equation.html
+      - title:  선형 연립 미분방정식
+        url:    2021/05/11/modeling_with_systems.html
       - title:  열방정식/파동방정식의 의미
         url:    2019/08/29/Heat_Wave_Equation.html
       - title:  라플라스 방정식의 의미
