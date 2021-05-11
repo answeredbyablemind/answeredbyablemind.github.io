@@ -1,5 +1,5 @@
 ---
-title: 미분방정식 모델링
+title: 연립 미분방정식 모델링
 sidebar:
   nav: docs-ko
 aside:
