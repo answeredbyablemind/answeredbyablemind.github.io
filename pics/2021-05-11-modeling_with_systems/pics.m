@@ -25,6 +25,31 @@ grid on;
 legend(h, 'prey population','predator population');
 title('prey, predator populations over time');
 
+%% Prey-Predator model (logistic growth)
+figure('position',[227, 480, 1432, 420],'color','w');
+subplot(1,2,2);
+fun_dirfield_system(@(x,y) 2*x .* (1-x/10) - x.*y, @(x,y) -5*y + x.*y,0:0.2:10, 0:0.2:3)
+hold on;
+dzdt = @(t, z) fun_prey_predator_logistic(z);
+opts = odeset('Refine', 10);
+[t, z] = ode45(dzdt, [0, 10], [1; 1], opts);
+plot(z(:,1), z(:,2),'color',[0.494, 0.184, 0.556],'linewidth',2)
+
+xlabel('prey population');
+ylabel('predator population');
+title('phase plane plot (logistic growth)');
+
+subplot(1,2,1);
+clear h
+h(1) = plot(t, z(:,1),'linewidth',2);
+hold on;
+h(2) = plot(t, z(:,2),'linewidth',2);
+xlabel('time');
+ylabel('population')
+grid on;
+legend(h, 'prey population','predator population');
+title('prey, predator populations over time (logistic growth)');
+
 %% Damped pendulum
 global fig_dirfield
 
