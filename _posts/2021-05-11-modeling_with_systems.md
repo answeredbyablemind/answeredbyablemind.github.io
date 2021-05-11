@@ -83,4 +83,11 @@ $$식 (5)\Rightarrow \frac{dF}{dt}=-cF + dFR % 식 (6)$$
 $$\begin{cases}
   \frac{dR}{dt} = aR -bRF \\
   \frac{dF}{dt} = -cF + dFR
-\end{cases}$$
+\end{cases} % 식 (7)$$
+
+위의 식을 정확히 풀어 닫힌 형식으로 해(solution)을 얻어내는 방법은 아직도 알려져 있지 않다 [^1] [^2].
+
+[^1]: Exact solutions of Lotka-Volta equations, Mostafa A. Abdelkader, Mathematical Biosciences, 1974
+
+[^2]: https://math.stackexchange.com/questions/1367652/exact-solution-to-lotka-volterra-equations
+
