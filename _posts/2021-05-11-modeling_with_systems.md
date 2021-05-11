@@ -23,3 +23,6 @@ $$\begin{cases}
   \frac{dy}{dt} = g(x, y)
 \end{cases}$$
 
+
+# 포식자-피식자 방정식 (Lotka-Volterra Equation)
+

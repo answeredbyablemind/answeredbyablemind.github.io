@@ -1,13 +1,29 @@
 clear; close all; clc;
 
 %% Prey-Predator model
+figure('position',[227, 480, 1432, 420],'color','w');
+subplot(1,2,2);
 fun_dirfield_system(@(x,y) 2*x - x.*y, @(x,y) -5*y + x.*y,0:0.5:15)
 hold on;
 dzdt = @(t, z) fun_prey_predator(z);
-[t, z] = ode45(dzdt, [0, 10], [1; 1]);
-plot(z(:,1), z(:,2))
-[t, z] = ode45(dzdt, [0, 10], [2; 1]);
-plot(z(:,1), z(:,2))
+opts = odeset('Refine', 10);
+[t, z] = ode45(dzdt, [0, 10], [1; 1], opts);
+plot(z(:,1), z(:,2),'color',[0.494, 0.184, 0.556],'linewidth',2)
+
+xlabel('prey population');
+ylabel('predator population');
+title('phase plane plot');
+
+subplot(1,2,1);
+clear h
+h(1) = plot(t, z(:,1),'linewidth',2);
+hold on;
+h(2) = plot(t, z(:,2),'linewidth',2);
+xlabel('time');
+ylabel('population')
+grid on;
+legend(h, 'prey population','predator population');
+title('prey, predator populations over time');
 
 %% Damped pendulum
 global fig_dirfield
