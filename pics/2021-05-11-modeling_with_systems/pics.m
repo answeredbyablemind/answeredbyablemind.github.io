@@ -81,25 +81,42 @@ legend(h, 'susceptible','infected','removed','location','best');
 title('susceptible, infected, removed populations over time');
 
 %% Damped pendulum
-global fig_dirfield
-
-fig_dirfield = figure('position',[109, 370, 1323, 420],'color','w');
-subplot(1,2,1);
+figure('position',[109, 370, 1323, 420],'color','w');
+subplot(1,2,2);
 % fun_dirfield_system(@(x,y) y, @(x,y) -0.5*y-sin(x),-3:0.3:9, -4:0.3:4)
 fun_dirfield_system(@(x,y) y, @(x,y) -0.4*y-1.04*x,-3:0.3:3, -4:0.3:4)
 hold on;
 dzdt = @(t, z) fun_damped_pendulum(z);
 [t1, z1] = ode45(dzdt, [0, 15], [0; 2]);
-plot(z1(:,1), z1(:,2),'linewidth',2)
-% [t2, z2] = ode45(dzdt, [0, 15], [0; -2]);
-% plot(z2(:,1), z2(:,2),'linewidth',2)
-% [t3, z3] = ode45(dzdt, [0, 15], [2; 3]);
-% plot(z3(:,1), z3(:,2),'linewidth',2)
+plot(z1(:,1), z1(:,2),'linewidth',2,'color',[0.494, 0.184, 0.556])
+xlabel('position (x)');
+ylabel('velocity (x'')');
+
+subplot(1,2,1);
+clear h
+h(1) = plot(t1, z1(:,1),'linewidth',2);
+hold on;
+h(2) = plot(t1, z1(:,2),'linewidth',2);
+grid on;
+xlabel('time(s)');
+ylabel('position or velocity');
+legend(h,'position','velocity','location','best');
+
+
+%% Damped pendulum (video)
+global fig_dirfield
+
+fig_dirfield = figure('position',[109, 370, 1323, 420],'color','w');
+subplot(1,2,1);
+fun_dirfield_system(@(x,y) y, @(x,y) -0.4*y-1.04*x,-3:0.3:3, -4:0.3:4)
+hold on;
+dzdt = @(t, z) fun_damped_pendulum(z);
+[t1, z1] = ode45(dzdt, [0, 15], [0; 2]);
+plot(z1(:,1), z1(:,2),'linewidth',2,'color',[0.494, 0.184, 0.556])
 xlabel('position (x)');
 ylabel('velocity (x'')');
 
 fun_plot_pendulum(z1,'isRecording',true)
-
 %% phase plane
 
 figure;

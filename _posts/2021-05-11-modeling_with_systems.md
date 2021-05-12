@@ -21,8 +21,8 @@ $$\frac{dx}{dt}=f(t, x) % 식 (1)$$
 예를 들면, 다음과 같은 연립방정식의 형태를 이용하면 두 개의 종속변수에 대한 변화를 동시에 모델링 할 수 있다.
 
 $$\begin{cases}
-  \frac{dx}{dt} = f(x, y) \\
-  \frac{dy}{dt} = g(x, y)
+  \dfrac{dx}{dt} = f(x, y) \\\\
+  \dfrac{dy}{dt} = g(x, y)
 \end{cases} % 식 (2)$$
 
 
@@ -83,8 +83,8 @@ $$식 (5)\Rightarrow \frac{dF}{dt}=-cF + dFR % 식 (6)$$
 식 (4)와 식 (6)을 한꺼번에 이용하면 토끼와 여우의 개체수가 보여주는 밸런스를 확인할 수 있다.
 
 $$\begin{cases}
-  \frac{dR}{dt} = aR -bRF \\
-  \frac{dF}{dt} = -cF + dFR
+  \dfrac{dR}{dt} = aR -bRF \\\\
+  \dfrac{dF}{dt} = -cF + dFR
 \end{cases} % 식 (7)$$
 
 위의 식을 정확히 풀어 닫힌 형식으로 해(solution)을 얻어내는 방법은 아직도 알려져 있지 않다 [^1] [^2].
@@ -126,8 +126,8 @@ time = 2 즈음에 보면 포식자의 수가 너무 늘어날 때 쯤이 되면
 logistic growth의 식을 이용해 식 (7)에서 토끼의 개체수 성장에 관한 식을 수정해보자.
 
 $$식(7)\Rightarrow \begin{cases}
-  \frac{dR}{dt} = aR(1-\frac{R}{N}) -bRF \\
-  \frac{dF}{dt} = -cF + dFR
+  \dfrac{dR}{dt} = aR(1-\dfrac{R}{N}) -bRF \\\\
+  \dfrac{dF}{dt} = -cF + dFR
 \end{cases} % 식 (8)$$
 
 여기서 $N$은 한계 수용량이다.
@@ -150,7 +150,47 @@ $$식(7)\Rightarrow \begin{cases}
 
 연립 미분방정식의 관점을 통해 [미분방정식을 이용한 현상 모델링](https://angeloyeo.github.io/2021/05/01/modeling_with_differential_equation.html) 편에서 보았던 또 다른 내용 중 하나인 damped harmonic motion을 알아보자.
 
-dampled harmonic motion의 식은 다음과 같았다.
+damped harmonic motion의 식은 다음과 같았다.
 
 $$m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx = 0$$
 
+이 식은 2차 미분방정식이지만 다음과 같이 처리하면 2원 1차 연립미분방정식으로 고쳐쓸 수 있다.
+
+새로운 변수 $v$를 다음과 같이 설정하자.
+
+$$v = \frac{dx}{dt}$$
+
+그러면 $v$의 미분은
+
+$$\frac{dv}{dt}=\frac{d^2x}{dt^2}=-\frac{b}{m}v-kx$$
+
+이다.
+
+한편, 우리가 보고자 하는 것은 식 (7)과 유사한 것인데, 다시 말하면 좌변에는 두 변수에 대한 미분 계수가 들어가야 하고, 우변에는 두 변수에 대한 수식이 들어가는 것이다.
+
+즉, 좌변을 $x'$과 $v'$이라고 놓으면,
+
+$$
+\begin{cases}
+  \dfrac{dx}{dt} = v \\ \\
+  \dfrac{dv}{dt} = -\dfrac{b}{m}v-kx
+\end{cases}
+$$
+
+와 같이 모델링 할 수 있다.
+
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic3.png">
+  <br>
+  그림 3. 
+</p>
+
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/damped_motion.mp4">
+  </video>
+  <br>
+  그림 4.
+</p>
