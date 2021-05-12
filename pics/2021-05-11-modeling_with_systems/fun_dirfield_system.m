@@ -1,26 +1,41 @@
 function fun_dirfield_system(func_dxdt, func_dydt,xval,yval, varargin)
+% 2원 1차 미분방정식에 대한 방향장을 그려주는 함수.
+%
+% 2원 1차 미분방정식이라 함은 아래와 같은 구조를 가지는 것으로 생각함.
+%
+% dx/dt = f(x, y)
+% dy/dt = g(x, y)
+%
+% 혹은 비제차 미분방정식의 형태인 경우에는 다음과 같은 형태도 고려할 수 있음.
+% 이 경우에는 출력 plot이 animation이 됨.
+% dx/dt = f(x, y) + p(t)
+% dy/dt = g(x, y) + q(t)
+%
+% [입력]
+%
+% func_dxdt
 
 params = inputParser;
 params.CaseSensitive = false;
 params.addParameter('t', false); % nonhomogenous outforcing을 위한 용도
-params.addParameter('f', false); % nonhomogenous outforcing을 위한 용도
-params.addParameter('g', false); % nonhomogenous outforcing을 위한 용도
+params.addParameter('p', false); % nonhomogenous outforcing을 위한 용도
+params.addParameter('q', false); % nonhomogenous outforcing을 위한 용도
 
 params.parse(varargin{:});
 
 t = params.Results.t;
-f = params.Results.f;
-g = params.Results.g;
+p = params.Results.p; % particular 
+q = params.Results.q;
 
-flg_animate = false;
+h_animate = false;
 
 if any(t)
-    flg_animate = true;
-    if f == false
-       f = zeros(size(g));
+    h_animate = true;
+    if p == false
+       p = zeros(size(q));
     end
-    if g == false
-        g = zeros(size(f));
+    if q == false
+        q = zeros(size(p));
     end
     
 end
@@ -31,11 +46,7 @@ end
 
 [xm,ym]=meshgrid(xval,yval);
 
-dx = xval(2) - xval(1);
-dy = yval(2) - yval(1);
-
-
-if ~flg_animate
+if ~h_animate
     xp=feval(func_dxdt,xm,ym);
     yp=feval(func_dydt,xm,ym);
     
@@ -46,8 +57,8 @@ if ~flg_animate
 else
     
     for i_t = 1:length(t)
-        xp=feval(func_dxdt,xm,ym) + f(i_t);
-        yp=feval(func_dydt,xm,ym) + g(i_t);
+        xp=feval(func_dxdt,xm,ym) + p(i_t);
+        yp=feval(func_dydt,xm,ym) + q(i_t);
         
         s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
         

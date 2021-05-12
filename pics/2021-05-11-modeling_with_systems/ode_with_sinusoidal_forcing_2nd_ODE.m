@@ -26,7 +26,7 @@ plot(ft, x_analytic)
 tt = linspace(0, 11, 100);
 figure;
 fun_dirfield_system(@(x,y) y, @(x,y) -2 * y -17 * x, linspace(-0.5, 0.5, 20), linspace(-1, 1, 20),...
-    't',tt,'g',exp(-2*tt));
+    't',tt,'q',-2*sin(3*tt));
 
 function dzdt = myode(t, z, ft, f)
 f_val = interp1(ft, f, t);
