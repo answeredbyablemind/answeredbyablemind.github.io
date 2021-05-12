@@ -188,7 +188,7 @@ $$
 
 
 <p align = "center">
-  <video width = "auto" height = "auto" loop autoplay controls muted>
+  <video width = "100%" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/damped_motion.mp4">
   </video>
   <br>
