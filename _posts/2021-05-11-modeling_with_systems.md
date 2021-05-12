@@ -8,6 +8,8 @@ key: 20210511
 tags: 미분방정식
 ---
 
+※ 본 포스팅의 내용은 Thomas Judson의 [The ordinary differential equations project](http://faculty.sfasu.edu/judsontw/ode/)에서 많은 부분을 차용하였음을 밝힙니다.
+
 지금까지의 미분방정식에 대한 논의는 주로 1차 미분방정식에 관한 것이었다.
 
 그것도, 1차 1원 미분방정식으로 1원이라는 것은 미분계수가 계산되는 변수가 하나라는 뜻이다. 가령 $t$가 독립변수라고 했을 때, 종속변수는 $x$하나인 경우로 일반적인 식은 다음과 같았다.
@@ -112,4 +114,30 @@ time = 2 즈음에 보면 포식자의 수가 너무 늘어날 때 쯤이 되면
 처음에는 피식자의 수만 증가하다가 서서히 포식자가 늘어나면서 피식자가 감소하는 것을 볼 수 있다. 
 
 포식자-피식자 모델은 이렇듯 포식자-피식자 간의 개체수가 시간에 따라 어떻게 변하는지를 보여주고 있는 모델이라고 할 수 있다.
+
+# 한계 수용량이 정해진 포식자-피식자 모델
+
+이번에는 앞서 확인한 포식자-피식자 모델을 살짝 수정하여 한계 수용량이 있는 경우의 모델을 살펴보자.
+
+이 내용은 [미분방정식을 이용한 현상 모델링](https://angeloyeo.github.io/2021/05/01/modeling_with_differential_equation.html)에서 보았던 logistic growth의 맥락을 그대로 차용한 것이다.
+
+다시 말해, 이번 모델에서는 토끼가 먹을 수 있는 풀의 양이 한정적이라는 것이다. 무한히 넓게 펼쳐진 초원이 아닌 한정된 양의 풀이 있는 초원에서 토끼가 성장하게 되면 토끼의 성장량은 한계가 있을 수 밖에 없다.
+
+logistic growth의 식을 이용해 식 (7)에서 토끼의 개체수 성장에 관한 식을 수정해보자.
+
+$$식(7)\Rightarrow \begin{cases}
+  \frac{dR}{dt} = aR(1-\frac{R}{N}) -bRF \\
+  \frac{dF}{dt} = -cF + dFR
+\end{cases} % 식 (8)$$
+
+여기서 $N$은 한계 수용량이다.
+
+앞선 분석에서와 마찬가지로 $a=2, b= 1, c = 5, d = 1$로 하고, $N=10$으로 했을 때의 solution curve를 그려보면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic1.png">
+  <br>
+  그림 2. 한계 수용량이 정해진 포식자-피식자 모델의 solution curve 중 하나
+</p>
+
 
