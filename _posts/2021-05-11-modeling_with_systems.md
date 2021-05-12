@@ -145,3 +145,12 @@ $$식(7)\Rightarrow \begin{cases}
 이것은 그림 2의 오른쪽의 phase plot을 보면 더 확실히 보이는데, 대략 prey:predator 의 비율이 5:1 정도인 지점으로 값이 solution이 수렴하게 된다는 걸 알 수 있다.
 
 거기다, 그림 2의 오른쪽에서 볼 수 있듯이 한계 수용량이 정해진 경우의 포식자-피식자 모델에서는 5:1 비율의 주변 값에서는 어떤 초기 조건으로부터 출발하더라도 5:1 비율로 개체수가 수렴하게 되는 것을 볼 수 있다.
+
+# Damped harmonic motion
+
+연립 미분방정식의 관점을 통해 [미분방정식을 이용한 현상 모델링](https://angeloyeo.github.io/2021/05/01/modeling_with_differential_equation.html) 편에서 보았던 또 다른 내용 중 하나인 damped harmonic motion을 알아보자.
+
+dampled harmonic motion의 식은 다음과 같았다.
+
+$$m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx = 0$$
+
