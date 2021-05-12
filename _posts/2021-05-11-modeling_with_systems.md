@@ -135,9 +135,13 @@ $$식(7)\Rightarrow \begin{cases}
 앞선 분석에서와 마찬가지로 $a=2, b= 1, c = 5, d = 1$로 하고, $N=10$으로 했을 때의 solution curve를 그려보면 다음과 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic2.png">
   <br>
   그림 2. 한계 수용량이 정해진 포식자-피식자 모델의 solution curve 중 하나
 </p>
 
+그림 2의 왼쪽을 보면 각 개체의 개체수가 각각이 수렴하는 값이 있는 것을 볼 수 있다.
 
+이것은 그림 2의 오른쪽의 phase plot을 보면 더 확실히 보이는데, 대략 prey:predator 의 비율이 5:1 정도인 지점으로 값이 solution이 수렴하게 된다는 걸 알 수 있다.
+
+거기다, 그림 2의 오른쪽에서 볼 수 있듯이 한계 수용량이 정해진 경우의 포식자-피식자 모델에서는 5:1 비율의 주변 값에서는 어떤 초기 조건으로부터 출발하더라도 5:1 비율로 개체수가 수렴하게 되는 것을 볼 수 있다.
