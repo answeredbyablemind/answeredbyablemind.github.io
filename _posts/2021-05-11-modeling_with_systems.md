@@ -197,7 +197,5 @@ phase plane에서 시간에 따른 위치의 변화를 진자운동 애니메이
   그림 4. damped harmonic motion (underdamped)의 phase plane과 진자 운동으로 표현한 animation
 </p>
 
-위의 애니메이션을 보면 알 수 있듯이 underdamped harmonic motion의 진자 움직임은 진동이 서서히 느려지되, harmonic motion의 힘만큼 강하게 damping이 된 것이 아니다 보니
-
-여러 주기를 반복해가면서 서서히 느려지는 경우에 대해 모델링 한 것이라고 할 수 있다.
+위의 애니메이션을 보면 알 수 있듯이 진자 움직임은 진동이 서서히 느려지되, harmonic motion의 힘만큼 강하게 damping이 된 것이 아니다 보니 여러 주기를 반복해가면서 서서히 느려지는 경우에 대해 모델링 한 것이라고 할 수 있다.
 
