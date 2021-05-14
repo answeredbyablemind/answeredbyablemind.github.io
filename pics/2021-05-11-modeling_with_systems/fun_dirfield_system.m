@@ -20,12 +20,14 @@ params.CaseSensitive = false;
 params.addParameter('t', false); % nonhomogenous outforcing을 위한 용도
 params.addParameter('p', false); % nonhomogenous outforcing을 위한 용도
 params.addParameter('q', false); % nonhomogenous outforcing을 위한 용도
+params.addParameter('color', 0.5 * ones(1,3)); % nonhomogenous outforcing을 위한 용도
 
 params.parse(varargin{:});
 
 t = params.Results.t;
 p = params.Results.p; % particular 
 q = params.Results.q;
+arrow_color = params.Results.color;
 
 h_animate = false;
 
@@ -52,7 +54,7 @@ if ~h_animate
     
     s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
     
-    quiver(xval,yval,xp./s,yp./s, 0.5,'color',0.5 * ones(1,3));
+    quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
     axis tight;
 else
     
@@ -62,7 +64,7 @@ else
         
         s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
         
-        quiver(xval,yval,xp./s,yp./s, 0.5,'color',0.5 * ones(1,3));
+        quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
         axis tight;
         hold on;
         XLIMs = xlim;

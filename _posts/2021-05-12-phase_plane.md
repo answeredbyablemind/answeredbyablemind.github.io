@@ -21,4 +21,7 @@ $$\begin{cases}
 
 다시 말해, $(x, y)$에서의 기울기 $dy/dx$는
 
-$$\frac{dy}{dx}=\ddfrac{\frac{dy}{dt}}{\frac{dx}{dt}}$$
+$$\frac{dy}{dx}=\frac{dy/dt}{dx/dt}$$
+
+와 같이 계산할 수 있다는 점을 감안하면 모든 $(x, y)$에서 기울기를 계산해 그려줄 수 있다.
+
