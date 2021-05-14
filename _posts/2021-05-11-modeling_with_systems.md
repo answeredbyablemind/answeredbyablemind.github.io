@@ -179,18 +179,25 @@ $$
 
 와 같이 모델링 할 수 있다.
 
+여기서 $b/m$을 0.4, $k$를 1.04라 두고, 초기값을 $x=0$, $x' = 2$로 두었을 때 solution curve와 phase plane은 아래의 그림과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic3.png">
   <br>
-  그림 3. 
+  그림 3. damped harmonic motion (underdamped)의 solution curve와 phase plane
 </p>
 
+phase plane에서 시간에 따른 위치의 변화를 진자운동 애니메이션으로 표현하면 아래와 같이도 볼 수 있다.
 
 <p align = "center">
   <video width = "100%" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/damped_motion.mp4">
   </video>
   <br>
-  그림 4.
+  그림 4. damped harmonic motion (underdamped)의 phase plane과 진자 운동으로 표현한 animation
 </p>
+
+위의 애니메이션을 보면 알 수 있듯이 underdamped harmonic motion의 진자 움직임은 진동이 서서히 느려지되, harmonic motion의 힘만큼 강하게 damping이 된 것이 아니다 보니
+
+여러 주기를 반복해가면서 서서히 느려지는 경우에 대해 모델링 한 것이라고 할 수 있다.
+
