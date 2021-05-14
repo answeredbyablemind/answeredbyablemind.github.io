@@ -15,7 +15,7 @@ tags: 미분방정식
 $$\begin{cases}
   \dfrac{dx}{dt} = f(x, y) \\\\
   \dfrac{dy}{dt} = g(x, y)
-\end{cases} % 식 (2)$$
+\end{cases} % 식 (1)$$
 
 위상 평면은 2차원(혹은 3차원) 실수 평면에서 모든 점 $(x, y)$에 대한 기울기를 평면에 표현할 수 있다는 사실을 바탕으로 그릴 수 있다.
 
@@ -24,4 +24,13 @@ $$\begin{cases}
 $$\frac{dy}{dx}=\frac{dy/dt}{dx/dt}$$
 
 와 같이 계산할 수 있다는 점을 감안하면 모든 $(x, y)$에서 기울기를 계산해 그려줄 수 있다.
+
+가장 기본적인 2원 1차 미분방정식은 다음과 같은 것인데,
+
+$$\begin{cases}
+  \dfrac{dx}{dt} = x \\\\
+  \dfrac{dy}{dt} = y
+\end{cases} % 식 (2)$$
+
+식 (2)의 phase plane을 그리면 다음과 같다.
 
