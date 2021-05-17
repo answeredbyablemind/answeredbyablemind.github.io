@@ -99,28 +99,68 @@ $$\begin{cases}
 
 $$\begin{bmatrix}dx/dt\\dy/dt \end{bmatrix} = \begin{bmatrix}a_{11} && a_{12} \\ a_{21} && a_{22}\end{bmatrix} \begin{bmatrix}x\\y\end{bmatrix}=A \begin{bmatrix}x\\y\end{bmatrix} % 식(4)$$
 
-여기서 $\vec{x} = \begin{bmatrix} x\\y \end{bmatrix}$라고 하면
+여기서 $\vec{x} = \begin{bmatrix} x, y \end{bmatrix}^T$라고 하면
 
 $$\frac{d}{dt}\vec{x}=A\vec{x} % 식 (5)$$
 
 와 같은 관계로 식 (1)을 다시 써볼 수도 있을 것이다.
-
-그렇다면 위의 식 (4) 혹은 식 (5)에서 행렬이 갖는 의미는 무엇일까?
-
-우리는 식 (5)를 조금 더 분해해 생각해봄으로써 행렬이 가져다주는 의미에 대해 생각해볼 수 있다.
-
-식 (5)의 좌변은 미분계수가 들어있는데, 미분은 결국 변화율에 관한 내용이다. 다시 말해, 지금 시점($t$)의 값과 바로 다음 시점($t+dt$)의 값의 차이에 관한 설명이라는 뜻이다.
-
-또, 식 (5)의 우변에는 행렬이 들어있고, 이 행렬은 우변의 $\vec{x}=\begin{bmatrix} x\\y \end{bmatrix}$를 어떻게 계산해 줄 것인가에 대한 얘기가 들어있다.
-
-즉, 식 (5)가 말해주는 것은 임의의 $\vec{x}$에 대해 지금 시점 $t$와 바로 다음 시점 $t+dt$에서의 벡터 값 변화에 대한 것이다.
-
 
 ## 행렬이 작동하는 변환 시각화
 
 위상 평면을 이해할 때, 행렬이 작동하는 방식은 선형 변환이라기 보다는 계산을 위한 계수를 넣어둔 것에 더 가깝다.
 
 하지만, 식 (5)에서 행렬 $A$가 단위행렬일 때와 임의의 행렬일 때를 비교하면 어떤 식으로 계산이 이루어지게 되어 지금의 위상평면을 획득하게 되었는지를 시각화 할 수는 있을 것이다.
+
+### positive & negative real eigenvalues
+
+<p align = "center">
+  <video width = "560" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case1.mp4">
+  </video>
+  <br>
+  그림 4. 
+</p>
+
+### two positive eigenvalues
+
+<p align = "center">
+  <video width = "560" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case2.mp4">
+  </video>
+  <br>
+  그림 4. 
+</p>
+
+
+### two negative eigenvalues
+
+<p align = "center">
+  <video width = "560" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case3.mp4">
+  </video>
+  <br>
+  그림 4. 
+</p>
+
+### complex eigenvalues
+
+<p align = "center">
+  <video width = "560" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case4.mp4">
+  </video>
+  <br>
+  그림 4. 
+</p>
+
+### repeated eigenvalues
+
+<p align = "center">
+  <video width = "560" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case5.mp4">
+  </video>
+  <br>
+  그림 4. 
+</p>
 
 ## 고유값, 고유벡터의 의미
 

@@ -97,7 +97,7 @@ my_color = parula(n_iter);
 
 for i_iter = 1:n_iter
     temp = A * x0;
-    dxdt = temp(1); 
+    dxdt = temp(1);
     dydt = temp(2);
     
     delta = 0.5;
@@ -159,51 +159,87 @@ ylim([-3, 3])
 
 %% phase plane with linear transformation
 
-figure();
-
-A_final = [1, 2; 3, 2]; % a matrix with real eigenvalues
-% A_final = [-3, 1; -2, -1]; % complex eigenvalue
-% A_final = [0, 2; -2, 0]; % circle
-% A_final = [-1/10, 1;-1, -1/10]; % inward spiral
-% A_final = [-1, 1;0, -1]; % repeated eigenvalues 1
-% A_final = [5, 1;-4, 1]; % repeated eigenvalues 2
-n_step = 100;
-for i_step = 1:n_step
-    A_step = (A_final - eye(2)) / n_step;
+h_record = true;
+for i_matrix = 1:5
+    matrix2choose = i_matrix;
     
-    A = eye(2) + A_step * i_step;
+    switch matrix2choose
+        case 1
+            A_final = [1, 2; 3, 2]; % one positive, one negative eigenvalue (real ones)
+        case 2
+            A_final = [2, 0; 0, 3]; % two positive eigenvalues
+        case 3
+            A_final = [-2, 0; 0, -3]; % two negative eigenvalues
+        case 4
+            A_final = [-3, 1; -2, -1]; % complex eigenvalues
+        case 5
+            A_final = [-1, 1;0, -1]; % repeated eigenvalues
+    end
     
-    fun_dirfield_system(@(x,y) A(1,1)*x+A(1,2)*y, @(x,y) A(2,1) * x+ A(2,2) * y, -3:0.3:3)
-%     title([num2str(i_step),'/',num2str(n_step)]);
-    xlim([-3, 3])
-    ylim([-3, 3])
-    hold on;
+    if h_record
+        newVid = VideoWriter(['phase_plane_case',num2str(matrix2choose)],'MPEG-4');
+        
+        newVid.FrameRate = 20;
+        newVid.Quality = 100;
+        open(newVid);
+    end
     
-    [V,D] = eig(A);
-    
-    if sum(abs(imag(V(:))))==0
-        xx = linspace(-3,3,100);
-        yy1 = V(2,1)/(V(1,1)+eps) * xx;
-        yy2 = V(2,2)/(V(1,2)+eps) * xx;
-
-        plot(xx, yy1,'color','k','linewidth',2);
-        plot(xx, yy2,'color','k','linewidth',2);
-
-        my_color = lines(2);
-        for i = 1:2
-            mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+    figure('color','w');
+    n_step = 100;
+    for i_step = 1:n_step
+        A_step = (A_final - eye(2)) / n_step;
+        
+        A = eye(2) + A_step * i_step;
+        
+        fun_dirfield_system(@(x,y) A(1,1)*x+A(1,2)*y, @(x,y) A(2,1) * x+ A(2,2) * y, -3:0.3:3)
+        %     title([num2str(i_step),'/',num2str(n_step)]);
+        xlim([-3, 3])
+        ylim([-3, 3])
+        hold on;
+        
+        [V,D] = eig(A);
+        
+        if sum(abs(imag(V(:))))==0
+            xx = linspace(-3,3,100);
+            yy1 = V(2,1)/(V(1,1)+eps) * xx;
+            yy2 = V(2,2)/(V(1,2)+eps) * xx;
+            
+            plot(xx, yy1,'color','k','linewidth',2);
+            plot(xx, yy2,'color','k','linewidth',2);
+            
+            my_color = lines(2);
+            for i = 1:2
+                mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+            end
+        end
+        %
+        %     dzdt = @(t,z) fun_phase_plane(z, A);
+        %     opts = odeset('Refine',10);
+        %     [t, z] = ode45(dzdt, [0, 10], [1; 0],opts);
+        %     hold on;
+        %     plot(z(:,1), z(:,2),'linewidth',2)
+        %
+        xlabel('$$x$$','interpreter','latex');
+        ylabel('$$y$$','interpreter','latex');
+        if h_record
+            writeVideo(newVid, getframe(gcf));
+        end
+        
+        drawnow;
+        
+        if i_step < n_step
+            cla;
         end
     end
-% 
-%     dzdt = @(t,z) fun_phase_plane(z, A);
-%     opts = odeset('Refine',10);
-%     [t, z] = ode45(dzdt, [0, 10], [1; 0],opts);
-%     hold on;
-%     plot(z(:,1), z(:,2),'linewidth',2)
-%     
-    drawnow;
     
-    if i_step < n_step
-        cla;
+    for i = 1:10
+        if h_record
+            writeVideo(newVid, getframe(gcf));
+        end
     end
+    
+    if h_record
+        close(newVid)
+    end
+    
 end
