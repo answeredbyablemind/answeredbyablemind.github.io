@@ -59,8 +59,8 @@ if ~h_animate
 else
     
     for i_t = 1:length(t)
-        xp=feval(func_dxdt,xm,ym) + p(i_t);
-        yp=feval(func_dydt,xm,ym) + q(i_t);
+        xp=feval(func_dxdt,xm,ym) - p(i_t);
+        yp=feval(func_dydt,xm,ym) - q(i_t);
         
         s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
         

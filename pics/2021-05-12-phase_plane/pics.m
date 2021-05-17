@@ -34,6 +34,41 @@ ylim([-3, 3])
 xlabel('$$x$$','interpreter','latex');
 ylabel('$$y$$','interpreter','latex');
 
+%% 가장 기본적인 phase plane (2)
+
+figure;
+A = [0, 1;1, 0];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+[V,D]= eig(A);
+
+hold on;
+
+xx = linspace(-3,3,100);
+yy1 = V(1,1)/(V(2,1)+eps) * xx;
+yy2 = V(1,2)/(V(2,2)+eps) * xx;
+
+plot(xx, yy1,'color','k','linewidth',2);
+plot(xx, yy2,'color','k','linewidth',2);
+
+my_color = lines(2);
+for i = 1:2
+    mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+end
+
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+%% 가장 기본적인 phase plane + cosine & sine
+
+figure;
+A = [1, 0;0, 1];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3,...
+    't',linspace(0, 4*pi, 100),'p',cos(linspace(0,4*pi,100)),'q',sin(linspace(0,4*pi,100)))
+
 %% phase plane
 
 figure;
