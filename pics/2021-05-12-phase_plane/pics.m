@@ -62,6 +62,53 @@ ylim([-3, 3])
 xlabel('$$x$$','interpreter','latex');
 ylabel('$$y$$','interpreter','latex');
 
+%% A = [0, 1;1, 0]이라는 행렬에서 Euler Method 접목시켜보기
+
+figure;
+A = [0, 1;1, 0];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+[V,D]= eig(A);
+
+hold on;
+
+xx = linspace(-3,3,100);
+yy1 = V(1,1)/(V(2,1)+eps) * xx;
+yy2 = V(1,2)/(V(2,2)+eps) * xx;
+
+plot(xx, yy1,'color','k','linewidth',2);
+plot(xx, yy2,'color','k','linewidth',2);
+
+my_color = lines(2);
+for i = 1:2
+    mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+end
+
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+% 첫 스타트 포인트
+x0 = [2; -1];
+n_iter = 20;
+my_color = jet(n_iter);
+
+for i_iter = 1:n_iter
+    temp = A * x0;
+    dxdt = temp(1); 
+    dydt = temp(2);
+    
+    delta = 0.1;
+    
+    % 화살표 하나 그어주기
+    quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',my_color(i_iter,:),'linewidth',2)
+    
+    x0(1) = x0(1) + dxdt * delta;
+    x0(2) = x0(2) + dydt * delta;
+end
+
 %% 가장 기본적인 phase plane + cosine & sine
 
 figure;
