@@ -109,57 +109,109 @@ $$\frac{d}{dt}\vec{x}=A\vec{x} % 식 (5)$$
 
 위상 평면을 이해할 때, 행렬이 작동하는 방식은 선형 변환이라기 보다는 계산을 위한 계수를 넣어둔 것에 더 가깝다.
 
-하지만, 식 (5)에서 행렬 $A$가 단위행렬일 때와 임의의 행렬일 때를 비교하면 어떤 식으로 계산이 이루어지게 되어 지금의 위상평면을 획득하게 되었는지를 시각화 할 수는 있을 것이다.
+하지만, 식 (5)에서 행렬 $A$가 단위행렬일 때와 임의의 주어진 행렬일 때를 비교하면 어떤 식으로 계산이 이루어지게 되어 지금의 위상평면을 획득하게 되었는지를 시각화 할 수 있을 것이다.
+
+또한 이 과정에서 위상 평면을 분석할 때 행렬 $A$의 고유값, 고유벡터의 역할에 대해 좀 더 시각적으로 이해할 수 있게 된다.
 
 ### positive & negative real eigenvalues
+
+$$\begin{bmatrix}1 && 2 \\ 3 && 2 \end{bmatrix}$$
+
+고유값:
+
+$$ \lambda = -1, 4$$
+
+고유벡터:
+
+$$\begin{bmatrix} -0.707 \\ 0.707 \end{bmatrix}, \begin{bmatrix}-0.555 \\ -0.832\end{bmatrix}$$
 
 <p align = "center">
   <video width = "560" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case1.mp4">
   </video>
   <br>
-  그림 4. 
+  그림 4. 양수, 음수인 고유값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### two positive eigenvalues
+
+$$\begin{bmatrix}2 && 0 \\ 0 && 3 \end{bmatrix}$$
+
+고유값:
+
+$$ \lambda = 2, 3$$
+
+고유벡터:
+
+$$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1\end{bmatrix}$$
 
 <p align = "center">
   <video width = "560" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case2.mp4">
   </video>
   <br>
-  그림 4. 
+  그림 5. 두 양수 고유값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 
 ### two negative eigenvalues
+
+$$\begin{bmatrix}-2 && 0 \\ 0 && -3 \end{bmatrix}$$
+
+고유값:
+
+$$ \lambda = -3, -2$$
+
+고유벡터:
+
+$$\begin{bmatrix} 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 0\end{bmatrix}$$
 
 <p align = "center">
   <video width = "560" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case3.mp4">
   </video>
   <br>
-  그림 4. 
+  그림 6. 두 음수 고유값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### complex eigenvalues
+
+$$\begin{bmatrix}-3 && 1 \\ -2 && -1 \end{bmatrix}$$
+
+고유값:
+
+$$ \lambda = -2+i, -2-i$$
+
+고유벡터:
+
+$$\begin{bmatrix} 0.408 - 0.408i \\ 0.817 \end{bmatrix}, \begin{bmatrix} 0.408+0.408i \\ 0.817 \end{bmatrix}$$
 
 <p align = "center">
   <video width = "560" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case4.mp4">
   </video>
   <br>
-  그림 4. 
+  그림 6. 두 복소 고유값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### repeated eigenvalues
+
+$$\begin{bmatrix}-1 && 1 \\ 0 && -1 \end{bmatrix}$$
+
+고유값:
+
+$$ \lambda = -1\text{(중근)}$$
+
+고유벡터:
+
+$$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \end{bmatrix}$$
 
 <p align = "center">
   <video width = "560" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case5.mp4">
   </video>
   <br>
-  그림 4. 
+  그림 7. 두 중근 고유값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ## 고유값, 고유벡터의 의미
