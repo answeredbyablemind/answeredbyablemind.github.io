@@ -9,7 +9,7 @@ tags: 미분방정식
 ---
 
 <p align = "center">
-  <iframe width= "110%" height = "650" src = "https://mathlets.org/javascript/build/vectorFields.html" frameborder = "0"></iframe>
+  <iframe width= "101%" height = "650" src = "https://mathlets.org/javascript/build/vectorFields.html" frameborder = "0"></iframe>
   <br>
   a, b, c, d 값을 조정해가며 phase plane의 변화를 확인해보자.
   <br>
