@@ -10,7 +10,7 @@ tags: 미분방정식
 
 
 <p align = "center">
-  <iframe width= "110%" height = "650" src = "https://mathlets.org/javascript/build/linPhasePorMatrix.html" frameborder = "0"></iframe>
+  <iframe width= "101%" height = "650" src = "https://mathlets.org/javascript/build/linPhasePorMatrix.html" frameborder = "0"></iframe>
   <br>
   Trace-Determinant plane 상의 점들에 매칭되는 phase plane
   <br>
