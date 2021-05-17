@@ -92,15 +92,15 @@ ylabel('$$y$$','interpreter','latex');
 
 % 첫 스타트 포인트
 x0 = [2; -1];
-n_iter = 20;
-my_color = jet(n_iter);
+n_iter = 5;
+my_color = parula(n_iter);
 
 for i_iter = 1:n_iter
     temp = A * x0;
     dxdt = temp(1); 
     dydt = temp(2);
     
-    delta = 0.1;
+    delta = 0.5;
     
     % 화살표 하나 그어주기
     quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',my_color(i_iter,:),'linewidth',2)
