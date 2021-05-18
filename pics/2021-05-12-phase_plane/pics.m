@@ -78,10 +78,10 @@ yy2 = V(1,2)/(V(2,2)+eps) * xx;
 plot(xx, yy1,'color','k','linewidth',2);
 plot(xx, yy2,'color','k','linewidth',2);
 
-my_color = lines(2);
-for i = 1:2
-    mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
-end
+% my_color = lines(2);
+% for i = 1:2
+%     mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+% end
 
 
 xlim([-3, 3])
@@ -93,7 +93,7 @@ ylabel('$$y$$','interpreter','latex');
 % 첫 스타트 포인트
 x0 = [2; -1];
 n_iter = 5;
-my_color = parula(n_iter);
+my_color = lines(n_iter);
 
 for i_iter = 1:n_iter
     temp = A * x0;
@@ -103,8 +103,9 @@ for i_iter = 1:n_iter
     delta = 0.5;
     
     % 화살표 하나 그어주기
-    quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',my_color(i_iter,:),'linewidth',2)
+    quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',my_color(i_iter,:),'linewidth',2,'maxheadsize',1)
     
+    plot(x0(1), x0(2),'o','markerfacecolor','r','markeredgecolor','k')
     x0(1) = x0(1) + dxdt * delta;
     x0(2) = x0(2) + dydt * delta;
 end
@@ -159,7 +160,7 @@ ylim([-3, 3])
 
 %% phase plane with linear transformation
 
-h_record = true;
+h_record = false;
 for i_matrix = 1:5
     matrix2choose = i_matrix;
     
