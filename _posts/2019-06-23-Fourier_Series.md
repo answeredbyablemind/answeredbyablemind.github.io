@@ -254,7 +254,7 @@ $$
 $$
 
 $$
-\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}  dt\right)
+\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}\right)dt
 $$
 
 ***
@@ -272,7 +272,7 @@ $$
 <center> where </center>
 
 $$
-a_k = \frac{1}{T}\int_{0}^{T} x(t)exp\left(j \frac{2\pi k}{T} t\right) dt
+a_k = \frac{1}{T}\int_{0}^{T} x(t)exp\left(-j \frac{2\pi k}{T} t\right) dt
 $$
 
 은 수학적으로 타당한 것이다.
