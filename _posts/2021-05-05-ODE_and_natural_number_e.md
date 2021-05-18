@@ -15,7 +15,7 @@ tags: 미분방정식
 * [자연상수 e의 의미](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)
 * [방향장과 오일러 방법](https://angeloyeo.github.io/2021/04/30/direction_fields.html)
 
-#
+# ㅁㅁ
 
 미분방정식의 alpha와 omega는 연속 성장임.
 
