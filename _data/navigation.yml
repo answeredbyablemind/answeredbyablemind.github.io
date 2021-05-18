@@ -153,6 +153,8 @@ docs-ko:
         url:    2021/05/01/modeling_with_differential_equation.html
       - title:  방향장과 오일러 방법
         url:    2021/04/30/direction_fields.html
+      - title:  미분방정식과 자연상수 e
+        url:    2021/05/05/ODE_and_natural_number_e.html
       - title:  변수분리법
         url:    2021/05/06/separable_differential_equations.html
       - title:  1차 선형 미분방정식
