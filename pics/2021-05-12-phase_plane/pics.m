@@ -9,15 +9,16 @@ addpath('D:\angeloyeo.github.io\pics\');
 %% 가장 기본적인 phase plane
 
 figure;
-A = [1, 0;0, 1];
+% A = [1, 0;0, 1];
+A = [0, 1;10, -3]
 fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
 [V,D]= eig(A);
 
 hold on;
 
 xx = linspace(-3,3,100);
-yy1 = V(1,1)/(V(2,1)+eps) * xx;
-yy2 = V(1,2)/(V(2,2)+eps) * xx;
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
 
 plot(xx, yy1,'color','k','linewidth',2);
 plot(xx, yy2,'color','k','linewidth',2);
@@ -44,8 +45,8 @@ fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) *
 hold on;
 
 xx = linspace(-3,3,100);
-yy1 = V(1,1)/(V(2,1)+eps) * xx;
-yy2 = V(1,2)/(V(2,2)+eps) * xx;
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
 
 plot(xx, yy1,'color','k','linewidth',2);
 plot(xx, yy2,'color','k','linewidth',2);
@@ -72,8 +73,8 @@ fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) *
 hold on;
 
 xx = linspace(-3,3,100);
-yy1 = V(1,1)/(V(2,1)+eps) * xx;
-yy2 = V(1,2)/(V(2,2)+eps) * xx;
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
 
 plot(xx, yy1,'color','k','linewidth',2);
 plot(xx, yy2,'color','k','linewidth',2);
@@ -110,53 +111,68 @@ for i_iter = 1:n_iter
     x0(2) = x0(2) + dydt * delta;
 end
 
-%% 가장 기본적인 phase plane + cosine & sine
+
+%% A = [0, 1;1, 0]이라는 행렬에서 Euler Method 접목시켜보기
+
+figure;
+A = [0, 1;1, 0];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+[V,D]= eig(A);
+
+hold on;
+
+xx = linspace(-3,3,100);
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
+
+plot(xx, yy1,'color','k','linewidth',2);
+plot(xx, yy2,'color','k','linewidth',2);
+
+% my_color = lines(2);
+% for i = 1:2
+%     mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+% end
+
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+% 첫 스타트 포인트 여러개로
+x0s = [...
+    2, -1;
+    -1.5, 1;
+    2, -2.5;
+    -2, 2.5]';
+
+for i_x0 = 1:size(x0s, 2)
+    x0 = x0s(:,i_x0);
+    n_iter = 5;
+    my_color = lines(n_iter);
+    
+    for i_iter = 1:n_iter
+        temp = A * x0;
+        dxdt = temp(1);
+        dydt = temp(2);
+        
+        delta = 0.5;
+        
+        % 화살표 하나 그어주기
+        quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',my_color(i_iter,:),'linewidth',2,'maxheadsize',1)
+        
+        plot(x0(1), x0(2),'o','markerfacecolor','r','markeredgecolor','k')
+        x0(1) = x0(1) + dxdt * delta;
+        x0(2) = x0(2) + dydt * delta;
+    end
+end
+%% 가장 기본적인 phase plane + cosine & sine --> 비제차 미분방정식 쪽으로 넘길 내용
 
 figure;
 A = [1, 0;0, 1];
 fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3,...
     't',linspace(0, 4*pi, 100),'p',cos(linspace(0,4*pi,100)),'q',sin(linspace(0,4*pi,100)))
-
-%% phase plane
-
-figure;
-A = [1, 3;1, -1];
-fun_dirfield_system(@(x,y) x+3*y, @(x,y) x-y,-3:0.3:3)
-
-[V,D] = eig(A);
-line([0, V(1,1)],[0, V(2,1)])
-line([0, V(1,2)],[0, V(2,2)])
-
-dzdt = @(t,z) fun_phase_plane(z, A);
-[t, z] = ode45(dzdt, [0, 10], [1; 0]);
-hold on;
-plot(z(:,1), z(:,2))
-[t, z] = ode45(dzdt, [0, 10], [1; -2]);
-hold on;
-plot(z(:,1), z(:,2))
-xlim([-3, 3])
-ylim([-3, 3])
-
-%% phase plane
-
-figure;
-A = [-2, 0;0, 2];
-fun_dirfield_system(@(x,y) -2*x, @(x,y) 2*y,-3:0.3:3)
-
-[V,D] = eig(A);
-line([0, V(1,1)],[0, V(2,1)])
-line([0, V(1,2)],[0, V(2,2)])
-
-dzdt = @(t,z) fun_phase_plane(z, A);
-[t, z] = ode45(dzdt, [0, 10], [1; 0]);
-hold on;
-plot(z(:,1), z(:,2))
-[t, z] = ode45(dzdt, [0, 10], [1; -2]);
-hold on;
-plot(z(:,1), z(:,2))
-xlim([-3, 3])
-ylim([-3, 3])
-
 
 %% phase plane with linear transformation
 
@@ -244,3 +260,17 @@ for i_matrix = 1:5
     end
     
 end
+
+%% complex eigenvalue에 대한 고찰
+A = [-2, 6;-3, 4];
+close all;
+figure;
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3);
+
+[V,D] = eig(A);
+
+real(D(1,1))
+t = linspace(0,1,100);
+hold on;
+val = exp(t).*exp(3i*t);
+plot(real(val),imag(val),'o')
