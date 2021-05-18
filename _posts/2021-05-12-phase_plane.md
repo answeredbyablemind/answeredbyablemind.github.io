@@ -17,6 +17,12 @@ tags: 미분방정식
   <a href = "https://mathlets.org/mathlets/vector-fields/">https://mathlets.org/mathlets/vector-fields/</a>
 </p>
 
+# Prerequisites
+
+위상 평면에 대한 내용을 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
+
+* [자연상수 e의 의미](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)
+
 # 위상 평면 소개
 
 2원 1차 미분방정식이나 2차 미분방정식을 해석할 때 위상평면을 이용한 해석은 미분방정식의 해의 특성을 파악하는데 굉장히 중요한 역할을 한다.
@@ -126,9 +132,15 @@ $$\frac{d}{dt}v=Av % 식 (5)$$
 
 즉, $Av$는 지금 주어진 $v = [x0, y0]^T$가 다음 번 시간 스텝에서는 어디로 이동할지에 관한 계산이다.
 
-그럼 $AAv$는 어떨까? 이것은 주어진 $v =[x0, y0]^T$가 두 번째 시간 스텝에서는 어디로 이동할지를 나타낸다.
+그리고 그 다음번 타임스텝은 새로 이동한 점으로부터 $A$를 곱해 새로 이동할 좌표를 계산하면 된다.
 
-같은 방식으로 주어진 점으로부터 여러 번 타임 스텝 뒤에는 어디로 점이 이동할지 생각해보면 다음과 같은 방식으로 시각화 할 수 있다.
+이러한 방식으로 주어진 점으로부터 여러 번 타임 스텝 뒤에는 어디로 점이 이동할지 생각해보자.
+
+행렬 $A$가 아래와 같을 때,
+
+$$A=\begin{bmatrix}0 && 1 \\ 1 && 0 \end{bmatrix}$$
+
+다음과 같은 방식으로 (2, -1)이라는 점으로부터 $\Delta t = 0.5$로 설정한 상태에서 여러번 시간 스텝 진행에 따른 $(x, y)$ 좌표의 위치를 그려보면 아래와 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic4.png">
@@ -147,6 +159,26 @@ $$\frac{d}{dt}v=Av % 식 (5)$$
   <br>
   그림 5. 임의의 네 개의 점에서부터 시작해 $\Delta t = 0.5$ 인 경우에 5회 이동해 본 경로
 </p>
+
+네 개의 포인트 중 어떤 경우더라도 검은색 라인으로 붙게 되는 것을 볼 수 있다.
+
+검은색 라인은 행렬 $A$의 [고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)를 방향으로 하는 직선 두 개이다.
+
+그럼 왜 매번 행렬 $A$를 곱해서 새로운 좌표를 찾아 갈 때마다 고유벡터를 따라갈까?
+
+(작성 중...)
+
+
+
+이 행렬의 고유벡터는 다음과 같다.
+
+$$v_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1 \end{bmatrix}$$
+
+$$v_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\1 \end{bmatrix}$$
+
+또, 각 고유벡터에 대응되는 고윳값은 다음과 같다.
+
+$$\lambda_1 = -1,\quad \lambda_2 = 1$$
 
 ## 행렬이 작동하는 변환 시각화
 

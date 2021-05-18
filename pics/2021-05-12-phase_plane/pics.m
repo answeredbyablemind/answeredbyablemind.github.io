@@ -11,6 +11,7 @@ addpath('D:\angeloyeo.github.io\pics\');
 figure;
 % A = [1, 0;0, 1];
 A = [0, 1;10, -3]
+
 fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
 [V,D]= eig(A);
 
@@ -260,17 +261,3 @@ for i_matrix = 1:5
     end
     
 end
-
-%% complex eigenvalue에 대한 고찰
-A = [-2, 6;-3, 4];
-close all;
-figure;
-fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3);
-
-[V,D] = eig(A);
-
-real(D(1,1))
-t = linspace(0,1,100);
-hold on;
-val = exp(t).*exp(3i*t);
-plot(real(val),imag(val),'o')
