@@ -1,8 +1,8 @@
 ---
-title: 블로그사용방법
+title: 블로그 사용법
 aside:
   toc: false
-key: 20191002
+key: 20190102
 ---
 
 <center>
