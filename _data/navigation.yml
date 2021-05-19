@@ -17,6 +17,11 @@ header:
     url: /archive.html
 
   - titles:
+      ko      : &KO       블로그 사용법
+      ko-KR   : *KO
+    url: 2019/01/02/how_to_use_blog.html
+
+  - titles:
       en      : &EN       About
       en-GB   : *EN
       en-US   : *EN
