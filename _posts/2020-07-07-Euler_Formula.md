@@ -131,8 +131,11 @@ $n$이 커지면 커질 수록 1과 $1/n$을 밑변고 높이로 하는 직각 �
 $n$이 커질 수록 반지름이 1이고, 길이가 1인 호(arc) 위의 점에 가까워지는 것을 알 수 있다.
 
 <p align = "center">
-  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/various_n_Euler_discretely.gif">
-  <br> 그림 6. 식 (6)에서 n이 커질 수록 식 (6)의 값은 반지름이 1이고 길이가 1인 호(arc) 위의 점을 의미한다.
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/various_n_Euler_discretely.mp4">
+  </video>
+  <br>
+  그림 6. 식 (6)에서 n이 커질 수록 식 (6)의 값은 반지름이 1이고 길이가 1인 호(arc) 위의 점을 의미한다.
 </p>
 
 따라서 최종적으로 식 (6)이 의미하는 것은 무엇인가?

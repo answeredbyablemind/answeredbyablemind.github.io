@@ -1,20 +1,9 @@
 header:
+
   - titles:
-      en      : &EN       Archive
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  归档
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  歸檔
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       아카이브
+      ko      : &KO       블로그 사용법
       ko-KR   : *KO
-    url: /archive.html
+    url: 2019/01/02/how_to_use_blog.html
 
   - titles:
       en      : &EN       About
@@ -29,7 +18,7 @@ header:
       zh-Hant : &ZH_HANT  關於
       zh-TW   : *ZH_HANT
       zh-HK   : *ZH_HANT
-      ko      : &KO       소개
+      ko      : &KO       저자 소개
       ko-KR   : *KO
     url: /about.html
     

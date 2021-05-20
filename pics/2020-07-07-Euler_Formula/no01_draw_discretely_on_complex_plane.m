@@ -39,7 +39,7 @@ open(v);
 clear F
 
 n = 100;
-figure;
+figure('color','w');
 
 for i = 1:n
     
