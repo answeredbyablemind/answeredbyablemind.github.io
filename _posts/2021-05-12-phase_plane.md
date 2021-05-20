@@ -124,9 +124,7 @@ $$\frac{d}{dt}v=Av % 식 (5)$$
 
 ## 미분방정식 시스템에서 고윳값, 고유벡터의 의미
 
-위에서 언급했던 내용에 따라 손으로 위상 평면 상의 기울기 벡터를 하나라도 그려봤다면, 위상 평면의 행렬이 작동하는 방식은 [선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)이라기 보다는 계산을 위한 계수를 넣어둔 것에 더 가깝다는 것을 알 수 있을 것이다.
-
-여기서 행렬이 선형변환의 의미를 크게 가지지 않는다면 행렬을 가지고 우리가 알 수 있는 정보는 어떤 것이 있을까?
+식 (5)를 보면 미분방정식 시스템은 행렬을 이용해 표현할 수 있다는 것을 알 수 있다. 여기서 주어진 행렬을 통해 우리가 알 수 있는 정보는 어떤 것이 있을까?
 
 식 (5)에서 우리는 우변의 $Av$에 주목해보자. 
 
@@ -204,7 +202,7 @@ $$\begin{bmatrix} -0.707 \\ 0.707 \end{bmatrix}, \begin{bmatrix}-0.555 \\ -0.832
 
 <p align = "center">
   <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case1.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case1.mp4">
   </video>
   <br>
   그림 4. 양수, 음수인 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
@@ -223,8 +221,8 @@ $$ \lambda = 2, 3$$
 $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case2.mp4">
+  <video width = "1090" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case2.mp4">
   </video>
   <br>
   그림 5. 두 양수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
@@ -244,8 +242,8 @@ $$ \lambda = -3, -2$$
 $$\begin{bmatrix} 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 0\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case3.mp4">
+  <video width = "1090" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case3.mp4">
   </video>
   <br>
   그림 6. 두 음수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
@@ -264,8 +262,8 @@ $$ \lambda = -2+i, -2-i$$
 $$\begin{bmatrix} 0.408 - 0.408i \\ 0.817 \end{bmatrix}, \begin{bmatrix} 0.408+0.408i \\ 0.817 \end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case4.mp4">
+  <video width = "1090" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case4.mp4">
   </video>
   <br>
   그림 6. 두 복소 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
@@ -284,8 +282,8 @@ $$ \lambda = -1\text{(중근)}$$
 $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case5.mp4">
+  <video width = "1090" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case5.mp4">
   </video>
   <br>
   그림 7. 두 중근 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시

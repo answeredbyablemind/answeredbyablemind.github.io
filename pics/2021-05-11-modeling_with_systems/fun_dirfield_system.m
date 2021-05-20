@@ -21,6 +21,9 @@ params.addParameter('t', false); % nonhomogenous outforcing을 위한 용도
 params.addParameter('p', false); % nonhomogenous outforcing을 위한 용도
 params.addParameter('q', false); % nonhomogenous outforcing을 위한 용도
 params.addParameter('color', 0.5 * ones(1,3)); % nonhomogenous outforcing을 위한 용도
+params.addParameter('stream',false)
+params.addParameter('record',false)
+params.addParameter('filename','default_name')
 
 params.parse(varargin{:});
 
@@ -28,11 +31,14 @@ t = params.Results.t;
 p = params.Results.p; % particular 
 q = params.Results.q;
 arrow_color = params.Results.color;
+h_stream = params.Results.stream;
+h_record = params.Results.record;
+filename = params.Results.filename;
 
-h_animate = false;
+h_nonhomogeneous = false;
 
 if any(t)
-    h_animate = true;
+    h_nonhomogeneous = true;
     if p == false
        p = zeros(size(q));
     end
@@ -48,7 +54,16 @@ end
 
 [xm,ym]=meshgrid(xval,yval);
 
-if ~h_animate
+
+if h_record
+    newVid = VideoWriter(filename,'MPEG-4');
+    
+    newVid.FrameRate = 20;
+    newVid.Quality = 100;
+    open(newVid);
+end
+
+if ~h_nonhomogeneous
     xp=feval(func_dxdt,xm,ym);
     yp=feval(func_dydt,xm,ym);
     
@@ -56,6 +71,20 @@ if ~h_animate
     
     quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
     axis tight;
+    xlabel('$$x$$','interpreter','latex');
+    ylabel('$$y$$','interpreter','latex');
+        
+    if h_stream
+        [verts,averts] = streamslice(xval,yval,xp./(s+eps),yp./(s+eps));
+        sl = streamline([verts averts]);
+
+        iverts = interpstreamspeed(xval,yval,xp./(s+eps),yp./(s+eps),verts,0.03);
+        [~,M] = streamparticlesMod(iverts,100,'Animate',1,'FrameRate',newVid.FrameRate,'Markersize',5);
+    end
+    if h_record
+        writeVideo(newVid, M);
+        close(newVid)
+    end
 else
     
     for i_t = 1:length(t)
@@ -65,6 +94,9 @@ else
         s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
         
         quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
+        xlabel('$$x$$','interpreter','latex');
+        ylabel('$$y$$','interpreter','latex');
+        
         axis tight;
         hold on;
         XLIMs = xlim;
