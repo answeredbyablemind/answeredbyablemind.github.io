@@ -205,6 +205,23 @@ $$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 \frac{1}{\sqrt{2}}\begin{bmatrix}
 
 $$=c_1 \begin{bmatrix}-1\\1 \end{bmatrix} e^{-t} +c_2 \begin{bmatrix}1\\1 \end{bmatrix} e^{t}$$
 
+거기다 만약 $t=0$일 때 $(2, -1)$이라는 점을 통과하는 경우라고 하면 솔루션 커브는 아래와 같다.
+
+$$\begin{bmatrix}2\\ -1 \end{bmatrix} = c_1\begin{bmatrix}-1 \\ 1\end{bmatrix}+c_2\begin{bmatrix}1 \\ 1\end{bmatrix}$$
+
+$$\therefore c_1 = -\frac{3}{2},\quad c_2 = \frac{1}{2}$$
+
+$$\therefore \begin{bmatrix}x(t) \\y(t) \end{bmatrix}=-\frac{3}{2}\begin{bmatrix}-1\\1 \end{bmatrix} \exp(-t) +\frac{1}{2}\begin{bmatrix}1\\1 \end{bmatrix} \exp(t) $$
+
+그림으로 표현하면 아래와 같이 표현할 수도 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic6.png">
+  <br>
+  그림 6. 식 x의 solution curve
+</p>
+
+
 ## 행렬이 작동하는 변환 시각화
 
 위상 평면을 분석할 때 행렬 $A$의 고윳값, 고유벡터의 역할에 대해 좀 더 시각적으로 이해할 수 있게 된다.

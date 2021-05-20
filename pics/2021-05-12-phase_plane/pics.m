@@ -116,7 +116,46 @@ for i_iter = 1:n_iter
     x0(2) = x0(2) + dydt * delta;
 end
 
+%% A = [0, 1;1, 0]이라는 행렬에서 solution까지
 
+figure;
+A = [0, 1;1, 0];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+[V,D]= eig(A);
+
+hold on;
+
+xx = linspace(-3,3,100);
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
+
+plot(xx, yy1,'color','k','linewidth',2);
+plot(xx, yy2,'color','k','linewidth',2);
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+% 첫 스타트 포인트
+
+% Analytic Solution
+t = 0:1/100:10;
+z = -3/2*[-1;1].*exp(-t) + 1/2 * [1;1].*exp(t);
+plot(z(1,:), z(2,:),'linewidth',2,'color','r')
+axis square
+t2plot = find(ismember(t, 0:0.3:10));
+my_color = lines(length(t2plot));
+for i_t2plot = 1:length(t2plot)
+    plot(z(1,t2plot(i_t2plot)), z(2,t2plot(i_t2plot)),'o','markerfacecolor',my_color(i_t2plot,:),'markeredgecolor',ones(1,3) * 0.4,'markersize',10,'linewidth',2)
+end
+% Numerical Solution
+% x0 = [2; -1];
+% clear z
+% dzdt = @(t, z) my_difeq(z);
+% [t, z] = ode45(dzdt, [0, 10], x0, odeset('RelTol', 1e-3, 'AbsTol', 1e-3,'Refine',10));
+% plot(z(:,1), z(:,2),'b--','linewidth',2)
 %% A = [0, 1;1, 0]이라는 행렬에서 Euler Method 접목시켜보기
 
 figure;
