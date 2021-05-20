@@ -201,7 +201,7 @@ $$ \lambda = -1, 4$$
 $$\begin{bmatrix} -0.707 \\ 0.707 \end{bmatrix}, \begin{bmatrix}-0.555 \\ -0.832\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
+  <video width = "700" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case1.mp4">
   </video>
   <br>
@@ -221,7 +221,7 @@ $$ \lambda = 2, 3$$
 $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "1090" height = "auto" loop autoplay controls muted>
+  <video width = "700" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case2.mp4">
   </video>
   <br>
@@ -242,7 +242,7 @@ $$ \lambda = -3, -2$$
 $$\begin{bmatrix} 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 0\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "1090" height = "auto" loop autoplay controls muted>
+  <video width = "700" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case3.mp4">
   </video>
   <br>
@@ -262,7 +262,7 @@ $$ \lambda = -2+i, -2-i$$
 $$\begin{bmatrix} 0.408 - 0.408i \\ 0.817 \end{bmatrix}, \begin{bmatrix} 0.408+0.408i \\ 0.817 \end{bmatrix}$$
 
 <p align = "center">
-  <video width = "1090" height = "auto" loop autoplay controls muted>
+  <video width = "700" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case4.mp4">
   </video>
   <br>
@@ -282,7 +282,7 @@ $$ \lambda = -1\text{(중근)}$$
 $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \end{bmatrix}$$
 
 <p align = "center">
-  <video width = "1090" height = "auto" loop autoplay controls muted>
+  <video width = "700" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case5.mp4">
   </video>
   <br>
