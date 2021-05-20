@@ -211,14 +211,14 @@ $$\begin{bmatrix}2\\ -1 \end{bmatrix} = c_1\begin{bmatrix}-1 \\ 1\end{bmatrix}+c
 
 $$\therefore c_1 = -\frac{3}{2},\quad c_2 = \frac{1}{2}$$
 
-$$\therefore \begin{bmatrix}x(t) \\y(t) \end{bmatrix}=-\frac{3}{2}\begin{bmatrix}-1\\1 \end{bmatrix} \exp(-t) +\frac{1}{2}\begin{bmatrix}1\\1 \end{bmatrix} \exp(t) $$
+$$\therefore \begin{bmatrix}x(t) \\y(t) \end{bmatrix}=-\frac{3}{2}\begin{bmatrix}-1\\1 \end{bmatrix} e^{-t} +\frac{1}{2}\begin{bmatrix}1\\1 \end{bmatrix} e^{t} $$
 
-그림으로 표현하면 아래와 같이 표현할 수도 있다.
+이 식은 매개변수 $t$로 표현된 곡선의 방정식이며, 그림으로 표현하면 아래와 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic6.png">
   <br>
-  그림 6. 식 x의 solution curve
+  그림 6. 식 (16)의 곡선을 그림으로 표현한 것
 </p>
 
 
