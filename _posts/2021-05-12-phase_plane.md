@@ -243,7 +243,7 @@ $$\begin{bmatrix} -0.707 \\ 0.707 \end{bmatrix}, \begin{bmatrix}-0.555 \\ -0.832
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case1.mp4">
   </video>
   <br>
-  그림 4. 양수, 음수인 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 7. 양수, 음수인 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### two positive eigenvalues
@@ -263,7 +263,7 @@ $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1\end{bmatrix}$$
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case2.mp4">
   </video>
   <br>
-  그림 5. 두 양수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 8. 두 양수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 
@@ -284,7 +284,7 @@ $$\begin{bmatrix} 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 0\end{bmatrix}$$
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case3.mp4">
   </video>
   <br>
-  그림 6. 두 음수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 9. 두 음수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### complex eigenvalues
@@ -304,7 +304,7 @@ $$\begin{bmatrix} 0.408 - 0.408i \\ 0.817 \end{bmatrix}, \begin{bmatrix} 0.408+0
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case4.mp4">
   </video>
   <br>
-  그림 6. 두 복소 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 10. 두 복소 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### repeated eigenvalues
@@ -324,5 +324,5 @@ $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \end{bmatrix}$$
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case5.mp4">
   </video>
   <br>
-  그림 7. 두 중근 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 11. 두 중근 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
