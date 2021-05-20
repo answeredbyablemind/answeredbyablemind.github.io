@@ -70,7 +70,7 @@ if ~h_nonhomogeneous
     s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
     
     quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
-    axis tight;
+    axis square;
     xlabel('$$x$$','interpreter','latex');
     ylabel('$$y$$','interpreter','latex');
         

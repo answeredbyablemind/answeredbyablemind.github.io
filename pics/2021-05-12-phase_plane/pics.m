@@ -9,8 +9,8 @@ addpath('D:\angeloyeo.github.io\pics\');
 %% 가장 기본적인 phase plane
 
 figure;
-% A = [1, 0;0, 1];
-A = [0, 1;10, -3]
+A = [1, 0;0, 1];
+% A = [0, 1;10, -3]
 
 fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
 [V,D]= eig(A);
@@ -33,8 +33,7 @@ end
 xlim([-3, 3])
 ylim([-3, 3])
 
-xlabel('$$x$$','interpreter','latex');
-ylabel('$$y$$','interpreter','latex');
+axis square
 
 %% 가장 기본적인 phase plane (2)
 
@@ -62,10 +61,8 @@ end
 xlim([-3, 3])
 ylim([-3, 3])
 
-xlabel('$$x$$','interpreter','latex');
-ylabel('$$y$$','interpreter','latex');
-
-fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3, 'stream',true,'record', true)
+axis square
+% fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3, 'stream',true,'record', true)
 
 
 %% A = [0, 1;1, 0]이라는 행렬에서 Euler Method 접목시켜보기
