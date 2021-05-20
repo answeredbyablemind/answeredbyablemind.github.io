@@ -54,11 +54,11 @@ end
 
 [xm,ym]=meshgrid(xval,yval);
 
-
+framerate = 20;
 if h_record
     newVid = VideoWriter(filename,'MPEG-4');
     
-    newVid.FrameRate = 20;
+    newVid.FrameRate = framerate;
     newVid.Quality = 100;
     open(newVid);
 end
@@ -75,14 +75,14 @@ if ~h_nonhomogeneous
     ylabel('$$y$$','interpreter','latex');
         
     if h_stream
-        [verts,averts] = streamslice(xval,yval,xp./(s+eps),yp./(s+eps));
+        [verts,averts] = streamslice(xval,yval,xp,yp);
         sl = streamline([verts averts]);
 
-        iverts = interpstreamspeed(xval,yval,xp./(s+eps),yp./(s+eps),verts,0.03);
-        [~,M] = streamparticlesMod(iverts,100,'Animate',1,'FrameRate',newVid.FrameRate,'Markersize',5);
+        iverts = interpstreamspeed(xval,yval,xp,yp,verts,0.02);
+        [~,M] = streamparticlesMod(iverts,100,'Animate',3,'FrameRate',framerate,'Markersize',5);
     end
     if h_record
-        writeVideo(newVid, M);
+        writeVideo(newVid, repmat(M, 1, 5));
         close(newVid)
     end
 else
