@@ -22,6 +22,7 @@ tags: 미분방정식
 위상 평면에 대한 내용을 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
 * [자연상수 e의 의미](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)
+* [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 * [복소 고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2020/11/02/complex_eigen.html)
 
@@ -124,9 +125,7 @@ $$\frac{d}{dt}v=Av % 식 (5)$$
 
 ## 미분방정식 시스템에서 고윳값, 고유벡터의 의미
 
-위에서 언급했던 내용에 따라 손으로 위상 평면 상의 기울기 벡터를 하나라도 그려봤다면, 위상 평면의 행렬이 작동하는 방식은 [선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)이라기 보다는 계산을 위한 계수를 넣어둔 것에 더 가깝다는 것을 알 수 있을 것이다.
-
-여기서 행렬이 선형변환의 의미를 크게 가지지 않는다면 행렬을 가지고 우리가 알 수 있는 정보는 어떤 것이 있을까?
+식 (5)를 보면 미분방정식 시스템은 행렬을 이용해 표현할 수 있다는 것을 알 수 있다. 여기서 주어진 행렬을 통해 우리가 알 수 있는 정보는 어떤 것이 있을까?
 
 식 (5)에서 우리는 우변의 $Av$에 주목해보자. 
 
@@ -140,7 +139,7 @@ $$\frac{d}{dt}v=Av % 식 (5)$$
 
 행렬 $A$가 아래와 같을 때,
 
-$$A=\begin{bmatrix}0 && 1 \\ 1 && 0 \end{bmatrix}$$
+$$A=\begin{bmatrix}0 && 1 \\ 1 && 0 \end{bmatrix} % 식 (6)$$
 
 다음과 같은 방식으로 (2, -1)이라는 점으로부터 $\Delta t = 0.5$로 설정한 상태에서 여러번 시간 스텝 진행에 따른 $(x, y)$ 좌표의 위치를 그려보면 아래와 같다.
 
@@ -150,7 +149,7 @@ $$A=\begin{bmatrix}0 && 1 \\ 1 && 0 \end{bmatrix}$$
   그림 4. (2, -1)이라는 점으로부터 시작해 $\Delta t = 0.5$ 인 경우에 5회 이동해 본 경로
 </p>
 
-위의 그림 4를 보면 (2, -1)에서 $A$를 곱해가면서 계산이 진행됨에 따라 검은색 라인에 붙어가려는 경향을 보이는 것을 알 수 있다.
+위의 그림 4를 보면 (2, -1)에서 $A$를 곱해가면서 계산이 진행됨에 따라 한쪽 검은색 라인을 따라 0에 가까워지고 다른 한쪽 검은색 라인을 따라 0에서 멀어지는 것을 볼 수 있다.
 
 이러한 결과는 비단 (2, -1)에서 뿐만 아니라 이 평면 위의 어떤 점을 잡더라도 비슷한 경향을 보이게 된다는 것을 알 수 있다.
 
@@ -162,19 +161,15 @@ $$A=\begin{bmatrix}0 && 1 \\ 1 && 0 \end{bmatrix}$$
   그림 5. 임의의 네 개의 점에서부터 시작해 $\Delta t = 0.5$ 인 경우에 5회 이동해 본 경로
 </p>
 
-네 개의 포인트 중 어떤 경우더라도 검은색 라인으로 붙게 되는 것을 볼 수 있다.
+네 개의 포인트 중 어떤 경우더라도 한쪽 검은색 라인을 따라 원점에 가까워지고 다른 한쪽 검은색 라인을 따라 원점에서 멀어지는 것을 볼 수 있다.
 
-검은색 라인은 행렬 $A$의 [고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)를 방향으로 하는 직선 두 개이다.
+그렇다면 우리가 생각해야 하는 것은 검은색 라인은 무엇이고, 어떤 경우에 원점에 가까워지고 어떤 경우에는 원점에서 멀어지려고 할까?
 
-그럼 왜 매번 행렬 $A$를 곱해서 새로운 좌표를 찾아 갈 때마다 고유벡터를 따라갈까?
+두 검은색 라인은 행렬 $A$의 [고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html) 방향의 두 직선이다.
 
-왜냐면 **행렬 $A$가 가해주는 변환은 고유벡터 상에서는 변화가 고유벡터 방향으로 상수배만큼 움직이지만 다른 벡터에서는 그렇지 않고 방향이 변하기 때문이다.**
+또, 각 고유벡터에 대응되는 고윳값이 음수인 경우 시간이 지남에 따라 원점에 가까워지려 하고 대응되는 고윳값이 양수인 경우 원점에서 멀어지려고 한다.
 
-그래서 고유벡터는 행렬 $A$를 통해 변하게 된 위상 평면의 새로운 축으로 작동하게 된다.
-
-
-
-이 행렬의 고유벡터는 다음과 같다.
+실제 식 (6)의 행렬 $A$의 고유벡터는 다음과 같다.
 
 $$v_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1 \end{bmatrix}$$
 
@@ -184,11 +179,52 @@ $$v_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\1 \end{bmatrix}$$
 
 $$\lambda_1 = -1,\quad \lambda_2 = 1$$
 
+따라서, 그림 4 혹은 그림 5에서 볼 수 있는 것 처럼 매번 새로운 좌표를 찾아갈 때 마다 $v_1$을 따라서는 원점에 가까워지고 $v_2$를 따라서는 원점에서 멀어지려고 한다는 것을 확인할 수 있다.
+
+그럼 왜 매번 행렬 $A$를 곱해서 새로운 좌표를 찾아 갈 때마다 고유벡터를 따라 변화가 일어날까?
+
+왜냐면 **행렬 $A$가 가해주는 변환은 고유벡터 상에서는 변화가 고유벡터 방향으로 상수배만큼 움직이지만 다른 벡터에서는 그렇지 않고 방향이 변하기 때문이다.**
+
+그래서 고유벡터는 행렬 $A$를 통해 변하게 된 위상 평면 상 변화의 **새로운 축**으로 작동하게 된다.
+
+그렇다면 고윳값의 의미는 무엇일까? 고윳값의 부호는 해당 고유벡터 축에서 원점으로 가까워질지 멀어질지를 결정해주는 요소였다고 하면, 고윳값의 크기는 얼마나 빨리 원점으로 가까워질지 멀어질지를 결정해주는 요소다.
+
+## 2원 1차 미분방정식의 해
+
+[미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 것 처럼 우리는 매번 다음번 좌표를 정할 때 마다 현재 결과물을 바탕으로 성장하므로 좌표의 이동은 연속성장을 이용해 표현할 수 있다. 따라서 자연상수 $e$를 이용해서 좌표의 변화를 표현하는 것은 연속성장의 의미를 담는 것이므로 자연스러운 표현방법이라 할 수 있다.
+
+그리고 [자연상수 위의 승수의 역할이 바로 성장 속도](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)와 관련된 것이므로 자연상수 $e$의 지수에 고윳값을 이용함으로써 성장 속도를 표현할 수 있을 것이다.
+
+또, 주어진 행렬 $A$에 대해 행렬 $A$의 고유벡터를 따라 좌표평면 상에서 변화가 일어나므로, 연립 미분방정식의 일반해는 다음과 같이 서술하면 충분할 것이다.
+
+$$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 v_1 \exp(\lambda_1 t) +c_2 v_2 \exp(\lambda_2 t) $$
+
+따라서, 식 (6)의 행렬로 쓸 수 있는 연립 미분방정식이라면 그 해는 다음과 같을 것이다.
+
+$$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 \frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1 \end{bmatrix} \exp(-t) +c_2 \frac{1}{\sqrt{2}}\begin{bmatrix}1\\1 \end{bmatrix} \exp(t) $$
+
+$$=c_1 \begin{bmatrix}-1\\1 \end{bmatrix} e^{-t} +c_2 \begin{bmatrix}1\\1 \end{bmatrix} e^{t}$$
+
+거기다 만약 $t=0$일 때 $(2, -1)$이라는 점을 통과하는 경우라고 하면 솔루션 커브는 아래와 같다.
+
+$$\begin{bmatrix}2\\ -1 \end{bmatrix} = c_1\begin{bmatrix}-1 \\ 1\end{bmatrix}+c_2\begin{bmatrix}1 \\ 1\end{bmatrix}$$
+
+$$\therefore c_1 = -\frac{3}{2},\quad c_2 = \frac{1}{2}$$
+
+$$\therefore \begin{bmatrix}x(t) \\y(t) \end{bmatrix}=-\frac{3}{2}\begin{bmatrix}-1\\1 \end{bmatrix} e^{-t} +\frac{1}{2}\begin{bmatrix}1\\1 \end{bmatrix} e^{t} $$
+
+이 식은 매개변수 $t$로 표현된 곡선의 방정식이며, 그림으로 표현하면 아래와 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic6.png">
+  <br>
+  그림 6. 식 (16)의 곡선을 그림으로 표현한 것
+</p>
+
+
 ## 행렬이 작동하는 변환 시각화
 
-식 (5)에서 행렬 $A$가 단위행렬일 때와 임의의 주어진 행렬일 때를 비교하면 어떤 식으로 계산이 이루어지게 되어 지금의 위상평면을 획득하게 되었는지를 시각화 할 수 있을 것이다.
-
-또한 이 과정에서 위상 평면을 분석할 때 행렬 $A$의 고윳값, 고유벡터의 역할에 대해 좀 더 시각적으로 이해할 수 있게 된다.
+위상 평면을 분석할 때 행렬 $A$의 고윳값, 고유벡터의 역할에 대해 좀 더 시각적으로 이해할 수 있게 된다.
 
 ### positive & negative real eigenvalues
 
@@ -203,11 +239,11 @@ $$ \lambda = -1, 4$$
 $$\begin{bmatrix} -0.707 \\ 0.707 \end{bmatrix}, \begin{bmatrix}-0.555 \\ -0.832\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case1.mp4">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case1.mp4">
   </video>
   <br>
-  그림 4. 양수, 음수인 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 7. 양수, 음수인 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### two positive eigenvalues
@@ -223,11 +259,11 @@ $$ \lambda = 2, 3$$
 $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case2.mp4">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case2.mp4">
   </video>
   <br>
-  그림 5. 두 양수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 8. 두 양수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 
@@ -244,11 +280,11 @@ $$ \lambda = -3, -2$$
 $$\begin{bmatrix} 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 0\end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case3.mp4">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case3.mp4">
   </video>
   <br>
-  그림 6. 두 음수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 9. 두 음수 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### complex eigenvalues
@@ -264,11 +300,11 @@ $$ \lambda = -2+i, -2-i$$
 $$\begin{bmatrix} 0.408 - 0.408i \\ 0.817 \end{bmatrix}, \begin{bmatrix} 0.408+0.408i \\ 0.817 \end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case4.mp4">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case4.mp4">
   </video>
   <br>
-  그림 6. 두 복소 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 10. 두 복소 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>
 
 ### repeated eigenvalues
@@ -284,9 +320,9 @@ $$ \lambda = -1\text{(중근)}$$
 $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \end{bmatrix}$$
 
 <p align = "center">
-  <video width = "560" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_case5.mp4">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_with_particle_case5.mp4">
   </video>
   <br>
-  그림 7. 두 중근 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
+  그림 11. 두 중근 고윳값을 갖는 행렬로 얻게 되는 위상평면의 예시
 </p>

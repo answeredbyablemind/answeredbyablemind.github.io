@@ -9,8 +9,8 @@ addpath('D:\angeloyeo.github.io\pics\');
 %% 가장 기본적인 phase plane
 
 figure;
-% A = [1, 0;0, 1];
-A = [0, 1;10, -3]
+A = [1, 0;0, 1];
+% A = [0, 1;10, -3]
 
 fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
 [V,D]= eig(A);
@@ -33,14 +33,14 @@ end
 xlim([-3, 3])
 ylim([-3, 3])
 
-xlabel('$$x$$','interpreter','latex');
-ylabel('$$y$$','interpreter','latex');
+axis square
 
 %% 가장 기본적인 phase plane (2)
 
 figure;
+axis square
 A = [0, 1;1, 0];
-fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3, 'stream',false)
 [V,D]= eig(A);
 
 hold on;
@@ -61,8 +61,9 @@ end
 xlim([-3, 3])
 ylim([-3, 3])
 
-xlabel('$$x$$','interpreter','latex');
-ylabel('$$y$$','interpreter','latex');
+axis square
+% fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3, 'stream',true,'record', true)
+
 
 %% A = [0, 1;1, 0]이라는 행렬에서 Euler Method 접목시켜보기
 
@@ -112,7 +113,46 @@ for i_iter = 1:n_iter
     x0(2) = x0(2) + dydt * delta;
 end
 
+%% A = [0, 1;1, 0]이라는 행렬에서 solution까지
 
+figure;
+A = [0, 1;1, 0];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+[V,D]= eig(A);
+
+hold on;
+
+xx = linspace(-3,3,100);
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
+
+plot(xx, yy1,'color','k','linewidth',2);
+plot(xx, yy2,'color','k','linewidth',2);
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+% 첫 스타트 포인트
+
+% Analytic Solution
+t = 0:1/100:10;
+z = -3/2*[-1;1].*exp(-t) + 1/2 * [1;1].*exp(t);
+plot(z(1,:), z(2,:),'linewidth',2,'color','r')
+axis square
+t2plot = find(ismember(t, 0:0.3:10));
+my_color = lines(length(t2plot));
+for i_t2plot = 1:length(t2plot)
+    plot(z(1,t2plot(i_t2plot)), z(2,t2plot(i_t2plot)),'o','markerfacecolor',my_color(i_t2plot,:),'markeredgecolor',ones(1,3) * 0.4,'markersize',10,'linewidth',2)
+end
+% Numerical Solution
+% x0 = [2; -1];
+% clear z
+% dzdt = @(t, z) my_difeq(z);
+% [t, z] = ode45(dzdt, [0, 10], x0, odeset('RelTol', 1e-3, 'AbsTol', 1e-3,'Refine',10));
+% plot(z(:,1), z(:,2),'b--','linewidth',2)
 %% A = [0, 1;1, 0]이라는 행렬에서 Euler Method 접목시켜보기
 
 figure;
@@ -173,11 +213,10 @@ end
 figure;
 A = [1, 0;0, 1];
 fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3,-3:0.3:3,...
-    't',linspace(0, 4*pi, 100),'p',cos(linspace(0,4*pi,100)),'q',sin(linspace(0,4*pi,100)))
+    't',linspace(0, 4*pi, 100),'p',cos(linspace(0,4*pi,100)),'q',sin(linspace(0,4*pi,100)),'stream',false)
 
-%% phase plane with linear transformation
+%% phase plane with particle movement
 
-h_record = false;
 for i_matrix = 1:5
     matrix2choose = i_matrix;
     
@@ -194,70 +233,34 @@ for i_matrix = 1:5
             A_final = [-1, 1;0, -1]; % repeated eigenvalues
     end
     
-    if h_record
-        newVid = VideoWriter(['phase_plane_case',num2str(matrix2choose)],'MPEG-4');
-        
-        newVid.FrameRate = 20;
-        newVid.Quality = 100;
-        open(newVid);
-    end
-    
-    figure('color','w');
+    figure('color','w','position',[680, 558, 1090, 420]);
     n_step = 100;
-    for i_step = 1:n_step
-        A_step = (A_final - eye(2)) / n_step;
+    
+    subplot(1,2,1);
+    fun_dirfield_system(@(x,y) A_final(1,1)*x+A_final(1,2)*y, @(x,y) A_final(2,1) * x+ A_final(2,2) * y, -3:0.3:3,-3:0.3:3, 'stream',false)
+    xlim([-3, 3])
+    ylim([-3, 3])
+    hold on;
+    
+    [V,D] = eig(A_final);
+    
+    if sum(abs(imag(V(:))))==0
+        xx = linspace(-3,3,100);
+        yy1 = V(2,1)/(V(1,1)+eps) * xx;
+        yy2 = V(2,2)/(V(1,2)+eps) * xx;
         
-        A = eye(2) + A_step * i_step;
+        plot(xx, yy1,'color','k','linewidth',2);
+        plot(xx, yy2,'color','k','linewidth',2);
         
-        fun_dirfield_system(@(x,y) A(1,1)*x+A(1,2)*y, @(x,y) A(2,1) * x+ A(2,2) * y, -3:0.3:3)
-        %     title([num2str(i_step),'/',num2str(n_step)]);
-        xlim([-3, 3])
-        ylim([-3, 3])
-        hold on;
-        
-        [V,D] = eig(A);
-        
-        if sum(abs(imag(V(:))))==0
-            xx = linspace(-3,3,100);
-            yy1 = V(2,1)/(V(1,1)+eps) * xx;
-            yy2 = V(2,2)/(V(1,2)+eps) * xx;
-            
-            plot(xx, yy1,'color','k','linewidth',2);
-            plot(xx, yy2,'color','k','linewidth',2);
-            
-            my_color = lines(2);
-            for i = 1:2
-                mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
-            end
-        end
-        %
-        %     dzdt = @(t,z) fun_phase_plane(z, A);
-        %     opts = odeset('Refine',10);
-        %     [t, z] = ode45(dzdt, [0, 10], [1; 0],opts);
-        %     hold on;
-        %     plot(z(:,1), z(:,2),'linewidth',2)
-        %
-        xlabel('$$x$$','interpreter','latex');
-        ylabel('$$y$$','interpreter','latex');
-        if h_record
-            writeVideo(newVid, getframe(gcf));
-        end
-        
-        drawnow;
-        
-        if i_step < n_step
-            cla;
+        my_color = lines(2);
+        for i = 1:2
+            mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
         end
     end
     
-    for i = 1:10
-        if h_record
-            writeVideo(newVid, getframe(gcf));
-        end
-    end
-    
-    if h_record
-        close(newVid)
-    end
-    
+    subplot(1,2,2);
+    fun_dirfield_system(@(x,y) A_final(1,1)*x+A_final(1,2)*y, @(x,y) A_final(2,1) * x+ A_final(2,2) * y, -3:0.3:3,-3:0.3:3,...
+        'stream',true,'record',true,'filename',['phase_plane_with_particle_case',num2str(i_matrix)])
+    xlim([-3, 3])
+    ylim([-3, 3])
 end
