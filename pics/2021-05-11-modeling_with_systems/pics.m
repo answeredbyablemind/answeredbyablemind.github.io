@@ -116,4 +116,4 @@ plot(z1(:,1), z1(:,2),'linewidth',2,'color',[0.494, 0.184, 0.556])
 xlabel('position (x)');
 ylabel('velocity (x'')');
 
-fun_plot_pendulum(z1,'isRecording',true)
+fun_plot_pendulum(z1,'isRecording',false)
