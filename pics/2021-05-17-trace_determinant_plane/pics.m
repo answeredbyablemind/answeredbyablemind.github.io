@@ -106,3 +106,29 @@ for i_x0 = 1:size(x0s,1)
     [~, z] = ode45(dzdt, [-10, 10], x0, odeset('RelTol', 1e-3, 'AbsTol', 1e-3,'Refine',10));
     plot(z(:,1), z(:,2),'b-','linewidth',1.5)
 end
+
+%% 중근 고윳값 갖는 경우
+
+figure;
+A = [0.1, 1;
+    -1, 0.1];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+
+hold on;
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+% Numerical Solution
+x0s = [0, 0.5];
+
+for i_x0 = 1:size(x0s,1)
+    x0 = x0s(i_x0,:);
+    clear z
+    dzdt = @(t, z) my_difeq3(z);
+    [~, z] = ode45(dzdt, [-10, 10], x0, odeset('RelTol', 1e-3, 'AbsTol', 1e-3,'Refine',10));
+    plot(z(:,1), z(:,2),'b-','linewidth',1.5)
+end
