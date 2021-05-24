@@ -38,9 +38,28 @@ $$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a && b \\ c && d \
 
 또, 고윳값이 음수인 경우 해당되는 고유벡터를 따라 시간이 지날 수록 함수값은 원점에 가까워지게 되었다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic1.png">
+  <br>
+  그림 1. 실수 고윳값을 가지는 경우. 양수 고윳값에 대응되는 고유벡터를 따라 함수값은 원점으로부터 멀어지고, 음수 고윳값에 대응되는 고유벡터를 따라 함수값은 원점을 향해 간다.
+</p>
+
 한편, 고윳값이 복소수인 경우에는 phase plane이 원점을 따라 회전하는 것 같은 형태를 띄게 되었다. 
 
 이 때, 복소 고윳값의 실수부가 1보다 작으면 원점을 향해서 수렴하게 되었다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic2.png">
+  <br>
+  그림 2. 복소 고윳값을 가지는 경우. 복소 고윳값의 실수부가 1보다 작으면 원점을 향해 수렴해가며 회전한다.
+</p>
+
 한편, 고윳값이 복소수인데 실수부가 1보다 크면 phase plane의 형태가 원점을 벗어나는 회전을 하는 것을 알 수 있었다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic3.png">
+  <br>
+  그림 3. 복소 고윳값을 가지는 경우. 복소 고윳값의 실수부가 1보다 크면 원점으로부터 멀어져가며 회전한다.
+</p>
+
+또, 고윳값이 겹치는 경우도 있다. 중근 고윳값을 가지는 경우라고 표현한다.
