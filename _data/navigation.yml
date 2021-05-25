@@ -37,6 +37,11 @@ header:
       ko-KR   : *KO
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
+docs-en:
+  - title:      Basic Math
+    children:
+      - title:  Angle and Radian
+        url:    en/2019/06/04/2-1-angle_rad.html
 docs-ko:
   - title:      기초 선형대수학 이론
     children:
