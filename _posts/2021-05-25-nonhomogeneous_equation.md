@@ -19,7 +19,18 @@ tags: 미분방정식
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic1.png">
+  <br>
+  그림 1.  
+</p>
 
 # 연립 비제차 미분방정식
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic2.mp4">
+  </video>
+  <br>
+  그림 2.
+</p>
 
 # General solution = homogeneous + particular solution 인 이유

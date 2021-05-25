@@ -6,9 +6,7 @@ fn = [fn '\2021-05-11-modeling_with_systems'];
 addpath(fn);
 addpath('D:\angeloyeo.github.io\pics\');
 
-%% 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÌºÐ¹ï¿½ï¿½ï¿½ï¿½ï¿½
-
-%% 1ì°¨ 
+%% 1°è ¹ÌºÐ¹æÁ¤½Ä 
 figure('position',[680, 558, 1122, 420]);
 
 dxdt = @(t, x) x;
@@ -16,7 +14,7 @@ xx = linspace(-4,4,20);
 
 subplot(1,2,1);
 fun_dirfield(dxdt, xx, xx,'linewidth',1.5);
-[t, x] = ode45(@(t,x) x, [-4, 4], linspace(-0.3, 0.3, 4));
+[t, x] = ode45(@(t,x) x, [-4, 4], [-0.3, -0.05, -0.01, 0, 0.01, 0.05, 0.3]);
 plot(t, x, 'b')
 xlim([-4, 4])
 ylim([-4, 4])
@@ -30,13 +28,13 @@ title('$$\frac{dx}{dt}-x=exp(t/2)$$','interpreter','latex')
 pt = linspace(-4, 4, 100);
 p = exp(pt/2);
 
-[t, x] = ode45(@(t,x) my_difeq(t,x,pt,p), [-4, 4], [-0.3, -0.26, -0.24, -0.2]);
+[t, x] = ode45(@(t,x) my_difeq(t,x,pt,p), [-4, 4], [-0.3, -0.27, -0.26, -0.24, -0.2]);
 plot(t, x, 'b')
 xlim([-4, 4])
 ylim([-4, 4])
 
 %% 2ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÌºÐ¹ï¿½ï¿½ï¿½ï¿½ï¿½
-figure;
+figure('color','w');
 A = [0, 1;1, 0];
 dxdt = @(x,y) A(1,1) * x + A(1,2) * y;
 dydt = @(x,y) A(2,1) * x + A(2,2) * y;
