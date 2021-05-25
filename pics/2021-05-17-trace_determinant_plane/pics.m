@@ -159,3 +159,7 @@ end
 %% TD Plane and its 결정경계
 
 fun_plot2DPlane(-3,3,-3,3,true);
+hold on;
+xx = linspace(-3,3,100);
+yy = 1/4 * xx.^2;
+plot(xx, yy,'linewidth',2)
