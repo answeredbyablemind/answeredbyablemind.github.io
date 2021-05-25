@@ -161,6 +161,8 @@ docs-ko:
         url:    2021/05/12/phase_plane.html
       - title:  trace-determinant plane
         url:    2021/05/17/trace_determinant_plane.html
+      - title:  비제차 미분방정식의 의미
+        url:    2021/05/25/nonhomogeneous_equation.html
 
   - title:      편미분방정식
     children:
