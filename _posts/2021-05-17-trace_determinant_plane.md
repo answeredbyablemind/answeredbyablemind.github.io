@@ -84,7 +84,7 @@ $$A\vec{v} = \lambda \vec{v} % 식 (2)$$
 
 위 식에서 우변은 다음과 같이 고쳐 쓸 수도 있다.
 
-$$\lambda \vec{v] = \lambda \vec{v} I % 식 (3)$$
+$$\lambda \vec{v} = \lambda \vec{v} I % 식 (3)$$
 
 여기서 $I$는 단위 행렬(identity matrix)이다.
 
