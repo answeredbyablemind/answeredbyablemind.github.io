@@ -82,6 +82,7 @@ if ~h_nonhomogeneous
         iverts = interpstreamspeed(xval,yval,xp,yp,verts,0.02);
         [~,M] = streamparticlesMod(iverts,100,'Animate',3,'FrameRate',framerate,'Markersize',5);
     end
+    
     if h_record
         writeVideo(newVid, repmat(M, 1, 5));
         close(newVid)
@@ -89,8 +90,19 @@ if ~h_nonhomogeneous
 else
     
     for i_t = 1:length(t)
-        xp=feval(func_dxdt,xm,ym) - p(i_t);
-        yp=feval(func_dydt,xm,ym) - q(i_t);
+%         xp_hom=feval(func_dxdt,xm,ym);
+%         yp_hom=feval(func_dydt,xm,ym);
+%         
+%         s_hom = sqrt(xp_hom.^2+yp_hom.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
+%         
+%         quiver(xval,yval,xp_hom./s_hom,yp_hom./s_hom, 0.5,'color',arrow_color);
+%         grid on;
+%         xlabel('$$x$$','interpreter','latex');
+%         ylabel('$$y$$','interpreter','latex');
+        
+        
+        xp=feval(func_dxdt,xm,ym) + p(i_t);
+        yp=feval(func_dydt,xm,ym) + q(i_t);
         
         s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
         
@@ -104,12 +116,20 @@ else
         XLIMs = xlim;
         YLIMs = ylim;
         
-        text((XLIMs(2) - XLIMs(1)) * 0.1 + XLIMs(1), (YLIMs(2) - YLIMs(1)) * 0.9 + YLIMs(1),['t=',sprintf('%.2f',t(i_t))],'BackgroundColor','w','fontsize',15);
+        text((XLIMs(2) - XLIMs(1)) * 0.1 + XLIMs(1), (YLIMs(2) - YLIMs(1)) * 0.9 + YLIMs(1),...
+            ['t=',sprintf('%.2f',t(i_t))],'BackgroundColor','w','fontsize',15);
+        if h_record
+            writeVideo(newVid, getframe(gcf))
+        end
         
         pause(0.1)
         if i_t < length(t)
             cla;
         end
+    end
+    
+    if h_record
+        close(newVid)
     end
     
 end

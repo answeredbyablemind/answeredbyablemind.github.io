@@ -14,9 +14,11 @@ xx = linspace(-4,4,20);
 
 subplot(1,2,1);
 fun_dirfield(dxdt, xx, xx,'linewidth',1.5);
+title('$$\frac{dx}{dt}-x=0$$','interpreter','latex')
 subplot(1,2,2);
 fun_dirfield(dxdt, xx, xx,...
     'p', @(t) exp(t/2),'color',[235, 64, 52]/255,'linewidth',1.5);
+title('$$\frac{dx}{dt}-x=exp(t/2)$$','interpreter','latex')
 
 %% 2원 1차 비제차 미분방정식
 figure;
@@ -31,4 +33,4 @@ p = @(t) cos(t);
 q = @(t) sin(t);
 
 fun_dirfield_system(dxdt, dydt, xx, yy,...
-    't',tt,'p', p(tt),'q', q(tt), 'stream',false)
+    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',true,'filename','pic2')
