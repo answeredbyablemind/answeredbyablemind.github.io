@@ -8,7 +8,6 @@ key: 20210517
 tags: 미분방정식
 ---
 
-
 <p align = "center">
   <iframe width= "101%" height = "650" src = "https://mathlets.org/javascript/build/linPhasePorMatrix.html" frameborder = "0"></iframe>
   <br>
@@ -28,7 +27,7 @@ tags: 미분방정식
 
 [위상 평면 (phase plane)](https://angeloyeo.github.io/2021/05/12/phase_plane.html) 편에서 선형 연립 미분방정식은 아래와 같이 행렬을 이용해 표현할 수 있음을 확인하였다.
 
-$$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a && b \\ c && d \end{bmatrix}\begin{bmatrix}x \\ y \end{bmatrix} % 식 (1)$$
+$$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a & b \\ c & d \end{bmatrix}\begin{bmatrix}x \\ y \end{bmatrix} % 식 (1)$$
 
 그리고 위 식의 행렬로부터 고윳값과 고유벡터를 계산해보고 고윳값, 고유벡터의 값에 따른 phase plane의 형태 변화에 대해 알아보았다.
 
@@ -96,11 +95,11 @@ $$\Rightarrow (A-\lambda I)\vec{v} = 0 % 식 (5)$$
 
 만약 $A$ 행렬이 아래와 같은 $2\times 2$행렬이라면,
 
-$$A = \begin{bmatrix}a && b \\c && d\end{bmatrix} % 식 (6)$$
+$$A = \begin{bmatrix}a & b \\c & d\end{bmatrix} % 식 (6)$$
 
 식 (5)는 다음과 같이 바뀔 것이다.
 
-$$\text{식 (5)}\Rightarrow \begin{bmatrix}a-\lambda && b \\ c && d-\lambda\end{bmatrix}\vec{v} = 0 % 식 (7)$$
+$$\text{식 (5)}\Rightarrow \begin{bmatrix}a-\lambda & b \\ c & d-\lambda\end{bmatrix}\vec{v} = 0 % 식 (7)$$
 
 여기서 $\vec{v}$는 영벡터(zero vector)라면 고유벡터를 찾을 이유가 없는 trivial solution을 얻게 되는 것이므로,
 
@@ -108,7 +107,7 @@ trivial solution이 아닌 의미있는 solution을 얻기위해선 식 (7)의 �
 
 따라서 아래의 조건을 만족할 때 고유벡터 $\vec{v}$가 trivial solution이 아니게 된다고 할 수 있다.
 
-$$det\left(\begin{bmatrix}a-\lambda && b \\ c && d-\lambda\end{bmatrix}\right) = 0 % 식 (8)$$
+$$det\left(\begin{bmatrix}a-\lambda & b \\ c & d-\lambda\end{bmatrix}\right) = 0 % 식 (8)$$
 
 행렬식의 정의에 따라 이 식을 조금 더 풀어보면,
 
@@ -151,3 +150,45 @@ $$\lambda_{1, 2} = \frac{T\pm\sqrt{T^2-4D}}{2} % 식 (11)$$
 가령, $x$축이 trace 값, $y$축이 determinant 값을 나타내는 평면을 생각한다고 하면
 
 $D=\frac{1}{4}T^2$이라는 곡선을 기준으로 고윳값의 실수, 복소수, 중근 여부를 판별할 수 있게 된다.
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic5.png">
+  <br>
+  그림 5. $D = 1/4 T^2$이라는 조건에 해당하는 곡선
+</p>
+
+다시 말해 식 (1)과 같이 연립 미분방정식이 주어져있고, 행렬의 대각합(T)과 행렬식(D)의 값을 계산한 뒤, Trace-Determinant 평면 위에 (T,D) 값을 확인한 뒤, 그 점의 위치를 그림 5에서 보여주고 있는 곡선의 위치와 비교해보는 것이다.
+
+만약 (T,D)가 곡선보다 위에 있다면 두 고윳값이 모두 복소수가 된다.
+
+(잘 생각해보면 $T^2-4D < 0$ 라는 조건은 $D>\frac{1}{4}T^2$과 같은 것이다.)
+
+또, (T,D)가 곡선보다 아래에 있으면 두 고윳값은 모두 실수가 된다.
+
+마지막으로 (T,D)가 곡선 상에 있으면 중근 고윳값을 갖는 것이다.
+
+이러한 결과를 글 맨 위에 있는 Applet을 통해 확인해보자.
+
+### 복소 고윳값을 갖는 경우
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic6.png">
+  <br>
+  그림 6. 복소 고윳값을 갖는 경우의 Trace-Determinant Plane 상의 좌표 위치와 Phase Plane
+</p>
+
+### 실수 고윳값을 갖는 경우
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic7.png">
+  <br>
+  그림 7. 실수 고윳값을 갖는 경우의 Trace-Determinant Plane 상의 좌표 위치와 Phase Plane
+</p>
+
+### 중근 고윳값을 갖는 경우
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic8.png">
+  <br>
+  그림 8. 중근 고윳값을 갖는 경우의 Trace-Determinant Plane 상의 좌표 위치와 Phase Plane
+</p>
