@@ -17,7 +17,8 @@ tags: 미분방정식
 
 # 1차 비제차 미분방정식
 
-
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic1.png">
 
 # 연립 비제차 미분방정식
 
