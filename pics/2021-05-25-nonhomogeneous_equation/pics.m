@@ -95,11 +95,26 @@ dydt = @(x,y) A(2,1) * x + A(2,2) * y;
 xx = -3:0.3:3;
 yy = xx;
 
+pt = linspace(0, 4*pi, 100);
+p = cos(pt);
+qt = linspace(0, 4*pi, 100);
+q = sin(qt);
+[t_ode45, z_ode45] = ode45(@(t, x) my_difeq2(t, x, pt, p, qt, q), [0; 4*pi], [2; -3]);
+
 tt = linspace(0, 4*pi, 100);
 p = @(t) cos(t);
 q = @(t) sin(t);
 
+x_ode45 = interp1(t_ode45, z_ode45(:,1), tt);
+y_ode45 = interp1(t_ode45, z_ode45(:,2), tt);
+
 fun_dirfield_system(dxdt, dydt, xx, yy,...
-    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',false,'filename','pic4')
+    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',true,'filename','pic5',...
+    'x_ode45',x_ode45,'y_ode45',y_ode45)
 
-
+hold on;
+% 
+% figure;
+% plot(z_ode45(:,1), z_ode45(:,2), 'b')
+% xlim([-3, 3])
+% ylim([-3, 3])

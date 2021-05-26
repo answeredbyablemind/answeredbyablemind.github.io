@@ -24,6 +24,8 @@ params.addParameter('color', 0.5 * ones(1,3)); % nonhomogenous outforcing을 위한
 params.addParameter('stream',false)
 params.addParameter('record',false)
 params.addParameter('filename','default_name')
+params.addParameter('x_ode45', 0);
+params.addParameter('y_ode45', 0);
 
 params.parse(varargin{:});
 
@@ -34,6 +36,8 @@ arrow_color = params.Results.color;
 h_stream = params.Results.stream;
 h_record = params.Results.record;
 filename = params.Results.filename;
+x_ode45 = params.Results.x_ode45;
+y_ode45 = params.Results.y_ode45;
 
 h_nonhomogeneous = false;
 
@@ -90,16 +94,6 @@ if ~h_nonhomogeneous
 else
     
     for i_t = 1:length(t)
-%         xp_hom=feval(func_dxdt,xm,ym);
-%         yp_hom=feval(func_dydt,xm,ym);
-%         
-%         s_hom = sqrt(xp_hom.^2+yp_hom.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
-%         
-%         quiver(xval,yval,xp_hom./s_hom,yp_hom./s_hom, 0.5,'color',arrow_color);
-%         grid on;
-%         xlabel('$$x$$','interpreter','latex');
-%         ylabel('$$y$$','interpreter','latex');
-        
         
         xp=feval(func_dxdt,xm,ym) + p(i_t);
         yp=feval(func_dydt,xm,ym) + q(i_t);
@@ -113,9 +107,14 @@ else
         
         axis tight;
         hold on;
+        xlim([min(xm(:)), max(xm(:))])
+        ylim([min(ym(:)), max(ym(:))])
         XLIMs = xlim;
         YLIMs = ylim;
         
+        if length(x_ode45)>1
+            plot(x_ode45(i_t), y_ode45(i_t),'o','markerfacecolor','r')
+        end
         text((XLIMs(2) - XLIMs(1)) * 0.1 + XLIMs(1), (YLIMs(2) - YLIMs(1)) * 0.9 + YLIMs(1),...
             ['t=',sprintf('%.2f',t(i_t))],'BackgroundColor','w','fontsize',15);
         if h_record
