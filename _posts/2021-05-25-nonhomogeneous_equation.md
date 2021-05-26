@@ -65,7 +65,7 @@ $$\frac{dx}{dt} = x+e^{t/2} % 식 (4)$$
 
 식 (1)을 가지고 다시 보면, 비제차 미분방정식은 원래의 제차방정식의 형태
 
-$$\frac{dx}{dt}+p(t)x = 0$$
+$$\frac{dx}{dt}+p(t)x = 0 % 식 (5)$$
 
 의 우변에 $q(t)$를 더해둔 것과 같은 모습이다. 다시 말해 기존의 제차 미분방정식이 갖고 있던 방향장의 형태 기울기 장의 모습에 $t$에만 의존적인 변화가 추가된다는 것이다.
 
@@ -83,21 +83,69 @@ $$\frac{dx}{dt}+p(t)x = 0$$
 
 [연립 미분방정식 모델링](https://angeloyeo.github.io/2021/05/11/modeling_with_systems.html) 편에서는 아래와 같은 두 개의 종속변수에 대한 변화를 동시에 모델링 할 수 있는 제차 연립미분방정식을 소개한 적 있다.
 
-$$\begin{cases}\dfrac{dx}{dt} = f(x,y) \\\\ \dfrac{dy}{dt}=g(x,y)\end{cases}$$
+$$\begin{cases}\dfrac{dx}{dt} = f(x,y) \\\\ \dfrac{dy}{dt}=g(x,y)\end{cases} % 식 (6)$$
 
 연립 미분방정식을 비제차 형식으로 만들게 된다면 아래와 같은 꼴을 띄게 된다.
 
-$$\begin{cases}\dfrac{dx}{dt} = f(x,y) + p(t)\\\\ \dfrac{dy}{dt}=g(x,y) + q(t)\end{cases}$$
+$$\begin{cases}\dfrac{dx}{dt} = f(x,y) + p(t)\\\\ \dfrac{dy}{dt}=g(x,y) + q(t)\end{cases} % 식 (7)$$
 
 연립 비제차 미분방정식은 독립변수에만 의존적인 값이 $x$ 혹은 $y$의 변화율에 추가된다는 점이 1계 비제차 미분방정식과 동일하다.
 
+그런데, 연립 비제차 미분방정식을 그리려고 하니 하나의 문제가 있다. 가령, 종속변수가 $x, y$로 두 개인 연립 비제차 미분방정식이라고 하면 이 미분방정식의 해를 시각화 하기 위한 위상 평면의 가로축, 세로축에는 모두 종속변수가 들어가지 독립변수 $t$가 들어갈 자리는 없기 때문이다.
+
+첫 번재 방법은 3차원 plot을 그리는 것이다. 즉, 독립변수에 축(axis)을 하나 할당해주고, 독립변수의 변화에 따른 phase plane을 그려나가는 것이다.
+
+하지만, 이런 방법으로는 시각화를 한들 눈으로 보고 이 변화를 이해하기 어렵다.
+
+두 번째 방법은 애니메이션을 만드는 것이다. 다시 말하면, 독립변수를 시간(time)으로 해석해 시간의 변화에 따른 phase plane의 변화를 매 순간 순간 마다 그리는 것이다.
+
+다시 말하면 애니메이션이다.
+
+우리는 두 번째 방법을 이용해 연립 비제차 미분방정식의 해의 특성을 파악할 것이다.
+
+예를 들어 아래와 같은 2원 1계 연립 비제차 미분방정식이 있다고 생각해보자.
+
+$$\begin{cases}\dfrac{dx}{dt} = y + \cos(t)\\\\ \dfrac{dy}{dt}=x+\sin(t) \end{cases} % 식 (8)$$
+
+위 식의 제차 미분방정식 형태에서는 $\cos(t)$ 혹은 $\sin(t)$의 term 이 없었을 것이고 phase plane은 아래와 같을 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic3.png">
+  <br>
+  그림 3. 식 (8)의 제차 방정식 형태를 phase plane에 표시한 것
+</p>
+
+이제, $\cos(t)$ 혹은 $\sin(t)$라는 시간-의존적인(time dependent) term을 넣어 $t$값에 따라 phase plane이 달라지도록 그리면 다음과 같다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic3.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic4.mp4">
   </video>
   <br>
-  그림 3.
+  그림 4. 식 (8)의 시간 $t$에 따른 phase plane의 변화
 </p>
 
 # General solution = homogeneous + particular solution 인 이유
+
+학부시절 미분방정식을 배울 때 제일 이해되지 않았던 개념 중 하나가 일반해(general solution)에 대한 개념이었다.
+
+미분방정식의 일반해는 homogeneous solution과 particular solution을 합친 것이라는 것이다.
+
+예를 들어,
+
+$$y''-4y'+3y=x % 식 (9)$$
+
+라는 미분방정식을 풀면 그 일반해는
+
+$$y(x) = c_1 e^x + c_2 e^{3x} + \frac{x}{3} + \frac{4}{9} % 식 (10)$$
+
+와 같은데, (이 해를 구하는 구체적인 방법에 대해서는 추후 설명할 예정이다.)
+
+앞의 $c_1 e^x + c_2 e^{3x}$은 
+
+$$y''-4y'+3y=0 % 식 (11)$$
+
+이라는 식을 풀어서 얻어내는 결과물이고, 뒤의 $x/3+4/9$는 식 (9)만을 풀어서 얻어낸 결과물이다.
+
+두 결과물들을 각각 homogeneous solution, particular solution이라고 부른다.
+

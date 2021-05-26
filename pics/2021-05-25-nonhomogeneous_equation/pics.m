@@ -70,6 +70,23 @@ p = exp(pt/2);
 xlim([-4, 4])
 ylim([-4, 4])
 
+%% 2원 1차 연립 미분방정식 (비제차 --> 제차 형태의 phase plane 먼저)
+figure('color','w');
+A = [0, 1;1, 0];
+dxdt = @(x,y) A(1,1) * x + A(1,2) * y;
+dydt = @(x,y) A(2,1) * x + A(2,2) * y;
+xx = -3:0.3:3;
+yy = xx;
+
+tt = linspace(0, 4*pi, 100);
+p = @(t) cos(t);
+q = @(t) sin(t);
+
+fun_dirfield_system(dxdt, dydt, xx, yy)
+xlim([-3, 3])
+ylim([-3, 3])
+
+
 %% 2원 1차 연립 미분방정식 (비제차)
 figure('color','w');
 A = [0, 1;1, 0];
@@ -83,4 +100,6 @@ p = @(t) cos(t);
 q = @(t) sin(t);
 
 fun_dirfield_system(dxdt, dydt, xx, yy,...
-    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',false,'filename','pic3')
+    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',false,'filename','pic4')
+
+
