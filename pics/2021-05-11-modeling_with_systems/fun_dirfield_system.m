@@ -92,9 +92,8 @@ if ~h_nonhomogeneous
         close(newVid)
     end
 else
-    
     for i_t = 1:length(t)
-        
+%         plot(x_ode45, y_ode45,'b');
         xp=feval(func_dxdt,xm,ym) + p(i_t);
         yp=feval(func_dydt,xm,ym) + q(i_t);
         
@@ -113,7 +112,7 @@ else
         YLIMs = ylim;
         
         if length(x_ode45)>1
-            plot(x_ode45(i_t), y_ode45(i_t),'o','markerfacecolor','r')
+            plot(x_ode45(i_t,:), y_ode45(i_t,:),'o','markerfacecolor','r')
         end
         text((XLIMs(2) - XLIMs(1)) * 0.1 + XLIMs(1), (YLIMs(2) - YLIMs(1)) * 0.9 + YLIMs(1),...
             ['t=',sprintf('%.2f',t(i_t))],'BackgroundColor','w','fontsize',15);

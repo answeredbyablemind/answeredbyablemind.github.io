@@ -99,17 +99,30 @@ pt = linspace(0, 4*pi, 100);
 p = cos(pt);
 qt = linspace(0, 4*pi, 100);
 q = sin(qt);
-[t_ode45, z_ode45] = ode45(@(t, x) my_difeq2(t, x, pt, p, qt, q), [0; 4*pi], [2; -3]);
 
 tt = linspace(0, 4*pi, 100);
-p = @(t) cos(t);
-q = @(t) sin(t);
+pp = @(t) cos(t);
+qq = @(t) sin(t);
 
-x_ode45 = interp1(t_ode45, z_ode45(:,1), tt);
-y_ode45 = interp1(t_ode45, z_ode45(:,2), tt);
+initial_points = [...
+    2, -3; 
+    1, 0; 
+    0, -0.5;
+    -0.5, 0.5;
+    -0.5, -0.5;
+    -1, -0.3];
+% initial_points = [1, -0.5];
+clear x_ode45 y_ode45
+for i_points = 1:size(initial_points, 1)
+    initial_point = initial_points(i_points,:);
+    [t_ode45, z_ode45] = ode45(@(t, x) my_difeq2(t, x, pt, p, qt, q), [0; 4*pi], initial_point);
+    
+    x_ode45(:,i_points) = interp1(t_ode45, z_ode45(:,1), tt);
+    y_ode45(:,i_points) = interp1(t_ode45, z_ode45(:,2), tt);
+end
 
 fun_dirfield_system(dxdt, dydt, xx, yy,...
-    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',true,'filename','pic5',...
+    't',tt,'p', pp(tt),'q', qq(tt), 'stream',false,'record',true,'filename','pic5',...
     'x_ode45',x_ode45,'y_ode45',y_ode45)
 
 hold on;
