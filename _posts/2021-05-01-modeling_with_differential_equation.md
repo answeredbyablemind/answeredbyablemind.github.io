@@ -14,7 +14,7 @@ tags: 미분방정식
 
 이 때, 미분 계수의 미분 횟수는 1회에서 그치지 않고 여러회 반복될 수 있는데,
 
-가장 간단한 1차 미분방정식(first-order differential equation)의 경우의 형식은 다음과 같다.
+가장 간단한 1계 미분방정식(first-order differential equation)의 경우의 형식은 다음과 같다.
 
 $$\frac{dy}{dx}=f(x, y) % 식 (1)$$
 

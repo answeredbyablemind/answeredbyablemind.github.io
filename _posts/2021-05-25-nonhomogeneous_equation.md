@@ -13,12 +13,13 @@ tags: 미분방정식
 비제차 미분방정식의 의미에 대해 더 잘 알기 위해서는 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
 * [방향장과 오일러 방법](https://angeloyeo.github.io/2021/04/30/direction_fields.html)
-* [1차 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)
+* [1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)
+* [연립 미분방정식 모델링](https://angeloyeo.github.io/2021/05/11/modeling_with_systems.html)
 * [위상 평면](https://angeloyeo.github.io/2021/05/12/phase_plane.html)
 
-# 1차 비제차 미분방정식
+# 1계 비제차 미분방정식
 
-1차 선형 미분방정식의 형태는 다음과 같았다.
+1계 선형 미분방정식의 형태는 다음과 같았다.
 
 $$\frac{dx}{dt}+p(t)x = q(t) % 식 (1)$$
 
@@ -26,11 +27,11 @@ $$\frac{dx}{dt}+p(t)x = q(t) % 식 (1)$$
 
 (여기서 DE는 Differential Equation을 줄인 말이다. 또, 이 article에서는 한국어 표현 중에서는 제차, 비제차의 용어를 사용할 것이다.)
 
-그런데, 우리는 미분방정식에 대해 공부할 때 1차 비제차 미분방정식에 대해서는 크게 다루지 않는다.
+그런데, 우리는 미분방정식에 대해 공부할 때 1계 비제차 미분방정식에 대해서는 크게 다루지 않는다.
 
-왜냐하면 1차 비제차 미분방정식은 해를 구하는 것이 어렵지 않기 때문이다.
+왜냐하면 1계 비제차 미분방정식은 해를 구하는 것이 어렵지 않기 때문이다.
 
-[1차 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 배운바와 같이 식 (1)과 같은 1차 비제차 미분방정식의 솔루션은 아래와 같다.
+[1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 배운바와 같이 식 (1)과 같은 1계 비제차 미분방정식의 솔루션은 아래와 같다.
 
 식 (1)의 $p(t)$에 대해 다음과 $\int p(t)dt = P(t)$와 같은 관계를 갖는 $P(t)$를 생각해볼 때,
 
@@ -76,8 +77,20 @@ $$\frac{dx}{dt}+p(t)x = 0$$
   그림 2. 비제차 방정식의 방향장은 독립 변수의 구간 별로 비제차 항(식 (1)의 $q(t)$)의 값을 기울기에 더해준 것이다.
 </p>
 
-
 # 연립 비제차 미분방정식
+
+이번에는 미분방정식의 식이 두 개 이상인 경우에 해당하는 연립 미분방정식에 대해 생각해보자.
+
+[연립 미분방정식 모델링](https://angeloyeo.github.io/2021/05/11/modeling_with_systems.html) 편에서는 아래와 같은 두 개의 종속변수에 대한 변화를 동시에 모델링 할 수 있는 제차 연립미분방정식을 소개한 적 있다.
+
+$$\begin{cases}\dfrac{dx}{dt} = f(x,y) \\\\ \dfrac{dy}{dt}=g(x,y)\end{cases}$$
+
+연립 미분방정식을 비제차 형식으로 만들게 된다면 아래와 같은 꼴을 띄게 된다.
+
+$$\begin{cases}\dfrac{dx}{dt} = f(x,y) + p(t)\\\\ \dfrac{dy}{dt}=g(x,y) + q(t)\end{cases}$$
+
+연립 비제차 미분방정식은 독립변수에만 의존적인 값이 $x$ 혹은 $y$의 변화율에 추가된다는 점이 1계 비제차 미분방정식과 동일하다.
+
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>

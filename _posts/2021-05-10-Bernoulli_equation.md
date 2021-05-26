@@ -8,7 +8,7 @@ key: 20210510
 tags: 미분방정식
 ---
 
-이전 포스팅 [1차 선형 미분 방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서는 아래와 같은 미분방정식의 해법을 찾는 방법에 대해 다룬 바 있다.
+이전 포스팅 [1계 선형 미분 방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서는 아래와 같은 미분방정식의 해법을 찾는 방법에 대해 다룬 바 있다.
 
 $$\frac{dx}{dt}+p(t)x=q(t) % 식 (1)$$
 
@@ -44,7 +44,7 @@ $$\frac{du}{dt}=(1-n)x^{-n}\frac{dx}{dt} % 식(4)$$
 
 $$식(3)\Rightarrow \frac{1}{1-n}\frac{du}{dt}+p(t)u=q(t) % 식 (5)$$
 
-다시 말하면, 베르누이 방정식에 치환을 적절히 적용하면 일반적인 [1차 선형미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)으로 바꿔줄 수 있게 된다.
+다시 말하면, 베르누이 방정식에 치환을 적절히 적용하면 일반적인 [1계 선형미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)으로 바꿔줄 수 있게 된다.
 
 # 예제
 
@@ -80,7 +80,7 @@ $$\frac{du}{dt}-\frac{1}{t}u=-t^2 % 식 (10)$$
 
 이다.
 
-여기서부터는 1차 선형미분방정식의 해를 찾는 방법을 이용하여, 양변에 적분 인자 $e^{\int -\frac{1}{t}dt}$를 곱해주자.
+여기서부터는 1계 선형미분방정식의 해를 찾는 방법을 이용하여, 양변에 적분 인자 $e^{\int -\frac{1}{t}dt}$를 곱해주자.
 
 $\int -\frac{1}{t}dt=-\ln t$이고, $e^{-\ln t}=e^{\ln 1/t}=1/t$이므로 적분인자는 $1/t$이다.
 
