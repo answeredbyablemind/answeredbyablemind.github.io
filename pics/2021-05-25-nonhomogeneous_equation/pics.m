@@ -70,7 +70,7 @@ p = exp(pt/2);
 xlim([-4, 4])
 ylim([-4, 4])
 
-%% 2ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÌºÐ¹ï¿½ï¿½ï¿½ï¿½ï¿½
+%% 2¿ø 1Â÷ ¿¬¸³ ¹ÌºÐ¹æÁ¤½Ä (ºñÁ¦Â÷)
 figure('color','w');
 A = [0, 1;1, 0];
 dxdt = @(x,y) A(1,1) * x + A(1,2) * y;
@@ -83,4 +83,4 @@ p = @(t) cos(t);
 q = @(t) sin(t);
 
 fun_dirfield_system(dxdt, dydt, xx, yy,...
-    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',true,'filename','pic3')
+    't',tt,'p', p(tt),'q', q(tt), 'stream',false,'record',false,'filename','pic3')
