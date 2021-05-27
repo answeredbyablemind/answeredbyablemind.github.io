@@ -151,7 +151,7 @@ docs-ko:
         url:    2021/05/05/ODE_and_natural_number_e.html
       - title:  변수분리법
         url:    2021/05/06/separable_differential_equations.html
-      - title:  1차 선형 미분방정식
+      - title:  1계 선형 미분방정식
         url:    2021/05/08/first_order_linear_equations.html
       - title:  베르누이 방정식
         url:    2021/05/10/Bernoulli_equation.html
