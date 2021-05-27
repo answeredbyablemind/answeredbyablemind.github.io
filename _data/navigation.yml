@@ -163,7 +163,7 @@ docs-ko:
         url:    2021/05/17/trace_determinant_plane.html
       - title:  비제차 미분방정식의 의미
         url:    2021/05/25/nonhomogeneous_equation.html
-      - title:  2계 제차 미분방정식
+      - title:  2계 선형 미분방정식
         url:    2021/05/27/second_order_ODE.html
 
   - title:      편미분방정식
