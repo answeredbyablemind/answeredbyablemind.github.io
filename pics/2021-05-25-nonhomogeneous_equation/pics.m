@@ -132,7 +132,7 @@ newVid.FrameRate = 20;
 newVid.Quality = 100;
 open(newVid);
 
-figure;
+figure('color','w');
 plot(x_ode45(:,1), y_ode45(:,1), 'b')
 hold on;
 xlim([-3, 3])
