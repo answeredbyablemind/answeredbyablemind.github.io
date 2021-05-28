@@ -144,10 +144,6 @@ $N, C, k$에 적절한 값을 넣었을 때 그래프의 형태는 아래와 같
 
 # 스프링의 움직임에 관한 현상
 
-<center>
-  <iframe src="https://phet.colorado.edu/sims/html/pendulum-lab/latest/pendulum-lab_en.html" width="800" height="600" scrolling="no" allowfullscreen frameborder = "0"></iframe>
-</center>
-
 ## Undamped spring-mass system
 
 후크의 법칙이라고 알려진 스프링의 움직임에 관한 식은 다음과 같다.
