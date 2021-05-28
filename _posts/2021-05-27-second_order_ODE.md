@@ -223,5 +223,11 @@ $$x(t) = c_1e^t + c_2e^{3t}$$
 
 이다.
 
+참고로 식 (17)의 해집합에 대한 위상평면을 그려보면 다음과 같다. 굵은 검은색 선은 고유벡터를 따라가는 직선이다.
 
+<p align = "center">
+  <img src=  "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-27-second_order_ODE/pic1.png">
+  <br>
+  그림 2. 식 (17)의 연립 미분방정식의 해집합에 관한 위상 평면. 굵은 검은색 선은 고유벡터를 따라가는 직선임.
+</p>
 
