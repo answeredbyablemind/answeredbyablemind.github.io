@@ -165,6 +165,8 @@ docs-ko:
         url:    2021/05/25/nonhomogeneous_equation.html
       - title:  2계 선형 미분방정식
         url:    2021/05/27/second_order_ODE.html
+      - title:  경계값 문제(BVP)
+        url:    2021/05/28/Boundary_Value_Problem.html
 
   - title:      편미분방정식
     children:
