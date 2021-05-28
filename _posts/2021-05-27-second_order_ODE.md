@@ -8,8 +8,6 @@ key: 20210527
 tags: 미분방정식
 ---
 
-※ 본 포스팅의 내용은 Thomas Judson의 [The ordinary differential equations project](http://faculty.sfasu.edu/judsontw/ode/)에서 많은 부분을 차용하였음을 밝힙니다.
-
 # Prerequisitess
 
 본 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
@@ -113,6 +111,8 @@ $$\quad\notag$$
 
 $$\begin{cases}\dfrac{dx}{dt} = y \\\\ \dfrac{dy}{dt}=x\end{cases}$$
 
+$$\text{초기조건: }(x,y) = (2, -1)$$
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic6.png">
   <br> 그림 1. 어떤 연립 미분방정식에 대해, 해의 초기값으로부터 시간에 따른 성장은 고유벡터를 따라 고윳값 만큼 매번 일어난다.
@@ -136,4 +136,4 @@ $$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix} = \begin{bmatrix}a_{11} & a_{12} \
 
 $$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=c_1\begin{bmatrix}| \\ \vec{v}_1 \\ |\end{bmatrix}e^{\lambda_1 t}+c_2\begin{bmatrix}| \\ \vec{v}_2 \\ |\end{bmatrix}e^{\lambda_2 t}$$
 
-이다.
+이다. 여기서 $c_1$, $c_2$는 상수이다.
