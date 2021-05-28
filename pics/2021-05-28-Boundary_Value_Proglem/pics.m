@@ -1,34 +1,38 @@
 clear; close all; clc;
 
-% the ODE to solve
-% D^2 v_z + 1/r D v_z - \Delta P/(\mu L) = 0
+fn = cd;
+fn = fullfile(fn, '..');
+fn = [fn '\2021-05-11-modeling_with_systems'];
+addpath(fn);
+addpath('D:\angeloyeo.github.io\pics\');
 
-global DeltaP mu L V
+%% the ODE to solve
 
-DeltaP = -3;
-mu = 2;
-L = 100;
-V = 20;
-R = 10;
-kappa = 0.1;
+global A BoundaryCondition
+
+A = [0, 1;-3, 4];
+% BoundaryCondition = [1, 1.5]; BoundaryCondition_Time = [0, 1.5];
+% BoundaryCondition = [1, 3]; BoundaryCondition_Time = [0, 2];
+BoundaryCondition = [-2, -7]; BoundaryCondition_Time = [1, 3];
 
 odefun = @bvpfcn;
 bcfun = @bcfcn;
-r = linspace(kappa*R, R, 30);
+r = linspace(BoundaryCondition_Time(1), BoundaryCondition_Time (2), 30);
 solinit = bvpinit(r, @guess);
 sol = bvp4c(odefun, bcfun, solinit);
 
-%% Comparing wiht analytic solution 
+fun_dxdt = @(x,y) A(1,1) * x + A(1,2) * y;
+fun_dydt = @(x,y) A(2,1) * x + A(2,2) * y;
 
-v_z_analytic = -DeltaP * R^2 / (4 * mu * L) * (1-r.^2/R^2) + log(R./r)/log(1/kappa) * (V + DeltaP*R^2/(4*mu*L)*(1-kappa^2));
+xx = linspace(-10,10,30);
+yy = xx;
 
-clear h
 figure;
-h(1) = plot(sol.x, sol.y(1,:),'b-','linewidth',2);
+fun_dirfield_system(fun_dxdt, fun_dydt, xx, yy)
 hold on;
-h(2) = plot(r, v_z_analytic,'ro','linewidth',2);
-xlabel('$$r$$','interpreter','latex');
-ylabel('$$v_z$$','interpreter','latex');
-legend(h, 'Solution from ODE solver', 'Analytic Solution');
-grid on;
-set(gca,'fontsize',11)
+plot(sol.y(1,:), sol.y(2,:),'linewidth',2)
+xlim([xx(1), xx(end)])
+ylim(xlim)
+% 
+% figure;
+% plot(sol.y(1,:), sol.y(2,:),'linewidth',2)

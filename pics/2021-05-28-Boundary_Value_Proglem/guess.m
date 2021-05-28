@@ -1,4 +1,4 @@
 function g = guess(x)
-g = [log(x)
-    1./(x+eps)];
+g = [exp(x)
+    exp(x)];
 end
