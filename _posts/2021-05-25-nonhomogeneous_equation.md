@@ -125,6 +125,26 @@ $$\begin{cases}\dfrac{dx}{dt} = y + \cos(t)\\\\ \dfrac{dy}{dt}=x+\sin(t) \end{ca
   그림 4. 식 (8)의 시간 $t$에 따른 phase plane의 변화
 </p>
 
+phase plane이 시간에 따라 바뀐다는 것은 initial condition에 따라 나오는 curve도 시시각각 따라가는 방향이 바뀐다는 것을 의미한다. 아래의 그림 5에서는 그러한 내용을 표현하였다.
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic5.mp4">
+  </video>
+  <br>
+  그림 5. 여러가지 initial condition에 따른 solution curve의 변화
+</p>
+
+이 중 가령 (2, -3)에서 시작하는 경우의 solution curve는 아래의 영상과 같이 그려지게 된다.
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic6.mp4">
+  </video>
+  <br>
+  그림 6. 특정 initial condition에 따른 solution curve
+</p>
+
 # General solution = homogeneous + particular solution 인 이유
 
 학부 시절 미분방정식을 배울 때 제일 이해되지 않았던 개념 중 하나가 일반해(general solution)에 대한 개념이었다.

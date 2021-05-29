@@ -126,8 +126,27 @@ fun_dirfield_system(dxdt, dydt, xx, yy,...
     'x_ode45',x_ode45,'y_ode45',y_ode45)
 
 hold on;
-% 
-% figure;
-% plot(z_ode45(:,1), z_ode45(:,2), 'b')
-% xlim([-3, 3])
-% ylim([-3, 3])
+
+newVid =  VideoWriter('pic6','MPEG-4');
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+figure('color','w');
+plot(x_ode45(:,1), y_ode45(:,1), 'b')
+hold on;
+xlim([-3, 3])
+ylim([-3, 3])
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex')
+for i = 1:size(x_ode45,1)
+    h = plot(x_ode45(i,1), y_ode45(i,1), 'o','markerfacecolor','r','markeredgecolor','k');
+    drawnow;
+    writeVideo(newVid, getframe(gcf))
+
+    if i < size(x_ode45,1)
+        delete(h)
+    end
+end
+close(newVid)
