@@ -97,8 +97,26 @@ for i_time = 1:length(time2see)
 end
 %     plot(sol.y(1, idx), sol.y(2, idx),'o','markerfacecolor','k', 'markeredgecolor','k');
 
-    
-    
-    
-    
-    
+
+%% the ODE to solve
+
+t_sol = linspace(0, 3, 100);
+x_sol = -0.001*exp(3*t_sol)+0.7430*exp(t_sol);
+y_sol = -0.003*exp(3*t_sol)+0.7430*exp(t_sol);
+
+figure;
+plot(x_sol, y_sol,'-','linewidth',2)
+hold on;
+time2see = [0,1,2,3];
+for i_time = 1:length(time2see)
+    [~,idx] = min(abs(t_sol - time2see(i_time)));
+    plot(x_sol(idx), y_sol(idx),'o','markerfacecolor','y', 'markeredgecolor','k');
+    text(x_sol(idx)-2.8,y_sol(idx)+1.2, ['@ t = ', num2str(time2see(i_time))],'BackgroundColor','w','EdgeColor','k')
+end
+
+xlim([xx(1), xx(end)])
+ylim(xlim)
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+axis square
