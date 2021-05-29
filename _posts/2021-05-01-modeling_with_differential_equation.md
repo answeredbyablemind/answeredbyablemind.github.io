@@ -330,3 +330,7 @@ $$x(t) = \frac{1}{6}e^{-\frac{3t}{2}}\sin(6t)$$
 * 솔루션 풀이 법이 먹힌다고 해서 해는 유일하게 존재하는 것인지
 * 솔루션이 존재하지만 저런 방법들 중 하나로 모든 미분 방정식을 풀 수 있게 되는 것인지
 
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V2s12ZlBdbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+</center>
+
