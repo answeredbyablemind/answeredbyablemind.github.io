@@ -254,7 +254,7 @@ $$
 $$
 
 $$
-\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}\right)dt
+\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}t\right)dt
 $$
 
 ***
