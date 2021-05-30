@@ -91,3 +91,47 @@ plot(xx, yy,'linewidth',2,'color',[0.494, 0.184, 0.556])
 
 
 ylim([-3, 3])
+
+%% Exponential Growth
+dydx = @(x,y) y;
+figure;
+fun_dirfield(dydx, linspace(-1,10,20), linspace(-50, 1200, 20))
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+title('$$\frac{dy}{dx}=y$$','interpreter','latex')
+set(gca,'fontsize',12)
+set(gcf,'position',[680   498   622   480])
+
+hold on;
+XLIMs = xlim;
+YLIMs = ylim;
+line(XLIMs, [0, 0],'color','k','linewidth',2)
+line([0, 0], YLIMs, 'color','k','linewidth',2)
+xx = linspace(-2, 10, 100);
+yy = 100*exp(xx);
+plot(xx, yy,'linewidth',2,'color',lines(1))
+xlim(XLIMs)
+ylim(YLIMs)
+
+%% Logistic Growth
+dydx = @(x,y) y.*(1-y/1000);
+figure;
+fun_dirfield(dydx, linspace(-1,10,20), linspace(-50, 1200, 20))
+grid on;
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+title('$$\frac{dy}{dx}=y\left(1-\frac{y}{1000}\right)$$','interpreter','latex')
+set(gca,'fontsize',12)
+set(gcf,'position',[680   498   622   480])
+
+hold on;
+XLIMs = xlim;
+YLIMs = ylim;
+line(XLIMs, [0, 0],'color','k','linewidth',2)
+line([0, 0], YLIMs, 'color','k','linewidth',2)
+xx = linspace(-2, 10, 100);
+yy = 1000*exp(xx)./(exp(xx)+9);
+plot(xx, yy,'linewidth',2,'color',lines(1))
+xlim(XLIMs)
+ylim(YLIMs)
