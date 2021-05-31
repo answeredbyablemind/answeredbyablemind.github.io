@@ -167,6 +167,8 @@ docs-ko:
         url:    2021/05/27/second_order_ODE.html
       - title:  경계값 문제(BVP)
         url:    2021/05/28/Boundary_Value_Problem.html
+      - title:  선형연산자와 함수 공간
+        url:    2021/05/31/linear_operator_and_function_space.html
 
   - title:      편미분방정식
     children:
