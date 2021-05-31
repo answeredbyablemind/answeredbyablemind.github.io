@@ -100,9 +100,11 @@ end
 
 %% the ODE to solve
 
+c = [exp(3), exp(1); exp(9), exp(3)]\[2;7];
+
 t_sol = linspace(0, 3, 100);
-x_sol = -0.001*exp(3*t_sol)+0.7430*exp(t_sol);
-y_sol = -0.003*exp(3*t_sol)+0.7430*exp(t_sol);
+x_sol = c(1)*exp(3*t_sol)+c(2)*exp(t_sol);
+y_sol = 3*c(1)*exp(3*t_sol)+c(2)*exp(t_sol);
 
 figure;
 plot(x_sol, y_sol,'-','linewidth',2)
