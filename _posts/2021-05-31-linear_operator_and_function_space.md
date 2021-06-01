@@ -379,7 +379,7 @@ $$\Rightarrow J(f, g)+\left\langle  \left(\frac{d^2}{dx^2}p^*(x)-\frac{d}{dx}q^*
 
 $$L^{\dagger}\psi=\frac{d^2}{dx^2}\Big(p^*(x)\psi(x)\Big)-\frac{d}{dx}\Big(q^*(x)\psi(x)\Big)+r^*(x)\psi(x)$$
 
-# Ax=b in the world of functions
+# $Ax=b$ in the world of functions
 
 이번 포스팅에서 우리는 지금까지 함수를 일종의 벡터로 볼 수 있다는 사실을 통해 벡터로써의 함수와 그 함수에 가해질 수 있는 연산들의 특징을 살펴보았다.
 
@@ -389,7 +389,7 @@ $$L^{\dagger}\psi=\frac{d^2}{dx^2}\Big(p^*(x)\psi(x)\Big)-\frac{d}{dx}\Big(q^*(x
 
 그러면 선형대수학에서 $Ax=b$의 해는 어떤 조건에서 존재했더라?
 
-## Existence of solution of Ax =b
+## Existence of solution of $Ax =b$
 
 바로 [행렬 곱의 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 보았던 것 처럼 $b$가 $A$의 열공간에 존재하고 있을 경우였다.
 
@@ -423,7 +423,7 @@ $$x^T(0) = 0$$
 
 그러므로, $Ax=b$의 해가 존재하는 조건은 $A^Ty=0$인 $y$에 대해 $b^Ty=0$인 것이다.
 
-## Solvability of Lu = f
+## Solvability of $Lu = f$
 
 우리는 함수 공간에서 연산자 $L$의 adjoint $L^\dagger$를 알아보았다.
 
