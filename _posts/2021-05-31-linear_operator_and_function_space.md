@@ -318,16 +318,65 @@ $$\langle f, Lg\rangle = \langle L^\dagger f, g\rangle$$
 
 $$\langle f, Lg \rangle = \int_{a}^{b}f^*(x)Lg(x)dx=\int_{a}^{b}f^*(x) \frac{dg}{dx}dx$$
 
+부분적분을 이용하면 다음과 같이 계산된다.
 
+$$\Rightarrow f^*(x)g(x)\big |_{a}^{b}-\int_{a}^{b}\frac{df^*}{dx}g(x)dx$$
 
+$$= f^*(x)g(x)\big |_{a}^{b}+\int_{a}^{b}\left(-\frac{df^*}{dx}\right)g(x)dx$$
 
-$$L^{\dagger}v=-\frac{d}{dx}v$$
+$$=f^*(b)g(b)-f^*(a)g(a) + \left\langle -\frac{d}{dx}f, g\right\rangle$$
 
-$$Lu = a(x)\frac{d^2u}{dx^2}+b(x)\frac{du}{dx}+c(x)u$$
+따라서, $f^*(b)g(b) -f^*(a)g(a0) = 0$ 이라는 조건 하에 다음과 같이 미분 연산자의 adjoint를 생각할 수 있다.
 
-formal adjoint $L^{\dagger}v$는
+$$L^{\dagger}\psi=-\frac{d}{dx}\psi$$
 
-$$L^{\dagger}v=(av)_{xx}-(bv)_x+cv$$
+---
+
+또, 만약 아래와 같은 2차 미분이 포함된 연산자인 경우도 한번 생각해보자.
+
+$$L\phi = p(x)\frac{d^2\phi}{dx^2}+q(x)\frac{d\phi}{dx}+r(x)\phi(x)$$
+
+그러면 $L^\dagger$는 다음을 만족해야 한다.
+
+$$\langle f, Lg\rangle = \langle L^\dagger f, g\rangle$$
+
+여기서부터는 가독성을 위해 '$(x)$'라는 기호는 생략하여 수식을 조금 간략화하여 적도록 하자.
+
+$$\langle f,Lg \rangle = \int_{a}^{b}f^*\left\lbrace p\frac{d^2g}{dx^2}+q\frac{dg}{dx}+rg\right\rbrace$$
+
+$$=\int_{a}^{b}f^* p \frac{d^2g}{dx^2}dx + \int_{a}^{b}f^* q \frac{dg}{dx}dx+\int_{a}^{b}f^* r gdx$$
+
+여기서 $p(x)$, $q(x)$, $r(x)$의 위치를 이동시키면,
+
+$$\Rightarrow \int_{a}^{b}pf^* \frac{d^2g}{dx^2}dx + \int_{a}^{b}qf^* \frac{dg}{dx}dx+\int_{a}^{b}rf^* gdx$$
+
+와 같이 된다.
+
+위 식에서 덧셈으로 합쳐진 세 개의 식 중 앞의 두 개의 식을 각각 따로 계산해보면 다음과 같이 계산된다.
+
+i) 
+
+$$\int_{a}^{b} p f^* \frac{d^2g}{dx^2}dx=(pf^*)\frac{dg}{dx}\Big |_{a}^{b}-\int_{a}^{b}\frac{d}{dx}\left(pf^*\right)\frac{dg}{dx}dx$$
+
+$$=(pf^*)\frac{dg}{dx}\Big|_{a}^{b}-\left\lbrace\frac{d}{dx}\left(pf^*\right)g\Big |_{a}^{b}-\int_{a}^{b}\frac{d^2}{dx^2}\left(pf^*\right)g dx\right \rbrace$$
+
+$$=(pf^*)\frac{dg}{dx}\Big|_{a}^{b}-\frac{d}{dx}(pf^*)g\Big|_{a}^{b}+\int_{a}^{b}\frac{d^2}{dx^2}(pf^*)g dx$$
+
+ii)
+
+$$\int_{a}^{b}qf^*\frac{dg}{dx}dx=(qf^*)g\Big|_{a}^{b}-\int_{a}^{b}\frac{d}{dx}(qf^*)gdx$$
+
+따라서, 원래의 식은 다음과 같이 묶어 쓸 수 있다.
+
+$$\Rightarrow \left(pf^*\frac{dg}{dx}-\frac{d}{dx}(pf^*)g+(qf^*)g\right)\Big|_{a}^{b}+\int_{a}^{b}\frac{d^2}{dx^2}(pf^*)g-\frac{d}{dx}(qf^*)g+rf^*g dx$$
+
+여기서 왼쪽의 식을 $J(f, g)$라 하면,
+
+$$\Rightarrow J(f, g)+\left\langle  \left(\frac{d^2}{dx^2}p^*(x)-\frac{d}{dx}q^*(x)+r^*(x)\right)f, g\right\rangle$$
+
+따라서, $J(f, g)=0$ 이라는 조건 하에 다음과 같은 $L^{\dagger}$를 찾을 수 있다.
+
+$$L^{\dagger}\psi=\frac{d^2}{dx^2}(p^*(x)\psi(x))-\frac{d}{dx}(q^*(x)\psi(x))+r^*(x)\psi(x)$$
 
 # Ax=b in the world of functions
 
