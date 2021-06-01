@@ -308,7 +308,18 @@ $$L^{\dagger}\psi = \alpha^*\psi$$
 
 ### (2) 미분 연산자의 adjoint
 
-$$Lu = \frac{d}{dx}u$$
+구간 $x\in [a, b]$에서 정의된 복소함수 $\phi$, $\psi$, $f$, $g$와 임의의 복소수 $\alpha$에 대해, 아래와 같은 연산자를 생각하자.
+
+$$L\phi = \frac{d}{dx}\phi$$
+
+그러면 $L^\dagger$는 다음을 만족해야 한다.
+
+$$\langle f, Lg\rangle = \langle L^\dagger f, g\rangle$$
+
+$$\langle f, Lg \rangle = \int_{a}^{b}f^*(x)Lg(x)dx=\int_{a}^{b}f^*(x) \frac{dg}{dx}dx$$
+
+
+
 
 $$L^{\dagger}v=-\frac{d}{dx}v$$
 
