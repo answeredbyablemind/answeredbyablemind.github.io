@@ -376,7 +376,7 @@ $$\Rightarrow J(f, g)+\left\langle  \left(\frac{d^2}{dx^2}p^*(x)-\frac{d}{dx}q^*
 
 따라서, $J(f, g)=0$ 이라는 조건 하에 다음과 같은 $L^{\dagger}$를 찾을 수 있다.
 
-$$L^{\dagger}\psi=\frac{d^2}{dx^2}(p^*(x)\psi(x))-\frac{d}{dx}(q^*(x)\psi(x))+r^*(x)\psi(x)$$
+$$L^{\dagger}\psi=\frac{d^2}{dx^2}\Big(p^*(x)\psi(x)\Big)-\frac{d}{dx}\Big(q^*(x)\psi(x)\Big)+r^*(x)\psi(x)$$
 
 # Ax=b in the world of functions
 
