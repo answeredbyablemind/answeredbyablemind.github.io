@@ -214,7 +214,7 @@ $$L\phi = \int_{-\infty}^{\infty}\phi(x')g(x-x')dx' % 식 (17)$$
 
 또는 푸리에 변환도 적분 연산자의 일종이다.
 
-$$L\phi = \int_{-\infty}^{\infty}\phi(\xi)e^{2\pi i\xi x}d\xi % 식 (18)$$
+$$L\phi = \int_{-\infty}^{\infty}\phi(\xi)e^{-2\pi i\xi x}d\xi % 식 (18)$$
 
 ## 전치 연산 → adjoint 연산
 
