@@ -35,7 +35,9 @@ tags: 미분방정식
 이번 포스팅을 이해하기 위해선 아래의 내용에 대해 자세히 알고 오시는 것을 추천드립니다.
 
 * [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
+* [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
 * [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html)
+* [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
 
 # functions as vectors
 
@@ -68,9 +70,9 @@ tags: 미분방정식
 
 아래는 함수의 상수배와 함수끼리의 합을 표현한 것이다. 
 
-$$(c\cdot f)(x) = c\cdot f(x)$$
+$$(c\cdot f)(x) = c\cdot f(x) % 식 (1)$$
 
-$$(f+g)(x) = f(x)+g(x)$$
+$$(f+g)(x) = f(x)+g(x) % 식 (2)$$
 
 다시 말해 어떤 함수 $f(x)$에 임의의 상수 $c$를 곱하더라도 여전히 $cf(x)$는 함수이고,
 
@@ -96,11 +98,59 @@ $$(f+g)(x) = f(x)+g(x)$$
 
 이 개념이 어디서부터 나왔는지, 이 개념이 가졌던 근본적인 의미가 뭐였는지 생각해본 뒤에 비로소 확장된 버전의 테크닉들을 생각해낼 수 있기 때문이다.
 
-## 벡터 간의 내적 -> 함수의 내적
+여기서는 총 세 가지의 선형대수학의 개념에 대해 함수해석학에서 "확장된" 버전의 개념이 어떤 것인지 알아볼 것이다.
 
-## 행렬과 벡터의 곱 -> 연산자와 함수의 관계
+## 벡터 간의 내적 → 함수의 내적
 
-## 전치 행렬 --> adjoint 연산
+첫 번째는 내적(inner product) 연산이다.
+
+선형대수학에서 벡터의 내적은 다음과 같이 정의되었다.
+
+임의의 아래와 같은 $n$차원 실수 벡터 $\vec{a}$와 $\vec{b}$에 대하여,
+
+$$\vec{a} = \begin{bmatrix}a_1\\ a_2 \\ \vdots \\ a_n\end{bmatrix} % 식 (3)$$
+
+$$\vec{b} = \begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_n\end{bmatrix} % 식 (4)$$
+
+$$\text{dot}(\vec{a}, \vec{b})=a_1b_1 + a_2b_2 +\cdots + a_nb_n % 식 (5)$$
+
+만약 $\vec{a}$와 $\vec{b}$가 복소 벡터였다고 하면 내적은 다음과 같이 정의된다.
+
+$$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % 식 (6)$$
+
+여기서 $*$은 복소 켤레(complex conjugate) 연산이다.
+
+왜 복소 벡터는 복소 켤레 연산이 들어가는지 생각해본다면 내적을 통해 복소 벡터에서 길이를 정의하기 위해서이다.
+
+어떤 실수 벡터 $\vec{a}$의 크기(보통 L2-norm)는 다음과 같이 정의된다.
+
+$$\text{norm}(\vec{a}) = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} % 식 (7)$$
+
+즉,
+
+$$\text{norm}(\vec{a}) = \sqrt{\text{dot}(\vec{a}, \vec{a})}=\sqrt{a_1a_1+a_2a_2+\cdots+a_na_n} % 식 (8)$$
+
+이 개념을 복소벡터에까지 확장시키면, 복소 벡터 $\vec{a}$에 대해서
+
+$$\text{norm}(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2+\cdots +a_n^*a_n}=\sqrt{\text{dot}(\vec{a},\vec{a})} % 식 (9)$$
+
+이어야 하므로 복소벡터의 내적연산은 식 (6)과 같이 정의되어야 하는 것이다.
+
+이제 식 (6)의 방식을 확장해 함수의 내적을 정의해보도록 하자.
+
+미분방정식을 다룰 때 사용되는 함수들은 실수 함수 범위에서 그치지않고 함수값이 복소수가 될 수 도 있기 때문에 다음과 같이 복소 벡터의 내적의 정의를 확장해 다음과 같이 정의한다.
+
+실수 입력 복소수 출력을 갖는 구간 $(a, b)$에서 정의된 임의의 복소함수 $f$, $g$에 대해 두 함수의 inner product $\langle f, g\rangle$은 
+
+$$\langle f, g\rangle \equiv \int_a^bf^*(x)g(x) dx$$
+
+이다. 여기서 $f^*(x)$는 $f(x)$의 complex conjugate이다.
+
+## 행렬과 벡터의 곱 → 연산자와 함수의 관계
+
+행렬은 
+
+## 전치 행렬 → adjoint 연산
 
 # Ax=b in the world of functions
 
@@ -136,3 +186,9 @@ $$L^{\dagger}v=(av)_{xx}-(bv)_x+cv$$
 ## eigenvalue and eigenfunctions
 
 ## eigenfunction expansion
+
+# 참고 문헌
+
+* function space, Wikipedia (https://en.wikipedia.org/wiki/Function_space)
+* Applied Mathematical Methods in Theoretical Physics, 2nd ed., Wiley-VCH, Michio Masujima
+* Advanced Differential Equations: Asymptotics & Perturbations, Arxiv, 2020, J Nathan Kutz 
