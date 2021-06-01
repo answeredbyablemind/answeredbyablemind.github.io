@@ -142,7 +142,7 @@ $$\text{norm}(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2
 
 실수 입력 복소수 출력을 갖는 구간 $(a, b)$에서 정의된 임의의 복소함수 $f$, $g$에 대해 두 함수의 inner product $\langle f, g\rangle$은 
 
-$$\langle f, g\rangle \equiv \int_a^bf^*(x)g(x) dx$$
+$$\langle f, g\rangle \equiv \int_a^bf^*(x)g(x) dx % 식 (10)$$
 
 이다. 여기서 $f^*(x)$는 $f(x)$의 complex conjugate이다.
 
@@ -162,7 +162,7 @@ $$\langle f, g\rangle \equiv \int_a^bf^*(x)g(x) dx$$
 
 그리고, 특히 아래와 같은 특성을 만족하는 연산자라면 그 연산자는 '선형 연산자'라고 부른다. 어떤 연산자 $L$에 대해,
 
-$$L(\alpha f + \beta g) = \alpha Lf + \beta Lg$$
+$$L(\alpha f + \beta g) = \alpha Lf + \beta Lg  % 식 (11)$$
 
 이며, $\alpha$와 $\beta$는 임의의 복소수이고, $f$와 $g$는 임의의 복소 함수이다.
 
@@ -178,23 +178,23 @@ $$L(\alpha f + \beta g) = \alpha Lf + \beta Lg$$
 
 (1) 스칼라배 연산
 
-$$L\phi = \alpha \phi$$
+$$L\phi = \alpha \phi  % 식 (12)$$
 
 (2) 미분 연산자. 
 
 미분 차수는 몇 차(order)여도 상관없다.
 
-$$L\phi = \frac{d^3}{dx^3}\phi \quad\text{ or }\quad L = \frac{d^3}{dx^3}$$ 
+$$L\phi = \frac{d^3}{dx^3}\phi \quad\text{ or }\quad L = \frac{d^3}{dx^3} % 식 (13)$$ 
 
 또는 여러 개의 미분연산이 결합된 것도 하나의 연산자로 볼 수 있으며 다른 함수를 곱하고 미분을 취해주는 방식도 가능하다.
 
 가령, 아래와 같은 연산자도 생각할 수 있으며 선형 연산자이다.
 
-$$L\phi = \phi^{(n)}(x)+a_1(x)\phi^{(n-1)}(x)+\cdots+a_{n-1}(x)\phi'(x)+a_n(x)\phi(x)$$
+$$L\phi = \phi^{(n)}(x)+a_1(x)\phi^{(n-1)}(x)+\cdots+a_{n-1}(x)\phi'(x)+a_n(x)\phi(x) % 식 (14)$$
 
 즉, 연산자는
 
-$$L = \frac{d^n}{dx^n}+a_1(x)\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}\frac{d}{dx}+a_n(x)$$
+$$L = \frac{d^n}{dx^n}+a_1(x)\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}\frac{d}{dx}+a_n(x) % 식 (15)$$
 
 이다.
 
@@ -204,17 +204,72 @@ $$L = \frac{d^n}{dx^n}+a_1(x)\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}\frac{d}{dx}
 
 임의의 복소함수 $K(\cdot,\cdot)$에 대해,
 
-$$L\phi = \int_{a}^{b}K(x, x')\phi(x')dx'$$
+$$L\phi = \int_{a}^{b}K(x, x')\phi(x')dx' % 식 (16)$$
 
 가령 convolution 연산도 적분 연산자의 일종이다.
 
-$$L\phi = \int_{-\infty}^{\infty}\phi(x')g(x-x')dx'$$
+$$L\phi = \int_{-\infty}^{\infty}\phi(x')g(x-x')dx' % 식 (17)$$
 
 또는 푸리에 변환도 적분 연산자의 일종이다.
 
-$$L\phi = \int_{-\infty}^{\infty}\phi(\xi)e^{2\pi i\xi x}d\xi$$
+$$L\phi = \int_{-\infty}^{\infty}\phi(\xi)e^{2\pi i\xi x}d\xi % 식 (18)$$
 
-## 전치 행렬 → adjoint 연산
+## 전치 연산 → adjoint 연산
+
+이번에는 전치 연산에 대해 생각해보자.
+
+벡터의 전치 연산은 매우 간단하다. 아래와 같이 행과 열을 뒤집어 주면 된다.
+
+$$\begin{bmatrix}1 & 2\end{bmatrix}^T = \begin{bmatrix}1\\2 \end{bmatrix} % 식 (19)$$
+
+그럼 선형대수학에서 전치 연산의 역할은 무엇이었던가?
+
+전치 연산은 열벡터를 행벡터로, 혹은 행벡터를 열벡터로 바꿔주는 역할을 해주었다.
+
+[행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html) 편에서 보았던 것 처럼 행벡터는 열벡터에 적용되는 함수(functional)이다.
+
+그리고 벡터의 전치 연산을 정의하고 행벡터를 열벡터에 작용하는 함수로 생각함으로써 두 벡터의 내적은 다음과 같이도 계산할 수 있게 되었다.
+
+임의의 벡터 $\vec{a}$와 $\vec{b}$에 대해서,
+
+$$\vec{a}\cdot\vec{b} = \vec{a}^T\vec{b} % 식 (20)$$
+
+와 같이 쓸 수 있게 되는 것이다. 즉, $\vec{a}$에 전치연산을 취해줌으로써 원래의 열벡터를 행벡터로 바꿔놓았고, 이를 통해 벡터의 기능을 연산자로 작동할 수 있게 해준 것이다.
+
+여기서 말하고자 하는 핵심 포인트는 '전치 연산은 내적과 함께 생각해야 하는 것이며, 연산자에 작용시키기 위해 만든 연산'이라는 것이다.
+
+---
+
+한편, 임의의 두 벡터의 내적 연산을 생각해보는데 두 벡터 중 두 번 째 벡터는 $A$라는 행렬을 통해 선형변환 된 결과로써의 벡터라고 생각해보자. 
+
+다시 말해, 임의의 두 벡터 $x$, $y$에 대해,
+
+$$x\cdot Ay % 식 (21)$$
+
+와 같은 내적연산을 생각해보자. 
+
+우리는 이 식을 통해 행렬 $A$의 전치 연산에 대해 생각해볼 것이다. 식 (20)에 따르면 식 (21)은 전치연산을 활용해 쓰면,
+
+$$x^TAy % 식 (22)$$
+
+가 된다.
+
+여기서 괄호를 조금 다르게 묶어서 생각해보면 식 (22)는 이렇게도 볼 수 있다.
+
+$$(x^TA)y % 식 (23)$$
+
+만약 이 식이 $x^TA$라는 벡터와 $y$라는 벡터의 내적이었다면 식 (23)은 전치연산을 통해 다음과 같이 표현될 수도 있었을 것이다.
+
+$$(A^Tx)^Ty=(A^Tx)\cdot y % 식 (24)$$
+
+여기까지 본 내용을 통해 벡터의 전치 연산을 함수 공간에 어떻게 확장시켰는지 알아보자.
+
+두 함수 $\psi$와 $\phi$, 그리고 연산자 $L$에 대해 다음이 성립하게 하는 것을 연산자 $L$에 대한 adjoint 연산($\dagger$, dagger라고 읽음)이다.
+
+$$\langle \psi, L\phi \rangle = \langle L^\dagger \psi, \phi\rangle$$
+
+여기서 $\langle \psi, \phi \rangle$은 $\psi$와 $\phi$ 간의 내적이다.
+
 
 $$Lu = \frac{d}{dx}u$$
 
