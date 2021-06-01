@@ -148,7 +148,29 @@ $$\langle f, g\rangle \equiv \int_a^bf^*(x)g(x) dx$$
 
 ## 행렬과 벡터의 곱 → 연산자와 함수의 관계
 
-행렬은 
+[행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html) 편에서는 행렬은 벡터에 적용되는 일종의 함수라고 말한 바 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic1.png">
+  <br>
+  그림 3. 행렬은 벡터를 입력으로 받고 또 다른 벡터를 출력으로 내주는 일종의 함수 역할을 한다.
+</p>
+
+우리가 만약 일반적인 함수 $f(x)$, $g(x)$를 벡터로 생각할 수 있다면 선형대수학에서의 행렬의 개념을 확장시킨 함수를 입력으로 받고 다른 함수를 출력해주는 개념을 생각할 수 있다.
+
+그러한 개념을 우리는 함수에 적용되는 '연산자(operator)'라고 부르자. 선형대수학의 행렬처럼 연산자는 함수를 입력받고 다른 함수를 출력해준다.
+
+그리고, 특히 아래와 같은 특성을 만족하는 연산자라면 그 연산자는 '선형 연산자'라고 부른다. 어떤 연산자 $L$에 대해,
+
+$$L(\alpha f + \beta g) = \alpha Lf + \beta Lg$$
+
+이며, $\alpha$와 $\beta$는 임의의 복소수이고, $f$와 $g$는 임의의 복소 함수이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-31-linear_operator_and_function_space/pic4.png">
+  <br>
+  그림 4. 연산자(operator)란 함수를 입력으로 받고 또 다른 함수를 출력해주는 함수이다.
+</p>
 
 ## 전치 행렬 → adjoint 연산
 
