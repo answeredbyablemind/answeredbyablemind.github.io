@@ -172,28 +172,49 @@ $$L(\alpha f + \beta g) = \alpha Lf + \beta Lg$$
   그림 4. 연산자(operator)란 함수를 입력으로 받고 또 다른 함수를 출력해주는 함수이다.
 </p>
 
+계속 추상적인 표현으로 '연산자'라고만 하면 이해하기 어렵기 때문에 아래와 같이 연산자의 쉬운 예시를 몇 가지 생각해보자.
+
+연산자 $L$과 함수 $\phi(x)$에 대해,
+
+(1) 스칼라배 연산
+
+$$L\phi = \alpha \phi$$
+
+(2) 미분 연산자. 
+
+미분 차수는 몇 차(order)여도 상관없다.
+
+$$L\phi = \frac{d^3}{dx^3}\phi \quad\text{ or }\quad L = \frac{d^3}{dx^3}$$ 
+
+또는 여러 개의 미분연산이 결합된 것도 하나의 연산자로 볼 수 있으며 다른 함수를 곱하고 미분을 취해주는 방식도 가능하다.
+
+가령, 아래와 같은 연산자도 생각할 수 있으며 선형 연산자이다.
+
+$$L\phi = \phi^{(n)}(x)+a_1(x)\phi^{(n-1)}(x)+\cdots+a_{n-1}(x)\phi'(x)+a_n(x)\phi(x)$$
+
+즉, 연산자는
+
+$$L = \frac{d^n}{dx^n}+a_1(x)\frac{d^{n-1}}{dx^{n-1}}+\cdots+a_{n-1}\frac{d}{dx}+a_n(x)$$
+
+이다.
+
+(3) 적분 연산자. 
+
+일반적인 적분 뿐만 아니라 다른 어떤 함수를 곱하고 적분을 취해주는 방식도 가능하다. 마찬가지로 선형연산자이다.
+
+임의의 복소함수 $K(\cdot,\cdot)$에 대해,
+
+$$L\phi = \int_{a}^{b}K(x, x')\phi(x')dx'$$
+
+가령 convolution 연산도 적분 연산자의 일종이다.
+
+$$L\phi = \int_{-\infty}^{\infty}\phi(x')g(x-x')dx'$$
+
+또는 푸리에 변환도 적분 연산자의 일종이다.
+
+$$L\phi = \int_{-\infty}^{\infty}\phi(\xi)e^{2\pi i\xi x}d\xi$$
+
 ## 전치 행렬 → adjoint 연산
-
-# Ax=b in the world of functions
-
-$$Lu=f$$
-
-## Solvability
-
-Fredholm's alternative theorem 정리하기.
-
-left nullspace와 column space가 직교하는 것이 solvability condition
-
-
-# 함수에 적용되는 행렬? 선형 연산자
-
-가장 기본적인 선형 연산자: 미분, 적분
-
-선형 연산자들의 선형 결합 또한 선형 연산자이다.
-
-선형 연산자는 항상 boundary condition과 함께 정의되어야 한다.
-
-## transpose of matrices --> adjoint of operators
 
 $$Lu = \frac{d}{dx}u$$
 
@@ -205,9 +226,16 @@ formal adjoint $L^{\dagger}v$는
 
 $$L^{\dagger}v=(av)_{xx}-(bv)_x+cv$$
 
-## eigenvalue and eigenfunctions
+# Ax=b in the world of functions
 
-## eigenfunction expansion
+$$Lu=f$$
+
+## Solvability
+
+Fredholm's alternative theorem 정리하기.
+
+left nullspace와 column space가 직교하는 것이 solvability condition
+
 
 # 참고 문헌
 
