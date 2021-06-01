@@ -169,6 +169,8 @@ docs-ko:
         url:    2021/05/28/Boundary_Value_Problem.html
       - title:  선형 연산자와 함수 공간
         url:    2021/05/31/linear_operator_and_function_space.html
+      - title:  고유함수 전개
+        url:    2021/06/01/eigenfunction_expansion.html
 
   - title:      편미분방정식
     children:
