@@ -54,9 +54,35 @@ tags: 미분방정식
 
 너무 단순한가?
 
-굳이 비유를 들자면, 쿠팡 로켓배송은 로켓와우 멤버십 가입비 2900원만내면 쿠팡에서 제공하는 모든 서비스를 누릴 수 있다.
+마치 쿠팡에서 로켓와우 멤버십 가입비 2900원만내면 쿠팡에서 제공하는 모든 로켓배송 서비스를 누릴 수 있는 것 처럼, 어떤 수학적 object가 위의 두 개의 법칙만 잘 만족하는 것이라고 확인된다면 '벡터'라는 멤버십을 받게 되는 것이다.
 
-마찬가지로 어떤 수학적 object가 위의 두 개의 법칙만 잘 만족하는 것이라고 확인된다면 선형대수학에서 열심히 일궈놓은 개념들과 테크닉들을 적용할 수 있게 되는 것이다.
+그리고 이에 따라 선형대수학에서 열심히 일궈놓은 개념들과 테크닉들을 적용받을 수 있게 된다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-31-linear_operator_and_function_space/pic1.png">
+  <br>
+  그림 1. 쿠팡에서 로켓와우 멤버십에 가입해 누릴 수 있는 혜택들 (출처: 쿠팡)
+</p>
+
+엄밀한 증명은 아니지만 간단하게만 생각해봐도 함수는 벡터로 볼 수 있는 자격을 갖췄다.
+
+아래는 함수의 상수배와 함수끼리의 합을 표현한 것이다. 
+
+$$(c\cdot f)(x) = c\cdot f(x)$$
+
+$$(f+g)(x) = f(x)+g(x)$$
+
+다시 말해 어떤 함수 $f(x)$에 임의의 상수 $c$를 곱하더라도 여전히 $cf(x)$는 함수이고,
+
+어떤 함수 $f(x)$와 $g(x)$를 더하더라도 $f(x)+g(x)$ 역시 함수다.
+
+<p align = "center">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/d/d7/Example_for_addition_of_functions.svg">
+  <br>
+  그림 2. 두 함수의 합
+  <br>
+  <a href = "https://en.wikipedia.org/wiki/Function_space"> 그림 출처: Fucntion space, Wikipeda </a>
+</p>
 
 ## 함수의 내적
 
