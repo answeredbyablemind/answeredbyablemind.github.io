@@ -32,13 +32,14 @@ tags: 미분방정식
 
 # Prerequisites
 
-이번 포스팅을 이해하기 위해선 아래의 내용에 대해 자세히 알고 오시는 것을 추천드립니다.
+이번 포스팅을 이해하기 위해선 아래의 내용에 대해 자세히 알고 오시는 것을 추천드립니다. (사실상 선형대수학의 기초 전반은 모두 알아야 잘 이해할 수 있습니다.)
 
 * [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
 * [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
 * [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html)
 * [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
-
+* [4개 주요 부분 공간 간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)
+  
 # functions as vectors
 
 이전 포스팅 중 선형대수학의 기초 부분인 [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)에서는 세 가지 관점으로 벡터를 생각했다.
@@ -380,14 +381,73 @@ $$L^{\dagger}\psi=\frac{d^2}{dx^2}\Big(p^*(x)\psi(x)\Big)-\frac{d}{dx}\Big(q^*(x
 
 # Ax=b in the world of functions
 
-$$Lu=f$$
+이번 포스팅에서 우리는 지금까지 함수를 일종의 벡터로 볼 수 있다는 사실을 통해 벡터로써의 함수와 그 함수에 가해질 수 있는 연산들의 특징을 살펴보았다.
 
-## Solvability
+그런데, 선형대수학이 행렬 $A$와 벡터 $x$, $b$에 대해 $Ax=b$를 놓고 해 $x$를 구하는 과정을 연구하는 과정에서 발전한 학문인 것과 같이,
 
-Fredholm's alternative theorem 정리하기.
+우리는 연산자 $L$과 함수 $u$, $f$에 대해 $Lu=f$의 해 $u$를 구하는 과정을 잘 이해하는 것이 함수를 벡터처럼 다루고자 하는 궁극적인 목표라고 할 수 있다.
 
-left nullspace와 column space가 직교하는 것이 solvability condition
+그러면 선형대수학에서 $Ax=b$의 해는 어떤 조건에서 존재했더라?
 
+## Existence of solution of Ax =b
+
+바로 [행렬 곱의 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 보았던 것 처럼 $b$가 $A$의 열공간에 존재하고 있을 경우였다.
+
+이것을 다른 시각에서 설명해보면 다음과 같이 설명할 수 있다. 우리는 주요 부분 공간(row space, column space, null space, left null space)의 관계를 이용해서 해의 존재 조건을 따져볼 것이다.
+
+아래와 같은 조건을 만족하는 모종의 벡터 $y$를 생각해보자.
+
+$$A^Ty=0$$
+
+그러면 원래의 식 $Ax=b$에 대해 $y$와 내적을 취해보자.
+
+$$Ax\cdot y = (Ax)^Ty = x^TA^Ty$$
+
+위 식에서 괄호를 조금 다르게 쳐주면 다음과 같이 생각할 수도 있다.
+
+$$\Rightarrow x^T(A^Ty)$$
+
+여기서 $A^Ty=0$이라는 관계를 가진다고 하였으므로
+
+$$x^T(0) = 0$$
+
+이다.
+
+그런데, $Ax=b$라는 관계에 의해 $(Ax)^Ty=b^Ty$ 이기도 하고, $(Ax)^Ty=0$이라는 사실을 확인했으므로 $b^Ty=b\cdot y = 0$이다. 따라서, $vec{b}$와 $\vec{y}$는 서로 직교하는 벡터라는걸 알 수 있다.
+
+그런데, 조금만 생각해보면 $y$는 left null space안에 있는 벡터라는 사실을 알 수 있다. left null space의 정의에 따라 그런 것이다.
+
+그리고 [4개 주요 부분 공간 간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html) 편에서 배웠던 것 처럼 column space는 left null space와 항상 직교한다.
+
+따라서 만약 $b$벡터가 $y$에 직교한다면 이 $b$벡터는 left null space와 직교하는 벡터 공간 안에 있는 것이므로 $b$는 column space안에 있는 벡터임을 알 수 있는 것이다.
+
+그러므로, $Ax=b$의 해가 존재하는 조건은 $A^Ty=0$인 $y$에 대해 $b^Ty=0$인 것이다.
+
+## Solvability of Lu = f
+
+우리는 함수 공간에서 연산자 $L$의 adjoint $L^\dagger$를 알아보았다.
+
+위의 선형대수학에서의 논의를 함수 공간에 그대로 적용하면 $Lu=f$가 해를 가질 조건은 다음과 같다.
+
+$L^\dagger v = 0$인 함수 $v$에 대하여 $Lu=f$에 $v$를 내적해보자.
+
+그러면
+
+$$\langle v, Lu\rangle = \langle v, f\rangle$$
+
+이고, adjoint의 정의에 의해 위 식은 다음과 같다는 것을 알 수 있다.
+
+$$\langle L^\dagger v, u\rangle = \langle v, f\rangle$$
+
+여기서 $L^\dagger v=0$이므로 위 식의 좌변은 0이 된다. 따라서,
+
+$$\langle v, f \rangle = 0$$
+
+이라는 사실을 알 수 있다.
+
+따라서, 위 선형대수학에서 $Ax=b$의 해의 존재조건과 유사하게 함수 공간에서 $Lu=f$의 해가 존재하기 위해서는 **$f(x)$라는 함수가 adjoint 연산자의 영공간에 직교한다는 조건이 $Lu=f$가 해를 가지는 조건**이다.
+
+이 이론을 프레드홀름 정리 중 하나인 Fredholm alternative 라고 부르기도 한다.
 
 # 참고 문헌
 
