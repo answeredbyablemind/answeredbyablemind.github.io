@@ -151,7 +151,7 @@ docs-ko:
         url:    2021/05/05/ODE_and_natural_number_e.html
       - title:  변수분리법
         url:    2021/05/06/separable_differential_equations.html
-      - title:  1계 선형 미분방정식
+      - title:  1계 선형 미분방정식의 해법
         url:    2021/05/08/first_order_linear_equations.html
       - title:  베르누이 방정식
         url:    2021/05/10/Bernoulli_equation.html
@@ -165,6 +165,8 @@ docs-ko:
         url:    2021/05/27/second_order_ODE.html
       - title:  2계 선형 미분방정식의 해법 (2)
         url:    2021/06/02/second_order_ODE_2.html
+      - title:  reduction of order
+        url:    2021/06/03/reduction_of_order.html
       - title:  비제차 미분방정식의 의미
         url:    2021/05/25/nonhomogeneous_equation.html
       - title:  경계값 문제(BVP)
