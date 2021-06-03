@@ -169,6 +169,8 @@ docs-ko:
         url:    2021/06/03/reduction_of_order.html
       - title:  비제차 미분방정식의 의미
         url:    2021/05/25/nonhomogeneous_equation.html
+      - title:  미정계수법
+        url:    2021/06/04/undetermined_coefficients.html
       - title:  경계값 문제(BVP)
         url:    2021/05/28/Boundary_Value_Problem.html
       - title:  선형 연산자와 함수 공간
