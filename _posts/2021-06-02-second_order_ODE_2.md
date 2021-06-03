@@ -198,7 +198,7 @@ $$\therefore x(t) = -\frac{8}{\sqrt{5}}\exp(2t)\sin(\sqrt{5}t)$$
 
 이 경우는 해법이 조금 독특한데, 보조방정식의 해가 되는 $\lambda$를 이용해 하나의 해를 $e^{\lambda t}$로 설정하고 또 다른 해는 $te^{\lambda t}$라고 설정하여 문제를 푼다.
 
-이렇게 설정할 수 있는 이유에 대해서는 다른 포스팅에서 자세히 소개할 것이다. 관련 내용은 reduction of order라고 부르는 테크닉이다.
+이렇게 설정할 수 있는 이유에 대해서는 다른 포스팅에서 자세히 소개할 것이다. 관련 내용은 [reduction of order](https://angeloyeo.github.io/2021/06/03/reduction_of_order.html)라고 부르는 테크닉이다.
 
 ### 예시 문제
 
