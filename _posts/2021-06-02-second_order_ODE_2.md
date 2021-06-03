@@ -14,6 +14,8 @@ tags: 미분방정식
 
 * [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html)
+* [미분방정식을 이용한 오일러 공식 유도](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
+* [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 
 # 2계 제차 선형 미분방정식
 
@@ -116,3 +118,69 @@ $$\therefore c_1 = 1.4,\quad c_2 = -1.4$$
 $$x(t) = 1.4e^{-8t}-1.4e^{-3t}$$
 
 이다.
+
+## 복소수 고윳값을 갖는 경우
+
+식 (2)의 계수 $a$, $b$, $c$ 간의 관계가 $b^2-4ac<0$인 경우 복소수 고윳값을 갖는다는 것을 알 수 있다.
+
+### 예시 문제
+
+다음 초기값 문제를 해결하시오.
+
+$$x''-4x'+9x = 0,\quad x(0) = 0,\quad x'(0)=-8$$
+
+여기서 $x=e^{\lambda t}$로 가정하고 보조 방정식을 얻으면,
+
+$$\lambda^2-4\lambda+9=0$$
+
+이다.
+
+따라서 $\lambda$는
+
+$$\lambda = \frac{4\pm\sqrt{16-4*9}}{2}$$
+
+$$=\frac{4\pm\sqrt{-20}}{2}=2\pm i \sqrt 5$$
+
+이다.
+
+따라서, 방정식의 일반해는
+
+$$x(t)=c_1e^{(2+i\sqrt 5)t}+c_2e^{(2-i\sqrt 5)t}$$
+
+여기부터는 $e^t$를 $\exp(t)$와 같이 쓰도록 하자. (지수 승이 잘 안 보임)
+
+$$=c_1\exp(2t)\exp(i\sqrt 5 t)+c_2\exp(2t)\exp(-i\sqrt 5t)$$
+
+오일러 공식
+
+$$e^{i\theta}=\cos(\theta)+i\sin(\theta)$$
+
+에 의해,
+
+$$\Rightarrow c_1\exp(2t)\left(\cos(\sqrt{5}t)+i\sin(\sqrt{5}t)\right) + c_2\exp(2t)\left(\cos(\sqrt{5}t)-i\sin(\sqrt{5}t)\right)$$
+
+$$=\exp(2t)\left(
+  c_1\cos(\sqrt{5}t)+c_2\cos(\sqrt{5}t)+ic_1\sin(\sqrt{5t})-ic_2\sin(\sqrt{5}t)
+  \right)$$
+
+여기서 $c_1+c_2$와 $ic_1-ic_2$를 각각 새로운 상수 $c_3$와 $c_4$로 치환하면,
+
+$$\Rightarrow \exp(2t)\left(
+  c_3\cos(\sqrt{5t})+c_4\sin(\sqrt{5t})
+  \right)$$
+
+가 된다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
