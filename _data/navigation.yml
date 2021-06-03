@@ -161,8 +161,10 @@ docs-ko:
         url:    2021/05/12/phase_plane.html
       - title:  trace-determinant plane
         url:    2021/05/17/trace_determinant_plane.html
-      - title:  2계 선형 미분방정식
+      - title:  2계 선형 미분방정식의 해법 (1)
         url:    2021/05/27/second_order_ODE.html
+      - title:  2계 선형 미분방정식의 해법 (2)
+        url:    2021/06/02/second_order_ODE_2.html
       - title:  비제차 미분방정식의 의미
         url:    2021/05/25/nonhomogeneous_equation.html
       - title:  경계값 문제(BVP)
