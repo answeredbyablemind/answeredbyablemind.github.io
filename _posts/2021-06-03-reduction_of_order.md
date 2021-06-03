@@ -76,10 +76,33 @@ $$=\left(\exp\left(\int\frac{x_1'}{x_1}dt\right)\right)^2\exp\left(\int p(t)dt\r
 
 $$=\left\lbrace\exp(\ln (x_1)\right\rbrace^2\exp\left(\int p(t)dt\right)$$
 
-$$=x_1^2$$
+$$=x_1^2\exp\left(\int p(t)dt\right)$$
 
+과 같다.
 
+그러면 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 본 것 처럼 식 (10)의 양변에 $\mu(t)$를 곱해주면 다음과 같이 식을 변형할 수 있게 된다.
 
+$$식(10)\Rightarrow h''x_1^2\exp\left(\int p(t)dt\right)+\left(2\frac{x_1'}{x_1}+p(t)\right)h'x_1^2\exp\left(\int p(t)dt\right) = 0$$
+
+미분의 chain rule을 이용해 묶어주면 다음과 같이 쓸 수 있다.
+
+$$\Rightarrow \frac{d}{dt}\left\lbrace h'x_1^2\exp\left(\int p(t)dt\right)\right\rbrace=0$$
+
+따라서, $h'$는 다음과 같이 구할 수 있다. 위 식의 양변에 적분을 취해주면,
+
+$$\Rightarrow h'x_1^2\exp\left(\int p(t)dt\right)=C_1$$
+
+여기서 $C_1$은 적분상수이다.
+
+$$\Rightarrow h'=\frac{C_1}{x_1^2}\exp\left(-\int p(t) dt\right)$$
+
+그리고 최종적으로 $h$는 다음과 같다.
+
+$$h(t) = \int \frac{C_1}{x_1^2}\exp\left(-\int p(t) dt\right) dt+C_2$$
+
+여기서 $C_2$ 역시 적분상수이다.
+
+그러면 $x_1(t)$가 식 (1)의 해로 주어졌을 경우 $x_2(t)$를 $h(t)x_1(t)$와 같은 형식으로 구할 수 있음을 알 수 있다.
 
 
 
