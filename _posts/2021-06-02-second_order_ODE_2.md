@@ -166,17 +166,68 @@ $$=\exp(2t)\left(
 여기서 $c_1+c_2$와 $ic_1-ic_2$를 각각 새로운 상수 $c_3$와 $c_4$로 치환하면,
 
 $$\Rightarrow \exp(2t)\left(
-  c_3\cos(\sqrt{5t})+c_4\sin(\sqrt{5t})
+  c_3\cos(\sqrt{5}t)+c_4\sin(\sqrt{5}t)
   \right)$$
 
 가 된다.
 
+여기서 초기 조건을 대입하면,
+
+$$x(0) = c_3=0$$
+
+$$x'(t)=2\exp(2t)\left(c_3\cos(\sqrt{5}t)+c_4\sin(\sqrt{5}t)\right)
++\exp(2t)\left(
+  -\sqrt{5}c_3\sin(\sqrt 5 t) + \sqrt{5}c_4\cos(\sqrt{5}t)
+  \right)$$
+
+$$=2\exp(2t)(c_4\sin(\sqrt{5}t))+\exp(2t)(\sqrt{5}c_4\cos(\sqrt{5}t))$$
+
+$$x'(0) = \exp(0)(\sqrt{5}c_4)=-8$$
+
+$$\therefore c_4 = -\frac{8}{\sqrt{5}}$$
+
+따라서, 이 미분방정식의 해는
+
+$$\therefore x(t) = -\frac{8}{\sqrt{5}}\exp(2t)\sin(\sqrt{5}t)$$
+
+이다.
+
+## 중근을 갖는 경우
+
+식 (2)의 계수 $a$, $b$, $c$ 간의 관계가 $b^2-4ac=0$인 경우 중근 고윳값을 갖는다는 것을 알 수 있다.
+
+이 경우는 해법이 조금 독특한데, 보조방정식의 해가 되는 $\lambda$를 이용해 하나의 해를 $e^{\lambda t}$로 설정하고 또 다른 해는 $te^{\lambda t}$라고 설정하여 문제를 푼다.
+
+이렇게 설정할 수 있는 이유에 대해서는 다른 포스팅에서 자세히 소개할 것이다. 관련 내용은 reduction of order라고 부르는 테크닉이다.
+
+### 예시 문제
+
+아래의 초기값 문제를 해결하시오.
+
+$$x''-4x'+4x=0\quad x(0) = 12\quad x'(0) = -3$$
 
 
+이 미분방정식의 보조 방정식을 구하면 다음과 같다.
 
+$$\lambda^2-4\lambda+4 = 0$$
 
+따라서, $\lambda = 2\text{(중근)}$이다.
 
+그러므로 우리는 다음과 같이 일반해를 생각할 수 있게 된다.
 
+$$x(t)=c_1e^{2t}+c_2te^{2t}$$
+
+초기값을 이용하면,
+
+$$x(0) = c_1 = 12$$
+
+$$x'(t) = 2c_1e^{2t}+c_2e^{2t}+2c_2te^{2t}$$
+
+$$x'(0) = 2c_1+c_2= -3$$
+
+$$c_2 = -3-24 =-27$$
+
+$$\therefore x(t) = 12e^{2t}-27te^{2t}$$
 
 
 
