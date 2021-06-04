@@ -97,3 +97,37 @@ $$\begin{bmatrix}y_1 & y_2\\ y_1' & y_2'\end{bmatrix}\begin{bmatrix}u' \\ v'\end
 따라서, 우리가 구하게 되는 해는 $u'$와 $v'$에 관한 것이다.
 
 이 연립방정식을 구할 수 있는 해법 중 하나는 크래머 법칙(Cramer's rule)이다.
+
+크래머 법칙을 이용하면 아래와 같이 해를 구할 수 있다.
+
+$$u'=\frac
+  {\text{det}\left(\begin{bmatrix}0 & y_2 \\ r(x) & y_2'\end{bmatrix}\right)}
+  {\text{det}\left(\begin{bmatrix}y_1 & y_2 \\ y_1' & y_2'\end{bmatrix}\right)}
+$$
+
+$$v'=\frac
+  {\text{det}\left(\begin{bmatrix}y_1 & 0 \\ y_1' & r(x) \end{bmatrix}\right)}
+  {\text{det}\left(\begin{bmatrix}y_1 & y_2 \\ y_1' & y_2'\end{bmatrix}\right)}
+$$
+
+여기서 분모의 $\text{det}\left(\begin{bmatrix}y_1 & y_2 \\ y_1' & y_2'\end{bmatrix}\right)$를 $y_1$과 $y_2$의 [론스키안(Wronskian)](https://angeloyeo.github.io/2019/10/10/Wronskian.html)이라고 부르는데 우리는 $W(y_1, y_2)$라고 적자.
+
+그리고 각 분자에 있는 행렬식은 $2\times 2$ 행렬의 행렬식을 직접 계산할 수 있으므로,
+
+$$u'=\frac{-y_2r(x)}{W(y_1,y_2)}$$
+
+$$v'=\frac{y_1r(x)}{W(y_1,y_2)}$$
+
+임을 알 수 있다. 따라서,
+
+$$u(x)=\int \frac{-y_2r(x)}{W(y_1,y_2)} dx$$
+
+$$v(x)=\int \frac{y_1r(x)}{W(y_1,y_2)} dx$$
+
+과 같이 $u(x)$와 $v(x)$를 계산할 수 있게 된다.
+
+따라서, particular solution은
+
+$$y_p(x) = -y_1\int\frac{y_2r(x)}{W(y_1,y_2)}dx+y_2\int\frac{y_1r(x)}{W(y_1,y_2)}dx$$
+
+가 됨을 알 수 있다.
