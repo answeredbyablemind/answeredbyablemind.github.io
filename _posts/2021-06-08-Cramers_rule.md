@@ -35,7 +35,7 @@ $$A=\begin{bmatrix}
 
 그리고, $A$ 행렬의 열 notation을 이용해 $Ax=b$는 다음과 같이도 쓸 수 있다.
 
-$A$의 각 열을 $\begin{bmatrix}| \\ A_1\\ |\end{bmatrix}$, $\begin{bmatrix}| \\ A_2\\ |\end{bmatrix}$, $\cdots$, $\begin{bmatrix}| \\ A_n\\ |\end{bmatrix}$이라 하고 $x$의 각 원소를 $x_1$, $x_2$, $\cdots$, $x_n$이라 할 때,
+$A$의 각 열을 $\begin{bmatrix}\| \\ A_1\\ \|\end{bmatrix}$, $\begin{bmatrix}\| \\ A_2\\ \|\end{bmatrix}$, $\cdots$, $\begin{bmatrix}\| \\ A_n\\ \|\end{bmatrix}$이라 하고 $x$의 각 원소를 $x_1$, $x_2$, $\cdots$, $x_n$이라 할 때,
 
 $$Ax=x_1\begin{bmatrix}| \\ A_1\\ |\end{bmatrix}+x_2\begin{bmatrix}| \\ A_2\\ |\end{bmatrix}+\cdots+x_n\begin{bmatrix}| \\ A_n\\ |\end{bmatrix} = b$$
 
