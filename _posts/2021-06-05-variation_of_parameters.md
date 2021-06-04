@@ -14,7 +14,7 @@ tags: 미분방정식
 
 * [Reduction of order](https://angeloyeo.github.io/2021/06/03/reduction_of_order.html)
 * [론스키안(Wronskian)](https://angeloyeo.github.io/2019/10/10/Wronskian.html)
-* 크래머 법칙(Cramer's Rule)
+* [크래머 공식(Cramer's Rule)](https://angeloyeo.github.io/2021/06/08/Cramers_rule.html)
 * [미정계수법](https://angeloyeo.github.io/2021/06/04/undetermined_coefficients.html)
 
 # 매개변수 변환법 소개
