@@ -84,3 +84,16 @@ $$\Rightarrow u'y_1'+v'y_2'=r(x)$$
 
 와 같이 쓸 수 있다.
 
+---
+
+여기서 식 (7)과 식 (12)를 묶어 다음과 같이 표현해보자.
+
+$$\begin{cases}u'y_1+v'y_2= 0 \\ \\ u'y_1'+v'y_2'=r(x)\end{cases}$$
+
+이 식은 일종의 연립방정식으로 아래와 같이 행렬을 이용해 표현할 수도 있다.
+
+$$\begin{bmatrix}y_1 & y_2\\ y_1' & y_2'\end{bmatrix}\begin{bmatrix}u' \\ v'\end{bmatrix}=\begin{bmatrix}0 \\ r(x)\end{bmatrix}$$
+
+따라서, 우리가 구하게 되는 해는 $u'$와 $v'$에 관한 것이다.
+
+이 연립방정식을 구할 수 있는 해법 중 하나는 크래머 법칙(Cramer's rule)이다.
