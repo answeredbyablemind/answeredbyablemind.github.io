@@ -88,7 +88,7 @@ $$y_h = c_1e^x+c_2e^{3x}$$
 
 이다.
 
-그러면 우리가 homogeneous solution에 particular solution을 합친 것을 일반해라고 가정하였으므로 우리의 일반해는 아래와 같은 형태가 될 것이다.
+그러면 homogeneous solution에 particular solution을 합친 것을 일반해라고 볼 수 있으므로 우리의 일반해는 아래와 같은 형태가 될 것이다.
 
 $$y(x) = c_1e^x + c_2e^{3x}+Ax+B$$
 
