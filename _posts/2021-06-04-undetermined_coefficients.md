@@ -56,7 +56,9 @@ $$Ax+B$$
 
 와 같이 두고 문제를 풀어볼 수 있다.
 
-[2계 선형미분방정식의 해법(2)](https://angeloyeo.github.io/2021/06/02/second_order_ODE_2.html) 편에서 본 내용을 적용하면 식 (1)의 homogeneous solution은 다음과 같이 풀 수 있다.
+[2계 선형미분방정식의 해법(2)](https://angeloyeo.github.io/2021/06/02/second_order_ODE_2.html) 편에서 본 내용을 적용하면 비제차 미분방정식의 완전해는 homogeneous solution과 particular solution의 합이다. 
+
+식 (1)의 homogeneous solution은 다음과 같이 풀 수 있다. 
 
 식 (1)의 제차미분방정식 형태는 다음과 같다.
 
