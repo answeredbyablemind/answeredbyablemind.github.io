@@ -12,7 +12,7 @@ tags: 미분방정식
 
 본 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
+* [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html)
 * [미분방정식을 이용한 오일러 공식 유도](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
 * [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
@@ -41,7 +41,7 @@ $$x(t) = e^{\lambda t} % 식 (3)$$
 
 이제는 "왜" 이와 같은 해를 상정하는지 쉽게 이해할 수 있다. 
 
-앞서 [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)편과 [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html) 편에서 설명한 것 처럼 미분방정식의 시간의 흐름에 따른 변화는 되먹임이 있는 연속성장이기 때문이다.
+앞서 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)편과 [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html) 편에서 설명한 것 처럼 미분방정식의 시간의 흐름에 따른 변화는 되먹임이 있는 연속성장이기 때문이다.
 
 따라서 식 (1)과 같은 선형 제차 2계 미분방정식에 대해 $x(t) = e^{\lambda t}$라고 하면 다음이 성립할 것이다.
 

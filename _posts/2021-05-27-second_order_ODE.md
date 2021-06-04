@@ -12,7 +12,7 @@ tags: 미분방정식
 
 본 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
+* [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 * [연립 미분방정식 모델링](https://angeloyeo.github.io/2021/05/11/modeling_with_systems.html)
 * [위상 평면](https://angeloyeo.github.io/2021/05/12/phase_plane.html)
@@ -115,7 +115,7 @@ $$\text{초기조건: }(x,y) = (2, -1)$$
   <br> 그림 1. 어떤 연립 미분방정식에 대해, 해의 초기값으로부터 시간에 따른 성장은 고유벡터를 따라 고윳값 만큼 매번 일어난다.
 </p>
 
-한편, [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 언급했던 것 처럼 자연상수 $e$는 성장량과 관련된 지표이다.
+한편, [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 언급했던 것 처럼 자연상수 $e$는 성장량과 관련된 지표이다.
 
 그래서 $e^{kt}$는 시간 $t$ 에 따른 성장량을 나타내게 된다. 이렇게 써놓고 보면 $e^{kt}$라는 식에서 $k$는 성장률 혹은 성장 속도이다.
 

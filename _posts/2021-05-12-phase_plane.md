@@ -22,7 +22,7 @@ tags: 미분방정식
 위상 평면에 대한 내용을 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
 * [자연상수 e의 의미](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)
-* [미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
+* [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 * [복소 고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2020/11/02/complex_eigen.html)
 
@@ -191,7 +191,7 @@ $$\lambda_1 = -1,\quad \lambda_2 = 1$$
 
 ## 2원 1계 미분방정식의 해
 
-[미분방정식과 자연상수 e](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 것 처럼 우리는 매번 다음번 좌표를 정할 때 마다 현재 결과물을 바탕으로 성장하므로 좌표의 이동은 연속성장을 이용해 표현할 수 있다. 따라서 자연상수 $e$를 이용해서 좌표의 변화를 표현하는 것은 연속성장의 의미를 담는 것이므로 자연스러운 표현방법이라 할 수 있다.
+[자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 것 처럼 우리는 매번 다음번 좌표를 정할 때 마다 현재 결과물을 바탕으로 성장하므로 좌표의 이동은 연속성장을 이용해 표현할 수 있다. 따라서 자연상수 $e$를 이용해서 좌표의 변화를 표현하는 것은 연속성장의 의미를 담는 것이므로 자연스러운 표현방법이라 할 수 있다.
 
 그리고 [자연상수 위의 승수의 역할이 바로 성장 속도](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)와 관련된 것이므로 자연상수 $e$의 지수에 고윳값을 이용함으로써 성장 속도를 표현할 수 있을 것이다.
 
