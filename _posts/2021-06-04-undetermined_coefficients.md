@@ -103,6 +103,14 @@ $$y(x) = c_1e^x + c_2e^{3x}+\frac{1}{3}x+\frac{4}{9}$$
 
 # 미정계수 테이블
 
-식 (1)의 $x$와 같은 비제차 항은 여러가지 형태가 나올 수 있는데 보통 다항식, 삼각함수, 지수함수의 꼴로 나온다면 아래와 같이 미정계수를 정하여 풀면 좋다.
+식 (1)의 $x$와 같은 비제차 항은 여러가지 형태가 나올 수 있는데 보통 다항식, 삼각함수, 지수함수의 꼴로 나온다면 아래와 같이 미정계수를 정해 particular solution을 가정하여 풀이를 시도해볼 수 있다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-04-undetermined_coefficients/pic1.png">
+  <br>
+  그림 1. 미정계수법을 이용 시 적용할 수 있는 particular solution의 형태
+  <br>
+  그림 출처: Advance Engineering Mathematics, Dennis G. Zill, 6th ed., Jones & Bartlett Learning
+</p>
 
 
