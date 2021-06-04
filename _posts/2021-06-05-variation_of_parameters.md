@@ -55,7 +55,7 @@ $$y_p'=u'y_1+uy_1'+v'y_2+vy_2'$$
 
 $$u'y_1+v'y_2 = 0$$
 
-이 가정은 매우 핵심적이다. 우리는 적절한 $u$, $v$를 찾는 것이 목적이기 때문에 이런 가정까지도 만족하는 $u$와 $v$를 찾기만 하면 되는 것이다. 이 가정은 뒤에 있을 Cramer's rule에 적용하기 위한 연립 방정식으로 연결된다.
+이 가정은 미분 식을 간단하게 만들어줄 뿐만 아니라 솔루션을 구하는데 매우 핵심적인 역할을 한다. 이 가정은 뒤에 있을 Cramer's rule에 적용하기 위한 연립 방정식으로 연결되기 때문이다. 우리는 적절한 $u$, $v$를 찾는 것이 목적이기 때문에 이런 가정까지도 만족하는 $u$와 $v$를 찾기만 하면 되는 것이다. 
 
 이런 가정을 가지고 $y_p''$을 구하면,
 
@@ -131,3 +131,71 @@ $$v(x)=\int \frac{y_1r(x)}{W(y_1,y_2)} dx$$
 $$y_p(x) = -y_1\int\frac{y_2r(x)}{W(y_1,y_2)}dx+y_2\int\frac{y_1r(x)}{W(y_1,y_2)}dx$$
 
 가 됨을 알 수 있다.
+
+# 예제문제
+
+## 문제 1.
+
+아래의 미분방정식의 해를 구하시오.
+
+$$2y''+18y=6\tan(3t)$$
+
+### Solution
+
+매개변수 변환법을 이용해 문제를 풀 때 빠질 수 있는 함정 중 하나는 최고 차항의 계수가 1이 아닌 경우에 이것을 1로 만들어줘야 한다는 점이다.
+
+그러기 위해 양변을 $2$로 나눠주자.
+
+$$\Rightarrow y''+9y'=3\tan(3t)$$
+
+[2계 선형미분방정식의 해법(2)](https://angeloyeo.github.io/2021/06/02/second_order_ODE_2.html) 편에서 확인한 바와 같이 대입법을 이용해 위 방정식의 제차꼴 해를 풀어주면,
+
+$$y_h(t) = c_1\cos(3t)+c_2\sin(3t)$$
+
+임을 알 수 있다.
+
+따라서 $y_1(t) = \cos(3t)$ 이고, $y_2(t)=\sin(3t)$이다.
+
+식 (21)의 해법을 이용해 비제차 해(particular solution)을 구해보자.
+
+그러기 위해 $y_1$과 $y_2$와 Wronskian을 먼저 계산하도록 하자.
+
+$$W(y_1, y_2) = \text{det}\left(\begin{bmatrix}y_1 & y_2 \\ y_1'& y_2'\end{bmatrix}\right)=\text{det}\left(\begin{bmatrix}\cos(3t) & \sin(3t) \\ -3\sin(3t) & 3\cos(3t)\end{bmatrix}\right)$$
+
+$$=3\cos^2(3t)+3\sin^2(3t) = 3$$
+
+따라서, particular solution은
+
+$$y_p(t) = -\cos(3t)\int \frac{3\sin(3t)\tan(3t)}{3}dt+\sin(3t)\int \frac{3\cos(3t)\tan(3t)}{3}dt$$
+
+여기서 $\tan(x)=\frac{\sin(x)}{\cos(x)}$ 라는 사실을 이용하자.
+
+$$\Rightarrow-\cos(3t)\int\frac{\sin^2(3t)}{\cos(3t)}dt+\sin(3t)\int\sin(3t)dt$$
+
+$$=-\cos(3t)\int\frac{1-\cos^2(3t)}{\cos(3t)}dt+\sin(3t)\left(-\frac{1}{3}\cos(3t)\right)$$
+
+$$=-\cos(3t)\int\sec(3t)-\cos(3t)dt+\sin(3t)\left(-\frac{1}{3}\cos(3t)\right)$$
+
+$$=-\cos(3t)\left(\int\sec(3t)dt-\int\cos(3t)dt\right)+\sin(3t)\left(-\frac{1}{3}\cos(3t)\right)
+$$
+
+$\sec(x)$의 적분이 아래와 같다는 사실을 이용하자.
+
+$$\int\sec(x)dx = \ln|\sec(x)+\tan(x)|+C$$
+
+$$\Rightarrow-\cos(3t)\left(\frac{1}{3}\ln|\sec(3t)+\tan(3t)|\right)+\cos(3t)\left(\frac{1}{3}\sin(3t)\right)+\sin(3t)\left(-\frac{1}{3}\cos(3t)\right)$$
+
+여기서 뒤의 두 개 항은 부호만 반대이고 값은 같은 것이므로,
+
+$$\Rightarrow-\cos(3t)\left(\frac{1}{3}\ln|\sec(3t)+\tan(3t)|\right)$$
+
+$$=-\frac{\cos(3t)}{3}\ln|\sec(3t)+\tan(3t)|$$
+
+와 같이 particular solution을 구할 수 있다.
+
+따라서 일반해는
+
+$$y(t) = c_1\cos(3t)+c_2\sin(3t)-\frac{\cos(3t)}{3}\ln|\sec(3t)+\tan(3t)|$$
+
+이다.
+
