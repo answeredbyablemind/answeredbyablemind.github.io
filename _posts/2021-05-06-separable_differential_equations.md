@@ -42,11 +42,15 @@ $$y=Ce^x% 식 (3)$$
 
 $$식(2)\Rightarrow \frac{1}{y}\frac{dy}{dx}=1$$
 
-여기서 양변을 $x$에 대해 적분하면 다음과 같다.
+이고, 여기서 양변을 $dx$로 곱하면 좌변에는 $y$에 관한 식, 우변에는 $x$에 관한 식으로 몰아넣은 것과 같다.
 
-$$\int\frac{1}{y}\frac{dy}{dx}dx = \int 1 dx$$
+$$\Rightarrow \frac{1}{y}dy=dx$$
 
-$$=\int\frac{1}{y}dy=\int 1 dx$$
+따라서,
+
+여기서 양변을 적분하면 다음과 같다.
+
+$$\Rightarrow\int\frac{1}{y}dy=\int 1 dx$$
 
 따라서,
 
