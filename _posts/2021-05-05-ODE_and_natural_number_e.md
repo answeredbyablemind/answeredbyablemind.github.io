@@ -183,3 +183,7 @@ dictionary.com에서는 homogeneous의 수학적 의미로 'having a common prop
 즉, 시간이 지나더라도 변하지 않는 "일정한" 혹은 "동일한" 시스템을 유지하고 있는 시스템이다라는 뜻으로 이해해야 할 것으로 보인다. 
 
 다시 말해, 외부로부터 입력을 받지 않고 스스로의 시스템을 구축해 놓는 것이 제차 미분방정식이 갖고 있는 본질적 의미라고 생각하기 때문이다.
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/tf7N9247ImU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
