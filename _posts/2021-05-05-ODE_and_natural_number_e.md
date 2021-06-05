@@ -176,8 +176,6 @@ $$\frac{dx}{dt}=f(t) % 식 (15)$$
 
 식 (15)는 반대로 외부의 입력을 받아서 시시각각 시스템의 룰이 조금씩 변하고 있는 셈이다.
 
-우리는 식 (14)와 같은 형태의 미분방정식을 제차 미분방정식 (homogeneous differential equation)이라고 하고 식 (15)와 같은 형태의 미분방정식을 비제차 미분방정식 (non-homogeneous differential equation)이라고 부른다.
-
 여기서 제차(齊次 혹은 동차 同次) 미분방정식의 의미는 '동일하다' 혹은 '동등하다'라는 의미로 homogeneous를 직역한 것으로 보인다.
 
 하지만, 이 번역은 제차 미분방정식이 가져다주는 의미를 전혀 반영하지 못하고 있는데, dictionary.com에서는 homogeneous의 수학적 의미로 
