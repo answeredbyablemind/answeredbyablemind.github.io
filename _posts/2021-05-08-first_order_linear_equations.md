@@ -76,29 +76,29 @@ $$=c_1\frac{dx_1}{dt}+c_1p(t)x_1(t) + c_2\frac{dx_2}{dt}+c_2p(t)x_2(t) % 식 (7)
 
 식 (1)과 같은 형태의 미분 방정식을 풀기 위해선 미분의 연쇄법칙(chain rule)을 이용해야 한다.
 
-식 (1)의 가운데에 있는 $p(t)$에 대해서, $P'(t) = p(t)$ 혹은 $\int p(t) dt = P(t)$와 같은 관계를 갖는 $P(t)$를 생각해보자.
+식 (1)의 가운데에 있는 $p(t)$에 대해서, $\mu'(t) = p(t)$ 혹은 $\int p(t) dt = \mu(t)$와 같은 관계를 갖는 $\mu(t)$를 생각해보자.
 
-그러면 $e^{P(t)}x$의 $t$에 대한 미분은 다음과 같이 쓸 수 있다는 것을 알 수 있다.
+그러면 $e^{\mu(t)}x$의 $t$에 대한 미분은 다음과 같이 쓸 수 있다는 것을 알 수 있다.
 
-$$\frac{d}{dt}\left(e^{P(t)}x(t)\right)=e^{P(t)}P'(t)x(t) + e^{P(t)}x'(t) % 식 (8)$$
+$$\frac{d}{dt}\left(e^{\mu(t)}x(t)\right)=e^{\mu(t)}\mu'(t)x(t) + e^{\mu(t)}x'(t) % 식 (8)$$
 
-$$=e^{P(t)}\left\lbrace P'(t)x(t)+x'(t)\right\rbrace % 식(9)$$
+$$=e^{\mu(t)}\left\lbrace \mu'(t)x(t)+x'(t)\right\rbrace % 식(9)$$
 
-$$=e^{P(t)}\left\lbrace p(t)x(t) + x'(t)\right\rbrace % 식(10)$$
+$$=e^{\mu(t)}\left\lbrace p(t)x(t) + x'(t)\right\rbrace % 식(10)$$
 
 식 (10)의 중괄호 안에 있는 식은 결국 식 (1)의 좌변과 같은 것이다. 따라서,
 
-$$식(8)\Rightarrow \frac{d}{dt}\left(e^{P(t)}x(t)\right) = e^{P(t)}q(t)$$
+$$식(8)\Rightarrow \frac{d}{dt}\left(e^{\mu(t)}x(t)\right) = e^{\mu(t)}q(t)$$
 
-$$\therefore e^{P(t)x}=\int e^{P(t)q(t)}dt + C$$
+$$\therefore e^{\mu(t)x}=\int e^{\mu(t)q(t)}dt + C$$
 
 즉,
 
-$$x(t) = \frac{1}{e^{P(t)}}\left(\int e^{P(t)}q(t)dt + C\right)$$
+$$x(t) = \frac{1}{e^{\mu(t)}}\left(\int e^{\mu(t)}q(t)dt + C\right)$$
 
 와 같이 풀어지는 것을 알 수 있다.
 
-여기서 중요한 포인트 중 하나는 $x$에 $e^{P(t)}$를 곱해주는 과정에서 이 해법이 시작된다는 점인데, $e^{P(t)}$를 적분 인자(integrating factor)라고 한다.
+여기서 중요한 포인트 중 하나는 $x$에 $e^{\mu(t)}$를 곱해주는 과정에서 이 해법이 시작된다는 점인데, $e^{\mu(t)}$를 적분 인자(integrating factor)라고 한다.
 
 # 예시 문제
 
