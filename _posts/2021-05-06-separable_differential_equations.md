@@ -157,7 +157,7 @@ $$\therefore C = 80, k = -0.0253$$
 그런데, 소금물 두 컵을 잘 섞어서 농도를 확인하는게 아니고, 맹물이 들어있던 물탱크에 특정 농도의 소금물을 꾸준히 붓는다면 **시간에 따른** 소금물의 농도를 확인할 수도 있지 않을까?
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-06-separable_differential_equations/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-06-separable_differential_equations/pic3.png">
   <br>
   그림 2. 물탱크에 소금물을 서서히 섞어주는 타입의 문제가 상정하는 상황
   <br>
