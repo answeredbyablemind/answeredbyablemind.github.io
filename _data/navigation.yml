@@ -182,7 +182,7 @@ docs-ko:
       - title:  선형 연산자와 함수 공간
         url:    2021/05/31/linear_operator_and_function_space.html
       - title:  고유함수 전개
-        url:    2021/06/01/eigenfunction_expansion.html
+        url:    2021/06/01/eigenfunction_expansions.html
       - title:  스트룸 리우빌 이론
         url:    2021/06/06/Sturm_Liouville.html
       - title:  이중진자와 카오스 이론
