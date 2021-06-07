@@ -8,6 +8,15 @@ key: 20210601
 tags: 미분방정식
 ---
 
+이 포스팅은 [Univ. Washington의 Nathan Kutz 교수님의 강의](https://www.youtube.com/watch?v=_ZOJjiuO4eE&ab_channel=NathanKutz)를 많이 참고 하여 작성한 것임을 미리 밝힙니다.
+
+# Prerequisites
+
+이 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
+* [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)
+
 # 에르미트 행렬 소개
 
 에르미트(Hermitian) 행렬은 자기 자신과 켤레 전치가 같은 복소수 정사각 행렬이다. 다시 말해, 임의의 $n\times n$행렬에 대해 아래의 성질이 성립한다면 에르메트 행렬이다.
@@ -162,3 +171,40 @@ $$x=\sum_{i=1}^{n}c_ix_i=\sum_{i=1}^{n}\left(\frac{b\cdot x_i}{\lambda_i}\right)
 
 # 고유함수 전개
 
+## 고윳값, 고유함수의 개념 소개
+
+선형대수학에서 $Ax=b$ 문제를 풀 때 고유벡터를 기저로 solution $x$를 표현함으로써 solution을 구해냈다면 함수해석학에서도 마찬가지로 $Lu=f$ 문제를 풀 때 solution function $u$를 고유함수를 기저로 표현함으로써 문제를 풀 수도 있다.
+
+선형연산자 $L$에 대해 고윳값 $\lambda_n$과 고유함수 $u_n$의 개념을 생각해보자.
+
+이전 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서 보았던 것 처럼 행렬이 벡터를 입력받고 벡터를 출력해주는 함수로 작용하듯이,
+
+어떤 함수를 입력받고 새로운 함수를 출력해주는 새로운 개념의 함수를 생각해볼 수 있다. 이 때, 이 입출력 함수간의 관계를 매개해주는 것이 선형 연산자라고 언급하였다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-31-linear_operator_and_function_space/pic4.png">
+  <br>
+  그림 1. 벡터와 행렬의 관계는 함수와 연산자의 관계로 개념이 확장된다.
+</p>
+
+한편, 선형대수학에서는 [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)를 정의했는데, 이 개념은 어떤 벡터에 행렬을 적용할 때 행렬을 통해 출력된 벡터가 입력된 벡터의 상수배이기만 한 벡터를 찾을 수 있다면 그 벡터가 고유벡터, 그 상수배된 상수값이 고윳값임을 말해준 것이었다.
+
+이 개념을 확장시키면 선형 연산자도 고윳값, 고유함수의 개념을 생각할 수 있다는 것을 알 수 있다.
+
+다시 말해 아래와 같은 관계를 가지는 함수 $u_n$과 $\lambda_n$을 생각해낼 수 있다.
+
+$$Lu_n=\lambda_n u_n \quad\text{for}\quad n = 1, 2, \cdots, \infty$$
+
+위 식이 말해주는 것은 $L$이라는 선형연산자를 $u_n$이라는 함수에 적용해주면 그 특정 $u_n$이라는 함수는 입력함수의 $\lambda_n$ 배만큼만 변하게 만들어준다는 뜻이다.
+
+## 직교하는 고유함수를 이용한 전개
+
+이 포스팅의 초반부에서 eigenvector의 선형 결합을 이용해 해를 표현할 수 있었던 것 처럼 eigenfunction의 선형 결합을 이용해 $Lu=f$의 해를 표현할 수 있다.
+
+아래와 같은 미분방정식을 생각하자.
+
+$$Lu=f$$
+
+여기서 연산자 $L$이 서로 직교하는 무한개의 eigenfunctions $u_n \quad\text{for}\quad n = 1, 2, \cdot,s \infty$를 갖는다고 가정하자[^1].
+
+[^1]: 우리는 앞서 Hermitian matrix의 고유벡터를 이용했다. 고윳값이 다른 Hermitian matrix의 고유벡터들은 서로 직교하는 성질이 있기 때문이다. 지금은 연산자가 Hermitian matrix와 관련이 있는지에 대해서는 직접적으로 다루지 않고, 연산자에 대응하는 eigenfunction들이 직교한다고 가정하고 eigenfunction expansion을 생각 해본다. Hermitian matrix와 연관된 연산자에 대해선 추후의 Sturm-Liouville 이론을 참고하자.
