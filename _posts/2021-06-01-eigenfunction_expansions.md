@@ -301,7 +301,17 @@ $$\sqrt{\int_{0}^{l}\sin\left(\frac{n\pi x}{l}\right)\sin\left(\frac{n\pi x}{l}\
 
 $$u_n=\left\lbrace\sqrt{\frac{2}{l}}\sin\frac{n\pi x}{l}\right\rbrace\quad\text{for }n\in\Bbb{N}$$
 
-과 같다. 그러므로 원래 문제의 조건을 만족하는 해 $u(x)$ 는 아래와 같이 고유함수 전개해서 표현할 수 있다.
+과 같다. 
+
+이 고유함수들은 직교한다는 것을 함수의 내적을 통해서 쉽게 확인할 수 있다.
+
+$$\langle u_n, u_m\rangle=\int_{0}^{l}\left(\sqrt{\frac{2}{l}}\sin\frac{n\pi x}{l}\right)\left(\sqrt{\frac{2}{l}}\sin\frac{m\pi x}{l}\right)dx$$
+
+$$=\int_{0}^{l}\frac{l}{2}\sin\left(\frac{n\pi x}{l}\right)\sin\left(\frac{m\pi x}{l}\right)dx$$
+
+$$=\begin{cases}0 & m\neq n\\ 1 &m=n\end{cases}$$
+
+그러므로 원래 문제의 조건을 만족하는 해 $u(x)$ 는 아래와 같이 고유함수 전개해서 표현할 수 있다.
 
 $$u(x)=\sum_{n=1}^{\infty}c_n\sqrt\frac{2}{l}\sin\left(\frac{n\pi x}{l}\right)$$
 
