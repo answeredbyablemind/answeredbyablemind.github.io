@@ -104,7 +104,7 @@ $$=e^{\mu(t)}\left\lbrace p(t)x(t) + x'(t)\right\rbrace % 식(13)$$
 
 $$식(11)\Rightarrow \frac{d}{dt}\left(e^{\mu(t)}x(t)\right) = e^{\mu(t)}q(t)$$
 
-$$\therefore e^{\mu(t)x}=\int e^{\mu(t)q(t)}dt + C$$
+$$\therefore e^{\mu(t)x}=\int e^{\mu(t)}q(t)dt + C$$
 
 즉,
 
