@@ -332,7 +332,7 @@ $$u(x) = \frac{x(1-x^2)}{6}$$
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic_conv.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-01-eigenfunction_expansion/pic2.mp4">
   </video>
   <br>
 </p>
