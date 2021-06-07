@@ -312,6 +312,14 @@ $$c_n = \frac{\langle f, u_n\rangle}{\lambda_n}$$
 
 $$c_n =\frac{1}{(n\pi)^2}\int_{0}^{1}(x)\sqrt{2}\sin\left(n\pi x\right)dx$$
 
+$$=\frac{\sqrt{2}}{n^2\pi^2}\int_{0}^{1}x\sin(n\pi x)dx $$
+
+부분적분을 활용하면 다음과 같이 쓸 수 있다.
+
+$$\Rightarrow \frac{\sqrt{2}}{n^2\pi^2}\left(x\cdot\frac{-1}{n\pi}\cos(n\pi x)\right)\Big|_{0}^{1}-\int_{0}^{1}\left(\frac{-1}{n\pi}\right)\cos(n\pi x)dx$$
+
+$$=\frac{\sqrt{2}}{n^2\pi^2}\cdot\left(\frac{-1}{n\pi}\right)\cos(n\pi)$$
+
 $$=(-\sqrt{2})\frac{(-1)^n}{n^3\pi^3}$$
 
 이므로,
