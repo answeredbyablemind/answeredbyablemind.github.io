@@ -8,7 +8,7 @@ key: 20210601
 tags: 미분방정식
 ---
 
-이 포스팅은 [Univ. Washington의 Nathan Kutz 교수님의 강의](https://www.youtube.com/watch?v=_ZOJjiuO4eE&ab_channel=NathanKutz)를 많이 참고 하여 작성한 것임을 미리 밝힙니다.
+이 포스팅은 [Nathan Kutz 교수님의 강의](https://www.youtube.com/watch?v=_ZOJjiuO4eE&ab_channel=NathanKutz)를 많이 참고 하여 작성한 것임을 미리 밝힙니다.
 
 # Prerequisites
 
@@ -205,6 +205,119 @@ $$Lu_n=\lambda_n u_n \quad\text{for}\quad n = 1, 2, \cdots, \infty$$
 
 $$Lu=f$$
 
-여기서 연산자 $L$이 서로 직교하는 무한개의 eigenfunctions $u_n \quad\text{for}\quad n = 1, 2, \cdot,s \infty$를 갖는다고 가정하자[^1].
+여기서 연산자 $L$이 서로 직교하는 무한개의 고유함수 $u_n \quad\text{for}\quad n = 1, 2, \cdots \infty$를 갖는다고 가정하자[^1]. 그리고 이 고유함수들의 크기(norm)는 모두 1이라고 가정하자.
 
 [^1]: 우리는 앞서 Hermitian matrix의 고유벡터를 이용했다. 고윳값이 다른 Hermitian matrix의 고유벡터들은 서로 직교하는 성질이 있기 때문이다. 지금은 연산자가 Hermitian matrix와 관련이 있는지에 대해서는 직접적으로 다루지 않고, 연산자에 대응하는 eigenfunction들이 직교한다고 가정하고 eigenfunction expansion을 생각 해본다. Hermitian matrix와 연관된 연산자에 대해선 추후의 Sturm-Liouville 이론을 참고하자.
+
+그러면 $Lu=f$의 솔루션 함수 $u$ 는 고유함수 $u_n$을 새로운 기저로하여 다음과 같이 표현할 수 있다.
+
+$$u(x)=\sum_{n=1}^{\infty}c_n u_n$$
+
+이를 고유함수 전개(eigenfunction expansion)이라고 한다.
+
+한편, 구간 $[a, b]$에서 정의된 두 함수 간의 내적 연산을 아래와 같이 정의하자.
+
+$$\langle f, g\rangle=\int_{a}^{b}f^*(x)g(x) dx$$
+
+여기서 $^*$은 complex conjugate을 표시한 것이다.
+
+그리고 함수의 크기(norm)은 내적을 이용해 다음과 같이 정의하자.
+
+$$\text{norm}(f)=\sqrt{\langle f,f\rangle}$$
+
+이제 $Lu=f$라는 식을 다음과 같이 고유함수를 이용해 풀어 써보자.
+
+$$Lu=L\sum_{n=1}^{\infty}c_nu_n=f$$
+
+그리고 위 식의 양변에 고유함수 $u_m$을 내적해주면,
+
+$$\Rightarrow \langle L\sum_{n=1}^{\infty}c_n u_n, u_m\rangle=\langle f, u_m\rangle$$
+
+연산자 $L$은 선형연산자이므로 아래와 같이 summation 안으로 $L$을 넣어주자.
+
+$$\Rightarrow \langle \sum_{n=1}^{\infty}c_nLu_n, u_m \rangle = \langle f, u_m \rangle$$
+
+고윳값과 고유함수의 정의에 따라 다음과 같이 식을 바꿀 수 있다.
+
+$$\Rightarrow \langle\sum_{n=1}^{\infty}c_n\lambda_n u_n, u_m\rangle=\langle f,u_m\rangle$$
+
+여기서 모든 서로 다른 고유함수들은 직교한다고 하였으므로, $u_n$과 $u_m$ 같을 때만 $\langle u_n, u_m\rangle$이 1이고 아닐 때는 모두 값이 0이 된다. 따라서,
+
+$$\Rightarrow c_m\lambda_m=\langle f, u_m\rangle$$
+
+그러므로, $u(x)$를 고유함수 전개하기 위해 필요한 계수 $c_n$을 구하였다고 할 수 있다. 따라서, $u(x)$에 대한 고유함수 전개는 다음과 같다.
+
+$$u(x)=\sum_{n=1}^{\infty}c_n u_n=\sum_{n=1}^{\infty}\frac{\langle f,u_n\rangle}{\lambda_n}u_n$$
+
+## 예제 문제
+
+아래와 같은 경계값 문제에 대해 고유함수 전개를 수행해보자.
+
+$$-\frac{d^2}{dx^2}u(x)=f(x)\quad u(0)=0, u(l)=0$$
+
+### 풀이
+
+우리는 위 문제를 $Lu=f$의 문제로 생각해본다면 연산자 $L$은 
+
+$$L=-\frac{d^2}{dx^2}$$
+
+과 같다는 것을 알 수 있다.
+
+따라서, 이 연산자에 대한 고윳값 문제를 풀기 위해 다음과 같은 식을 생각해보자.
+
+$$Lu=\lambda u$$
+
+$$\Rightarrow -\frac{d^2}{dx^2}u=\lambda u$$
+
+$$\Rightarrow \frac{d^2}{dx^2}u+\lambda u = 0$$
+
+이 식은 일반적인 2계 상미분방정식이므로 솔루션은,
+
+$$u=c_1\sin{\sqrt{\lambda}}x+c_2\cos{\sqrt{\lambda}}x$$
+
+이다. 여기서 Boundary Condition을 적용해보면,
+
+$$u(0) = c_2\cos(0)=0$$
+
+$$\therefore c_2 = 0$$
+
+$$u(l)=c_1\sin\sqrt{\lambda}x=0$$
+
+여기서 중요한 부분은 $c_1$을 0으로 만들어버리면 솔루션이 $u(x)=0$이 되어버리므로 trivial solution을 구하는 것이 된다. 따라서, trivial solution이 나오지 않도록 막기 위해선 고윳값을 다음과 같이 정해야 함을 알 수 있다.
+
+$$\sqrt\lambda =\frac{n\pi}{l}$$
+
+따라서, 고유함수들은 
+
+$$u_n=\left\lbrace\sin\frac{n\pi x}{l}\right\rbrace\quad\text{for }n\in\Bbb{N}$$
+
+가 된다. 그런데 이 고유함수들의 크기(norm)는 1이 아니기 때문에 정규화를 시켜줘서 크기가 1인 고유벡터들로 모두 수정하자.
+
+각 고유함수들의 크기는
+
+$$\sqrt{\int_{0}^{l}\sin\left(\frac{n\pi x}{l}\right)\sin\left(\frac{n\pi x}{l}\right)dx}=\sqrt{\frac{l}{2}}$$
+
+이다. 따라서, 정규화된 고유함수들은
+
+$$u_n=\left\lbrace\sqrt{\frac{2}{l}}\sin\frac{n\pi x}{l}\right\rbrace\quad\text{for }n\in\Bbb{N}$$
+
+과 같다. 그러므로 원래 문제의 조건을 만족하는 해 $u(x)$ 는 아래와 같이 고유함수 전개해서 표현할 수 있다.
+
+$$u(x)=\sum_{n=1}^{\infty}c_n\sqrt\frac{2}{l}\sin\left(\frac{n\pi x}{l}\right)$$
+
+
+$$c_n = \frac{\langle f, u_n\rangle}{\lambda_n}$$
+
+만약 $f(x) = x$이라고 하고, $l=1$이라고 하면,
+
+$$c_n =\frac{1}{(n\pi)^2}\int_{0}^{1}(x)\sqrt{2}\sin\left(n\pi x\right)dx$$
+
+$$=(-\sqrt{2})\frac{(-1)^n}{n^3\pi^3}$$
+
+이므로,
+
+$$u(x) = \sum_{n=1}^{\infty}c_n\sqrt\frac{2}{l}\sin\left(\frac{n\pi x}{l}\right)=\sum_{n=1}^{\infty}(-\sqrt{2})\frac{(-1)^n}{n^3\pi^3}\sqrt{2}\sin(n\pi x)$$
+
+와 같다는 것이다.
+
+
