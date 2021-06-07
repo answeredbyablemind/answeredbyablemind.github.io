@@ -213,3 +213,7 @@ $$\Rightarrow x(t) = 500-500 e^{-0.01t}$$
   <br>
   그림 3. mixing problem의 solution curve
 </p>
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/W_Uycu2l4qU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
