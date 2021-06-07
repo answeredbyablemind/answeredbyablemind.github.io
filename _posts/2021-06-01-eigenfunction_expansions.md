@@ -320,4 +320,19 @@ $$u(x) = \sum_{n=1}^{\infty}c_n\sqrt\frac{2}{l}\sin\left(\frac{n\pi x}{l}\right)
 
 와 같다는 것이다.
 
+이 미분방정식을 다시 쓰면
 
+$$-\frac{d^2u}{dx^2}=x$$
+
+이고 경계조건은 $u(0)=0$, $u(1)=0$이다. 이 방정식의 해를 eigenfunction expansion이 아닌 일반적인 방법으로 직접 구해보면
+
+$$u(x) = \frac{x(1-x^2)}{6}$$
+
+임을 쉽게 알 수 있는데, 위의 eigenfunction expansion으로 구한 식을 $n$이 1일 때부터 서서히 더해나가면 일반적인 방법으로 구한 해에 근사해 가는 것을 확인할 수 있다.
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-04-07-Kalman_filter/pic_conv.mp4">
+  </video>
+  <br>
+</p>
