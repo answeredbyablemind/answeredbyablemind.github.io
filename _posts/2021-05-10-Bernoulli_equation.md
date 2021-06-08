@@ -1,5 +1,5 @@
 ---
-title: 베르누이 방정식
+title: 베르누이 미분방정식
 sidebar:
   nav: docs-ko
 aside:
