@@ -70,6 +70,20 @@ $$=c_1\frac{dx_1}{dt}+c_1p(t)x_1(t) + c_2\frac{dx_2}{dt}+c_2p(t)x_2(t) % 식 (7)
 
 와 같이 쓸 수 있다는 의미에서 '선형 미분방정식'이라는 이름이 붙는 것이다.
 
+## 비선형 미분방정식의 예시
+
+미분 연산자가 비선형인 경우에 대해서도 예시를 들어 확인해보자면 아래와 같은 미분방정식은 비선형 미분방정식이다.
+
+$$\frac{dx}{dt}+x^2 = 0$$
+
+왜냐면 아래와 같이 두 식이 일치하지 않기 때문이다.
+
+$$O(c_1 x_1 + c_2 x_2 ) = c_1 \frac{dx_1}{dt}+c_1^2 x_1^2 + c_2 \frac{dx_2}{dt}+c_2^2x_2^2$$
+
+$$\neq c_1O(x_1)+c_2O(x_2) = c_1 \frac{dx_1}{dt}+c_1x_1^2+c_2\frac{dx_2}{dt}+c_2 x_2^2$$
+
+
+
 # 1계 선형 미분 방정식의 해법
 
 [//]:# (TODO: 문장 내의 식 번호 수정 할 것)
@@ -80,17 +94,17 @@ $$=c_1\frac{dx_1}{dt}+c_1p(t)x_1(t) + c_2\frac{dx_2}{dt}+c_2p(t)x_2(t) % 식 (7)
 
 그러면 $e^{\mu(t)}x$의 $t$에 대한 미분은 다음과 같이 쓸 수 있다는 것을 알 수 있다.
 
-$$\frac{d}{dt}\left(e^{\mu(t)}x(t)\right)=e^{\mu(t)}\mu'(t)x(t) + e^{\mu(t)}x'(t) % 식 (8)$$
+$$\frac{d}{dt}\left(e^{\mu(t)}x(t)\right)=e^{\mu(t)}\mu'(t)x(t) + e^{\mu(t)}x'(t) % 식 (11)$$
 
-$$=e^{\mu(t)}\left\lbrace \mu'(t)x(t)+x'(t)\right\rbrace % 식(9)$$
+$$=e^{\mu(t)}\left\lbrace \mu'(t)x(t)+x'(t)\right\rbrace % 식(12)$$
 
-$$=e^{\mu(t)}\left\lbrace p(t)x(t) + x'(t)\right\rbrace % 식(10)$$
+$$=e^{\mu(t)}\left\lbrace p(t)x(t) + x'(t)\right\rbrace % 식(13)$$
 
-식 (10)의 중괄호 안에 있는 식은 결국 식 (1)의 좌변과 같은 것이다. 따라서,
+식 (13)의 중괄호 안에 있는 식은 결국 식 (1)의 좌변과 같은 것이다. 따라서,
 
-$$식(8)\Rightarrow \frac{d}{dt}\left(e^{\mu(t)}x(t)\right) = e^{\mu(t)}q(t)$$
+$$식(11)\Rightarrow \frac{d}{dt}\left(e^{\mu(t)}x(t)\right) = e^{\mu(t)}q(t)$$
 
-$$\therefore e^{\mu(t)x}=\int e^{\mu(t)q(t)}dt + C$$
+$$\therefore e^{\mu(t)x}=\int e^{\mu(t)}q(t)dt + C$$
 
 즉,
 
@@ -130,7 +144,7 @@ $$x(t) = \frac{1}{e^{\mu(t)}}\left(\int e^{\mu(t)}q(t)dt + C\right)$$
 
 또, 소금의 시간 당 변화율은 들어오는 소금의 비율과 나가는 소금의 비율의 차이이므로,
 
-$$\frac{dx}{dt}=\text{rate in } - \text{rate out} % 식 (12)$$
+$$\frac{dx}{dt}=\text{rate in } - \text{rate out} % 식 (17)$$
 
 이라고 쓸 수 있다.
 
@@ -150,19 +164,19 @@ $$\text{rate out}=\frac{9}{500+t}x$$
 
 따라서, 
 
-$$\frac{dx}{dt}=5-\frac{9}{500+t}x % 식 (15)$$
+$$\frac{dx}{dt}=5-\frac{9}{500+t}x % 식 (20)$$
 
 와 같이 미분방정식을 세워줄 수 있다.
 
 위 식을 다시 살짝 정리하면,
 
-$$\Rightarrow \frac{dx}{dt}+\frac{9}{500+t}x=5 % 식 (16)$$
+$$\Rightarrow \frac{dx}{dt}+\frac{9}{500+t}x=5 % 식 (21)$$
 
-과 같은데, 양변에 곱할 적분 인자 $\mu(t)$를 계산해보면 다음과 같다.
+과 같은데, 양변에 곱할 적분 인자 $e^{\mu(t)}$를 계산해보면 다음과 같다.
 
-$$\mu(t)=\exp\left(\int \frac{9}{500+t}dt\right)=e^{9\ln(500+t)}=(500+t)^9$$
+$$e^{\mu(t)}=\exp\left(\int \frac{9}{500+t}dt\right)=e^{9\ln(500+t)}=(500+t)^9$$
 
-따라서, 식 (16)의 양변에 적분인자 $\mu(t)$를 곱해주면,
+따라서, 식 (21)의 양변에 적분인자 $e^{\mu(t)}$를 곱해주면,
 
 $$\Rightarrow (500+t)^9\frac{dx}{dt}+9(500+t)^8x=5(500+t)^9$$
 

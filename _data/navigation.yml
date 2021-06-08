@@ -155,7 +155,7 @@ docs-ko:
         url:    2021/05/06/separable_differential_equations.html
       - title:  1계 선형 미분방정식의 해법
         url:    2021/05/08/first_order_linear_equations.html
-      - title:  베르누이 방정식
+      - title:  베르누이 미분방정식
         url:    2021/05/10/Bernoulli_equation.html
       - title:  연립 미분방정식 모델링
         url:    2021/05/11/modeling_with_systems.html
