@@ -14,10 +14,8 @@ tags: 미분방정식
 
 이번 포스팅의 내용에 대해 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)
 * [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)
 * [고유함수 전개](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html)
-
 
 # 스트룸 리우빌 이론 소개
 
@@ -85,11 +83,15 @@ $$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
 
 $$\langle Lf, g \rangle=\langle f, L^\dagger g\rangle$$
 
-자, 그러면 self-adjont란 $L^\dagger =L$인 연산자를 말한다.
+다시 말해 self-adjont인 연산자란 $L^\dagger =L$인 연산자를 말한다.
 
-이러한 연산자들은 마치 선형대수학에서 대칭 행렬(symmetric matrix) 혹은 에르미트 행렬(Hermitian matrix)에 대응되는 개념이다.
+그러므로 다음과 같은 성질을 만족해야 한다.
 
-S-L 연산자가 self adjoint 연산자임을 확인해보자.
+$$\langle Lf, g\rangle =\langle f, Lg\rangle$$
+
+이러한 연산자들은 마치 선형대수학에서 대칭 행렬(symmetric matrix) 혹은 에르미트 행렬(Hermitian matrix)의 개념에 대응된다.
+
+이제 S-L 연산자가 self adjoint 연산자임을 확인해보자.
 
 $$\langle Lf, g\rangle=\int_{a}^{b}\left(-\frac{d}{dx}\left[p(x)\overline{f '}\right]+q(x)\overline f\right)g \ dx$$
 
@@ -111,27 +113,43 @@ $$=-\left[\overline{f} p(x)g'\right]_{a}^{b}+\int_{a}^{b}\left(\overline{f'}p(x)
 
 이 때, $\langle Lf, g\rangle=\langle f, Lg\rangle$ 인지 여부를 확인해보자.
 
-$$\langle Lf, g\rangle-\langle f, Lg\rangle = \left(-\left[p(x)\overline{f'}g\right]_{a}^{b}+\int_{a}^{b}\left(p(x)\overline{f'}g' + q(x)\overline f g \right)dx\right)-\left(-\left[\overline{f} p(x)g'\right]_{a}^{b}+\int_{a}^{b}\left(\overline{f'}p(x)g'+\overline f q(x)g \right)dx\right)$$
+$$\langle Lf, g\rangle-\langle f, Lg\rangle = \left(-\left[p(x)\overline{f'}g\right]_{a}^{b}+\int_{a}^{b}\left(p(x)\overline{f'}g' + q(x)\overline f g \right)dx\right)\\-\left(-\left[\overline{f} p(x)g'\right]_{a}^{b}+\int_{a}^{b}\left(\overline{f'}p(x)g'+\overline f q(x)g \right)dx\right)$$
 
 $$=-\left[p(x)\overline{f'}g\right]_{a}^{b}+\left[\overline{f} p(x)g'\right]_{a}^{b}$$
 
 $$=-\left[p(x)\overline{f'}g-p(x)\overline{f}g'\right]_{a}^{b}$$
 
-$$=-(p(b)\overline{f'(b)}g(b)-p(b)\overline{f(b)}g'(b)-p(a)\overline{f'(a)}g(a)+p(a)\overline{f(a)}g'(a))$$
+$$=-\Big[(p(b)\overline{f'(b)}g(b)-p(b)\overline{f(b)}g'(b))-(p(a)\overline{f'(a)}g(a)-p(a)\overline{f(a)}g'(a))\Big]$$
 
-여기서 $f$와 $g$ 모두 S-L 이론의 경계조건을 만족하는 함수로 생각한 것이므로 위의 값은 0이 됨을 알 수 있다.
+$$=-p(b)\overline{f'(b)}g(b)+p(b)\overline{f(b)}g'(b)+p(a)\overline{f'(a)}g(a)-p(a)\overline{f(a)}g'(a)$$
 
-가령, 함수 $f$는 다음 조건을 만족하는 함수여야 한다.
+여기서 $f$와 $g$ 모두 S-L 이론의 경계조건을 만족하는 함수로 생각한 것이다.
 
-$$\alpha_1 f(a)+\beta_1 \frac{df(a)}{dx}=0$$
+가령, 함수 $g$는 다음 조건을 만족하는 함수여야 한다.
 
-$$\alpha_2 f(b)+\beta_2 \frac{df(b)}{dx}=0$$
+$$\alpha_1 g(a)+\beta_1 g'(a)=0$$
 
-그리고 위의 식에서 왼쪽 네 개의 항만을 떼오면 아래와 같이 식을 바꿔볼 수 있다.
+$$\alpha_2 g(b)+\beta_2 g'(b)=0$$
 
-$$p(b)\overline{f'(b)}g(b)-p(b)\overline{f(b)}g'(b)\Rightarrow \beta_2\overline{f'(b)}+\alpha_2\overline{f(b)}$$
+따라서, 식 (21)에서 다음과 같이 식을 대입해 생각해보면,
 
-$p(b)g(b)$나 $p(b)g'(b)$는 적절한 값 $\beta_2$, $\alpha_2$라고 생각할 수 있기 때문이다. $\beta_2$, $\alpha_2$가 어떤 값이든 간에 경계조건은 만족해야 하므로 원래의 위 식은 0이다. 따라서, $\langle Lf, g\rangle-\langle f, Lg\rangle = 0$임을 알 수 있다.
+$$p(a)\overline{f'(a)}\Rightarrow \alpha_1$$
+
+$$-p(a)\overline{f(a)}\Rightarrow \beta_1$$
+
+$$-p(b)\overline{f'(b)}\Rightarrow \alpha_2$$
+
+$$p(b)\overline{f(b)}\Rightarrow \beta_2$$
+
+식 (21)은 다음과 같이 바꿔 쓸 수 있다는 것을 알 수 있다.
+
+$$식(21)\Rightarrow \alpha_1 g(a)+\beta_1 g'(a)+\alpha_2 g(b)+\beta_2 g'(b)$$
+
+이 값은 경계 조건에 의해 0이 되어야 한다. (반대로 $f$에 대해 적용해보아도 마찬가지 결과를 얻을 수 있다.)
+
+따라서, $\langle Lf, g\rangle-\langle f, Lg\rangle = 0$임을 알 수 있다.
+
+그러므로 S-L 연산자 $L$은 self-adjoint 연산자임을 알 수 있다.
 
 
 ## S-L 이론의 고윳값 문제
