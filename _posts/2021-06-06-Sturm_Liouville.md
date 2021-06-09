@@ -264,3 +264,80 @@ $$c_n = \frac{b_n}{\lambda_n-\mu}$$
 
 $$u(x)=\sum_{n=1}^{\infty}\frac{\langle f, u_n\rangle}{\lambda_n-\mu}u_n(x)$$
 
+# 예제 문제
+
+아래와 같은 2계 비제차 미분방정식을 Sturm Liouville 이론의 관점에서 풀이하시오.
+
+$$\frac{d^2u}{dx^2}+2u=-x$$
+
+여기서 $x\in[0, 1]$에서 정의되며 경계조건은 다음과 같다.
+
+$$u(0) = 0$$
+
+$$u(1)+u'(1)=0$$
+
+## 풀이
+
+이 문제를 스트룸 리우빌 형식으로 바꾸면 다음과 같이 쓸 수 있다.
+
+$$-\frac{d^2}{dx^2}u=2u+x$$
+
+다시 말해, 원래의 식 (1)과 식 (6)의 관점에서 보면 $p(x)=1$, $q(x)=0$, $r(x)=1$, $\mu=2$, $f(x)=x$인 아주 간단한 형태의 스트룸 리우빌 문제라고 볼 수 있다.
+
+여기서 $\mu=0$, $q(x)=-2$라고도 볼 수 있지만, 관점의 문제일 뿐이다는 점은 약간의 팁(?)이다.
+
+### 고윳값 계산
+
+이 식의 고윳값 문제는 다음과 같은데,
+
+$$-\frac{d^2u_n}{dx^2}=\lambda_n u_n$$
+
+이 고윳값 문제의 일반해는 다음과 같다.
+
+$$u_n=c_1 \sin\sqrt{\lambda_n}x + c_2 \cos\sqrt{\lambda_n}x$$
+
+$u_n(0)=0$ 이라는 경계 조건을 만족하기 위해선 $c_2=0$이 되어야 하므로,
+
+$$u_n=c_1\sin\sqrt{\lambda_n}x$$
+
+라고 쓸 수 있다.
+
+또 다른 경계조건인 $u_n(1)+u'_n(1)=0$라는 조건을 만족하기 위해 $u'(x)$를 구해보면,
+
+$$u'(x)=\sqrt{\lambda_n}c_1\cos\sqrt{\lambda_n}x$$
+
+이므로, $u_n(1)+u'_n(1)$은
+
+$$u_n(1)+u'_n(1)=c_1\sin\sqrt{\lambda_n}+\sqrt{\lambda_n}c_1\cos\sqrt{\lambda_n}=0$$
+
+이어야 한다. 여기서 $c_1$은 0이 되면 안되므로(trivial solution이 나오기 때문에),
+
+고윳값은 다음의 조건을 만족하는 값들이어야 한다.
+
+$$\sin\sqrt{\lambda_n}+\sqrt{\lambda_n}\cos\sqrt{\lambda_n}=0$$
+
+여기서 양변을 $\cos\sqrt{\lambda_n}$으로 나눠주면,
+
+$$\Rightarrow \sqrt{\lambda_n}+\tan\sqrt{\lambda_n}=0$$
+
+을 만족하는 $\lambda_n$이 고윳값들이다.
+
+위 방정식의 해를 얻기 위해선 $y=\tan(x)$ 함수와 $y=-x$함수가 만나는 지점을 찾아야 한다.
+
+일반적인 방법으로는 해를 얻기 힘들고 컴퓨터를 이용해 해를 구하면 다음과 같은 결과를 얻을 수 있다.
+
+<p align = "center">
+  <img src=  "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic1.png">
+  <br>
+  그림 1. tan(x)+x=0의 솔루션위 의치
+</p>
+
+$$\lbrace x | \tan(x)+x=0\rbrace = \lbrace 2.0288, 4.9132, 7.9787, 11.086, 14.207, \cdots\rbrace$$
+
+그러면 위의 값들이 $\sqrt{\lambda_n}\text{ for } n = 1,2,\cdots$에 대응되는 값임을 알 수 있다.
+
+이 때 각 고윳값들에 대응되는 고유함수는 다음과 같이 얻어진다.
+
+$$u_n = \frac{\sqrt{2}}{(1+\cos^2\sqrt{\lambda_n})^{1/2}}\sin\sqrt{\lambda_n}x\quad\quad n=1,2,\cdots$$
+
+이 고유함수들은 $\langle u_n, u_n \rangle = 1$이 되도록 정규화 한 것이다.
