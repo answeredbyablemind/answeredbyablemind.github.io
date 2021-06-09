@@ -46,7 +46,7 @@ for i = 1:10
         writeVideo(newVid, getframe(gcf)) % 0.5초씩 그리기
     end
     
-    if i < length(my_roots)
+    if i < 10
         delete(h(2));
     end
 end
