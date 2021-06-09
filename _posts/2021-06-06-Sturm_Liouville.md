@@ -193,6 +193,74 @@ $$\langle y_n, y_m \rangle_r = \int_{a}^{b}r(x)\overline{y_n(x)}y_m(x)dx=\int_{a
 
 * 두 번째 고유함수에 관한 성질에 의해 고유함수들은 구간 $[a, b]$에서 weighting 함수 $r(x)$와 함께 정의되는 힐버트 공간($L^2([a,b],w(x)dx)$, 쉽게 말해 함수 공간으로써 함수가 무한 차원 공간의 점으로 해석될 수 있게 해줌.)의 직교 기저를 구성하게 된다.
 
-핵심적인 것은 S-L 연산자의 고유함수가 힐버트 공간의 직교 기저를 구성한다는 것인데, 이 성질에 의해 구간 $[a,b]$에서 정의된 임의의 함수 $u$는 고유함수의 선형결합으로 표현될 수 있다.
+핵심적인 것은 S-L 연산자의 고유함수가 힐버트 공간의 직교 기저를 구성한다는 것인데, 이 성질에 의해 구간 $[a,b]$에서 정의된 식 (1)의 솔루션 함수 $u$는 고유함수의 선형결합으로 표현될 수 있다.
 
 $$u=\sum_{n=1}^{\infty}c_nu_n$$
+
+같은 방법으로 식 (1)의 forcing function인 $f(x)$도 고유함수의 선형결합으로 표현할 수 있다. 
+
+이 방법은 [고유함수 전개](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 편에서 본 내용과 크게 다르지 않다. 이번에는 스트룸 리우빌 문제에 적용하는 것만이 유일한 차이라고 할 수 있다.
+
+고유함수들의 orthogonality, $\langle u_n,u_m\rangle_r=\delta_{nm}$, 를 적용하기 위해서 $f(x)$를 구하는 것 보다 $r(x)$로 나눈 식에 대해 고려해보자. 아래와 같은 식을 생각해보자.
+
+$$\frac{f(x)}{r(x)}=\sum_{n=1}^{\infty}b_n u_n$$
+
+여기서 $b_n$의 값을 특정하기 위해 아래와 같이 내적 연산을 취해보자.
+
+$$\left\langle\frac{f(x)}{r(x)}, u_m\right\rangle_r=\left\langle\sum_{n=1}^\infty b_nu_n, u_m \right\rangle_r$$
+
+$$\Rightarrow \int_{a}^{b}r(x)\left[\frac{f(x)}{r(x)}\right]u_m dx= \int_{a}^{b}r(x)\left(\sum_{n=1}^{\infty}b_nu_n\right)u_m dx$$
+
+우변의 식에서 $\langle u_n,u_m\rangle_r=\delta_{nm}$이라는 관계에 의해 summation이 취해질 때 $n=m$인 경우에만 한해서 $\langle u_n,u_m \rangle_r = 1$이고 나머지의 경우는 모두 0이다. 따라서,
+
+$$\Rightarrow \int_{a}^{b}f(x)u_mdx=b_m$$
+
+즉, $b_n$은 아래와 같이 계산될 수 있는 것이다.
+
+$$b_n=\langle f, u_n\rangle$$
+
+다시 솔루션 함수의 고유함수 전개로 넘어와서,
+
+
+원래의 식 (1)의 $u$를 고유함수의 선형결합을 이용해 다음과 같이 표현할 수 있다.
+
+$$Lu=\mu r(x)u+f(x)$$
+
+$$\Rightarrow L\left(\sum_{n=1}^{\infty}c_nu_n\right)=\mu r(x)\left(\sum_{n=1}^{\infty}c_nu_n\right)+f(x)$$
+
+연산자 $L$은 선형 연산자이므로 summation 안으로 집어넣으면,
+
+$$\Rightarrow \left(\sum_{n=1}^{\infty}c_n L u_n\right)=\mu r(x)\left(\sum_{n=1}^{\infty}c_nu_n\right)+f(x)$$
+
+여기서 $Lu_n$은 고윳값을 이용해 다음과 같이 쓸 수도 있다.
+
+$$\Rightarrow \left(\sum_{n=1}^{\infty}c_n \lambda_n r(x)u_n \right)=\mu r(x)\left(\sum_{n=1}^{\infty}c_nu_n\right)+f(x)$$
+
+여기서 $u_m$에 대한 내적 연산을 취해주면,
+
+$$\Rightarrow \sum_{n=1}^{\infty}c_n\lambda_n \langle r(x)u_n, u_m\rangle=\mu\sum_{n=1}^{\infty}c_n\langle r(x)u_n, u_m\rangle + \langle f, u_m\rangle$$
+
+$$\Rightarrow \sum_{n=1}^{\infty}c_n\lambda_n \langle u_n, u_m\rangle_r=\mu\sum_{n=1}^{\infty}c_n\langle u_n, u_m\rangle_r + \langle f, u_m\rangle$$
+
+$$\Rightarrow c_m\lambda_m = \mu c_m + b_m$$
+
+여기서 우변의 $\mu c_m$을 좌변으로 옮겨서 식을 약간만 정리해주면,
+
+$$(\lambda_n-\mu)c_n = b_n, \quad n=1,2,3,\cdots$$
+
+과 같이 쓸 수 있게 된다.
+
+결국 우리는 $c_n$을 구해서 솔루션 함수를 표현해주는 것이 목표이다. 여기서 $c_n$이 적절히 존재해야지만 솔루션이 존재한다고 할 수 있다. 따라서 위 식을 보면 다음과 같은 조건에 따라 해의 존재 형태를 알 수 있게 된다.
+
+* Case 1: $\mu\neq \lambda_n$
+
+$$c_n = \frac{b_n}{\lambda_n-\mu}$$
+
+* Case 2: $\mu = \lambda_n, b_n\neq 0$, 해가 존재하지 않음
+
+* Case 3: $\mu=\lambda_n, b_n=0$, 유일해가 아님 (null space가 0 벡터가 아닌경우)
+
+거의 대부분의 경우는 Case 1을 따르기 때문에 솔루션 함수는 다음과 같이 쓸 수 있게 된다.
+
+$$u(x)=\sum_{n=1}^{\infty}\frac{\langle f, u_n\rangle}{\lambda_n-\mu}u_n(x)$$
+
