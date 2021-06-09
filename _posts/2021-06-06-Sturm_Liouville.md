@@ -374,7 +374,7 @@ $$u(x)=0.82761\sin(\sqrt{2}x)-\frac{x}{2}$$
 
 이 개념이 더 확장된 것이 [푸리에 급수](https://angeloyeo.github.io/2019/06/23/Fourier_Series.html)이다. 푸리에 급수는 임의의 주기함수를 삼각함수의 합으로 표현해준다.
 
-푸리에 시리즈가 수학적으로 흠결없이 작동할 수 있는 이유는 이러한 깊은 배경지식이 자리하고 있는 것이다.
+푸리에 시리즈가 수학적으로 흠결없이 작동할 수 있는 데에는 이러한 깊은 배경지식이 자리하고 있는 것이다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
