@@ -191,6 +191,8 @@ $$\lambda_1 \lt \lambda_2 \lt \lambda_3 \lt \cdots \lt \lambda_n \lt \cdots \rig
 
 $$\langle y_n, y_m \rangle_r = \int_{a}^{b}r(x)\overline{y_n(x)}y_m(x)dx=\int_{a}^{b}r(x)y_n(x)y_m(x)dx=\delta_{mn}$$
 
-* 두 번째 고유함수에 관한 성질에 의해 고유함수들은 구간 $[a, b]$에서 weighting 함수 $r(x)$와 함께 정의되는 힐버트 공간($L^2([a,b],w(x)dx)$)의 직교 기저를 구성하게 된다.
+* 두 번째 고유함수에 관한 성질에 의해 고유함수들은 구간 $[a, b]$에서 weighting 함수 $r(x)$와 함께 정의되는 힐버트 공간($L^2([a,b],w(x)dx)$, 쉽게 말해 함수 공간으로써 함수가 무한 차원 공간의 점으로 해석될 수 있게 해줌.)의 직교 기저를 구성하게 된다.
 
-# 
+핵심적인 것은 S-L 연산자의 고유함수가 힐버트 공간의 직교 기저를 구성한다는 것인데, 이 성질에 의해 구간 $[a,b]$에서 정의된 임의의 함수 $u$는 고유함수의 선형결합으로 표현될 수 있다.
+
+$$u=\sum_{n=1}^{\infty}c_nu_n$$
