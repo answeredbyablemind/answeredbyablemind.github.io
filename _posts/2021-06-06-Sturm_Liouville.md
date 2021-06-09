@@ -27,13 +27,21 @@ tags: 미분방정식
 
 선형 연산자 $L$에 대해 아래와 같은 꼴을 띄는 방정식은 스트룸 리우빌 이론으로 해석할 수 있다.
 
-$$Lu=\mu r(x)u+f(x)$$
+$$Lu=\mu r(x)u+f(x) % 식(1)$$
 
-여기에 아래와 같은 경계 조건이 주어져야 한다. 여기서 $\alpha, \beta$ 값들은 적절한 상수이다.
+여기에 아래와 같은 경계 조건이 주어져야 한다. 
 
-$$\alpha_1 u(a)+\beta_1 \frac{du(a)}{dx}=0$$
+$$\alpha_1 u(a)+\beta_1 \frac{du(a)}{dx}=0 % 식(2)$$
 
-$$\alpha_2 u(b)+\beta_2 \frac{du(b)}{dx}=0$$
+$$\alpha_2 u(b)+\beta_2 \frac{du(b)}{dx}=0 % 식(3)$$
+
+여기서 $\alpha, \beta$ 값들은 다음과 같은 성질을 만족하는 상수이다[^1].
+
+$$\alpha_1^2+\beta_1^2 >0 % 식 (4)$$
+
+$$\alpha_2^2+\beta_2^2 >0 % 식 (5)$$
+
+[^1]: 이 조건이 만족할 때를 regular S-L 문제라고 하는데, 너무 깊게는 들어가지 말자.
 
 조금 더 구체적으로 선형 연산자 $L$은 아래와 같이 주어지는 것이며 이 연산자를 스트룸 리우빌 연산자(Sturm-Liouville Operator)라고 부르자.
 
@@ -119,33 +127,15 @@ $$=-\left[p(x)\overline{f'}g\right]_{a}^{b}+\left[\overline{f} p(x)g'\right]_{a}
 
 $$=-\left[p(x)\overline{f'}g-p(x)\overline{f}g'\right]_{a}^{b}$$
 
-$$=-\Big[(p(b)\overline{f'(b)}g(b)-p(b)\overline{f(b)}g'(b))-(p(a)\overline{f'(a)}g(a)-p(a)\overline{f(a)}g'(a))\Big]$$
+$$=\left[p(x)W(\overline{f}, g)\right]_{a}^{b}$$
 
-$$=-p(b)\overline{f'(b)}g(b)+p(b)\overline{f(b)}g'(b)+p(a)\overline{f'(a)}g(a)-p(a)\overline{f(a)}g'(a)$$
+여기서 $W$는 Wronskian이다.
 
-여기서 $f$와 $g$ 모두 S-L 이론의 경계조건을 만족하는 함수로 생각한 것이다.
+이 때, 잘 생각해보면 $W(\overline{f},g)$는 항상 0이다 왜냐하면, 식 (2)의 경계조건을 함수 $\overline{f}$와 $g$에 대해 얻은 두 조건을 행렬로 표현해보면 다음과 같은데
 
-가령, 함수 $g$는 다음 조건을 만족하는 함수여야 한다.
+$$\begin{bmatrix}\overline{f(a)} &\overline{f'(a)}\\g(a) & g'(a)\end{bmatrix}\begin{bmatrix}\alpha_1 \\ \beta_1\end{bmatrix}=\begin{bmatrix}0 \\0\end{bmatrix}$$
 
-$$\alpha_1 g(a)+\beta_1 g'(a)=0$$
-
-$$\alpha_2 g(b)+\beta_2 g'(b)=0$$
-
-따라서, 식 (21)에서 다음과 같이 식을 대입해 생각해보면,
-
-$$p(a)\overline{f'(a)}\Rightarrow \alpha_1$$
-
-$$-p(a)\overline{f(a)}\Rightarrow \beta_1$$
-
-$$-p(b)\overline{f'(b)}\Rightarrow \alpha_2$$
-
-$$p(b)\overline{f(b)}\Rightarrow \beta_2$$
-
-식 (21)은 다음과 같이 바꿔 쓸 수 있다는 것을 알 수 있다.
-
-$$식(21)\Rightarrow \alpha_1 g(a)+\beta_1 g'(a)+\alpha_2 g(b)+\beta_2 g'(b)$$
-
-이 값은 경계 조건에 의해 0이 되어야 한다. (반대로 $f$에 대해 적용해보아도 마찬가지 결과를 얻을 수 있다.)
+여기서 위 식의 왼쪽에 있는 행렬이 역함수를 가지게 되면 $\alpha_1$, $\beta_1$은 모두 0이 되므로 식 (4)의 조건을 어기게 되는 것이다. 그 뿐만 아니더라도 $\alpha_1$과 $\beta_1$이 모두 0이면 아무런 의미없는 경계조건이 되는 것이므로 $W(\overline{f}, g)$가 0이 되어야 함은 자명하다고 할 수 있다. 마찬가지 방법으로 $b$에 대해서도 위의 방법은 성립한다.
 
 따라서, $\langle Lf, g\rangle-\langle f, Lg\rangle = 0$임을 알 수 있다.
 
