@@ -364,7 +364,7 @@ $$u(x)=0.82761\sin(\sqrt{2}x)-\frac{x}{2}$$
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic2.png">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic2.mp4">
   </video>
   <br>
   그림 2. 고유함수의 선형결합으로 u(x)를 approximate 해가는 과정
@@ -378,7 +378,7 @@ $$u(x)=0.82761\sin(\sqrt{2}x)-\frac{x}{2}$$
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic3.png">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic3.mp4">
   </video>
   <br>
   그림 3. 고유함수의 선형결합을 이용해 f(x)를 approximate 해가는 과정
