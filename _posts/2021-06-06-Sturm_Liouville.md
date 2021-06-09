@@ -286,8 +286,6 @@ $$-\frac{d^2}{dx^2}u=2u+x$$
 
 여기서 $\mu=0$, $q(x)=-2$라고도 볼 수 있지만, 관점의 문제일 뿐이다는 점은 약간의 팁(?)이다.
 
-### 고윳값 계산
-
 이 식의 고윳값 문제는 다음과 같은데,
 
 $$-\frac{d^2u_n}{dx^2}=\lambda_n u_n$$
@@ -296,7 +294,7 @@ $$-\frac{d^2u_n}{dx^2}=\lambda_n u_n$$
 
 $$u_n=c_1 \sin\sqrt{\lambda_n}x + c_2 \cos\sqrt{\lambda_n}x$$
 
-$u_n(0)=0$ 이라는 경계 조건을 만족하기 위해선 $c_2=0$이 되어야 하므로,
+$u_n(0)=0$ 이라는 경계 조건을 만족하기 위해선 $c_2=0$이 되어야 하므로 고유함수는
 
 $$u_n=c_1\sin\sqrt{\lambda_n}x$$
 
@@ -336,8 +334,52 @@ $$\lbrace x | \tan(x)+x=0\rbrace = \lbrace 2.0288, 4.9132, 7.9787, 11.086, 14.20
 
 그러면 위의 값들이 $\sqrt{\lambda_n}\text{ for } n = 1,2,\cdots$에 대응되는 값임을 알 수 있다.
 
-이 때 각 고윳값들에 대응되는 고유함수는 다음과 같이 얻어진다.
+이 때 각 고윳값들에 대응되는 고유함수 $u_n$을 $\langle u_n, u_n \rangle = 1$이 되도록 정규화하면 $u_n$은 다음과 같이 수정할 수 있다..
 
 $$u_n = \frac{\sqrt{2}}{(1+\cos^2\sqrt{\lambda_n})^{1/2}}\sin\sqrt{\lambda_n}x\quad\quad n=1,2,\cdots$$
 
-이 고유함수들은 $\langle u_n, u_n \rangle = 1$이 되도록 정규화 한 것이다.
+따라서, 우리는 이 고유함수를 이용해 $f(x)$와 $u(x)$를 표현할 수 있게 된다.
+
+그를 위해 먼저 $b_n$을 계산해보면,
+
+$$b_n = \langle f, u_n\rangle = \int_{0}^{1}\left(\frac{\sqrt{2}}{(1+\cos^2\sqrt{\lambda_n})^{1/2}}x\sin\sqrt{\lambda_n}x \right)dx=\frac{2\sqrt{2}\sin\sqrt{\lambda_n}}{\lambda_n(1+\cos^2\sqrt{\lambda_n})^{1/2}}$$
+
+와 같다. 따라서,
+
+$$f(x)=4\sum_{n=1}^{\infty}\frac{\sin\sqrt{\lambda_n}\sin\sqrt{\lambda_n}x}{\lambda_n(1+\cos^2\sqrt{\lambda_n})}$$
+
+이고,
+
+$$u(x)=4\sum_{n=1}^{\infty}\frac{\sin\sqrt{\lambda_n}\sin{\sqrt{\lambda_n}x}}{\lambda_n(\lambda_n-2)(1+\cos^2\sqrt{\lambda_n})}$$
+
+과 같이 쓸 수 있음을 알 수 있다.
+
+이 결과들은 다소 복잡해 보이지만 아래와 같이 영상으로 보면 그 의미를 더 쉽게 이해할 수 있다.
+
+$u(x)$는 일반적인 비제차미분방정식의 해를 구하는 방법을 통해
+
+$$u(x)=0.82761\sin(\sqrt{2}x)-\frac{x}{2}$$
+
+라는 것을 쉽게 알 수 있는데, $u(x)$를 위에서 구한 고유함수의 선형결합으로 표현한 것과 비교하면 다음과 같이 수렴해가는 것을 알 수 있다.
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic2.png">
+  </video>
+  <br>
+  그림 2. 고유함수의 선형결합으로 u(x)를 approximate 해가는 과정
+</p>
+
+더 신기한 것은 $f(x)=x$라는 함수도 고유함수의 선형결합으로 표현해줄 수 있다는 점이다.
+
+이 개념이 더 확장된 것이 [푸리에 급수](https://angeloyeo.github.io/2019/06/23/Fourier_Series.html)이다. 푸리에 급수는 임의의 주기함수를 삼각함수의 합으로 표현해준다.
+
+푸리에 시리즈가 수학적으로 흠결없이 작동할 수 있는 이유는 이러한 깊은 배경지식이 자리하고 있는 것이다.
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic3.png">
+  </video>
+  <br>
+  그림 3. 고유함수의 선형결합을 이용해 f(x)를 approximate 해가는 과정
+</p>
