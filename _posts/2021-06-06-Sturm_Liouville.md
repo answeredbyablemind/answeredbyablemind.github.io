@@ -141,8 +141,23 @@ $$\begin{bmatrix}\overline{f(a)} &\overline{f'(a)}\\g(a) & g'(a)\end{bmatrix}\be
 
 그러므로 S-L 연산자 $L$은 self-adjoint 연산자임을 알 수 있다.
 
-
 ## S-L 이론의 고윳값 문제
+
+우리는 앞서 S-L operator가 self-adjoint operator라는 것을 확인했다.
+
+self-adjoint operator는 잠깐 언급했듯이 선형대수학에서 에르미트 행렬(Hermitian matrix)의 개념을 확장시킨 것이라고 할 수 있다.
+
+[고유함수 전개](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 편에서 에르미트 행렬을 소개한 바 있었는데, 에르미트 행렬의 가장 중요한 특징 중 하나는 서로 다른 고윳값에 대해서 고유벡터들이 모두 직교한다는 것이었다.
+
+마찬가지로 self-adjoint operator 역시도 고윳값, 고유함수를 가지는데 고윳값들이 서로 다르면 고유함수들이 직교한다.
+
+그러면 S-L 이론에서는 고윳값들이 모두 다르다(distinct)는 것을 보장받을 수 있을까? 
+
+정답은 그렇다이다. 식 (2)~식(5)의 조건을 만족하는 S-L 연산자라면 고윳값이 모두 distinct하고 서로 다른 고유 함수가 직교하는 특성을 갖는다.
+
+왜 그런지에 대해서는 스트룸의 분리 정리, 스트룸의 비교 정리, 스트룸의 진동 정리를 통해 증명할 수 있다고 한다. 
+
+아직 필자의 수학적 지식이 부족한 탓에 자세히 이해하기는 어려워 증명은 스킵하고자 한다. 자세한 내용은 [전파거북이 님의 포스팅](https://ghebook.blogspot.com/2011/11/sturm-liouville-theory.html)을 참고해보자.
 
 $$Lu_n=\lambda_nr(x) u_n$$
 
