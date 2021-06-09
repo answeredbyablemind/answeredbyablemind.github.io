@@ -19,11 +19,11 @@ tags: 미분방정식
 
 # 스트룸 리우빌 이론 소개
 
-스트룸 리우빌 이론[^1]은 2계 선형미분방정식의 해를 얻고 이 해의 특성을 이해하기 위한 이론이다.
+스트룸 리우빌 이론(Sturm-Liouville theory)[^1]은 2계 선형미분방정식의 해를 얻고 이 해의 특성을 이해하기 위한 이론이다. (포스팅에서는 줄여서 S-L 이론이라고도 부르고자 함)
 
 [^1]: 이름이 심지어 정리(theorem)가 아닌 '이론(theory)'이다. 이 이론을 따르는 수 많은 적용 사례들이 있음을 시사한다.
 
-특히, 2계 선형미분방정식을 연산자(operator)의 관점에서 봄으로써 해를 구하고자 하는 시도에서 출발한다. 이 이론이 의미있는 이유는 아무리 복잡한 2계 미분방정식이더라도 스트룸 리우빌 이론의 관점에서 문제를 보면 그 문제들을 다르게 해석해볼 수 있기 때문이다.
+특히, 2계 선형미분방정식을 연산자(operator)의 관점에서 봄으로써 해를 구하고자 하는 시도에서 출발한다. 이 이론이 의미있는 이유는 아무리 복잡한 2계 미분방정식이더라도 S-L 이론의 관점에서 문제를 보면 그 문제들을 다르게 해석해볼 수 있기 때문이다.
 
 선형 연산자 $L$에 대해 아래와 같은 꼴을 띄는 방정식은 스트룸 리우빌 이론으로 해석할 수 있다.
 
@@ -97,7 +97,7 @@ $$\langle Lf, g \rangle=\langle f, L^\dagger g\rangle$$
 
 $$\langle Lf, g\rangle =\langle f, Lg\rangle$$
 
-이러한 연산자들은 마치 선형대수학에서 대칭 행렬(symmetric matrix) 혹은 에르미트 행렬(Hermitian matrix)의 개념에 대응된다.
+이러한 연산자들은 마치 <b><span style="color:red">선형대수학에서 대칭 행렬(symmetric matrix) 혹은 에르미트 행렬(Hermitian matrix)의 개념에 대응</span></b>된다.
 
 이제 S-L 연산자가 self adjoint 연산자임을 확인해보자.
 
@@ -141,24 +141,56 @@ $$\begin{bmatrix}\overline{f(a)} &\overline{f'(a)}\\g(a) & g'(a)\end{bmatrix}\be
 
 그러므로 S-L 연산자 $L$은 self-adjoint 연산자임을 알 수 있다.
 
-## S-L 이론의 고윳값 문제
+## 스트룸 리우빌 이론의 고윳값 문제
 
-우리는 앞서 S-L operator가 self-adjoint operator라는 것을 확인했다.
+S-L 연산자의 고윳값, 고유함수 문제를 다루기에 앞서 우리는 구간 $[a,b]$에서 정의되는 복소함수 $f(x)$, $g(x)$, $r(x)$에 대해서 아래와 같은 내적 연산을 정의하자.
+
+$$\langle f, g \rangle_r=\int_{a}^{b}r(x)\overline{f(x)}g(x)dx$$
+
+여기서 $r(x)$는 weighting function이라고 부른다. 많은 경우에 $r(x)=1$인데 그렇지 않은 일반적인 경우까지 포함하기 위해 위와 같은 형태의 내적을 정의한다고 보면 좋을 것 같다. $r(x)=1$인 경우의 함수의 내적은 다음과 같이 쓰도록 하자.
+
+$$\langle f, g \rangle=\int_{a}^{b}\overline{f(x)}g(x)dx$$
+
+또, 직교성에 대한 표현을 쉽게 하기 위해 다음과 같은 Kronecker Delta 함수 표기를 생각하자.
+
+$$\langle u_n, u_m\rangle_r=\delta_{mn}$$
+
+여기서 $\delta_{mn}$은 $m=n$ 인 경우만 1이고 나머지 경우는 0인 함수를 의미한다.
+
+이제 S-L 연산자 $L$에 대해 다음과 같은 식을 생각해보자.
+
+$$Lu_n=\lambda_nr(x) u_n$$
+
+여기서 $u_n$은 $x$에 대한 함수이고 고윳값 $\lambda_n$에 대응하는 고유함수라는 것을 생각해볼 수 있다.
+
+이 식의 우변이 $r(x)$가 곱해진 형태로 주어진 것은 원래의 Sturm-Liouville 이론에서 주어진 방정식의 우변의 형태에 맞춰진 것이다.
+
+---
+
+한편, 우리는 앞서 Sturm-Liouville operator가 self-adjoint operator라는 것을 확인했다.
 
 self-adjoint operator는 잠깐 언급했듯이 선형대수학에서 에르미트 행렬(Hermitian matrix)의 개념을 확장시킨 것이라고 할 수 있다.
 
-[고유함수 전개](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 편에서 에르미트 행렬을 소개한 바 있었는데, 에르미트 행렬의 가장 중요한 특징 중 하나는 서로 다른 고윳값에 대해서 고유벡터들이 모두 직교한다는 것이었다.
+[고유함수 전개](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 편에서 에르미트 행렬을 소개한 바 있었는데, 에르미트 행렬의 가장 중요한 특징은 **에르미트 행렬의 고윳값은 모두 실수이고 서로 다른 고윳값에 대응되는 고유벡터들이 모두 직교한다**는 것이었다.
 
-마찬가지로 self-adjoint operator 역시도 고윳값, 고유함수를 가지는데 고윳값들이 서로 다르면 고유함수들이 직교한다.
+마찬가지로 self-adjoint operator 역시도 고윳값, 고유함수를 가진다. 그리고 self-adjoint operator의 고윳값은 모두 실수이며, 고윳값들이 서로 다르면 고유함수들이 직교한다.
 
-그러면 S-L 이론에서는 고윳값들이 모두 다르다(distinct)는 것을 보장받을 수 있을까? 
+그런데 혹시 S-L 이론에서는 고윳값들이 모두 다르다(distinct)는 것을 보장받을 수만 있다면 S-L 연산자의 모든 고유함수들은 서로 직교할 수 있다. 과연 S-L 연산자의 고윳값들은 모두 distinct하다고 할 수 있을까?
 
-정답은 그렇다이다. 식 (2)~식(5)의 조건을 만족하는 S-L 연산자라면 고윳값이 모두 distinct하고 서로 다른 고유 함수가 직교하는 특성을 갖는다.
+정답은 "그렇다"이다. 식 (2)~식(5)의 조건을 만족하는 S-L 연산자라면 고윳값이 모두 distinct하고 서로 다른 고유 함수가 직교하는 특성을 갖는다. 이에 대해서는 스트룸의 분리 정리, 스트룸의 비교 정리, 스트룸의 진동 정리를 통해 증명할 수 있다고 하는데, 아직 필자의 수학적 지식이 부족한 탓에 자세히 이해하기는 어려워 증명은 스킵하고자 한다. 자세한 내용은 [전파거북이 님의 포스팅](https://ghebook.blogspot.com/2011/11/sturm-liouville-theory.html)을 참고해보자.
 
-왜 그런지에 대해서는 스트룸의 분리 정리, 스트룸의 비교 정리, 스트룸의 진동 정리를 통해 증명할 수 있다고 한다. 
+---
 
-아직 필자의 수학적 지식이 부족한 탓에 자세히 이해하기는 어려워 증명은 스킵하고자 한다. 자세한 내용은 [전파거북이 님의 포스팅](https://ghebook.blogspot.com/2011/11/sturm-liouville-theory.html)을 참고해보자.
+지금까지의 내용을 종합하여 S-L 연산자가 self-adjoint 연산자이고 모든 고윳값이 distinct 하다는 것을 바탕으로 생각하면 S-L 연산자는 다음과 같은 성질을 가진다는 것을 알 수 있다.
 
-$$Lu_n=\lambda_nr(x) u_n$$
+* S-L 연산자의 고윳값은 모두 실수이고, distinct해서 다음과 같이 나열할 수 있다.
+
+$$\lambda_1 \lt \lambda_2 \lt \lambda_3 \lt \cdots \lt \lambda_n \lt \cdots \rightarrow \infty$$
+
+* 위 고윳값에 대응되는 고유함수들은 모두 실수 함수이며, 아래와 같이 서로 직교한다. 구간 $[a,b]$에서 정의된 서로 다른 고유함수 $y_n$, $y_m$에 대해,
+
+$$\langle y_n, y_m \rangle_r = \int_{a}^{b}r(x)\overline{y_n(x)}y_m(x)dx=\int_{a}^{b}r(x)y_n(x)y_m(x)dx=\delta_{mn}$$
+
+* 두 번째 고유함수에 관한 성질에 의해 고유함수들은 구간 $[a, b]$에서 weighting 함수 $r(x)$와 함께 정의되는 힐버트 공간($L^2([a,b],w(x)dx)$)의 직교 기저를 구성하게 된다.
 
 # 
