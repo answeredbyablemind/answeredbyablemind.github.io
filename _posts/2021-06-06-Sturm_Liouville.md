@@ -131,7 +131,7 @@ $$=\left[p(x)W(\overline{f}, g)\right]_{a}^{b}$$
 
 여기서 $W$는 Wronskian이다.
 
-이 때, 잘 생각해보면 $W(\overline{f},g)$는 항상 0이다 왜냐하면, 식 (2)의 경계조건을 함수 $\overline{f}$와 $g$에 대해 얻은 두 조건을 행렬로 표현해보면 다음과 같은데
+이 때, 잘 생각해보면 $W(\overline{f},g)$는 $x=a$일 때나 $x=b$일 때나 항상 0이다. 왜냐하면, 식 (2)의 경계조건(즉, $x=a$인 경우)을 함수 $\overline{f}$와 $g$에 대해 얻은 두 조건을 행렬로 표현해보면 다음과 같은데
 
 $$\begin{bmatrix}\overline{f(a)} &\overline{f'(a)}\\g(a) & g'(a)\end{bmatrix}\begin{bmatrix}\alpha_1 \\ \beta_1\end{bmatrix}=\begin{bmatrix}0 \\0\end{bmatrix}$$
 
