@@ -1,5 +1,5 @@
 ---
-title: 이중 진자와 카오스 이론
+title: 그린 함수를 이용한 해법
 sidebar:
   nav: docs-ko
 aside:
