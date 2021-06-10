@@ -43,7 +43,7 @@ tags: 미분방정식
 
 여기서 말하는 '내부 구조에 대한 해석'은 미분방정식의 제차해(homogeneous solution)을 말한다. 
 
-즉, [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편과 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편에서 보았던 것 처럼 제차해(homogeneous solution)은 아무런 외부 입력이 없더라도 자체적으로 구동하는 동작 방법이 서술되어 있는것이다.
+즉, [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편과 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편에서 보았던 것 처럼 제차해(homogeneous solution)은 아무런 외부 입력이 없더라도 자체적으로 구동하는 동작 방법이 서술되어 있는것이다. 왜냐면 제차해는 '되먹임'을 통한 연속 성장에 대한 솔루션 커브이기 때문이다.
 
-
+또, '외부 입력에 대한 반응'이라 함은 미분방정식의 비제차 해, particular solution을 말한다. 이것은 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편에서 다루었던 것 처럼 시간에 따라 추가적인 외부 입력이 들어올 때의 출력 변화를 의미한다. 거기다 이 출력 변화는 '자체적으로 구동하는' 미분방정식의 제차 시스템(homogeneous system or autonomous system)의 해 위에 얹어져서 작동하게 된다. 우리는 이것을 중첩의 원리라고 부르기도 한다. 
 
