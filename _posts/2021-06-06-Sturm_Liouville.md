@@ -440,7 +440,7 @@ $$=\frac{\pi}{2}$$
 
 따라서, $\langle u_n,u_n\rangle = 1$로 만들어주기 위해서는 다음과 같이 고유함수의 형태를 수정하자.
 
-$$u_n=\frac{2}{\pi}\sin(nx)$$
+$$u_n=\sqrt{\frac{2}{\pi}}\sin(nx)$$
 
 여기서 $n=1,2,\cdots, \infty$ 이다.
 
@@ -452,23 +452,28 @@ $$Lu=f(x)=x,\quad x\in[0,\pi]$$
 
 식 (31)의 결과에 따라 $f(x)=x$는 다음과 같이 고유함수의 선형결합으로 표현해줄 수 있다.
 
-$$f(x)=\sum_{n=1}^{\infty}b_n u_n=\sum_{n=1}^{\infty}b_n \frac{2}{\pi}\sin(nx)$$
+$$f(x)=\sum_{n=1}^{\infty}b_n u_n=\sum_{n=1}^{\infty}b_n \sqrt{\frac{2}{\pi}}\sin(nx)$$
 
 그리고 $b_n$은 식 (35)와 같이 구해줄 수 있다.
 
-$$b_n=\langle f, u_n\rangle = \int_{0}^{\pi}x\frac{2}{\pi}\sin(nx)dx$$
+$$b_n=\langle f, u_n\rangle = \int_{0}^{\pi}x\sqrt{\frac{2}{\pi}}\sin(nx)dx$$
 
-$$=\frac{2}{\pi}\int_{0}^{\pi}x\sin(nx)dx$$
+$$=\sqrt{\frac{2}{\pi}}\int_{0}^{\pi}x\sin(nx)dx$$
 
-$$=\frac{2}{\pi}\left(-\frac{1}{n}x\cos(nx)\Big|_{0}^{\pi}+\int_{0}^{\pi}\frac{1}{n}\cos(nx)dx\right)$$
+$$=\sqrt{\frac{2}{\pi}}\left(-\frac{1}{n}x\cos(nx)\Big|_{0}^{\pi}+\int_{0}^{\pi}\frac{1}{n}\cos(nx)dx\right)$$
 
-$$=\frac{2}{\pi}\left(-\frac{1}{n}\pi\cos(n\pi)-\frac{1}{n}\cdot\frac{1}{n}(\sin(nx))\Big|_{0}^{\pi}\right)$$
+$$=\sqrt{\frac{2}{\pi}}\left(-\frac{1}{n}\pi\cos(n\pi)-\frac{1}{n}\cdot\frac{1}{n}(\sin(nx))\Big|_{0}^{\pi}\right)$$
 
-$$=\frac{2}{\pi}\left(-\frac{1}{n}\pi(-1)^n\right)=-\frac{2}{n}(-1)^n$$
+$$=\sqrt{\frac{2}{\pi}}\left(-\frac{1}{n}\pi(-1)^n\right)$$
 
 그러므로 $f(x)=x$는 삼각함수의 선형결합으로 다음과 같이 표현해줄 수 있게 된다.
 
-$$f(x)=x=\sum_{n=1}^{\infty}-\frac{2}{n}(-1)^n\sin(nx)$$
+$$f(x)=x=\sum_{n=1}^{\infty}\sqrt{\frac{2}{\pi}}\left(-\frac{1}{n}\pi(-1)^n\right)\sqrt{\frac{2}{\pi}}\sin(nx)$$
+
+$$=\sum_{n=1}^{\infty}\frac{2}{\pi}\left(-\frac{1}{n}\pi(-1)^n\right)\sin(nx)$$
+
+$$=\sum_{n=1}^{\infty}-\frac{2}{n}(-1)^n\sin(nx)$$
+
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
