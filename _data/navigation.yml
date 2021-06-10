@@ -175,7 +175,7 @@ docs-ko:
         url:    2021/06/04/undetermined_coefficients.html
       - title:  매개변수 변환법
         url:    2021/06/05/variation_of_parameters.html
-      - title:  오일러-코시 방정식
+      - title:  오일러-코시 미분방정식
         url:    2021/06/07/Euler_Cauchy.html
       - title:  경계값 문제(BVP)
         url:    2021/05/28/Boundary_Value_Problem.html
