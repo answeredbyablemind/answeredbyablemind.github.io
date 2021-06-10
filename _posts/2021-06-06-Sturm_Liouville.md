@@ -470,6 +470,14 @@ $$=\frac{2}{\pi}\left(-\frac{1}{n}\pi(-1)^n\right)=-\frac{2}{n}(-1)^n$$
 
 $$f(x)=x=\sum_{n=1}^{\infty}-\frac{2}{n}(-1)^n\sin(nx)$$
 
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-06-Sturm_Liouville/pic4.mp4">
+  </video>
+  <br>
+  그림 4. $L=-u''$ 연산자 고유함수의 선형결합을 이용해 $f(x)=x$를 approximate 해가는 과정 (푸리에 sine 시리즈와 동일)
+</p>
+
 ## 베셀 미분방정식(Bessel equation)
 
 스트룸 리우빌 이론의 백미(白眉)는 여러가지 특수 미분방정식에 대해 적용해볼 수 있다는 점이다.
