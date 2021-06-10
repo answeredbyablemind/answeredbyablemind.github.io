@@ -104,3 +104,48 @@ for i = 1:30 % 마지막 장면에서 1.5초 더 대기할 수 있도록
 end
 
 close(newVid)
+
+%% 푸리에 시리즈
+
+newVid = VideoWriter('pic4', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+figure('color','w');
+xx = linspace(0,pi,20);
+h(1) = plot(xx, xx,'ro','linewidth',2);
+hold on;
+xx = linspace(0, pi, 100);
+reconstruct = zeros(1, length(xx));
+xlim([0, pi])
+ylim([0, 4])
+
+for n = 1:1000
+    reconstruct = reconstruct + (-1)/n*2*(-1)^n*sin(n*xx);
+    h(2) = plot(xx, reconstruct,'linewidth',2,'color','k');
+    title(['n = ',num2str(n)]);
+    grid on;
+    if n < 10
+        for ii = 1:5
+            writeVideo(newVid, getframe(gcf))
+        end
+    else
+        if rem(n,5) == 0
+            for ii = 1:2
+                writeVideo(newVid, getframe(gcf))
+            end
+        end
+    end
+    
+    if n < 1000
+        delete(h(2));
+    end
+end
+
+
+for i = 1:30 % 마지막 장면에서 1.5초 더 대기할 수 있도록
+    writeVideo(newVid, getframe(gcf))
+end
+
+close(newVid)
