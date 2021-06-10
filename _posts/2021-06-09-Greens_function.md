@@ -7,3 +7,43 @@ aside:
 key: 20210609
 tags: 미분방정식
 ---
+
+# Prerequisites
+
+그린 함수를 이용한 미분방정식의 해법을 이해하기 위해서는 다음의 내용에 대해 이해하고 오시는 것이 좋습니다.
+
+* [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)
+
+아래는 신호 및 시스템 과목에 관한 내용인데, 그린 함수를 이해하기 위해서 읽으면 좋은 optional prerequisites 입니다.
+
+* [Discrete Time Convolution](https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html)
+* [Continuous Time Convolution](https://angeloyeo.github.io/2019/07/01/Continuous_Time_Convolution.html)
+
+# 미분방정식을 보는 또 다른 관점
+
+지금까지 네 가지 관점에서 미분방정식을 해석해보았다. (많이도 했다...)
+
+[미분방정식을 이용한 현상 모델링](https://angeloyeo.github.io/2021/05/01/modeling_with_differential_equation.html)편에서는 미분계수가 포함된 방정식을 미분방정식이라고 보았다.
+
+또, [방향장과 오일러 방법](https://angeloyeo.github.io/2021/04/30/direction_fields.html) 편에서는 좌표 (x,y )에 매핑된 기울기로 미분방정식을 기하학적으로 해석했으며,
+
+[자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서는 미분방정식이란 연속성장의 관점에서 시시각각 변화율이 바뀌는 시스템의 관점에서 미분방정식을 해석하였다.
+
+그리고, [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서는 함수를 벡터로 취급할 수 있음을 알아보았고 미분 연산자의 관점에서 미분 방정식을 해석했다.
+
+이번 시간에는 미분방정식을 **'시스템'**의 관점에서 해석하고자 한다. 
+
+이 내용은 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)에서 확인한 연산자 이론의 내용과 궤를 같이 하는 것이지만 이 관점의 전환을 통해 그린 함수를 이용해서 해를 구할 수 있겠구나 하는 'motivation'을 받을 수 있을 것이다.
+
+---
+
+기본적으로 시스템이라고 하는 것은 입력과 출력이 있는 것이다. 이것은 함수의 개념과도 유사하다고 할 수 있다.
+
+그런데, 이 시스템이라고 하는 것은 '내부 구조'에 대한 해석과 '외부 입력에 의한 반응'에 대한 해석을 동시에 확인할 수 있어야 한다는 점에서 굳이 '시스템'이라는 이름을 붙였다.
+
+여기서 말하는 '내부 구조에 대한 해석'은 미분방정식의 제차해(homogeneous solution)을 말한다. 
+
+즉, [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편과 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편에서 보았던 것 처럼 제차해(homogeneous solution)은 아무런 외부 입력이 없더라도 자체적으로 구동하는 동작 방법이 서술되어 있는것이다.
+
+
+
