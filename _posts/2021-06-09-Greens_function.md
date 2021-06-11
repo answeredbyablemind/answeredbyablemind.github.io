@@ -141,7 +141,7 @@ $$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx$$
 그런데, 문제는 $r(x)$는 적절한 너비 $2\xi$ 만큼에 대해 정의되어 있으므로 $f(x)$와 $r(x)$의 적분으로는 실제 $f(x_0)$ 값을 얻기 어려울 것이다. 따라서 우리는 $\xi$를 매우 작게 만들면 더 정확히 $f(x)$의 값을 위 식과 같은 내적을 통해서 얻을 수 있다는 것을 예상할 수 있다. 우리는 $\xi$를 작게 만들어줄 때 다음과 같은 일이 일어날 것임을 알 수 있다.
 
 <p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic6.mp4">
   </video>
   <br>
