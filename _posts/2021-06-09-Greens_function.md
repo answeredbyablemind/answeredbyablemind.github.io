@@ -112,7 +112,7 @@ tags: 미분방정식
 
 가령, $[2, 3, 5, 1, 4]$라는 벡터에 대해 맨 앞의 2라는 값을 뽑아오기 위해서는 기저벡터 $[1, 0, 0, 0, 0]$과 내적해줌으로써 원소값을 뽑아올 수 있다.
 
-$$\text{dot}([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2$$
+$$\text{dot}([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2 % 식(1)$$
 
 마찬가지 방식으로 우리도 함수의 특정 위치의 값을 뽑아오기 위해서는 내적을 해주기 위한 기저 벡터와 유사한 함수를 생각해야 한다.
 
@@ -120,17 +120,17 @@ $$\text{dot}([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2$$
 
 $x\in[a,b]$에서 정의된 함수 $f$, $g$에 대해
 
-$$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
+$$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx % 식(2)$$
 
 여기서 $\overline{f(x)}$는 $f(x)$의 complex conjugate 이다.
 
 만약 $f(x)$와 $g(x)$가 모두 실수함수라면 다음과 같이도 써줄 수 있다.
 
-$$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx$$
+$$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx % 식(3)$$
 
 즉, 함수의 내적은 적분으로 정의되므로 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
 
-$$r(x) = \begin{cases}1/(2\xi),\quad -\xi<x<\xi \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases}$$
+$$r(x) = \begin{cases}1/(2\xi),\quad -\xi<x<\xi \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases} % 식(4)$$
 
 여기서 $\xi$는 아주 작은 크기의 실수(real number)이다.
 
@@ -138,7 +138,7 @@ $$r(x) = \begin{cases}1/(2\xi),\quad -\xi<x<\xi \\ 0,\quad\quad \quad\quad \text
 
 즉, 우리는 원하는 위치의 함수값을 내적을 통해 얻기 위해 다음과 같은 일을 수행하면 될 것으로 보인다. $x_0$가 구간 $[a, b]$ 사이에 위치한다고 가정했을 때,
 
-$$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx$$
+$$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx % 식(5)$$
 
 와 같다.
 
@@ -154,9 +154,9 @@ $$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx$$
 
 따라서, 우리는 $\xi$가 작아질 수록 $r(x)$가 아래의 $\delta(x)$와 같은 모습을 띄게 된다는 것을 알 수 있다.
 
-$$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases}$$
+$$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases} % 식(6)$$
 
-$$\int_{-\infty}^{\infty}\delta(x)dx = 1$$
+$$\int_{-\infty}^{\infty}\delta(x)dx = 1 % 식(7)$$
 
 ## 디랙 델타 함수의 수학적 의미
 
@@ -220,33 +220,35 @@ $$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx=f(x_0)$$
 
 $$Lu=f$$
 
-그 때 그린 함수 $G(\xi, x)$는 다음과 같은 조건을 만족하는 함수이다.
+그 때 그린 함수 $G(x, \xi)$는 다음과 같은 조건을 만족하는 함수이다.
 
-$$L^\dagger G= \delta(x-\xi)$$
+$$LG= \delta(x-\xi)$$
 
-여기서 $\dagger$는 adjoint 연산이고 $\delta(x)$는 디랙 델타 함수이다. 또, $\xi$ 역시 $\xi\in[a,b]$와 같이 정의된 변수이다.
+여기서 $\delta(x)$는 디랙 델타 함수이다. 또, $\xi$ 역시 $\xi\in[a,b]$와 같이 정의된 변수이다.
 
 왜 그린 함수는 저렇게 복잡하게 생긴 방식으로 정의했을까?
 
-$Lu=f$라는 식에 대해 양변에 $G$를 내적해보자.
+위 식에서 양변에 $f$를 곱하고 $\xi$에 대해 적분해보자.
 
-$$\langle Lu, G \rangle = \langle f, G\rangle$$
+$$\Rightarrow \int L G(x, \xi)f(\xi)d\xi$$
 
-여기서 adjoint 연산의 정의에 의해 다음과 같이 쓸 수 있다.
+여기서 그린 함수의 정의에 의해 다음과 같이 바꿔 쓸 수 있다.
 
-$$\Rightarrow \langle u, L^\dagger G\rangle =\langle f G, \rangle$$
+$$\Rightarrow \int \delta(x-\xi)f(\xi)d\xi$$
 
-그린 함수의 정의에 의해,
+여기서 디랙 델타 함수의 sifting property에 따라 다음이 성립한다.
 
-$$\Rightarrow \langle u, \delta(x-\xi)\rangle = \langle f, G\rangle$$
+$$\int\delta(x-\xi)f(\xi)d\xi = f(x)=Lu$$
 
-디랙 델타 함수의 sifting property에 의해,
+한편, $L$은 $x$에만 작용하는 선형 연산자이므로 적분 밖으로 뺄 수도 있다.
 
-$$u(\xi)=\langle f, G\rangle$$
+$$\Rightarrow L\left(\int G(x, \xi)f(\xi)d\xi\right)=Lu$$
 
-다시 말해 솔루션 함수 $u$를 다음과 같이 구해낼 수 있다는 것이다.
+따라서
 
-$$u(\xi)=\int_{a}^{b}f(x)G(x,\xi)dx$$
+$$u(x)=\int G(x,\xi)f(\xi)d\xi$$
+
+와 같이 미분방정식의 해를 구할 수 있다는 것을 알 수 있다.
 
 잘 생각해보면 그린 함수가 해를 구해내는 방식은 선형대수학에서 역행렬을 이용하는 방식과 유사하다.
 
