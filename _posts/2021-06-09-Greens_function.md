@@ -130,9 +130,9 @@ $$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx % 식(3)$$
 
 즉, 함수의 내적은 적분으로 정의되므로 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
 
-$$r(x) = \begin{cases}1/(2\xi),\quad -\xi<x<\xi \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases} % 식(4)$$
+$$r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases} % 식(4)$$
 
-여기서 $\xi$는 아주 작은 크기의 실수(real number)이다.
+여기서 $\epsilon$은 아주 작은 크기의 실수(real number)이다.
 
 이 함수는 모든 실수 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
 
@@ -142,17 +142,17 @@ $$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx % 식(5)$$
 
 와 같다.
 
-그런데, 문제는 $r(x)$는 적절한 너비 $2\xi$ 만큼에 대해 정의되어 있으므로 $f(x)$와 $r(x)$의 적분으로는 실제 $f(x_0)$ 값을 얻기 어려울 것이다. 따라서 우리는 $\xi$를 매우 작게 만들면 더 정확히 $f(x)$의 값을 위 식과 같은 내적을 통해서 얻을 수 있다는 것을 예상할 수 있다. 우리는 $\xi$를 작게 만들어줄 때 다음과 같은 일이 일어날 것임을 알 수 있다.
+그런데, 문제는 $r(x)$는 적절한 너비 $2\epsilon$ 만큼에 대해 정의되어 있으므로 $f(x)$와 $r(x)$의 적분으로는 실제 $f(x_0)$ 값을 얻기 어려울 것이다. 따라서 우리는 $\epsilon$을 매우 작게 만들면 더 정확히 $f(x)$의 값을 위 식과 같은 내적을 통해서 얻을 수 있다는 것을 예상할 수 있다. 우리는 $\epsilon$을 작게 만들어줄 때 다음과 같은 일이 일어날 것임을 알 수 있다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic6.mp4">
   </video>
   <br>
-  그림 5. $\xi$가 작아지면서 바뀌어가는 $r(x)$의 형태
+  그림 5. $\epsilon$이 작아지면서 바뀌어가는 $r(x)$의 형태
 </p>
 
-따라서, 우리는 $\xi$가 작아질 수록 $r(x)$가 아래의 $\delta(x)$와 같은 모습을 띄게 된다는 것을 알 수 있다.
+따라서, 우리는 $\epsilon$이 작아질 수록 $r(x)$가 아래의 $\delta(x)$와 같은 모습을 띄게 된다는 것을 알 수 있다.
 
 $$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases} % 식(6)$$
 
@@ -164,7 +164,7 @@ $$\int_{-\infty}^{\infty}\delta(x)dx = 1 % 식(7)$$
 
 이 개념에 대해 더 엄밀하게 알기 위해선 분포 이론(distribution theory)를 알아야 한다. 간단하게만 소개하면 distribution theory에서는 기존의 함수의 정의를 확장한 '일반화된 함수'의 개념을 도입하는데 일반화된 함수의 정의역은 더 이상 숫자가 아니라 구간이다. 구간을 정의역으로 정의함으로써 함수값이 무한대로 발산하는 이상한 문제를 해결할 수 있게 된다. 
 
-또, 어떻게 생각하면 델타 함수는 범함수(functional)의 개념에 가깝다. 범함수는 [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html) 편에서 잠깐 다루었던 개념인데, 벡터를 실수나 복소수로 mapping 해주는 함수이다. 우리는 벡터의 내적에서 행벡터의 역할이 범함수라는 것을 배웠는데, 델타함수 $\delta(x-x_0)$도 마찬가지로 내적연산을 취해줌으로써 함수 $f(x)$를 함수값($f(x_0)$)으로 매핑 해준다는 관점에서 델타 함수는 범함수(functional)에 가까운 개념이라고 할 수 있다. 이런 관점에서 보면 끼워맞추기 식으로 정의된것만 같았던 델타함수의 의미가 더 다가올 것으로 생각된다.
+또, 어떻게 생각하면 델타 함수는 범함수(functional)의 개념에 가깝다. 범함수는 [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html) 편에서 잠깐 다루었던 개념인데, 벡터를 실수나 복소수로 mapping 해주는 함수이다. 우리는 벡터의 내적에서 행벡터의 역할이 범함수라는 것을 배웠는데, 델타함수 $\delta(x-x_0)$도 마찬가지로 내적연산을 취해줌으로써 함수 $f(x)$를 함수값$f(x_0)$으로 매핑 해준다는 관점에서 델타 함수는 범함수(functional)에 가까운 개념이라고 할 수 있다. 이런 관점에서 보면 끼워맞추기 식으로 정의된것만 같았던 델타함수의 의미가 더 다가올 것으로 생각된다.
 
 ## Sifting Property
 
@@ -186,7 +186,7 @@ $$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
 
 구간 $[a, b]$ 사이에 존재하는 $x_0$에 대해서, 델타함수의 정의에 따라,
 
-$$\Rightarrow \lim_{\xi\rightarrow 0}\int_{x_0-\xi}^{x_0+\xi}\frac{f(x)}{2\xi}dx=\lim_{\xi\rightarrow 0}\frac{1}{2\xi}\int_{x_0-\xi}^{x_0+\xi}f(x)dx$$
+$$\Rightarrow \lim_{\epsilon\rightarrow 0}\int_{x_0-\epsilon}^{x_0+\epsilon}\frac{f(x)}{2\epsilon}dx=\lim_{\epsilon\rightarrow 0}\frac{1}{2\epsilon}\int_{x_0-\epsilon}^{x_0+\epsilon}f(x)dx$$
 
 여기서 평균값 정리를 사용하자. 임의의 구간 $[x_1, x_2]$에서 평균값 정리는 함수 $f$가 $[x_1,x_2]$에서 연속이고 $(x_1,x_2)$에서 미분가능할 때 다음을 만족시키는 임의의 $\bar{x}\in(x_1,x_2)$가 적어도 하나 존재한다는 정리이다.
 
@@ -198,11 +198,11 @@ $$\Rightarrow \frac{1}{x_2-x_1}\int_{x_1}^{x_2}f(x)dx=f(\bar{x})$$
 
 임을 알 수 있다. (이것을 적분 평균값 정리라고 부른다.) 
 
-여기서, $x_1=x_0-\xi$, $x_2=x_0+\xi$로 치환하면,
+여기서, $x_1=x_0-\epsilon$, $x_2=x_0+\epsilon$으로 치환하면,
 
-$$\Rightarrow \frac{1}{2\xi}\int_{x_0-\xi}^{x_0+\xi}f(x)dx=f(\bar{x})$$
+$$\Rightarrow \frac{1}{2\epsilon}\int_{x_0-\epsilon}^{x_0+\epsilon}f(x)dx=f(\bar{x})$$
 
-와 같다는 것을 알 수 있는데, $\bar{x}$는 $x_0-\xi$와 $x_0+\xi$ 사이의 값인데 $\xi$는 0으로 수렴하고 있으므로 $\bar{x}$는 $x_0$로 수렴함을 알 수 있다.
+와 같다는 것을 알 수 있는데, $\bar{x}$는 $x_0-\epsilon$과 $x_0+\epsilon$ 사이의 값인데 $\epsilon$은 0으로 수렴하고 있으므로 $\bar{x}$는 $x_0$로 수렴함을 알 수 있다.
 
 따라서,
 
@@ -220,33 +220,39 @@ $$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx=f(x_0)$$
 
 $$Lu=f$$
 
-그 때 그린 함수 $G(x, \xi)$는 다음과 같은 조건을 만족하는 함수이다.
+여기서 경계조건은 다음과 같은 homogeneous boundary condition을 만족한다고 하자.
 
-$$LG= \delta(x-\xi)$$
+$$u(a)=0, u(b)=0$$
 
-여기서 $\delta(x)$는 디랙 델타 함수이다. 또, $\xi$ 역시 $\xi\in[a,b]$와 같이 정의된 변수이다.
+여기서 homogeneous 경계조건이라 함은 혹은 $u'(a)=0$, $u'(b)=0$ 과 같은 경계 조건을 가질 수도 있는 것이지만 여기서는 문제를 쉽게 만들기 위해 위와 같은 단순한 조건을 상정해보자.
+
+이 때 그린 함수 $G(x, s)$는 다음과 같은 조건을 만족하는 함수이다.
+
+$$LG= \delta(x-s)$$
+
+여기서 $\delta(x)$는 디랙 델타 함수이다. 또, $s$ 역시 $s\in[a,b]$와 같이 정의된 변수이다.
 
 왜 그린 함수는 저렇게 복잡하게 생긴 방식으로 정의했을까?
 
-위 식에서 양변에 $f$를 곱하고 $\xi$에 대해 적분해보자.
+위 식에서 양변에 $f$를 곱하고 $s$에 대해 적분해보자.
 
-$$\Rightarrow \int L G(x, \xi)f(\xi)d\xi$$
+$$\Rightarrow \int L G(x, s)f(s)ds$$
 
 여기서 그린 함수의 정의에 의해 다음과 같이 바꿔 쓸 수 있다.
 
-$$\Rightarrow \int \delta(x-\xi)f(\xi)d\xi$$
+$$\Rightarrow \int \delta(x-s)f(s)ds$$
 
 여기서 디랙 델타 함수의 sifting property에 따라 다음이 성립한다.
 
-$$\int\delta(x-\xi)f(\xi)d\xi = f(x)=Lu$$
+$$\int\delta(x-s)f(s)ds = f(x)=Lu$$
 
 한편, $L$은 $x$에만 작용하는 선형 연산자이므로 적분 밖으로 뺄 수도 있다.
 
-$$\Rightarrow L\left(\int G(x, \xi)f(\xi)d\xi\right)=Lu$$
+$$\Rightarrow L\left(\int G(x, s)f(s)ds\right)=Lu$$
 
 따라서
 
-$$u(x)=\int G(x,\xi)f(\xi)d\xi$$
+$$u(x)=\int G(x,s)f(s)ds$$
 
 와 같이 미분방정식의 해를 구할 수 있다는 것을 알 수 있다.
 

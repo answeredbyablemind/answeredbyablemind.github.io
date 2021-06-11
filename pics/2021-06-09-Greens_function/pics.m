@@ -144,8 +144,9 @@ for i_xi = 1:length(xis)
     h(5) = plot([xi, 1],[0, 0],'linewidth',linewidth,'color',color);
     ylim([0, 10])
     grid on;
-    h(6)= text(0.29, 7.39,['$\xi = ',num2str(xi),'$'],'interpreter','latex','fontsize',15);
-    
+    h(6)= text(0.29, 7.39,['$\epsilon = ',num2str(xi),'$'],'interpreter','latex','fontsize',15);
+    xlabel('x');
+    ylabel('r(x)');
     for ii = 1:10
         writeVideo(newVid, getframe(gcf))
     end
