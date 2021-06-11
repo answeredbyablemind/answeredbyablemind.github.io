@@ -76,6 +76,8 @@ tags: 미분방정식
 
 위의 그림 2에서 말하고자 하는 것은 이 시스템이 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다고 하면 입력과 출력을 time step 구간 별로 나눠서 생각해볼 수 있다는 것이다.
 
+이렇게 작동할 수 있는 것은 벡터와 시스템이 모두 선형성을 만족하기 때문이다.
+
 다시 정리하면, 아래의 애니메이션이 표현하는 것 처럼 각각의 dimension의 벡터 입력은 각각의 dimension의 벡터 출력에 관여한다고 볼 수 있다.
 
 <p align = "center">
@@ -179,6 +181,44 @@ $$\langle \delta(x-x_0), f(x)\rangle = f(x_0)$$
 SIFT는 체로 걸러낸다는 뜻으로 $x_0$ 만큼 이동한 델타함수와 함수 $f(x)$의 내적이 마치 $x=x_0$라는 점에서 함수값을 체로 걸러내주는 듯한 결과를 보여주기 때문에 이런 이름이 붙은 것이다.
 
 # 그린 함수
+
+그린 함수의 정의는 다음과 같다.
+
+구간 $x\in[a,b]$ 및 적절한 경계 조건에서 정의된 선형연산자 $L$과 함수 $u, f$에 대해서 다음이 성립한다고 하자.
+
+$$Lu=f$$
+
+그 때 그린 함수 $G(\xi, x)$는 다음과 같은 조건을 만족하는 함수이다.
+
+$$L^\dagger G= \delta(x-\xi)$$
+
+여기서 $\dagger$는 adjoint 연산이고 $\delta(x)$는 디랙 델타 함수이다. 또, $\xi$ 역시 $\xi\in[a,b]$와 같이 정의된 변수이다.
+
+왜 그린 함수는 저렇게 복잡하게 생긴 방식으로 정의했을까?
+
+$Lu=f$라는 식에 대해 양변에 $G$를 내적해보자.
+
+$$\langle Lu, G \rangle = \langle f, G\rangle$$
+
+여기서 adjoint 연산의 정의에 의해 다음과 같이 쓸 수 있다.
+
+$$\Rightarrow \lange u, L^\dagger G\rangle =\langle f G, \rangle$$
+
+그린 함수의 정의에 의해,
+
+$$\Rightarrow \langle u, \delta(x-\xi)\rangle = \langle f, G\rangle$$
+
+디랙 델타 함수의 sifting property에 의해,
+
+$$u(\xi)=\langle f, G\rangle$$
+
+다시 말해 솔루션 함수 $u$를 다음과 같이 구해낼 수 있다는 것이다.
+
+$$u(\xi)=\int_{a}^{b}f(x)G(x,\xi)dx$$
+
+잘 생각해보면 그린 함수가 해를 구해내는 방식은 선형대수학에서 역행렬을 이용하는 방식과 유사하다.
+
+$Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석학의 문제에 대해서 $u=L_{-1}f$와 유사하게 $u=\langle f, G\rangle$로 표현되는 것이다.
 
 ## 그린 함수의 정의
 
