@@ -78,7 +78,7 @@ tags: 미분방정식
 
 
 <p align = "center">
-  <video width = "600" height = "auto" loop autoplay controls muted>
+  <video width = "800" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic4.mp4">
   </video>
   <br>
@@ -86,7 +86,7 @@ tags: 미분방정식
 </p>
 
 <p align = "center">
-  <video width = "600" height = "auto" loop autoplay controls muted>
+  <video width = "800" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic5.mp4">
   </video>
   <br>

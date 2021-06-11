@@ -77,8 +77,8 @@ xx2 = linspace(4,8,100);
 
 p1 = [-11, -8, -6]+2;
 p2 = [5.8, 7.9, 10.6]-2;
-yy1 = polyval(poly(p1), xx1);
-yy2 = -polyval(poly(p2), xx2);
+yy1 = polyval(poly(p1), xx1)-3;
+yy2 = -polyval(poly(p2), xx2)-3;
 
 my_color = lines(4);
 
@@ -88,8 +88,8 @@ hold on;
 plot(xx2, yy2, 'color',my_color(1,:),'linewidth',2);
 patch([-2, -2, 2, 2], [10, -10, -10, 10],'w','edgecolor','k','linewidth',2)
 text(0, 0, sprintf('¹ÌºÐ¹æÁ¤½Ä ½Ã½ºÅÛ \n (Á¦Â÷+ºñÁ¦Â÷)'),'HorizontalAlignment','center','VerticalAlignment','middle','fontname','³ª´®°íµñ','fontsize',12)
-text(mean(xx1), 10, '<ÀÔ·Â ÇÔ¼ö>','HorizontalAlignment','center','VerticalAlignment','middle','fontname','³ª´®°íµñ','fontsize',12)
-text(mean(xx2), 10, '<Ãâ·Â ÇÔ¼ö>','HorizontalAlignment','center','VerticalAlignment','middle','fontname','³ª´®°íµñ','fontsize',12)
+text(-6, 10, '<ÀÔ·Â ÇÔ¼ö>','HorizontalAlignment','center','VerticalAlignment','middle','fontname','³ª´®°íµñ','fontsize',15,'FontWeight','bold')
+text(6, 10, '<Ãâ·Â ÇÔ¼ö>','HorizontalAlignment','center','VerticalAlignment','middle','fontname','³ª´®°íµñ','fontsize',15,'FontWeight','bold')
 xlim([-9, 9])
 ylim([-12, 12])
 % set(gca,'visible','off')
