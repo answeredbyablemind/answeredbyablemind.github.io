@@ -83,7 +83,7 @@ tags: 미분방정식
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic4.mp4">
   </video>
   <br>
-  그림 3.
+  그림 3. (벡터 관점) 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다
 </p>
 
 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서 우리는 함수가 일반적인 벡터의 일종으로 볼 수 있다고 언급했다.
@@ -97,5 +97,29 @@ tags: 미분방정식
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic5.mp4">
   </video>
   <br>
-  그림 4.
+  그림 4. (함수 관점) 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다
 </p>
+
+# 디렉 델타 함수
+
+그림 3과 4를 통해 각 time step의 입력값이 각 time step의 출력값에만 영향을 준다고 본다면, 우리는 각 time step의 벡터값들을 뽑아올 수 있는 것 처럼 함수값을 뽑아올 수 있어야 한다.
+
+그림 3에서 각 벡터의 원소들을 뽑아오기 위해서는 각 dimension에 해당하는 기저벡터를 이용해 각 함수값을 추출할 수 있다.
+
+가령, $[2, 3, 5, 1, 4]$라는 벡터에 대해 맨 앞의 2라는 값을 뽑아오기 위해서는 기저벡터 $[1, 0, 0, 0, 0]$과 내적해줌으로써 원소값을 뽑아올 수 있다.
+
+$$dot([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2$$
+
+마찬가지 방식으로 우리도 함수의 특정 위치의 값을 뽑아오기 위해서는 내적을 해주기 위한 기저 벡터와 유사한 함수를 생각해야 한다.
+
+함수의 내적은 구간이 적절하게 $[a,b]$와 같이 정해졌을 때 아래와 같이 정의되었다.
+
+$x\in[a,b]$에서 정의된 함수 $f$, $g$에 대해
+
+$$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
+
+여기서 $\overline{f(x)}$는 $f(x)$의 complex conjugate 이다.
+
+즉, 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
+
+$$\delta(x)=\begin{cases}\end{cases}$$
