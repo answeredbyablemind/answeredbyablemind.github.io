@@ -122,4 +122,6 @@ $$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
 
 즉, 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
 
-$$\delta(x)=\begin{cases}\end{cases}$$
+$$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases}$$
+
+$$\int_{-\infty}^{\infty}\delta(x)dx = 1$$
