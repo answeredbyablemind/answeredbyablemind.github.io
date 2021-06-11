@@ -76,6 +76,7 @@ tags: 미분방정식
 
 위의 그림 2에서 말하고자 하는 것은 이 시스템이 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다고 하면 입력과 출력을 time step 구간 별로 나눠서 생각해볼 수 있다는 것이다.
 
+다시 정리하면, 아래의 애니메이션이 표현하는 것 처럼 각각의 dimension의 벡터 입력은 각각의 dimension의 벡터 출력에 관여한다고 볼 수 있다.
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay controls muted>
@@ -84,6 +85,12 @@ tags: 미분방정식
   <br>
   그림 3.
 </p>
+
+[선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서 우리는 함수가 일반적인 벡터의 일종으로 볼 수 있다고 언급했다.
+
+그 말은 함수란 무한 차원의 벡터라는 뜻이고, 그것은 숫자가 무한하게 나열된 함수를 하나의 벡터로 취급하겠다는 뜻이다.
+
+따라서, 위의 개념을 함수에 확장시키면 아래의 애니메이션과 같이 짧은 구간 구간의 입력 함수 값들은 각각의 구간의 출력 함수값들에만 관여한다고도 볼 수 있다.
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay controls muted>
