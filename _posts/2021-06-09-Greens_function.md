@@ -180,7 +180,39 @@ $$\langle \delta(x-x_0), f(x)\rangle = f(x_0)$$
 
 SIFT는 체로 걸러낸다는 뜻으로 $x_0$ 만큼 이동한 델타함수와 함수 $f(x)$의 내적이 마치 $x=x_0$라는 점에서 함수값을 체로 걸러내주는 듯한 결과를 보여주기 때문에 이런 이름이 붙은 것이다.
 
+sifting property는 다음과 같이 확인해볼 수 있다.
+
+$$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
+
+구간 $[a, b]$ 사이에 존재하는 $x_0$에 대해서, 델타함수의 정의에 따라,
+
+$$\Rightarrow \lim_{\xi\rightarrow 0}\int_{x_0-\xi}^{x_0+\xi}\frac{f(x)}{2\xi}dx=\lim_{\xi\rightarrow 0}\frac{1}{2\xi}\int_{x_0-\xi}^{x_0+\xi}f(x)dx$$
+
+여기서 평균값 정리를 사용하자. 임의의 구간 $[x_1, x_2]$에서 평균값 정리는 함수 $f$가 $[x_1,x_2]$에서 연속이고 $(x_1,x_2)$에서 미분가능할 때 다음을 만족시키는 임의의 $\bar{x}\in(x_1,x_2)$가 적어도 하나 존재한다는 정리이다.
+
+$$f'(\bar{x})=\frac{f(x_2)-f(x_1)}{x_2-x_1}$$
+
+여기서 우리는 위 식의 적분꼴을 생각해보면,
+
+$$\Rightarrow \frac{1}{x_2-x_1}\int_{x_1}^{x_2}f(x)dx=f(\bar{x})$$
+
+임을 알 수 있다. (이것을 적분 평균값 정리라고 부른다.) 
+
+여기서, $x_1=x_0-\xi$, $x_2=x_0+\xi$로 치환하면,
+
+$$\Rightarrow \frac{1}{2\xi}\int_{x_0-\xi}^{x_0+\xi}f(x)dx=f(\bar{x})$$
+
+와 같다는 것을 알 수 있는데, $\bar{x}$는 $x_0-\xi$와 $x_0+\xi$ 사이의 값인데 $\xi$는 0으로 수렴하고 있으므로 $\bar{x}$는 $x_0$로 수렴함을 알 수 있다.
+
+따라서,
+
+$$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx=f(x_0)$$
+
+이다.
+
 # 그린 함수
+
+## 그린 함수의 정의
 
 그린 함수의 정의는 다음과 같다.
 
@@ -202,7 +234,7 @@ $$\langle Lu, G \rangle = \langle f, G\rangle$$
 
 여기서 adjoint 연산의 정의에 의해 다음과 같이 쓸 수 있다.
 
-$$\Rightarrow \lange u, L^\dagger G\rangle =\langle f G, \rangle$$
+$$\Rightarrow \langle u, L^\dagger G\rangle =\langle f G, \rangle$$
 
 그린 함수의 정의에 의해,
 
@@ -218,8 +250,6 @@ $$u(\xi)=\int_{a}^{b}f(x)G(x,\xi)dx$$
 
 잘 생각해보면 그린 함수가 해를 구해내는 방식은 선형대수학에서 역행렬을 이용하는 방식과 유사하다.
 
-$Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석학의 문제에 대해서 $u=L_{-1}f$와 유사하게 $u=\langle f, G\rangle$로 표현되는 것이다.
-
-## 그린 함수의 정의
+$Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석학의 문제에 대해서 $u=L^{-1}f$와 유사하게 $u=\langle f, G\rangle$로 표현되는 것이다.
 
 ## 예시 문제
