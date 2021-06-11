@@ -33,6 +33,45 @@ newVid.Quality = 100;
 open(newVid);
 
 addpath('../')
+figure('position',[680, 558, 1080, 420],'color','w');
+patch([-2, -2, 2, 2], [10, -10, -10, 10],'w','edgecolor','k','linewidth',2)
+xlim([-9, 9])
+ylim([-12, 12])
+hold on;
+text(0, 0, sprintf('미분방정식 시스템 \n (제차+비제차)'),'HorizontalAlignment','center','VerticalAlignment','middle','fontname','나눔고딕','fontsize',12)
+text(-6, 10, '<입력 벡터>','HorizontalAlignment','center','VerticalAlignment','middle','fontname','나눔고딕','fontsize',15,'FontWeight','bold')
+text(6, 10, '<출력 벡터>','HorizontalAlignment','center','VerticalAlignment','middle','fontname','나눔고딕','fontsize',15,'FontWeight','bold')
+
+% set(gca,'visible','off')
+mArrow2(-3.5,0,-2.5,0,{'linewidth',2})
+mArrow2(2.5,0,3.5,0,{'linewidth',2})
+set(gca,'visible','off');
+
+clear h
+for i_text = 1:5
+    txt_colors = {'black','black','black','black','black'};
+    txt_colors{i_text} = 'red';
+    h(1) = text(-6, 0, sprintf('[\\color{%s}2, \\color{%s}3, \\color{%s}5, \\color{%s}1, \\color{%s}4]', txt_colors{1}, txt_colors{2}, txt_colors{3}, txt_colors{4}, txt_colors{5}),...
+        'HorizontalAlignment','center','VerticalAlignment','middle','fontname','나눔고딕','fontsize',20,'fontweight','bold');
+    h(2) = text(6, 0, sprintf('[\\color{%s}8, \\color{%s}5, \\color{%s}1, \\color{%s}2, \\color{%s}7]', txt_colors{1}, txt_colors{2}, txt_colors{3}, txt_colors{4}, txt_colors{5}),...
+        'HorizontalAlignment','center','VerticalAlignment','middle','fontname','나눔고딕','fontsize',20,'fontweight','bold');
+    
+    for ii = 1:10
+        writeVideo(newVid, getframe(gcf))
+    end
+    delete(h);
+end
+
+close(newVid)
+
+%% 박스와 화살표 모든 것들을 MATLAB에서 그려버릴 수 없을까?
+
+newVid = VideoWriter('pic5', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+addpath('../')
 xx1 = linspace(-8,-4,100);
 xx2 = linspace(4,8,100);
 
@@ -78,8 +117,8 @@ while(1)
     delete(h)
     highlight = highlight + 10;
 end
-    
+
 close(newVid)
-    
-    
+
+
 

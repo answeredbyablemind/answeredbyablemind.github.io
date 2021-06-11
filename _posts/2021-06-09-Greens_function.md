@@ -39,6 +39,13 @@ tags: 미분방정식
 
 이 내용은 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 되먹임에 관한 내용이나 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)에서 확인한 연산자 이론의 내용과 궤를 같이 하는 것이다. 하지만 이런 관점의 전환을 통해 왜 그린 함수라는 아이디어가 나올 수 있었는지를 한번 더 이해할 수 있게 될 것이다.
 
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic1.png">
+  <br>
+  그림 1. 미분방정식은 closed-loop가 포함된 system으로 볼 수 있다.
+</p>
+
 ---
 
 기본적으로 시스템이라고 하는 것은 입력과 출력이 있는 것이다. 이것은 함수의 개념과도 유사하다고 할 수 있다.
@@ -61,3 +68,27 @@ tags: 미분방정식
 
 그러면 우리는 $[8, 5, 1, 2, 7]$이라는 출력값은 다음 그림과 같은 방법으로 얻은 것이라고 생각할 수도 있을 것이다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic2.png">
+  <br>
+  그림 2. 시스템의 입출력 관계로 미분방정식을 생각할 때, 각각의 시간 step에 해당하는 입력은 각 시간 step에 해당하는 출력에만 관여한다고 볼 수 있다.
+</p>
+
+위의 그림 2에서 말하고자 하는 것은 이 시스템이 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다고 하면 입력과 출력을 time step 구간 별로 나눠서 생각해볼 수 있다는 것이다.
+
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic4.mp4">
+  </video>
+  <br>
+  그림 3.
+</p>
+
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic5.mp4">
+  </video>
+  <br>
+  그림 4.
+</p>
