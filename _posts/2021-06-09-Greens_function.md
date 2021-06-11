@@ -100,7 +100,7 @@ tags: 미분방정식
   그림 4. (함수 관점) 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다
 </p>
 
-# 디렉 델타 함수
+# 디렉 델타 함수 (Dirac delta function)
 
 그림 3과 4를 통해 각 time step의 입력값이 각 time step의 출력값에만 영향을 준다고 본다면, 우리는 각 time step의 벡터값들을 뽑아올 수 있는 것 처럼 함수값을 뽑아올 수 있어야 한다.
 
@@ -108,7 +108,7 @@ tags: 미분방정식
 
 가령, $[2, 3, 5, 1, 4]$라는 벡터에 대해 맨 앞의 2라는 값을 뽑아오기 위해서는 기저벡터 $[1, 0, 0, 0, 0]$과 내적해줌으로써 원소값을 뽑아올 수 있다.
 
-$$dot([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2$$
+$$\text{dot}([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2$$
 
 마찬가지 방식으로 우리도 함수의 특정 위치의 값을 뽑아오기 위해서는 내적을 해주기 위한 기저 벡터와 유사한 함수를 생각해야 한다.
 
@@ -120,7 +120,35 @@ $$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
 
 여기서 $\overline{f(x)}$는 $f(x)$의 complex conjugate 이다.
 
-즉, 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
+만약 $f(x)$와 $g(x)$가 모두 실수함수라면 다음과 같이도 써줄 수 있다.
+
+$$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx$$
+
+즉, 함수의 내적은 적분으로 정의되므로 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
+
+$$r(x) = \begin{cases}1/(2\xi),\quad -\xi<x<\xi \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases}$$
+
+여기서 $\xi$는 아주 작은 크기의 실수(real number)이다.
+
+이 함수는 모든 실수 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
+
+즉, 우리는 원하는 위치의 함수값을 내적을 통해 얻기 위해 다음과 같은 일을 수행하면 될 것으로 보인다. $x_0$가 구간 $[a, b]$ 사이에 위치한다고 가정했을 때,
+
+$$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx$$
+
+와 같다.
+
+그런데, 문제는 $r(x)$는 적절한 너비 $2\xi$ 만큼에 대해 정의되어 있으므로 $f(x)$와 $r(x)$의 적분으로는 실제 $f(x_0)$ 값을 얻기 어려울 것이다. 따라서 우리는 $\xi$를 매우 작게 만들면 더 정확히 $f(x)$의 값을 위 식과 같은 내적을 통해서 얻을 수 있다는 것을 예상할 수 있다. 우리는 $\xi$를 작게 만들어줄 때  다음과 같은 일이 일어날 것임을 알 수 있다.
+
+<p align = "center">
+  <video width = "800" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic6.mp4">
+  </video>
+  <br>
+  그림 5. $\xi$가 작아지면서 바뀌어가는 $r(x)$의 형태
+</p>
+
+따라서, 우리는 $\xi$가 작아질 수록 $r(x)$가 아래의 $\delta(x)$와 같은 모습을 띄게 된다는 것을 알 수 있다.
 
 $$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases}$$
 

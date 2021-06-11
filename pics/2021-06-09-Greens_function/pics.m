@@ -120,5 +120,42 @@ end
 
 close(newVid)
 
+%% Delfa function ±×¸®±â
 
+newVid = VideoWriter('pic6', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
 
+xis = [0.5, 0.25, 0.1, 0.05, 0.01, 0.0001];
+figure('color','w');
+linewidth=2;
+color = lines(1);
+clear h
+for i_xi = 1:length(xis)
+    xi = xis(i_xi);
+    height = 1/(2*xi);
+    
+    h(1) = plot([-1, -xi],[0, 0],'linewidth',linewidth,'color',color);
+    hold on;
+    h(2) = plot([-xi,-xi],[0, height],'linewidth',linewidth,'color',color);
+    h(3) = plot([-xi, xi],ones(1,2)*height,'linewidth',linewidth,'color',color);
+    h(4) = plot([xi,xi],[0, height],'linewidth',linewidth,'color',color);
+    h(5) = plot([xi, 1],[0, 0],'linewidth',linewidth,'color',color);
+    ylim([0, 10])
+    grid on;
+    h(6)= text(0.29, 7.39,['$\xi = ',num2str(xi),'$'],'interpreter','latex','fontsize',15);
+    
+    for ii = 1:10
+        writeVideo(newVid, getframe(gcf))
+    end
+    
+    if i_xi < length(xis)
+        delete(h)
+    end
+end
+
+for ii = 1:10
+    writeVideo(newVid, getframe(gcf))
+end
+close(newVid)
