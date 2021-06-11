@@ -234,30 +234,47 @@ $$LG= \delta(x-s)$$
 
 왜 그린 함수는 저렇게 복잡하게 생긴 방식으로 정의했을까?
 
+[//]:# (이유가 어떻게 될지 서술...?)
+
+(쓰는 중)
+
+그린 함수의 역할은 역행렬과 같다.
+
+$$G=L^{-1}\delta(x-s)$$
+
+와 같은 방식으로 생각해보면 ... ($L^{-1}$은 수학적으로 정의될 수 있는 용어가 아님)
+
+[//]:# (이유가 어떻게 될지 서술...?)
+
 위 식에서 양변에 $f$를 곱하고 $s$에 대해 적분해보자.
 
-$$\Rightarrow \int L G(x, s)f(s)ds$$
+$$\Rightarrow \int_{a}^{b} L G(x, s)f(s)ds$$
 
 여기서 그린 함수의 정의에 의해 다음과 같이 바꿔 쓸 수 있다.
 
-$$\Rightarrow \int \delta(x-s)f(s)ds$$
+$$\Rightarrow \int_{a}^{b} \delta(x-s)f(s)ds$$
 
 여기서 디랙 델타 함수의 sifting property에 따라 다음이 성립한다.
 
-$$\int\delta(x-s)f(s)ds = f(x)=Lu$$
+$$\int_{a}^{b}\delta(x-s)f(s)ds = f(x)=Lu$$
 
 한편, $L$은 $x$에만 작용하는 선형 연산자이므로 적분 밖으로 뺄 수도 있다.
 
-$$\Rightarrow L\left(\int G(x, s)f(s)ds\right)=Lu$$
+$$\Rightarrow L\left(\int_{a}^{b} G(x, s)f(s)ds\right)=Lu$$
 
 따라서
 
-$$u(x)=\int G(x,s)f(s)ds$$
+$$u(x)=\int_{a}^{b} G(x,s)f(s)ds$$
 
 와 같이 미분방정식의 해를 구할 수 있다는 것을 알 수 있다.
 
 잘 생각해보면 그린 함수가 해를 구해내는 방식은 선형대수학에서 역행렬을 이용하는 방식과 유사하다.
 
-$Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석학의 문제에 대해서 $u=L^{-1}f$와 유사하게 $u=\langle f, G\rangle$로 표현되는 것이다.
+$Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석학의 문제에 대해서 $u=L^{-1}f$와 유사하게 $G$와 $f$의 적분으로 표현되는 것이다.
+
+## 그린 함수 계산하기
+
+
+
 
 ## 예시 문제
