@@ -16,6 +16,8 @@ tags: 미분방정식
 
 그린 함수를 이용한 미분방정식의 해법을 이해하기 위해서는 다음의 내용에 대해 이해하고 오시는 것이 좋습니다.
 
+* [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
+* [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html)
 * [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)
 
 아래는 신호 및 시스템 과목에 관한 내용인데, 그린 함수를 이해하기 위해서 읽으면 좋은 optional prerequisites 입니다.
@@ -23,84 +25,78 @@ tags: 미분방정식
 * [Discrete Time Convolution](https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html)
 * [Continuous Time Convolution](https://angeloyeo.github.io/2019/07/01/Continuous_Time_Convolution.html)
 
-# 미분방정식을 보는 또 다른 관점
+# 선형 연산자의 역행렬을 생각할 수 있을까?
 
-지금까지 네 가지 관점에서 미분방정식을 해석해보았다. (많이도 했다...)
-
-[미분방정식을 이용한 현상 모델링](https://angeloyeo.github.io/2021/05/01/modeling_with_differential_equation.html)편에서는 미분계수가 포함된 방정식을 미분방정식이라고 보았다.
-
-또, [방향장과 오일러 방법](https://angeloyeo.github.io/2021/04/30/direction_fields.html) 편에서는 좌표 (x,y )에 매핑된 기울기로 미분방정식을 기하학적으로 해석했으며,
-
-[자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서는 미분방정식이란 연속성장의 관점에서 시시각각 변화율이 바뀌는 시스템의 관점에서 미분방정식을 해석하였다.
-
-그리고, [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서는 함수를 벡터로 취급할 수 있음을 알아보았고 미분 연산자의 관점에서 미분 방정식을 해석했다.
-
-이번 시간에는 미분방정식을 **시스템**의 관점에서 해석하고자 한다. 특히, 미분방정식은 closed-loop system으로 해석할 수 있다.
-
-이 내용은 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 되먹임에 관한 내용이나 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)에서 확인한 연산자 이론의 내용과 궤를 같이 하는 것이다. 하지만 이런 관점의 전환을 통해 왜 그린 함수라는 아이디어가 나올 수 있었는지를 한번 더 이해할 수 있게 될 것이다.
-
+[선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서는 함수를 벡터로 취급할 수 있음을 알아보았고 미분 연산자의 관점에서 미분 방정식을 해석했다. 또, 선형 연산자란 선형대수학에서 공부한 행렬의 개념을 확장시킨 것으로, 함수를 입력 받으면 또 다른 함수를 출력해주는 것이라고 배웠다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-31-linear_operator_and_function_space/pic4.png">
   <br>
-  그림 1. 미분방정식은 closed-loop가 포함된 system으로 볼 수 있다.
+  그림 1. 연산자(operator)란 함수를 입력으로 받고 또 다른 함수를 출력해주는 함수이다. 이 개념은 선형대수학의 행렬을 확장시킨 개념이라고 볼 수 있다.
 </p>
+
+이번에는 그러면 역행렬에 대해 생각해보자.
+
+역행렬은 아래와 같이 정의되는 행렬이다. 임의의 정사각 행렬(square matrix) $A$와 벡터 $x$, $b$에 대해 다음이 성립한다고 하자.
+
+$$Ax=b$$
+
+만약 $A$라는 행렬이 역행렬을 가진다고 하면 역행렬 $B$는 다음과 같은 성질을 만족하는 행렬이다.
+
+$$AB=I$$
+
+여기서 $I$는 단위 행렬이다.
+
+우리는 보통 역행렬을 $A^{-1}$라고들 많이 쓰지만 여기선 역행렬 또한 일종의 행렬임을 강조하고자 썼다.
+
+연산자 이론을 처음 배울 때 강조했던 것 처럼 어떤 개념을 다른 필드로 확장시키기 위해선 의심해보고 또 의심해봐야 한다. 그리고 확장 시키고자 하는 개념의 본래적 의미가 무엇이었는지 수차례 고민해보아야 한다.
+
+우리는 행렬곱과 역행렬의 의미를 다시 한번 생각해보자.
+
+## 행렬곱과 역행렬의 의미
+
+우리는 행렬 곱에 대해 다시 한번 생각해보자.
+
+두 행렬 $A$, $B$에 대해 $A$와 $B$를 곱한다는 것은 $A$는 행위자로, $B$는 피행위자로 연산되는 것이라고 볼 수 있다.
+
+왜냐하면, [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 보았던 것 처럼 기본적으로 행렬의 곱은 앞에 곱해지는 행렬 $A$와 뒤에 곱해지는 행렬 $B$에 대해 $A$의 행벡터들과 $B$의 열벡터 간의 내적으로 볼 수 있기 때문이다. 거기에, [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html) 편에서 보았던 것 처럼 행벡터는 열벡터에 대한 함수(functional)로 작용한다고 했으니 앞선 행렬 $A$는 행벡터를 위아래로 쌓아둔 연산자들의 집합이라고 볼 수 있고, 뒤에 놓인 행렬 $B$는 열벡터를 양 옆으로 쌓아둔 피연산자들의 집합이라고도 볼 수 있다.
+
+그리고 $AB=I$라는 식을 보면 다음과 같은 일들이 일어나는 것임을 알 수 있다.
+
+* $A$라는 연산자가 $B$의 첫번째 열에 적용되면 첫 번째 기저벡터가 출력된다.
+
+* $A$라는 연산자가 $B$의 두번째 열에 적용되면 두 번째 기저벡터가 출력된다.
+
+$$\vdots\notag$$
+
+* $A$라는 연산자가 $B$의 마지막 열에 적용되면 마지막 기저벡터가 출력된다.
+
+우리는 이 개념들을 함수 공간에서 유사하게 확장시켜 적용해 볼 것이다.
 
 ---
 
-기본적으로 시스템이라고 하는 것은 입력과 출력이 있는 것이다. 이것은 함수의 개념과도 유사하다고 할 수 있다.
+[선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서는 함수를 벡터로 취급할 수 있음을 설명했는데, 앞선 설명에서 열벡터가 피연산자라고 하였으니, 함수를 대응시키는 벡터는 열벡터라고 생각할 수 있다.
 
-그런데, closed-loop 시스템이라고 하는 것은 '피드백을 통한 내부적인 작동'과 '외부 입력에 의한 반응'을 동시에 확인할 수 있어야 한다는 점에서 일반적인 함수와 다르다.
+그러니까, 만약 $AB=I$라는 $B$ 행렬이 존재할 수 있다면 $B$ 행렬은 열벡터를 쌓아 만든 개념으로 볼 수 있는 것이고 함수해석학에서는 어떤 함수들이 쌓아진 것으로 봐야 한다는 뜻이다. 다시 말해 원래의 독립변수가 아닌 또 다른 독립변수에 대해 대응되는 함수들을 쭉 나열해둔 것이어야 한다. 핵심 포인트는 $B$ 행렬에 대응될 개념을 함수해석학에서 찾아야 한다면 '함수 뭉치들'이어야 한다는 것이다.
 
-여기서 말하는 '피드백을 통한 내부적인 작동'은 미분방정식의 제차해(homogeneous solution)을 말한다. 
+우리는 $Lu=f$에 대해 생각할 것인데, $L$은 선형연산자, $u(x)$와 $f(x)$는 $x\in[a,b]$에서 정의된 함수라고 생각해보자. 그리고 우리가 생각해낼 '함수 뭉치들'을 다음과 같은 기호로 써보자.
 
-즉, [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편과 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편에서 보았던 것 처럼 제차해(homogeneous solution)은 아무런 외부 입력이 없더라도 자체적으로 구동하는 동작 방법이 서술되어 있는것이다. 왜냐면 제차해는 피드백을 통한 연속 성장에 대한 서술이기 때문이다.
+$$G(x,s)$$
 
-또, '외부 입력에 의한 반응'이라 함은 미분방정식의 비제차 해(particular solution)을 말한다. 이것은 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편에서 다루었던 것 처럼 시간에 따라 추가적인 외부 입력이 들어올 때의 출력 변화를 의미한다. 거기다 이 출력 변화는 '자체적으로 구동하는' 미분방정식의 제차 시스템(homogeneous system or autonomous system)의 해 위에 얹어져서 작동하게 된다. 우리는 이것을 중첩의 원리라고 부르기도 한다. 
+이런 기호로 새로운 함수 뭉치들을 써낸 것은 $s$ 역시 $s\in[a,b]$의 정의역에서 정의되는 새로운 독립변수로 쓴 것이고, 새로운 $s$축을 따라 $G(x;s)$를 쌓아줄 것이기 때문이다.
 
----
+그러면 우리는 $L$이라는 연산자가 $s$를 따라가면서 적용될 때 다음과 같은 일이 일어나야 역행렬이 해주는 일과 유사한 일을 적용시킨다는 것을 알 수 있다.
 
-그럼 우리는 입력과 출력의 관점에서, 미분방정식으로 서술된 시스템의 출력이란 매 시간 포인트마다의 입력값에 반응하여 얻게 되는 시스템의 출력값들을 모두 모아 합친 것이라고 볼 수 있지는 않을까?
+* $L$이라는 연산자가 $G(x, s)$의 $s$의 첫 번째 값($a$)에 대응되는 함수에 적용되면 첫 번째 기저벡터에 대응되는 함수가 출력된다.
 
-연속 시간의 관점에서 이 관계를 이해하기는 쉽지 않기 때문에 적절한 시간 간격을 두고 입력과 출력을 생각해보자.
+* $L$이라는 연산자가 $G(x, s)$의 $s$의 두 번째 값($a$의 바로 옆 값)에 대응되는 함수에 적용되면 두 번째 기저벡터에 대응되는 함수가 출력된다.
+  
+$$\vdots\notag$$
 
-가령, 1초 간격으로 한 포인트씩 입력을 넣는데 $[2, 3, 5, 1, 4]$와 같은 입력을 넣고 $[8, 5, 1, 2, 7]$이라는 출력을 얻었다고 생각해보자.
+* $L$이라는 연산자가 $G(x, s)$의 $s$의 마지막 값($b$)에 대응되는 함수에 적용되면 마지막 기저벡터에 대응되는 함수가 출력된다.
+  
 
-그러면 우리는 $[8, 5, 1, 2, 7]$이라는 출력값은 다음 그림과 같은 방법으로 얻은 것이라고 생각할 수도 있을 것이다.
 
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic2.png">
-  <br>
-  그림 2. 시스템의 입출력 관계로 미분방정식을 생각할 때, 각각의 시간 step에 해당하는 입력은 각 시간 step에 해당하는 출력에만 관여한다고 볼 수 있다.
-</p>
-
-위의 그림 2에서 말하고자 하는 것은 이 시스템이 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다고 하면 입력과 출력을 time step 구간 별로 나눠서 생각해볼 수 있다는 것이다.
-
-이렇게 작동할 수 있는 것은 벡터와 시스템이 모두 선형성을 만족하기 때문이다.
-
-다시 정리하면, 아래의 애니메이션이 표현하는 것 처럼 각각의 dimension의 벡터 입력은 각각의 dimension의 벡터 출력에 관여한다고 볼 수 있다.
-
-<p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic4.mp4">
-  </video>
-  <br>
-  그림 3. (벡터 관점) 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다
-</p>
-
-[선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서 우리는 함수가 일반적인 벡터의 일종으로 볼 수 있다고 언급했다.
-
-그 말은 함수란 무한 차원의 벡터라는 뜻이고, 그것은 숫자가 무한하게 나열된 함수를 하나의 벡터로 취급하겠다는 뜻이다.
-
-따라서, 위의 개념을 함수에 확장시키면 아래의 애니메이션과 같이 짧은 구간 구간의 입력 함수 값들은 각각의 구간의 출력 함수값들에만 관여한다고도 볼 수 있다.
-
-<p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic5.mp4">
-  </video>
-  <br>
-  그림 4. (함수 관점) 각 time step에서의 입력값이 각 time step의 출력값에만 영향을 준다
-</p>
 
 # 디랙 델타 함수 (Dirac delta function)
 
