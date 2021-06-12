@@ -71,6 +71,12 @@ $$\vdots\notag$$
 
 * $A$라는 연산자가 $B$의 마지막 열에 적용되면 마지막 기저벡터가 출력된다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic1.png">
+  <br>
+  그림 2. 두 행렬이 역행렬이 되려면 앞에 곱해지는 행렬이 뒤에 곱해지는 행렬의 각각의 열에 작용해 각 순번에 해당하는 기저벡터를 출력해야 한다.
+</p>
+
 우리는 이 개념들을 함수 공간에서 유사하게 확장시켜 적용해 볼 것이다.
 
 ---
