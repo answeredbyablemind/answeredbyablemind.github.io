@@ -74,7 +74,7 @@ $$\vdots\notag$$
 * $A$라는 연산자가 $B$의 마지막 열에 적용되면 마지막 단위 기저벡터가 출력된다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic1.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic1.png">
   <br>
   그림 2. 행렬 곱셈 연산이 수행되는 두 행렬에 대해 두 번째 행렬이 앞선 행렬의 역행렬이 되려면 앞에 곱해지는 행렬이 뒤에 곱해지는 행렬의 각각의 열에 작용해 각 순번에 해당하는 단위 기저벡터를 출력해야 한다.
 </p>
@@ -89,24 +89,24 @@ $$\vdots\notag$$
 
 우리는 $Lu=f$에 대해 생각할 것인데, $L$은 선형연산자, $u(x)$와 $f(x)$는 $x\in[a,b]$에서 정의된 함수라고 생각해보자. 그리고 우리가 생각해낼 '함수 뭉치들'을 다음과 같은 기호로 써보자.
 
-$$G(x,s)$$
+$$G(x,y)$$
 
-이런 기호로 새로운 함수 뭉치들을 써낸 것은 $s$ 역시 $s\in[a,b]$의 정의역에서 정의되는 새로운 독립변수로 쓴 것이고, 새로운 $s$축을 따라 $G(x;s)$를 쌓아줄 것이기 때문이다.
+이런 기호로 새로운 함수 뭉치들을 써낸 것은 $s$ 역시 $s\in[a,b]$의 정의역에서 정의되는 새로운 독립변수로 쓴 것이고, 새로운 $s$축을 따라 $G(x;y)$를 쌓아줄 것이기 때문이다.
 
 그러면 우리는 $L$이라는 연산자가 $s$를 따라가면서 적용될 때 다음과 같은 일이 일어나야 역행렬이 해주는 일과 유사한 일을 적용시킨다는 것을 알 수 있다.
 
-* $L$이라는 연산자가 $G(x, s)$의 $s$의 첫 번째 값($a$)에 대응되는 함수에 적용되면 첫 번째 단위 기저벡터에 대응되는 함수가 출력된다.
+* $L$이라는 연산자가 $G(x, y)$의 $s$의 첫 번째 값($a$)에 대응되는 함수에 적용되면 첫 번째 단위 기저벡터에 대응되는 함수가 출력된다.
 
-* $L$이라는 연산자가 $G(x, s)$의 $s$의 두 번째 값($a$의 바로 옆 값)에 대응되는 함수에 적용되면 두 번째 단위 기저벡터에 대응되는 함수가 출력된다.
+* $L$이라는 연산자가 $G(x, y)$의 $s$의 두 번째 값($a$의 바로 옆 값)에 대응되는 함수에 적용되면 두 번째 단위 기저벡터에 대응되는 함수가 출력된다.
   
 $$\vdots\notag$$
 
-* $L$이라는 연산자가 $G(x, s)$의 $s$의 마지막 값($b$)에 대응되는 함수에 적용되면 마지막 단위 기저벡터에 대응되는 함수가 출력된다.
+* $L$이라는 연산자가 $G(x, y)$의 $s$의 마지막 값($b$)에 대응되는 함수에 적용되면 마지막 단위 기저벡터에 대응되는 함수가 출력된다.
   
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic2.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic2.png">
   <br>
-  그림 3. 어떤 선형 연산자 $L$에 대해 역행렬에 대응되는 함수 $G(x,s)$를 얻으려면 연산자가 각 순번 $s$에 대응하는 함수 $G(x, s)$에 적용되었을 때 단위 기저벡터에 대응하는 함수를 출력해줄 수 있어야 한다.
+  그림 3. 어떤 선형 연산자 $L$에 대해 역행렬에 대응되는 함수 $G(x,y)$를 얻으려면 연산자가 각 순번 $s$에 대응하는 함수 $G(x, y)$에 적용되었을 때 단위 기저벡터에 대응하는 함수를 출력해줄 수 있어야 한다.
 </p>
 
 그렇다면 우리는 단위 기저 벡터에 대응되는 함수의 개념을 생각해보아야 한다. 이 개념은 디랙 델타 함수라는 개념에서부터 찾을 수 있다.
@@ -238,9 +238,9 @@ $$u(a)=0, u(b)=0$$
 
 여기서 homogeneous 경계조건이라 함은 혹은 $u'(a)=0$, $u'(b)=0$ 과 같은 경계 조건을 가질 수도 있는 것이지만 여기서는 문제를 쉽게 만들기 위해 위와 같은 단순한 조건을 상정해보자.
 
-이 때 그린 함수 $G(x, s)$는 다음과 같은 조건을 만족하는 함수이다.
+이 때 그린 함수 $G(x, y)$는 다음과 같은 조건을 만족하는 함수이다.
 
-$$LG= \delta(x-s)$$
+$$LG= \delta(x-y)$$
 
 여기서 $\delta(x)$는 디랙 델타 함수이다. 또, $s$ 역시 $s\in[a,b]$와 같이 정의된 변수이다.
 
@@ -252,7 +252,7 @@ $$LG= \delta(x-s)$$
 
 그린 함수의 역할은 역행렬과 같다.
 
-$$G=L^{-1}\delta(x-s)$$
+$$G=L^{-1}\delta(x-y)$$
 
 와 같은 방식으로 생각해보면 ... ($L^{-1}$은 수학적으로 정의될 수 있는 용어가 아님)
 
@@ -260,23 +260,23 @@ $$G=L^{-1}\delta(x-s)$$
 
 위 식에서 양변에 $f$를 곱하고 $s$에 대해 적분해보자.
 
-$$\Rightarrow \int_{a}^{b} L G(x, s)f(s)ds$$
+$$\Rightarrow \int_{a}^{b} L G(x, y)f(y)dy$$
 
 여기서 그린 함수의 정의에 의해 다음과 같이 바꿔 쓸 수 있다.
 
-$$\Rightarrow \int_{a}^{b} \delta(x-s)f(s)ds$$
+$$\Rightarrow \int_{a}^{b} \delta(x-y)f(y)dy$$
 
 여기서 디랙 델타 함수의 sifting property에 따라 다음이 성립한다.
 
-$$\int_{a}^{b}\delta(x-s)f(s)ds = f(x)=Lu$$
+$$\int_{a}^{b}\delta(x-y)f(y)dy = f(x)=Lu$$
 
 한편, $L$은 $x$에만 작용하는 선형 연산자이므로 적분 밖으로 뺄 수도 있다.
 
-$$\Rightarrow L\left(\int_{a}^{b} G(x, s)f(s)ds\right)=Lu$$
+$$\Rightarrow L\left(\int_{a}^{b} G(x, y)f(y)dy\right)=Lu$$
 
 따라서
 
-$$u(x)=\int_{a}^{b} G(x,s)f(s)ds$$
+$$u(x)=\int_{a}^{b} G(x,y)f(y)dy$$
 
 와 같이 미분방정식의 해를 구할 수 있다는 것을 알 수 있다.
 
