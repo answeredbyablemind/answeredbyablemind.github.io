@@ -158,7 +158,9 @@ $$r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \
 
 여기서 $\epsilon$은 아주 작은 크기의 실수(real number)이다.
 
-이 함수는 $r(x)=\overline{r(x)}$이므로 식 (11)과 같은 적분으로 함수의 내적을 이용할 수 있을 것이다.
+이 함수는 $r(x)=\overline{r(x)}$이므로 아래와 같은 적분으로 함수의 내적을 이용할 수 있을 것이다.
+
+$$\langle r(x), f(x) \rangle =\int_{a}^{b}r(x)f(x)dx$$
 
 이 함수는 모든 정의역 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 
 
