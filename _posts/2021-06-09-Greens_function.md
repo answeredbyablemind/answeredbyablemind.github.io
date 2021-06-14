@@ -164,7 +164,13 @@ $$r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \
 
 이 함수는 모든 정의역 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 
 
-그런데, 문제는 $r(x)$는 적절한 너비 $2\epsilon$ 만큼에 대해 정의되어 있으므로 $f(x)$와 $r(x)$의 적분으로는 실제 $f(x_0)$ 값을 얻기 어려울 것이다. 따라서 우리는 $\epsilon$을 매우 작게 만들면 더 정확히 $f(x)$의 값을 위 식과 같은 내적을 통해서 얻을 수 있다는 것을 예상할 수 있다. 우리는 $\epsilon$을 작게 만들어줄 때 다음과 같은 일이 일어날 것임을 알 수 있다.
+다시 말해 다음과 같은 내적을 생각할 수 있다는 의미이다. 만약 $x\in[a,b]$에 대해 $a\lt 0\lt b$ 인 경우를 상정한다면
+
+$$\langle r(x), f(x)\rangle=\int_{a}^{b}r(x)f(x)dx\approx f(0)$$
+
+이라는 것이다.
+
+그런데, 문제는 $r(x)$는 적절한 너비 $2\epsilon$ 만큼에 대해 정의되어 있으므로 $f(x)$와 $r(x)$의 적분으로는 실제 $f(0)$ 값을 얻기 어려울 것이다. 따라서 우리는 $\epsilon$을 매우 작게 만들면 더 정확히 $f(x)$의 값을 위 식과 같은 내적을 통해서 얻을 수 있다는 것을 예상할 수 있다. 우리는 $\epsilon$을 작게 만들어줄 때 다음과 같은 일이 일어날 것임을 알 수 있다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
@@ -180,69 +186,51 @@ $$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases} $$
 
 $$\int_{-\infty}^{\infty}\delta(x)dx = 1 $$
 
-만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
+즉, 우리는 $\epsilon$을 매우 작게 만들어줌으로써 다음과 같은 관계를 얻어낼 수 있게 된다.
 
-즉, 우리는 원하는 위치의 함수값을 내적을 통해 얻기 위해 다음과 같은 일을 수행하면 될 것으로 보인다. $x_0$가 구간 $[a, b]$ 사이에 위치한다고 가정했을 때,
+$$\int_{a}^{b}\delta(x)f(x)=f(0)$$
 
-$$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx$$
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic7.mp4">
+  </video>
+  <br>
+  그림 5. 디랙 델타함수와의 내적을 통해 함수의 특정 값을 얻어낼 수 있다.
+</p>
+
+또, 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
+
+$x_0$가 구간 $[a, b]$ 사이에 위치한다고 가정했을 때,
+
+$$f(x_0) \approx \int_{a}^{b}r(x-x_0)f(x)dx$$
 
 와 같다.
 
 여기서도 $\epsilon$을 매우 작게 만들어주면,
 
-$$f(x_0)=\int_{a}^{b}f(x)\delta(x-x_0)$$
+$$f(x_0)=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
 
-가 된다는 것을 알 수 있다.
+와 같이 $f(x)$의 $x_0$라는 입력에 해당하는 원소의 값을 얻어낼 수 있게 되는 것이다. 
 
-## Sifting Property
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic8.mp4">
+  </video>
+  <br>
+  그림 6. $x=0$이 아닌 임의의 위치의 함수값을 얻고 싶다면 디랙 델타 함수를 옮겨 계산하면 된다.
+</p>
 
-바로 위의 식은 delta 함수의 가장 중요한 성질 중 하나이다.
+이 과정에서 우리는 디랙 델타함수의 sifting property를 확인할 수 있게 된다.
 
-$$\langle \delta(x-x_0), f(x)\rangle = f(x_0)$$
-
-이 특성의 이름은 "SIFTING" property 인데 절대 "SHIFTING"이 아니다[^1]. 
-
-[^1]: sift라는 단어가 없다고 하거나, 오타라고 말하는 등의 이상한 설명이 많다.
-
-SIFT는 체로 걸러낸다는 뜻으로 $x_0$ 만큼 이동한 델타함수와 함수 $f(x)$의 내적이 마치 $x=x_0$라는 점에서 함수값을 체로 걸러내주는 듯한 결과를 보여주기 때문에 이런 이름이 붙은 것이다.
-
-sifting property는 다음과 같이 조금 더 수학적으로 정확하게 확인해볼 수 있다.
-
-$$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
-
-구간 $[a, b]$ 사이에 존재하는 $x_0$에 대해서, 델타함수의 정의에 따라,
-
-$$\Rightarrow \lim_{\epsilon\rightarrow 0}\int_{x_0-\epsilon}^{x_0+\epsilon}\frac{f(x)}{2\epsilon}dx=\lim_{\epsilon\rightarrow 0}\frac{1}{2\epsilon}\int_{x_0-\epsilon}^{x_0+\epsilon}f(x)dx$$
-
-여기서 평균값 정리를 사용하자. 임의의 구간 $[x_1, x_2]$에서 평균값 정리는 함수 $f$가 $[x_1,x_2]$에서 연속이고 $(x_1,x_2)$에서 미분가능할 때 다음을 만족시키는 임의의 $\bar{x}\in(x_1,x_2)$가 적어도 하나 존재한다는 정리이다.
-
-$$f'(\bar{x})=\frac{f(x_2)-f(x_1)}{x_2-x_1}$$
-
-여기서 우리는 위 식의 적분꼴을 생각해보면,
-
-$$\Rightarrow \frac{1}{x_2-x_1}\int_{x_1}^{x_2}f(x)dx=f(\bar{x})$$
-
-임을 알 수 있다. (이것을 적분 평균값 정리라고 부른다.) 
-
-여기서, $x_1=x_0-\epsilon$, $x_2=x_0+\epsilon$으로 치환하면,
-
-$$\Rightarrow \frac{1}{2\epsilon}\int_{x_0-\epsilon}^{x_0+\epsilon}f(x)dx=f(\bar{x})$$
-
-와 같다는 것을 알 수 있는데, $\bar{x}$는 $x_0-\epsilon$과 $x_0+\epsilon$ 사이의 값인데 $\epsilon$은 0으로 수렴하고 있으므로 $\bar{x}$는 $x_0$로 수렴함을 알 수 있다.
-
-따라서,
-
-$$\langle \delta(x-x_0), f(x)\rangle=\int_{a}^{b}\delta(x-x_0)f(x)dx=f(x_0)$$
-
-이다.
+sifting property란 함수 $f(x)$의 특정값 $x=x_0$만을 델타함수를 이용해 체로 걸러내는 듯한 디랙 델타함수의 특성이다.
 
 ## 디랙 델타 함수의 수학적 의미
 
-디랙 델타 함수는 정말 독특하다. 위에서 언급했던 내용들을 기반으로 디랙델타 함수의 의미를 정리해보자.
+디랙 델타 함수는 전체 정의역 범위에서 정적분이 1이고 특정 값에서만 무한대 값을 가지는 독특한 함수이다. 위에서 언급했던 내용들을 기반으로 디랙델타 함수의 의미를 정리해보자.
 
 ### 디랙 델타 함수는 범함수(functional)
 
-디랙 델타 함수는 함수의 정의에 따른 함수가 아니다. 함수값이 발산하기 때문에 공역의 원소를 특정할 수 없기 때문이다.이 개념에 대해 더 엄밀하게 알기 위해선 분포 이론(distribution theory)를 알아야 한다. 
+디랙 델타 함수는 엄밀하게 말하면 함수의 정의에 따른 함수가 아니다. 함수값이 발산하기 때문에 공역의 원소를 특정할 수 없기 때문이다.이 개념에 대해 더 엄밀하게 알기 위해선 분포 이론(distribution theory)를 알아야 한다. 
 
 간단하게만 소개하면 distribution theory에서는 기존의 함수의 정의를 확장한 '일반화된 함수'의 개념을 도입하는데 일반화된 함수의 정의역은 더 이상 숫자가 아니라 구간이다. 구간을 정의역으로 정의함으로써 함수값이 무한대로 발산하는 이상한 문제를 해결할 수 있게 된다. 
 

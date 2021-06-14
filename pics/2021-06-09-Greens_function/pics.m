@@ -160,3 +160,168 @@ for ii = 1:10
     writeVideo(newVid, getframe(gcf))
 end
 close(newVid)
+
+%% 함수와 디랙델타함수의 내적
+
+newVid = VideoWriter('pic7', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+figure('color','w');
+
+subplot(2,1,1);
+p = [0.00018238, -0.0010983, 0.0041346, 0.020829, -0.063281, 0.3753];
+xx = linspace(-5,5,100);
+yy = polyval(p, xx);
+plot(xx, yy)
+hold on; grid on;
+
+xlim([-5, 5])
+ylim([-1, 1])
+
+xis = linspace(0.5,0.01, 50);
+clear h
+
+linewidth=2;
+color = lines(1);
+
+p1 = [0.7, -0.1];
+p2 = [0.05, polyval(p,0.05)-0.05];
+dp = p2-p1;
+quiver(p1(1), p1(2), dp(1), dp(2), 0,'linewidth',2,'MaxHeadSize', 1,'color','r');
+
+for i_xi = 1:length(xis)
+    xi = xis(i_xi);
+
+    subplot(2,1,1);
+    xx = linspace(-xi,xi,10);
+    yy = polyval(p, xx);
+    h(1) = plot(xx, yy,'r','linewidth',3);
+    
+    subplot(2,1,2);
+    height = 1/(2*xi);
+    
+    h(2) = plot([-5, -xi],[0, 0],'linewidth',linewidth,'color',color);
+    hold on;
+    h(3) = plot([-xi,-xi],[0, height],'linewidth',linewidth,'color',color);
+    h(4) = plot([-xi, xi],ones(1,2)*height,'linewidth',linewidth,'color',color);
+    h(5) = plot([xi,xi],[0, height],'linewidth',linewidth,'color',color);
+    h(6) = plot([xi, 5],[0, 0],'linewidth',linewidth,'color',color);
+    grid on;
+    h(7)= text(0.29, 7.39,['$\epsilon = ',num2str(xi),'$'],'interpreter','latex','fontsize',15);
+    xlabel('x');
+    ylabel('r(x)');
+    
+    xlim([-5, 5])
+    ylim([-0.5, 3])
+    
+        writeVideo(newVid, getframe(gcf))
+    
+    if i_xi < length(xis)
+        delete(h)
+    end
+end
+
+for ii = 1:10
+    writeVideo(newVid, getframe(gcf))
+end
+close(newVid)
+
+%% 디랙 델타 함수의 이동 및 내적
+
+newVid = VideoWriter('pic8', 'MPEG-4'); % New
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+figure('color','w');
+
+subplot(2,1,1);
+p = [0.00018238, -0.0010983, 0.0041346, 0.020829, -0.063281, 0.3753];
+xx = linspace(-5,5,100);
+yy = polyval(p, xx);
+plot(xx, yy)
+hold on; grid on;
+
+xlim([-5, 5])
+ylim([-1, 1])
+
+xis = linspace(0.5,0.01, 50);
+clear h
+
+linewidth=2;
+color = lines(1);
+
+n_shift = 30;
+my_shift = linspace(0,2,n_shift);
+
+clear h
+
+xi= xis(1);
+height = 1/(2*xi);
+
+for i_shift = 1:n_shift
+    subplot(2,1,1);
+    p1 = [0.7+my_shift(i_shift), -0.1];
+    p2 = [0.05+my_shift(i_shift), polyval(p,0.05+my_shift(i_shift))-0.05];
+    dp = p2-p1;
+    h(1) = quiver(p1(1), p1(2), dp(1), dp(2), 0,'linewidth',2,'MaxHeadSize', 1,'color','r');
+
+    subplot(2,1,2);
+    h(2) = plot([-5, -xi+my_shift(i_shift)],[0, 0],'linewidth',linewidth,'color',color);
+    hold on;
+    h(3) = plot([-xi,-xi]+my_shift(i_shift),[0, height],'linewidth',linewidth,'color',color);
+    h(4) = plot([-xi, xi]+my_shift(i_shift),ones(1,2)*height,'linewidth',linewidth,'color',color);
+    h(5) = plot([xi,xi]+my_shift(i_shift),[0, height],'linewidth',linewidth,'color',color);
+    h(6) = plot([xi+my_shift(i_shift), 5],[0, 0],'linewidth',linewidth,'color',color);
+    xlabel('x');
+    ylabel('r(x)');
+    grid on;
+    xlim([-5, 5])
+    ylim([-0.5, 3])
+    writeVideo(newVid, getframe(gcf))
+    
+    delete(h)
+end
+subplot(2,1,1);
+
+quiver(p1(1), p1(2), dp(1), dp(2), 0,'linewidth',2,'MaxHeadSize', 1,'color','r');
+
+for i_xi = 1:length(xis)
+    xi = xis(i_xi);
+
+    subplot(2,1,1);
+    xx = linspace(-xi+my_shift(end),xi+my_shift(end),10);
+    yy = polyval(p, xx);
+    h(1) = plot(xx, yy,'r','linewidth',3);
+    
+    subplot(2,1,2);
+    height = 1/(2*xi);
+    
+    h(2) = plot([-5, -xi+my_shift(end)],[0, 0],'linewidth',linewidth,'color',color);
+    hold on;
+    h(3) = plot([-xi,-xi]+my_shift(end),[0, height],'linewidth',linewidth,'color',color);
+    h(4) = plot([-xi, xi]+my_shift(end),ones(1,2)*height,'linewidth',linewidth,'color',color);
+    h(5) = plot([xi,xi]+my_shift(end),[0, height],'linewidth',linewidth,'color',color);
+    h(6) = plot([xi+my_shift(end), 5],[0, 0],'linewidth',linewidth,'color',color);
+    grid on;
+    h(7)= text(0.29, 7.39,['$\epsilon = ',num2str(xi),'$'],'interpreter','latex','fontsize',15);
+    xlabel('x');
+    ylabel('r(x)');
+    
+    xlim([-5, 5])
+    ylim([-0.5, 3])
+    
+        writeVideo(newVid, getframe(gcf))
+    
+    if i_xi < length(xis)
+        delete(h)
+    end
+end
+
+for ii = 1:10
+    writeVideo(newVid, getframe(gcf))
+end
+close(newVid)
+
