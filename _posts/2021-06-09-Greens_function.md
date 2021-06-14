@@ -121,9 +121,29 @@ $$\hat{j}=\begin{bmatrix}0\\1\end{bmatrix}$$
 
 이다.
 
-가령, $[2, 3, 5, 1, 4]$라는 벡터에 대해 맨 앞의 2라는 값을 뽑아오기 위해서는 기저벡터 $[1, 0, 0, 0, 0]$과 내적해줌으로써 원소값을 뽑아올 수 있다.
+여기서 기저 벡터의 기능은 무엇이라고 할 수 있을까? 그것은 임의의 벡터를 기저벡터의 선형결합으로 표현하는데 있다.
 
-$$\text{dot}([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2 % 식(1)$$
+가령, 임의의 벡터
+
+$$\begin{bmatrix}a\\b\end{bmatrix}$$
+
+는 다음과 같이 위의 두 기저벡터 $\hat{i}$와 $\hat{j}$의 선형결합으로 표현할 수 있다.
+
+$$\begin{bmatrix}a\\b\end{bmatrix} = a\begin{bmatrix}1 \\ 0 \end{bmatrix}+b\begin{bmatrix}0 \\ 1 \end{bmatrix}=a\hat{i}+b\hat{j}$$
+
+그러다보니 다음과 같이 임의의 벡터를 기저 벡터와 내적해주면 기저벡터가 가지고 있는 성분량이 나오게 되는 것이다.
+
+가령, 임의의 벡터 $[a,b]^T$에 대해 $\hat{i}$ 기저벡터와의 내적은 $a$라는 값을 뽑아준다.
+
+$$\text{dot}(\begin{bmatrix}a\\b \end{bmatrix}, \begin{bmatrix}1\\0 \end{bmatrix})=a$$
+
+그리고 벡터는 숫자들의 나열이라고도 볼 수 있고 이 때 나열된 숫자의 개수가 벡터의 차원을 의미한다고 볼 수 있다[^1].
+
+[^1]: 수학적으로 엄밀한 표현은 아니지만 ...
+
+가령, $[2, 3, 5, 1, 4]^T$라는 5차원 벡터에 대해 기저벡터 $[1, 0, 0, 0, 0]^T$과 내적해줌으로써 이 기저벡터가 $[2, 3, 5, 1, 4]^T$라는 벡터를 표현할 때 담당하는 성분량을 알 수 있게 되는 것이다.
+
+$$\text{dot}([2, 3, 5, 1 , 4]^T, [1, 0, 0, 0, 0]^T) = 2$$
 
 마찬가지 방식으로 우리도 함수의 특정 위치의 값을 뽑아오기 위해서는 내적을 해주기 위한 기저 벡터와 유사한 함수를 생각해야 한다.
 
@@ -131,25 +151,27 @@ $$\text{dot}([2, 3, 5, 1 , 4], [1, 0, 0, 0, 0]) = 2 % 식(1)$$
 
 $x\in[a,b]$에서 정의된 함수 $f$, $g$에 대해
 
-$$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx % 식(2)$$
+$$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
 
 여기서 $\overline{f(x)}$는 $f(x)$의 complex conjugate 이다.
 
-만약 $f(x)$와 $g(x)$가 모두 실수함수라면 다음과 같이도 써줄 수 있다.
+만약 $f(x)=\overline{f(x)}$라면 다음과 같이도 써줄 수 있다.
 
-$$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx % 식(3)$$
+$$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx$$
 
 즉, 함수의 내적은 적분으로 정의되므로 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
 
-$$r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases} % 식(4)$$
+$$r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases}$$
 
 여기서 $\epsilon$은 아주 작은 크기의 실수(real number)이다.
 
-이 함수는 모든 실수 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
+이 함수는 $r(x)=\overline{r(x)}$이므로 식 xx와 같은 적분으로 함수의 내적을 이용할 수 있을 것이다.
+
+이 함수는 모든 정의역 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
 
 즉, 우리는 원하는 위치의 함수값을 내적을 통해 얻기 위해 다음과 같은 일을 수행하면 될 것으로 보인다. $x_0$가 구간 $[a, b]$ 사이에 위치한다고 가정했을 때,
 
-$$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx % 식(5)$$
+$$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx$$
 
 와 같다.
 
@@ -165,9 +187,9 @@ $$f(x_0) \approx \int_{a}^{b}f(x)r(x-x_0)dx % 식(5)$$
 
 따라서, 우리는 $\epsilon$이 작아질 수록 $r(x)$가 아래의 $\delta(x)$와 같은 모습을 띄게 된다는 것을 알 수 있다.
 
-$$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases} % 식(6)$$
+$$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases} $$
 
-$$\int_{-\infty}^{\infty}\delta(x)dx = 1 % 식(7)$$
+$$\int_{-\infty}^{\infty}\delta(x)dx = 1 $$
 
 ## 디랙 델타 함수의 수학적 의미
 
