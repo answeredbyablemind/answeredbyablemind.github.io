@@ -428,3 +428,45 @@ xlabel('x');
 ylabel('y');
 zlabel('G(x,y)');
 view(-76.3, 32.4)
+
+%% 양 끝이 고정되어 있는 로프의 움직임에 관한 미분방정식의 그린 함수
+
+y = pi/3;
+
+x = linspace(0,pi,100);
+for i_x = 1:length(x)
+    if x(i_x)<y
+        G(i_x)=(1/pi*y-1) * x(i_x);
+    else
+        G(i_x)=(1/pi*y) * x(i_x)-y;
+    end
+end
+
+
+figure;
+plot(x,G,'linewidth',2)
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$G(x, \pi/3)$$','interpreter','latex')
+grid on;
+xlim([0, pi])
+ylim([-1, 0.2])
+set(gca,'xtick',[0, pi/3, 2*pi/3, pi]);
+set(gca,'xticklabel',{'$$0$$','$$\pi/3$$','$$2\pi/3$$','$$\pi$$'},'TickLabelInterpreter','latex')
+title('y=pi/3 인 경우의 그린 함수 G(x,pi/3)')
+set(gca,'fontsize',12)
+%%
+[X,Y]=meshgrid(linspace(0,pi,50));
+f = [];
+for i =1:size(X,1)
+    for j = 1:size(Y,1)
+        if X(i,j) < Y(i,j)
+            f(i,j) = (Y(i,j)/pi-1)*X(i,j);
+        else
+            f(i,j) = Y(i,j)/pi*X(i,j)-Y(i,j);
+        end
+    end
+end
+
+figure;
+surf(X,Y,f)

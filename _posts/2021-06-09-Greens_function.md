@@ -481,7 +481,7 @@ $$\frac{d^2}{dx^2}u=f(x)$$
 
 여기서 경계조건은 다음과 같이 주어졌다고 생각해보자.
 
-$$u(0)=0, u'(l)=0$$
+$$u(0)=0, u(\pi)=0$$
 
 ### 예시 문제 2의 풀이
 
@@ -505,27 +505,21 @@ $$G(x,y)=\begin{cases} c_1x+c_2 & x\lt y\\c_3x+c_4 & x\gt y\end{cases}$$
 
 가 되어야 함을 알 수 있고, 경계 조건에 따라,
 
-$$G(0,y) = c_1(0)+c_2=0$$
+$$G(0)=c_2=0$$
 
-$$\therefore c_2 = 0$$
+이고
 
-$$\frac{\partial}{\partial x}G(x,y)\Big|_{x=l}=c_3=0$$
+$$G(\pi)=c_3\pi+c_4=0$$
 
-이기 때문에 
+임을 알 수 있다. 
 
-$$\Rightarrow G(x,y)=\begin{cases} c_1x & x\lt y\\c_4 & x\gt y\end{cases}$$
-
-와 같음을 알 수 있다.
-
-이제 정해지지 못한 $c_1$과 $c_4$를 정하기 위해 아래와 같은 추가 조건들을 생각해보자.
-
-충분히 작은 양의 실수 $\epsilon$에 대해,
+또, 충분히 작은 양의 실수 $\epsilon$에 대해,
 
 $$\int_{y-\epsilon}^{y+\epsilon}LGdx=\int_{y-\epsilon}^{y+\epsilon}\delta(x-y)dx=1$$
 
 $$\Rightarrow \int_{y-\epsilon}^{y+\epsilon}\frac{\partial^2}{\partial x^2}G(x,y)dx=\left[\frac{\partial}{\partial x}G(x,y)\right]_{y-\epsilon}^{y+\epsilon}=1$$
 
-즉, $y=x$ 근처에서의 미분계수는 1만큼 차이가 나게 된다.
+임을 알 수 있다. 다시 말해 즉, $y=x$ 근처에서의 미분계수는 1만큼 차이가 나게 된다.
 
 또, 
 
@@ -537,35 +531,25 @@ $$G(y+\epsilon,y)-G(y-\epsilon,y)=0$$
 
 따라서 위 조건들을 대입해보면,
 
-$$G(y+\epsilon,y)-G(y-\epsilon,y)=c_4 - c_1(y-\epsilon)=c_4-c_1y=0$$
+$$G(y+\epsilon,y)-G(y-\epsilon,y)=c_3y+c_4-c_1y=(c_3-c_1)y+c_4=0$$
 
-$$G'(y+\epsilon,y)-G'(y-\epsilon,y)=0-c_1=1$$
+이고,
 
-$$\therefore c_1= -1, c_4=-y$$
+$$G'(y+\epsilon,y)-G'(y-\epsilon,y)=c_3-c_1=1$$
 
-따라서 그린 함수는
+이다. 위 조건들을 조합하면 그린 함수는 다음과 같다는 것을 알 수 있다.
 
-$$G(x,y)=\begin{cases}-x & x\lt y \\ -y & x \gt y\end{cases}$$
+$$G(x,y)=\begin{cases}\left(\dfrac{y}{\pi}-1\right)x, & x\lt y \\\\ \left(\dfrac{x}{\pi}-1\right)y, & x \gt y\end{cases}$$
 
 와 같다.
+
+그린 함수를 $y=\pi/3$ 인 경우에 대해 그려보면 다음과 같은 형태를 띈다는 것을 알 수 있는데,
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic12.png">
   <br>
-  그림 10. 예시 문제 2의 그린 함수
+  그림 10. 예시 문제 2의 $y=\pi/3$인 경우의 그린 함수
 </p>
-
-만약 여기서 $f(x)=x$라고 하면 솔루션 $u(x)$는
-
-$$u(x)=\int_{0}^{l}f(y)G(x,y)dy=\int_{0}^{x}y(-y)dy+\int_{x}^{l}y(-x)dy$$
-
-$$=\int_{0}^{x}-y^2dy-\int_{x}^{l}yxdy$$
-
-$$=-\frac{y^3}{3}\Big|_{0}^{x}-x\frac{y^2}{2}\Big|_{x}^{l}$$
-
-$$=\left(\frac{x^2}{2}-\frac{l^2}{2}\right)x-\frac{x^3}{3}$$
-
-이다.
 
 ## 예시 문제 3.
 
