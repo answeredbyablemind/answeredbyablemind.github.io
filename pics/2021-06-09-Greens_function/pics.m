@@ -325,3 +325,25 @@ for ii = 1:10
 end
 close(newVid)
 
+%%
+
+[X,Y]=meshgrid(linspace(2,10,50));
+
+f = [];
+
+for i = 1:size(X,1)
+    for j = 1:size(Y,1)
+        if X(i,j)<Y(i,j)
+            f(i,j) = 0;
+        else
+            f(i,j) = 1;
+        end
+    end
+end
+
+figure('color','w')
+surf(X,Y,f);
+xlabel('x');
+ylabel('y');
+zlabel('G(x,y)');
+% colormap(jet)

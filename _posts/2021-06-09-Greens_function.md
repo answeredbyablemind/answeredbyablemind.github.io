@@ -7,7 +7,6 @@ aside:
 key: 20210609
 tags: 미분방정식
 ---
-
 ※ 본 포스팅의 내용은 수학적인 엄밀성 보다는 그린 함수의 개념에 더 쉽게 다가가기 위해 작성한 것입니다. 혹시나 수학적으로 치명적인 오류가 있다면 꼭 조언 부탁드립니다.
 
 # Prerequisites
@@ -32,11 +31,17 @@ tags: 미분방정식
 
 역행렬은 아래와 같이 정의되는 행렬이다. 임의의 정사각 행렬(square matrix) $A$와 벡터 $x$, $b$에 대해 다음이 성립한다고 하자.
 
-$$Ax=b$$
+$$
+Ax=b
+
+$$
 
 만약 $A$라는 행렬이 역행렬을 가진다고 하면 역행렬 $B$는 다음과 같은 성질을 만족하는 행렬이다.
 
-$$AB=I$$
+$$
+AB=I
+
+$$
 
 여기서 $I$는 단위 행렬이다.
 
@@ -53,10 +58,12 @@ $$AB=I$$
 $AB=I$라는 식을 보면 다음과 같은 일들이 일어나는 것임을 알 수 있다.
 
 * $A$라는 연산자가 $B$의 첫번째 열에 적용되면 첫 번째 단위 기저벡터가 출력된다.
-
 * $A$라는 연산자가 $B$의 두번째 열에 적용되면 두 번째 단위 기저벡터가 출력된다.
 
-$$\vdots\notag$$
+$$
+\vdots\notag
+
+$$
 
 * $A$라는 연산자가 $B$의 마지막 열에 적용되면 마지막 단위 기저벡터가 출력된다.
 
@@ -68,30 +75,38 @@ $$\vdots\notag$$
 
 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서는 함수를 벡터로 취급할 수 있음을 설명하였다.
 
-그러니까, 만약 $AB=I$라는 $B$ 행렬이 존재할 수 있다면 $B$ 행렬은 열벡터를 쌓아 만든 개념으로 볼 수 있는 것이므로 함수해석학에서 행렬 $B$에 대응하는 개념은 함수를 연속적으로 쌓아 만든 것으로 볼 수 있다. 
+그러니까, 만약 $AB=I$라는 $B$ 행렬이 존재할 수 있다면 $B$ 행렬은 열벡터를 쌓아 만든 개념으로 볼 수 있는 것이므로 함수해석학에서 행렬 $B$에 대응하는 개념은 함수를 연속적으로 쌓아 만든 것으로 볼 수 있다.
 
-다시 말해 원래의 독립변수가 아닌 또 다른 독립변수에 대응되는 함수들을 쭉 나열해둔 것이어야 한다. 
+다시 말해 원래의 독립변수가 아닌 또 다른 독립변수에 대응되는 함수들을 쭉 나열해둔 것이어야 한다.
 
 $L$은 선형연산자, $u(x)$와 $f(x)$는 $x\in[a,b]$에서 정의된 함수라고 생각해보자. 이 때, 다음이 성립한다고 하자.
 
-$$Lu=f$$
+$$
+Lu=f
+
+$$
 
 그리고 우리가 생각해낼 '함수의 나열'을 다음과 같은 기호로 써보자.
 
-$$G(x,y)$$
+$$
+G(x,y)
+
+$$
 
 이런 기호로 새로운 함수 뭉치들을 써낸 것은 $y$ 역시 $y\in[a,b]$의 정의역에서 정의되는 새로운 독립변수로 쓴 것이고, 새로운 $y$축을 따라 $G(x;y)$를 쌓아줄 것이기 때문이다.
 
 그러면 우리는 $L$이라는 연산자가 $y$를 따라가면서 적용될 때 다음과 같은 일이 일어나야 역행렬이 해주는 일과 유사한 일을 적용시킨다는 것을 알 수 있다.
 
 * $L$이라는 연산자가 $G(x, y)$의 $y$의 첫 번째 값($a$)에 대응되는 함수에 적용되면 첫 번째 단위 기저벡터에 대응되는 함수가 출력된다.
-
 * $L$이라는 연산자가 $G(x, y)$의 $y$의 두 번째 값($a$의 바로 옆 값)에 대응되는 함수에 적용되면 두 번째 단위 기저벡터에 대응되는 함수가 출력된다.
-  
-$$\vdots\notag$$
+
+$$
+\vdots\notag
+
+$$
 
 * $L$이라는 연산자가 $G(x, y)$의 $y$의 마지막 값($b$)에 대응되는 함수에 적용되면 마지막 단위 기저벡터에 대응되는 함수가 출력된다.
-  
+
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic2.png">
   <br>
@@ -106,11 +121,17 @@ $$\vdots\notag$$
 
 우리는 단위 기저 벡터에 대해 생각해보기 위해 먼저 단위 기저 벡터라는 것이 어떤 것이었는지 알아보고 이 개념을 함수 공간에 확장시켜보도록 하자.
 
-가장 간단한 단위 기저 벡터는 보통 표준 기저(standard basis)라고 부르는 것들이다. 2차원 벡터 공간에서는 $\hat{i}$, $\hat{j}$라고 단위 기저 벡터를 부르며 각각은 
+가장 간단한 단위 기저 벡터는 보통 표준 기저(standard basis)라고 부르는 것들이다. 2차원 벡터 공간에서는 $\hat{i}$, $\hat{j}$라고 단위 기저 벡터를 부르며 각각은
 
-$$\hat{i}=\begin{bmatrix}1\\0\end{bmatrix}$$
+$$
+\hat{i}=\begin{bmatrix}1\\0\end{bmatrix}
 
-$$\hat{j}=\begin{bmatrix}0\\1\end{bmatrix}$$
+$$
+
+$$
+\hat{j}=\begin{bmatrix}0\\1\end{bmatrix}
+
+$$
 
 이다.
 
@@ -118,23 +139,35 @@ $$\hat{j}=\begin{bmatrix}0\\1\end{bmatrix}$$
 
 가령, 임의의 벡터
 
-$$\begin{bmatrix}a\\b\end{bmatrix}$$
+$$
+\begin{bmatrix}a\\b\end{bmatrix}
+
+$$
 
 는 다음과 같이 위의 두 기저벡터 $\hat{i}$와 $\hat{j}$의 선형결합으로 표현할 수 있다.
 
-$$\begin{bmatrix}a\\b\end{bmatrix} = a\begin{bmatrix}1 \\ 0 \end{bmatrix}+b\begin{bmatrix}0 \\ 1 \end{bmatrix}=a\hat{i}+b\hat{j}$$
+$$
+\begin{bmatrix}a\\b\end{bmatrix} = a\begin{bmatrix}1 \\ 0 \end{bmatrix}+b\begin{bmatrix}0 \\ 1 \end{bmatrix}=a\hat{i}+b\hat{j}
+
+$$
 
 그러다보니 다음과 같이 임의의 벡터를 기저 벡터와 내적해주면 기저벡터가 가지고 있는 성분량이 나오게 되는 것이다.
 
 가령, 임의의 벡터 $[a,b]^T$에 대해 $\hat{i}$ 기저벡터와의 내적은 $a$라는 값을 뽑아준다.
 
-$$\text{dot}(\begin{bmatrix}a\\b \end{bmatrix}, \begin{bmatrix}1\\0 \end{bmatrix})=a$$
+$$
+\text{dot}(\begin{bmatrix}a\\b \end{bmatrix}, \begin{bmatrix}1\\0 \end{bmatrix})=a
+
+$$
 
 그리고 벡터는 숫자들의 나열이라고도 볼 수 있다. 그래서 더 많은 숫자를 나열해볼 수도 있다.
 
 가령, $[2, 3, 5, 1, 4]^T$라는 5차원 벡터에 대해 기저벡터 $[1, 0, 0, 0, 0]^T$과 내적해줌으로써 이 기저벡터가 $[2, 3, 5, 1, 4]^T$라는 벡터를 표현할 때 담당하는 성분량을 알 수 있게 되는 것이다.
 
-$$\text{dot}\left(\begin{bmatrix}2\\3\\5\\1\\4\end{bmatrix}, \begin{bmatrix}1\\0\\0\\0\\0\end{bmatrix}\right) = 2$$
+$$
+\text{dot}\left(\begin{bmatrix}2\\3\\5\\1\\4\end{bmatrix}, \begin{bmatrix}1\\0\\0\\0\\0\end{bmatrix}\right) = 2
+
+$$
 
 마찬가지 방식으로 우리도 함수의 특정 위치의 값을 뽑아오기 위해서는 내적을 해주기 위한 기저 벡터와 유사한 함수를 생각해야 한다.
 
@@ -142,29 +175,44 @@ $$\text{dot}\left(\begin{bmatrix}2\\3\\5\\1\\4\end{bmatrix}, \begin{bmatrix}1\\0
 
 $x\in[a,b]$에서 정의된 함수 $f$, $g$에 대해
 
-$$\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx$$
+$$
+\langle f, g\rangle = \int_{a}^{b}\overline{f(x)}g(x)dx
+
+$$
 
 여기서 $\overline{f(x)}$는 $f(x)$의 complex conjugate 이다.
 
 만약 $f(x)=\overline{f(x)}$라면 다음과 같이도 써줄 수 있다.
 
-$$\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx$$
+$$
+\langle f, g\rangle = \int_{a}^{b}f(x)g(x)dx
+
+$$
 
 즉, 함수의 내적은 적분으로 정의되므로 적분을 이용해 함수값을 뽑아내주기 위해 아래와 같은 함수를 생각해보자.
 
-$$r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases}$$
+$$
+r(x) = \begin{cases}1/(2\epsilon),\quad -\epsilon<x<\epsilon \\ 0,\quad\quad \quad\quad \text{elsewhere}\end{cases}
+
+$$
 
 여기서 $\epsilon$은 아주 작은 크기의 실수(real number)이다.
 
 이 함수는 $r(x)=\overline{r(x)}$이므로 아래와 같은 적분으로 함수의 내적을 이용할 수 있을 것이다.
 
-$$\langle r(x), f(x) \rangle =\int_{a}^{b}r(x)f(x)dx$$
+$$
+\langle r(x), f(x) \rangle =\int_{a}^{b}r(x)f(x)dx
 
-이 함수는 모든 정의역 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다. 
+$$
+
+이 함수는 모든 정의역 구간에서 적분했을 때 넓이는 1이므로 값을 얻고자 하는 함수 $f(x)$와 적분하면 $f(0)$ 근처의 값을 얻어올 수 있게 된다.
 
 다시 말해 다음과 같은 내적을 생각할 수 있다는 의미이다. 만약 $x\in[a,b]$에 대해 $a\lt 0\lt b$ 인 경우를 상정한다면
 
-$$\langle r(x), f(x)\rangle=\int_{a}^{b}r(x)f(x)dx\approx f(0)$$
+$$
+\langle r(x), f(x)\rangle=\int_{a}^{b}r(x)f(x)dx\approx f(0)
+
+$$
 
 이라는 것이다.
 
@@ -182,13 +230,22 @@ $$\langle r(x), f(x)\rangle=\int_{a}^{b}r(x)f(x)dx\approx f(0)$$
 
 따라서, 우리는 $\epsilon$이 작아질 수록 $r(x)$가 아래의 $\delta(x)$와 같은 모습을 띄게 된다는 것을 알 수 있다.
 
-$$\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases} $$
+$$
+\delta(x)=\begin{cases}\infty,\quad  x=0 \\ 0,\ \ \quad x\neq 0\end{cases}
 
-$$\int_{-\infty}^{\infty}\delta(x)dx = 1 $$
+$$
+
+$$
+\int_{-\infty}^{\infty}\delta(x)dx = 1
+
+$$
 
 즉, 우리는 $\epsilon$을 매우 작게 만들어줌으로써 다음과 같은 관계를 얻어낼 수 있게 된다.
 
-$$\int_{a}^{b}\delta(x)f(x)=f(0)$$
+$$
+\int_{a}^{b}\delta(x)f(x)=f(0)
+
+$$
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
@@ -198,19 +255,25 @@ $$\int_{a}^{b}\delta(x)f(x)=f(0)$$
   그림 5. 디랙 델타함수와의 내적을 통해 함수의 특정 값을 얻어낼 수 있다.
 </p>
 
-또, 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다. 
+또, 만약 $x=0$ 외의 다른 위치 $x_0$에서의 함수값을 얻고 싶다면 $r(x)$를 평행이동 시켜 $r(x-x_0)$과 적분해주면 될 것이다.
 
 $x_0$가 구간 $[a, b]$ 사이에 위치한다고 가정했을 때,
 
-$$f(x_0) \approx \int_{a}^{b}r(x-x_0)f(x)dx$$
+$$
+f(x_0) \approx \int_{a}^{b}r(x-x_0)f(x)dx
+
+$$
 
 와 같다.
 
 여기서도 $\epsilon$을 매우 작게 만들어주면,
 
-$$f(x_0)=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
+$$
+f(x_0)=\int_{a}^{b}\delta(x-x_0)f(x)dx
 
-와 같이 $f(x)$의 $x_0$라는 입력에 해당하는 원소의 값을 얻어낼 수 있게 되는 것이다. 
+$$
+
+와 같이 $f(x)$의 $x_0$라는 입력에 해당하는 원소의 값을 얻어낼 수 있게 되는 것이다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
@@ -222,8 +285,6 @@ $$f(x_0)=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
 
 결국 디랙 델타 함수는 단위 기저벡터에 대응하는 함수라고 볼 수 있다 [^2].
 
-[^2]: 엄밀하게는 distribution theory를 들먹여야하고, functional의 개념에 대해 들먹여야 한다. 하고 싶은 말은 많지만 필자의 역할은 교과서 집필이 아니라 큰 그림 이해로의 안내라고 생각하기 때문에 디랙 델타 함수에 대한 자세한 내용은 생략하고자 한다. 자세한 내용은 분포 이론에 대한 교과서를 참고해보자.
-
 # 미분 연산자의 inverse = 그린 함수
 
 ## 그린 함수의 정의
@@ -232,51 +293,79 @@ $$f(x_0)=\int_{a}^{b}\delta(x-x_0)f(x)dx$$
 
 구간 $x\in[a,b]$ 및 적절한 경계 조건에서 정의된 선형연산자 $L$과 함수 $u, f$에 대해서 다음이 성립한다고 하자.
 
-$$Lu=f$$
+$$
+Lu=f
+
+$$
 
 여기서 경계조건은 다음과 같은 것일 수 있다[^3].
 
-$$u(a)=0, u(b)=0$$
+$$
+u(a)=0, u(b)=0
 
-[^3]: 여기서 $u'(a)=0$, $u'(b)=0$ 과 같은 다양한 homogeneous 경계 조건의 경우의 수가 있다. 하지만, 여기서는 문제를 쉽게 만들기 위해 단순한 조건을 상정해보자.
+$$
 
 이 때 그린 함수 $G(x, y)$는 다음과 같은 조건을 만족하는 함수이다.
 
-$$LG= \delta(x-y)$$
+$$
+LG= \delta(x-y)
+
+$$
 
 여기서 $\delta(x)$는 디랙 델타 함수이다. 또, $y$ 역시 $y\in[a,b]$와 같이 정의된 변수이다.
 
-이렇게 보면 위 식이 바로 
+이렇게 보면 위 식이 바로
 
-$$AB=I$$
+$$
+AB=I
+
+$$
 
 와 같은 꼴임을 생각할 수 있다.
 
-즉, 대략적인 표기로 
+즉, 대략적인 표기로
 
-$$G(x,y) \approx L^{-1}$$
+$$
+G(x,y) \approx L^{-1}
+
+$$
 
 이다.
 
 $G(x,y)$가 $L$의 inverse가 될 수 있는지 다시 한번 확인해보기 위해 위 식에서 양변에 $f(y)$를 곱하고 $y$에 대해 적분해보자.
 
-$$\Rightarrow \int_{a}^{b} L G(x, y)f(y)dy$$
+$$
+\Rightarrow \int_{a}^{b} L G(x, y)f(y)dy
+
+$$
 
 여기서 그린 함수의 정의에 의해 다음과 같이 바꿔 쓸 수 있다.
 
-$$\Rightarrow \int_{a}^{b} \delta(x-y)f(y)dy$$
+$$
+\Rightarrow \int_{a}^{b} \delta(x-y)f(y)dy
+
+$$
 
 여기서 디랙 델타 함수의 sifting property에 따라 다음이 성립한다.
 
-$$\int_{a}^{b}\delta(x-y)f(y)dy = f(x)=Lu$$
+$$
+\int_{a}^{b}\delta(x-y)f(y)dy = f(x)=Lu
+
+$$
 
 한편, $L$은 $x$에만 작용하는 선형 연산자이므로 적분 밖으로 뺄 수도 있다.
 
-$$\Rightarrow L\left(\int_{a}^{b} G(x, y)f(y)dy\right)=Lu$$
+$$
+\Rightarrow L\left(\int_{a}^{b} G(x, y)f(y)dy\right)=Lu
+
+$$
 
 따라서
 
-$$u(x)=\int_{a}^{b} G(x,y)f(y)dy$$
+$$
+u(x)=\int_{a}^{b} G(x,y)f(y)dy
+
+$$
 
 와 같이 미분방정식의 해를 구할 수 있다는 것을 알 수 있다.
 
@@ -284,43 +373,54 @@ $$u(x)=\int_{a}^{b} G(x,y)f(y)dy$$
 
 $Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석학의 문제에 대해서 $u=L^{-1}f$와 유사하게 $G$와 $f$을 곱한 것의 적분으로 표현되는 것이다 (미분의 역연산이 적분이기 때문).
 
-## 그린 함수 계산하기
+## 예시 문제 1.
 
-선형대수학 시간에 역행렬 계산하는 법을 배웠듯 그린 함수를 계산하는 법을 생각해보자.
+그린 함수는 이론적으로만 보면 의미가 어느정도 와닿긴 하지만 실제로 어떻게 미분방정식의 해를 구하는데 사용되는지는 이해하기 어려울 수 있다. 이를 보완하기 위해 예시 문제를 풀어보면서 그린 함수의 의미에 대해 조금 더 생각해보도록 하자.
 
-그린 함수의 정의를 다시 한번 보자.
+아래와 같은 미분방정식을 그린 함수를 이용해서 해를 구해보자.
 
-$$LG=\delta(x-y)$$
+$$\frac{dy}{dx}=x$$
 
-우변을 보면 $x<y$라는 정의역 $x$에서는 모두 값이 0이 되고, $x>y$라는 정의역 $x$에서도 값이 0이 된다.
+여기서 초기 조건을 $y(a)=0$이라고 두고, 우리가 관심을 갖는 $x$의 범위는 $x\in[a,\infty)$라고 생각하자.
 
-그러니까 우선 우리가 풀어야 할 문제는 다음과 같은 것이다.
+### 예시 문제 1의 풀이
 
-$$\begin{cases}LG = 0 & \text{for }x \lt y \\ LG=0 & \text{for }x \gt y \end{cases}$$
+미분계수를 연산자로 생각하면 우리의 미분연산자 $L$은 다음과 같은 것이다.
 
-그런 뒤 우리는 $x\lt y$인 영역에서 정의된 그린 함수와 $x\gt y$인 정의역에서 정의된 그린 함수가 어떻게 연결되어 있을지를 상상해야 한다. 
+$$L=\frac{d}{dx}$$
 
-디랙 델타 함수의 정의에 따라 $x=y$인 지점에서는 $LG=\infty$인 값을 가질텐데 이것이 말이 되기나 하는것일까 하고 생각할 수 있지만, 다음을 생각해보자.
+그리고 그린 함수의 정의에 의해 다음과 같은 그린 함수를 생각할 수 있다.
 
-충분히 작은 실수 $\epsilon$에 대해 $y$에서 아주 약간 왼쪽으로 이동한 지점 $y-\epsilon$과 $y$에서 아주 약간 오른쪽으로 이동한 지점 $y+\epsilon$에 대해 델타 함수의 성질에 따라 다음이 성립하는 것을 알 수 있다.
+$$LG(x,y)=\delta(x-y)$$
 
-$x$와 $y$에 대한 함수인 $G(x,y)$에 대해, $x=y-\epsilon$인 지점과 $x=y+\epsilon$인 지점을 잘 생각해보면 우선은,
+우선 디랙 델타 함수의 성질에 따라 다음과 같이 그린 함수의 형태를 상정할 수 있다.
 
-$$LG(y-\epsilon,y)=LG(y+\epsilon,y)$$
+$$\begin{cases}LG(x,y) = 0 & \text{for }x\lt y \\ LG(x,y)=0 & \text{for }x\gt y\end{cases}$$
 
-이다. 다시 말해 그린 함수 $G(x,y)$는 $x=y$라는 모든 지점에서 연속이라는 뜻이다. 왜냐하면, $G(x,y)$가 $x=y$ 지점에서 불연속이라고 가정한다면 ~ 이므로 모순이 된다. 따라서 $G(x,y)$는 $x=y$ 지점에서 연속이다.
+즉, $G(x,y)$는 $x\lt y$ 및 $x\gt y$인 구간에서는 미분연산자 $L$의 homogeneous solution을 통해 표현할 수 있게 되는 것이다. 한번 미분해서 0이 되는 경우는 상수함수에 해당한다. 즉,
 
-TODO: 이유 찾기
+$$\begin{cases}G(x,y) = c_1 & x\lt y \\ G(x,y)=c_2 & x \gt y\end{cases}$$
 
-또 디랙 델타 함수의 정의에 의해
+라고 쓸 수 있다.
 
-$$\int_{y-\epsilon}^{y+\epsilon}LG(x,y)dx=\int_{y-\epsilon}^{y+\epsilon}\delta(x-y)dx=1$$
+한편, 그린 함수의 정의를 생각해보면 다음과 같은 사실도 생각해볼 수 있다.
 
-이다.
+$$\frac{\partial }{\partial x}G(x,y)=\delta(x-y)$$
+
+(여기서 미분연산자 $d/dx$가 $\partial/\partial x$로 바뀐 것은 $G$는 $(x, y)$ 두 변수에 대한 함수이기 때문이다.)
+
+다시 말해 $G(x,y)$는 $x=y$라는 점에서는 불연속적인 값을 갖는 함수일 것이라는 것이다. 거기에, 충분히 작은 양의 실수 $\epsilon$에 대해서 
+
+$$\int_{y-\epsilon}^{y+\epsilon}LG(x,y)dx=\int_{y-\epsilon}^{y+\epsilon}\frac{\partial}{\partial x}G(x,y)dx$$
+
+$$=G(y+\epsilon,y)-G(y-\epsilon,y)=\int_{y-\epsilon}^{y+\epsilon}\delta(x-y)dx=1$$
+
+이라는 사실을 알 수 있으므로 $x=y$ 값을 기준으로 양 옆의 값이 1만큼 차이나는 함수의 형태를 띄고 있다는 것을 상상해볼 수 있다.
 
 
 
 
 
-
-## 예시 문제
+[^2]: 엄밀하게는 distribution theory를 들먹여야하고, functional의 개념에 대해 들먹여야 한다. 하고 싶은 말은 많지만 필자의 역할은 교과서 집필이 아니라 큰 그림 이해로의 안내라고 생각하기 때문에 디랙 델타 함수에 대한 자세한 내용은 생략하고자 한다. 자세한 내용은 분포 이론에 대한 교과서를 참고해보자.
+    
+[^3]: 여기서 $u'(a)=0$, $u'(b)=0$ 과 같은 다양한 homogeneous 경계 조건의 경우의 수가 있다. 하지만, 여기서는 문제를 쉽게 만들기 위해 단순한 조건을 상정해보자.
