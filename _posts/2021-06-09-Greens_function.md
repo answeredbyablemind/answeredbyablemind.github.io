@@ -399,7 +399,7 @@ $$\begin{cases}LG(x,y) = 0 & \text{for }x\lt y \\ LG(x,y)=0 & \text{for }x\gt y\
 
 즉, $G(x,y)$는 $x\lt y$ 및 $x\gt y$인 구간에서는 미분연산자 $L$의 homogeneous solution을 통해 표현할 수 있게 되는 것이다. 한번 미분해서 0이 되는 경우는 상수함수에 해당한다. 즉,
 
-$$\begin{cases}G(x,y) = c_1 & x\lt y \\ G(x,y)=c_2 & x \gt y\end{cases}$$
+$$\begin{cases}G(x,y) = c_1 & \text{for }x\lt y \\ G(x,y)=c_2 & \text{for }x \gt y\end{cases}$$
 
 라고 쓸 수 있다.
 
@@ -417,7 +417,21 @@ $$=G(y+\epsilon,y)-G(y-\epsilon,y)=\int_{y-\epsilon}^{y+\epsilon}\delta(x-y)dx=1
 
 이라는 사실을 알 수 있으므로 $x=y$ 값을 기준으로 양 옆의 값이 1만큼 차이나는 함수의 형태를 띄고 있다는 것을 상상해볼 수 있다.
 
+대략적인 그린 함수의 형태는 아래의 그림 7과 같을 것이다.
 
+그림 7을 볼 때는 $x$, $y$의 값이 같을 때 discontinuity가 있다는 것에 주목해야하며 $x$, $y$의 범위는 중요하지 않다. 또, discontinuity가 있는 곳의 함수값의 차이가 1이라는 것에 주목하도록 하자.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic9.png">
+  <br>
+  그림 7. 연산자 $L$이 1계 미분계수인 경우의 그린 함수의 대략적인 형태
+</p>
+
+여기서 초기값 조건을 이용하면
+
+$$G(a,y)=0$$
+
+이므로 $c_1=0$이고 $c_2=1$인 것을 알 수 있다. 따라서,
 
 
 
