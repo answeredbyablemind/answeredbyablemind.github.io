@@ -470,3 +470,5 @@ end
 
 figure;
 surf(X,Y,f)
+xlim([0, pi])
+ylim([0, pi])
