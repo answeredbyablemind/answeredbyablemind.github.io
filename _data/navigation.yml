@@ -61,6 +61,8 @@ docs-ko:
         url:    2020/11/17/four_fundamental_subspaces.html
       - title:  기저의 변환
         url:    2020/12/07/change_of_basis.html
+      - title:  기본 행렬
+        url:    2021/06/15/elementary_square_matrices.html
 
   - title:      선형대수학 응용
     children:
