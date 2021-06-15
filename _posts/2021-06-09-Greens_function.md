@@ -379,9 +379,9 @@ $Ax=b$라는 문제에서 $x=A^{-1}b$로 표현되듯 $Lu=f$라는 함수해석�
 
 아래와 같은 미분방정식을 그린 함수를 이용해서 해를 구해보자.
 
-$$\frac{dy}{dx}=x$$
+$$\frac{du}{dx}=x$$
 
-여기서 초기 조건을 $y(a)=0$이라고 두고, 우리가 관심을 갖는 $x$의 범위는 $x\in[a,\infty)$라고 생각하자.
+여기서 초기 조건을 $u(a)=0$이라고 두고, 우리가 관심을 갖는 $x$의 범위는 $x\in[a,\infty)$라고 생각하자.
 
 ### 예시 문제 1의 풀이
 
@@ -431,9 +431,45 @@ $$=G(y+\epsilon,y)-G(y-\epsilon,y)=\int_{y-\epsilon}^{y+\epsilon}\delta(x-y)dx=1
 
 $$G(a,y)=0$$
 
-이므로 $c_1=0$이고 $c_2=1$인 것을 알 수 있다. 따라서,
+이므로 식 (35)에서 $c_1=0$이고 $c_2=1$인 것을 알 수 있다. 따라서,
 
+$$G(x,y) = \begin{cases}0 & x\in [a,y) \\ 1 & x \in (y,\infty)\end{cases}$$
 
+와 같이 그린 함수를 계산할 수 있다.
+
+이 함수는 unit step function $H(x)$를 $y$만큼 양의 방향으로 평행이동 시킨 것으로도 볼 수 있다.
+
+여기서 $H(x)$는 다음과 같은 형태이다.
+
+$$H(x)=\begin{cases}1, & x\gt 0\\ 0, & x \lt 0\end{cases}$$
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic10.png">
+  <br>
+  그림 8. unit step function의 형태
+</p>
+
+그러므로 미분방정식의 솔루션은
+
+$$u(x)=\int_{a}^{\infty}G(x,y)f(y)dy$$
+
+이며, unit step function $H(x)$을 이용해서 쓰면,
+
+$$\Rightarrow \int_{a}^{\infty}H(x-y)f(y)dy$$
+
+이고 $H(x-y)$는 $y$ 관점에서 보면 unit step function을 좌우로 뒤집어 둔 뒤 $x$만큼 양의 방향으로 이동한 것으로 파악할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic11.png">
+  <br>
+  그림 9. unit step function $H(x-y)$의 형태
+</p>
+
+따라서, 솔루션을 구하면,
+
+$$u(x)=\int_{a}^{x}ydy=\left[\frac{1}{2}y^2\right]_{a}^{x}=\frac{1}{2}x^2-\frac{1}{2}a^2$$
+
+이라는 사실을 알 수 있다.
 
 [^2]: 엄밀하게는 distribution theory를 들먹여야하고, functional의 개념에 대해 들먹여야 한다. 하고 싶은 말은 많지만 필자의 역할은 교과서 집필이 아니라 큰 그림 이해로의 안내라고 생각하기 때문에 디랙 델타 함수에 대한 자세한 내용은 생략하고자 한다. 자세한 내용은 분포 이론에 대한 교과서를 참고해보자.
     

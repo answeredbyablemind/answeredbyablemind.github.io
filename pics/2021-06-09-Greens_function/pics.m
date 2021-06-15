@@ -347,3 +347,41 @@ xlabel('x');
 ylabel('y');
 zlabel('G(x,y)');
 % colormap(jet)
+
+%% unit step function
+
+figure;
+line([-2, 0], [0, 0],'color','b')
+hold on;
+plot(0,0,'o','markerfacecolor','w','markeredgecolor','b');
+line([0, 0],[0, 1],'linestyle','--','color','b')
+plot(0,0.5,'o','markerfacecolor','b','markeredgecolor','none');
+line([0, 2], [1, 1],'color','b')
+plot(0,1,'o','markerfacecolor','w','markeredgecolor','b');
+grid on;
+ylim([-0.2, 1.2])
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$H(x)$$','interpreter','latex');
+title('Unit step function $$H(x)$$','interpreter','latex');
+
+
+%% unit step function H(x-y)
+
+figure;
+line([-1, 3], [1, 1],'color','b')
+hold on;
+line([3, 3], [1, 0],'linestyle','--','color','b')
+line([3, 7], [0, 0],'color','b')
+plot(3, 1,'o','markerfacecolor','w','markeredgecolor','b');
+plot(3, 0.5,'o','markerfacecolor','b','markeredgecolor','none');
+plot(3, 0,'o','markerfacecolor','w','markeredgecolor','b');
+
+set(gca,'xtick',[0, 3])
+grid on;
+set(gca,'xticklabel',{'$$0$$','$$x$$'},'TickLabelInterpreter','latex')
+
+ylim([-0.2, 1.2])
+xlabel('$$y$$','interpreter','latex');
+ylabel('$$H(x-y)$$','interpreter','latex');
+title('Unit step function $$H(x-y)$$','interpreter','latex');
+set(gca,'fontsize',12)
