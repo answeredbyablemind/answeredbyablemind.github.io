@@ -385,3 +385,46 @@ xlabel('$$y$$','interpreter','latex');
 ylabel('$$H(x-y)$$','interpreter','latex');
 title('Unit step function $$H(x-y)$$','interpreter','latex');
 set(gca,'fontsize',12)
+
+%% Green function for 예시 문제 2
+
+[X,Y]=meshgrid(linspace(0,1,50));
+f = [];
+for i = 1:size(X,1)
+    for j = 1:size(Y,1)
+        if X(i,j)<Y(i,j)
+            f(i,j) = -X(i,j);
+        else
+            f(i,j) = -Y(i,j);
+        end
+    end
+end
+
+figure;
+surf(X,Y, f)
+xlabel('x');
+ylabel('y');
+zlabel('G(x,y)');
+view([-81.9, 24.4])
+
+%% Green function 예시 문제 3
+
+[X,Y]=meshgrid(linspace(0,1,50));
+k=1;
+f = [];
+for i =1:size(X,1)
+    for j = 1:size(Y,1)
+        if X(i,j) < Y(i,j)
+            f(i,j) = cos(k*X(i,j))*cos(k*(Y(i,j)-1))./(k*sin(k*1));
+        else
+            f(i,j) = cos(k*(X(i,j)-1))*cos(k*Y(i,j))/(k*sin(k*1));
+        end
+    end
+end
+
+figure;
+surf(X,Y,f)
+xlabel('x');
+ylabel('y');
+zlabel('G(x,y)');
+view(-76.3, 32.4)

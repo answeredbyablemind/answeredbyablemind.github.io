@@ -517,6 +517,112 @@ $$\Rightarrow G(x,y)=\begin{cases} c_1x & x\lt y\\c_4 & x\gt y\end{cases}$$
 
 와 같음을 알 수 있다.
 
+이제 정해지지 못한 $c_1$과 $c_4$를 정하기 위해 아래와 같은 추가 조건들을 생각해보자.
+
+충분히 작은 양의 실수 $\epsilon$에 대해,
+
+$$\int_{y-\epsilon}^{y+\epsilon}LGdx=\int_{y-\epsilon}^{y+\epsilon}\delta(x-y)dx=1$$
+
+$$\Rightarrow \int_{y-\epsilon}^{y+\epsilon}\frac{\partial^2}{\partial x^2}G(x,y)dx=\left[\frac{\partial}{\partial x}G(x,y)\right]_{y-\epsilon}^{y+\epsilon}=1$$
+
+즉, $y=x$ 근처에서의 미분계수는 1만큼 차이가 나게 된다.
+
+또, 
+
+$$G(y+\epsilon,y)-G(y-\epsilon,y)=0$$
+
+이다. 다시 말해 $G(x,y)$는 $y=x$ 근처에서 연속이다.
+
+그 이유는 귀류법을 이용해 설명할 수 있는데, 만약 $G(x,y)$가 $y=x$ 근처에서 불연속이었다면 $G(x,y)$는 $y=x$ 근처에서 unit step function을 통해 모델링 할 수 있는것이 된다.  그런데, unit step function의 1차 미분이 delta function이고 2차 미분은 unit doublet이라고 함수이다. 그런데, 이미 $G(x,y)$의 2계 미분이 디랙 델타 함수라는 것을 토대로 생각해보면 $G(x,y)$는 $y=x$ 근처에서 연속이어야 한다는 것을 알 수 있다.
+
+따라서 위 조건들을 대입해보면,
+
+$$G(y+\epsilon,y)-G(y-\epsilon,y)=c_4 - c_1(y-\epsilon)=c_4-c_1y=0$$
+
+$$G'(y+\epsilon,y)-G'(y-\epsilon,y)=0-c_1=1$$
+
+$$\therefore c_1= -1, c_4=-y$$
+
+따라서 그린 함수는
+
+$$G(x,y)=\begin{cases}-x & x\lt y \\ -y & x \gt y\end{cases}$$
+
+와 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic12.png">
+  <br>
+  그림 10. 예시 문제 2의 그린 함수
+</p>
+
+만약 여기서 $f(x)=x$라고 하면 솔루션 $u(x)$는
+
+$$u(x)=\int_{0}^{l}f(y)G(x,y)dy=\int_{0}^{x}y(-y)dy+\int_{x}^{l}y(-x)dy$$
+
+$$=\int_{0}^{x}-y^2dy-\int_{x}^{l}yxdy$$
+
+$$=-\frac{y^3}{3}\Big|_{0}^{x}-x\frac{y^2}{2}\Big|_{x}^{l}$$
+
+$$=\left(\frac{x^2}{2}-\frac{l^2}{2}\right)x-\frac{x^3}{3}$$
+
+이다.
+
+## 예시 문제 3.
+
+이번에는 2계 미분방정식의 형태가 조금 더 복잡해진 경우를 보자.
+
+$$\frac{d^2}{dx^2}u+k^2u=f(x)$$
+
+여기서 경계 조건은 다음과 같이 생각해보자.
+
+$$u'(0)=0, u'(l)=0$$
+
+### 예시 문제 3 풀이
+
+예시 문제 2번의 풀이와 유사하게 $x\lt y$ 인경우와 $x\gt y$ 인 경우로 나눠 풀이할 수 있다.
+
+$x\lt y$ 인 경우에 대해, 미분 연산자 $L$은
+
+$$L=\frac{d^2}{dx^2}+k^2$$
+
+이므로, 이 경우의 그린 함수는 
+
+$$\frac{\partial^2}{\partial x^2}G(x,y)+kG(x,y)=0$$
+
+이다.
+
+따라서, 그린 함수는
+
+$$G=A\cos kx+B\sin kx$$
+
+인데, 경계 조건 중 첫번째 조건을 대입하면,
+
+$$G=A\cos kx$$
+
+임을 알 수 있다.
+
+$x\gt y$인 경우에 대해서는 마찬가지 미분연산자를 이용하되 경계 조건 중 두번째를 대입하면
+
+$$G=B\cos k(x-l)$$
+
+임을 알 수 있다.
+
+그린 함수의 $x=y$ 근처에서의 연속 조건과 미분 계수의 차이가 1이라는 조건을 만족시킬 수 있는 그린 함수를 찾으면 다음과 같다.
+
+$$G(x,y)=\begin{cases}
+            \cos(kx)\cos(k(y-l))/(k\sin(kl)) & x \lt y \\
+            \cos(k(x-l))\cos(ky)/(k \sin(kl)) & x \gt y
+          \end{cases}$$
+
+만약 $k=1$, $l=1$인 경우라고 하면 그린 함수의 형태는 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic13.png">
+  <br>
+  그림 11. 예시 문제 3의 그린 함수
+</p>
+
+마찬가지 방법으로 $f(x)$가 정해지면 그린 함수와 $f(x)$의 적분을 통해 솔루션 $u(x)$를 구할 수 있게 된다.
 
 
 [^2]: 엄밀하게는 distribution theory를 들먹여야하고, functional의 개념에 대해 들먹여야 한다. 하고 싶은 말은 많지만 필자의 역할은 교과서 집필이 아니라 큰 그림 이해로의 안내라고 생각하기 때문에 디랙 델타 함수에 대한 자세한 내용은 생략하고자 한다. 자세한 내용은 분포 이론에 대한 교과서를 참고해보자.
