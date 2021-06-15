@@ -628,6 +628,14 @@ $$G(x,y)=\begin{cases}
 
 마찬가지 방법으로 $f(x)$가 정해지면 그린 함수와 $f(x)$의 적분을 통해 솔루션 $u(x)$를 구할 수 있게 된다.
 
+# 참고 문헌
+
+* [Advanced Differential Equations: Asymptotics & Perturbations, J. Nathan Kutz, University of Washington](https://arxiv.org/pdf/2012.14591.pdf)
+* [Green's function, Wolfram Alpha](https://mathworld.wolfram.com/GreensFunction.html)
+* [StackEschange: Green function Impulse response confusion](https://math.stackexchange.com/questions/2432092/greens-function-impulse-response-confusion)
+* [Brilliant: Green's Funcions in Physics](https://brilliant.org/wiki/greens-functions-in-physics/)
+* [Green's functions for ODEs, David Skinner, University of Cambridge](http://www.damtp.cam.ac.uk/user/dbs26/1Bmethods.html)
+* [Wikipedia: Green function](https://en.wikipedia.org/wiki/Green%27s_function)
 
 [^2]: 엄밀하게는 distribution theory를 들먹여야하고, functional의 개념에 대해 들먹여야 한다. 하고 싶은 말은 많지만 필자의 역할은 교과서 집필이 아니라 큰 그림 이해로의 안내라고 생각하기 때문에 디랙 델타 함수에 대한 자세한 내용은 생략하고자 한다. 자세한 내용은 분포 이론에 대한 교과서를 참고해보자.
     
