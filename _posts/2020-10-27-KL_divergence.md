@@ -110,11 +110,11 @@ $$CE = \sum_{x\in\chi}\left(-P(x)\log(Q(x))\right)$$
 
 Cross Entropy를 계산하면,
 
-$$\Rightarrow -\sum_i P(x_i)\log(Q(x_i)) = -1 * (1/6 * \log(1/2) + 5 * 1/6 * \log(1/6)) = 2.0343$$
+$$\Rightarrow -\sum_i P(x_i)\log(Q(x_i)) = -\left(\frac{1}{6} \log_2(1/2) + \frac{5}{6} \log_2(1/10)\right) = 2.9349 \text{ bit}$$
 
 인데 반해, 정상적인 주사위였다면 정보 엔트로피 값은
 
-$$\Rightarrow -sum_i P(x_i)\log(P(x_i)) = -1 * (6 * 1/6 * \log(1/6)) = 1.7918$$
+$$\Rightarrow -\sum_i P(x_i)\log(P(x_i)) = -\left(\frac{6}{6}\log_2(1/6)\right) = 2.5850 \text{ bit}$$
 
 이다.
 
