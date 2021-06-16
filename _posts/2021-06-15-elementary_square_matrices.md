@@ -120,11 +120,13 @@ $$I=\begin{bmatrix}1&0&0\\0&1&0\\ 0&0&1\end{bmatrix} \rightarrow E=\begin{bmatri
 
 기호로 표시하면 $r_2 \rightarrow sr_2$와 같으며, 임의의 $3\times 4$ 행렬 $A$에 행렬에 연산을 수행해주면 아래와 같은 연산이 수행되는 것이다.
 
-$$EA = \begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}
+$$EA = \begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix}
+\begin{bmatrix}
   a_{11} & a_{12} & a_{13} & a_{14}\\
   \color{red}{a_{21}}  & \color{red}{a_{22}}  & \color{red}{a_{23}}  & \color{red}{a_{24}} \\
   a_{31} & a_{32} & a_{33} & a_{34}
-\end{bmatrix}=\begin{bmatrix}
+\end{bmatrix}
+=\begin{bmatrix}
   a_{11} & a_{12} & a_{13} & a_{14}\\
   \color{red}{sa_{21}}  & \color{red}{sa_{22}}  & \color{red}{sa_{23}}  & \color{red}{sa_{24}} \\
   a_{31} & a_{32} & a_{33} & a_{34}
@@ -138,13 +140,65 @@ $$E^{-1}=\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{1/s} & 0 \\ 0 & 0 & 1\end{b
 
 다시 말해,
 
-$$EE^{-1}=E^{-1}E=\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{1/s} & 0 \\ 0 & 0 & 1\end{bmatrix}=\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{1/s} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\ 0&0&1\end{bmatrix}$$
+$$EE^{-1}=E^{-1}E=I$$
+
+$$\Rightarrow \begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{1/s} & 0 \\ 0 & 0 & 1\end{bmatrix}=\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{1/s} & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\ 0&0&1\end{bmatrix}$$
 
 이라는 것이다.
 
 ## Row switching
 
+row switching은 단위 행렬의 행을 바꿔준 것으로 얻을 수 있다.
+
+만약, 3행과 2행을 바꿔주는 연산을 수행하고자 한다면 다음과 같은 행렬을 생각해볼 수 있는 것이다.
+
+$$I=\begin{bmatrix}
+  1 & 0 & 0 \\
+  \color{red}{0} & \color{red}{1} & \color{red}{0}
+  \\\color{blue}{0} & \color{blue}{0} & \color{blue}{1}\end{bmatrix}\rightarrow P_{32}=
+  \begin{bmatrix}
+  1 & 0 & 0 \\
+  \color{blue}{0} & \color{blue}{0} & \color{blue}{1}\\
+  \color{red}{0} & \color{red}{1} & \color{red}{0}\end{bmatrix}$$
+
+기본 행렬 중 row switching을 해주는 행렬은 permutation matrix라고도 하고, symbol은 $P$를 쓴다. 거기에, 바꿔주는 행 두개의 번호를 $P_{ij}$와 같이 관례적으로 적어주어서 어떤 두 행의 순서를 바꾸고자 하는지를 명시해준다.
+
+가령 임의의 $3\times 4$ 행렬에 $P_{32}$ 를 곱해주면 다음과 같은 결과로 이어지는 것이다.
+
+$$P_{32}A=\begin{bmatrix}
+  1 & 0 & 0 \\
+  \color{blue}{0} & \color{blue}{0} & \color{blue}{1}\\
+  \color{red}{0} & \color{red}{1} & \color{red}{0}\end{bmatrix}
+  \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} & a_{14}\\
+  \color{red}{a_{21}}  & \color{red}{a_{22}}  & \color{red}{a_{23}}  & \color{red}{a_{24}} \\
+  \color{blue}{a_{31}} & \color{blue}{a_{32}} & \color{blue}{a_{33}} & \color{blue}{a_{34}}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} & a_{14}\\
+  \color{blue}{a_{31}} & \color{blue}{a_{32}} & \color{blue}{a_{33}} & \color{blue}{a_{34}}\\
+  \color{red}{a_{21}}  & \color{red}{a_{22}}  & \color{red}{a_{23}}  & \color{red}{a_{24}}  
+  \end{bmatrix}
+$$
+
+또 추가로 생각해볼 수 있는 것은 행의 순서를 바꿔주는 기본 행렬(혹은 permuatation 행렬)의 역행렬은 자기 자신이라는 점이다. 이것은 꽤 자명해보이기도 하는데, 1행과 3행을 바꿔주는 연산을 다시 돌려 놓으려면 다시 1행과 3행을 바꿔주기만 하면 되는 것이다.
+
+즉, 아래와 같은 행렬에 대해
+
+$$P_{31}=\begin{bmatrix}0 & 0& \color{red}{1} \\ 0 & 1 & 0 \\ \color{blue}{1} & 0 & 0\end{bmatrix}$$
+
+역행렬은
+
+$$P^{-1}_{31}=\begin{bmatrix}0 & 0& \color{red}{1} \\ 0 & 1 & 0 \\ \color{blue}{1} & 0 & 0\end{bmatrix}$$
+
+이다.
+
 ## Row-addition matrices
+
+마지막으로 생각해볼 기본 행 연산은 서로 다른 행끼리 더해주는 연산이다. 그리고, 더해준 결과를 어떤 행에 대체해두는 과정까지 수행해야 한다.
+
+이 행위를 수식으로 표현하면 아래와 같은 것이다. 가령, 2행을 2행 더하기 1행의 $s$배로 바꿔준다는 것은 아래와 같은 결과를 얻는다는 것이다. 
 
 $$\begin{bmatrix}
   \color{blue}{a_{11}} & \color{blue}{a_{12}} & \color{blue}{a_{13}} & \color{blue}{a_{14}}\\
@@ -160,16 +214,6 @@ $$\begin{bmatrix}
 
 위와 같은 연산을 수행해주는 행렬 $E$를 생각해보자. 위 연산 전, 후 결과에 대해 연산이 이루어지기 전 행렬을 $A$라고 하면 다음과 같이 행렬 $E$가 행렬 $A$에 작동한다고 생각할 수 있다.
 
-$$EA=E\begin{bmatrix}
-  \color{blue}{a_{11}} & \color{blue}{a_{12}} & \color{blue}{a_{13}} & \color{blue}{a_{14}}\\
-  \color{red}{a_{21}}  & \color{red}{a_{22}}  & \color{red}{a_{23}}  & \color{red}{a_{24}} \\
-  a_{31} & a_{32} & a_{33} & a_{34}
-\end{bmatrix}=\begin{bmatrix}
-  a_{11} & a_{12} & a_{13} & a_{14}\\
-  \color{red}{a_{21}} \color{black}{+} \color{blue}{sa_{11}} & \color{red}{a_{22}} \color{black}{+} \color{blue}{sa_{12}}  & \color{red}{a_{23}} \color{black}{+} \color{blue}{sa_{13}}  & \color{red}{a_{24}} \color{black}{+} \color{blue}{sa_{14}}\\
-  a_{31} & a_{32} & a_{33} & a_{34}
-\end{bmatrix} $$
-
 $$I=\begin{bmatrix}1 & 0 & 0 \\ \color{red}{0} & \color{red}{1} & \color{red}{0} \\ 0 & 0 & 1\end{bmatrix}\rightarrow E = \begin{bmatrix}1 & 0 & 0 \\ \color{red}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
 
 
@@ -182,6 +226,10 @@ $$EA=\begin{bmatrix}1 & 0 & 0 \\ \color{blue}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatri
   \color{red}{a_{21}} \color{black}{+} \color{blue}{sa_{11}} & \color{red}{a_{22}} \color{black}{+} \color{blue}{sa_{12}}  & \color{red}{a_{23}} \color{black}{+} \color{blue}{sa_{13}}  & \color{red}{a_{24}} \color{black}{+} \color{blue}{sa_{14}}\\
   a_{31} & a_{32} & a_{33} & a_{34}
 \end{bmatrix} $$
+
+이런 행렬 $E$가 어떻게 row-addition 혹은 row-replacement 연산을 수행해주는지 잘 생각해보자.
+
+연산을 취해주는 행렬 $E$의 각 행은 출력 결과 행렬의 행에 각각 영향을 미치게 된다.
 
 가령 아래와 같은 행렬 $A$에 대해,
 
