@@ -100,7 +100,7 @@ $$[A|b]=\left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]$$
 
 * Row multiplication
 * Row switching
-* Row addition (혹은 row replacement)
+* Row addition
 
 기본 행렬의 역할은 뒤에 곱해질 행렬의 행에 연산을 취해주는 것이고, 가령 뒤에 곱해질 행렬의 크기가 $m\times n$이라면 기본 행렬의 크기는 $m\times m$이 되어야지만 뒤에 곱해질 행렬에 연산이 취해진 뒤에도 행렬의 크기는 그대로 유지될 수 있을 것이다.
 
@@ -227,14 +227,14 @@ $$EA=\begin{bmatrix}1 & 0 & 0 \\ \color{blue}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatri
   a_{31} & a_{32} & a_{33} & a_{34}
 \end{bmatrix} $$
 
-이런 행렬 $E$가 어떻게 row-addition 혹은 row-replacement 연산을 수행해주는지 잘 생각해보자.
+이런 행렬 $E$가 어떻게 row-addition 연산을 수행해주는지 잘 생각해보자.
 
 우선 생각해볼 수 있는 점은 행렬 $E$의 각 행을 이용해 수행하는 연산은 출력 행렬의 각 행에 영향이 간다는 것이다.
 
 그림으로 생각해보면,
 
 <p align = "center">
-  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic1.png">
+  <img width = "500" src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic1.png">
   <br>
   그림 1. 왼쪽에 곱해지는 행렬의 각 행은 출력으로 나오는 행렬의 각 행에 영향을 미치는 것이다.
 </p>
@@ -242,21 +242,21 @@ $$EA=\begin{bmatrix}1 & 0 & 0 \\ \color{blue}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatri
 그리고 왼쪽에 곱해지는 행렬 $E$의 각 행들의 각 원소는 피연산 당하는 행렬의 각 행들에 대해 얼마만큼 weight를 줄 것인가에 관한 것을 의미하기도 한다.
 
 <p align = "center">
-  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic2.png">
+  <img width = "500" src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic2.png">
   <br>
   그림 2. 연산을 수행하는 행렬의 각 행에 들어있는 원소들이 말하는 것
 </p>
 
-따라서, 출력 행렬에 row replacement 연산이 수행된다는 것은 아래와 같은 일이 일어나는 것이다.
+따라서, 출력 행렬에 row addition 연산이 수행된다는 것은 아래와 같은 일이 일어나는 것이다.
 
 <p align = "center">
-  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic3.png">
+  <img width = "500" src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic3.png">
   <br>
   그림 3. 연산을 수행하는 행렬의 각 행에 들어있는 원소들이 말하는 것
 </p>
 
 
-이렇듯 row addition(혹은 row replacement) 연산을 이용하면 아래와 같이 특정 원소를 0으로 소거해줄 수 있다. 가령 아래와 같은 행렬 $A$에 대해,
+이렇듯 row addition 연산을 이용하면 아래와 같이 특정 원소를 0으로 소거해줄 수 있다. 가령 아래와 같은 행렬 $A$에 대해,
 
 $$A=\begin{bmatrix}\color{blue}{1} & 2 & 3 & 4 \\ \color{red}{1} & -1 & -2 & 2 \\ 0 & 3 & 2 &  1\end{bmatrix}$$
 
