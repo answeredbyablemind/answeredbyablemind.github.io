@@ -55,21 +55,21 @@ $$U=\begin{bmatrix}
 
 그리고 이런 기본 행 연산들을 통해서 해를 얻어주는 과정을 우리가 다시 잘 생각해보면 가장 아랫쪽에 있던 방정식에서는 가장 마지막 미지수에 대한 식만을 남기고, 그 위에 있는 방정식은 마지막 두 개의 미지수만을 남기는 식으로 미지수를 소거해 나가면 가장 아래에 있는 식으로부터 마지막 미지수에 대한 값을 얻고, 그 위에 있는 식에 대입하는 과정을 통해 그 다음 미지수에 대한 값을 얻고... 등의 순서로 미지수의 값들을 차례대로 얻어낼 수 있게 된다는 사실을 알 수 있다.
 
-$$\begin{cases}x+y+z = 6 \\ 2x+3y-z=5 \\ 2x+3y+3z=17\end{cases}$$
+$$\begin{cases}x+y+z = 6 \\ 2x+3y-z=5 \\ 2x+3y+3z=17\end{cases} % 식 (3)$$
 
 아래와 같은 연산을 수행하자.
 
-$$r_2 \rightarrow r_2-2r_1$$
+$$r_2 \rightarrow r_2-2r_1 % 식 (4)$$
 
-$$r_3 \rightarrow r_3 - 2r_1$$
+$$r_3 \rightarrow r_3 - 2r_1 % 식 (5)$$
 
-$$\begin{cases}x+y+z = 6 \\ 0x+y-3z=-7 \\ 0x+y+z=5\end{cases}$$
+$$\begin{cases}x+y+z = 6 \\ 0x+y-3z=-7 \\ 0x+y+z=5\end{cases} % 식 (6)$$
 
 아래와 같은 연산을 수행하자.
 
-$$r_3 \rightarrow r_3- r_2$$
+$$r_3 \rightarrow r_3- r_2 % 식 (7)$$
 
-$$\begin{cases}x+y+z = 6 \\ 0x+y-3z=-7 \\ 0x+0y+4z=12\end{cases}$$
+$$\begin{cases}x+y+z = 6 \\ 0x+y-3z=-7 \\ 0x+0y+4z=12\end{cases} % 식 (8)$$
 
 그러면 아래에서부터 $4z=12$이므로 $z=3$임을 알 수 있고,
 
@@ -77,10 +77,26 @@ $$\begin{cases}x+y+z = 6 \\ 0x+y-3z=-7 \\ 0x+0y+4z=12\end{cases}$$
 
 $y=2, z=3$을 첫번째 식에 대입하면 $x=1$임을 알 수 있게 된다.
 
-이런 과정을 back substitution이라고 부른다.
+가장 마지막 미지수부터 처음 미지수로 계산해 나간다고 해서 이런 과정을 back substitution이라고 부른다.
+
+# Back substituion을 행렬로 표현해보자.
+
+위에서 계산했던 해를 구하는 과정을 행렬로 표현해보면 어떨까?
+
+즉, 식 (3) 방정식을 표현한 행렬
+
+$$\left[\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 2 & 3 & -1 & 5 \\ 2 & 3 & 3 & 17\end{array}\right]% 식 (9)$$
+
+에 식 (4), (5), (7)과 같은 기본 행 연산들을 수행해줌으로써 식 (8)의 방정식을 표현한 행렬
+
+$$\left[\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & 1 & -3 & -7 \\ 0 & 0 & 4 & 12\end{array}\right]$$
+
+을 얻게 된 과정을 기본 행렬로 기본 행 연산들을 표현해 써보자는 것이다.
+
+기본 행 연산들을 [기본 행렬](https://angeloyeo.github.io/2021/06/15/elementary_square_matrices.html)을 이용해 표현하면 다음과 같이 요약해서 쓸 수 있다.
 
 $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -1 & 1\end{bmatrix}
 \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ -2 & 0 & 1\end{bmatrix}
 \begin{bmatrix}1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}
-\begin{bmatrix}1 & 1 & 1 \\ 2 & 3 & -1 \\ 2 & 3 & 3\end{bmatrix}=
-\begin{bmatrix}1 & 1 & 1 \\ 0 & 1 & -3 \\ 0 & 0 & 4\end{bmatrix}$$
+\left[\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 2 & 3 & -1 & 5 \\ 2 & 3 & 3 & 17\end{array}\right]=
+\left[\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & 1 & -3 & -7 \\ 0 & 0 & 4 & 12\end{array}\right]$$
