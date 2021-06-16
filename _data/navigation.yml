@@ -104,6 +104,8 @@ docs-ko:
         url:    2020/07/14/ICA.html
       - title:  크래머 공식
         url:    2021/06/08/Cramers_rule.html
+      - title:  숄레스키 분해
+        url:    2021/06/17/Cholesky_decomposition.html
 
   - title:      기초 미적분학
     children:
