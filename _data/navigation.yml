@@ -63,6 +63,8 @@ docs-ko:
         url:    2020/12/07/change_of_basis.html
       - title:  기본 행렬
         url:    2021/06/15/elementary_square_matrices.html
+      - title:  LU 분해
+        url:    2021/06/16/LU_decomposition.html
 
   - title:      선형대수학 응용
     children:
