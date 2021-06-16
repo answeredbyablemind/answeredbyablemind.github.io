@@ -70,15 +70,15 @@ $$A=\begin{bmatrix}2 & 3 \\ 4 & 7\end{bmatrix}$$
 
 $$b = \begin{bmatrix}1\\3\end{bmatrix}$$
 
-라고 하여 두 행렬을 양 옆으로 합친 행렬 $(A\|b)$는
+라고 하여 두 행렬을 양 옆으로 합친 행렬 $[A\|b]$는
 
-$$(A|b)=\left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]$$
+$$[A|b]=\left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]$$
 
 와 같이 써줄 수도 있는 것이다. 이런 형태의 행렬을 첨가 행렬(augmented matrix)라고 한다.
 
 첨가 행렬에서 긴 세로 막대기는 시각적 도움을 위한 보조선일 뿐 실제로는 일반 $2\times 3$ 행렬처럼 다뤄줘도 무방하다.
 
-결론적으로 우리는 이 첨가 행렬의 각 '행(row)'들을 하나 하나의 방정식인 것 처럼 다뤄줌으로써 연립 방정식을 풀 수 있게 된다.
+결론적으로 우리는 이 첨가 행렬의 각 '행(row)'들을 하나 하나의 방정식인 것 처럼 다7뤄줌으로써 연립 방정식을 풀 수 있게 된다.
 
 그렇다면, 행렬로 연립방정식을 표현해줄 수 있다는 것 까지는 납득할 수 있지만, 굳이 더 복잡해 보이기만 하는 행렬로 연립 방정식을 표현해줘야 하는 이유가 있을까?
 
@@ -100,7 +100,7 @@ $$(A|b)=\left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]$$
 
 * Row multiplication
 * Row switching
-* Row addition
+* Row addition (혹은 row replacement)
 
 기본 행렬의 역할은 뒤에 곱해질 행렬의 행에 연산을 취해주는 것이고, 가령 뒤에 곱해질 행렬의 크기가 $m\times n$이라면 기본 행렬의 크기는 $m\times m$이 되어야지만 뒤에 곱해질 행렬에 연산이 취해진 뒤에도 행렬의 크기는 그대로 유지될 수 있을 것이다.
 
@@ -229,9 +229,34 @@ $$EA=\begin{bmatrix}1 & 0 & 0 \\ \color{blue}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatri
 
 이런 행렬 $E$가 어떻게 row-addition 혹은 row-replacement 연산을 수행해주는지 잘 생각해보자.
 
-연산을 취해주는 행렬 $E$의 각 행은 출력 결과 행렬의 행에 각각 영향을 미치게 된다.
+우선 생각해볼 수 있는 점은 행렬 $E$의 각 행을 이용해 수행하는 연산은 출력 행렬의 각 행에 영향이 간다는 것이다.
 
-가령 아래와 같은 행렬 $A$에 대해,
+그림으로 생각해보면,
+
+<p align = "center">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic1.png">
+  <br>
+  그림 1. 왼쪽에 곱해지는 행렬의 각 행은 출력으로 나오는 행렬의 각 행에 영향을 미치는 것이다.
+</p>
+
+그리고 왼쪽에 곱해지는 행렬 $E$의 각 행들의 각 원소는 피연산 당하는 행렬의 각 행들에 대해 얼마만큼 weight를 줄 것인가에 관한 것을 의미하기도 한다.
+
+<p align = "center">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic2.png">
+  <br>
+  그림 2. 연산을 수행하는 행렬의 각 행에 들어있는 원소들이 말하는 것
+</p>
+
+따라서, 출력 행렬에 row replacement 연산이 수행된다는 것은 아래와 같은 일이 일어나는 것이다.
+
+<p align = "center">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-15-elementary_square_matrix/pic3.png">
+  <br>
+  그림 3. 연산을 수행하는 행렬의 각 행에 들어있는 원소들이 말하는 것
+</p>
+
+
+이렇듯 row addition(혹은 row replacement) 연산을 이용하면 아래와 같이 특정 원소를 0으로 소거해줄 수 있다. 가령 아래와 같은 행렬 $A$에 대해,
 
 $$A=\begin{bmatrix}\color{blue}{1} & 2 & 3 & 4 \\ \color{red}{1} & -1 & -2 & 2 \\ 0 & 3 & 2 &  1\end{bmatrix}$$
 
@@ -239,3 +264,83 @@ $$A=\begin{bmatrix}\color{blue}{1} & 2 & 3 & 4 \\ \color{red}{1} & -1 & -2 & 2 \
 
 $$EA = \begin{bmatrix}1 & 0& 0\\
  \color{blue}{-1} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}\color{blue}{1} & 2 & 3 & 4 \\ \color{red}{1} & -1 & -2 & 2 \\ 0 & 3 & 2 &  1\end{bmatrix}= \begin{bmatrix}\color{blue}{1} & 2 & 3 & 4 \\ \color{red}{0} & -3 & -5 & -2 \\ 0 & 3 & 2 &  1\end{bmatrix}$$
+
+또 추가로 생각해볼 수 있는 것은 서로 다른 행끼리 더해주는 연산에 대한 역연산은 $-s$ 배해줘서 다시 더해주는 것이다. 
+
+가령, 아래와 같은 행렬에 대해
+
+$$E=\begin{bmatrix}1 & 0 & 0 \\ \color{red}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+
+역행렬은
+
+$$E^{-1}=\begin{bmatrix}1 & 0 & 0 \\ \color{red}{-s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+
+이다.
+
+즉,
+
+$$E^{-1}E=I$$
+
+$$=\begin{bmatrix}1 & 0 & 0 \\ \color{red}{-s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}1 & 0 & 0 \\ \color{red}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}$$
+
+이라는 점을 생각해볼 수 있다는 것이다.
+
+# 기본행렬을 이용한 연립 방정식의 풀이
+
+우리는 맨 처음에 보았던 연립방정식을 기본 행렬을 이용해 풀어보고 MATLAB으로 직접 implement하여 결과를 확인해보도록 하자.
+
+$$\begin{cases}2x+3y=1 \\ 4x + 7y=3\end{cases}$$
+
+$$[A|b]=\left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]$$
+
+두 번째 식의 $x$에 관한 항을 제거해 주기 위해 다음과 같은 연산을 수행하자.
+
+$$r_2\rightarrow r_2 - 2r_1$$
+
+그러기 위해 row addition 연산을 수행해보자. 그러기 위해 아래와 같은 기본행렬을 위의 첨가 행렬의 왼편에 곱해보자.
+
+$$E_1=\begin{bmatrix}1&0\\-2&1\end{bmatrix}$$
+
+$$\Rightarrow E_1[A|b]=\begin{bmatrix}1&0\\-2&1\end{bmatrix}\left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]$$
+
+$$=\left[\begin{array}{cc|c}2 & 3 & 1 \\ 0 & 1 & 1\end{array}\right]$$
+
+이번엔 첫 번째 행의 두 번째 원소 $3$을 없애주기 위해 아래와 같은 연산을 수행해보자.
+
+$$r_1\rightarrow r_1 - 3r_2$$
+
+그러기 위해 아래와 같은 기본 행렬을 곱해보자.
+
+$$E_2=\begin{bmatrix}1&-3\\0&1\end{bmatrix}$$
+
+$$\Rightarrow \begin{bmatrix}1&-3\\0&1\end{bmatrix}\left[\begin{array}{cc|c}2 & 3 & 1 \\ 0 & 1 & 1\end{array}\right]=\left[\begin{array}{cc|c}2 & 0 & -2 \\ 0 & 1 & 1\end{array}\right]$$
+
+마지막으로 첫 행을 1/2배 해주자. 그러기 위해 아래와 같은 기본행렬을 곱해보자.
+
+$$E_3 = \begin{bmatrix}1/2&0\\0&1\end{bmatrix}$$
+
+$$\Rightarrow \begin{bmatrix}1/2&0\\0&1\end{bmatrix}
+  \left[\begin{array}{cc|c}2 & 0 & -2 \\ 0 & 1 & 1\end{array}\right]
+  =\left[\begin{array}{cc|c}1 & 0 & -1 \\ 0 & 1 & 1\end{array}\right]$$
+
+따라서, $x=-1$, $y=1$ 임을 마지막 결과 첨가행렬을 통해 확인할 수 있는 것이다.
+
+그리고 이 과정을 잘 생각해보면 아래와 같이 기본 행렬들 $E_1$, $E_2$, $E_3$을 차례대로 써서 결과를 얻을 수 있다는 것도 알 수 있다.
+
+$$E_3E_2E_1[A|b]
+=\begin{bmatrix}1/2&0\\0&1\end{bmatrix}
+ \begin{bmatrix}1&-3\\0&1\end{bmatrix}
+ \begin{bmatrix}1&0\\-2&1\end{bmatrix}
+ \left[\begin{array}{cc|c}2 & 3 & 1 \\ 4 & 7 & 3\end{array}\right]
+=\left[\begin{array}{cc|c}1 & 0 & -1 \\ 0 & 1 & 1\end{array}\right]$$
+
+그리고 컴퓨터로는 아래와 같이 간단한 코딩으로 연산들과 방정식을 표현하고 해를 얻을 수 있게 된다.
+
+```{matlab}
+E3 = [1/2, 0; 0, 1];
+E2 = [1, -3; 0, 1];
+E1 = [1, 0; -2, 1];
+A_aug = [2, 3, 1; 4, 7, 3];
+
+E3*E2*E1*A_aug
+```
