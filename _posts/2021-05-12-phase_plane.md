@@ -348,7 +348,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/rotate_and_bigger.mp4">
   </video>
   <br>
-  그림 11. 복소수 지수를 갖는 자연상수 지수 함수의 시간에 따른 위치 변화
+  그림 11. 복소수 지수를 갖는 자연상수 지수 함수 $ re^{i\theta t}$의 시간에 따른 위치 변화
 </p>
 
 따라서 복소 고윳값을 갖는 경우에는 실수부가 0보다 크면 반지름이 계속해서 커지는 솔루션 커브를 갖게 된다.
