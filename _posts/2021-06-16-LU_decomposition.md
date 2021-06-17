@@ -100,3 +100,11 @@ $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -1 & 1\end{bmatrix}
 \begin{bmatrix}1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}
 \left[\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 2 & 3 & -1 & 5 \\ 2 & 3 & 3 & 17\end{array}\right]=
 \left[\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & 1 & -3 & -7 \\ 0 & 0 & 4 & 12\end{array}\right]$$
+
+원래의 $[A\|b]$ 행렬 왼쪽에 붙은 기본 행렬들의 의미를 생각해본다면 다음과 같은 기본 행 연산들이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic1.png">
+  <br>
+  그림 1. 기본 행렬 연산을 통해서 얻게 된 최종 결과물로 back substitution을 수행할 수 있게 된다.
+</p>
