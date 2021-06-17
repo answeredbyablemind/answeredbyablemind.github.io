@@ -187,6 +187,32 @@ $$\lambda_1 = -1,\quad \lambda_2 = 1$$
 
 그래서 고유벡터는 행렬 $A$를 통해 변하게 된 위상 평면 상 변화의 **새로운 축**으로 작동하게 된다.
 
+조금 더 시각적으로 설명해보면, 행렬은 선형 변환이다 라는 관점에서 접근해보면 좋다. 선형 변환이라는 것은 다음과 같이 원래의 그림 1에서 보여주는 단위 행렬로 설명되는 기본적인 연립미분방정식의 위상 평면을 우리에게 주어진 행렬로 표현하는 위상평면으로 변환 시켜주는 역할을 하는 것이다.
+
+우리에게 주어졌던 행렬 $A$
+
+$$A=\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$$
+
+에 대해서 아래와 같은 선형 변환으로 행렬 $A$ 의 역할을 생각해볼 수 있는 것이다.
+
+<p align = "center">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_as_linear_transformation.mp4">
+  </video>
+  <br>
+  그림 6. 위상 평면을 생각할 때 선형변환으로써의 행렬의 기능
+</p>
+
+그런데, 고유벡터 위에 있던 화살표들은 크기만 바뀌고 방향이 바뀌지 않는다. (반대방향으로는 갈 수 있다.) 고유벡터 위에 있는 화살표들만 색깔을 다르게 해서 표시해보면 다음과 같다.
+
+<p align = "center">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_as_linear_transformation_with_eig.mp4">
+  </video>
+  <br>
+  그림 7. 선형 변환 시 고유벡터 위에 있는 화살표들의 방향은 바뀌지 않는다. (반대방향으로는 갈 수 있음)
+</p>
+
 그렇다면 고윳값의 의미는 무엇일까? 고윳값의 부호는 해당 고유벡터 축에서 원점으로 가까워질지 멀어질지를 결정해주는 요소였다고 하면, 고윳값의 크기는 얼마나 빨리 원점으로 가까워질지 멀어질지를 결정해주는 요소다.
 
 ## 2원 1계 미분방정식의 해
