@@ -26,8 +26,11 @@ tags: 미분방정식
 * [밑이 음수인 지수 함수](https://angeloyeo.github.io/2019/09/12/negative_base_exponential.html)
 * [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 * [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
+* [1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)
 * [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 * [복소 고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2020/11/02/complex_eigen.html)
+
+내용이 많아 보이지만 마지막 복소 고윳값과 고유벡터는 보지 않더라도 나머지 내용들은 꼭 보고 오길 추천합니다.
 
 # 위상 평면 소개
 
@@ -348,6 +351,94 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
   그림 11. 복소수 지수를 갖는 자연상수 지수 함수의 시간에 따른 위치 변화
 </p>
 
+따라서 복소 고윳값을 갖는 경우에는 실수부가 0보다 크면 반지름이 계속해서 커지는 솔루션 커브를 갖게 된다.
 
+<p align = "center">
+  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic3.png">
+  <br>
+  그림 11. 실수부가 0보다 큰 복소 고윳값을 갖는 경우의 솔루션 커브
+</p>
 
+반대로 복소 고윳값을 갖는 경우에는 실수부가 0보다 작으면 반지름이 계속해서 작아지는 솔루션 커브를 갖게 된다.
 
+<p align = "center">
+  <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic2.png">
+  <br>
+  그림 12. 실수부가 0보다 작은 복소 고윳값을 갖는 경우의 솔루션 커브
+</p>
+
+## 중복 고윳값을 갖는 경우
+
+중복 고윳값을 갖는 경우를 생각해보려면 약간의 고민이 필요하다.
+
+우선 중복 고윳값을 갖는다는 말은 이 고윳값은 항상 실수(real number)라는 것을 의미한다.
+
+왜냐면 특성 방정식의 해는 2차 방정식의 근의 공식으로 부터 정해지는 것일텐데 판별식이 0이라는 것은 결국 중근은 항상 실수임을 말해주고 있는 것이기 때문이다.
+
+중복 고윳값을 갖는 경우에는 고유벡터가 일차 독립인지 아닌지 여부에 따라 솔루션이 달라질 수 있다.
+
+### 1. 중복 고윳값을 갖더라도 고유벡터는 독립적인 경우
+
+아래와 같은 케이스를 생각해보자.
+
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+
+이 경우는 고윳값이 모두 $\lambda$로 중복되지만 고유벡터는
+
+$$v_1 =\begin{bmatrix}1\\0\end{bmatrix},v_2 =\begin{bmatrix}0\\1\end{bmatrix}$$
+
+로 각각이 $x$ 축과 $y$축에 해당한다. 그러므로 솔루션은 다음과 같이 구해질 수 있다.
+
+$$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=c_1\begin{bmatrix}1 \\0\end{bmatrix}e^{\lambda t}+c_2\begin{bmatrix}0\\1\end{bmatrix}e^{\lambda t}$$
+
+$$=\begin{bmatrix}c_1\\c_2\end{bmatrix}e^{\lambda t}$$
+
+### 2. 중복 고윳값을 갖고 고유벡터도 중복인 경우
+
+아래와 같은 케이스를 생각해보자.
+
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 1 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+
+이 경우는 고윳값은 $\lambda$로 두 개가 중복인데, 고유벡터는
+
+$$v=\begin{bmatrix}1\\0\end{bmatrix}$$
+
+으로 하나만 나오는 경우이다.
+
+이런 경우는 우선 첫 번째 해를 먼저 구해보면,
+
+$$x_1(t)=c_1 e^{\lambda t}\begin{bmatrix}1 \\0\end{bmatrix}$$
+
+임을 알 수 있다. 일단 첫 번째 해가 주어졌기 때문에 두 번째 해를 원래의 식에 대입해 구해보도록 하자.
+
+원래의 식을 다시 쓰면 다음과 같은데,
+
+$$\begin{cases}x'=\lambda x + y \\ y'=\lambda y\end{cases}$$
+
+만약 여기서 $y=0$이 아니라는 조건만 붙는다면 구했던 첫번째 솔루션이 $y(t)$에 해당하는 솔루션임을 알 수 있다. 따라서,
+
+$$y(t)=c_2 e^{\lambda t}$$
+
+라고 적어주면 $y=c_2e^{\lambda t}$를 대입해 $x'$은 다음과 같이 쓸 수 있음을 알 수 있다.
+
+$$x' = \lambda x + c_2 e^{\lambda t}$$
+
+이 식은 잘 생각해보면 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)이므로 $x(t)$는
+
+$$x(t)=c_1e^{\lambda t}+c_2te^{\lambda t}$$
+
+임을 알 수 있다.
+
+따라서, 우리가 구하고자 했던 시스템의 솔루션은 다음과 같은 것으로 판단할 수 있다.
+
+$$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=c_1\begin{bmatrix}1 \\0\end{bmatrix}e^{\lambda t}+c_2\begin{bmatrix}t\\1\end{bmatrix}e^{\lambda t}$$
+
+실제로 아래와 같은 연립미분방정식에 대한 phase plane을 그려보자.
+
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}-1 & 1 \\ 0 & -1 \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic8.png">
+  <br>
+  그림 13. 중복 고윳값 고유벡터를 갖는 연립 미분방정식의 phase plane
+</p>
