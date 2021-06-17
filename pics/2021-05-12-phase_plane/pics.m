@@ -264,3 +264,83 @@ for i_matrix = 1:5
     xlim([-3, 3])
     ylim([-3, 3])
 end
+
+%% 선형 변환 애니메이션 다시 만들기 + eigenvector 위의 arrow 들은 변하지 않음을 명확히 보여줄 것
+
+A_final = [0, 1;1, 0];
+n_step = 100;
+
+figure('color','w');
+
+h_specify_eigenvector = true;
+h_record = true;
+
+if h_specify_eigenvector
+    filename = 'phase_plane_as_linear_transformation_with_eig';
+else
+    filename = 'phase_plane_as_linear_transformation';
+end
+
+if h_record
+    newVid = VideoWriter(filename,'MPEG-4');
+    
+    newVid.FrameRate = 20;
+    newVid.Quality = 100;
+    open(newVid);
+end
+
+for i_step = 1:n_step
+    A_step = (A_final - eye(2)) / n_step;
+    
+    A = eye(2) + A_step * i_step;
+    func_dxdt = @(x,y) A(1,1) * x + A(1,2) * y;
+    func_dydt = @(x,y) A(2,1) * x + A(2,2) * y;
+    xval = -3:0.3:3;
+    yval = -3:0.3:3;
+    h_quiver = fun_dirfield_system(func_dxdt, func_dydt, xval, yval,'stream',false,'record',false);
+    
+    % eigenvector 위의 arrow들만 색깔 추가해주기
+    if h_specify_eigenvector
+        [V,D] = eig(A);
+        
+        [xm,ym]=meshgrid(xval, yval);
+        
+        idx = xm == ym | xm == -ym;
+        
+        xp=feval(func_dxdt,xm,ym);
+        yp=feval(func_dydt,xm,ym);
+        
+        xp(~idx) = nan;
+        yp(~idx) = nan;
+        
+        hold on;
+        s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
+        h_quiver2 = quiver(xval,yval,xp./s,yp./s, 1,'color','r','linewidth',1.5);
+    end
+    
+    grid on;
+    axis square;
+    
+    xlim([-3, 3])
+    ylim([-3, 3])
+    xlabel('$$x$$','interpreter','latex');
+    ylabel('$$y$$','interpreter','latex');
+    
+    if h_record
+        writeVideo(newVid, getframe(gcf));
+    end
+    
+    pause(0.01);
+    if i_step < n_step
+        delete([h_quiver, h_quiver2])
+    end
+end
+
+
+
+if h_record
+    for i = 1:20
+        writeVideo(newVid, getframe(gcf));
+    end
+    close(newVid)
+end

@@ -1,4 +1,4 @@
-function fun_dirfield_system(func_dxdt, func_dydt,xval,yval, varargin)
+function h_quiver = fun_dirfield_system(func_dxdt, func_dydt,xval,yval, varargin)
 % 2원 1차 미분방정식에 대한 방향장을 그려주는 함수.
 %
 % 2원 1차 미분방정식이라 함은 아래와 같은 구조를 가지는 것으로 생각함.
@@ -30,7 +30,7 @@ params.addParameter('y_ode45', 0);
 params.parse(varargin{:});
 
 t = params.Results.t;
-p = params.Results.p; % particular 
+p = params.Results.p; % particular
 q = params.Results.q;
 arrow_color = params.Results.color;
 h_stream = params.Results.stream;
@@ -44,7 +44,7 @@ h_nonhomogeneous = false;
 if any(t)
     h_nonhomogeneous = true;
     if p == false
-       p = zeros(size(q));
+        p = zeros(size(q));
     end
     if q == false
         q = zeros(size(p));
@@ -73,16 +73,16 @@ if ~h_nonhomogeneous
     
     s = sqrt(xp.^2+yp.^2); % 모든 quiver는 방향만 나타내면 되므로 크기로 정규화 하겟음.
     
-    quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
+    h_quiver = quiver(xval,yval,xp./s,yp./s, 0.5,'color',arrow_color);
     grid on;
     axis square;
     xlabel('$$x$$','interpreter','latex');
     ylabel('$$y$$','interpreter','latex');
-        
+    
     if h_stream
         [verts,averts] = streamslice(xval,yval,xp,yp);
         sl = streamline([verts averts]);
-
+        
         iverts = interpstreamspeed(xval,yval,xp,yp,verts,0.02);
         [~,M] = streamparticlesMod(iverts,100,'Animate',3,'FrameRate',framerate,'Markersize',5);
     end
@@ -93,7 +93,7 @@ if ~h_nonhomogeneous
     end
 else
     for i_t = 1:length(t)
-%         plot(x_ode45, y_ode45,'b');
+        %         plot(x_ode45, y_ode45,'b');
         xp=feval(func_dxdt,xm,ym) + p(i_t);
         yp=feval(func_dydt,xm,ym) + q(i_t);
         
