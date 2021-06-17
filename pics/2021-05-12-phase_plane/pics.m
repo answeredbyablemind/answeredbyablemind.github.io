@@ -347,7 +347,6 @@ end
 
 %%
 
-
 figure('color','w');
 hold on;
 plot(1*cos(acos(1/sqrt(5))), 1*sin(acos(1/sqrt(5))),'ko','linewidth',2);
@@ -363,3 +362,49 @@ plot(r*cos(theta), r*sin(theta),'--','color',lines(1));
 plotComplexPlane(-2,2,-2,2,false)
 text(0.17, 0.118, '$$\theta$$','interpreter','latex','fontsize',15)
 text(0.519, 1.085,'$$e^{i\theta}$$','interpreter','latex','fontsize',20)
+
+
+%% 회전하면서 값이 점점 커지는 케이스
+
+newVid = VideoWriter('rotate_and_bigger','MPEG-4');
+
+newVid.FrameRate = 20;
+newVid.Quality = 100;
+open(newVid);
+
+figure('color','w','position',[680, 334, 1045, 644]);
+hold on;
+plotComplexPlane(-5,5,-5,5,false)
+
+n_step = 500;
+thetas = linspace(0, 10*pi, n_step);
+rs = linspace(1, 5, n_step);
+
+clear h
+
+trail = rs.*exp(1i*thetas);
+
+plot(real(trail), imag(trail),'k--');
+
+n_step = 100;
+thetas = linspace(0, 10*pi, n_step);
+rs = linspace(1, 5, n_step);
+
+for i_step = 1:n_step
+    r = rs(i_step);
+    theta = thetas(i_step);
+    pos = r*exp(1i*theta);
+    h(1) = plot(real(pos), imag(pos),'ro','linewidth',2);
+    h(2) = line([0, real(pos)], [0, imag(pos)],'color','r','linewidth',2);
+    
+    writeVideo(newVid, getframe(gcf));
+
+    
+    drawnow;
+    if i_step < n_step
+        delete(h);
+    end
+    
+end
+
+close(newVid)

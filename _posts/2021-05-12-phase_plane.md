@@ -332,6 +332,21 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
 
 일반적으로 $e^{i\theta}$는 복소 평면에서 $1$이라는 숫자를 $\theta$ 라디안 만큼 회전시킨 곳의 위치의 복소수를 의미한다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic7.png">
+  <br>
+  그림 10. 허수 지수를 갖는 자연상수 지수 함수의 복소 평면 상의 위치
+</p>
+
+따라서, $e^{\alpha t}$는 시간이 지날 수록 값이 커지고 $e^{i\beta t}$는 시간이 지나면서 계속 회전을 하게 되므로 결국 두 값을 곱한 $e^{\alpha t}e^{i\beta t}$는 회전하면서 반지름이 점점 커지는 원과 같은 형태를 띄게 된다.
+
+<p align = "center">
+  <video width = "700" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/rotate_and_bigger.mp4">
+  </video>
+  <br>
+  그림 11. 복소수 지수를 갖는 자연상수 지수 함수의 시간에 따른 위치 변화
+</p>
 
 
 
