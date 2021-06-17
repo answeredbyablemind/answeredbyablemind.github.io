@@ -40,13 +40,15 @@ newVid.FrameRate = 20;
 newVid.Quality = 100;
 open(newVid);
 
-for t=  1:1000
+
+for t=  1:3:3000
     for i_x0 = 1:size(x0vals,1)
         z2plot = z{i_x0};
         h(i_x0) = plot3(z2plot(t,1), z2plot(t,2), z2plot(t,3),'o','markerfacecolor',my_color(i_x0,:),'markeredgecolor','k');
         h(i_x0+size(x0vals,1)) = plot3(z2plot(1:t,1), z2plot(1:t,2), z2plot(1:t,3),'-','color',my_color(i_x0,:));
     end
-    
+    set(gcf,'color','w','position',[1000, 234, 1060, 720])
+
     xlim([min(empty(:,1)), max(empty(:,1))]);
     ylim([min(empty(:,2)), max(empty(:,2))]);
     zlim([min(empty(:,3)), max(empty(:,3))]);
@@ -54,10 +56,9 @@ for t=  1:1000
     set(gca,'visible','off')
     title('Lorenz System');
     writeVideo(newVid, getframe(gcf));
-    set(gcf,'color','w')
     drawnow;
     
-    if t < 1000
+    if t < 3000
         delete(h)
     end
     
