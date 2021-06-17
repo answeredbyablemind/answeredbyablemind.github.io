@@ -378,7 +378,7 @@ plotComplexPlane(-5,5,-5,5,false)
 
 n_step = 500;
 thetas = linspace(0, 10*pi, n_step);
-rs = linspace(1, 5, n_step);
+rs = exp(linspace(0, 2, n_step));
 
 clear h
 
@@ -388,7 +388,7 @@ plot(real(trail), imag(trail),'k--');
 
 n_step = 100;
 thetas = linspace(0, 10*pi, n_step);
-rs = linspace(1, 5, n_step);
+rs = exp(linspace(0, 2, n_step));
 
 for i_step = 1:n_step
     r = rs(i_step);
@@ -396,6 +396,7 @@ for i_step = 1:n_step
     pos = r*exp(1i*theta);
     h(1) = plot(real(pos), imag(pos),'ro','linewidth',2);
     h(2) = line([0, real(pos)], [0, imag(pos)],'color','r','linewidth',2);
+    h(3) = text(3.9, -3.8, ['$$\theta =',sprintf('%.2f',theta),', r = ',sprintf('%.2f',r),'$$'],'interpreter','latex','fontsize',15);
     
     writeVideo(newVid, getframe(gcf));
     
