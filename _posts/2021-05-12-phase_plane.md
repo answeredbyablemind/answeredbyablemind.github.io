@@ -22,6 +22,9 @@ tags: 미분방정식
 위상 평면에 대한 내용을 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
 * [자연상수 e의 의미](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)
+* [허수의 존재 의미에 대하여](https://angeloyeo.github.io/2019/06/15/imaginary_number.html)
+* [밑이 음수인 지수 함수](https://angeloyeo.github.io/2019/09/12/negative_base_exponential.html)
+* [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 * [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 * [복소 고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2020/11/02/complex_eigen.html)
@@ -247,7 +250,7 @@ $$\therefore \begin{bmatrix}x(t) \\y(t) \end{bmatrix}=-\frac{3}{2}\begin{bmatrix
   그림 8. 식 (17)의 곡선을 그림으로 표현한 것
 </p>
 
-# 실근, 허근, 중근 고윳값의 의미
+# 실수, 복소수, 중복 고윳값의 의미
 
 지금까지 우리는 솔루션 커브의 시간에 따른 변화를 위상 평면상에서 표현할 수 있고, 그 움직임이 고유벡터를 중심으로 일어난다는 것을 확인했다.
 
@@ -271,7 +274,7 @@ $$\Rightarrow \lambda^2-5\lambda+6=0$$
 
 그러므로 우리는 다음과 같은 결론을 내릴 수 있다.
 
-고윳값은 실수이거나 허수이거나 중근을 갖게 된다고 말이다.
+고윳값은 실수이거나 복소수이거나 중근을 갖게 된다고 말이다.
 
 ## 실수 고윳값을 갖는 경우
 
@@ -279,14 +282,57 @@ $$\Rightarrow \lambda^2-5\lambda+6=0$$
 
 식 (12)에서 본 것 처럼 고윳값은 자연상수 $e$의 지수로 올려서 이용하게 되는데, [자연상수 e의 의미](https://angeloyeo.github.io/2019/09/04/natural_number_e.html) 편을 참고해보면 $e$ 위의 지수는 성장횟수와 성장률에 비례하는 값이다.
 
-다시 말해 얼마나 빨리 성장시킬 것인가를 말해주고 있는 것이다.
+즉, 고윳값 $\lambda = \alpha$라고 하면 식 (12)에서와 같이 자연상수 $e$에 지수로 올리면,
 
-그러므로 실근을 갖는 경우에는 아래 그림과 같이 고유벡터를 따라 원점으로 가까워지거나 멀어지거나 하는 변화를 보이는 솔루션 커브를 갖는다.
+$$e^{\alpha t}$$
+
+이다. 다시 말해 $t$가 커질 수록 얼마나 빨리 1이라는 값을 성장시킬 것인가를 말해주고 있는 것이다.
+
+그러므로 실근을 갖는 경우에는 아래 그림과 같이 고유벡터를 따라 원점으로 가까워지거나 원점으로부터 멀어지거나 하는 변화를 보이는 솔루션 커브를 갖는다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic1.png">
   <br>
-  그림
+  그림 9. 실수 고윳값을 갖는 경우의 위상 평면 및 일부 solution curve의 예시
 </p>
+
+## 복소수 고윳값을 갖는 경우
+
+복소수 고윳값을 갖는 경우는 허수에 대한 약간의 지식이 필요하다.
+
+허수에 관한 내용은 [허수의 존재 의미에 대하여](https://angeloyeo.github.io/2019/06/15/imaginary_number.html) 편에서 조금 자세히 본 적이 있는데, 한 마디로 요약하면 어떤 복소수에 허수를 곱해주는 것은 시계 반대방향으로 90도 회전을 의미한다는 것이다.
+
+핵심 포인트만 언급하자면, 허수가 관여한다는 것은 회전과 관련 있는 변화가 생길 것이라는 것을 암시한다고 보면 좋을 것 같다.
+
+그런데, 우리는 식 (12)에서 본 것 처럼 고윳값을 자연상수 $e$의 지수로 올려서 사용하게 된다.
+
+그럼 고윳값이 해주는 역할은 어떤 것일까?
+
+가령, 고윳값을 아래와 같은 형태의 복소수로 서술해보자.
+
+$$\lambda = \alpha + i\beta$$
+
+여기서 $\alpha,\beta$는 모두 임의의 실수이고 $i=\sqrt{-1}$이다.
+
+그러면 자연상수 $e$에 지수로 $\alpha \pm i\beta$를 올려주면,
+
+$$e^{\lambda t}=e^{\alpha t + i\beta t}$$
+
+가 되고, 지수법칙에 의해,
+
+$$\Rightarrow e^{\alpha t}e^{i\beta t}$$
+
+가 된다고 할 수 있다.
+
+그러면 $e^{\alpha t}$는 위의 실수 고윳값 케이스에서 봤던 것 처럼 값이 지속적으로 커지거나 지속적으로 작아지는 것을 의미한다.
+
+그런데, $e^{i\beta t}$는 어떤 의미를 가질까?
+
+이것은 반지름이 1인 원 위의 회전을 의미한다. 혹시 이 부분이 생소하다면 [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html) 편을 참고해보도록 하자.
+
+일반적으로 $e^{i\theta}$는 복소 평면에서 $1$이라는 숫자를 $\theta$ 라디안 만큼 회전시킨 곳의 위치의 복소수를 의미한다.
+
+
+
 
 

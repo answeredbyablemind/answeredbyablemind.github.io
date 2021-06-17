@@ -344,3 +344,22 @@ if h_record
     end
     close(newVid)
 end
+
+%%
+
+
+figure('color','w');
+hold on;
+plot(1*cos(acos(1/sqrt(5))), 1*sin(acos(1/sqrt(5))),'ko','linewidth',2);
+line([0, cos(acos(1/sqrt(5)))], [0, sin(acos(1/sqrt(5)))],'linestyle','-','color','k')
+
+theta = linspace(0, acos(1/sqrt(5)), 100);
+r = 0.15;
+plot(r*cos(theta), r*sin(theta),'k')
+
+theta= linspace(0, 2*pi,100);
+r = 1;
+plot(r*cos(theta), r*sin(theta),'--','color',lines(1));
+plotComplexPlane(-2,2,-2,2,false)
+text(0.17, 0.118, '$$\theta$$','interpreter','latex','fontsize',15)
+text(0.519, 1.085,'$$e^{i\theta}$$','interpreter','latex','fontsize',20)
