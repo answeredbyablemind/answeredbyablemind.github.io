@@ -118,3 +118,29 @@ $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -1 & 1\end{bmatrix}
   <br>
   그림 2. 기본 행렬 연산을 통해서 계수 행렬 $A$를 상삼각행렬의 꼴로 바꿀 수 있다.
 </p>
+
+그리고 [기본 행렬](https://angeloyeo.github.io/2021/06/15/elementary_square_matrices.html) 시간에 배웠던 것 처럼 기본 행렬들의 역행렬은 아주 간단한 형태를 띄고 있다. 간단하게 복습해보면 아래와 같다.
+
+가령 아래와 같은 Row multiplication 행렬과 그 역행렬의 관계는 다음과 같다.
+
+$$E=\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{s} & 0 \\ 0 & 0 & 1\end{bmatrix} \rightarrow E^{-1}=\begin{bmatrix}1 & 0 & 0 \\ 0 & \color{red}{1/s} & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+
+와 같다.
+
+또, 가령 아래와 같은 Row addition을 수행해주는 기본 행렬과 그 역행렬의 관계는 다음과 같다.
+
+$$E=\begin{bmatrix}1 & 0 & 0 \\ \color{red}{s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}\rightarrow E^{-1}=\begin{bmatrix}1 & 0 & 0 \\ \color{red}{-s} & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
+
+와 같다.
+
+또, 행의 순서를 바꿔주는 기능을 수행해주는 기본 행렬과 그 역행렬의 관계는 다음과 같다.
+
+$$P_{31}=\begin{bmatrix}0 & 0& \color{red}{1} \\ 0 & 1 & 0 \\ \color{blue}{1} & 0 & 0\end{bmatrix} \rightarrow P^{-1}_{31}=\begin{bmatrix}0 & 0& \color{red}{1} \\ 0 & 1 & 0 \\ \color{blue}{1} & 0 & 0\end{bmatrix}$$
+
+그러므로 그림 2에서 볼 수 있었던 계수 행렬 $A$를 상삼각행렬로 만들어주는 연산에 대해 계수 행렬 $A$앞에 곱했던 기본행렬들의 역행렬을 순서대로 곱해주면 아래와 같이 행렬 $A$를 다시 써줄 수 있게 된다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic3.png">
+  <br>
+  그림 3. 기본행렬들의 역행렬을 순서대로 다시 곱해주면 하삼각행렬과 상삼각행렬로 행렬 $A$를 분해할 수 있음을 알 수 있다.
+</p>
