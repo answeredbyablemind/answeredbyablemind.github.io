@@ -56,7 +56,7 @@ Symmetric 행렬의 경우[^1] LU 분해를 다음과 같은 방식으로도 생
 
 [^1]: 복소 행렬이라면 에르미트 행렬로 확장할 수 있다. 다만, 에르미트 행렬의 경우에도 대칭 행렬의 경우와 같은 방법으로 Cholesky factorization의 아이디어를 생각할 수 있으므로 이번 포스팅에서는 실수 성분만을 갖는 symmetric 행렬에 한정해 생각해보도록 하자.
 
-만약 $A$가 symmetric matrix라면 __**혹시**__ 이런식으로도 분해될 수 있지는 않을까?
+만약 $A$가 symmetric matrix라면 **혹시** 이런식으로도 분해될 수 있지는 않을까?
 
 $$A=LL^T=L^TL$$
 
@@ -99,6 +99,43 @@ $$x^TAx\geq 0$$
 * semi-positive definite
 
 일 때 $A=LL^T=L^TL$과 같이 분해 가능하며 이 분해 방법을 **Cholesky factorization (숄레스키 분해)**라고 부른다.
+
+# Cholesky factorization 계산
+
+Cholesky factorization은 앞선 LU 분해의 또 다른 계산 방법에서와 같은 맥락으로 계산할 수 있다.
+
+행렬 $A$가 대칭행렬이면서 semi-positive definite이라고 가정하자.
+
+그러면 행렬 $A$를 다음과 같이 분해할 수 있다고 가정할 수 있다.
+
+$$A = LL^T= 
+    \begin{bmatrix}
+        l_{11} & 0      & 0 \\
+        l_{21} & l_{22} & 0 \\
+        l_{31} & l_{32} & l_{33} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        l_{11} & l_{21} & l_{31} \\
+        0      & l_{22} & l_{32} \\
+        0      & 0      & l_{33} \\
+    \end{bmatrix}
+$$
+
+$$=\begin{bmatrix}
+    l_{11}^2     &                           & \text{(대칭)}\\\\
+    l_{21}l_{11} & L_{21}^2+l_{22}^2         &             \\\\
+    l_{31}l_{11} & l_{31}l_{21}+l_{32}l_{22} & l_{31}^2+l_{32}^2+l_{33}^2
+\end{bmatrix}$$
+
+$$L=\begin{bmatrix}
+    \sqrt{a_{11}}    &    0 & 0 \\\\
+    a_{21}/l_{11}    &    \sqrt{a_{22}-l_{21}^2}  & 0 \\\\
+    a_{31}/l_{11}    &    (a_{32}-l_{31}l_{21})/l_{22} & \sqrt{a_{33}-l_{31}^2-l_{32}^2}
+\end{bmatrix}$$
+
+$$l_{jj}=\sqrt{a_{jj}-\sum_{k=1}^{j-1}l_{jk}^2}$$
+
+$$l_{ij}=\frac{1}{l_{jj}}\left(a_{ij}-\sum_{k=1}^{j-1}l_{ik}l_{jk}\right)$$
 
 Cholesky–Banachiewicz algorithm
 
