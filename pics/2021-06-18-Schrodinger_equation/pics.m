@@ -64,7 +64,6 @@ n = 500; % length of the wave for both space and time
 
 x = linspace(0, pi, n);
 t = linspace(0, 1, n);
-
 wave_x = sin(3 * x);
 wave_t = exp(-1i * pi * t);
 
