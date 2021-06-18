@@ -66,7 +66,7 @@ $$A=LL^T=L^TL$$
 
 그런데 $A$가 symmetric 행렬이라고 해서 항상 $A=LL^T=L^TL$로 분해할 수 있는 것은 아니다. 우리는 임의의 $L$이 어떤 특성을 가져야만 하는지 생각해보자.
 
-임의의 벡터는 행렬 $L$과 벡터 $x$의 곱 $Lx$를 생각해보자. 이 $Lx$ 벡터의 L2-norm 값은 항상 0보다 크거나 같다. 
+행렬 $L$과 임의의 벡터 $x$의 곱 $Lx$를 생각해보자. 이 $Lx$ 벡터의 L2-norm 값은 항상 0보다 크거나 같다. 
 
 그리고 L2-norm을 계산하는 방법은 벡터의 내적으로도 가능한데, 이 과정을 다시 쓰면,
 
@@ -76,7 +76,7 @@ $$|Lx|^2 = (Lx)^T(Lx)$$
 
 그리고 전치 연산자의 성질에 의해 다음과 같이 정리해서 쓸 수 있다.
 
-$$\Rightarrow x^TL^TLx$$
+$$x^TL^TLx$$
 
 그리고 괄호로 중간에 있는 $L^TL$을 묶어주면,
 
@@ -121,11 +121,15 @@ $$A = LL^T=
     \end{bmatrix}
 $$
 
-$$=\begin{bmatrix}
+행렬 곱을 계산해보면 다음과 같은 결과를 얻을 수 있다.
+
+$$\Rightarrow \begin{bmatrix}
     L_{11}^2     &                           & \text{(대칭)}\\\\
     L_{21}L_{11} & L_{21}^2+L_{22}^2         &             \\\\
     L_{31}L_{11} & L_{31}L_{21}+L_{32}L_{22} & L_{31}^2+L_{32}^2+L_{33}^2
 \end{bmatrix}$$
+
+위의 계산 결과와 행렬 $A$의 원소를 1:1로 비교하면 다음과 같이 정리할 수 있다는 것을 알 수 있다.
 
 $$L=\begin{bmatrix}
     \sqrt{a_{11}}    &    0 & 0 \\\\
@@ -133,11 +137,19 @@ $$L=\begin{bmatrix}
     a_{31}/L_{11}    &    (a_{32}-L_{31}L_{21})/L_{22} & \sqrt{a_{33}-L_{31}^2-L_{32}^2}
 \end{bmatrix}$$
 
+이것의 패턴을 일반화 하면 다음과 같다는 것 또한 생각해볼 수 있다.
+
 $$L_{jj}=\sqrt{a_{jj}-\sum_{k=1}^{j-1}L_{jk}^2}$$
 
-$$L_{ij}=\frac{1}{L_{jj}}\left(a_{ij}-\sum_{k=1}^{j-1}L_{ik}L_{jk}\right)$$
+$$L_{ij}=\frac{1}{L_{jj}}\left(a_{ij}-\sum_{k=1}^{j-1}L_{ik}L_{jk}\right)\quad \text{for }i>j$$
 
-Cholesky–Banachiewicz algorithm
+## MATLAB 구현
+
+Cholesky factorization의 계산 방법을 직접 구현한 알고리즘 중 하나로  Cholesky–Banachiewicz algorithm 이 있다.
+
+이 알고리즘은 Cholesky factorization의 하삼각행렬을 매 행마다 계산해나가는 방식으로 구현되어 있다.
+
+아래는 MATLAB으로 Cholesky-Banachiewicz 알고리즘을 구현한 것이다.
 
 ```{MATLAB}
 A = [4,12,-16;12,37,-43;-16,-43,98];
@@ -162,6 +174,8 @@ end
 L
 transpose(chol(A))
 ```
+
+위 결과에서 L과 transpose(chol(A))를 비교한 결과가 같다는 것을 확인할 수 있을 것이다.
 
 # 참고문헌
 
