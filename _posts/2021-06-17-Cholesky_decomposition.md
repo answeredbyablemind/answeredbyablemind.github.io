@@ -50,20 +50,55 @@ $$=\begin{bmatrix}
 
 이런 방식으로 순차적으로 $L$과 $U$의 원소들을 구할 수 있다.
 
-# Symmetric 행렬의 경우
+# Symmetric 행렬의 LU 분해?
 
 Symmetric 행렬의 경우[^1] LU 분해를 다음과 같은 방식으로도 생각할 수 있다.
 
 [^1]: 복소 행렬이라면 에르미트 행렬로 확장할 수 있다. 다만, 에르미트 행렬의 경우에도 대칭 행렬의 경우와 같은 방법으로 Cholesky factorization의 아이디어를 생각할 수 있으므로 이번 포스팅에서는 실수 성분만을 갖는 symmetric 행렬에 한정해 생각해보도록 하자.
 
-만약 $A$가 symmetric matrix라면 <u><b>혹시</u></b> 이런식으로도 분해될 수 있지는 않을까?
+만약 $A$가 symmetric matrix라면 __**혹시**__ 이런식으로도 분해될 수 있지는 않을까?
 
-$$A=LL^T$$
+$$A=LL^T=L^TL$$
 
 왜냐면 symmetric matrix는 $A=A^T$이므로 $(LL^T)^T = LL^T$라고 쓸 수도 있을 것 같고, $L^T$는 상삼각행렬이므로 $LU$ 분해와 유사한 형태의 결론을 얻을 수도 있을 것 같기 때문이다.
 
 [//]:# (Positive Definite 조건이 필요한 이유?)
 
+그런데 $A$가 symmetric 행렬이라고 해서 항상 $A=LL^T=L^TL$로 분해할 수 있는 것은 아니다. 우리는 임의의 $L$이 어떤 특성을 가져야만 하는지 생각해보자.
+
+임의의 벡터는 행렬 $L$과 벡터 $x$의 곱 $Lx$를 생각해보자. 이 $Lx$ 벡터의 L2-norm 값은 항상 0보다 크거나 같다. 
+
+그리고 L2-norm을 계산하는 방법은 벡터의 내적으로도 가능한데, 이 과정을 다시 쓰면,
+
+$$|Lx|^2 = (Lx)^T(Lx)$$
+
+이다.
+
+그리고 전치 연산자의 성질에 의해 다음과 같이 정리해서 쓸 수 있다.
+
+$$\Rightarrow x^TL^TLx$$
+
+그리고 괄호로 중간에 있는 $L^TL$을 묶어주면,
+
+$$x^T(L^TL)x$$
+
+이며 $(L^TL)$이 어떤 행렬 $A$라고 한다면,
+
+$$x^TAx$$
+
+와 같이 쓸 수 있으며 이 계산은 임의의 벡터 $Lx$의 L2-norm을 계산하는 방법으로부터 왔으므로
+
+$$x^TAx\geq 0$$
+
+이다. 우리는 $x^TAx\geq 0$과 같은 성질을 만족하는 행렬을 semi positive definite 행렬이라고 부른다. 다시 말해, $A=LL^T=L^TL$을 만족하는 행렬은 semi-positive definite 행렬이어야 한다.
+
+정리하면,
+
+* 행렬 A가 정방행렬이고
+* 대칭행렬이면서
+* semi-positive definite
+
+일 때 $A=LL^T=L^TL$과 같이 분해 가능하며 이 분해 방법을 **Cholesky factorization (숄레스키 분해)**라고 부른다.
 
 Cholesky–Banachiewicz algorithm
 
