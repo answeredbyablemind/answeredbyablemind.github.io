@@ -119,6 +119,8 @@ $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -1 & 1\end{bmatrix}
   그림 2. 기본 행렬 연산을 통해서 계수 행렬 $A$를 상삼각행렬의 꼴로 바꿀 수 있다.
 </p>
 
+# 기본 행렬의 역행렬을 곱하기: LU 분해
+
 그리고 [기본 행렬](https://angeloyeo.github.io/2021/06/15/elementary_square_matrices.html) 시간에 배웠던 것 처럼 기본 행렬들의 역행렬은 아주 간단한 형태를 띄고 있다. 간단하게 복습해보면 아래와 같다.
 
 가령 아래와 같은 Row multiplication 행렬과 그 역행렬의 관계는 다음과 같다.
@@ -142,5 +144,12 @@ $$P_{31}=\begin{bmatrix}0 & 0& \color{red}{1} \\ 0 & 1 & 0 \\ \color{blue}{1} & 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic3.png">
   <br>
-  그림 3. 기본행렬들의 역행렬을 순서대로 다시 곱해주면 하삼각행렬과 상삼각행렬로 행렬 $A$를 분해할 수 있음을 알 수 있다.
+  그림 3. 기본행렬들의 역행렬을 순서대로 다시 곱해줌으로써 좌변에 $A$만 남겨놓을 수 있게 된다.
+</p>
+
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic4.png">
+  <br>
+  그림 4. 기본행렬들의 역행렬을 순서대로 다시 곱해줌으로써 좌변에 $A$만 남겨놓을 수 있게 된다.
 </p>
