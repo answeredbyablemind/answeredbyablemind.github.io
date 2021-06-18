@@ -104,7 +104,17 @@ $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -1 & 1\end{bmatrix}
 원래의 $[A\|b]$ 행렬 왼쪽에 붙은 기본 행렬들의 의미를 생각해본다면 다음과 같은 기본 행 연산들이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic1.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic1.png">
   <br>
   그림 1. 기본 행렬 연산을 통해서 얻게 된 최종 결과물로 back substitution을 수행할 수 있게 된다.
+</p>
+
+그러면 위에서 $x,y,z$에 대한 해를 구한 방법과 마찬가지로 결과로써의 우변의 행렬로부터 동일하게 $4z=12$라는 결과를 통해 $z=3$임을 알 수 있고, $y$와 $x$도 차례대로 알 수 있는 것이다.
+
+그런데, 이 아이디어를 적용해서 조금 다른 시도를 생각해보자. 우리는 $[A\|b]$ 대신에 방정식의 계수만 붙어있는 행렬 $A$에 대해서도 동일한 방법으로 기본 행렬을 곱해주면 우변의 행렬을 첨가(augment) 시키지 않은 꼴을 얻을 수 있다. 이 때, 얻게 되는 결과물은 앞서 소개한 상삼각행렬(upper triangular matrix)의 꼴일 것이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-16-LU_decomposition/pic2.png">
+  <br>
+  그림 2. 기본 행렬 연산을 통해서 계수 행렬 $A$를 상삼각행렬의 꼴로 바꿀 수 있다.
 </p>
