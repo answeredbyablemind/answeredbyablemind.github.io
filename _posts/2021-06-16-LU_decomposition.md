@@ -201,3 +201,79 @@ $$A=\begin{bmatrix}0& 0&3 \\ 1 & 1 & 1 \\ 2 & 3 & -1\end{bmatrix}$$
 
 $$=P_{13}LU = \begin{bmatrix}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{bmatrix}\begin{bmatrix}1&0&0\\1/2&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}2& 3&-1 \\ 0 & -1/2 & 3/2 \\ 0 & 0 & 3\end{bmatrix}$$
 
+# LU 분해의 이용
+
+LU 분해를 이용하면 어떤 이점이 있는지 생각해보자.
+
+## Ax=b의 해 구하기
+
+만약 $A$가 정방행렬이고 $A=LU$와 같이분해 가능하다고 하면 다음과 같이 생각해볼 수 있다.
+
+$$Ax=b$$
+
+에서 $A=LU$라고 쓸 수 있으므로,
+
+$$\Rightarrow (LU)x=b$$
+
+이다. 이 때, 만약 이 식을 다음과 같이 괄호의 위치를 바꿔서 생각해보면,
+
+$$\Rightarrow L(Ux)=b$$
+
+$Ux$ 역시도 일종의 열벡터라고 생각할 수 있다는 것을 알 수 있다. 따라서, $Ux=c$라는 이름의 열벡터로 치환해주면,
+
+$$\Rightarrow Lc=b$$
+
+와 같은 꼴의 문제가 된다.
+
+그런데, $L$은 잘 생각해보면 하삼각행렬이고 하삼각행렬은 forward substitution을 활용하면 solution을 수월하게 얻을 수 있다.
+
+그런 다음 우리는 
+
+$$Ux=c$$
+
+라는 문제를 풀어주면 $x$에 대한 답을 얻을 수 있게 되는 것이다. 이 때는 backward substitution을 써주면 해를 쉽게 얻을 수 있게 된다.
+
+예를 들어, 위에서 보았던 행렬 $A$에 대해 LU 분해하면 다음과 같다.
+
+$$A=LU$$
+
+$$\Rightarrow\begin{bmatrix}1&1&1\\ 2& 3& -1\\ 2&3&3\end{bmatrix}=
+  \begin{bmatrix}1 & 0 & 0 \\2& 1 & 0\\2 & 1 & 1\end{bmatrix}
+  \begin{bmatrix}1 & 1 & 1 \\0& 1 & -3\\0 & 0 & 4\end{bmatrix}$$
+
+와 같은데, 
+
+$Ax=b$에서 $b$가 $[6, 5, 17]^T$ 였다고 하면, $LUx=b$는
+
+$$\begin{bmatrix}1 & 0 & 0 \\2& 1 & 0\\2 & 1 & 1\end{bmatrix}
+  \begin{bmatrix}1 & 1 & 1 \\0& 1 & -3\\0 & 0 & 4\end{bmatrix}
+  \begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}6\\5\\17\end{bmatrix}$$
+
+과 같고, 위 식을 $Lc=b$의 꼴로 바꿔주면,
+
+$$\begin{bmatrix}1 & 0 & 0 \\2& 1 & 0\\2 & 1 & 1\end{bmatrix}
+  \begin{bmatrix}c_1\\c_2\\c_3\end{bmatrix}=\begin{bmatrix}6\\5\\17\end{bmatrix}$$
+
+그러면 손쉽게 $c_1=6$, $c_2 = -7$, $c_3=12$라는 것을 알 수 있으므로 우리가 추가로 풀어야 할 문제는 $Ux=c$라는 점을 생각해보았을 때,
+
+$$Ux=c\Rightarrow \begin{bmatrix}1 & 1 & 1 \\0& 1 & -3\\0 & 0 & 4\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix} = \begin{bmatrix}6\\-7\\12\end{bmatrix}$$
+
+따라서, 이번엔 back-substitution을 이용하면 $z=3$, $y=2$, $x=1$ 임을 알 수 있다.
+
+## 행렬식을 수월하게 구하기
+
+마찬가지 원리로 만약 $A$라는 행렬이 LU 분해 가능하다고 하면 다음을 생각해볼 수 있다.
+
+$$A=LU$$
+
+라고 했을 때, 행렬식의 성질에 의해
+
+$$det(A)=det(L)det(U)$$
+
+일 것이다. 그런데 $L$이나 $U$는 모두 삼각행렬이므로 대각성분의 곱만으로 행렬식이 계산된다는 점을 생각하면 $A$의 행렬식을 쉽게 구할 수 있게 된다.
+
+다시 말해 $A$를 분해한 $L$과 $U$가 식 (1), (2)와 같다고 하면 $A$의 행렬식은
+
+$$det(A) = \prod_{i=1}^{n}l_{i,i}\prod_{j=1}^{n}u_{j,j}=\prod_{i=1}^{n}l_{i,i}u_{i,i}$$
+
+와 같이 간단하게 계산할 수 있게 된다.
