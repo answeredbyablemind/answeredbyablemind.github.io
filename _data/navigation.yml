@@ -65,6 +65,8 @@ docs-ko:
         url:    2021/06/15/elementary_square_matrices.html
       - title:  LU 분해
         url:    2021/06/16/LU_decomposition.html
+      - title:  가우스 소거법
+        url:    2021/06/19/Gauss_elimination.html
 
   - title:      선형대수학 응용
     children:
