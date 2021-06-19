@@ -42,17 +42,37 @@ tags: 선형대수학
 
 # Row-echelon and row-reduced echelon matrices
 
+
+<p align = "center">
+    <img width = "800" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic4.png">
+    <br>
+</p>
+
+## echelon이라는 단어에 대해서
+
 Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 
 이 번역은 아주 잘못된 번역의 좋은 예시로 볼 수 있을 것 같다. 그리고 이런 오역으로 인해 학생들이 row-echelon 행렬을 이해하는데 더 어려움을 가중할 것 같다.
 
-우리가 보통 수학에서 사다리꼴이라고 하면 
+우리가 보통 수학에서 사다리꼴이라고 하면 아래와 같은 도형을 생각하기 쉽다.
 
 <p align = "center">
-    <img width = "800" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/trapezoid.png">
+    <img width = "800" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic2.png">
     <br>
 </p>
 
+그런데 '사다리꼴' 이 말하는 사다리(ladder)의 형태를 말하는 것이다. 즉,
 
+<p align = "center">
+    <img width = "800" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic3.png">
+    <br>
+</p>
 
+왜냐면 echelon이라는 영어 단어가 '사다리'라는 뜻을 갖는 영단어에서 유래되었기 때문인 것으로 보인다. 하지만 여기서 row-echelon form이라는 뜻에서 echelon은 step-like architecture를 의미하는 것으로 보아야 타당하다.
 
+다시 말하면, 행렬의 하단부에 0이 쏠려있다보니 그 0들의 형태가 마치 계단 형태인 것 처럼 보인다는 의미에서 echelon이라는 단어를 썼다고 보는 것이 더 낫다. 그리고 그래야 맥락에 맞지 않아 보이는 pivot이라는 용어도 단어의 이용 의도를 조금더 파악할 수 있게 된다.
+
+<p align = "center">
+    <img width = "800" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic5.png">
+    <br>
+</p>
