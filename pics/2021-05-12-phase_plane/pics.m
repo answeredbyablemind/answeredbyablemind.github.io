@@ -26,7 +26,7 @@ plot(xx, yy2,'color','k','linewidth',2);
 
 my_color = lines(2);
 for i = 1:2
-    mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+    mArrow2(0, 0, V(1,i), V(2,i), {'linewidth',2,'color',my_color(i,:)});
 end
 
 
@@ -54,7 +54,7 @@ plot(xx, yy2,'color','k','linewidth',2);
 
 my_color = lines(2);
 for i = 1:2
-    mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
+    mArrow2(0, 0, V(1,i), V(2,i), {'linewidth',2,'color',my_color(i,:)});
 end
 
 
@@ -291,17 +291,25 @@ for i_vec = 1:2
     xlabel('$$x$$','interpreter','latex');
     ylabel('$$y$$','interpreter','latex');
     title([num2str(i_vec),'번째 고유벡터로 정사영'],'fontname','NanumBarunGothic')
+    vec_color = lines(2);
+    mArrow2(0, 0, V(1,i_vec), V(2,i_vec), {'linewidth',3,'color','r'});
 end
 %% projections on eigenvectors (2)
 for i_vec = 1:2
     eigvec = V(:,i_vec);
-    eigvec = sign(eigvec(1)) * eigvec;
     proj_on_eigvec = eigvec'*x0_history;
     figure('position',[1000, 558, 1140, 420]);
     
     subplot(1,2,1);
-    mArrow2(0,0,max(proj_on_eigvec)+0.5,0, {'color','k','linewidth',1})
-    xlim([0, max(proj_on_eigvec)+0.5])
+    if i_vec == 1
+        mArrow2(-3,0,0.3,0, {'color','k','linewidth',1})
+        xlim([-3, 0.3])
+%         xlim([0, max(proj_on_eigvec)+0.5])
+    elseif i_vec == 2
+        mArrow2(0,0,max(proj_on_eigvec)+0.5,0, {'color','k','linewidth',1})
+        xlim([0, max(proj_on_eigvec)+0.5])
+    end
+        
     set(gca,'visible','off')
     
     xticks = get(gca,'xtick');
@@ -309,7 +317,7 @@ for i_vec = 1:2
         line(xticks(i_xtick) * ones(1,2), [-0.01, 0.01],'color','k')
         text(xticks(i_xtick),-0.05,num2str(xticks(i_xtick)),'HorizontalAlignment','center')
     end
-    text(mean(xlim), -0.15, [num2str(i_vec),'번 고유벡터 위에서의 좌표'],'HorizontalAlignment','center','fontsize',12)
+    text(mean(xlim), -0.15, [num2str(i_vec),'번 고유벡터 위에서의 좌표'],'HorizontalAlignment','center','fontsize',12,'fontname','nanumbarungothic')
     ylim([-0.5, 0.5])
     
     hold on;
@@ -325,6 +333,7 @@ for i_vec = 1:2
         ylabel([num2str(i_vec),'번 고유벡터 위에서의 좌표'])
         grid on;
         %         text(i_x0-1, proj_on_eigvec(i_x0)+ 0.15, num2str(i_x0-1))
+        set(gca,'fontname','nanumbarungothic')
     end
 end
 
