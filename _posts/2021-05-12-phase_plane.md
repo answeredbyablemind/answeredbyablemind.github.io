@@ -28,9 +28,6 @@ tags: 미분방정식
 * [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)
 * [고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
-* [복소 고윳값과 고유벡터의 의미](https://angeloyeo.github.io/2020/11/02/complex_eigen.html)
-
-내용이 많아 보이지만 마지막 복소 고윳값과 고유벡터는 보지 않더라도 나머지 내용들은 꼭 보고 오길 추천합니다.
 
 # 위상 평면 소개
 
@@ -185,7 +182,7 @@ $$\begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 즉, 행렬 $A$는 그림 6의 왼쪽에 있는 위상 평면 상에 있는 각각의 벡터들에 적용해서 선형변환을 취해주는 것이라고 할 수 있다. 영상으로 확인해보면 다음과 같은 변화가 일어나는 것이다.
 
 <p align = "center">
-  <video width = "700" height = "auto" loop autoplay controls muted>
+  <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_as_linear_transformation.mp4">
   </video>
   <br>
@@ -195,7 +192,7 @@ $$\begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 그런데, 고유벡터 위에 있던 화살표들은 크기만 바뀌고 방향이 바뀌지 않는다. (반대방향으로는 갈 수 있다.) 고유벡터 위에 있는 화살표들만 색깔을 다르게 해서 표시해보면 다음과 같다.
 
 <p align = "center">
-  <video width = "700" height = "auto" loop autoplay controls muted>
+  <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/phase_plane_as_linear_transformation_with_eig.mp4">
   </video>
   <br>
@@ -232,31 +229,69 @@ $$\lambda_1 = -1,\quad \lambda_2 = 1$$
 
 ## 미분방정식 시스템에서 고윳값의 의미
 
+그림 4에서 확인한 $(2, -1)$에서부터 $\Delta t = 0.5$라고 설정했을 때 매 스텝마다의 솔루션 커브의 움직임에 대한 그림을 다시 생각해보자.
+
+우선 앞선 꼭지에서 우리는 고유벡터들이 새로운 변화의 '축'으로 작용한다는 것을 확인했다. 그렇다면 솔루션 커브의 변화에 따른 새로운 '축'의 좌표는 어떻게 될지 생각해보자.
+
+아래의 그림에서는 시각화를 위해 위상 평면의 화살표는 제거하고 솔루션의 타임 스텝 별 변화만을 표시하였다.
+
+거기에, $y=-x$ 선 위에 있는 고유벡터 $v_1$과 $y=x$ 선 상에 있는 고유벡터 $v_2$에 정사영을 취해 원점으로부터의 거리를 계산해보았다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic10.png">
   <br>
+  그림 8. 그림 4에서 시간 스텝 별 솔루션의 좌표를 두 고유벡터에 정사영하여 원점으로부터 거리를 측정해보자.
 </p>
+
+위 그림에서 얻은 원점으로부터의 거리(즉, 새로운 축 위의 좌표)를 표시해보면 다음과 같이 생각해볼 수 있다.
+
+첫 번째 방법은 새로운 축 위의 좌표값 그대로를 생각해보는 것이고, 두 번째는 순번에 따른 새로운 축의 좌표값이 어떻게 변하는지 생각해보는 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic11.png">
   <br>
+  그림 9. 1번 고유벡터의 관점에서 보는 새로운 좌표값의 변화
 </p>
+
+두 번째 고유벡터에도 마찬가지 일을 수행할 수 있다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic12.png">
   <br>
+  그림 10. 2번 고유벡터의 관점에서 보는 새로운 좌표값의 변화
 </p>
+
+1번 고유벡터의 고윳값은 $-1$이고, 2번 고유벡터의 고윳값은 $1$이었다. 이 사실과 그림 9, 그림 10에서 보여주는 현상을 잘 대조해놓고 생각해보면 고윳값의 부호가 음수이면 매 타입스텝마다 새로운 고유벡터위의 좌표값이 0으로 수렴해가고, 반대로 고윳값의 부호가 양수이면 매 타임스텝마다 새로운 고유벡터 위의 좌표값이 무한대로 발산하는 것을 알 수 있다.
+
+거기다 그림 9, 그림 10을 보면 타입 스텝마다의 좌표값의 변화는 exponential한 변화를 띄는 것을 알 수 있는데, 이것은 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 보았던 것처럼 positive feedback을 통해 다음번 솔루션 커브 상의 위치를 결정하기 때문이다. 다시 말해 현재값을 기준으로 다음번 값이 정해지기 때문에 exponential한 변화를 보이며 이 또한 $\Delta t$가 매우 작아지면 연속적인 성장을 수행하기 때문에 자연상수 $e$를 밑으로 하는 지수함수의 꼴로 성장할 것임을 알 수 있다.
+
+그리고 고윳값의 크기는 성장 속도를 결정한다.
+
+고윳값 고유벡터의 정의를 생각해보면, 임의의 정방행렬 $A$에 대해 고윳값 $\lambda$, 고유벡터 $v$에 대해서 다음이 성립한다.
+
+$$Av=\lambda v$$
+
+여기서는 행렬 $A$를 곱한다는 것이 평면 상 어느 위치로 다음에 이동해야 할지를 결정하는 것을 의미하는데,
+
+고유벡터 상에서는 행렬 $A$를 두 번 곱해주면 다음과 같이 변하는 것을 알 수 있다.
+
+$$AAv=\lambda^2v$$
+
+따라서, 고유벡터 상에서의 움직임은 고윳값의 크기에 따라 결정된다고 볼 수 있다.
+
+결론적으로 두 가지 근거를 조합하면 시간에 따른 고유벡터 상에서의 움직임은 다음과 같이 볼 수 있다.
+
+$$\Rightarrow e^{\lambda t}$$
 
 ## 2원 1계 미분방정식의 해
 
-[자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 것 처럼 우리는 매번 다음번 좌표를 정할 때 마다 현재 결과물을 바탕으로 성장하므로 좌표의 이동은 연속성장을 이용해 표현할 수 있다. 따라서 자연상수 $e$를 이용해서 좌표의 변화를 표현하는 것은 연속성장의 의미를 담는 것이므로 자연스러운 표현방법이라 할 수 있다.
-
-그리고 [자연상수 위의 승수의 역할이 바로 성장 속도](https://angeloyeo.github.io/2019/09/04/natural_number_e.html)와 관련된 것이므로 자연상수 $e$의 지수에 고윳값을 이용함으로써 성장 속도를 표현할 수 있을 것이다.
-
-또, 주어진 행렬 $A$에 대해 행렬 $A$의 고유벡터를 따라 좌표평면 상에서 변화가 일어나므로, 연립 미분방정식의 일반해는 다음과 같이 서술하면 충분할 것이다.
+결론적으로 연립 제차 미분방정식에서 고윳값, 고유벡터의 성질을 생각하면 다음과 같이 해를 생각할 수 있다.
 
 $$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 v_1 \exp(\lambda_1 t) +c_2 v_2 \exp(\lambda_2 t) $$
+
+다시 말해 고유벡터 $v_1$과 $v_2$를 따라 변화가 일어나되, 그 위에서의 좌표는 $\exp(\lambda_1 t)$와 $\exp(\lambda_2 t)$와 같이 시간에 따라 변해간다는 뜻이다.
+
+그리고 $c_1$, $c_2$는 초기값에 따라 결정되는 값이다.
 
 따라서, 식 (6)의 행렬로 쓸 수 있는 연립 미분방정식이라면 그 해는 다음과 같을 것이다.
 
