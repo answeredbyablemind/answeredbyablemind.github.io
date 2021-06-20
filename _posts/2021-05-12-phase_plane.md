@@ -293,7 +293,7 @@ $$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 v_1 \exp(\lambda_1 t) +c_2 v_2 \e
 
 그리고 $c_1$, $c_2$는 초기값에 따라 결정되는 값이다.
 
-따라서, 식 (6)의 행렬로 쓸 수 있는 연립 미분방정식이라면 그 해는 다음과 같을 것이다.
+따라서, 식 (4)의 연립 미분방정식이라면 고유벡터가 $\begin{bmatrix}1\\-1\end{bmatrix}$, $\begin{bmatrix}1\\1\end{bmatrix}$이고 그에 대응되는 고윳값은 $-1$, $1$이므로 해는 다음과 같을 것이다.
 
 $$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 \frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1 \end{bmatrix} \exp(-t) +c_2 \frac{1}{\sqrt{2}}\begin{bmatrix}1\\1 \end{bmatrix} \exp(t) $$
 
