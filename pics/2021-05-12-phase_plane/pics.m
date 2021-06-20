@@ -169,12 +169,6 @@ yy2 = V(2,2)/(V(1,2)+eps) * xx;
 plot(xx, yy1,'color','k','linewidth',2);
 plot(xx, yy2,'color','k','linewidth',2);
 
-% my_color = lines(2);
-% for i = 1:2
-%     mArrow2(0, 0, V(1,i) * D(i,i), V(2,i) * D(i,i), {'linewidth',2,'color',my_color(i,:)});
-% end
-
-
 xlim([-3, 3])
 ylim([-3, 3])
 
@@ -208,6 +202,133 @@ for i_x0 = 1:size(x0s, 2)
         x0(2) = x0(2) + dydt * delta;
     end
 end
+%% 고윳값의 의미 확인
+
+A = [0, 1;1, 0];
+[V,~]= eig(A);
+figure;
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+
+hold on;
+
+xx = linspace(-3,3,100);
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
+
+plot(xx, yy1,'color','k','linewidth',2);
+plot(xx, yy2,'color','k','linewidth',2);
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+% 첫 스타트 포인트 여러개로
+x0 = [2, -1]';
+x0_history = x0;
+
+n_iter = 5;
+my_color =[0, 0, 0; lines(n_iter)];
+for i_iter = 1:n_iter
+    temp = A * x0;
+    dxdt = temp(1);
+    dydt = temp(2);
+    
+    delta = 0.5;
+    
+    % 화살표 하나 그어주기
+    quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',0.4*ones(1,3),'linewidth',2,'maxheadsize',1)
+    
+    plot(x0(1), x0(2),'o','markerfacecolor',my_color(i_iter,:),'markeredgecolor','k','markersize',10)
+    x0(1) = x0(1) + dxdt * delta;
+    x0(2) = x0(2) + dydt * delta;
+    x0_history = [x0_history, x0];
+end
+
+%% projections on eigenvectors (1)
+
+A = [0, 1;1, 0];
+[V,~]= eig(A);
+figure('position',[1000, 558, 1020, 420]);
+for i_vec = 1:2
+    subplot(1,2,i_vec)
+    % fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+    axis square
+    hold on;
+    
+    xx = linspace(-3,3,100);
+    yy1 = V(2,1)/(V(1,1)+eps) * xx;
+    yy2 = V(2,2)/(V(1,2)+eps) * xx;
+    
+    plot(xx, yy1,'color','k','linewidth',1);
+    plot(xx, yy2,'color','k','linewidth',1);
+    
+    xlim([-3, 3])
+    ylim([-3, 3])
+    
+    % 첫 스타트 포인트 여러개로
+    x0 = [2, -1]';
+    
+    n_iter = 5;
+    my_color =[0, 0, 0; lines(n_iter)];
+    for i_iter = 1:n_iter
+        temp = A * x0;
+        dxdt = temp(1);
+        dydt = temp(2);
+        
+        delta = 0.5;
+        x1 = (V(:,i_vec)'*x0) * V(:,i_vec);
+        
+        line([x0(1), x1(1)], [x0(2), x1(2)],'color',my_color(i_iter,:),'linestyle','-','linewidth',2)
+        
+        % 화살표 하나 그어주기
+        quiver(x0(1), x0(2), dxdt * delta, dydt * delta, 0, 'color',0.6*ones(1,3),'linewidth',2,'maxheadsize',1,'linestyle','-')
+        
+        plot(x0(1), x0(2),'o','markerfacecolor',my_color(i_iter,:),'markeredgecolor','k','markersize',10)
+        x0(1) = x0(1) + dxdt * delta;
+        x0(2) = x0(2) + dydt * delta;
+        grid on;
+    end
+    
+    xlabel('$$x$$','interpreter','latex');
+    ylabel('$$y$$','interpreter','latex');
+    title([num2str(i_vec),'번째 고유벡터로 정사영'],'fontname','NanumBarunGothic')
+end
+%% projections on eigenvectors (2)
+for i_vec = 1:2
+    eigvec = V(:,i_vec);
+    eigvec = sign(eigvec(1)) * eigvec;
+    proj_on_eigvec = eigvec'*x0_history;
+    figure('position',[1000, 558, 1140, 420]);
+    
+    subplot(1,2,1);
+    mArrow2(0,0,max(proj_on_eigvec)+0.5,0, {'color','k','linewidth',1})
+    xlim([0, max(proj_on_eigvec)+0.5])
+    set(gca,'visible','off')
+    
+    xticks = get(gca,'xtick');
+    for i_xtick = 1:length(xticks)
+        line(xticks(i_xtick) * ones(1,2), [-0.01, 0.01],'color','k')
+        text(xticks(i_xtick),-0.05,num2str(xticks(i_xtick)),'HorizontalAlignment','center')
+    end
+    text(mean(xlim), -0.15, [num2str(i_vec),'번 고유벡터 위에서의 좌표'],'HorizontalAlignment','center','fontsize',12)
+    ylim([-0.5, 0.5])
+    
+    hold on;
+    for i_x0 = 1:length(x0_history)
+        subplot(1,2,1);
+        plot(proj_on_eigvec(i_x0),0, 'o','markerfacecolor',my_color(i_x0,:),'markeredgecolor','k','markersize',10)
+        
+        subplot(1,2,2);
+        hold on;
+        plot(i_x0-1, proj_on_eigvec(i_x0),'o','markerfacecolor',my_color(i_x0,:),'markeredgecolor','k','markersize',10)
+        hold on;
+        xlabel('순번');
+        ylabel([num2str(i_vec),'번 고유벡터 위에서의 좌표'])
+        grid on;
+        %         text(i_x0-1, proj_on_eigvec(i_x0)+ 0.15, num2str(i_x0-1))
+    end
+end
+
+
 %% 가장 기본적인 phase plane + cosine & sine --> 비제차 미분방정식 쪽으로 넘길 내용
 
 figure;

@@ -232,6 +232,22 @@ $$\lambda_1 = -1,\quad \lambda_2 = 1$$
 
 ## 미분방정식 시스템에서 고윳값의 의미
 
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic10.png">
+  <br>
+</p>
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic11.png">
+  <br>
+</p>
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic12.png">
+  <br>
+</p>
+
 ## 2원 1계 미분방정식의 해
 
 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 본 것 처럼 우리는 매번 다음번 좌표를 정할 때 마다 현재 결과물을 바탕으로 성장하므로 좌표의 이동은 연속성장을 이용해 표현할 수 있다. 따라서 자연상수 $e$를 이용해서 좌표의 변화를 표현하는 것은 연속성장의 의미를 담는 것이므로 자연스러운 표현방법이라 할 수 있다.
