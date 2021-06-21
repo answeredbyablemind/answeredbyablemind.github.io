@@ -142,11 +142,15 @@ t = 0:1/100:10;
 z = -3/2*[-1;1].*exp(-t) + 1/2 * [1;1].*exp(t);
 plot(z(1,:), z(2,:),'linewidth',2,'color','r')
 axis square
-t2plot = find(ismember(t, 0:0.3:10));
-my_color = lines(length(t2plot));
+t2plot = [0. 0.5, 1, 1.5, 2, 2.5];
+my_fun = @(t) -3/2*[-1;1]*exp(-t)+1/2*[1;1]*exp(t);
+my_fun(t2plot)
+my_color = [0,0,0; lines(length(t2plot))];
 for i_t2plot = 1:length(t2plot)
-    plot(z(1,t2plot(i_t2plot)), z(2,t2plot(i_t2plot)),'o','markerfacecolor',my_color(i_t2plot,:),'markeredgecolor',ones(1,3) * 0.4,'markersize',10,'linewidth',2)
+    temp = my_fun(t2plot(:, i_t2plot));
+    plot(temp(1), temp(2), 'o','markerfacecolor',my_color(i_t2plot,:),'markeredgecolor',0.2 * ones(1,3),'markersize',10,'linewidth',2)
 end
+
 % Numerical Solution
 % x0 = [2; -1];
 % clear z
@@ -337,6 +341,38 @@ for i_vec = 1:2
     end
 end
 
+%% 실제 솔루션과 고유벡터 위의 좌표들 비교
+
+
+figure('position',[1000, 558, 1140, 420]);
+for i_vec = 1:2
+    eigvec = V(:,i_vec);
+    proj_on_eigvec = eigvec'*x0_history;
+    subplot(1,2,i_vec);
+    for i_x0 = 1:length(x0_history)
+        hold on;
+        plot(i_x0-1, proj_on_eigvec(i_x0),'o','markerfacecolor',my_color(i_x0,:),'markeredgecolor','k','markersize',10)
+        hold on;
+%         xlabel('순번'); 
+        xlabel('time(s)');
+        ylabel([num2str(i_vec),'번 고유벡터 위에서의 좌표'])
+        grid on;
+        %         text(i_x0-1, proj_on_eigvec(i_x0)+ 0.15, num2str(i_x0-1))
+        set(gca,'fontname','nanumbarungothic')
+    end
+end
+
+t = linspace(0, 2.5, 100);
+x = -3/sqrt(2) * exp(-t);
+subplot(1,2,1);
+plot(t*2, x,'k--','linewidth',2)
+set(gca,'xticklabel',0:0.5:2.5)
+
+t = linspace(0, 2.5, 100);
+x = 1/sqrt(2) * exp(t);
+subplot(1,2,2);
+plot(t*2, x,'k--','linewidth',2)
+set(gca,'xticklabel',0:0.5:2.5)
 
 %% 가장 기본적인 phase plane + cosine & sine --> 비제차 미분방정식 쪽으로 넘길 내용
 
