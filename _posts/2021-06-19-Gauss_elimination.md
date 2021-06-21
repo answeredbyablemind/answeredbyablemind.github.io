@@ -185,6 +185,6 @@ $$\begin{cases}y=-2x-1 \\ y=3x-2 \\ y=x+1\end{cases}$$
 
 
 <p align = "center">
-    <img width = "300" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
+    <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
     <br>
 </p>
