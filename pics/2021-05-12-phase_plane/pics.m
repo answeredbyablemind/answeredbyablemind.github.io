@@ -356,6 +356,8 @@ for i_vec = 1:2
 %         xlabel('순번'); 
         xlabel('time(s)');
         ylabel([num2str(i_vec),'번 고유벡터 위에서의 좌표'])
+        title('실제 솔루션과의 비교')
+        
         grid on;
         %         text(i_x0-1, proj_on_eigvec(i_x0)+ 0.15, num2str(i_x0-1))
         set(gca,'fontname','nanumbarungothic')

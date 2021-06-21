@@ -261,25 +261,19 @@ $$v_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}1 \\1 \end{bmatrix}$$
 
 거기다 그림 9, 그림 10을 보면 타입 스텝마다의 좌표값의 변화는 exponential한 변화를 띄는 것을 알 수 있는데, 이것은 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html) 편에서 보았던 것처럼 positive feedback을 통해 다음번 솔루션 커브 상의 위치를 결정하기 때문이다. 다시 말해 현재값을 기준으로 다음번 값이 정해지기 때문에 exponential한 변화를 보이며 이 또한 $\Delta t$가 매우 작아지면 연속적인 성장을 수행하기 때문에 자연상수 $e$를 밑으로 하는 지수함수의 꼴로 성장할 것임을 알 수 있다.
 
-그리고 고윳값의 크기는 성장 속도를 결정한다.
+따라서 각각의 고유벡터 위에서는 1계 미분방정식과 같이 positive feedback을 통해 솔루션 커브의 좌표가 결정되며
 
-고윳값 고유벡터의 정의를 생각해보면, 임의의 정방행렬 $A$에 대해 고윳값 $\lambda$, 고유벡터 $v$에 대해서 다음이 성립한다.
+$$\frac{dx}{dt}=\lambda x$$
 
-$$Av=\lambda v$$
+와 같이 고윳값의 크기에 따라 성장 속도가 결정되는 것임을 알 수 있다.
 
-여기서는 행렬 $A$를 곱한다는 것이 평면 상 어느 위치로 다음에 이동해야 할지를 결정하는 것을 의미하는데,
+왜냐면 고윳값의 정의에 따라 한번 성장 할 때 마다 고유벡터 위에서는 고윳값 만큼만 성장하기 때문이다.
 
-고유벡터 상에서는 행렬 $A$를 두 번 곱해주면 다음과 같이 변하는 것을 알 수 있다.
+따라서, 각 고유벡터 위의 좌표값의 변화는
 
-$$AAv=\lambda^2v$$
+$$ce^{\lambda t}$$
 
-이와 같이, 고유벡터 상에서의 움직임은 고윳값이 크면 클 수록 더 빨리 움직이므로 고윳값의 크기에 따라 성장의 속도가 결정된다고 볼 수 있다.
-
-결론적으로 두 가지 근거를 조합하면 시간에 따른 고유벡터 상에서의 움직임은 다음과 같이 볼 수 있다.
-
-$$\Rightarrow ce^{\lambda t}$$
-
-여기서 $c$는 초기값에 의해 결정되는 값이라고 할 수 있다.
+와 같이 쓸 수 있는 것이다. 여기서 $c$는 초기값에 의해 결정되는 값이다.
 
 ## 2원 1계 미분방정식의 해
 
@@ -291,7 +285,7 @@ $$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 v_1 \exp(\lambda_1 t) +c_2 v_2 \e
 
 그리고 $c_1$, $c_2$는 초기값에 따라 결정되는 값이다.
 
-따라서, 식 (4)의 연립 미분방정식이라면 고유벡터가 $\begin{bmatrix}1\\-1\end{bmatrix}$, $\begin{bmatrix}1\\1\end{bmatrix}$이고 그에 대응되는 고윳값은 $-1$, $1$이므로 해는 다음과 같을 것이다.
+따라서, 식 (4)의 연립 미분방정식이라면 고유벡터가 $[-1, 1]^T$, $[1, 1]^T$이고 그에 대응되는 고윳값은 각각 $-1$, $1$이므로 해는 다음과 같을 것이다.
 
 $$\begin{bmatrix}x(t) \\y(t) \end{bmatrix}=c_1 \frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1 \end{bmatrix} \exp(-t) +c_2 \frac{1}{\sqrt{2}}\begin{bmatrix}1\\1 \end{bmatrix} \exp(t) $$
 
@@ -310,7 +304,15 @@ $$\therefore \begin{bmatrix}x(t) \\y(t) \end{bmatrix}=-\frac{3}{2}\begin{bmatrix
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic6.png">
   <br>
-  그림 8. 식 (17)의 곡선을 그림으로 표현한 것
+  그림 11. 식 (17)의 곡선을 그림으로 표현한 것
+</p>
+
+그리고 그림 9, 10에서 생각해본 고유벡터 상의 좌표들을 실제 솔루션의 좌표와 비교해보면 다음과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic13.png">
+  <br>
+  그림 12. Euler method로 생각해본 고유벡터 상의 좌표와 실제 솔루션과의 비교
 </p>
 
 # 실수, 복소수, 중복 고윳값의 의미
@@ -356,7 +358,7 @@ $$e^{\alpha t}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic1.png">
   <br>
-  그림 9. 실수 고윳값을 갖는 경우의 위상 평면 및 일부 solution curve의 예시
+  그림 13. 실수 고윳값을 갖는 경우의 위상 평면 및 일부 solution curve의 예시
 </p>
 
 ## 복소수 고윳값을 갖는 경우
@@ -398,7 +400,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic7.png">
   <br>
-  그림 10. 허수 지수를 갖는 자연상수 지수 함수의 복소 평면 상의 위치
+  그림 14. 허수 지수를 갖는 자연상수 지수 함수의 복소 평면 상의 위치
 </p>
 
 따라서, $e^{\alpha t}$는 시간이 지날 수록 값이 커지고 $e^{i\beta t}$는 시간이 지나면서 계속 회전을 하게 되므로 결국 두 값을 곱한 $e^{\alpha t}e^{i\beta t}$는 회전하면서 반지름이 점점 커지는 원과 같은 형태를 띄게 된다.
@@ -408,7 +410,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/rotate_and_bigger.mp4">
   </video>
   <br>
-  그림 11. 복소수 지수를 갖는 자연상수 지수 함수 $ re^{i\theta t}$의 시간에 따른 위치 변화
+  그림 15. 복소수 지수를 갖는 자연상수 지수 함수 $ re^{i\theta t}$의 시간에 따른 위치 변화
 </p>
 
 따라서 복소 고윳값을 갖는 경우에는 실수부가 0보다 크면 반지름이 계속해서 커지는 솔루션 커브를 갖게 된다.
@@ -416,7 +418,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
 <p align = "center">
   <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic3.png">
   <br>
-  그림 11. 실수부가 0보다 큰 복소 고윳값을 갖는 경우의 솔루션 커브
+  그림 16. 실수부가 0보다 큰 복소 고윳값을 갖는 경우의 솔루션 커브
 </p>
 
 반대로 복소 고윳값을 갖는 경우에는 실수부가 0보다 작으면 반지름이 계속해서 작아지는 솔루션 커브를 갖게 된다.
@@ -424,7 +426,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
 <p align = "center">
   <img src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic2.png">
   <br>
-  그림 12. 실수부가 0보다 작은 복소 고윳값을 갖는 경우의 솔루션 커브
+  그림 17. 실수부가 0보다 작은 복소 고윳값을 갖는 경우의 솔루션 커브
 </p>
 
 ## 중복 고윳값을 갖는 경우
@@ -500,5 +502,5 @@ $$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}-1 & 1 \\ 0 & -1 \e
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-12-phase_plane/pic8.png">
   <br>
-  그림 13. 중복 고윳값 고유벡터를 갖는 연립 미분방정식의 phase plane
+  그림 18. 중복 고윳값 고유벡터를 갖는 연립 미분방정식의 phase plane
 </p>
