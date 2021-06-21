@@ -157,3 +157,34 @@ $$\begin{bmatrix}
     2 & 6 & 4 & 6 & 2 \\
     3 & 3 & 8 & 12 & 17
 \end{bmatrix}$$
+
+다음과 같은 row operation들을 수행하자.
+
+$$r_2 \rightarrow r_2- 2r_1$$
+
+$$r_3 \rightarrow r_3- 3r_1$$
+
+그러면 다음과 같은 행렬을 얻을 수 있게 된다.
+
+$$\begin{bmatrix}
+    1 & 1 & 2 & 3 & 4 \\
+    0 & 4 & 0 & 0 & -6 \\
+    0 & 0 & 2 & 3 & 5
+\end{bmatrix}$$
+
+
+# Row-echelon 행렬의 특성
+
+우선 LU 분해를 할 때와는 달리 Row-echelon 행렬을 얻게되는 행렬은 정방행렬(square matrix)이 아니어도 괜찮다.
+
+연립 방정식과 연관시켜 생각해보면 식의 개수보다 변수의 개수가 많거나 변수의 개수가 식의 개수보다 많은 경우에 해당된다고 할 수 있다.
+
+식의 개수가 변수의 개수보다 많은 경우는 overdetermined system이라고 부르기도 한다. 다음과 같은 경우가 overdetermined system에 해당한다고 할 수 있다.
+
+$$\begin{cases}y=-2x-1 \\ y=3x-2 \\ y=x+1\end{cases}$$
+
+
+<p align = "center">
+    <img width = "300" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
+    <br>
+</p>
