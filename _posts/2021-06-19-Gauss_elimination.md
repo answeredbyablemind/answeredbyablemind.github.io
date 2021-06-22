@@ -188,3 +188,18 @@ $$\begin{cases}y=-2x-1 \\ y=3x-2 \\ y=x+1\end{cases}$$
     <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
     <br>
 </p>
+
+# 벡터의 선형 독립/선형 종속
+
+# Matrix rank
+
+# free variables
+
+# 핵심 포인트
+
+핵심은 방정식의 개수와 변수의 개수가 같지 않은 경우에 해의 특성이 어떠한지 파악하기 위해 사용하는 테크닉이라는 점이다.
+
+선형 독립적인 변수들을 캐치해낼 수 있다.
+
+반대로 선형 독립적이지 않은 변수들은 어떤 다른 변수의 변화에 맞춰 변화한다.
+
