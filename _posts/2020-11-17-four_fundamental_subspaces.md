@@ -28,7 +28,7 @@ tags: 선형대수
 
 선형대수학과 관련해서 지금까지 다루어 왔던 많은 논의들은 "[행렬은 선형변환이다](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)"라는 내용을 기반으로 하여 구성되었다.
 
-잠깐 복습하자면, 행렬은 벡터를 변환시켜 다른 벡터를 출력해준다[^1].
+잠깐 복습하자면, 행렬은 벡터를 변환시켜 다른 벡터를 출력해준다.
 
 <p align = "center">
 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic1.png">
