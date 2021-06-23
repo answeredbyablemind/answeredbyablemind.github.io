@@ -180,6 +180,60 @@ $$\begin{bmatrix}
 
 ## RREF: 역행렬의 계산
 
+$Ax=b$에서 $b$ 벡터가 여러 종류일 때, 한꺼번에 해 $x$들을 구할 수 있다.
+
+가령, 아래와 같이 세 가지 경우의 솔루션을 얻고자 한다고 하자.
+
+$$\begin{cases}3x-z = 1 \\ x+2y+3z = 1 \\ 2x-y+z=1\end{cases}$$
+
+$$\begin{cases}3x-z = 2 \\ x+2y+3z = 2 \\ 2x-y+z=2\end{cases}$$
+
+$$\begin{cases}3x-z = 3 \\ x+2y+3z = 3 \\ 2x-y+z=3\end{cases}$$
+
+그러면 각각의 경우에 대해서 세 번의 계산을 할 것이 아니라 다음과 같이 augmented matrix를 구성하고 가우스-조던 소거를 수행하면 한번에 세 가지 방정식을 다 풀어낼 수 있게 된다.
+
+$$\left[\begin{array}{ccc|ccc} 
+    3 & 0 & -1 & 1 & 2 & 3 \\
+    1 & 2 & 3 &  1 & 2 & 3 \\
+    2 & -1 & 1 & 1 & 2 & 3
+\end{array}\right]$$
+
+이것은 다시 말해 다음과 같은 행렬 문제를 푸는 것과 다르지 않다.
+
+$$AB=
+    \begin{bmatrix}3 & 0 & -1 \\ 1 & 2 & 3 \\ 2 & -1 & 1\end{bmatrix}
+    \begin{bmatrix}x_{11} & x_{12} & x_{13} \\ x_{21} & x_{22} & x_{23} \\ x_{31} & x_{32} & x_{33}\end{bmatrix}
+    =\begin{bmatrix}1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3\end{bmatrix}$$
+
+그럼 만약 이렇게 augmented matrix를 쓸 수 있다는 점을 응용해 augmented matrix를 다음과 같이 설정하면 어떨까?
+
+$$\left[\begin{array}{ccc|ccc} 
+    3 & 0  & -1 & 1 & 0 & 0 \\
+    1 & 2  & 3  & 0 & 1 & 0 \\
+    2 & -1 & 1  & 0 & 0 & 1
+\end{array}\right]$$
+
+즉, $B$라는 행렬은 $A$라는 행렬 뒤에 곱해져서 결과로써 단위 행렬을 출력해주어야 한다.
+
+다시 말해 $B$ 행렬은 $A$ 행렬의 역행렬이다.
+
+즉, 위의 augmented matrix에 대해 가우스-조던 행렬 소거를 적용해 reduced-row echelon matrix로 만들어주면 다음과 같다.
+
+$$\left[\begin{array}{ccc|ccc} 
+    1 & 0  & 0  & 1/4 & 1/20 & 1/10 \\
+    0 & 1  & 0  & 1/4 & 1/4 & -1/2 \\
+    0 & 0  & 1  & -1/4 & 3/20 & 3/10
+\end{array}\right]$$
+
+그러므로 $A$의 역행렬을 다음과 같이 계산할 수 있는 것이다.
+
+$$A^{-1}=\begin{bmatrix}
+    1/4 & 1/20 & 1/10 \\
+    1/4 & 1/4 & -1/2 \\
+    -1/4 & 3/20 & 3/10
+\end{bmatrix}$$
+
+
 ## 행동치 관계를 통한 솔루션 계산
 
 $Ax=b$, $Ux=c$, $Rx=d$의 해는 모두 동일하다.
