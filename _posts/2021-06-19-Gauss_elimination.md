@@ -1,5 +1,5 @@
 ---
-title: 가우스 소거법
+title: 가우스 / 가우스-조던 소거법
 sidebar:
   nav: docs-ko
 aside:
@@ -37,11 +37,11 @@ tags: 선형대수학
 
 그런데, 꼭 행렬 $A$가 정방 행렬이어야지만 위와 같은 방식의 row operation을 해줄 수 있는 것은 아니다.
 
-다시 말해, 식의 개수보다 변수의 개수가 많은 경우도 있을 수 있고, 변수의 개수보다 식의 개수가 많은 경우에 대해서도 생각해볼 수 있지 않을까? 
+다시 말해, 식의 개수보다 변수의 개수가 많은 경우도 있을 수 있고, 변수의 개수보다 식의 개수가 많은 경우에 대해서도 위와 같은 상삼각행렬 비슷한 것을 남길 수 있지 않을까?
 
-그리고, 정방행렬이 아닌 계수 행렬 $A$에 대해 row operation을 수행해 얻은 행렬 $U$가 우리에게 시사해주는 바는 어떤 것들이 있을지도 한번 생각해보자.
+또, 상삼각행렬의 꼴이 아니라 대각성분 위에 남아있는 숫자들도 모두 row operation을 취해줌으로써 소거해버리면 어떻게 될까?
 
-# Row-echelon and row-reduced echelon matrices
+# LU 분해와 REF, RREF
 
 정방행렬이 아닌 직사각행렬(rectangular matrix)에 대해 row operation을 취해줌으로써 우리가 얻어야 하는 최종 결과물은 마치 LU 분해를 수행해서 상삼각행렬(upper triangular matrix)를 얻은 것과 같은 형태이다.
 
@@ -71,7 +71,7 @@ tags: 선형대수학
 
 다시 말해 row-echelon matrix는 직사각행렬 $A$에 대해 row operation을 수행한 결과로 얻어지는 행렬로 상삼각행렬과 유사한 형태와 기능을 갖는 행렬이다. 그리고 위에서 언급한 세 가지 특성을 가져야 한다. 따라서, row operation을 수행해주면서 해당 형태를 갖게끔 행교환을 계속 수행해줌으로써 얻을 수 있게 된다.
 
-## echelon이라는 단어에 대해서
+## Echelon이라는 단어의 번역에 대해서
 
 Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 
@@ -95,7 +95,7 @@ Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 
 다시 말하면, 행렬의 하단부에 0이 쏠려있다보니 그 0들의 형태가 마치 계단 형태인 것 처럼 보인다는 의미에서 echelon이라는 단어를 썼다고 보는 것이 더 낫다. 그리고 그래야 맥락에 맞지 않아 보이는 pivot이라는 용어도 단어의 이용 의도를 조금더 파악할 수 있게 된다.
 
-## Row-echelon matrix의 예시
+## REF & RREF의 형태 예시: 눈으로 구별해보세요.
 
 Row-echelon 행렬의 개념은 처음 접하게 되면 어리둥절할 수 있다.
 
@@ -148,7 +148,9 @@ $$\begin{bmatrix}
    0 & 0 & 0 & 0
 \end{bmatrix}$$
 
-## Row-echelon matrix 구하기 예시 문제
+## REF & RREF 직접 구해보기
+
+### 손으로 REf, RREF 구하기
 
 아래의 행렬 $A$에 대해 elementary row operation을 수행해 row-echelon matrix를 얻어보자.
 
@@ -172,34 +174,26 @@ $$\begin{bmatrix}
     0 & 0 & 2 & 3 & 5
 \end{bmatrix}$$
 
+### MATLAB에서 REF, RREF 구하기
 
-# Row-echelon 행렬의 특성
+# REF와 RREF의 쓸모
 
-우선 LU 분해를 할 때와는 달리 Row-echelon 행렬을 얻게되는 행렬은 정방행렬(square matrix)이 아니어도 괜찮다.
+## RREF: 역행렬의 계산
 
-연립 방정식과 연관시켜 생각해보면 식의 개수보다 변수의 개수가 많거나 변수의 개수가 식의 개수보다 많은 경우에 해당된다고 할 수 있다.
+## 행동치 관계를 통한 솔루션 계산
 
-식의 개수가 변수의 개수보다 많은 경우는 overdetermined system이라고 부르기도 한다. 다음과 같은 경우가 overdetermined system에 해당한다고 할 수 있다.
+$Ax=b$, $Ux=c$, $Rx=d$의 해는 모두 동일하다.
 
-$$\begin{cases}y=-2x-1 \\ y=3x-2 \\ y=x+1\end{cases}$$
+$A$와 $U$와 $R$은 모두 행동치 행렬이다.
 
+row operation을 수행해주더라도 row space의 변화는 없다. (다만 column space에는 변화가 생긴다.)
 
-<p align = "center">
-    <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
-    <br>
-</p>
+## 행 벡터의 선형 독립 / 종속 판별
 
-# 벡터의 선형 독립/선형 종속
+## 행렬의 rank 계산
 
-# Matrix rank
+## free variable이 어떤 것인지 확인
 
-# free variables
+non-zero row, pivot column, free column
 
-# 핵심 포인트
-
-핵심은 방정식의 개수와 변수의 개수가 같지 않은 경우에 해의 특성이 어떠한지 파악하기 위해 사용하는 테크닉이라는 점이다.
-
-선형 독립적인 변수들을 캐치해낼 수 있다.
-
-반대로 선형 독립적이지 않은 변수들은 어떤 다른 변수의 변화에 맞춰 변화한다.
-
+complete solution을 구하기 위해 필요한 과정
