@@ -174,7 +174,51 @@ $$\begin{bmatrix}
     0 & 0 & 2 & 3 & 5
 \end{bmatrix}$$
 
+여기까지만 구하면 이것이 행렬 $A$의 row-echelon form이다.
+
+여기서 2행에 1/4를 곱해주고 3행에 1/2를 곱해주자.
+
+즉, 
+
+$$r_2 \rightarrow \frac{1}{4}r_2 $$
+
+$$r_3 \rightarrow \frac{1}{2}r_3$$
+
+연산을 취해주면 다음과 같이 행렬이 수정된다.
+
+$$\begin{bmatrix}
+    1 & 1 & 2 & 3 & 4 \\
+    0 & 1 & 0 & 0 & -3/2 \\
+    0 & 0 & 1 & 3/2 & 5/2
+\end{bmatrix}$$
+
+여기서 pivot 위의 값들도 모두 0으로 만들어주기 위해 아래와 같은 두 개의 행연산을 취해주자.
+
+$$r_1 \rightarrow r_1 - r_2$$
+
+$$r_1 \rightarrow r_1 - 2r_3$$
+
+그러면 최종적으로 다음과 같은 행렬을 얻을 수 있게 된다.
+
+$$\begin{bmatrix}
+    1 & 0 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & 0 & -3/2 \\
+    0 & 0 & 1 & 3/2 & 5/2
+\end{bmatrix}$$
+
+이것이 행렬 A의 reduced-row echelon form이다.
+
 ### MATLAB에서 REF, RREF 구하기
+
+[~, ref_A]=lu(A);
+
+원래 ref_A는 LU 분해를 통해 얻은 상삼각행렬(upper triangular matrix)이 들어오는 자리.
+
+ref는 유일하게 결정되지 않아서 손으로 푼 REF 결과와 MATLAB의 LU 분해 결과는 다를 수 있다.
+
+rref_A = rref(A);
+
+
 
 # REF와 RREF의 쓸모
 
