@@ -81,6 +81,9 @@ for i_x0 = 1:size(x0s,1)
     plot(z(:,1), z(:,2),'b-','linewidth',1.5)
 end
 
+figure;
+plot(z(:,1), z(:,2),'y-','linewidth',1.5)
+set(gca,'visible','off')
 %% 복소 고윳값 갖는 행렬 (outward spiral)
 
 figure;
