@@ -443,7 +443,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
 
 아래와 같은 케이스를 생각해보자.
 
-$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}$$
 
 이 경우는 고윳값이 모두 $\lambda$로 중복되지만 고유벡터는
 
@@ -459,7 +459,7 @@ $$=\begin{bmatrix}c_1\\c_2\end{bmatrix}e^{\lambda t}$$
 
 아래와 같은 케이스를 생각해보자.
 
-$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 1 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 1 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}$$
 
 이 경우는 고윳값은 $\lambda$로 두 개가 중복인데, 고유벡터는
 
