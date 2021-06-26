@@ -1,5 +1,5 @@
 ---
-title: 가우스 소거법
+title: 가우스 / 가우스-조던 소거법
 sidebar:
   nav: docs-ko
 aside:
@@ -37,11 +37,11 @@ tags: 선형대수학
 
 그런데, 꼭 행렬 $A$가 정방 행렬이어야지만 위와 같은 방식의 row operation을 해줄 수 있는 것은 아니다.
 
-다시 말해, 식의 개수보다 변수의 개수가 많은 경우도 있을 수 있고, 변수의 개수보다 식의 개수가 많은 경우에 대해서도 생각해볼 수 있지 않을까? 
+다시 말해, 식의 개수보다 변수의 개수가 많은 경우도 있을 수 있고, 변수의 개수보다 식의 개수가 많은 경우에 대해서도 위와 같은 상삼각행렬 비슷한 것을 남길 수 있지 않을까?
 
-그리고, 정방행렬이 아닌 계수 행렬 $A$에 대해 row operation을 수행해 얻은 행렬 $U$가 우리에게 시사해주는 바는 어떤 것들이 있을지도 한번 생각해보자.
+또, 상삼각행렬의 꼴이 아니라 대각성분 위에 남아있는 숫자들도 모두 row operation을 취해줌으로써 소거해버리면 어떻게 될까?
 
-# Row-echelon and row-reduced echelon matrices
+# LU 분해와 REF, RREF
 
 정방행렬이 아닌 직사각행렬(rectangular matrix)에 대해 row operation을 취해줌으로써 우리가 얻어야 하는 최종 결과물은 마치 LU 분해를 수행해서 상삼각행렬(upper triangular matrix)를 얻은 것과 같은 형태이다.
 
@@ -71,7 +71,7 @@ tags: 선형대수학
 
 다시 말해 row-echelon matrix는 직사각행렬 $A$에 대해 row operation을 수행한 결과로 얻어지는 행렬로 상삼각행렬과 유사한 형태와 기능을 갖는 행렬이다. 그리고 위에서 언급한 세 가지 특성을 가져야 한다. 따라서, row operation을 수행해주면서 해당 형태를 갖게끔 행교환을 계속 수행해줌으로써 얻을 수 있게 된다.
 
-## echelon이라는 단어에 대해서
+## Echelon이라는 단어의 번역에 대해서
 
 Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 
@@ -95,7 +95,7 @@ Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 
 다시 말하면, 행렬의 하단부에 0이 쏠려있다보니 그 0들의 형태가 마치 계단 형태인 것 처럼 보인다는 의미에서 echelon이라는 단어를 썼다고 보는 것이 더 낫다. 그리고 그래야 맥락에 맞지 않아 보이는 pivot이라는 용어도 단어의 이용 의도를 조금더 파악할 수 있게 된다.
 
-## Row-echelon matrix의 예시
+## REF & RREF의 형태 예시: 눈으로 구별해보세요.
 
 Row-echelon 행렬의 개념은 처음 접하게 되면 어리둥절할 수 있다.
 
@@ -148,7 +148,9 @@ $$\begin{bmatrix}
    0 & 0 & 0 & 0
 \end{bmatrix}$$
 
-## Row-echelon matrix 구하기 예시 문제
+## REF & RREF 직접 구해보기
+
+### 손으로 REf, RREF 구하기
 
 아래의 행렬 $A$에 대해 elementary row operation을 수행해 row-echelon matrix를 얻어보자.
 
@@ -172,19 +174,124 @@ $$\begin{bmatrix}
     0 & 0 & 2 & 3 & 5
 \end{bmatrix}$$
 
+여기까지만 구하면 이것이 행렬 $A$의 row-echelon form이다.
 
-# Row-echelon 행렬의 특성
+여기서 2행에 1/4를 곱해주고 3행에 1/2를 곱해주자.
 
-우선 LU 분해를 할 때와는 달리 Row-echelon 행렬을 얻게되는 행렬은 정방행렬(square matrix)이 아니어도 괜찮다.
+즉, 
 
-연립 방정식과 연관시켜 생각해보면 식의 개수보다 변수의 개수가 많거나 변수의 개수가 식의 개수보다 많은 경우에 해당된다고 할 수 있다.
+$$r_2 \rightarrow \frac{1}{4}r_2 $$
 
-식의 개수가 변수의 개수보다 많은 경우는 overdetermined system이라고 부르기도 한다. 다음과 같은 경우가 overdetermined system에 해당한다고 할 수 있다.
+$$r_3 \rightarrow \frac{1}{2}r_3$$
 
-$$\begin{cases}y=-2x-1 \\ y=3x-2 \\ y=x+1\end{cases}$$
+연산을 취해주면 다음과 같이 행렬이 수정된다.
+
+$$\begin{bmatrix}
+    1 & 1 & 2 & 3 & 4 \\
+    0 & 1 & 0 & 0 & -3/2 \\
+    0 & 0 & 1 & 3/2 & 5/2
+\end{bmatrix}$$
+
+여기서 pivot 위의 값들도 모두 0으로 만들어주기 위해 아래와 같은 두 개의 행연산을 취해주자.
+
+$$r_1 \rightarrow r_1 - r_2$$
+
+$$r_1 \rightarrow r_1 - 2r_3$$
+
+그러면 최종적으로 다음과 같은 행렬을 얻을 수 있게 된다.
+
+$$\begin{bmatrix}
+    1 & 0 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & 0 & -3/2 \\
+    0 & 0 & 1 & 3/2 & 5/2
+\end{bmatrix}$$
+
+이것이 행렬 A의 reduced-row echelon form이다.
+
+### MATLAB에서 REF, RREF 구하기
+
+[~, ref_A]=lu(A);
+
+원래 ref_A는 LU 분해를 통해 얻은 상삼각행렬(upper triangular matrix)이 들어오는 자리.
+
+ref는 유일하게 결정되지 않아서 손으로 푼 REF 결과와 MATLAB의 LU 분해 결과는 다를 수 있다.
+
+rref_A = rref(A);
 
 
-<p align = "center">
-    <img width = "600" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
-    <br>
-</p>
+
+# REF와 RREF의 쓸모
+
+## RREF: 역행렬의 계산
+
+$Ax=b$에서 $b$ 벡터가 여러 종류일 때, 한꺼번에 해 $x$들을 구할 수 있다.
+
+가령, 아래와 같이 세 가지 경우의 솔루션을 얻고자 한다고 하자.
+
+$$\begin{cases}3x-z = 1 \\ x+2y+3z = 1 \\ 2x-y+z=1\end{cases}$$
+
+$$\begin{cases}3x-z = 2 \\ x+2y+3z = 2 \\ 2x-y+z=2\end{cases}$$
+
+$$\begin{cases}3x-z = 3 \\ x+2y+3z = 3 \\ 2x-y+z=3\end{cases}$$
+
+그러면 각각의 경우에 대해서 세 번의 계산을 할 것이 아니라 다음과 같이 augmented matrix를 구성하고 가우스-조던 소거를 수행하면 한번에 세 가지 방정식을 다 풀어낼 수 있게 된다.
+
+$$\left[\begin{array}{ccc|ccc} 
+    3 & 0 & -1 & 1 & 2 & 3 \\
+    1 & 2 & 3 &  1 & 2 & 3 \\
+    2 & -1 & 1 & 1 & 2 & 3
+\end{array}\right]$$
+
+이것은 다시 말해 다음과 같은 행렬 문제를 푸는 것과 다르지 않다.
+
+$$AB=
+    \begin{bmatrix}3 & 0 & -1 \\ 1 & 2 & 3 \\ 2 & -1 & 1\end{bmatrix}
+    \begin{bmatrix}x_{11} & x_{12} & x_{13} \\ x_{21} & x_{22} & x_{23} \\ x_{31} & x_{32} & x_{33}\end{bmatrix}
+    =\begin{bmatrix}1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3\end{bmatrix}$$
+
+그럼 만약 이렇게 augmented matrix를 쓸 수 있다는 점을 응용해 augmented matrix를 다음과 같이 설정하면 어떨까?
+
+$$\left[\begin{array}{ccc|ccc} 
+    3 & 0  & -1 & 1 & 0 & 0 \\
+    1 & 2  & 3  & 0 & 1 & 0 \\
+    2 & -1 & 1  & 0 & 0 & 1
+\end{array}\right]$$
+
+즉, $B$라는 행렬은 $A$라는 행렬 뒤에 곱해져서 결과로써 단위 행렬을 출력해주어야 한다.
+
+다시 말해 $B$ 행렬은 $A$ 행렬의 역행렬이다.
+
+즉, 위의 augmented matrix에 대해 가우스-조던 행렬 소거를 적용해 reduced-row echelon matrix로 만들어주면 다음과 같다.
+
+$$\left[\begin{array}{ccc|ccc} 
+    1 & 0  & 0  & 1/4 & 1/20 & 1/10 \\
+    0 & 1  & 0  & 1/4 & 1/4 & -1/2 \\
+    0 & 0  & 1  & -1/4 & 3/20 & 3/10
+\end{array}\right]$$
+
+그러므로 $A$의 역행렬을 다음과 같이 계산할 수 있는 것이다.
+
+$$A^{-1}=\begin{bmatrix}
+    1/4 & 1/20 & 1/10 \\
+    1/4 & 1/4 & -1/2 \\
+    -1/4 & 3/20 & 3/10
+\end{bmatrix}$$
+
+
+## 행동치 관계를 통한 솔루션 계산
+
+$Ax=b$, $Ux=c$, $Rx=d$의 해는 모두 동일하다.
+
+$A$와 $U$와 $R$은 모두 행동치 행렬이다.
+
+row operation을 수행해주더라도 row space의 변화는 없다. (다만 column space에는 변화가 생긴다.)
+
+## 행 벡터의 선형 독립 / 종속 판별
+
+## 행렬의 rank 계산
+
+## free variable이 어떤 것인지 확인
+
+non-zero row, pivot column, free column
+
+complete solution을 구하기 위해 필요한 과정
