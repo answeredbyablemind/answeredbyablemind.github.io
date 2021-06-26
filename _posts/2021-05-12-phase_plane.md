@@ -379,7 +379,7 @@ $$\lambda = \alpha + i\beta$$
 
 여기서 $\alpha,\beta$는 모두 임의의 실수이고 $i=\sqrt{-1}$이다.
 
-그러면 자연상수 $e$에 지수로 $\alpha \pm i\beta$를 올려주면,
+그러면 자연상수 $e$에 지수로 $\alpha + i\beta$를 올려주면,
 
 $$e^{\lambda t}=e^{\alpha t + i\beta t}$$
 
