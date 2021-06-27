@@ -121,8 +121,6 @@ $$\Rightarrow \lambda ^2 - (a+d)\lambda + ad-bc = 0 % 식 (10)$$
 
 ## Trace & Determinant
 
-식 (10)에서 $a+d$를 $T$라고 치환하고 $ad-bc$를 $D$라고 치환하자.
-
 $a+d$는 원래의 식 (6) 행렬 $A$의 대각합(trace)를 의미하고 $ad-bc$는 식 (6) 행렬 $A$의 행렬식(determinant)를 의미한다.
 
 $a+d$를 $T$라고 치환하고 $ad-bc$를 $D$라고 치환한 뒤 식 (10)에 근의 공식을 적용하면 아래와 같이 특성방정식의 해(solution)인 고윳값을 계산할 수 있다.
