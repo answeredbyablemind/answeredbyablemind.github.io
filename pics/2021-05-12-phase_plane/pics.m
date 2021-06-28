@@ -653,3 +653,57 @@ for i_x0 = 1:size(x0s,1)
     plot(z(:,1), z(:,2),'b-','linewidth',1.5)
 end
 
+
+%% 중근 고윳값 갖는 경우 (2)
+
+figure;
+A = [5, 1;-4, 1];
+fun_dirfield_system(@(x,y) A(1,1) * x + A(1,2) * y, @(x,y) A(2,1) * x + A(2,2) * y,-3:0.3:3)
+[V,D] = eig(A);
+
+hold on;
+
+xlim([-3, 3])
+ylim([-3, 3])
+
+xlabel('$$x$$','interpreter','latex');
+ylabel('$$y$$','interpreter','latex');
+
+
+xx = linspace(-3,3,100);
+yy1 = V(2,1)/(V(1,1)+eps) * xx;
+yy2 = V(2,2)/(V(1,2)+eps) * xx;
+
+if D(1,1) < 0
+    color = lines(1);
+else
+    color = lines(2);
+    color = color(2,:);
+end
+
+plot(xx, yy1,'color',color,'linewidth',2);
+
+if D(2,2) < 0
+    color = lines(1);
+else
+    color = lines(2);
+    color = color(2,:);
+end
+
+plot(xx, yy2,'color',color,'linewidth',2);
+
+% Numerical Solution
+x0s = [0, -0.5];
+
+for i_x0 = 1:size(x0s,1)
+    x0 = x0s(i_x0,:);
+    clear z
+    dzdt = @(t, z) my_difeq5(z);
+    [~, z] = ode45(dzdt, [-10, 10], x0, odeset('RelTol', 1e-3, 'AbsTol', 1e-3,'Refine',10));
+    plot(z(:,1), z(:,2),'b-','linewidth',1.5)
+end
+
+t = linspace(0,10,100);
+x = -0.5 * exp(3*t).*t;
+y = -0.5 * exp(3*t).*(-2*t+1);
+plot(x, y,'r')
