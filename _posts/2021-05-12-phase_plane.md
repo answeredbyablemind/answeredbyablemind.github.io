@@ -351,7 +351,7 @@ $$\Rightarrow \lambda^2-5\lambda+6=0$$
 
 $$e^{\alpha t}$$
 
-이다. 다시 말해 $t$가 커질 수록 얼마나 빨리 성장시킬 것인가를 말해주고 있는 것이다.
+이다. 이 값이 바로 고유벡터 위에서의 성장량으 말하는 것이다. 즉, $t$가 커짐에 따라 positive feedback을 통해 성장하는 양이 결정된다.
 
 그러므로 실근을 갖는 경우에는 아래 그림과 같이 고유벡터를 따라 원점으로 가까워지거나 원점으로부터 멀어지거나 하는 변화를 보이는 솔루션 커브를 갖는다.
 
@@ -379,7 +379,7 @@ $$\lambda = \alpha + i\beta$$
 
 여기서 $\alpha,\beta$는 모두 임의의 실수이고 $i=\sqrt{-1}$이다.
 
-그러면 자연상수 $e$에 지수로 $\alpha \pm i\beta$를 올려주면,
+그러면 자연상수 $e$에 지수로 $\alpha + i\beta$를 올려주면,
 
 $$e^{\lambda t}=e^{\alpha t + i\beta t}$$
 
@@ -443,7 +443,7 @@ $$\Rightarrow e^{\alpha t}e^{i\beta t}$$
 
 아래와 같은 케이스를 생각해보자.
 
-$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}$$
 
 이 경우는 고윳값이 모두 $\lambda$로 중복되지만 고유벡터는
 
@@ -461,7 +461,7 @@ $$=\begin{bmatrix}c_1\\c_2\end{bmatrix}e^{\lambda t}$$
 
 아래와 같은 케이스를 생각해보자.
 
-$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 1 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 1 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}$$
 
 이 경우는 고윳값은 $\lambda$로 두 개가 중복인데, 고유벡터는
 

@@ -45,7 +45,7 @@ $$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a & b \\ c & d \en
 
 한편, 고윳값이 복소수인 경우에는 phase plane이 원점을 따라 회전하는 것 같은 형태를 띄게 되었다. 
 
-이 때, 복소 고윳값의 실수부가 1보다 작으면 원점을 향해서 수렴하게 되었다.
+이 때, 복소 고윳값의 실수부가 음수이면 원점을 향해서 수렴하게 되었다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic2.png">
@@ -53,7 +53,7 @@ $$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a & b \\ c & d \en
   그림 2. 복소 고윳값을 가지는 경우. 복소 고윳값의 실수부가 1보다 작으면 원점을 향해 수렴해가며 회전한다.
 </p>
 
-한편, 고윳값이 복소수인데 실수부가 1보다 크면 phase plane의 형태가 원점을 벗어나는 회전을 하는 것을 알 수 있었다.
+한편, 고윳값이 복소수인데 실수부가 양수 phase plane의 형태가 원점을 벗어나는 회전을 하는 것을 알 수 있었다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic3.png">
@@ -61,12 +61,12 @@ $$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a & b \\ c & d \en
   그림 3. 복소 고윳값을 가지는 경우. 복소 고윳값의 실수부가 1보다 크면 원점으로부터 멀어져가며 회전한다.
 </p>
 
-또, 고윳값이 겹치는 경우도 있다. 중근 고윳값을 가지는 경우라고 표현한다. 중근 고윳값을 가지는 경우에는 고유벡터도 구별할 수 없게 되어 직선 하나만으로 수렴/발산 하는 형태의 phase plane이 그려진다.
+또, 고윳값이 겹치는 경우도 있다. 중근 고윳값을 가지는 경우라고 표현한다. 중근 고윳값을 가지는 경우에는 고유벡터를 구별할 수 없는 경우도 있다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic4.png">
   <br>
-  그림 4. 중근 고윳값을 가지는 경우. 중근 고윳값을 가지는 경우 고유벡터도 겹치게 되면서 직선 하나만 고유벡터로 확인되게 된다.
+  그림 4. 중근 고윳값을 가지는 경우. 중근 고윳값을 가지는 경우 고유벡터도 많은 경우 중복된다.
 </p>
 
 # 특성방정식 (characteristic equation)
@@ -120,8 +120,6 @@ $$\Rightarrow \lambda ^2 - (a+d)\lambda + ad-bc = 0 % 식 (10)$$
 이 특성방정식의 해를 구하면 고윳값을 얻게 되는 것이다.
 
 ## Trace & Determinant
-
-식 (10)에서 $a+d$를 $T$라고 치환하고 $ad-bc$를 $D$라고 치환하자.
 
 $a+d$는 원래의 식 (6) 행렬 $A$의 대각합(trace)를 의미하고 $ad-bc$는 식 (6) 행렬 $A$의 행렬식(determinant)를 의미한다.
 
