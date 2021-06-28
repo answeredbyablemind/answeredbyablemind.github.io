@@ -457,6 +457,8 @@ $$=\begin{bmatrix}c_1\\c_2\end{bmatrix}e^{\lambda t}$$
 
 ### 2. 중복 고윳값을 갖고 고유벡터도 중복인 경우
 
+※ 아래의 내용에 대해 이해하지 못한다면 스킵하여도 이후 내용을 이해하는데 문제가 없습니다.
+
 아래와 같은 케이스를 생각해보자.
 
 $$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}\lambda & 1 \\ 0 & \lambda \end{bmatrix}\begin{bmatrix}x \\y\end{bmatrix}=A\begin{bmatrix}x \\y\end{bmatrix}$$
@@ -469,27 +471,52 @@ $$v=\begin{bmatrix}1\\0\end{bmatrix}$$
 
 이런 경우는 우선 첫 번째 해를 먼저 구해보면,
 
-$$x_1(t)=c_1 e^{\lambda t}\begin{bmatrix}1 \\0\end{bmatrix}$$
+$$s_1(t)= e^{\lambda t}\begin{bmatrix}1 \\0\end{bmatrix}$$
 
-임을 알 수 있다. 일단 첫 번째 해가 주어졌기 때문에 두 번째 해를 원래의 식에 대입해 구해보도록 하자.
+임을 알 수 있다. 그런데 여기서부터 두 번째 해는 다음과 같이 생각할 수 있다[^1].
 
-원래의 식을 다시 쓰면 다음과 같은데,
+$$s_2(t) = te^{\lambda t}\begin{bmatrix}1\\0\end{bmatrix}+e^{\lambda t}\begin{bmatrix}v_3 \\ v_4\end{bmatrix}$$
 
-$$\begin{cases}x'=\lambda x + y \\ y'=\lambda y\end{cases}$$
+[^1]: 왜 이런 형식의 해를 생각하는지에 대해서는 크게 고민하지 말자. 앞으로의 미분방정식의 여러 해법을 공부할 때에도 많은 경우가 아이디어 싸움이다. 미분방정식은 해가 유일하게 존재한다고 판별되면 어떤 방식으로 해를 구하던지 해만 구할 수 있다면 그것이 정답이다. 여기서도 순전히 '아이디어'로 생각하자. (이미 다른 방식으로 많이 풀어본 뒤 실패하고 남게 된 아이디어라고 봐야 한다.)
 
-만약 여기서 $y=0$이 아니라는 조건만 붙는다면 구했던 첫번째 솔루션이 $y(t)$에 해당하는 솔루션임을 알 수 있다. 따라서,
+그리고 최종 해는 다음과 같이 $s_1(t)$와 $s_2(t)$의 선형결합으로 생각하자.
 
-$$y(t)=c_2 e^{\lambda t}$$
+$$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=c_1s_1(t)+c_2s_2(t)$$
 
-라고 적어주면 $y=c_2e^{\lambda t}$를 대입해 $x'$은 다음과 같이 쓸 수 있음을 알 수 있다.
+$s_2(t)$ 역시 원래의 미분방정식을 만족해야 하므로 대입해보면,
 
-$$x' = \lambda x + c_2 e^{\lambda t}$$
+$$s_2'=As_2$$
 
-이 식은 잘 생각해보면 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)이므로 $x(t)$는
+$$\Rightarrow e^{\lambda t}\begin{bmatrix}1\\0\end{bmatrix}+t\lambda e^{\lambda t}\begin{bmatrix}1\\0\end{bmatrix}+\lambda e^{\lambda t}\begin{bmatrix}v_3\\v_4\end{bmatrix}=A\left(te^{\lambda t}\begin{bmatrix}1\\0\end{bmatrix}+e^{\lambda t}\begin{bmatrix}v_3 \\ v_4\end{bmatrix}\right)$$
 
-$$x(t)=c_1e^{\lambda t}+c_2te^{\lambda t}$$
+따라서 $te^{\lambda t}$와 $e^{\lambda t}$로 양변을 각각 묶어주면,
 
-임을 알 수 있다.
+$$\left(\lambda\begin{bmatrix}1\\0\end{bmatrix}\right)te^{\lambda t}+\left(\begin{bmatrix}1\\0\end{bmatrix}+\lambda\begin{bmatrix}v_3 \\v_4\end{bmatrix}\right)e^{\lambda t}=\left(A\begin{bmatrix}1\\0\end{bmatrix}\right)te^{\lambda t}+\left(A\begin{bmatrix}v_3 \\v_4\end{bmatrix}\right)e^{\lambda t}$$
+
+와 같으므로 다음을 만족해야 함을 알 수 있다.
+
+$$\begin{cases}
+
+  A\begin{bmatrix}1\\0\end{bmatrix} = \lambda\begin{bmatrix}1\\0\end{bmatrix} \\\\
+  A\begin{bmatrix}v_3\\v_4\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}+\lambda\begin{bmatrix}v_3\\v_4\end{bmatrix}
+
+\end{cases}$$
+
+위 식에서 첫 번째 식은 원래 고유벡터와 고윳값을 만족시키는 식이므로 크게 신경쓸 것이 없고 두 번째 식에 대해서는 다음과 같이 바꿔 쓸 수 있음을 알 수 있다.
+
+$$\Rightarrow \left(A-\lambda I\right)\begin{bmatrix}v_3\\v_4\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}$$
+
+$$=\begin{bmatrix}0&1\\0&0\end{bmatrix}\begin{bmatrix}v_3\\v_4\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}$$
+
+여기서 잘 보면 $v_3$는 free variable이고 $v_4=1$임을 알 수 있다. 따라서 $v_3=0$이라고 선택하면,
+
+$$\Rightarrow \begin{bmatrix}v_3\\v_4\end{bmatrix}=\begin{bmatrix}0\\1\end{bmatrix}$$
+
+이 된다.
+
+그러므로 $s_2(t)$는
+
+$$s_2(t)=te^{\lambda t}\begin{bmatrix}1\\0\end{bmatrix}+e^{\lambda t}\begin{bmatrix}0 \\ 1\end{bmatrix}=\begin{bmatrix}t\\1\end{bmatrix}e^{\lambda t}$$
 
 따라서, 우리가 구하고자 했던 시스템의 솔루션은 다음과 같은 것으로 판단할 수 있다.
 
