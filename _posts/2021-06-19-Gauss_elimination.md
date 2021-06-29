@@ -43,7 +43,9 @@ tags: 선형대수학
 
 # LU 분해와 REF, RREF
 
-정방행렬이 아닌 직사각행렬(rectangular matrix)에 대해 row operation을 취해줌으로써 우리가 얻어야 하는 최종 결과물은 마치 LU 분해를 수행해서 상삼각행렬(upper triangular matrix)를 얻은 것과 같은 형태이다.
+※ REF는 Row-Echelon Form을 줄인 말이고, RREF는 Reduced Row-Echelon Form을 줄인 말입니다.
+
+정방행렬이 아닌 직사각행렬(rectangular matrix)에 대해 row operation을 취해줌으로써 우리가 얻어야 하는 결과물은 마치 LU 분해를 수행해서 상삼각행렬(upper triangular matrix)를 얻은 것과 같은 형태일 수 있다.
 
 대략적으로는 아래와 같은 모습을 띄고 있는 것이라고 말할 수 있다.
 
@@ -53,7 +55,7 @@ tags: 선형대수학
     그림 2. 직사각 행렬에 대해 row operation을 수행해 얻고자 기대하는 결과물
 </p>
 
-그림 2와 같은 행렬을 우리는 row-echelon matrix라고 한다. 한국말로는 사다리꼴 행렬이라고 부른다. (이 단어만은 한국어 표현이 잘못되었다고 생각해 row-echelon matrix라고 부르도록 하겠다.) 그림 2에서 삼각형(▲)과 하이픈(-)은 모두 0이 아닌 원소들을 의미한다. 또, 0이 아닌 행의 선행 계수인 삼각형(▲)을 특별히 피벗(pivot)이라고 이름 붙였고, pivot이 포함된 열(column)을 pivot column이라고 부른다.
+그림 2와 같은 행렬을 우리는 row-echelon matrix 혹은 주어진 행렬의 row-echelon form이라고 한다. 한국말로는 사다리꼴 행렬이라고 부른다. (이 단어만은 한국어 표현이 잘못되었다고 생각해 row-echelon matrix라고 부르도록 하겠다.) 그림 2에서 삼각형(▲)과 하이픈(-)은 모두 0이 아닌 원소들을 의미한다. 또, 0이 아닌 행의 선행 계수인 삼각형(▲)을 특별히 피벗(pivot)이라고 이름 붙였고, pivot이 포함된 열(column)을 pivot column이라고 부른다.
 
 용어를 어느정도 파악했을테니 row-echelon matrix가 갖는 특성을 글로 정리하자면 다음과 같다.
 
@@ -70,6 +72,14 @@ tags: 선형대수학
 </p>
 
 다시 말해 row-echelon matrix는 직사각행렬 $A$에 대해 row operation을 수행한 결과로 얻어지는 행렬로 상삼각행렬과 유사한 형태와 기능을 갖는 행렬이다. 그리고 위에서 언급한 세 가지 특성을 가져야 한다. 따라서, row operation을 수행해주면서 해당 형태를 갖게끔 행교환을 계속 수행해줌으로써 얻을 수 있게 된다.
+
+그리고 만약 여기서 scaling을 통해 pivot들을 모두 1로 만들고, pivot 위의 숫자들도 모두 0으로 만들어줄 수도 있을 것이다. 가령, 그림 3의 형태의 row-echelon form에 대해 다음과 같이 변형시킬 수 있다.
+
+<p align = "center">
+    <img width = "400" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic6.png">
+    <br>
+    그림 4. row-echelon form에서 pivot 을 모두 1로 scaling 해주고 pivot 위의 값들도 모두 0으로 만들어주면 reduced-row echelon form이 된다.
+</p>
 
 ## Echelon이라는 단어의 번역에 대해서
 
@@ -209,6 +219,10 @@ $$\begin{bmatrix}
 이것이 행렬 A의 reduced-row echelon form이다.
 
 ### MATLAB에서 REF, RREF 구하기
+
+MATLAB이나 여타 선형대수학을 위한 계산 도구를 통해 주어진 행렬의 Row Echelon Form(REF) 혹은 Reduced Row Echelon Form(RREF)를 계산할 수 있다.
+
+
 
 [~, ref_A]=lu(A);
 
