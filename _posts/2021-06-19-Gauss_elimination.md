@@ -92,6 +92,7 @@ Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 <p align = "center">
     <img width = "300" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic2.png">
     <br>
+    그림 5. 사다리꼴 도형의 형태
 </p>
 
 그런데 '사다리꼴' 이 말하는 사다리(ladder)의 형태를 말하는 것이다. 즉,
@@ -99,6 +100,7 @@ Row-echelon 행렬은 한국말로는 사다리꼴 행렬이라고 번역한다.
 <p align = "center">
     <img width = "300" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic3.png">
     <br>
+    그림 6. 그냥 사다리
 </p>
 
 왜냐면 echelon이라는 영어 단어가 '사다리'라는 뜻을 갖는 영단어에서 유래되었기 때문인 것으로 보인다. 하지만 여기서 row-echelon form이라는 뜻에서 echelon은 step-like architecture를 의미하는 것으로 보아야 타당하다.
@@ -111,52 +113,76 @@ Row-echelon 행렬의 개념은 처음 접하게 되면 어리둥절할 수 있�
 
 글로 써진 row-echelon 행렬의 특징이 쉽게 와닿긴 어렵기 때문이다. 그래서 몇 가지 예시를 가지고 row-echelon 행렬인지의 여부를 확인해보자.
 
-아래의 행렬은 Row-echelon matrix라고 할 수 있다.
+REF는 Row-Echelon Form, RREF는 Reduced Row-Echelon Form을 각각 의미한다.
+
+아래의 행렬은 REF이라고 할 수 있다.
 
 $$\begin{bmatrix}
-   1 & ● & ● & ● \\
-   0 & 1 & ● & ● \\
+   1 & - & - & - \\
+   0 & 1 & - & - \\
    0 & 0 & 0 & 0 \\
    0 & 0 & 0 & 0
 \end{bmatrix}$$
 
-여기서 '●'는 0이 아닌 숫자를 의미한다.
+여기서 '-'는 0이 아닌 숫자를 의미한다.
 
-아래의 행렬은 또 Row-echelon matrix라고 할 수 있다. 꼭 첫번째 행의 첫번째 값이 non-zero term이 되어야 한다는 요구 조건은 없다.
+아래의 행렬은 또 REF이라고 할 수 있다. 꼭 첫번째 행의 첫번째 값이 non-zero term이 되어야 한다는 요구 조건은 없다.
 
 $$\begin{bmatrix}
-   0 & 3 & ● & ● & ● & ● & ●\\
-   0 & 0 & 2 & ● & ● & ● & ●\\
-   0 & 0 & 0 & 0 & 0 & 5 & ●\\
-   0 & 0 & 0 & 0 & 0 & 0 & ●
+   0 & 3 & - & - & - & - & -\\
+   0 & 0 & 2 & - & - & - & -\\
+   0 & 0 & 0 & 0 & 0 & 5 & -\\
+   0 & 0 & 0 & 0 & 0 & 0 & -
 \end{bmatrix}$$
 
-그런데, 아래의 행렬은 row-echelon matrix가 아니다. 0으로만 구성된 행은 가장 아래에 위치해야 한다는 법칙을 어긴 것이기 때문이다.
+그런데, 아래의 행렬은 REF이 아니다. 0으로만 구성된 행은 가장 아래에 위치해야 한다는 법칙을 어긴 것이기 때문이다.
 
 $$\begin{bmatrix}
-   1 & ● & ● & ● \\
-   0 & 2 & ● & ● \\
+   1 & - & - & - \\
+   0 & 2 & - & - \\
    0 & 0 & 0 & 0 \\
    0 & 0 & 0 & 1
 \end{bmatrix}$$
 
-또, 아래와 같은 꼴의 행렬도 row-echelon form이 아니다. 세 가지 특성 중 두 번째를 어겼기 때문이다. 다시 말해 두번째 행의 0이 아닌 선행 계수가 첫 번째 행의 0이 아닌 선행 계수보다 왼쪽에 위치하기 때문이다.
+또, 아래와 같은 꼴의 행렬도 REF이 아니다. 세 가지 특성 중 두 번째를 어겼기 때문이다. 다시 말해 두번째 행의 0이 아닌 선행 계수가 첫 번째 행의 0이 아닌 선행 계수보다 왼쪽에 위치하기 때문이다.
 
 $$\begin{bmatrix}
-   0 & 1 & ● & ● \\
-   1 & ● & ● & ● \\
+   0 & 1 & - & - \\
+   1 & - & - & - \\
    0 & 0 & 0 & 0 \\
    0 & 0 & 0 & 0
 \end{bmatrix}$$
 
-또 아래와 같은 행렬도 row-echelon form이 아니다. 두 번째 pivot인 4가 포함되어 있는 2열을 보면 pivot인 4 아래의 모든 항이 0으로 표시되어 있지 않기 때문이다.
+또 아래와 같은 행렬도 REF이 아니다. 두 번째 pivot인 4가 포함되어 있는 2열을 보면 pivot인 4 아래의 모든 항이 0으로 표시되어 있지 않기 때문이다.
 
 $$\begin{bmatrix}
-   3 & ● & ● & ● \\
-   0 & 4 & ● & ● \\
+   3 & - & - & - \\
+   0 & 4 & - & - \\
    0 & 2 & 0 & 0 \\
    0 & 0 & 0 & 0
 \end{bmatrix}$$
+
+아래의 행렬은 RREF이라고 할 수 있다.
+
+$$\begin{bmatrix}
+   1 & 0 & 3 & 2 \\
+   0 & 1 & 4 & 5 \\
+   0 & 0 & 0 & 0 \\
+   0 & 0 & 0 & 0
+\end{bmatrix}$$
+
+그러나 아래의 행렬은 RREF이 아니다. pivot의 정의 상 2행 2열의 4는 2행의 pivot인데, RREF라면 pivot이 모두 1이 되어야 하기 때문이다.
+
+만약 여기서 2행에 1/4를 모두 곱해주면 RREF이 된다.
+
+$$\begin{bmatrix}
+   1 & 0 & 0 & 2 \\
+   0 & 4 & 1 & 5 \\
+   0 & 0 & 0 & 0 \\
+   0 & 0 & 0 & 0
+\end{bmatrix}$$
+
+
 
 ## REF & RREF 직접 구해보기
 
@@ -222,9 +248,44 @@ $$\begin{bmatrix}
 
 MATLAB이나 여타 선형대수학을 위한 계산 도구를 통해 주어진 행렬의 Row Echelon Form(REF) 혹은 Reduced Row Echelon Form(RREF)를 계산할 수 있다.
 
+그런데, REF는 유일하게 결정되지는 않는다. 가령, 어떤 행렬의 REF을 구할 때 pivot 값을 약분해주지 않더라도 여전히 REF로 볼 수 있다.
 
+가령 아래와 같은 행렬 $A$에 대해,
+
+$$A = \begin{bmatrix}
+    1 & 1 & 2 & 3 & 4 \\
+    2 & 6 & 4 & 6 & 2 \\
+    3 & 3 & 8 & 12 & 17
+\end{bmatrix}$$
+
+REF 중 하나는 다음과 같은 것일 수 있다.
+
+$$REF(A)_1 = \begin{bmatrix}
+    1 & 1 & 2 & 3 & 4 \\
+    0 & 4 & 0 & 0 & -6 \\
+    0 & 0 & 2 & 3 & 5
+\end{bmatrix}$$
+
+그런데, 가령 2번 행에 1/2를 곱해주더라도 여전히 REF의 꼴임을 알 수 있다.
+
+$$REF(A)_2 = \begin{bmatrix}
+    1 & 1 & 2 & 3 & 4 \\
+    0 & 2 & 0 & 0 & -3 \\
+    0 & 0 & 2 & 3 & 5
+\end{bmatrix}$$
+
+그래서 REF는 유일하게 결정되지는 않지만 MATLAB에서는 LU분해에 사용되는 lu 함수를 이용해 REF 유사한 것을 얻을 수 있게 된다.
+
+MATLAB에서 아래와 같이 커맨드를 입력해보면,
+
+```
+A = [1, 1, 2, 3, 4; 2, 6, 4, 6, 2; 3, 3, 8, 12, 17]
 
 [~, ref_A]=lu(A);
+```
+
+아래와 같이 REF를 얻을 수 있다.
+
 
 원래 ref_A는 LU 분해를 통해 얻은 상삼각행렬(upper triangular matrix)이 들어오는 자리.
 
@@ -232,7 +293,21 @@ ref는 유일하게 결정되지 않아서 손으로 푼 REF 결과와 MATLAB의
 
 rref_A = rref(A);
 
+<p align = "center">
+    <img width = "400" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic7.png">
+    <br>
+    그림 7. MATLAB으로 구한 행렬 A의 Row-Echelon Form
+</p>
 
+반면 RREF는 pivot을 약분해주고 pivot 위의 원소들도 모두 소거해주기 때문에 유일하게 결정된다.
+
+MATLAB에서는 rref()라는 함수를 이용해 RREF를 구할 수 있다.
+
+<p align = "center">
+    <img width = "400" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic8.png">
+    <br>
+    그림 8. MATLAB으로 구한 행렬 A의 Reduced Row-Echelon Form
+</p>
 
 # REF와 RREF의 쓸모
 
@@ -291,14 +366,45 @@ $$A^{-1}=\begin{bmatrix}
     -1/4 & 3/20 & 3/10
 \end{bmatrix}$$
 
-
 ## 행동치 관계를 통한 솔루션 계산
 
-$Ax=b$, $Ux=c$, $Rx=d$의 해는 모두 동일하다.
+연립방정식의 해를 구할 때는 방정식에 상수배를 취해주거나, 방정식 끼리 더해주거나, 방정식의 순서를 바꿔주는 과정을 통해 해를 얻을 수 있다.
 
-$A$와 $U$와 $R$은 모두 행동치 행렬이다.
+그리고, [기본 행렬](https://angeloyeo.github.io/2021/06/15/elementary_square_matrices.html) 편에서 보았던 것 처럼 연립방정식에 적용하던 테크닉들을 행렬 연산으로 옮겨놓은 것이
 
-row operation을 수행해주더라도 row space의 변화는 없다. (다만 column space에는 변화가 생긴다.)
+row operation이다. row operation은 행렬의 한 행을 상수배해주는 것, 행렬의 행 끼리 더해주는 것, 그리고 행의 순서를 바꿔주는 세 가지 테크닉을 의미한다.
+
+연립방정식의 해를 구할 때 상수배, 방정식 끼리 더 해주기, 순서 바꿔주기를 해주어도 해에는 변함이 없는 것 처럼 row-operation을 수행해주어도 해는 여전히 동일하게 유지된다.
+
+그러니까 원래 행렬을 $A$, 그 행렬의 REF를 $U$, RREF를 $R$이라고 하면 $Ax=b$, $Ux=c$, $Rx=d$의 해는 모두 동일하다.
+
+(이 때, $c$와 $d$는 $A$를 $U$ 혹은 $R$로 바꿔주면서 우항의 벡터 $b$가 변형된 것이다.)
+
+조금 어려운 말로 하면 $A$와 $U$와 $R$은 모두 행동치(row-equivalent)이다.
+
+다른 말로 하면 row operation을 수행해주더라도 row space의 변화는 없다고 할 수 있다. 하지만 column space에는 변화가 생긴다.
+
+예를 들어 아래와 같은 연립방정식을 푼다고 생각해보자.
+
+$$\begin{cases}3x+3y+z=3 \\ 4x+5y+2z=1 \\ 2x+5y+z = 3 \end{cases}$$
+
+그것은 아래와 같은 행렬식을 푸는 것과 같다고 할 수 있다.
+
+$$\begin{bmatrix}3 & 3 & 1 \\ 4 & 5 & 2  \\ 2 & 5 & 1 \end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}3\\1\\3\end{bmatrix}$$
+
+그런데, REF를 구해서 $Ux=c$의 꼴로 만들어준 다음 해를 구해도 마찬가지 위 방정식의 해와 동일한 해를 구할 수 있다.
+
+$$\begin{bmatrix}4 & 5 & 2 \\ 0 & 5/2 & 0  \\ 0 & 0 & -1/2 \end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}1\\5/2\\3\end{bmatrix}$$
+
+그리고 RREF를 구해서 $Rx=d$의 꼴로 만들어준 다음 해를 구해도 마찬가지 해를 구할 수 있다.
+
+$$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0  \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\1\\6\end{bmatrix}$$
+
+해를 구하기에 가장 쉬워보이는 방정식은 $Rx=d$이고 $x,y,z$는 
+
+$$x=2, y= 1, z= -6$$
+
+임을 쉽게 알 수 있다.
 
 ## 행 벡터의 선형 독립 / 종속 판별
 
