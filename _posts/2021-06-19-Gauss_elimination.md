@@ -408,6 +408,44 @@ $$x=2, y= 1, z= -6$$
 
 ## 행 벡터의 선형 독립 / 종속 판별
 
+임의의 벡터 $v_1$, $v_2$에 대해 두 벡터가 선형 독립인지 판별하기 위해선 다음과 같은 과정을 수행해볼 수 있다.
+
+$$c_1 v_1 + c_2 v_2 = 0$$
+
+과 같은 식을 생각했을 때, 0이 아닌 $c_1$, $c_2$를 가지고 위 식이 성립할 수 있다면 두 벡터 $v_1$과 $v_2$는 선형독립이 아니다. 다른 말로는 선형 종속이라고 한다.
+
+다시 말해, 위 식을 다시 정리하면,
+
+$$v_1 = -\frac{c_2}{c_1}v_2$$
+
+가 될텐데, 위 식을 만족할만한 0이 아닌 $c_1$, $c_2$가 존재한다는 뜻이 되므로 $v_1$과 $v_2$는 상수배라는 의미이다.
+
+반대로 $c_1 v_1 + c_2 v_2 = 0$을 만족할 수 있는 $c_1$, $c_2$ 오직 0만 가능하다면 $v_1$과 $v_2$는 선형 독립이라고 한다.
+
+어떤 행렬의 Row-Echelon Form 혹은 Reduced Row-Echelon Form을 구하는 것은 row operation을 통해 수행하는 것이다.
+
+이 때, 만약 row operation을 통해서 어떤 행이 all zero 가 된다면, all zero가 된 행은 다른 행들의 선형조합으로 얻어낼 수 있는 행이었다는 뜻이 된다. 
+
+다시 말해, 그 행은 다른 행들과 선형 종속이라는 의미이다.
+
+가령 아래와 같은 행렬 $A$를 생각해보자.
+
+$$A=\begin{bmatrix}5 & 3 & 3 \\ 5 & 1 & 3 \\ 5 & 2 & 3 \end{bmatrix}$$
+
+이 식을 잘 보면 세 번째 행은 다음과 같이 row operation 해주면 all-zero로 소거할 수 있다.
+
+$$r_3 \rightarrow r_3 -\frac{1}{2}r_1-\frac{1}{2}r_2 = 0$$
+
+<p align = "center">
+    <img width = "400" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic9.png">
+    <br>
+    그림 9. 다른 행에 선형 종속인 행은 row operation을 통해 소거할 수 있다.
+</p>
+
+다시 말해 $r_3$은 $r_1$과 $r_2$의 선형결합으로 표현해줄 수 있다.
+
+$$r_3 = 0.5 r_1 + 0.5 r_2$$
+
 ## 행렬의 rank 계산
 
 ## free variable이 어떤 것인지 확인
