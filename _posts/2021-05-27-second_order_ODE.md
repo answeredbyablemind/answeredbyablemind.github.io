@@ -121,31 +121,31 @@ $$\frac{d^2x}{dt^2}-4\frac{dx}{dt}+3x(t) = 0 % 식 (13)$$
 
 그러기 위해 다음과 같은 새로운 변수 $y(t)$를 생각해보자.
 
-$$y(t) = \frac{dx}{dt} % 식 (14)$$
+$$y(t) = \frac{dx}{dt}$$
 
 그러면
 
-$$\frac{dy}{dt}=\frac{d^2x}{dt^2} = 4\frac{dx}{dt}-3x(t) % 식 (15)$$
+$$\frac{dy}{dt}=\frac{d^2x}{dt^2} = 4\frac{dx}{dt}-3x(t)$$
 
 과 같은 관계를 얻을 수 있다.
 
-따라서, 우리는 아래와 같은 연립 방정식을 도출할 수 있게 된다.
+따라서, 우리는 아래와 같은 연립 미분방정식을 도출할 수 있게 된다.
 
-$$\begin{cases}\dfrac{dx}{dt} = y\\\\ \dfrac{dy}{dt}=-3x+4y\end{cases} % 식 (16)$$
+$$\begin{cases}\dfrac{dx}{dt} = y\\\\ \dfrac{dy}{dt}=-3x+4y\end{cases}$$
 
-$$\Rightarrow \begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}0 & 1 \\ -3 & 4\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} % 식 (17)$$
+$$\Rightarrow \begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}0 & 1 \\ -3 & 4\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} $$
 
-이제 우리는 식 (17)에 있는 행렬의 고윳값과 고유벡터를 얻어보도록 하자. 
+이제 우리는 식 (23)에 있는 행렬의 고윳값과 고유벡터를 얻어보도록 하자. 
 
 고윳값, 고유벡터의 정의에 따라, 고유벡터가 $\vec{v}$라고 하고 고윳값이 $\lambda$라고 했을 때 다음 식을 만족해야 한다.
 
-$$\begin{bmatrix}0 & 1 \\ -3 & 4 \end{bmatrix}\vec{v} = \lambda\vec{v} % 식 (18)$$
+$$\begin{bmatrix}0 & 1 \\ -3 & 4 \end{bmatrix}\vec{v} = \lambda\vec{v}$$
 
 모든 항을 왼쪽으로 이항하면,
 
-$$\begin{bmatrix}0-\lambda & 1 \\ -3 & 4-\lambda\end{bmatrix}\vec{v} = 0 % 식 (19)$$
+$$\begin{bmatrix}0-\lambda & 1 \\ -3 & 4-\lambda\end{bmatrix}\vec{v} = 0$$
 
-$\vec{v}$가 영벡터가 되지 않기 위해선 식 (19)의 행렬이 역행렬을 가지면 안되기 때문에 아래의 조건을 만족해야 한다. (이것을 특성방정식이라고도 부른다.)
+$\vec{v}$가 영벡터가 되지 않기 위해선 식 (25)의 행렬이 역행렬을 가지면 안되기 때문에 아래의 조건을 만족해야 한다. (이것을 특성방정식이라고도 부른다.)
 
 $$det\left(\begin{bmatrix}0-\lambda & 1 \\ -3 & 4-\lambda\end{bmatrix}\right) = 0$$
 
@@ -159,11 +159,11 @@ $$\lambda = 1 \text{ or } 3$$
 
 이다.
 
-각 고윳값에 해당하는 고유벡터를 찾아보면, 식 (19)로부터
+각 고윳값에 해당하는 고유벡터를 찾아보면, 식 (25)로부터
 
 $\lambda = 1$인 경우,
 
-$$ 식(19) \Rightarrow\begin{bmatrix}0 -1 & 1 \\ -3 & 4-1 \end{bmatrix}\vec{v} = \lambda\vec{v}$$
+$$ 식(26) \Rightarrow\begin{bmatrix}0 -1 & 1 \\ -3 & 4-1 \end{bmatrix}\vec{v} = \lambda\vec{v}$$
 
 $$=\begin{bmatrix}-1 & 1 \\ -3 & 3\end{bmatrix}\begin{bmatrix}v_1 \\ v_2\end{bmatrix}$$
 
@@ -173,7 +173,7 @@ $$\therefore \vec{v} = \begin{bmatrix}1 \\ 1\end{bmatrix}$$
 
 또, $\lambda = 3$인 경우,
 
-$$ 식(19) \Rightarrow\begin{bmatrix}0 -3 & 1 \\ -3 & 4-3 \end{bmatrix}\vec{v} = 0$$
+$$ 식(26) \Rightarrow\begin{bmatrix}0 -3 & 1 \\ -3 & 4-3 \end{bmatrix}\vec{v} = 0$$
 
 $$ = \begin{bmatrix}-3 & 1 \\ -3 & 1 \end{bmatrix}\begin{bmatrix}v_1 \\ v_2\end{bmatrix} = 0$$
 
@@ -181,22 +181,22 @@ $$ = \begin{bmatrix}-3 v_1& v_2 \\ -3v_1 & v_2 \end{bmatrix}\vec{v} = \begin{bma
 
 $$\therefore \vec{v} = \begin{bmatrix}1 \\ 3\end{bmatrix}$$
 
-따라서, 식 (17)의 일반해는
+따라서, 식 (23)의 일반해는
 
 $$\begin{bmatrix}x(t) \\ y(t) \end{bmatrix} = c_1\begin{bmatrix}1 \\ 1\end{bmatrix}e^t + c_2 \begin{bmatrix}1 \\3 \end{bmatrix}e^{3t}$$
 
 이다.
 
-그러므로, 식 (13)의 일반해는
+그러므로, 식 (19)의 일반해는
 
-$$x(t) = c_1e^t + c_2e^{3t} % 식 (33)$$
+$$x(t) = c_1e^t + c_2e^{3t}$$
 
 이다.
 
-참고로 식 (17)의 해집합에 대한 위상평면을 그려보면 다음과 같다. 굵은 검은색 선은 고유벡터를 따라가는 직선이다.
+참고로 식 (23)에 대한 위상평면을 그려보면 다음과 같다. 굵은 검은색 선은 고유벡터를 따라가는 직선이다.
 
 <p align = "center">
   <img src=  "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-27-second_order_ODE/pic1.png">
   <br>
-  그림 2. 식 (17)의 연립 미분방정식의 해집합에 관한 위상 평면. 굵은 검은색 선은 고유벡터를 따라가는 직선임.
+  그림 2. 식 (23)의 연립 미분방정식에 관한 위상 평면. 굵은 검은색 선은 고유벡터를 따라가는 직선임.
 </p>
