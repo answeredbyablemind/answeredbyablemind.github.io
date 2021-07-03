@@ -223,3 +223,7 @@ $$y'+p(t)y = g(t)$$
 라는 1계 선형미분 방정식의 초기 조건이 $y(t_0)=y_0$이고, $p(t)$와 $g(t)$가 열린구간 $I=(\alpha, \beta)$에서 연속이라고 하면, 이 구간에서 초기조건을 만족하는 함수 $y=\phi(t)$가 유일하게 존재한다.
 
 왜냐면 $p(t)$와 $g(t)$가 구간 $I$에서 연속이라는 점을 생각하면 식 (11)과 같은 적분식을 정의할 수 있고, 초기 조건에 따른 적분 상수 $C$가 유일하게 결정될 수 있기 때문이다.
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/73IL153hDAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
