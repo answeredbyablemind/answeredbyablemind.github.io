@@ -12,10 +12,8 @@ tags: 미분방정식
 
 본 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html)
 * [미분방정식을 이용한 오일러 공식 유도](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
-* [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 
 # 2계 제차 선형 미분방정식
 
