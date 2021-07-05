@@ -141,13 +141,13 @@ $$x''+p(t)x'+q(t)x = 0 % 식 (19)$$
 
 그리고 여기서 기저 함수 $x_1(t)$는 주어져있다고 하자.
 
-$x_2(t) = h(t)x_1(t)$라는 꼴을 띈다고 가정하고 $h(t)$를 구할 수 있을지 알아보자.
+$x_2(t) = u(t)x_1(t)$라는 꼴을 띈다고 가정하고 $u$를 구할 수 있을지 알아보자.
 
 여기서 왜 그런 가정을 하냐?라고 묻는다면 특별히 그래야만 하는 이유는 없다. 
 
 미분방정식에서는 해가 유일하게 존재함이 보장된다면 어떤 방식의 아이디어로 방정식을 풀더라도 해만 나오면 그 방법이 정답이다. 다시 말해 해를 구하기 위한 아이디어의 싸움일 뿐이다.
 
-다만, $x_2(t)=h(t)x_1(t)$라고 두면 $x_1(t)$와는 독립적인 기저 함수를 얻을 수 있기 때문에 이렇게 결정하는 것은 타당한 접근이라고 볼 수는 있다.
+다만, $x_2(t)=ux_1(t)$라고 두면 $x_1(t)$와는 독립적인 기저 함수를 얻을 수 있기 때문에 이렇게 결정하는 것은 타당한 접근이라고 볼 수는 있다.
 
 (독립적인 기저 여부를 판단하기 위해선 [Wronskian](https://angeloyeo.github.io/2019/10/10/Wronskian.html)을 적용할 수 있다.)
 
@@ -161,80 +161,47 @@ $$x_2''+p(t)x_2'+q(t)x_2= 0$$
 
 따라서 우리는 방금 언급 된 식 중 두 번째 식을 사용하기 위해 $x_2'$과 $x_2''$을 구해보자. 
 
-$$x_2' = h'x_1 + hx'_1$$
+$$x_2' = u'x_1 + ux'_1$$
 
-$$x_2'' = h''x_1+h'x_1'+h'x_1' +hx_1''$$
+$$x_2'' = u''x_1+u'x_1'+u'x_1' +ux_1''$$
 
-$$=h''x_1+2h'x_1'+hx_1''$$
+$$=u''x_1+2u'x_1'+ux_1''$$
 
 따라서 원래의 식에 $x_2'$와 $x_2{''}$를 대입하면,
 
 $$x_2''+p(t)x_2'+q(t)x_2=0$$
 
-$$\Rightarrow h''x_1+2h'x_1'+hx_1''+p(t)(h'x_1+hx_1')+q(t)hx_1=0$$
+$$\Rightarrow u''x_1+2u'x_1'+ux_1''+p(t)(u'x_1+ux_1')+q(t)ux_1=0$$
 
-여기서 $h{''}$와 $h'$, $h$에 대하여 식을 묶어 보자.
+여기서 $h{''}$와 $u$, u에 대하여 식을 묶어 보자.
 
-$$\Rightarrow h''(x_1) + h'(2x_1'+p(t)x_1)+h(x_1''+p(t)x_1'+q(t)x_1)=0$$
+$$\Rightarrow u''(x_1) + u'(2x_1'+p(t)x_1)+h(x_1''+p(t)x_1'+q(t)x_1)=0$$
 
 앞서 언급한 바와 같이 $(x_1{''}+p(t)x_1'+q(t)x_1)=0$이므로
 
-$$\Rightarrow h''x_1 + h'(2x_1'+p(t)x_1) = 0$$
+$$\Rightarrow u''x_1 + u'(2x_1'+p(t)x_1) = 0$$
 
 이다.
 
 이 식을 다시 쓰면
 
-$$x_1h''+(2x_1'+p(t)x_1)h'=0$$
+$$x_1u''+(2x_1'+p(t)x_1)u'=0$$
 
 이 되고, 양변을 $x_1$로 나눠주면,
 
-$$\Rightarrow h'' + \left(2\frac{x_1'}{x_1}+p(t)\right)h'=0$$
+$$\Rightarrow u'' + \left(2\frac{x_1'}{x_1}+p(t)\right)u'=0$$
 
 과 같다.
 
-이 식은 $h'$을 구하기 위한 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)과 같으므로 1계 선형 미분방정식을 구할 때 사용했던 해법을 이용할 수 있게 된다.
+여기서 우리는 $u'$을 $U$로 바꿔써보자.
+
+그러면 식은 
+
+$$\Rightarrow U' + \left(2\frac{x_1'}{x_1}+p(t)\right)U=0$$
+
+가 된다.
+
+이 식은 $U$을 구하기 위한 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)과 같으므로 1계 선형 미분방정식을 구할 때 사용했던 해법을 이용할 수 있게 된다.
 
 즉, 해결을 위한 미분방정식의 order가 2차에서 1차로 내려갔다. (그래서 reduction of order technique이라고 부른다.)
 
-여기서 integrating factor $\mu(t)$는
-
-$$\mu(t) = \exp\left(\int2\frac{x_1'}{x_1}+p(t) dt\right)$$
-
-이다.
-
-이 식을 약간 변형하면,
-
-$$\Rightarrow \exp\left(2\int \frac{x_1'}{x_1}dt\right)\exp\left(\int p(t) dt\right)$$
-
-$$=\left(\exp\left(\int\frac{x_1'}{x_1}dt\right)\right)^2\exp\left(\int p(t)dt\right)$$
-
-$$=\left\lbrace\exp(\ln (x_1)\right\rbrace^2\exp\left(\int p(t)dt\right)$$
-
-$$=x_1^2\exp\left(\int p(t)dt\right)$$
-
-과 같다.
-
-그러면 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 본 것 처럼 식 (30)의 양변에 $\mu(t)$를 곱해주면 다음과 같이 식을 변형할 수 있게 된다.
-
-$$식 (30)\Rightarrow h''x_1^2\exp\left(\int p(t)dt\right)+\left(2\frac{x_1'}{x_1}+p(t)\right)h'x_1^2\exp\left(\int p(t)dt\right) = 0$$
-
-미분의 chain rule을 이용해 묶어주면 다음과 같이 쓸 수 있다.
-
-$$\Rightarrow \frac{d}{dt}\left\lbrace h'x_1^2\exp\left(\int p(t)dt\right)\right\rbrace=0$$
-
-따라서, $h'$는 다음과 같이 구할 수 있다. 위 식의 양변에 적분을 취해주면,
-
-$$\Rightarrow h'x_1^2\exp\left(\int p(t)dt\right)=C_1$$
-
-여기서 $C_1$은 적분상수이다.
-
-$$\Rightarrow h'=\frac{C_1}{x_1^2}\exp\left(-\int p(t) dt\right)$$
-
-그리고 최종적으로 $h$는 다음과 같다.
-
-$$h(t) = \int \frac{C_1}{x_1^2}\exp\left(-\int p(t) dt\right) dt+C_2$$
-
-여기서 $C_2$ 역시 적분상수이다.
-
-그러면 $x_1(t)$가 식 (19)의 해로 주어졌을 경우 $x_2(t)$를 $h(t)x_1(t)$와 같은 형식으로 구할 수 있음을 알 수 있다.
