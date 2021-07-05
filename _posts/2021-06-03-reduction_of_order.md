@@ -45,7 +45,7 @@ $$x(t)=c_1e^{\lambda t}+c_2 te^{\lambda t}$$
 
 (유도 과정의 수식 전개가 복잡해 보이기 때문에 이런 구성을 선택했다.)
 
-가령 식 (3)과 같은 방정식에 대해 $x_1(t)$라는 해 하나가 주어졌을 때,
+가령 식 (19)과 같은 방정식에 대해 $x_1(t)$라는 해 하나가 주어졌을 때,
 
 $$x_2(t) = ux_1(t)$$
 
@@ -137,7 +137,7 @@ Reduction of order 공식을 유도하는 방법은 식이 깔끔하게 이해�
 
 아래와 같은 조금 더 일반적인 형태의 2계 제차 선형 미분방정식을 푼다고 생각해보자.
 
-$$x''+p(t)x'+q(t)x = 0 % 식 (3)$$
+$$x''+p(t)x'+q(t)x = 0 % 식 (19)$$
 
 그리고 여기서 기저 함수 $x_1(t)$는 주어져있다고 하자.
 
@@ -215,9 +215,9 @@ $$=x_1^2\exp\left(\int p(t)dt\right)$$
 
 과 같다.
 
-그러면 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 본 것 처럼 식 (14)의 양변에 $\mu(t)$를 곱해주면 다음과 같이 식을 변형할 수 있게 된다.
+그러면 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 본 것 처럼 식 (30)의 양변에 $\mu(t)$를 곱해주면 다음과 같이 식을 변형할 수 있게 된다.
 
-$$식(14)\Rightarrow h''x_1^2\exp\left(\int p(t)dt\right)+\left(2\frac{x_1'}{x_1}+p(t)\right)h'x_1^2\exp\left(\int p(t)dt\right) = 0$$
+$$식 (30)\Rightarrow h''x_1^2\exp\left(\int p(t)dt\right)+\left(2\frac{x_1'}{x_1}+p(t)\right)h'x_1^2\exp\left(\int p(t)dt\right) = 0$$
 
 미분의 chain rule을 이용해 묶어주면 다음과 같이 쓸 수 있다.
 
@@ -237,4 +237,4 @@ $$h(t) = \int \frac{C_1}{x_1^2}\exp\left(-\int p(t) dt\right) dt+C_2$$
 
 여기서 $C_2$ 역시 적분상수이다.
 
-그러면 $x_1(t)$가 식 (3)의 해로 주어졌을 경우 $x_2(t)$를 $h(t)x_1(t)$와 같은 형식으로 구할 수 있음을 알 수 있다.
+그러면 $x_1(t)$가 식 (19)의 해로 주어졌을 경우 $x_2(t)$를 $h(t)x_1(t)$와 같은 형식으로 구할 수 있음을 알 수 있다.
