@@ -218,3 +218,15 @@ $$\therefore U=\exp\left(-2\ln(x_1)-\int p(t) dt\right)$$
 $$=\exp(-2\ln(x_1))\exp\left(-\int p(t) dt\right)$$
 
 $$=\frac{1}{x_1^2}\exp\left(-\int p(t) dt\right)$$
+
+과 같이 $U$를 구할 수 있음을 알 수 있다.
+
+여기서 $U=u'$이므로 $u$는 다음과 같이 계산할 수 있는 것이다.
+
+$$u=\int U dt$$
+
+그리고 새로운 기저 $x_2(t)$는
+
+$$x_2(t)=ux_1(t)$$
+
+이다.
