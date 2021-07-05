@@ -12,8 +12,8 @@ tags: 미분방정식
 
 본 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)
 * [2계 선형 미분방정식의 해법 (2)](https://angeloyeo.github.io/2021/06/02/second_order_ODE_2.html)
+* [변수분리법](https://angeloyeo.github.io/2021/05/06/separable_differential_equations.html)
 
 # 들어가기에 앞서
 
@@ -197,11 +197,24 @@ $$\Rightarrow u'' + \left(2\frac{x_1'}{x_1}+p(t)\right)u'=0$$
 
 그러면 식은 
 
-$$\Rightarrow U' + \left(2\frac{x_1'}{x_1}+p(t)\right)U=0$$
+$$\Rightarrow U' + \left(2\frac{x_1'}{x_1}+p(t)\right)U=0 % 식 (31)$$
 
 가 된다.
 
-이 식은 $U$을 구하기 위한 [1계 선형 미분방정식](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html)과 같으므로 1계 선형 미분방정식을 구할 때 사용했던 해법을 이용할 수 있게 된다.
-
 즉, 해결을 위한 미분방정식의 order가 2차에서 1차로 내려갔다. (그래서 reduction of order technique이라고 부른다.)
 
+식 (31)을 잘 보면 [변수분리법](https://angeloyeo.github.io/2021/05/06/separable_differential_equations.html)을 이용해 풀 수 있는 간단한 형태임을 알 수 있다.
+
+따라서, $U$에 대한 식을 모두 좌변으로, $t$에 대한 식을 모두 우변으로 옮기면 다음과 같다.
+
+$$\Rightarrow \frac{1}{U}dU=-\left(2\frac{x_1'}{x_1}+p(t)\right)dt$$
+
+여기서 양변을 적분해주면,
+
+$$\Rightarrow \ln(U)=-2\ln(x_1)-\int p(t)dt$$
+
+$$\therefore U=\exp\left(-2\ln(x_1)-\int p(t) dt\right)$$
+
+$$=\exp(-2\ln(x_1))\exp\left(-\int p(t) dt\right)$$
+
+$$=\frac{1}{x_1^2}\exp\left(-\int p(t) dt\right)$$
