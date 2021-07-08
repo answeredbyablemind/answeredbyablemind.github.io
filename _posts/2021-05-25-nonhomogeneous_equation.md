@@ -33,9 +33,9 @@ $$\frac{dx}{dt}+p(t)x = q(t) % 식 (1)$$
 
 [1계 선형 미분방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서 배운바와 같이 식 (1)과 같은 1계 비제차 미분방정식의 솔루션은 아래와 같다.
 
-식 (1)의 $p(t)$에 대해 다음과 $\int p(t)dt = P(t)$와 같은 관계를 갖는 $P(t)$를 생각해볼 때,
+식 (1)의 $p(t)$에 대해 다음과 $\int p(t)dt = \mu(t)$와 같은 관계를 갖는 $\mu(t)$를 생각해볼 때,
 
-$$x(t) = \frac{1}{e^{P(t)}}\left(\int e^{P(t)}q(t)dt + C\right) % 식 (2)$$
+$$x(t) = \frac{1}{e^{\mu(t)}}\left(\int e^{\mu(t)}q(t)dt + C\right) % 식 (2)$$
 
 이다.
 
