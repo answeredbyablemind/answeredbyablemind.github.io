@@ -97,6 +97,12 @@ $$\begin{cases}\dfrac{dx}{dt} = f(x,y) + p(t)\\\\ \dfrac{dy}{dt}=g(x,y) + q(t)\e
 
 하지만, 이런 방법으로는 시각화를 한들 눈으로 보고 이 변화를 이해하기 어렵다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic7.png">
+  <br>
+  그림 3. 시간 축을 추가해 3차원으로 구성해본 위상평면의 형태. 시각적으로 단번에 변화를 이해하기는 어렵다.
+</p>
+
 두 번째 방법은 애니메이션을 만드는 것이다. 다시 말하면, 독립변수를 시간(time)으로 해석해 시간의 변화에 따른 phase plane의 변화를 매 순간 순간 마다 그리는 것이다.
 
 다시 말하면 애니메이션이다.
@@ -112,7 +118,7 @@ $$\begin{cases}\dfrac{dx}{dt} = y + \cos(t)\\\\ \dfrac{dy}{dt}=x+\sin(t) \end{ca
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic3.png">
   <br>
-  그림 3. 식 (8)의 제차 방정식 형태를 phase plane에 표시한 것
+  그림 4. 식 (8)의 제차 방정식 형태를 phase plane에 표시한 것
 </p>
 
 이제, $\cos(t)$ 혹은 $\sin(t)$라는 시간-의존적인(time dependent) term을 넣어 $t$값에 따라 phase plane이 달라지도록 그리면 다음과 같다.
@@ -122,17 +128,17 @@ $$\begin{cases}\dfrac{dx}{dt} = y + \cos(t)\\\\ \dfrac{dy}{dt}=x+\sin(t) \end{ca
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic4.mp4">
   </video>
   <br>
-  그림 4. 식 (8)의 시간 $t$에 따른 phase plane의 변화
+  그림 5. 식 (8)의 시간 $t$에 따른 phase plane의 변화
 </p>
 
-phase plane이 시간에 따라 바뀐다는 것은 initial condition에 따라 나오는 curve도 시시각각 따라가는 방향이 바뀐다는 것을 의미한다. 아래의 그림 5에서는 그러한 내용을 표현하였다.
+phase plane이 시간에 따라 바뀐다는 것은 initial condition에 따라 나오는 curve도 시시각각 따라가는 방향이 바뀐다는 것을 의미한다. 아래의 그림 6에서는 그러한 내용을 표현하였다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic5.mp4">
   </video>
   <br>
-  그림 5. 여러가지 initial condition에 따른 solution curve의 변화
+  그림 6. 여러가지 initial condition에 따른 solution curve의 변화
 </p>
 
 이 중 가령 (2, -3)에서 시작하는 경우의 solution curve는 아래의 영상과 같이 그려지게 된다.
@@ -142,7 +148,7 @@ phase plane이 시간에 따라 바뀐다는 것은 initial condition에 따라 
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-25-nonhomogeneous_equation/pic6.mp4">
   </video>
   <br>
-  그림 6. 특정 initial condition에 따른 solution curve
+  그림 7. 특정 initial condition에 따른 solution curve
 </p>
 
 # General solution = homogeneous + particular solution 인 이유
@@ -183,6 +189,6 @@ $$x_p(t) = \frac{t}{3}+\frac{4}{9} % 식 (13)$$
 
 그 이유는 잘 생각해보면 그림 1 혹은 그림 4에서 알 수 있는데, 비제차 미분방정식의 해는 원래의 제차미분방정식 꼴의 방향장 혹은 위상평면에 독립변수에 의존적인 함수로부터 얻어진 기울기의 변화가 더해진 것이기 때문이다.
 
-심지어 그림 1 혹은 그림 4를 놓고 생각해보면 독립 변수에만 의존적인 비제차 term만으로는 기울기라는 것은 생각해볼 수도 없는 것이다.
+심지어 그림 1 혹은 그림 5를 놓고 생각해보면 독립 변수에만 의존적인 비제차 term만으로는 기울기라는 것은 생각해볼 수도 없는 것이다.
 
 따라서, 비제차 미분방정식의 완전한 솔루션은 제차미분방정식의 해와 비제차 term으로부터 얻게된 해를 더한 것으로 생각해야만 한다.
