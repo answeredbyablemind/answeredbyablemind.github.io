@@ -155,7 +155,7 @@ $$A=\frac{6}{73},B =-\frac{16}{73}$$
 
 따라서, particular solution은
 
-$$x_p(t)0=\frac{6}{73}\cos(3t)-\frac{16}{73}\sin(3t)$$
+$$x_p(t)=\frac{6}{73}\cos(3t)-\frac{16}{73}\sin(3t)$$
 
 이다.
 
