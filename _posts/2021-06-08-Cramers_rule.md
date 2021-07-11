@@ -1,5 +1,5 @@
 ---
-title: 크래머 공식
+title: 크래머 공식의 기하학적 의미
 sidebar:
   nav: docs-ko
 aside:
