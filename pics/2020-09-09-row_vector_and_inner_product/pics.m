@@ -1,5 +1,6 @@
 clear; close all; clc;
 addpath('D:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
+addpath('C:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
 
 %% 두 개의 subplot에 두 종류의 벡터들 그려주기
 figure('position',[680, 560, 1080, 420])
