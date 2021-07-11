@@ -130,3 +130,64 @@ $$x_1\begin{bmatrix}a\\c \end{bmatrix}+x_2\begin{bmatrix}b\\d \end{bmatrix}=\beg
 
 이것을 그림으로 표현하면 다음과 같다고 할 수 있다.
 
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-08-Cramers_rule/pic1.png">
+  <br>
+  그림 1. 식 (18)의 행렬 벡터 곱을 그림으로 표현한 것
+</p>
+
+이 때, 우리는 세 개의 평행사변형을 관찰해보도록 하자.
+
+첫 번째는 식 (16)의 행렬 $A$의 각 열 벡터를 두 변으로 하는 평행사변형이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-08-Cramers_rule/pic2.png">
+  <br>
+  그림 2. 식 (16)의 행렬 $A$의 열벡터로 구성되는 평행사변형
+</p>
+
+이 평행사변형의 넓이는 [행렬식의 기하학적 의미](https://angeloyeo.github.io/2019/08/06/determinant.html) 편에서 보았던 것 처럼 행렬식의 값으로 표현할 수 있다.
+
+두 번째 볼 평행사변형은 아래와 같이 $[b, d]^T$에 $x_2$를 곱한 벡터와 $[a, c]^T$의 두 열벡터로 구성되는 평행사변형이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-08-Cramers_rule/pic3.png">
+  <br>
+  그림 3. $[b, d]^T$에 $x_2$를 곱한 벡터와 $[a, c]^T$의 두 열벡터로 구성되는 평행사변형
+</p>
+
+이 평행사변형의 넓이를 계산해보면 다음과 같다는 것을 쉽게 알 수 있다.
+
+$$det\left(\begin{bmatrix}a & x_2 b \\ c & x_2 d\end{bmatrix}\right)$$
+
+그림 3에서 관찰하는 이 평행사변형은 그림 2에서 보았던 평행사변형의 넓이에서 $x_2$배 만큼 커진 것으로 볼 수 있다.
+
+혹은 위 식에서 행렬식의 특성에 의해 다음과 같이 쓸 수도 있다.
+
+$$\Rightarrow x_2 \ det\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right)$$
+
+한편, 세 번째로 관찰해볼 평행사변형은 아래의 그림 4와 같다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-08-Cramers_rule/pic4.png">
+  <br>
+  그림 4. $[a,c]^T$ 벡터와 $[b_1, b_2]^T$ 벡터로 구성된 평행사변형
+</p>
+
+그림 4의 평행사변형의 넓이는 행렬식을 이용해 다음과 같이 쓸 수 있다.
+
+$$det\left(\begin{bmatrix}a & b_1\\ c & b_2\end{bmatrix}\right)$$
+
+그런데 재밌는 점은 그림 3의 평행사변형과 그림 4의 평행사변형의 넓이는 같다. 왜냐면 밑변의 길이는 변화가 없고, 두 평행사변형의 높이도 같기 때문이다.
+
+따라서,
+
+$$x_2 \ det\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right)=det\left(\begin{bmatrix}a & b_1\\ c & b_2\end{bmatrix}\right)$$
+
+와 같이 쓸 수 있으므로,
+
+$$x_2 = \frac{det\left(\begin{bmatrix}a & b_1\\ c & b_2\end{bmatrix}\right)}{det\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right)}$$
+
+와 같다는 것을 알 수 있다. 이것은 $x_1$에 대해서도 같은 방법으로 확인할 수 있다.
+
+그리고, 마지막으로 이 결과는 크래머 공식과 같다는 것을 알 수 있다.
