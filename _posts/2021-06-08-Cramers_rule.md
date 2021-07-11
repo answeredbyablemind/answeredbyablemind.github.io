@@ -104,3 +104,29 @@ $$x_i = \frac{\text{det}(A^{rep}_{i})}{\text{det}(A)}$$
 
 임을 알 수 있다.
 
+# 기하학적 의미
+
+## Prerequisites
+
+크래머 공식의 기하학적 의미를 알기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)
+* [행렬식의 기하학적 의미](https://angeloyeo.github.io/2019/08/06/determinant.html)
+* 평행사변형의 넓이 = 밑변 x 높이
+
+## 기하학적 해석
+
+크래머 공식의 기하학적 의미는 행렬식이 두 벡터가 이루는 평행사변형의 넓이와 같다는 점과 평행사변형의 넓이는 밑변 x 높이로 계산할 수 있다는 사실 두 가지만으로 기하학적 의미를 해석할 수 있다.
+
+아래와 같은 아주 간단한 행렬, 벡터의 곱을 생각해보자.
+
+$$Ax=b$$
+
+$$\Rightarrow \begin{bmatrix}a & b \\ c & d\end{bmatrix}\begin{bmatrix}x_1 \\ x_2\end{bmatrix}=\begin{bmatrix}b_1 \\ b_2\end{bmatrix}$$
+
+[행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html) 편에서 열공간을 기반한 해석 파트를 보면 위의 행렬과 벡터의 곱은 다음과 같이도 쓸 수 있는 것이다.
+
+$$x_1\begin{bmatrix}a\\c \end{bmatrix}+x_2\begin{bmatrix}b\\d \end{bmatrix}=\begin{bmatrix}b_1 \\ b_2 \end{bmatrix}$$
+
+이것을 그림으로 표현하면 다음과 같다고 할 수 있다.
+
