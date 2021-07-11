@@ -12,10 +12,8 @@ tags: 미분방정식
 
 본 포스팅을 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
 
-* [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)
 * [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html)
 * [미분방정식을 이용한 오일러 공식 유도](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
-* [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 
 # 2계 제차 선형 미분방정식
 
@@ -33,43 +31,77 @@ $$a\frac{d^2x}{dt^2}+b\frac{dx}{dt}+cx(t) = 0 % 식 (2)$$
 
 # 대입 방법을 이용한 해법
 
+앞서 [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html) 편에서는 2계 제차 선형 미분방정식의 해를 구할 때 연립방정식의 형태로 방정식을 수정하여 솔루션을 구할 수 있다는 것에 대해 알아보았다.
+
+그 때 핵심적이었던 것은 고윳값과 고유벡터에 관한 것이었다는 것을 기억해보자.
+
+잠깐 복습하면 $y=dx/dt$로 대입하면 식 (2)와 같은 2계 미분방정식을 연립 미분방정식의 꼴로 쓰면 다음과 같았다.
+
+$$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix} = \begin{bmatrix}0 & 1 \\ -c/a & -b/a\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} % 식 (3)$$
+
+그리고 위 식에 들어있는 행렬의 특성방정식을 구하면 다음과 같았다.
+
+$$\lambda^2+\frac{b}{a}\lambda + \frac{c}{a}=0 % 식 (4)$$
+
+그리고 이 특성방정식을 통해 고윳값을 구하면,
+
+$$\lambda_{1,2}=\frac{-b\pm \sqrt{b^2-4ac}}{2a} % 식 (5) $$
+
+였으며, 고유벡터는
+
+$$v_{1,2}=\begin{bmatrix}1\\ \lambda_{1,2}\end{bmatrix} % 식 (6)$$
+
+라는 것을 알 수 있었다.
+
+그리고 위의 연립 미분방정식의 솔루션인,
+
+$$\begin{bmatrix}x(t)\\y(t)\end{bmatrix}=c_1e^{\lambda_1 t}\begin{bmatrix}1 \\ \lambda_1\end{bmatrix}+c_2e^{\lambda_2 t}\begin{bmatrix}1 \\ \lambda_2\end{bmatrix} % 식 (7)$$
+
+중에서 $x(t)$만 떼서 얻어내면 된다.
+
+따라서,
+
+$$x(t)=c_1 e^{\lambda_1 t}+c_2e^{\lambda_2 t} % 식 (8)$$
+
+와 같은 솔루션을 얻어낼 수 있음을 알 수 있다. 그러므로, 2계 선형미분방정식의 해를 얻어낼 때 가장 중요한 부분은 고윳값이라는 것을 알 수 있다.
+
+우리는 2계 선형 미분방정식의 해를 구하기 위한 조금 더 쉬운 방법으로 대입 방법을 이용해보자.
+
 대입 방법을 이용한 해법은 일반적으로 교과서에서 많이 소개되고 있는 해법으로 미분방정식의 해를 
 
-$$x(t) = e^{\lambda t} % 식 (3)$$
+$$x(t) = e^{\lambda t} % 식 (3+6)$$
 
 와 같이 상정하여 풀이를 진행해 나가는 것이다.
 
-이제는 "왜" 이와 같은 해를 상정하는지 쉽게 이해할 수 있다. 
-
-앞서 [자연상수 e와 제차 미분방정식](https://angeloyeo.github.io/2021/05/05/ODE_and_natural_number_e.html)편과 [2계 선형 미분방정식의 해법 (1)](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html) 편에서 설명한 것 처럼 미분방정식의 시간의 흐름에 따른 변화는 되먹임이 있는 연속성장이기 때문이다.
-
 따라서 식 (1)과 같은 선형 제차 2계 미분방정식에 대해 $x(t) = e^{\lambda t}$라고 하면 다음이 성립할 것이다.
 
-$$\Rightarrow a\lambda^2 e^{\lambda t} + b \lambda e^{\lambda t} + c e^{\lambda t} = 0 % 식 (4)$$
+$$\Rightarrow a\lambda^2 e^{\lambda t} + b \lambda e^{\lambda t} + c e^{\lambda t} = 0$$
 
 여기서 $e^{\lambda t}$로 식을 묶어내면,
 
-$$\Rightarrow e^{\lambda t}(a\lambda^2+b\lambda + c)=0 % 식 (5)$$
+$$\Rightarrow e^{\lambda t}(a\lambda^2+b\lambda + c)=0$$
 
 이 되고, $e^{\lambda t}$는 항상 양수이므로,
 
-$$a\lambda^2+b\lambda + c=0 % 식 (6)$$
+$$a\lambda^2+b\lambda + c=0$$
 
-이 되어야 한다. 따라서, 이 방정식의 근을 구하면 우리는 고윳값에 해당되던 $\lambda$가 어떤 것인지 알 수 있게 된다.
+이 되어야 한다. 즉, 대입법을 이용하면 우리가 식 (4)와 동일한 특성방정식을 얻을 수 있다는 것을 알 수 있다.
 
-참고로 식 (6)과 같은 방정식을 우리는 '보조 방정식(auxiliary equation)'이라고 부른다.
+따라서, 이 방정식의 근을 구하면 우리는 고윳값에 해당되던 $\lambda$가 어떤 것인지 알 수 있게 된다.
+
+참고로 식 (12)와 같은 방정식을 우리는 '보조 방정식(auxiliary equation)'이라고 부른다.
 
 그리고, 2차 방정식의 근은 두 개이기 때문에 두 개의 고윳값을 알게되면 아래와 같이 두 개의 solution을 얻게 되는 것이다.
 
-$$x_1(t)=e^{\lambda_1 t} % 식 (7)$$
+$$x_1(t)=e^{\lambda_1 t} % 식 (7+6)$$
 
-$$x_2(t)=e^{\lambda_2 t} % 식 (8)$$
+$$x_2(t)=e^{\lambda_2 t} % 식 (8+6)$$
 
 ## 중복되지 않는 실수 고윳값을 갖는 경우
 
-우리는 식 (3)과 같은 대입법을 이용해 2계 제차 상미분 방정식의 해를 구할 수 있는 방법을 생각해보았다.
+우리는 식 (9)와 같은 대입법을 이용해 2계 제차 상미분 방정식의 해를 구할 수 있는 방법을 생각해보았다.
 
-이 때, 해는 결론적으로 식 (6)과 같은 2차 방정식으로부터 얻는 고윳값을 통해 결정된다.
+이 때, 해는 결론적으로 식 (12)와 같은 2차 방정식으로부터 얻는 고윳값을 통해 결정된다.
 
 그럼 우리는 쉽게 2차 방정식의 해가 실수인 경우와 복소수인 경우로 나눠질 수 있다는 것을 알 수 있다. 근의 공식에 따르면,
 

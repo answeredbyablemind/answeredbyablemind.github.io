@@ -101,3 +101,7 @@ $$\therefore u(t) = -\frac{1}{2}t^3+Ct$$
 $$\therefore x(t) = \frac{1}{-0.5t^3+Ct}$$
 
 이다.
+
+<center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Fluz6bjmgm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
