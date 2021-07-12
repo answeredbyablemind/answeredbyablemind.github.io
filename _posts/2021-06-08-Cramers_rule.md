@@ -24,6 +24,38 @@ $$x_i = \frac{\text{det}(A^{rep}_{i})}{\text{det}(A)}$$
 
 여기서 $A^{rep}_{i}$는 행렬 $A$의 $i$번째 열을 $b$ 벡터로 치환한 행렬이다.
 
+다시 말해 아래와 같은 $Ax=b$라는 식에서,
+
+$$Ax=b \iff 
+  \begin{bmatrix}
+    a_{11} & \cdots & \color{red}{a_{1i}} & \cdots & a_{1n}\\
+    a_{21} & \cdots & \color{red}{a_{2i}} & \cdots & a_{2n}\\
+    \vdots & & \vdots & & \vdots \\
+    a_{n1} & \cdots & \color{red}{a_{ni}} & \cdots & a_nn
+  \end{bmatrix}
+  \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix}
+
+  = \begin{bmatrix}b_1 \\ b_2 \\ \vdots \\ b_n\end{bmatrix}
+  $$
+
+벡터 $x$의 $i$번째 원소 $x_i$는 다음과 같이 정해진다는 것이다.
+
+$$x_i = \frac{\det(A_i^{rep})}{\det(A)}=
+  \frac
+  { \left|\begin{matrix}
+    a_{11} & \cdots & \color{red}{b_{1}} & \cdots & a_{1n}\\
+    a_{21} & \cdots & \color{red}{b_{2}} & \cdots & a_{2n}\\
+    \vdots & & \vdots & & \vdots \\
+    a_{n1} & \cdots & \color{red}{b_{n}} & \cdots & a_nn
+  \end{matrix}\right|}
+  { \left|\begin{matrix}
+    a_{11} & \cdots & a_{1i} & \cdots & a_{1n}\\
+    a_{21} & \cdots & a_{2i} & \cdots & a_{2n}\\
+    \vdots & & \vdots & & \vdots \\
+    a_{n1} & \cdots & a_{ni} & \cdots & a_nn
+  \end{matrix}\right|}
+  $$
+
 ## 공식의 증명
 
 행렬 $A$는 아래와 같이 $n$ 개의 열벡터를 양 옆으로 쌓아둔 것과 같다고 할 수 있다.
