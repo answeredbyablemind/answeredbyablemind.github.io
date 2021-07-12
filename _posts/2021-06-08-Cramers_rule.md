@@ -69,16 +69,16 @@ $$\text{det}(A^{rep}_{i}) = \text{det}\left([A_1, A_2, \cdots, b,\cdots,A_n]\rig
 
 여기서 $b$는 $x_1A_1 + x_2A_2 + \cdots + x_nA_n$과 같으므로,
 
-$$\Rightarrow \text{det}\left([A_1, A_2, \cdots, x_1A_1 + x_2A_2 + \cdots + x_nA_n,\cdots,A_n]\right)$$
+$$\Rightarrow \text{det}\left([A_1, A_2, \cdots, \color{red}{x_1A_1 + x_2A_2 + \cdots + x_nA_n},\cdots,A_n]\right)$$
 
 행렬식의 성질에 의해,
 
-$$\Rightarrow x_1 \text{det}\left([A_1, A_2, \cdots, A_1,\cdots,A_n]\right) \\
-\quad + x_2 \text{det}\left([A_1, A_2, \cdots, A_2,\cdots,A_n]\right) \\
+$$\Rightarrow \color{red}{x_1} \text{det}\left([A_1, A_2, \cdots, \color{red}{A_1},\cdots,A_n]\right) \\
+\quad + \color{red}{x_2} \text{det}\left([A_1, A_2, \cdots, \color{red}{A_2},\cdots,A_n]\right) \\
 \vdots \\
-\quad + x_n \text{det}\left([A_1, A_2, \cdots, A_n,\cdots,A_n]\right) $$
+\quad + \color{red}{x_n} \text{det}\left([A_1, A_2, \cdots, \color{red}{A_n},\cdots,A_n]\right) $$
 
-$$=\sum_{j=1}^{n}x_j \text{det}\left([A_1, A_2, \cdots, A_j,\cdots,A_n]\right) $$
+$$=\sum_{j=1}^{n}\color{red}{x_j} \text{det}\left([A_1, A_2, \cdots, \color{red}{A_j},\cdots,A_n]\right) $$
 
 행렬을 이루는 열벡터 중 선형독립이 아닌 열벡터가 존재하는 경우 행렬식의 값은 0이다.
 
