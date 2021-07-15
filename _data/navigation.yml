@@ -195,6 +195,8 @@ docs-ko:
         url:    2021/06/06/Sturm_Liouville.html
       - title:  그린 함수를 이용한 해법
         url:    2021/06/09/Greens_function.html
+      - title:  미분방정식과 라플라스 변환
+        url:    2021/07/15/ODE_and_Laplace_transform.html
 
 
 

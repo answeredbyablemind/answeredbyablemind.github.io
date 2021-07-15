@@ -11,18 +11,22 @@ function fun_plot_covector_plane(vec)
 % XLIMs = p.Results.x_interval;
 % YLIMs = p.Results.y_interval;
 
-% line들 그려주기
+% plotting lines
 XLIMs = get(gca,'xlim');
 % YLIMs = get(gca,'xlim');
 xx = linspace(XLIMs(1)-2, XLIMs(2)+2, 100);
 
 for i = -10:10
     plot(xx, -1 * vec(1)/vec(2) * xx + i,'--','color',ones(1,3) * 0.5);
+    hold on;
 end
 
-%% 작은 화살표 그려주기 (covector plane 방향 표시용)
+
+%% plot small arrows to represent the direction of covector planes
 fun_for_SA = @(x) -1*vec(1)/vec(2)*x; % SA stands for Small Arrow
-% 반지름^2이 0.7인 원과 y=-vec(1)/vec(2)x 가 교차하는 지점에서 x 좌표 찾기
+% Finding x-coordinate at the point where the circle with radius = 0.7 and
+% y = -vec(1)/vec(2) x
+
 x_SA = [-1, 1] * sqrt(0.7/(1+vec(1)^2/vec(2)^2));
 y_SA = fun_for_SA(x_SA);
 
