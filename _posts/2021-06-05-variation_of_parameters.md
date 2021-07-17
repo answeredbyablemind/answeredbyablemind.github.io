@@ -146,7 +146,7 @@ $$2x''+18x=6\tan(3t)$$
 
 그러기 위해 양변을 $2$로 나눠주자.
 
-$$\Rightarrow x''+9x'=3\tan(3t)$$
+$$\Rightarrow x''+9x=3\tan(3t)$$
 
 [2계 선형미분방정식의 해법(2)](https://angeloyeo.github.io/2021/06/02/second_order_ODE_2.html) 편에서 확인한 바와 같이 대입법을 이용해 위 방정식의 제차꼴 해를 풀어주면,
 
