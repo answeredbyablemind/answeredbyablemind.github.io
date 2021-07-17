@@ -181,7 +181,7 @@ $$
 
 $\sec(t)$의 적분이 아래와 같다는 사실을 이용하자.
 
-$$\int\sec(t)dx = \ln|\sec(t)+\tan(t)|+C$$
+$$\int\sec(t)dt = \ln|\sec(t)+\tan(t)|+C$$
 
 $$\Rightarrow-\cos(3t)\left(\frac{1}{3}\ln|\sec(3t)+\tan(3t)|\right)+\cos(3t)\left(\frac{1}{3}\sin(3t)\right)+\sin(3t)\left(-\frac{1}{3}\cos(3t)\right)$$
 
