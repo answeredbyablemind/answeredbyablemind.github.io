@@ -273,6 +273,99 @@ $$f(x) = \sum_i R_i$$
 
 </center>
 
+# 참고용 Python 코드
+
+```{Python}
+# -------------------------
+# Feed-forward network
+# -------------------------
+class Network:
+    def __init__(self,layers):
+        self.layers = layers
+    
+    def forward(self,Z):
+        for l in self.layers: Z = l.forward(Z)
+        return Z
+    
+    def gradprop(self,DZ):
+        for l in self.layers[::-1]: DZ = l.gradprop(DZ)
+        return DZ
+    
+    def relprop(self, R):
+        for I in self.layers[::-1]: R = I.relprop(R)
+        return R
+
+# -------------------------
+# ReLU activation layer
+# -------------------------
+class ReLU:
+    def forward(self,X):
+        self.Z = X>0
+        return X*self.Z
+    
+    def gradprop(self,DY):
+        return DY*self.Z
+    
+    def relprop(self, R): 
+        return R
+    
+# -------------------------
+# Fully-connected layer
+# -------------------------
+class Linear:
+
+  def __init__(self, weight, bias):
+    self.W = weight
+    self.B = bias
+
+  def forward(self,X):
+    self.X = X
+    return np.dot(self.X,self.W)+self.B
+
+  def gradprop(self,DY):
+    self.DY = DY # DY는 target을 넣으면 됨. Desired Y
+    return np.dot(self.DY,self.W.T)
+
+
+class NextLinear(Linear): # implementing Z+ rule
+    def relprop(self,R):
+        V = np.maximum(0,self.W) # V는 W_ij^+를 의미함.
+        Z = np.dot(self.X,V)+1e-9; S = R/Z
+        C = np.dot(S,V.T);         R = self.X*C
+        return R
+    
+class FirstLinear(Linear): # implementing Zbeta rule
+    def relprop(self,R):
+        W,V,U = self.W,np.maximum(0,self.W),np.minimum(0,self.W)
+#        X,L,H = self.X,self.X*0+utils.lowest,self.X*0+utils.highest
+        X,L,H = self.X,self.X*0+(-1),self.X*0+(1.0)
+
+
+        Z = np.dot(X,W)-np.dot(L,V)-np.dot(H,U)+1e-9; S = R/Z
+        R = X*np.dot(S,W.T)-L*np.dot(S,V.T)-H*np.dot(S,U.T)
+        return R
+
+# Network 구조 입력
+nn = Network([
+    FirstLinear(final_W1, final_b1),ReLU(),
+    NextLinear(final_W2, final_b2),ReLU(),
+    NextLinear(final_W3, final_b3),ReLU(),
+    NextLinear(final_W4, final_b4),ReLU(),
+    NextLinear(final_Wh, final_bh),ReLU(),
+])
+
+rand_num = np.random.permutation(n_total)
+
+X = total_x[rand_num,:] # Input
+T = total_y[rand_num,:] # Target
+Y = nn.forward(X) # Output
+S = nn.gradprop(T)**2
+Y = nn.forward(X)
+
+D = nn.relprop(Y*T)
+```
+
+
 # 참고문헌
 * Explaining NonLinear Classification Decisions with Deep Taylor Decomposition, Montavon et al., 2015
 * Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017

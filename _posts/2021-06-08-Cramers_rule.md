@@ -8,6 +8,44 @@ key: 20210608
 tags: 선형대수학
 ---
 
+# 행렬식의 성질
+
+크래머 공식을 잘 이해하기 위해선 아래의 몇 가지 행렬식의 성질을 잘 이해하고 하면 좋다.
+
+* 행렬식은 각 열벡터로 구성된 평행사변형의 넓이와 같은 의미를 갖는다.
+
+가령 임의의 행렬
+
+$$A=\begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
+
+에 대해 각 열들을 $U$, $V$라고 한다면 $\det(A)=ad-bc$는 아래의 평행사변형의 넓이와 같다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/pic2.png">
+  <br>
+  그림 1. 행렬식의 값은 $U$, $V$ 벡터로 구성된 평행사변형의 넓이와 같다.
+</p>
+
+따라서, 평행사변형을 구성하는 벡터가 평행이라면 이 평행사변형의 넓이는 무조건 0이 된다.
+
+다른 말로는 행렬 $A$의 열벡터가 모두 선형독립이 아니라면 평행사변형의 넓이는 0이 되고 역행렬을 가지지 않는 행렬이 된다.
+
+* 행렬 $A$의 하나의 열이 $k$배 되면 행렬식의 값도 $k$배 된다.
+
+다시 말해 행렬식은 아래와 같은 성질을 만족한다.
+
+$$\det\left(\begin{bmatrix}a & k\cdot b \\c & k\cdot d\end{bmatrix}\right)=k\cdot\det\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right)$$
+
+이것은 그림 1에서 평행사변형의 변 중 하나가 $k$배 된 경우를 상상해보면 이해하기 쉽다.
+
+* $A_1, A_2, B_1, B_2, A_n$ 등이 열벡터이고 $k_1, k_2$는 스칼라라고 하자. 이 때, $[]$를 이용해 열벡터를 묶은 행렬을 표현할 때, 행렬식은 아래와 같은 결과를 만족한다.
+
+$$\det\left([A_1, A_2, \cdots, \color{red}{k_1B_1+k_2B_2},\cdots, A_n]\right)$$
+
+$$=\color{red}{k_1}\det\left([A_1, A_2, \cdots, \color{red}{B_1}, \cdots, A_n]\right)\\
+
++\color{red}{k_2}\det\left([A_1, A_2, \cdots, \color{red}{B_2}, \cdots, A_n]\right)$$
+
 # 크래머 공식
 
 크래머 공식은 아래와 같은 방정식의 해를 얻을 때 사용할 수 있는 공식이다.

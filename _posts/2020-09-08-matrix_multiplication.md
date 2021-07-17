@@ -32,9 +32,42 @@ $$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}\begin{bmatrix}a & b \\ c & d\end{
 
 이것을 잘 뜯어 생각해보면, 왼쪽에 있는 행렬에서 행 하나를 가져오고 오른쪽에 있는 행렬에서 열 하나를 가져와서 계산하게 된다는 것을 알 수 있다.
 
+행렬 곱이 이런 방식으로 정의되는 이유는 행렬이 일종의 함수라는 관점에서부터 얻어진다고 할 수 있다.
+
+추후에 자세하게 다루겠지만, 행렬을 어떤 함수 $f, g: \Bbb{R}^2\rightarrow \Bbb{R}^2$라고 생각해보자.
+
+즉, 2 차원 벡터를 입력 받아 2차원 벡터를 출력하는 함수의 기능을 한다고 보자는 것이다.
+
+다시 말해, 벡터 $[x,y]^T$와 아래의 행렬 $f$, $g$에 대하여 (여기서는 mapping의 의미를 강조하여 $f$와 $g$로 씀)
+
+$$f: \begin{bmatrix} a & b \\ c & d \end{bmatrix}$$
+
+$$g: \begin{bmatrix} p & q \\ r & s \end{bmatrix}$$
+
+각각의 매핑은 다음과 같다.
+
+$$f\left(\begin{bmatrix} x \\ y\end{bmatrix}\right)=\begin{bmatrix}ax+by \\ cx+dy\end{bmatrix}$$
+
+$$g\left(\begin{bmatrix} x \\ y\end{bmatrix}\right)=\begin{bmatrix}px+qy \\ rx+sy\end{bmatrix}$$
+
+이 때 두 매핑의 합성 $f\bullet g$를 생각해보면,
+
+$$f\bullet g\left(\begin{bmatrix} x \\ y\end{bmatrix}\right)
+  =\begin{bmatrix}a(px+qy)+b(rx+sy) \\ c(px+qy)+d(rx+sy)\end{bmatrix}$$
+
+$$=\begin{bmatrix}(ap+br)x  + (aq+bs)y \\ (cp+dr)x + (cq+ds)y\end{bmatrix}$$
+
+과 같다. 따라서 합성 매핑 $f\bullet g$는 다음과 같이 정의되면 된다.
+
+$$f\bullet g=\begin{bmatrix} ap+br & aq+bs \\ cp+dr & cq+ds\end{bmatrix}$$
+
+이 합성 매핑을 행렬의 곱으로 정의하고, 특별한 연산 기호는 쓰지 않고 두 행렬을 나란히 써서 나타낸다[^1].
+
+[^1]: 8일 간의 선형대수학, 경문사, 박부성 지음
+
 또, 가져온 행 혹은 열을 벡터로 생각한다면 계산된 행렬의 각 원소값은 ***벡터의 내적을 표현한 것***임을 알 수 있다.
 
-즉, 식(2)의 계산 결과에서 1행 1열의 원소값은 계산 되기 전 두 행렬 중 왼쪽 행렬의 1행의 행벡터와 오른쪽 행렬의 1열의 열벡터를 가져와 계산한 것임을 알 수 있다.
+즉, 식(1)의 계산 결과에서 1행 1열의 원소값은 계산 되기 전 두 행렬 중 왼쪽 행렬의 1행의 행벡터와 오른쪽 행렬의 1열의 열벡터를 가져와 계산한 것임을 알 수 있다.
 
 $$\begin{bmatrix}1 & 2\end{bmatrix}\begin{bmatrix}a\\c\end{bmatrix} = 1\cdot a + 2\cdot c$$
 
