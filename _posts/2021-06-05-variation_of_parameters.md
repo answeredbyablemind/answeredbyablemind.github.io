@@ -120,15 +120,15 @@ $$v'=\frac{x_1r(t)}{W(x_1,x_2)}$$
 
 임을 알 수 있다. 따라서,
 
-$$u(t)=\int \frac{-x_2r(t)}{W(x_1,x_2)} dx$$
+$$u(t)=\int \frac{-x_2r(t)}{W(x_1,x_2)} dt$$
 
-$$v(t)=\int \frac{x_1r(t)}{W(x_1,x_2)} dx$$
+$$v(t)=\int \frac{x_1r(t)}{W(x_1,x_2)} dt$$
 
 과 같이 $u(t)$와 $v(t)$를 계산할 수 있게 된다.
 
 따라서, particular solution은
 
-$$x_p(t) = -x_1\int\frac{x_2r(t)}{W(x_1,x_2)}dx+x_2\int\frac{x_1r(t)}{W(x_1,x_2)}dx$$
+$$x_p(t) = -x_1\int\frac{x_2r(t)}{W(x_1,x_2)}dt+x_2\int\frac{x_1r(t)}{W(x_1,x_2)}dt$$
 
 가 됨을 알 수 있다.
 
