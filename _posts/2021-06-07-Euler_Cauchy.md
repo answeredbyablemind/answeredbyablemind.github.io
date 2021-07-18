@@ -78,33 +78,33 @@ $$\Rightarrow a_2m^2+(a_1-a_2)m+a_0=0$$
 
 이 방법은 비제차 오일러-코시 미분방정식을 풀어야 할 때 유용하게 사용할 수 있다.
 
-$$t=\ln(x)$$
+$$z=\ln(x)$$
 
-$$y(x)=\phi(\ln(x))=\phi(t)$$
+$$y(x)=\phi(\ln(x))=\phi(z)$$
 
 그러면 미분계수는 다음과 같이 치환 가능하다.
 
-$$\frac{dy}{dx}=\frac{d\phi}{dx}=\frac{d\phi}{dt}\cdot\frac{dt}{dx}=\frac{d\phi}{dt}\cdot\frac{1}{x}$$
+$$\frac{dy}{dx}=\frac{d\phi}{dx}=\frac{d\phi}{dz}\cdot\frac{dz}{dx}=\frac{d\phi}{dz}\cdot\frac{1}{x}$$
 
-$$\frac{d^2y}{dx^2}=\frac{d}{dx}\left(\frac{d\phi}{dt}\cdot\frac{1}{x}\right)$$
+$$\frac{d^2y}{dx^2}=\frac{d}{dx}\left(\frac{d\phi}{dz}\cdot\frac{1}{x}\right)$$
 
-$$=\frac{d}{dx}\frac{d\phi}{dt}\frac{1}{x}+\frac{d\phi}{dt}\cdot\frac{d}{dx}\left(\frac{1}{x}\right)$$
+$$=\frac{d}{dx}\frac{d\phi}{dz}\frac{1}{x}+\frac{d\phi}{dz}\cdot\frac{d}{dx}\left(\frac{1}{x}\right)$$
 
-$$=\frac{d}{dt}\frac{d\phi}{dx}\frac{1}{x}+\frac{d\phi}{dt}\left(-\frac{1}{x^2}\right)$$
+$$=\frac{d}{dz}\frac{d\phi}{dx}\frac{1}{x}+\frac{d\phi}{dz}\left(-\frac{1}{x^2}\right)$$
 
-$$=\frac{d}{dt}\left(\frac{d\phi}{dt}\frac{1}{x}\right)\frac{1}{x}+\frac{d\phi}{dt}\left(-\frac{1}{x^2}\right)$$
+$$=\frac{d}{dz}\left(\frac{d\phi}{dz}\frac{1}{x}\right)\frac{1}{x}+\frac{d\phi}{dz}\left(-\frac{1}{x^2}\right)$$
 
-$$=\frac{d^2\phi}{dt^2}\cdot\frac{1}{x^2}-\frac{d\phi}{dt}\frac{1}{x^2}$$
+$$=\frac{d^2\phi}{dz^2}\cdot\frac{1}{x^2}-\frac{d\phi}{dz}\frac{1}{x^2}$$
 
-$$=\frac{1}{x^2}\left(\frac{d^2\phi}{dt^2}-\frac{d\phi}{dt}\right)$$
+$$=\frac{1}{x^2}\left(\frac{d^2\phi}{dz^2}-\frac{d\phi}{dz}\right)$$
 
 따라서, 원래의 식 (2)는 다음과 같이 바뀐다.
 
-$$식(2)\Rightarrow a_2x^2\frac{1}{x^2}\left(\frac{d^2\phi}{dt^2}-\frac{d\phi}{dt}\right)+a_1x\frac{1}{x}\frac{d\phi}{dt}+a_0\phi(t)=f(e^t)$$
+$$식(2)\Rightarrow a_2x^2\frac{1}{x^2}\left(\frac{d^2\phi}{dz^2}-\frac{d\phi}{dz}\right)+a_1x\frac{1}{x}\frac{d\phi}{dz}+a_0\phi(z)=f(e^z)$$
 
-$$= a_2\left(\frac{d^2\phi}{dt^2}-\frac{d\phi}{dt}\right)+a_1\frac{d\phi}{dt}+a_0\phi(t)=f(e^t)$$
+$$= a_2\left(\frac{d^2\phi}{dz^2}-\frac{d\phi}{dz}\right)+a_1\frac{d\phi}{dz}+a_0\phi(z)=f(e^z)$$
 
-$$=a_2\frac{d^2\phi}{dt^2}+(a_1-a_2)\frac{d\phi}{dt}+a_0\phi(t)=f(e^t)$$
+$$=a_2\frac{d^2\phi}{dz^2}+(a_1-a_2)\frac{d\phi}{dz}+a_0\phi(z)=f(e^z)$$
 
 이제부터 위 식은 선형 2계 미분방정식을 풀어주는 방법을 도입해서 풀이할 수 있다.
 
