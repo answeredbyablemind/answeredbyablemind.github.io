@@ -43,7 +43,9 @@ jackknife 방법은 주어진 데이터에서 하나 씩 빼 가면서 이상이
 
 가령, 그림 1에서 보았던 것과 같이 6명 화성인의 키(height)의 데이터가 다음과 같이 주어졌다고 생각해보자.
 
-$$[]$$
+$$[10, 14, 15, 15, 16, 18]$$
+
+
 
 <p align = "center">
     <img src = "https://thumbs.dreamstime.com/z/jackknife-vector-icon-jackknife-vector-outline-icon-illustration-white-background-135168267.jpg">
