@@ -85,16 +85,58 @@ $$\phi_n(X)=\frac{3}{2}\sum_{i=1}^{n}\log(x_i)$$
 
 # 잭나이프(jackknife) 방법
 
+## 잭나이프 방법의 유래
+
+잭나이프 방법은 Quenoulle와 Tukey에 의해 1949-1956년에 걸쳐 개발된 테크닉이라고 할 수 있다.
+
+잭나이프 방법이 '잭나이프'라는 이름을 갖게 된 것은 실제 잭나이프의 생김새처럼 데이터를 다루기 때문이다.
+
 <p align = "center">
     <img width = "400" src = "https://thumbs.dreamstime.com/z/jackknife-vector-icon-jackknife-vector-outline-icon-illustration-white-background-135168267.jpg">
     <br>
-    그림 1. 잭 나이프의 생김새
+    그림 3. 잭나이프의 생김새는 이런 형태다.
 </p>
+
+잭나이프 방법은 큰 분류로는 resampling에 기인한 방법인데, 잭나이프 방법은 주어진 데이터에서 하나 씩 빼가면서 새로운 데이터셋을 구성한다.
+
+예를 들어 (a,b,c,d)라는 데이터셋이 주어져있다고 하면 잭나이프 방법으로는
+
+(b,c,d), (a,c,d), (a,b,c)
+
+의 세 가지 새로운 데이터셋을 얻게 되는 것이다.
+
+잭나이프에서 칼이 하나 하나씩 빠져나와 사용되는 것과 같은 모습을 띈다.
+
+## 잭나이프 방법의 사용법
+
+그렇다면 잭나이프 방법의 구체적인 사용방법은 어떻게 될까?
+
+우선 용어를 살짝 정의하자. 
+
+임의의 추정량(estimator) $\phi$에 대하여 $\phi_n(X)=\phi_n(X_1, \cdots, X_n)$은 표본 $X=\lbrace X_1, X_2, \cdots, X_n \rbrace$에 대해 정의되는 추정값이다.
+
+여기서 subscript $n$은 $n$개의 표본에 대해 추정하는 것임을 강조하는 의미로 쓴 것이다.
+
+그리고 $n$개의 표본 $X$에서 $i$번째 표본을 제외한 집합을 $X_{[i]}$와 같이 쓰도록 하자.
+
+이제, 잭나이프 방법을 적용할 estimator $\phi$에 대해 다음과 같은 값을 생각해보자.
+
+$$ps_i(X)=n\phi_n(X)-(n-1)\phi_{n-1}(X_{[i]})$$
+
+위 값의 $ps$는 pseudo-value의 앞 두 글자만을 따온 것인데, pseudo-value의 의미는 모든 데이터를 다 이용해서 얻은 추정값에서 $i$번째 데이터만 제외해서 얻은 추정값을 빼준 것이다.
+
+다시 말하면 pseudo-value는 전체 데이터를 모두 이용해 얻은 추정값에서 $i$ 번째 데이터가 미치는 영향력이 얼마 만큼인지를 보여주는 값이라고 할 수 있다.
+
 
 # 부트스트랩 방법
 
 ## 개요
 
 ## bootstrap p-value
+
+# 참고문헌
+
+* [Jackknife resampling, Wikipedia](https://en.wikipedia.org/wiki/Jackknife_resampling)
+* [Resampling data: using a statistical jackknife, S. Sawyer, Washington University, 2005](https://www.math.wustl.edu/~sawyer/handouts/Jackknife.pdf)
 
 
