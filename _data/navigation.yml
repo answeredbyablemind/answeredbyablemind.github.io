@@ -272,6 +272,11 @@ docs-ko:
       - title:  1종 오류와 2종 오류
         url:    2021/01/26/types_of_errors.html
 
+  - title:    비모수 통계학
+    children:
+      - title:  잭나이프 & 부트스트랩 방법
+        url:    2021/07/19/jackknife_and_bootstrap.html
+
   - title:    베이즈 통계학
     children:
       - title:  베이즈 정리의 의미
