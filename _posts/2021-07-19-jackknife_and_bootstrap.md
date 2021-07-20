@@ -199,14 +199,14 @@ $$V_{ps}(X)=1.0909$$
 (그런데 대부분의 판본에서는 머리카락을 잡고 늪에서 나왔다는 판본이 더 많다고 한다.)
 
 <p align = "center">
-  <img src = "https://uselessetymology.files.wordpress.com/2019/10/bootstraps.png?w=400&h=335">
+  <img src = "https://uselessetymology.files.wordpress.com/2019/10/bootstraps.png">
   <br>
   그림 4. bootstrap의 물리적인 의미
 </p>
 
 아무튼간에 bootstrap이 왜 이런 이름을 갖게 되었는지 정도에 대해서만 알고 넘어가면 충분할 듯 싶다.
 
-<p>
+<p align = "center">
   <img src = "https://larspsyll.files.wordpress.com/2015/12/muenchhausen_herrfurth_7_500x789.jpg">
   <br>
   그림 5. 늪에서 빠져나오는 남작. bootstrap을 끌고 나왔다는 판본과 머리카락을 잡고 늪에서 빠져나왔다는 판본이 있다고 한다.
