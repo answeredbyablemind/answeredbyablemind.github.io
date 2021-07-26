@@ -199,7 +199,7 @@ $$V_{ps}(X)=1.0909$$
 (그런데 대부분의 판본에서는 머리카락을 잡고 늪에서 나왔다는 판본이 더 많다고 한다.)
 
 <p align = "center">
-  <img src = "https://uselessetymology.files.wordpress.com/2019/10/bootstraps.png">
+  <img width = "400" src = "https://uselessetymology.files.wordpress.com/2019/10/bootstraps.png">
   <br>
   그림 4. bootstrap의 물리적인 의미
 </p>
@@ -207,12 +207,22 @@ $$V_{ps}(X)=1.0909$$
 아무튼간에 bootstrap이 왜 이런 이름을 갖게 되었는지 정도에 대해서만 알고 넘어가면 충분할 듯 싶다.
 
 <p align = "center">
-  <img src = "https://larspsyll.files.wordpress.com/2015/12/muenchhausen_herrfurth_7_500x789.jpg">
+  <img width = "600" src = "https://larspsyll.files.wordpress.com/2015/12/muenchhausen_herrfurth_7_500x789.jpg">
   <br>
   그림 5. 늪에서 빠져나오는 남작. bootstrap을 끌고 나왔다는 판본과 머리카락을 잡고 늪에서 빠져나왔다는 판본이 있다고 한다.
 </p>
 
 ## 개요
+
+부트스트랩은 잭나이프 방법과 유사하게 추정량(estimator)의 오차 범위를 파악하기 위해 사용되는 기법이라고 할 수 있다.
+
+이를 위해 부트스트랩은 잭나이프 방법과 유사하게 resampling을 수행하는데, 잭나이프 방법과 다른 점은 중복을 허용한 resample을 수행한다는 점이다.
+
+유일한 차이는 중복을 허용해줄 것인가 아닌가에 있는 것이기 때문에 아주 사소한 차이가 있을 것으로 보이지만, 결국에는 resample 가능한 경우의 수가 훨씬 늘어나게 되어서
+
+resample된 샘플의 수는 더 많아지므로 resample된 sample의 histogram을 확인할 때 좀 더 부드러운 histogram을 볼 수가 있다.
+
+다만, 컴퓨터의 도움 없이는 수 많은 경우의 수에 대해 대처하기 어려우므로 컴퓨터 성능의 발전과 함께 고안되고 실용적으로 사용되고 있는 방법이라고 할 수 있겠다.
 
 ## 부트스트랩 신뢰 구간 및 p-value
 
