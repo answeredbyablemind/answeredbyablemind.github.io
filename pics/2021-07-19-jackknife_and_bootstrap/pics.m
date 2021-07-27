@@ -1,16 +1,45 @@
 clear; 
-dataset = randn(1,30)*5+10;
+
+dataset = [17.23, 13.93, 15.78, 14.91, 18.21, 14.28, 18.83, 13.45, 18.71, 18.81, 11.29, 13.39, 11.57, 10.94, 15.52, 15.25];
 
 estimator = @(x) log(std(x)^2);
-
-for i = 1:1000
-    bootstrap_sample(i,:)=datasample(dataset, 30);
+rng(1)
+for i = 1:5000
+    bootstrap_sample(i,:)=datasample(dataset, length(dataset));
     val(i)=estimator(bootstrap_sample(i,:));
 end
 
 figure;
 histogram(val)
 
+CI(1) = prctile(val, 0.025*100);
+CI(2) = prctile(val, (1-0.025)*100);
+
+h(1) = line(ones(1,2) * CI(1), ylim, 'color','r','linestyle','--','linewidth',2);
+line(ones(1,2) * CI(2), ylim, 'color','r','linestyle','--','linewidth',2)
+h(2) = line(ones(1,2)*log(5), ylim,'color','b','linestyle','--','linewidth',2);
+xlabel('estimator values'); ylabel('frequency');
+grid on;
+title('Bootstrap distribution')
+leg = legend(h, '95 percentile CI', 'true value', 'location','NW');
+set(leg,'fontsize',12);
+set(gca,'fontsize',12);
+
+%% sample distribution
+
+for i = 1:5000
+    sample_vals(i)=estimator(randn(1,length(dataset))*sqrt(5)+15);
+end
+
+figure;
+histogram(sample_vals)
+
+CI(1) = prctile(sample_vals, 0.025*100);
+CI(2) = prctile(sample_vals, (1-0.025)*100);
+
+line(ones(1,2) * CI(1), ylim, 'color','r','linestyle','--')
+line(ones(1,2) * CI(2), ylim, 'color','r','linestyle','--')
+line(ones(1,2)*log(5), ylim,'color','b','linestyle','--')
 
 %%
 rng(1)

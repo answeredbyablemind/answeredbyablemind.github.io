@@ -224,11 +224,53 @@ resample된 샘플의 수는 더 많아지므로 resample된 sample의 histogram
 
 다만, 컴퓨터의 도움 없이는 수 많은 경우의 수에 대해 대처하기 어려우므로 컴퓨터 성능의 발전과 함께 고안되고 실용적으로 사용되고 있는 방법이라고 할 수 있겠다.
 
-## 부트스트랩 신뢰 구간 및 p-value
+## 부트스트랩 방법의 사용법
+
+부트스트랩의 사용법은 잭나이프와 거의 유사한데, 기본적으로 resample을 통해 estimator의 오차 범위를 확인한다는 점은 같다.
+
+다만, 두 가지 부분에서 차이를 보이는데, 하나는 resample시 반복 추출을 허용한다는 점이고, 또 다른 하나는 부트스트랩은 pseudo value 같은 것은 쓰지 않고 추출된 데이터를 그대로 estimator에 넣어 사용한다는 점이다.
+
+조금 더 시각적으로 설명해보자면 다음과 같다.
+
+아래의 그림과 같은 7개의 sample이 주어져 있다고 해보자. (동그라미 위의 숫자는 sample의 순번이다.)
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-07-19-jackknife_and_bootstrap/pic6.png">
+  <br>
+  그림 6. 부트스트랩의 사용법을 설명하기 위해 생각해본 주어진 7개의 데이터 샘플
+</p>
+
+여기서 이렇게 주어진 7개의 데이터에 대해 반복 추출을 허용해가면서 랜덤하게 데이터를 resample한다고 해보자.
+
+가령, 아래 그림 7과 같은 결과를 얻을 수 있을 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-07-19-jackknife_and_bootstrap/pic7.png">
+  <br>
+  그림 7. 부트스트랩의 사용법을 설명하기 위해 생각해본 주어진 7개의 데이터 샘플
+</p>
+
+그림 7에서는 5회차까지만 resample하였지만, 1000회차, 혹은 5000회차까지 resample을 수행해보면 1000개 혹은 5000개의 데이터셋을 얻을 수 있게 된다.
+
+이렇게 얻은 무수히 많은 데이터셋에 대해서 각각의 회차별로 estimator 값을 구하고 histogram을 구하면 estimator의 오차범위를 추정할 수 있게 되는 것이다.
+
+## 부트스트랩의 사용 예시
+
+우리는 잭나이프의 예시 문제에서 사용한 데이터셋과 estimator를 그대로 다시 활용해서 부트스트랩 방법으로 오차 범위를 생각해보려고 한다.
+
+식 (8)과 (9)에 나와 있는 데이터셋과 estimator를 그대로 이용해보자.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-07-19-jackknife_and_bootstrap/pic8.png">
+  <br>
+  그림 8. 부트스트랩 분포
+</p>
+
 
 # 참고문헌
 
 * [Jackknife resampling, Wikipedia](https://en.wikipedia.org/wiki/Jackknife_resampling)
 * [Resampling data: using a statistical jackknife, S. Sawyer, Washington University, 2005](https://www.math.wustl.edu/~sawyer/handouts/Jackknife.pdf)
+* [Bootstrap: A statistical Method, Kesar Singh and Minge Xie, Rutgers University](https://www.stat.rutgers.edu/home/mxie/RCPapers/bootstrap.pdf)
 
 
