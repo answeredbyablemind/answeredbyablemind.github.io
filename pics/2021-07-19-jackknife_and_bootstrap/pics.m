@@ -11,18 +11,18 @@ end
 
 figure;
 histogram(val)
-
-CI(1) = prctile(val, 0.025*100);
-CI(2) = prctile(val, (1-0.025)*100);
-
-h(1) = line(ones(1,2) * CI(1), ylim, 'color','r','linestyle','--','linewidth',2);
-line(ones(1,2) * CI(2), ylim, 'color','r','linestyle','--','linewidth',2)
-h(2) = line(ones(1,2)*log(5), ylim,'color','b','linestyle','--','linewidth',2);
+% 
+% CI(1) = prctile(val, 0.025*100);
+% CI(2) = prctile(val, (1-0.025)*100);
+% 
+% h(1) = line(ones(1,2) * CI(1), ylim, 'color','r','linestyle','--','linewidth',2);
+% line(ones(1,2) * CI(2), ylim, 'color','r','linestyle','--','linewidth',2)
+% h(2) = line(ones(1,2)*log(5), ylim,'color','b','linestyle','--','linewidth',2);
 xlabel('estimator values'); ylabel('frequency');
 grid on;
 title('Bootstrap distribution')
-leg = legend(h, '95 percentile CI', 'true value', 'location','NW');
-set(leg,'fontsize',12);
+% leg = legend(h, '95 percentile CI', 'true value', 'location','NW');
+% set(leg,'fontsize',12);
 set(gca,'fontsize',12);
 
 %% sample distribution

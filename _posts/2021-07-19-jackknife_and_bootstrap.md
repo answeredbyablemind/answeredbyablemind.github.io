@@ -260,11 +260,43 @@ resample된 샘플의 수는 더 많아지므로 resample된 sample의 histogram
 
 식 (8)과 (9)에 나와 있는 데이터셋과 estimator를 그대로 이용해보자.
 
+우선 식 (8)에 있는 16개의 데이터셋에 대해 5000번의 중복을 허용한 resampling을 통해 데이터셋을 모은 뒤, 식 (9)에 있는 estimator를 적용시켜 5000개의 estimator value를 histogram에 뿌려보자.
+
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-07-19-jackknife_and_bootstrap/pic8.png">
   <br>
-  그림 8. 부트스트랩 분포
+  그림 8. 5000개의 부트스트랩 데이터셋에 estimator를 적용시켜 얻은 값들에 대해 histogram을 그려본 것
 </p>
+
+여기서 5000개 estimator 값들을 줄세워 상위 2.5% 값과 상위 97.5%의 값을 찾고 표시해보자. 그리고 식 (8)에 있는 데이터셋은 분산이 5인 데이터로부터 얻어졌으므로 true estimator value는 
+
+$$\log(5)=1.6094$$
+
+임을 알 수 있으므로 true estimator value도 표시해보자. 그렇게 해주면 아래 그림과 같다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-07-19-jackknife_and_bootstrap/pic9.png">
+  <br>
+  그림 9. 부트스트랩 데이터셋에 estimator를 취해 얻은 값들의 상위 2.5 percentile 값과 상위 97.5 percentile 값, 그리고 true value를 표시한 것
+</p>
+
+이렇게 얻은 상위 2.5 percentile과 상위 97.5 percentile 값은 95% confidence interval이 된다.
+
+이 방법은 percentile Confidence Interval이라고 불리는 방법인데, 이 방법이 가장 직관적으로 이해하기 쉽다.
+
+물론 bootstrap 방법 이용 시 confidence interval을 계산하는 다른 방법들도 있으니 참고 문헌 중 (Singh and Xie)를 참고하도록 하자.
+
+여하튼 여기서 주목해야 할 부분은 true value가 이 95% confidence interval 안에 속할 수 있게 된다는 점이다.
+
+## 부트스트랩의 의의
+
+부트스트랩은 결국 우리가 샘플링을 여러번 하지 못하는 현실에서 여러번 추출할 수 있었을 샘플의 estimator 값 분포가 어땠을지를 논리적으로 추정할 수 있게 해준다는데 의의가 있다.
+
+이 내용은 [표본과 표준 오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html) 편에서 다룬 내용과 궤를 같이 하는 것인데,
+
+평균(mean)같이 표준 오차가 잘 알려진 estimator들은 이런 부트스트랩 같은 방법을 쓸 하등의 이유가 없지만 표준 오차를 계산하는 방법이 잘 알려져 있지 않은 식 (9)와 같은 estimator들은
+
+부트스트랩 방법을 통해 손쉽게 오차 범위를 생각해볼 수 있게 해주는 것이다.
 
 
 # 참고문헌
