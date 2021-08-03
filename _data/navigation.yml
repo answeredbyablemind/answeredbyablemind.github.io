@@ -104,7 +104,7 @@ docs-ko:
         url:    2019/10/10/Wronskian.html
       - title:  독립성분분석(ICA)
         url:    2020/07/14/ICA.html
-      - title:  크래머 공식
+      - title:  크래머 공식의 기하학적 의미
         url:    2021/06/08/Cramers_rule.html
       - title:  숄레스키 분해
         url:    2021/06/17/Cholesky_decomposition.html
@@ -196,8 +196,6 @@ docs-ko:
       - title:  그린 함수를 이용한 해법
         url:    2021/06/09/Greens_function.html
 
-
-
   - title:      편미분방정식
     children:
       - title:  열방정식/파동방정식의 의미
@@ -273,6 +271,11 @@ docs-ko:
         url:    2021/01/05/confidence_interval.html
       - title:  1종 오류와 2종 오류
         url:    2021/01/26/types_of_errors.html
+
+  - title:    비모수 통계학
+    children:
+      - title:  잭나이프 & 부트스트랩 방법
+        url:    2021/07/19/jackknife_and_bootstrap.html
 
   - title:    베이즈 통계학
     children:
