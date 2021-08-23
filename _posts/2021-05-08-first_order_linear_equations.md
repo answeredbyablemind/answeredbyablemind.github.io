@@ -78,7 +78,7 @@ $$\frac{dx}{dt}+x^2 = 0$$
 
 왜냐면 아래와 같이 두 식이 일치하지 않기 때문이다.
 
-$$O(c_1 x_1 + c_2 x_2 ) = c_1 \frac{dx_1}{dt}+c_1^2 x_1^2 + c_2 \frac{dx_2}{dt}+c_2^2x_2^2$$
+$$O(c_1 x_1 + c_2 x_2 ) = c_1 \frac{dx_1}{dt}+c_1^2 x_1^2 + c_2 \frac{dx_2}{dt}+c_2^2x_2^2+2c_1x_1c_2x_2$$
 
 $$\neq c_1O(x_1)+c_2O(x_2) = c_1 \frac{dx_1}{dt}+c_1x_1^2+c_2\frac{dx_2}{dt}+c_2 x_2^2$$
 
