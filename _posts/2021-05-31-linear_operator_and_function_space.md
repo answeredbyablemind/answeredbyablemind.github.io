@@ -327,7 +327,7 @@ $$= f^*(x)g(x)\big |_{a}^{b}+\int_{a}^{b}\left(-\frac{df^*}{dx}\right)g(x)dx$$
 
 $$=f^*(b)g(b)-f^*(a)g(a) + \left\langle -\frac{d}{dx}f, g\right\rangle$$
 
-따라서, $f^*(b)g(b) -f^*(a)g(a0) = 0$ 이라는 조건 하에 다음과 같이 미분 연산자의 adjoint를 생각할 수 있다.
+따라서, $f^{*}(b)g(b) -f^{*}(a)g(a) = 0$ 이라는 조건 하에 다음과 같이 미분 연산자의 adjoint를 생각할 수 있다.
 
 $$L^{\dagger}\psi=-\frac{d}{dx}\psi$$
 
