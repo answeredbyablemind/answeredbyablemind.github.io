@@ -276,6 +276,8 @@ docs-ko:
     children:
       - title:  잭나이프 & 부트스트랩 방법
         url:    2021/07/19/jackknife_and_bootstrap.html
+      - title:  순열검정법(permutation test)
+        url:    2021/10/28/permutation_test.html
 
   - title:    베이즈 통계학
     children:
