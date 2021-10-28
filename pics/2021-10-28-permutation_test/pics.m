@@ -65,11 +65,9 @@ for i = 1:100
     my_txt(6) = text(11.8088, 14, sprintf('p-value = %0.2f', my_pval),'fontsize',12, 'fontname','³ª´®°íµñ');
     writeVideo(newVid, getframe(gcf));
     if i<5
-        writeVideo(newVid, getframe(gcf));
-        writeVideo(newVid, getframe(gcf));
-        writeVideo(newVid, getframe(gcf));
-        writeVideo(newVid, getframe(gcf));
-        writeVideo(newVid, getframe(gcf));
+        for j = 1:5
+            writeVideo(newVid, getframe(gcf));
+        end
     end
 
     drawnow;
@@ -83,6 +81,9 @@ for i = 1:100
         my_txt(6) = text(11.8088, 14, sprintf('p-value = %0.2f', my_pval),'fontsize',12, 'fontname','³ª´®°íµñ');
         text(-9, 10, '¡é ¡é', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
         text(-17.96, 12, 'Permutation ºÐÆ÷', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
+        for j = 1:10
+            writeVideo(newVid, getframe(gcf));
+        end
     end
     
 end
