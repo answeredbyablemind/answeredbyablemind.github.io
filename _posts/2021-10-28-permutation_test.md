@@ -34,15 +34,29 @@ tags: 통계학
 
 첫 번째 핵심 포인트를 정리하면 모수 통계 기법을 사용할 때는 **데이터의 분포가 정규분포를 따른다고 가정할 수 있어야 한다.**
 
-또, 모수 검정법을 사용하는 경우에는 잘 알려진 [통계량](https://angeloyeo.github.io/2020/02/12/standard_error.html#%ED%91%9C%EB%B3%B8%EC%A7%91%EB%8B%A8%EA%B3%BC-%ED%91%9C%EB%B3%B8-%ED%86%B5%EA%B3%84%EB%9F%89)에 대한 확률 분포를 이용하게 되는데, 이것 역시 한계점으로 작용할 수 있다.
+또, 모수 검정법을 사용해 귀무가설을 검증하는 경우 잘 알려진 [통계량](https://angeloyeo.github.io/2020/02/12/standard_error.html#%ED%91%9C%EB%B3%B8%EC%A7%91%EB%8B%A8%EA%B3%BC-%ED%91%9C%EB%B3%B8-%ED%86%B5%EA%B3%84%EB%9F%89)에 대한 확률 분포를 이용하게 되는데, 이것 역시 한계점으로 작용할 수 있다.
 
 가령, [t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)에서는 t-value라는 통계량을 이용해 통계적으로 유의한 차이가 있는지 여부를 판단한다.
 
 이것이 가능한 것은 t-분포가 이론적으로 알려져있기 때문이다. 다시 말해 지금 주어진 두 그룹의 샘플로부터 t-value를 계산했을 때 t-분포 상 어느 정도의 percentile을 점유하고 있는지를 확인함으로써 통계적으로 유의한지를 판가름 할 수 있는 것이다.
 
-두 번째 핵심 포인트를 정리하면 모수 통계 기법을 사용할 때는 **분포가 알려지지 않은 통계량은 사용할 수 없다.**
+두 번째 핵심 포인트를 정리하면 모수 통계 기법을 사용해 귀무가설을 검증하면 **분포가 알려지지 않은 통계량은 사용하기 어렵다.**
 
-이에 반해 비모수 통계 기법 중 
+이에 반해 비모수 통계 기법 중 순열 검정(permutation test)을 이용하면 데이터의 분포가 정규분포를 따르지 않거나 분포가 알려지지 않은 특이한 통계량을 사용하더라도 귀무가설을 검증할 수 있다.
+
+이번 포스팅에서는 순열 검정의 배경 이론과 실제적인 사용 방법에 대해 알아보도록 하자.
+
+# 순열 검정의 배경 이론
+
+순열 검정의 배경 이론을 이해하기에 앞서 '두 그룹 간 차이가 있다'라고 말하는 것이 어떤 것을 말하는지 다시 한번 복습해보도록 하자.
+
+[귀무가설](https://angeloyeo.github.io/2020/03/25/hypothesis.html), [t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html) 등을 공부하면서 귀에 딱지가 앉게 듣는 말이 있다. 바로,
+
+"두 표본 집단이 하나의 모집단에서 나왔다고 하자"
+
+는 귀무가설이다. 이 말은 그림으로 표현해보면 아래와 같이 볼 수도 있다.
+
+
 
 
 <p align = "center">
@@ -52,3 +66,13 @@ tags: 통계학
   <br>
   그림 
 </p>
+
+# Bootstrap과의 차이점?
+
+1. Bootstrap은 estimator의 Confidence interval을 확인하기 위한 목적으로 주로 사용되는 반면 Permutation test는 null hypothesis를 test하기 위해 만들어졌다. 
+2. 수행 과정 상에서는 Bootstrap은 중복을 허용하는 resampling을 수행하는 반면 permutation test는 중복없는 재배열을 수행한다는 차이점이 있다.
+
+# 참고 문헌
+
+* [Mass univariate analysis of event-related brain potentials/field I: A critical tutorial review, David M. Groppe et al., Psychophysiology, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4060794/pdf/nihms449395.pdf)
+* [StackExchange: bootstrap vs permutation hypothesis test](https://stats.stackexchange.com/questions/20217/bootstrap-vs-permutation-hypothesis-testing)
