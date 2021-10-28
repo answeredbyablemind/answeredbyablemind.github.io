@@ -56,6 +56,41 @@ tags: 통계학
 
 는 귀무가설이다. 이 말은 그림으로 표현해보면 아래와 같이 볼 수도 있다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic1.png">
+  <br>
+  그림 1. 두 표본 그룹이 동일한 모집단에서 추출되었다고 볼 수 있는 경우
+</p>
+
+위 그림은 모든 표본이 같은 값이라는 부분은 많이 과장되어 있지만, 본질적으로 짚고자 하는 내용은 다음과 같다.
+
+만약 두 표본 그룹이 동일한 모집단에서 추출되었다고 한다면, 두 그룹 안에 있는 샘플들을 교환한 뒤 통계적으로 검증해도 여전히 두 그룹간에는 차이가 없어야 한다.
+
+이 부분이 permutation test를 생각해내는 가장 핵심적인 아이디어이다. 그리고 이러한 가정이 새로운 귀무가설이 되는데 말하자면 null hypothesis of exchangeability이다.
+
+즉, 정말로 두 그룹의 샘플들이 동일한 모집단에서 나왔다고 한다면 샘플들을 교환해서 통계량을 계산하더라도 두 그룹간의 차이를 볼 수 없어야 한다는 것이다.
+
+그런데, 만약 아래 그림과 같이 두 표본 그룹이 전혀 다른 모집단에서부터 추출되었다면 샘플 간 교환을 수행할 때 통계량의 산출값이 많이 바뀔 것이라는 것을 예상할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic2.png">
+  <br>
+  그림 2. 두 표본 그룹이 다른 모집단에서 추출된 경우
+</p>
+
+# 순열 검정의 사용 절차
+
+우리는 이제부터 샘플들을 한 쌍 씩 섞어주는 것이 아니라 무작위로 섞은 뒤 그룹을 나눌 것이다. 다시 말해 원래의 데이터들을 순서는 고려한 채 선별하겠다는 의미이다.
+
+이 개념이 바로 고등학교 확률 시간에 배우는 순열(permutation)이다. 그런 다음 통계량을 계산하고 histogram을 그려보자.
+
+일단 우리에게 다음과 같이 두 그룹의 샘플 데이터가 주어져 있다고 생각해보자.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic3.png">
+  <br>
+  그림 3. 주어진 두 그룹의 샘플 데이터와 관찰하고자 하는 통계량(평균의 차이)
+</p>
 
 
 
