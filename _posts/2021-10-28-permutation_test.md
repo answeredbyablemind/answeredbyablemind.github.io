@@ -30,9 +30,9 @@ tags: 통계학
 
 언급한 두 개의 method는 모수 통계 기법(parametric test)이다. 모수 통계기법을 이용할 때는 데이터의 분포가 정규분포라는 것을 가정한다.
 
-그리고 이런 가정을 세울 수 있는 근간은 [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 있으며, 중심극한정리에 따르면 표본이 무수히 많으면 표본 평균의 분포가 정규분포를 따르기 때문이다.
+혹시나 데이터의 분포가 어떤 형태인지는 모르지만 표본 수가 충분한 경우에는 [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 따라 표본 평균의 분포가 정규분포를 따른다고 볼 수 있으므로 모수 검정법을 시행할 수 있다.
 
-첫 번째 핵심 포인트를 정리하면 모수 통계 기법을 사용할 때는 **표본의 숫자가 충분히 많아야 한다.**
+첫 번째 핵심 포인트를 정리하면 모수 통계 기법을 사용할 때는 **데이터의 분포가 정규분포를 따른다고 가정할 수 있어야 한다.**
 
 또, 모수 검정법을 사용하는 경우에는 잘 알려진 [통계량](https://angeloyeo.github.io/2020/02/12/standard_error.html#%ED%91%9C%EB%B3%B8%EC%A7%91%EB%8B%A8%EA%B3%BC-%ED%91%9C%EB%B3%B8-%ED%86%B5%EA%B3%84%EB%9F%89)에 대한 확률 분포를 이용하게 되는데, 이것 역시 한계점으로 작용할 수 있다.
 
@@ -42,6 +42,13 @@ tags: 통계학
 
 두 번째 핵심 포인트를 정리하면 모수 통계 기법을 사용할 때는 **분포가 알려지지 않은 통계량은 사용할 수 없다.**
 
+이에 반해 비모수 통계 기법 중 
 
 
-
+<p align = "center">
+  <video width = "600" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/perm_vid.mp4">
+  </video>
+  <br>
+  그림 
+</p>
