@@ -57,7 +57,7 @@ tags: 통계학
 는 귀무가설이다. 이 말은 그림으로 표현해보면 아래와 같이 볼 수도 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic1.png">
+  <img width = "600"  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic1.png">
   <br>
   그림 1. 두 표본 그룹이 동일한 모집단에서 추출되었다고 볼 수 있는 경우
 </p>
@@ -73,7 +73,7 @@ tags: 통계학
 그런데, 만약 아래 그림과 같이 두 표본 그룹이 전혀 다른 모집단에서부터 추출되었다면 샘플 간 교환을 수행할 때 통계량의 산출값이 많이 바뀔 것이라는 것을 예상할 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic2.png">
+  <img width = "600"  src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic2.png">
   <br>
   그림 2. 두 표본 그룹이 다른 모집단에서 추출된 경우
 </p>
@@ -87,11 +87,14 @@ tags: 통계학
 일단 우리에게 다음과 같이 두 그룹의 샘플 데이터가 주어져 있다고 생각해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic3.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-28-permutation_test/pic3.png">
   <br>
   그림 3. 주어진 두 그룹의 샘플 데이터와 관찰하고자 하는 통계량(평균의 차이)
 </p>
 
+우리가 여기서 알고싶은 것은 두 그룹 평균의 차이인 10.30이 과연 통계적으로 유의하게 크다고 말할 수 있는 값인가 하는 것이다.
+
+이에 따라 우리는 순열 검정을 사용하여 통계적으로 유의하다고 말할수 있을만큼 큰 값인지를 점검해보고자 한다.
 
 
 <p align = "center">
