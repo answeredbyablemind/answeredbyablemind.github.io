@@ -22,15 +22,17 @@ tags: 통계학
 
 두 그룹 간에 통계적으로 유의한 차이가 있는지 확인해보고 싶을 때가 있다.
 
-바로 생각이 드는 것은 [t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html) 혹은 [ANOVA](https://angeloyeo.github.io/2020/02/29/ANOVA.html) 정도일 것 같다.
+그런데 어떤 경우에는 기존의 모수 통계 기법을 이용하기 어려운 경우가 있다. 이럴 때 우리는 비모수 검정법 중 하나인 순열 검정법(permutation test)을 고려해볼 수 있다.
 
-언급한 두 개의 method의 공통점 중 하나는 둘 다 모수 통계 기법(parametric test)이라는 것이다.
+일단, 임의의 두 그룹에 대해 [t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html) 혹은 [ANOVA](https://angeloyeo.github.io/2020/02/29/ANOVA.html) 를 이용하는 경우를 상정해보자.
 
-모수 통계라는 것은 다르게 표현하면 데이터의 분포가 정규분포라는 것을 가정한다는 것이다. 
+언급한 두 개의 method는 모수 통계 기법(parametric test)이다. 모수 통계기법을 이용할 때는 데이터의 분포가 정규분포라는 것을 가정한다.
 
-한번 더 깊게 들어가보면 이런 가정을 세우는 것은 [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 따라 표본이 무수히 많아질 때는 표본 평균의 분포가 정규분포를 따르기 때문이다.
+그리고 이런 가정을 세울 수 있는 근간은 [중심극한정리](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)에 있으며, 중심극한정리에 따르면 표본이 무수히 많으면 표본 평균의 분포가 정규분포를 따르기 때문이다.
 
-두 단계를 거쳐 생각해보았을 때, t-test나 ANOVA 등의 모수 통계 기법을 사용하기 위해선 기본적으로 **표본의 숫자가 충분히 많아야 한다.**
+두 단계를 거쳐 생각해보았을 때, t-test나 ANOVA 등의 모수 통계 기법을 사용하기 위해선 첫번째로 **표본의 숫자가 충분히 많아야 한다.**
+
+
 
 
 
