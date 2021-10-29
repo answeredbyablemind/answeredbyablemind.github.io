@@ -271,6 +271,8 @@ docs-ko:
         url:    2021/01/05/confidence_interval.html
       - title:  1종 오류와 2종 오류
         url:    2021/01/26/types_of_errors.html
+      - title:  대응 표본 t 검정
+        url:    2021/10/29/paired_t_test.html
 
   - title:    비모수 통계학
     children:
