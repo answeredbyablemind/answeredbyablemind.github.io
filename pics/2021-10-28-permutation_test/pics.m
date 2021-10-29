@@ -6,6 +6,8 @@ data = [58, 69, 64, 55, 51, 41, 51, 71, 42];
 
 %% ¾Ö´Ï¸ÞÀÌ¼Ç ¸¸µé±â!
 
+h_record = false;
+
 figure('color','w');
 hold on;
 xlim([-25, 25])
@@ -31,13 +33,16 @@ histdata2show = [];
 xlabel('±×·ì º° Æò±Õ Â÷ÀÌ')
 ylabel('bin count')
 
-newVid = VideoWriter('perm_vid','MPEG-4');
-
-newVid.FrameRate = 5;
-newVid.Quality = 100;
-open(newVid);
+if h_record
+    newVid = VideoWriter('perm_vid','MPEG-4');
+    
+    newVid.FrameRate = 5;
+    newVid.Quality = 100;
+    open(newVid);
+end
 
 for i = 1:100
+    rng(i)
     rand_order = randperm(length(data));
     
     mn1 = mean(data(rand_order(1:4)));
@@ -65,13 +70,16 @@ for i = 1:100
     
     my_pval = sum(histdata2show > (mean(data(1:4))-mean(data(5:9)))) / length(histdata2show);
     my_txt(6) = text(11.8088, 14, sprintf('p-value = %0.2f', my_pval),'fontsize',12, 'fontname','³ª´®°íµñ');
-    writeVideo(newVid, getframe(gcf));
-    if i<5
-        for j = 1:5
-            writeVideo(newVid, getframe(gcf));
+    if h_record
+        
+        writeVideo(newVid, getframe(gcf));
+        if i<5
+            for j = 1:5
+                writeVideo(newVid, getframe(gcf));
+            end
         end
+        
     end
-
     drawnow;
     
     delete(my_txt)
@@ -83,10 +91,14 @@ for i = 1:100
         my_txt(6) = text(11.8088, 14, sprintf('p-value = %0.2f', my_pval),'fontsize',12, 'fontname','³ª´®°íµñ');
         text(-9, 10, '¡é ¡é', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
         text(-17.96, 12, 'Permutation ºÐÆ÷', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
-        for j = 1:10
-            writeVideo(newVid, getframe(gcf));
+        if h_record
+            for j = 1:10
+                writeVideo(newVid, getframe(gcf));
+            end
         end
     end
     
 end
-close(newVid)
+if h_record
+    close(newVid)
+end
