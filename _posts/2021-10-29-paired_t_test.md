@@ -9,12 +9,16 @@ tags: 통계학
 ---
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-29-paired_t_test/pic0.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-29-paired_t_test/pic0.png">
   <br>
   어떤 집단의 before / after를 비교하려고 할 때는 어떤 통계 기법을 사용할 수 있을까?
 </p>
 
 # Prerequisites
+
+이 포스팅을 더 잘 이해하기 위해선 아래의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* []()
 
 #
 
