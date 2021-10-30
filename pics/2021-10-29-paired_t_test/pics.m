@@ -1,43 +1,21 @@
 clear; close all; clc;
+placebo = [788,859,928,957,994,1034,1049,1078,1110,1147];
+drug = [849,879,910,1019,1145,1003,1114,1162,1201,1184];
 
-A = [0.19907407407407407, 788.3720930232557
-0.1967592592592593, 859.3023255813953
-0.1967592592592593, 927.906976744186
-0.1967592592592593, 956.9767441860465
-0.19907407407407407, 994.1860465116279
-0.1967592592592593, 1033.7209302325582
-0.19444444444444442, 1048.8372093023254
-0.1967592592592593, 1077.906976744186
-0.1967592592592593, 1110.4651162790697
-0.1967592592592593, 1146.5116279069766
-0.5972222222222222, 848.8372093023256
-0.5972222222222222, 879.0697674418603
-0.599537037037037, 910.4651162790697
-0.5972222222222222, 1018.6046511627907
-0.5972222222222222, 1145.3488372093022
-0.599537037037037, 1003.4883720930231
-0.5972222222222222, 1113.953488372093
-0.5972222222222222, 1161.6279069767443
-0.5972222222222222, 1201.1627906976744
-0.5972222222222222, 1183.7209302325582
-];
-
-placebo = A(1:10,2);
-drug = A(11:20,2);
 grp = [zeros(1,10), ones(1,10)];
 
 figure('position',[680, 558, 750, 420]);
 subplot(1,2,1)
 hold on;
-plot(grp, [placebo; drug]','o','markerfacecolor',lines(1))
+plot(grp, [placebo, drug],'o','markerfacecolor',lines(1),'markeredgecolor','k')
 xlim([-1, 2])
 ylim([600, 1400])
 grid on;
 set(gca,'xtick',[0, 1]);
-set(gca,'xticklabel',{'PLACEBO','DRUG'})
-
-ylabel('DAILY URINE PRODUCTION (mL/d)');
+set(gca,'xticklabel',{'플라시보','처치약'})
+ylabel('일일 소변량 (mL/d)');
 title('A');
+% set(gca,'fontname','나눔고딕')
 
 subplot(1,2,2);
 hold on;
@@ -47,10 +25,34 @@ ylim([600, 1400])
 for i = 1:10
     plot([0, 1], [placebo(i), drug(i)],'k');
 end
-plot(grp, [placebo; drug]','o','markerfacecolor',lines(1))
+plot(grp, [placebo, drug],'o','markerfacecolor',lines(1),'markeredgecolor','k')
 
 grid on;
 set(gca,'xtick',[0, 1]);
-set(gca,'xticklabel',{'PLACEBO','DRUG'})
-ylabel('DAILY URINE PRODUCTION (mL/d)');
+set(gca,'xticklabel',{'플라시보','처치약'})
+ylabel('일일 소변량 (mL/d)');
 title('B');
+% set(gca,'fontname','나눔고딕')
+
+%% independent t-test 수행 시
+
+[h, p, ci, stats] = ttest2(placebo, drug); % 검증용
+
+n1 = length(placebo);
+n2 = length(drug);
+
+mn1 = mean(placebo);
+mn2 = mean(drug);
+s1 = std(placebo);
+s2 = std(drug);
+s_pool = sqrt(s1^2/n1 + s2^2/n2);
+my_t = (mn1-mn2)/s_pool
+
+%% paired sample t-test 수행 시
+
+[h,p,ci,stat] = ttest(placebo, drug); % 검증용
+d = placebo - drug;
+d_bar = mean(d);
+s_d_bar = std(d)/sqrt(length(d));
+
+my_t_paired = d_bar / s_d_bar;
