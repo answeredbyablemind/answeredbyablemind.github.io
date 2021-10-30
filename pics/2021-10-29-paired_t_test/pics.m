@@ -56,3 +56,4 @@ d_bar = mean(d);
 s_d_bar = std(d)/sqrt(length(d));
 
 my_t_paired = d_bar / s_d_bar;
+tinv(0.025, length(d)-1)
