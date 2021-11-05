@@ -8,7 +8,7 @@ key: 2019061831
 tags: 신호처리
 ---
 
-아래의 과정은 모두 LTI(Linear Time-Invariant) system에서 생각하는 것임을 명기한다.
+아래의 과정은 모두 LTI(Linear Time-Invariant) system에서 생각하는 것임을 명기한다. 
 
 # 1. 서론
 
