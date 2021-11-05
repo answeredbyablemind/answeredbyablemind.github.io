@@ -261,3 +261,7 @@ $$x_2 = \frac{det\left(\begin{bmatrix}a & b_1\\ c & b_2\end{bmatrix}\right)}{det
 와 같다는 것을 알 수 있다. 이것은 $x_1$에 대해서도 같은 방법으로 확인할 수 있다.
 
 그리고, 마지막으로 이 결과는 크래머 공식과 같다는 것을 알 수 있다.
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DcBBKZyv-8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
