@@ -200,3 +200,11 @@ $$x(t) = c_1e^t + c_2e^{3t}$$
   <br>
   그림 2. 식 (23)의 연립 미분방정식에 관한 위상 평면. 굵은 검은색 선은 고유벡터를 따라가는 직선임.
 </p>
+
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g5nMlMlkL2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/csz_oo7psbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>

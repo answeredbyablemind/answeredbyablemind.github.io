@@ -201,3 +201,6 @@ $$x(t) = c_1\cos(3t)+c_2\sin(3t)-\frac{\cos(3t)}{3}\ln|\sec(3t)+\tan(3t)|$$
 
 이다.
 
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TmgzQ83rNs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>

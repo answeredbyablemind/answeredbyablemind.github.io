@@ -192,3 +192,7 @@ $$x_p(t) = \frac{t}{3}+\frac{4}{9} % 식 (13)$$
 심지어 그림 1 혹은 그림 5를 놓고 생각해보면 독립 변수에만 의존적인 비제차 term만으로는 기울기라는 것은 생각해볼 수도 없는 것이다.
 
 따라서, 비제차 미분방정식의 완전한 솔루션은 제차미분방정식의 해와 비제차 term으로부터 얻게된 해를 더한 것으로 생각해야만 한다.
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZoSO1A0U4Fg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center> 

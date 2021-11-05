@@ -230,3 +230,7 @@ $$u=\int U dt$$
 $$x_2(t)=ux_1(t)$$
 
 이다.
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/55jES6YrXEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>

@@ -190,3 +190,7 @@ $D=\frac{1}{4}T^2$이라는 곡선을 기준으로 고윳값의 실수, 복소�
   <br>
   그림 8. 중근 고윳값을 갖는 경우의 Trace-Determinant Plane 상의 좌표 위치와 Phase Plane
 </p>
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f2NAYIPyzuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>

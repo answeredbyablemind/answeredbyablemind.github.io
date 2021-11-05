@@ -533,3 +533,12 @@ $$\begin{bmatrix}dx/dt \\ dy/dt \end{bmatrix}=\begin{bmatrix}-1 & 1 \\ 0 & -1 \e
   <br>
   그림 18. 중복 고윳값 고유벡터를 갖는 연립 미분방정식의 phase plane
 </p>
+
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PbPnfuUjWMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cs-8RPRZBX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>

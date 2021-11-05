@@ -199,3 +199,6 @@ phase plane에서 시간에 따른 위치의 변화를 진자운동 애니메이
 
 위의 애니메이션을 보면 알 수 있듯이 진자 움직임은 진동이 서서히 느려지되, harmonic motion의 힘만큼 강하게 damping이 된 것이 아니다 보니 여러 주기를 반복해가면서 서서히 느려지는 경우에 대해 모델링 한 것이라고 할 수 있다.
 
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QWfQ95T2tM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
