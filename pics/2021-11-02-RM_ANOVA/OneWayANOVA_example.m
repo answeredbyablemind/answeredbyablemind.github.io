@@ -5,6 +5,15 @@ data = [4.6, 4.6, 4.3, 4.3;
     5.1, 5.5, 5.1, 4.9;
     5.3, 5.5, 5.3, 5.0;
     5.4, 5.6, 5.6, 5.6];
+
+%% 데이터의 description
+
+g = repmat([1,2,3,4], 7,1);
+boxplot(data(:), g(:))
+anova1(data(:), g(:))
+
+%%
+
 m = size(data,2);
 n = size(data,1);
 gm = mean(data(:));
