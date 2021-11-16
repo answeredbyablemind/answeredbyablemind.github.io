@@ -59,3 +59,21 @@ F = MS_treat / MS_res
 p = 1-fcdf(F, DF_treat, DF_res)
 
 finv(0.95, DF_treat, DF_res)
+
+%% Greenhouse Geisser epsilon 계산하기
+
+
+s = cov(data);
+
+num = m^2 * (mean(diag(s)) - mean(s(:)))^2;
+den = (m-1) * (sum(sum(s.^2)) - 2 * m * sum(mean(s,2).* mean(s,2)) + m^2 * mean(s(:))^2);
+epsilon_GG = num/den
+
+%% Huynh-Feldt epsilon
+
+epsilon_HF = (n*(m-1) *epsilon_GG - 2) / ((m-1) *((n-1) - (m-1) * epsilon_GG))
+
+%% lower bound
+
+epsilon_LB = 1/(m-1);
+
