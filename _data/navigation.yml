@@ -278,6 +278,8 @@ docs-ko:
 
   - title:    비모수 통계학
     children:
+      - title:  윌콕슨 부호합 검정
+        url:    2021/11/17/ranksum.html
       - title:  잭나이프 & 부트스트랩 방법
         url:    2021/07/19/jackknife_and_bootstrap.html
       - title:  순열검정법(permutation test)
