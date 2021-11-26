@@ -39,6 +39,17 @@ tags: 통계학
 
 예시를 통해 조금 더 자세하게 이해해 보도록 하자.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-11-26-signed_rank/pic1.png">
+  <br>
+</p>
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-11-26-signed_rank/pic2.png">
+  <br>
+</p>
+
+
 ## 부호 순위 검정의 정규 근사
 
 
