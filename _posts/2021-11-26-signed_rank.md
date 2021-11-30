@@ -81,9 +81,39 @@ tags: 통계학
 
 그런데, 우리가 얻은 W의 값은 -13이므로 양측 6%를 차지하는 -19보다 그 값이 더 크다. 따라서, 그룹 간 차이가 없을 것이라는 귀무가설을 기각할만큼 W의 크기가 크지 않다는 것을 알 수 있다.
 
+이와 같은 방법으로 n이 꽤 작을 때에는 가능한 모든 조합에 대해 W를 계산해봄으로써 critical value를 쉽게 구할 수 있다. 아래의 그림에서는 n = 5, 6, 7, 8 일 때의 유의한 W 의 크기와 p-value를 보여주고 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-11-26-signed_rank/pic4.png">
+  <br>
+  그림 4. n=5~8일 때의 유의하게 큰 W와 p-value
+  <br>
+  출처: Mosteller F, Rourke R, Sturdy Statistics: Nonparametrics and Order Statistics, Reading, MA: Addison-Wesley; 1973
+</p>
 
 ## 부호 순위 검정의 정규 근사
 
+부호 순위 검정을 수행할 때 n 수가 꽤 커진다면 어떨까?
+
+가능한 조합의 수는 $2^n$ 개이므로 n = 10 이상이라면 기하급수적으로 생각해볼 수 있는 조합의 수가 꽤 커지게 된다.
+
+따라서, 부호합 검정에서 사용한 접근법과 마찬가지의 접근법으로 정규 근사를 통해 부호 순위 검정의 결과를 간접적으로 얻어낼 수 있다.
+
+n수가 커졌을 때 $W$는 다음과 같은 모수를 가지는 정규 분포에 근사한다고 알려져 있다.
+
+$$\mu_W = 0$$
+
+$$\sigma_W = \sqrt{\frac{n(n+1)(2n+1)}{6}}$$
+
+여기서 $n$은 실험 피험자의 숫자이다.
+
+그러므로 우리는 아래와 같은 변수 $Z$를 생각해 볼 수 있다. 이 변수 $Z$는 정규분포를 따를 것이다.
+
+$$Z_W = \frac{W-\mu_W}{\sigma_W}=\frac{W}{\sqrt{[n(n+1)(2n+1)]/6}}$$
+
+부호합 검정에서의 연속 수정(continuity correction)과 마찬가지 방법으로 $Z_W$는 다음과 같이 수정될 수 있다.
+
+$$Z_W = \frac{|W|-1/2}{\sqrt{[n(n+1)(2n+1)]/6}}$$
 
 # 참고문헌
 
