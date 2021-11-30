@@ -23,5 +23,11 @@ end
 
 %%
 
-figure;
-histogram(W_list)
+figure('position',[680, 558, 1000, 420]);
+my_hist = histogram(W_list,'BinWidth', 2);
+xlabel('sum of signed ranks, W');
+ylabel('빈도');
+grid on;
+set(gca,'fontname','나눔고딕')
+title('가능한 모든 조합의 W 분포')
+set(gca,'ytick', 1:5)
