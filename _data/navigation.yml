@@ -250,6 +250,8 @@ docs-ko:
         url:    2020/09/15/CLT_meaning.html
       - title:  중심극한정리 증명
         url:    2020/01/10/CLT_proof.html
+      - title:  카이제곱 분포와 검정
+        url:    2021/12/13/chi_square.html  
 
   - title:    통계적 추론
     children:
@@ -275,6 +277,8 @@ docs-ko:
         url:    2021/10/29/paired_t_test.html
       - title:  반복측정 분산분석(RM ANOVA)
         url:    2021/11/02/RM_ANOVA.html
+      - title:  카이제곱 분포와 검정
+        url:    2021/12/13/chi_square.html  
 
   - title:    비모수 통계학
     children:
