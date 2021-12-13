@@ -305,13 +305,10 @@ $$f(Z)=f(AZ)=f(X)=0^2+X_2^2 +X_3^2 +\cdots$$
 
 와 같으므로 $f(Z)$는 $r-1$개의 표준정규분포 랜덤변수가 제곱합 되어 있는 것과 같다. 그러므로 $f(Z)$는 자유도가 $r-1$인 카이제곱 분포를 따르는 것을 알 수 있다.
 
----
-
-
-
 # 참고문헌
 
 * [Statistics for application (MIT Lecture, 18.443) / Section 10. Chi-squared goodness-of-fit test](https://ocw.mit.edu/courses/mathematics/18-443-statistics-for-applications-fall-2006/lecture-notes/lecture11.pdf)
 * [StackExchange: Proof of Pearson's chi squared test](https://math.stackexchange.com/questions/839940/proof-of-pearsons-chi-squared-test)
 * [SPSS Tutorial: Chi Square Analysis, The Open University](https://www.open.ac.uk/socialsciences/spsstutorial/files/tutorials/chi-square.pdf)
+* [Seven proofs of the Pearson Chi-squared independence test and its graphical interpretation](https://arxiv.org/pdf/1808.09171.pdf)
 
