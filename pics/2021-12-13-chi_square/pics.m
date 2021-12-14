@@ -125,3 +125,35 @@ grid on;
 xlabel('x');
 ylabel('pdf');
 title('다양한 자유도에 따른 카이제곱 분포의 비교');
+
+%% 사탕 빈도 분포
+
+x = [17, 16, 24, 29, 14];
+my_color = lines(5);
+for i = 1:5
+    bar(i, x(i),'facecolor',my_color(i,:));
+    hold on;
+end
+set(gca,'xtick', 1:5);
+set(gca,'xticklabel', {'소다맛','딸기맛','레몬맛','포도맛','사과맛'})
+xlabel('사탕의 종류');
+ylabel('빈도');
+hold on;
+plot(xlim, [20, 20], 'color','r','linestyle','--','linewidth',2)
+grid on;
+set(gca,'fontsize',12)
+set(gca,'fontname','마루부리 Beta');
+
+%%
+x = [1,2,3];
+y = [21, 13, 6;
+    16, 15, 14];
+figure;
+h = bar(x, y);
+set(gca,'xtick', 1:3);
+set(gca,'xticklabel', {'짜장면','짬뽕','마라탕'});
+legend(h, '남학생', '여학생');
+grid on;
+ylabel('빈도 카운트');
+xlabel('중국집 메뉴');
+set(gca,'fontsize', 12)
