@@ -39,7 +39,7 @@ $$Q = \sum_{i=1}^{k} X_i^2$$
 아래의 영상에서는 1000번만 반복해보았다.
 
 <p align = "center">
-  <video width = "auto" height = "auto" loop autoplay controls muted>
+  <video width = "500" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic2.mp4">
   </video>
   <br>
@@ -49,7 +49,7 @@ $$Q = \sum_{i=1}^{k} X_i^2$$
 이 결과를 실제 자유도가 1인 카이제곱 분포와 비교해보면 다음과 같이 상당히 일치하는 것을 알 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic3.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic3.png">
   <br>
   그림 3. 시뮬레이션과 자유도 1인 카이제곱 분포의 비교
 </p>
@@ -67,7 +67,7 @@ $k=1$인 경우와 다른 점은 표준정규분포에서 변수 세 개를 뽑�
 마찬가지로 1000번 반복해보면 다음과 같은 histogram을 얻을 수 있다.
 
 <p align = "center">
-  <video width = "auto" height = "auto" loop autoplay controls muted>
+  <video width = "500" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic5.mp4">
   </video>
   <br>
@@ -77,7 +77,7 @@ $k=1$인 경우와 다른 점은 표준정규분포에서 변수 세 개를 뽑�
 마지막의 히스토그램과 실제 자유도가 3인 카이제곱 분포를 비교하면 다음과 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic6.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic6.png">
   <br>
   그림 6. 시뮬레이션과 자유도 3인 카이제곱 분포의 비교
 </p>
