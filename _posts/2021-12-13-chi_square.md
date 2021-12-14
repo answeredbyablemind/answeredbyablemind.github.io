@@ -147,7 +147,7 @@ $$\frac{(O-E)^2}{E}$$
 가령 예를 들어 아래와 같은 데이터셋을 생각해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic9.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic9.png">
   <br>
   그림 9. 적합도 검정 수행해보기 위한 데이터셋
 </p>
@@ -168,15 +168,45 @@ $$\chi^2(4)_{0.95} = 9.4877$$
 
 ## 교차 분석
 
-교차 분석은 범주형 변수가 여러 개인 경우에 적용하는 분석 방법이다. 가령 아래와 같이 성별, 중국집 메뉴의 두 개의 범주형 변수에 대한 데이터를 확인해보자.
+교차 분석은 범주형 변수가 여러 개인 경우에 적용하는 분석 방법이다. 교차 분석의 목적은 여러 범주형 변수의 범주 간 차이가 기댓값에서 유의하게 벗어나는지 확인하는 것이다. 가령 아래와 같이 성별, 중국집 메뉴의 두 개의 범주형 변수에 대한 데이터를 확인해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic10.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic10.png">
   <br>
   그림 10. 교차 분석을 수행하기 위한 데이터셋
 </p>
 
+위 데이터 셋은 범주형 변수가 두 개이며 성별 변수에는 범주가 2개, 메뉴 변수에는 범주가 3개인 케이스이다.
 
+교차 분석에서도 마찬가지로 식 (2)에서 제시하는 통계량을 사용할 수 있다.
+
+이 때, 기댓값을 계산해야 하는데 각 cell의 기댓값은 다음과 같이 계산할 수 있다.
+
+$$\text{기댓값} = \frac{\text{해당 행 전체 합}\times\text{해당 열 전체 합}}{\text{전체 데이터 수}}$$
+
+<p align = "center">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-13-chi_square/pic11.png">
+  <br>
+  그림 11. 교차 분석 데이터셋의 기대빈도를 계산하는 방법과 결과
+</p>
+
+그리고 교차분석 시 테이블의 행 갯수를 $r$, 열 갯수를 $c$라고 했을 때 자유도는 $(r-1)\times (c-1)$로 계산한다.
+
+여기서 교차분석을 수행한다는 것은 각 메뉴별로 성별 간 선택의 차이를 보이는지, 혹은 각 성별 별로 메뉴 선택의 차이를 보이는지를 알아보는 것에 목적이 있다.
+
+식 (2)에 따라 통계량을 구하면,
+
+$$\chi^2 = \frac{(21-17.41)^2}{17.41} + \frac{(16-19.59)^2}{19.59} + 
+  \frac{(13-13.18)^2}{13.18} \notag$$
+  
+$$+ \frac{(15-14.82)^2}{14.82} + 
+  \frac{(6-9.41)^2}{9.41} + \frac{(14-10.59)^2}{10.59} = 3.7366$$
+
+이 때, 자유도는 $(2-1)\times(3-1) = 2$ 이고 이 자유도에서 상위 95%에 해당하는 $\chi^2$ 값은
+
+$$\chi^2(2)_{0.95} = 5.9915$$
+
+임을 알 수 있다. 따라서, 우리가 구한 통계량이 5.9915보다는 작은 것을 알 수 있으며 성별 및 메뉴판에 대해 기댓값에서 유의하게 벗어나지 않는 결과를 보인다는 것을 알 수 있다.
 
 
 

@@ -12,7 +12,7 @@ set(gca,'visible','off')
 % xlim([-3, 3])
 
 %% k=1인 카이제곱 분포 시뮬레이션
-figure;
+figure('color', 'w');
 newVid = VideoWriter('pic2','MPEG-4');
 
 newVid.FrameRate = 20;
@@ -60,7 +60,7 @@ grid on;
 title('자유도가 1인 카이제곱 분포와의 비교');
 
 %% k=3인 카이제곱 분포 시뮬레이션
-figure;
+figure('color','w');
 newVid = VideoWriter('pic5','MPEG-4');
 
 newVid.FrameRate = 20;
