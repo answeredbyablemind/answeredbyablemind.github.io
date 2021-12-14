@@ -112,7 +112,7 @@ $k=1$인 경우와 다른 점은 표준정규분포에서 변수 세 개를 뽑�
   출처: <a href = "https://stackoverflow.com/questions/60143913/the-random-error-term-is-assumed-to-follow-the-normal-distribution-with-a-mean-o">Stack Overflow</a>
 </p>
 
-그것 뿐만 아니라, 특별한 가정이 없더라도 많은 경우 오차(error) 혹은 편차(deviation) 변수는 정규분포를 따를 수 있다.
+그것 뿐만 아니라, 중심극한정리에 따라 샘플수가 무수히 많고 합(sum)을 이용해 오차를 정의하는 경우 오차의 분포는 정규분포를 따르게 된다.
 
 그러므로 이렇듯 오차 혹은 편차에 대한 분석을 수행할 때 카이제곱 분포를 이용하면 이 오차 혹은 편차가 우연히 발생할 수 있다고 볼 수 있을만한 수준의 것인지 그렇지 않은지를 판별할 수 있게 되는 것이다.
 
