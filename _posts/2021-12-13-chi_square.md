@@ -382,3 +382,6 @@ $$f(Z)=f(AZ)=f(X)=0^2+X_2^2 +X_3^2 +\cdots$$
 * [SPSS Tutorial: Chi Square Analysis, The Open University](https://www.open.ac.uk/socialsciences/spsstutorial/files/tutorials/chi-square.pdf)
 * [Seven proofs of the Pearson Chi-squared independence test and its graphical interpretation](https://arxiv.org/pdf/1808.09171.pdf)
 
+<p align = "center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/_GrdeYtYLO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
