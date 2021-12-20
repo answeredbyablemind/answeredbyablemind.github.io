@@ -191,9 +191,9 @@ function draw() {
      textAlign(CENTER, CENTER)
      textSize(25);
      if (isPD){
-          text('A is positive definite', 480+160, 300)
+          text('고윳값: '+round(eigvals[0]*10)/10+','+round(eigvals[1]*10)/10+'\nA is positive definite', 480+160, 300)
      } else {
-          text('A is not positive definite', 480+160, 300)
+          text('고윳값: '+round(eigvals[0]*10)/10+','+round(eigvals[1]*10)/10+'\nA is not positive definite', 480+160, 300)
      }
      pop()
 }
