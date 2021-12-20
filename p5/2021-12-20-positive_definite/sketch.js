@@ -90,7 +90,7 @@ function setup() {
      ]
 
      redArrowTipCircle = new Draggable(480 / 2 + redArrowTip[0][0] * scl, 480 / 2 - redArrowTip[1][0] * scl, tipCircleRadius)
-     greenArrowTipCircle = new Draggable(480 / 2 + greenArrowTip[0][0] * scl, 480 / 2 - greenArrowTip[1][0] * scl, tipCircleRadius)
+     // greenArrowTipCircle = new Draggable(480 / 2 + greenArrowTip[0][0] * scl, 480 / 2 - greenArrowTip[1][0] * scl, tipCircleRadius)
 
      tex = createSpan()
 }
@@ -114,7 +114,7 @@ function draw() {
           eigvals = eig_res.values._data
      }
      isPD = false;
-     if (eigvals[0] * eigvals[1]){
+     if (eigvals[0] * eigvals[1] > 0){
           isPD = true;
      }
 
@@ -158,18 +158,22 @@ function draw() {
      redArrowTipCircle.update();
      redArrowTipCircle.show();
 
-     greenArrowTipCircle.over();
-     greenArrowTipCircle.update();
-     greenArrowTipCircle.show();
+     // greenArrowTipCircle.over();
+     // greenArrowTipCircle.update();
+     // greenArrowTipCircle.show();
 
      redArrowTip =[
           [round((redArrowTipCircle.x - 480/2) / scl * 10) / 10],
           [round((480/2 - redArrowTipCircle.y) / scl * 10) / 10]
      ]
 
-     greenArrowTip =[
-          [round((greenArrowTipCircle.x - 480/2) / scl * 10)/10],
-          [round((480/2 - greenArrowTipCircle.y) / scl * 10)/10]
+     // greenArrowTip =[
+     //      [round((greenArrowTipCircle.x - 480/2) / scl * 10)/10],
+     //      [round((480/2 - greenArrowTipCircle.y) / scl * 10)/10]
+     // ]
+     greenArrowTip = [
+          redArrowTip[1],
+          redArrowTip[0],
      ]
 
      fill(255);
@@ -275,11 +279,11 @@ function drawArrow(x1, y1, x2, y2, c1, c2, c3) {
 
 function mousePressed(){
      redArrowTipCircle.pressed();
-     greenArrowTipCircle.pressed();
+     // greenArrowTipCircle.pressed();
 
 }
 
 function mouseReleased(){
      redArrowTipCircle.released();
-     greenArrowTipCircle.released()
+     // greenArrowTipCircle.released()
 }
