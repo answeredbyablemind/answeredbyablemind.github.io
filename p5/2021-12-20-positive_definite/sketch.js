@@ -114,7 +114,7 @@ function draw() {
           eigvals = eig_res.values._data
      }
      isPD = false;
-     if (eigvals[0] * eigvals[1] > 0){
+     if (eigvals[0] >0 & eigvals[1] > 0){
           isPD = true;
      }
 
