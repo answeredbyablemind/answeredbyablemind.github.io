@@ -56,7 +56,11 @@ $$a^Tb = |a||b|\cos(\theta)$$
 
 여기서 $\theta$는 $a$와 $b$의 사잇각이다. 그리고 $-\pi/2 \lt \theta \lt \pi/2$라는 조건을 만족할 때 $a^Tb > 0$이다.
 
-(그림 넣을 것)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-20-positive_definite/pic1.png">
+  <br>
+  그림 1. 두 벡터를 내적 시 두 벡터 간의 사잇각이 예각인 경우 내적값은 양수, 둔각인 경우는 내적값은 음수가 된다.
+</p>
 
 ---
 
@@ -76,11 +80,15 @@ $$x^TAx \rightarrow x^T(Ax)$$
 
 즉, 양의 실수처럼 양의 정부호 행렬을 이용한 선형변환은 입력 벡터를 '뒤집어주지는 않는' 것이어야 한다.
 
-(그림 넣을 것)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-20-positive_definite/pic2.png">
+  <br>
+  그림 2. 양의 정부호 행렬은 선형변환 시 변환 전 후의 각도 변화가 -90도에서 90도 사이에서만 변화하게 된다. (즉, 변환 후에도 파란색 영역에 들어오게 한다.)
+</p>
 
 ## 양의 정부호와 고윳값
 
-부가적인 성질이지만 양의 정부호 행렬과 고윳값의 부호는 연관성이 깊다.
+양의 정부호 행렬의 정의에 따르는 성질이지만 양의 정부호 행렬과 고윳값의 부호는 연관성이 깊다.
 
 $$Ax=\lambda x$$
 
@@ -104,7 +112,11 @@ $$x^TAx = x^T\lambda x=\lambda |x|^2$$
 
 그렇지 않은 경우에는 두 고윳값 중 적어도 하나는 음수 고윳값을 갖게되는 것을 알 수 있다.
 
-(그림 넣어서 좀 더 자세히 설명할 것)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-20-positive_definite/pic3.png">
+  <br>
+  그림 3. 선형 변환 후에 기저벡터들이 서로 뒤집히거나 두 기저벡터 간의 각도가 둔각이 되는 경우 두 고윳값 중 적어도 하나는 음수가 된다.
+</p>
 
 ## 양의 정부호와 헤시안 행렬
 
@@ -121,11 +133,13 @@ $$x^TAx = x^T\lambda x=\lambda |x|^2$$
 <p align = "center">
   <img src ="https://raw.githubusercontent.com/angeloyeo/gongdols/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99/%ED%97%A4%EC%8B%9C%EC%95%88%20%ED%96%89%EB%A0%AC%EC%9D%98%20%EC%9D%98%EB%AF%B8/fig3.gif">
   <br>
+  그림 4. 헤시안 행렬의 고윳값이 모두 양수인 경우
 </p>
 
 <p align = "center">
   <img src ="https://raw.githubusercontent.com/angeloyeo/gongdols/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99/%ED%97%A4%EC%8B%9C%EC%95%88%20%ED%96%89%EB%A0%AC%EC%9D%98%20%EC%9D%98%EB%AF%B8/fig4.gif">
   <br>
+  그림 5. 헤시안 행렬의 고윳값이 하나는 양수이고 하나는 음수인 경우
 </p>
 
 위 그림들의 화살표는 헤시안 행렬의 고유벡터 방향을 나타내고, 빨간색인 경우는 고윳값이 양수, 파란색인 경우는 고윳값이 음수인 경우를 의미한다.
