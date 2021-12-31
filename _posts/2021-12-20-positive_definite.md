@@ -1,5 +1,5 @@
 ---
-title: 양의 정부호 행렬
+title: 양의 정부호 행렬 (positive definite matrix)
 sidebar:
   nav: docs-ko
 aside:
@@ -28,7 +28,7 @@ tags: 선형대수학
 
 우선 양의 정부호 (positive definite) 행렬의 정의부터 차근히 살펴보도록 하자.
 
-영벡터가 아닌 임의의 열벡터 $x$와 대칭 행렬 $A$에 대해 다음이 성립한다면 $A$는 정방형 행렬이다.
+영벡터가 아닌 임의의 열벡터 $x$와 대칭 행렬 $A$에 대해 다음이 성립한다면 $A$는 양의 정부호(positive definite) 행렬이다.
 
 $$x^TAx >0$$
 
@@ -159,3 +159,7 @@ $$x^TAx = x^T\lambda x=\lambda |x|^2$$
 
 * [Geometrical interpretation of p.d. matrix, StackExchange](https://math.stackexchange.com/questions/86309/what-is-the-geometrical-interpretation-to-positive-definite-matrix)
 * [Definite Matrix, Wikipedia](https://en.wikipedia.org/wiki/Definite_matrix)
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fuxJ-VH8pWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
