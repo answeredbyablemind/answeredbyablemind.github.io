@@ -18,7 +18,7 @@ tags: 선형대수학
 
 [LU 분해](https://angeloyeo.github.io/2021/06/16/LU_decomposition.html) 편에서는 LU 분해란 Gaussian elimination을 수행하는 과정에서 사용하는 기본 행 연산을 이용해 얻게 되는 행렬 분해 방법이라고 소개한 바 있다.
 
-그런데, 꼭 Gaussian elimination을 이용하지 않더라도 아래와 같이 행렬 $A$를 하삼각행렬과 상삼각행렬의 곱으로 분해된다고 가정하더다라도 LU 분해의 결과를 그대로 얻을 수 있을 것이다.
+그런데, 꼭 Gaussian elimination을 이용하지 않더라도 아래와 같이 행렬 $A$를 하삼각행렬과 상삼각행렬의 곱으로 분해된다고 가정하더라도 LU 분해의 결과를 그대로 얻을 수 있을 것이다.
 
 임의의 $3\times 3$ 사이즈의 행렬 $A$에 대해 다음과 같이 행렬 분해가 가능하다고 생각해보자.
 
