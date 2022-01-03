@@ -338,6 +338,8 @@ docs-ko:
 
   - title:      신호 처리 기초
     children:
+      - title:  신호 처리 서론
+        url:    2022/01/03/signal_processing_introduction.html
       - title:  임펄스 응답 (impulse response)
         url:    2019/06/18/impulse_response.html
       - title:  이산시간 컨볼루션
