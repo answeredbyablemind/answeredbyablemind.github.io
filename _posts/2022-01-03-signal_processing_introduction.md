@@ -61,7 +61,11 @@ tags: 신호처리
 
 이산 신호는 생소한 개념일 수도 있다. 연속 시간 신호를 샘플링한 신호가 이산 신호이다. 샘플링에 관해선 추후에 더 자세하게 배우겠지만, 연속 시간 신호가 시간에 따라 바뀌는 중 중간 중간에 값을 가져와서 그 값들을 나열하는 과정이라고 할 수 있다. 그래서 수학적인 용어를 빌리자면 이산 신호는 함수보다 수열(sequence)에 가깝다.
 
-[//]:# (연속 시간 신호를 샘플링해서 이산 신호로 만드는 과정에 대한 그림 넣을 것)
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-03-signal_processing_introduction/pic2.png">
+  <br>
+  그림 2. 연속 신호를 이산 신호로 샘플링한 예시
+</p>
 
 이산 신호의 $x$축은 시간 $t$ 대신에 $n$이라고 적으며, $n$은 정수(integer)에서 따온 말이며 $\lbrace \cdots, -1, 0, 1, 2, \cdots \rbrace$와 같은 값이다. 
 

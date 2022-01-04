@@ -31,3 +31,26 @@ for i_t = [1:interval:length(t), length(t)]
     end
 end
 close(newVid);
+
+%% continuous time signal sampling
+
+fs1 = 1000;
+t1 = 0:1/fs1:2-1/fs1;
+x1 = sin(2*pi*1*t1);
+
+fs2 = 10;
+t2 = 0:1/fs2:2-1/fs2;
+x2 = sin(2*pi*1*t2);
+
+figure('position',[680, 482, 880, 496]);
+subplot(2,1,1);
+plot(t1, x1,'linewidth',2);
+xlabel('continuous time, t(sec)');
+grid on;
+ylabel('continuous x(t)');
+
+subplot(2,1,2);
+stem(0:length(t2)-1,x2,'--','filled');
+xlabel('discrete time index, n');
+grid on;
+ylabel('discrete x[n]');
