@@ -42,7 +42,7 @@ tags: 신호처리
 
 
 <p align = "center">
-  <video width = "500" height = "auto" loop controls muted>
+  <video width = "800" height = "auto" controls>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic1_modified.mp4">
   </video>
   <br>
@@ -62,7 +62,7 @@ tags: 신호처리
 이산 신호는 생소한 개념일 수도 있다. 연속 시간 신호를 샘플링한 신호가 이산 신호이다. 샘플링에 관해선 추후에 더 자세하게 배우겠지만, 연속 시간 신호가 시간에 따라 바뀌는 중 중간 중간에 값을 가져와서 그 값들을 나열하는 과정이라고 할 수 있다. 그래서 수학적인 용어를 빌리자면 이산 신호는 함수보다 수열(sequence)에 가깝다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-03-signal_processing_introduction/pic2.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic2.png">
   <br>
   그림 2. 연속 신호를 이산 신호로 샘플링한 예시
 </p>
@@ -84,7 +84,7 @@ tags: 신호처리
 여기서 $p(x_0, y_0)$는 $(x_0, y_0)$라는 위치에서의 밝기를 의미한다. 
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-03-signal_processing_introduction/pic3.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic3.png">
   <br>
   그림 3. 흑백사진 픽셀의 밝기를 256단계의 숫자로 치환해 숫자의 나열로써 이미지를 처리할 수 있다.
   <br>
