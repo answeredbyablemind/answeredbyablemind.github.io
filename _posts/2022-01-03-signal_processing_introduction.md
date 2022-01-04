@@ -83,7 +83,13 @@ tags: 신호처리
 
 여기서 $p(x_0, y_0)$는 $(x_0, y_0)$라는 위치에서의 밝기를 의미한다. 
 
-[//]:# (grey scale 그림에서 intensity = 함수값임을 보여줄 수 있는 그림 넣을 것)
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-03-signal_processing_introduction/pic3.png">
+  <br>
+  그림 3. 흑백사진 픽셀의 밝기를 256단계의 숫자로 치환해 숫자의 나열로써 이미지를 처리할 수 있다.
+  <br>
+  출처: <a href = "https://mozanunal.com/2019/11/img2sh/">Mozanunal.com</a>
+</p>
 
 사진 역시 마찬가지로 디지털 기기로 표현할 때는 이산화 시켜서 표현한다. 이렇게 이산화 된 사진 위의 각각의 포인트들을 픽셀이라고도 부른다.
 
