@@ -40,7 +40,14 @@ tags: 신호처리
 
 예를 들어, 마이크로 수음한 음성 신호 $v(t)$는 $x$축이 시간이고 $y$축이 마이크 전압인 시간에 대한 함수를 생각해볼 수 있다.
 
-[//]:# (마이크로 수음한 음성 신호 그림 들어갈 곳. 안/녕/하/세/요 를 녹음해보자.)
+
+<p align = "center">
+  <video width = "500" height = "auto" loop controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic1_modified.mp4">
+  </video>
+  <br>
+  그림 1. 징소리를 녹음한 음성 신호
+</p>
 
 ---
 
@@ -113,7 +120,7 @@ $$y(t) = \frac{d}{dt}x(t)$$
 
 한편, 신호를 $x, y$ 축의의 그래프로 표현했다면 시스템의 시각적 표현은 블록다이어그램을 이용해서 표현한다.
 
-[//]:# (블록 다이어그램을 이용한 연속 시간 시스템을 표현하는 그림 넣을 것. x(t) --> T{x(t)} --> y(t) = T{x(t)})
+[//]:# (블록 다이어그램을 이용한 연속 시간 시스템을 표현하는 그림 넣을 것)
 
 ## 선형대수학과의 연결성
 
@@ -129,7 +136,7 @@ $$y(t) = \frac{d}{dt}x(t)$$
 
 [^2]: 왜 행벡터는 안 되고 열벡터인가에 대해서는 [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html) 편에서 행벡터와 열벡터의 역할이 어떻게 다른지를 공부해보면 납득할 수 있다.
 
-$$x[k]=\begin{bmatrix}x[0] \\ x[1] \\ \vdots \\ x[n-1] \\end{bmatrix}$$
+$$x[k]=\begin{bmatrix}x[0] \\ x[1] \\ \vdots \\ x[n-1] \end{bmatrix}$$
 
 그리고 행렬의 기능이 입력 벡터와 출력 벡터 간의 선형 변환이라는 관점에서 시스템을 행렬로 표현할 수도 있다.
 
