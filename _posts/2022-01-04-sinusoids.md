@@ -170,10 +170,10 @@ phase shift가 되면 아래 그림과 같이 정현파가 좌/우로 옮겨지�
 
 다만 조금 헷갈리기 쉬운 부분은 phase shift에 의한 time delay인데, 쉽게 생각하려면 식 (1)을 다음과 같이 변형하면 된다.
 
-$$\text{식 (1)} \Rightarrow A\cos\left(2\pi f\left(t+\frac{\phi}{2\pi f}\right)\right)$$
+$$\text{식 (1)} \Rightarrow A\cos\left(2\pi f\left(t+\frac{\phi}{2\pi f}\right)\right)=A\cos\left(2\pi f\left(t-t_d\right)\right)$$
 
 즉, $\phi$ 라디안 만큼 phase shift가 있었다고 하면, 이에 의해 발생하는 time delay $t_d$는
 
-$$t_d = \frac{\phi}{2\pi f}$$
+$$t_d = -\frac{\phi}{2\pi f}$$
 
 초라고 할 수 있다.
