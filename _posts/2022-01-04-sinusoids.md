@@ -27,7 +27,7 @@ tags: 신호처리
 정현파의 본질은 원 위의 회전에 관한 것이다. 그리고, 시간에 따른 회전을 기술한 것이다.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic1.mp4">
   </video>
   <br>
@@ -39,7 +39,7 @@ tags: 신호처리
 가장 쉬운 방법은 회전하는 원의 $x$축 혹은 $y$축 위의 변화만을 시간에 따라 기술하는 것이다.
 
 <p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
+  <video width = "800" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic2.mp4">
   </video>
   <br>
@@ -89,7 +89,7 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
 진폭은 크게 어려운 개념이 아니다. 정현파의 진폭은 회전하는 원의 반지름의 길이와 같다.
 
 <p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
+  <video width = "800" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic5.mp4">
   </video>
   <br>
@@ -113,7 +113,7 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
 빨리 회전할 수록 주파수는 높다.
 
 <p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
+  <video width = "800" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic7.mp4">
   </video>
   <br>
