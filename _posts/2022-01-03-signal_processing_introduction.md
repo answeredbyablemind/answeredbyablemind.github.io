@@ -130,7 +130,11 @@ $$y(t) = \frac{d}{dt}x(t)$$
 
 한편, 신호를 $x, y$ 축의의 그래프로 표현했다면 시스템의 시각적 표현은 블록다이어그램을 이용해서 표현한다.
 
-[//]:# (블록 다이어그램을 이용한 연속 시간 시스템을 표현하는 그림 넣을 것)
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic4.png">
+  <br>
+  그림 4. 시스템은 블록 다이어그램으로 표현할 수 있으며 입/출력을 연결 시켜주고 있다.
+</p>
 
 ## 선형대수학과의 연결성
 
@@ -138,7 +142,7 @@ $$y(t) = \frac{d}{dt}x(t)$$
 
 * [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
 
-신호와 시스템은 선형대수학에서 벡터와 행렬의 개념에 대응되는 것 처럼 보인다.
+신호와 시스템은 선형대수학에서 벡터와 행렬의 개념에 대응 시켜 볼 수 있다.
 
 신호를 숫자의 나열로 본다는 것이 벡터의 정의에서 어긋나지 않기 때문에 디지털 기기에서는 신호를 열벡터(column vector)로 표기한다.
 
@@ -152,7 +156,32 @@ $$x[k]=\begin{bmatrix}x[0] \\ x[1] \\ \vdots \\ x[n-1] \end{bmatrix}$$
 
 다만, 이 경우 시스템이 유한한 길이의 이산 신호를 다루는 이산 시스템이어야 하며 동시에 선형 시스템인 경우로 한정해야 할 것이다.
 
-가령, 아래와 같은 시스템은 선형 시스템이 아니므로 행렬로 표현할 수 없다.
+그리고 선형 이산 시스템이라고 해서 모두 행렬로 바꿔서 쓸 수 있는 것은 또 아니다.
+
+가령, 아래와 같은 시스템은 선형 시스템인데,
+
+$$y[n]=x[n]-x[n-1]$$
+
+신호의 길이를 $0~(n-1)$까지로 제한하고 수식을 풀어써보면 다음과 같다.
+
+$$\begin{matrix}y[0] = x[0] \\ y[1]=x[1]-x[0] \\ y[2] = x[2] - x[1] \\ \vdots \\ y[n-1] =x[n-1]-x[n-2]\end{matrix}$$
+
+그래서 이것을 행렬로 표현하자면 다음과 같을 것이다. 
+
+$$\begin{bmatrix}y[0] \\ y[1] \\ \vdots \\ y[n-1]\end{bmatrix}=
+  \begin{bmatrix}
+     +1 & 0 & 0 & \cdots & 0 & 0 \\
+    -1 & +1 & 0 & \cdots & 0 & 0 \\
+     0 & -1 & +1 & \cdots & 0 & 0 \\
+     \vdots & \vdots & \vdots & \cdots & \ddots & \vdots \\
+     0 & 0 & 0 & \cdots & -1 & +1
+  \end{bmatrix}
+  \begin{bmatrix}x[0]\\x[1]\\\vdots \\x[n-1]\end{bmatrix}$$
+
+반면, 아래와 같은 시스템은 선형 시스템이 아니므로 행렬로 표현할 수 없다.
 
 $$y[n]=(x[n])^2$$
 
+만약 이산 시스템을 행렬로 표현할 수 있다면 선형대수학에서 사용하는 여러 스킬들을 적용할 수 있게 되어 여러 관점에서 시스템을 분석할 수 있게 된다.
+
+대표적으로 이산 푸리에 변환은 [푸리에 행렬](https://angeloyeo.github.io/2020/11/08/linear_algebra_and_Fourier_transform.html)을 구성함으로써 변환 과정을 계산해낼 수 있다.
