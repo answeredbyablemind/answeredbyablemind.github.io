@@ -189,3 +189,56 @@ legend(h, {'cosine wave','sine wave'},'location','best'); clear h
 ylabel('x(t), y(t)');
 set(gca,'fontsize',12);
 set(gca,'fontname','나눔고딕');
+
+
+%% pic5: 서로 다른 세 개의 반지름을 갖는 원
+newVid = VideoWriter('pic5','MPEG-4');
+
+newVid.FrameRate = 60;
+newVid.Quality = 100;
+open(newVid);
+
+fs = newVid.FrameRate;
+t = 0:1/fs:4;
+
+figure('color','w','position',[680, 286, 1017, 692]);
+xs = cos(2*pi*0.25*t);
+ys = sin(2*pi*0.25*t);
+
+
+rs = [0.5, 1, 2];
+for i_rs = 1:length(rs)
+    subplot(1,3,i_rs);
+    plot(rs(i_rs)*cos(linspace(0, 2*pi, 100)), rs(i_rs)*sin(linspace(0, 2*pi, 100)),'k','linewidth',2);
+    hold on;
+    axis square
+    grid on;
+    set(gca,'visible','off')
+    xlim([-2, 2])
+    ylim([-2, 2])
+    line([0, rs(i_rs)], [0, 0],'color','k','linewidth',1,'linestyle','--')
+    text(0, -rs(i_rs) - 0.2,  ['r = ', num2str(rs(i_rs))],'HorizontalAlignment','center','fontsize', 15);
+end
+
+msize = [10, 15, 20];
+for i_t = 1:length(t)
+
+    for i_rs = 1:length(rs)
+        subplot(1,3,i_rs);
+        h(i_rs) = plot(rs(i_rs)*xs(i_t), rs(i_rs)*ys(i_t),'o','markerfacecolor','r','markeredgecolor','k','markersize', msize(i_rs));
+        hold on;
+        axis square
+        grid on;
+        set(gca,'visible','off')
+        xlim([-2, 2])
+        ylim([-2, 2])
+    end
+    
+    writeVideo(newVid, getframe(gcf));
+
+    drawnow;
+    if i_t< length(t)
+        delete(h)
+    end
+end
+close(newVid);
