@@ -27,7 +27,7 @@ tags: 신호처리
 정현파의 본질은 원 위의 회전에 관한 것이다. 그리고, 시간에 따른 회전을 기술한 것이다.
 
 <p align = "center">
-  <video width = "600" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic1.mp4">
   </video>
   <br>

@@ -53,6 +53,7 @@ hold on;
 axis square
 grid on;
 set(gca,'visible','off')
+line([-1, 1], [0, 0],'color','k','linestyle','--')
 
 subplot(1,2,2);
 plot(cos(linspace(0, 2*pi, 100)), sin(linspace(0, 2*pi, 100)),'k','linewidth',2);
@@ -60,7 +61,7 @@ hold on;
 axis square
 grid on;
 set(gca,'visible','off')
-
+line([0, 0], [-1, 1], 'color','k','linestyle','--')
 
 for i_t = 1:length(t)
     subplot(1,2,1);
