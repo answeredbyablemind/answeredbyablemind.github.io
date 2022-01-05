@@ -39,7 +39,7 @@ tags: 신호처리
 가장 쉬운 방법은 회전하는 원의 $x$축 혹은 $y$축 위의 변화만을 시간에 따라 기술하는 것이다.
 
 <p align = "center">
-  <video width = "800" height = "auto" loop autoplay controls muted>
+  <video width = "800" height = "auto" controls>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic2.mp4">
   </video>
   <br>
@@ -49,9 +49,9 @@ tags: 신호처리
 위 그림에서 볼 수 있는 시간에 따른 $x$ 축 혹은 $y$ 축 위의 움직임을 아래와 같이 표현하는 것이 아이디어라고 할 수 있다. 시간 축을 새로 설정하자는 것이다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic3.gif">
+  <video width = "800" height = "auto" controls>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic3.mp4">
+  </video>
   <br>
   그림 3. 원 위의 회전에 맞춰 x 축 y 축의 시간 변화를 각각 그래프로 표현하면 정현파를 얻을 수 있다.
-  <br>
-  출처: <a href = "https://commons.wikimedia.org/wiki/File:Sine_and_cosine_animation.gif">위키피디아: sine and cosine animation</a>
 </p>
