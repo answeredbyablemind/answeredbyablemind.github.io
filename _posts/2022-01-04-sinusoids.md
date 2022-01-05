@@ -31,7 +31,7 @@ tags: 신호처리
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic1.mp4">
   </video>
   <br>
-  그림 1. 2초 주기로 원 위의 점이 회전하고 있다.
+  그림 1. 4초 주기로 원 위의 점이 회전하고 있다.
 </p>
 
 원은 2차원 평면 상에 위치한다. 그런데, 그래프 상에 시간에 따른 회전을 기술(記述)하려다보니 2차원 평면의 두 개 차원 중 하나의 차원은 포기할 수 밖에 없었을 것이다.
@@ -39,17 +39,17 @@ tags: 신호처리
 가장 쉬운 방법은 회전하는 원의 $x$축 혹은 $y$축 위의 변화만을 시간에 따라 기술하는 것이다.
 
 <p align = "center">
-  <video width = "800" height = "auto" controls>
+  <video width = "800" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic2.mp4">
   </video>
   <br>
-  그림 2. 2초 주기로 원 위의 점의 x 축 y 축 위의 변화만을 관찰하는 과정
+  그림 2. 4초 주기로 원 위의 점의 x 축 y 축 위의 변화만을 관찰하는 과정
 </p>
 
 위 그림에서 볼 수 있는 시간에 따른 $x$ 축 혹은 $y$ 축 위의 움직임을 아래와 같이 표현하는 것이 아이디어라고 할 수 있다. 시간 축을 새로 설정하자는 것이다.
 
 <p align = "center">
-  <video width = "800" height = "auto" controls>
+  <video width = "800" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic3.mp4">
   </video>
   <br>

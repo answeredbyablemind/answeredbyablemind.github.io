@@ -8,11 +8,11 @@ newVid.Quality = 100;
 open(newVid);
 
 fs = newVid.FrameRate;
-t = 0:1/fs:10;
+t = 0:1/fs:8;
 
 figure('color','w');
-xs = cos(2*pi*0.5*t);
-ys = sin(2*pi*0.5*t);
+xs = cos(2*pi*0.25*t);
+ys = sin(2*pi*0.25*t);
 
 plot(cos(linspace(0, 2*pi, 100)), sin(linspace(0, 2*pi, 100)),'k','linewidth',2);
 hold on;
@@ -41,11 +41,11 @@ newVid.Quality = 100;
 open(newVid);
 
 fs = newVid.FrameRate;
-t = 0:1/fs:10;
+t = 0:1/fs:8;
 
 figure('color','w','position',[667, 421, 936, 420]);
-xs = cos(2*pi*0.5*t);
-ys = sin(2*pi*0.5*t);
+xs = cos(2*pi*0.25*t);
+ys = sin(2*pi*0.25*t);
 
 subplot(1,2,1);
 plot(cos(linspace(0, 2*pi, 100)), sin(linspace(0, 2*pi, 100)),'k','linewidth',2);
@@ -102,11 +102,11 @@ newVid.Quality = 100;
 open(newVid);
 
 fs = newVid.FrameRate;
-t = 0:1/fs:6;
+t = 0:1/fs:4;
 
 figure('color','w','position',[680, 286, 1017, 692]);
-xs = cos(2*pi*0.5*t);
-ys = sin(2*pi*0.5*t);
+xs = cos(2*pi*0.25*t);
+ys = sin(2*pi*0.25*t);
 
 subplot(2,2,1);
 plot(cos(linspace(0, 2*pi, 100)), sin(linspace(0, 2*pi, 100)),'k','linewidth',2);
@@ -119,22 +119,23 @@ line([-1, 1], [0, 0], 'color','k','linestyle','--')
 
 subplot(2,2,2);
 set(gca,'visible','off');
-xlim([-0.5, 6]);
+xlim([-0.5, 4]);
 ylim([-1.2, 1.2]);
 mArrow2(0, -1, 0, 1, {'color','k'});
-mArrow2(-0.5, 0, 6, 0, {'color','k'});
-text(5.5, -0.1,'time(s)','HorizontalAlignment','center')
+mArrow2(-0.5, 0, 4, 0, {'color','k'});
+text(4.5, -0.1,'time(s)','HorizontalAlignment','center')
 text(0, 1.15, 'y(t)', 'HorizontalAlignment','center');
 hold on;
 
 subplot(2,2,3);
+axis square
 set(gca,'visible','off');
 xlim([-1.2, 1.2]);
-ylim([-6, 0.5]);
+ylim([-5, 0.5]);
 mArrow2(-1, 0, 1, 0, {'color','k'});
-mArrow2(0, 0.5, 0, -6, {'color','k'});
+mArrow2(0, 0.5, 0, -5, {'color','k'});
 text(1.15, -0.1,'x(t)','HorizontalAlignment','center')
-text(0, -6.5, 'time(s)', 'HorizontalAlignment','center');
+text(0, -5.5, 'time(s)', 'HorizontalAlignment','center');
 hold on;
 
 addpath('..\');
