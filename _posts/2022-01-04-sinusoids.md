@@ -55,3 +55,11 @@ tags: 신호처리
   <br>
   그림 3. 원 위의 회전에 맞춰 x 축 y 축의 시간 변화를 각각 그래프로 표현하면 정현파를 얻을 수 있다.
 </p>
+
+이렇게 해서 얻게 되는 파형은 두 개이고 $x$ 축의 시간 변화 그래프는 코사인 파라고 부르고 $y$ 축의 시간 변화 그래프는 사인파라고 부른다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic4.png">
+  <br>
+  그림 4. 주기가 4초인 코사인파와 사인파
+</p>

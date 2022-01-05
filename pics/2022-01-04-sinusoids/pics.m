@@ -176,3 +176,16 @@ for i_t = 1:length(t)
     end
 end
 close(newVid);
+
+%%
+t = 0:1/fs:4;
+figure('position',[680, 675, 860, 300]);
+h(1) = plot(t, cos(2*pi*0.25*t),'r','linewidth',2);
+hold on;
+h(2) = plot(t, sin(2*pi*0.25*t),'b','linewidth',2);
+grid on;
+xlabel('time(s)');
+legend(h, {'cosine wave','sine wave'},'location','best'); clear h
+ylabel('x(t), y(t)');
+set(gca,'fontsize',12);
+set(gca,'fontname','³ª´®°íµñ');
