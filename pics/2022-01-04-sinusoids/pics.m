@@ -105,7 +105,7 @@ open(newVid);
 fs = newVid.FrameRate;
 t = 0:1/fs:4;
 
-figure('color','w','position',[680, 286, 1017, 692]);
+figure('color','w','position',[680, 286, 1018, 692]);
 xs = cos(2*pi*0.25*t);
 ys = sin(2*pi*0.25*t);
 
@@ -201,7 +201,7 @@ open(newVid);
 fs = newVid.FrameRate;
 t = 0:1/fs:4;
 
-figure('color','w','position',[680, 286, 1017, 692]);
+figure('color','w','position',[680, 686, 1018, 292]);
 xs = cos(2*pi*0.25*t);
 ys = sin(2*pi*0.25*t);
 
@@ -242,3 +242,169 @@ for i_t = 1:length(t)
     end
 end
 close(newVid);
+
+%% pic 7 서로 다른 주파수를 갖는 원 세개
+
+newVid = VideoWriter('pic7','MPEG-4');
+
+newVid.FrameRate = 60;
+newVid.Quality = 100;
+open(newVid);
+
+fs = newVid.FrameRate;
+t = 0:1/fs:4;
+
+figure('color','w','position',[680, 686, 1018, 292]);
+freqs = [0.25, 0.5, 1];
+xs = [cos(2*pi*freqs(1)*t); cos(2*pi*freqs(2)*t); cos(2*pi*freqs(3)*t)];
+ys = [sin(2*pi*freqs(1)*t); sin(2*pi*freqs(2)*t); sin(2*pi*freqs(3)*t)];
+for i_fs = 1:length(freqs)
+    subplot(1,3,i_fs);
+    plot(cos(linspace(0, 2*pi, 100)), sin(linspace(0, 2*pi, 100)),'k','linewidth',2);
+    hold on;
+    axis square
+    grid on;
+    set(gca,'visible','off')
+    xlim([-2, 2])
+    ylim([-2, 2])
+    text(0, - 1.2,  ['f = ', num2str(freqs(i_fs)),'Hz'],'HorizontalAlignment','center','fontsize', 15);
+end
+
+for i_t = 1:length(t)
+
+    for i_fs = 1:length(freqs)
+        subplot(1,3,i_fs);
+        h(i_fs) = plot(xs(i_fs,i_t), ys(i_fs,i_t),'o','markerfacecolor','r','markeredgecolor','k','markersize', 10);
+        hold on;
+        axis square
+        grid on;
+        set(gca,'visible','off')
+        xlim([-2, 2])
+        ylim([-2, 2])
+    end
+    
+    writeVideo(newVid, getframe(gcf));
+
+    drawnow;
+    if i_t< length(t)
+        delete(h)
+    end
+end
+close(newVid);
+
+%% pic 8
+
+figure('position',[680, 707, 970, 270]);
+set(gca,'visible','off')
+tt = linspace(0, 2*pi, 100);
+mArrow2(-0.5, 0, 8, 0,{'color','k'})
+hold on;
+mArrow2(0, -1, 0, 1,{'color','k'})
+xlim([-0.5, 8])
+
+plot(tt, sin(tt), 'k','linewidth',2);
+plot(tt + pi/4, sin(tt),'k--','linewidth',2);
+set(gca,'xtick', [0, pi/4, pi/2, pi])
+%% pic9
+
+
+newVid = VideoWriter('pic9','MPEG-4');
+
+newVid.FrameRate = 60;
+newVid.Quality = 100;
+open(newVid);
+fs = newVid.FrameRate;
+
+t = 0:1/fs:4;
+
+phis = [pi/6, pi-pi/3];
+
+figure('color','w','position',[680, 411, 1030, 560]);
+
+subplot(2,3,1);
+set(gca,'visible','off')
+hold on;
+tt = linspace(0, 2*pi, 100);
+plot(cos(tt), sin(tt), 'k', 'linewidth',2);
+xlim([-1, 1])
+ylim([-1, 1])
+
+axis square
+line([-1, 1], [0, 0],'color','k','linestyle','--')
+line([0, 0], [-1, 1],'color','k','linestyle','--')
+text(0, -1.2, '$$\phi=\pi/6$$','interpreter','latex','HorizontalAlignment','center','fontsize',20)
+
+subplot(2,3,2:3);
+set(gca,'visible','off')
+xlim([-0.2, 4.2])
+ylim([-1, 1])
+hold on;
+
+mArrow2(0, -1, 0, 1, {'color','k'});
+mArrow2(-0.5, 0, 4, 0, {'color','k'});
+
+subplot(2,3,4);
+set(gca,'visible','off')
+hold on;
+tt = linspace(0, 2*pi, 100);
+plot(cos(tt), sin(tt), 'k', 'linewidth',2);
+xlim([-1, 1])
+ylim([-1, 1])
+
+
+axis square
+line([-1, 1], [0, 0],'color','k','linestyle','--')
+line([0, 0], [-1, 1],'color','k','linestyle','--')
+text(0, -1.2, '$$\phi=2\pi/3$$','interpreter','latex','HorizontalAlignment','center','fontsize',20)
+
+subplot(2,3,5:6);
+set(gca,'visible','off')
+xlim([-0.2, 4.2])
+ylim([-1, 1])
+hold on;
+mArrow2(0, -1, 0, 1, {'color','k'});
+mArrow2(-0.5, 0, 4, 0, {'color','k'});
+
+xs = [cos(2*pi*0.25*t+phis(1)); cos(2*pi*0.25*t+phis(2))];
+ys = [sin(2*pi*0.25*t+phis(1)); sin(2*pi*0.25*t+phis(2))];
+
+for i_t = 1:length(t)
+    for i_phi = 1:length(phis)
+        subplot(2,3,1+3*(i_phi-1));
+        
+        h(i_phi) = plot(xs(i_phi,i_t), ys(i_phi,i_t),'o','markerfacecolor','r','markeredgecolor','k','markersize', 10);
+        hold on;
+        axis square
+        grid on;
+        set(gca,'visible','off')
+        
+        if i_phi == 1
+            subplot(2,3, 2:3)
+        elseif i_phi == 2
+            subplot(2,3, 5:6)
+        end
+        
+        h2(i_phi) = plot(t(i_t), ys(i_phi, i_t),'o','markerfacecolor','r','markeredgecolor','k','markersize',10);
+        h3(i_phi) = plot(t(1:i_t), ys(i_phi, 1:i_t),'k--');
+        
+        
+    end
+    
+    if i_t == 1 || i_t == length(t)
+        for iii = 1:59
+            writeVideo(newVid, getframe(gcf));
+        end
+    end
+    
+    writeVideo(newVid, getframe(gcf));
+
+    drawnow;
+    if i_t< length(t)
+        delete(h);
+        delete(h2);
+        delete(h3);
+    end
+end
+
+close(newVid);
+

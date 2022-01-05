@@ -100,5 +100,80 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
 
 다만, 정현파를 그릴 때, 가로축을 시간, 세로축을 amplitude라고 많이들 적는데, 그것은 올바른 표현은 아니라는 점은 짚고 넘어갔으면 좋을 것 같다.
 
-[//]:# (가로축 시간, 세로축 amplitude라고 적은 뒤 정현파 하나 그려주고 잘못된 예시라는 것을 표현해줄 것)
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic6.png">
+  <br>
+  그림 6. 세로축의 label을 amplitude라고 쓰는 것은 잘못 표기하는 것이다.
+</p>
 
+## 주파수 (frequency)
+
+주파수의 개념은 회전 속도와 관련되어 있다. 얼마나 빨리 회전하는지에 관한 것이다.
+
+빨리 회전할 수록 주파수는 높다.
+
+<p align = "center">
+  <video width = "800" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic7.mp4">
+  </video>
+  <br>
+  그림 7. 서로 다른 크기의 주파수를 갖는 원의 회전
+</p>
+
+주파수는 주기의 역수인데, 1/s 단위를 Hz(헤르츠)라고 읽는다.
+
+따라서, 0.25 Hz는 4초에 한번 회전, 1 Hz는 1초에 한번 회전, 2 Hz는 0.5초에 한번 회전하는 경우를 의미한다.
+
+정현파의 주파수와 관련해 어렵게 여기는 개념중 하나는 라디안 주파수이다. 라디안 주파수는 보통 $\omega$(오메가 라고 읽는다.)를 기호로 사용한다.
+
+[라디안 각도 체계](https://angeloyeo.github.io/2019/06/04/2-1-angle_rad.html)은 원을 한번 회전할 때 반지름과 회전한 길이의 비율이 항상 $2\pi$임을 고려해 만든 각도 체계이다.
+
+1Hz가 1초에 한번 회전하는 것을 의미한다고 하면 라디안 주파수는 1초에 몇 라디안을 회전하는지를 쉽게 파악하려고 만든 개념이다.
+
+가령 $2\pi$ rad/s의 라디안 주파수는 1초에 1번 도는 회전을 의미한다. 다만, 라디안 각도 체계를 이용해 얼마나 회전했는지에 대해 표현한 것이다.
+
+그래서 Hz를 이용해 표기하는 주파수를 $f$라고 쓰고 라디안 주파수를 $\omega$라고 쓰면,
+
+$$\omega = 2\pi f$$
+
+와 같은 관계를 갖는다.
+
+## 위상 변이(phase shift)
+
+정현파를 공부할 때 위상에 대한 내용을 어려워 하는 경우가 많다.
+
+위상이라는 말은 지구과학에서 달(Moon)에 대해 공부할 때나 나오는 말이라 생소하기 때문이기도 하다.
+
+phase shift가 되면 아래 그림과 같이 정현파가 좌/우로 옮겨지게 된다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic8.png">
+  <br>
+  그림 8. phase shift가 일어나면 정현파가 좌/우로 움직이게 된다.
+</p>
+
+좌/우로 움직이는 현상에 대해 헷갈린다면 정현파의 고향인 원의 회전을 다시 생각해보자.
+
+다시 말해, 위상은 '원의 어디서부터 출발할 것인가?'를 말해주는 것이다.
+
+즉, 식 (1)에서 $\phi$ 는 회전을 시작하는 위치에 불과하다.
+
+<p align = "center">
+  <video width = "800" height = "auto" loop autoplay controls muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic9.mp4">
+  </video>
+  <br>
+  그림 9. 서로 다른 위상 변위를 갖는 원의 회전에 대한 sine 파 도시
+</p>
+
+그래서 phase를 shift해줬다는 것을 고려할 때는 어디서부터 회전을 시작할 것인가를 생각하면 충분한 것이다.
+
+다만 조금 헷갈리기 쉬운 부분은 phase shift에 의한 time delay인데, 쉽게 생각하려면 식 (1)을 다음과 같이 변형하면 된다.
+
+$$\text{식 (1)} \Rightarrow A\cos\left(2\pi f\left(t+\frac{\phi}{2\pi f}\right)\right)$$
+
+즉, $\phi$ 라디안 만큼 phase shift가 있었다고 하면, 이에 의해 발생하는 time delay $t_d$는
+
+$$t_d = \frac{\phi}{2\pi f}$$
+
+초라고 할 수 있다.
