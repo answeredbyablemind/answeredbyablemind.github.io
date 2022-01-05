@@ -27,7 +27,7 @@ tags: 신호처리
 정현파의 본질은 원 위의 회전에 관한 것이다. 그리고, 시간에 따른 회전을 기술한 것이다.
 
 <p align = "center">
-  <video width = "800" height = "auto" controls>
+  <video width = "600" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic1.mp4">
   </video>
   <br>
@@ -39,7 +39,7 @@ tags: 신호처리
 가장 쉬운 방법은 회전하는 원의 $x$축 혹은 $y$축 위의 변화만을 시간에 따라 기술하는 것이다.
 
 <p align = "center">
-  <video width = "800" height = "auto" controls>
+  <video width = "800" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic2.mp4">
   </video>
   <br>
