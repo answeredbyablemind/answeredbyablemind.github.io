@@ -86,7 +86,7 @@ $$r=\sqrt{1^2+0.5^2}=1.118$$
 
 $$\theta = \tan^{-1}\left(\frac{0.5}{1}\right)=0.4636 \text{ rad}$$
 
-즉, 아래의 그림에서 $r$과 $\theta$의 값은 $r = 1.118$과 $\theta = 0.4636 \text{ rad}$ 혹은 $\theta = 26.56\degree$이다.
+즉, 아래의 그림에서 $r$과 $\theta$의 값은 $r = 1.118$과 $\theta = 0.4636 \text{ rad}$ 혹은 $\theta = 26.56°$이다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic4.png">
