@@ -42,7 +42,7 @@ $$\oint_c\vec{F}\cdot d\vec{r} = \iint_A(\vec{\nabla}\times\vec{F})_{2D} dA$$
 아래와 같이 어떤 벡터장 위에 넓이를 갖는 곡면 S과 그 가장 외각의 폐곡선 C가 있다고 하자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic1.mp4">
   </video>
   <br>
@@ -58,7 +58,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d \vec{
 이제 식 (3)의 좌변으로부터 식(3)의 우변을 유도해보자. 곡면 $S$를 아래와 같이 반으로 쪼개서 보도록 하자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic2.mp4">
   </video>
   <br>
@@ -84,7 +84,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \oint_{C_1}\vec{F}\cdot d\vec{r} + \oint_{C_2}\
 이번엔 아래와 같이 곡면 $S$를 4등분 해보자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic4.mp4">
   </video>
   <br>
@@ -106,7 +106,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \sum_{k=1}^4\oint_{C_k}\vec{F}\cdot d\vec{r}$$
 그렇다면 곡면 $S$를 $N$ 등분하면 어떻게 될까?
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic6.mp4">
   </video>
   <br>
@@ -146,7 +146,7 @@ $$\oint_C\vec{F}\cdot d\vec{r} = \iint_S(\vec{\nabla}\times\vec{F})\cdot d\vec{S
 
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-22-stokes_theorem/pic8.mp4">
   </video>
   <br>
