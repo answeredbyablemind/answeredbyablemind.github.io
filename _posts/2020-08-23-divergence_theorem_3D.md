@@ -30,7 +30,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 아래와 같이 어떤 벡터장 위에 닫힌 곡면 S과 그로 인해 만들어지는 정육면체 모양의 부피체가 있다고 하자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic1.mp4">
   </video>
   <br>
@@ -52,7 +52,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} = \iiint_V(\vec{\nabl
 우선 아래와 같이 부피체를 y 축에 대해 2개로 쪼개보자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic3.mp4">
   </video>
   <br>
@@ -80,7 +80,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} ={\large\bigcirc}\ker
 이번엔 부피체를 $x$, $y$ 축에 대해 각각 두 개로 쪼개 총 네 개의 부피체를 만들어보자.
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic5.mp4">
   </video>
   <br>
@@ -113,7 +113,7 @@ $${\large\bigcirc}\kern-1.55em\iint_S\vec{F}\cdot d\vec{S} =
 
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay controls muted>
+  <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-23-divergence_theorem_3D/pic7.mp4">
   </video>
   <br>
