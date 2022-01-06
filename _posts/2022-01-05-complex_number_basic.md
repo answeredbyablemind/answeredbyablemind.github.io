@@ -55,7 +55,7 @@ tags: 신호처리
 직각 좌표계는 보통 좌표계라고 할 때 생각할 수 있는 데카르트 좌표계(Cartesian coordinate)을 말한다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic3.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic3.png">
   <br>
   그림 3. 직각 좌표계 위에 표현된 네 개의 점
 </p>
