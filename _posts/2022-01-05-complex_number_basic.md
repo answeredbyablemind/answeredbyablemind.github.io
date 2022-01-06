@@ -30,7 +30,45 @@ tags: 신호처리
 
 [허수의 존재 의미에 대하여](https://angeloyeo.github.io/2019/06/15/imaginary_number.html) 편에서 언급했듯이 허수 체계는 실수 축에 직교하는 수 체계이다.
 
+그리고 복소수 체계는 실수 체계와 허수 체계를 합한 것이므로 실수 체계와 허수 체계를 각각 가로축과 세로축에 수직선으로 하는 복소 평면을 구성하고 그 위에 표현할 수 있다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic1.png">
+  <br>
+  그림 1. 가로축과 세로축을 실수, 허수축으로 구성하면 복소평면을 얻을 수 있게 된다.
+</p>
+
+임의의 복소수, 예를 들어 $z=1+j0.5$라고 하면 $(1, 0.5)$ 좌표에 점을 찍어 복소수 하나를 표현할 수 있게 된다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic2.png">
+  <br>
+  그림 2. 복소수는 복소 평면 위에 한 점으로 표현할 수 있다.
+</p>
+
+그런데, 복소수를 평면 상의 한 점이라고 놓고 보면 어떤 좌표계를 쓰는지에 따라 다르게 복소수를 표현할 수 있게 된다. 주요하게는 직각 좌표계와 극 좌표계를 사용해 복소수를 표현할 수 있다.
+
 ## 직각 좌표형
+
+직각 좌표계를 이용해 복소수를 표현하는 것은 복소수를 실수부와 허수부로 나누어 표현해주는 것을 의미한다.
+
+직각 좌표계는 보통 좌표계라고 할 때 생각할 수 있는 데카르트 좌표계(Cartesian coordinate)을 말한다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic3.png">
+  <br>
+  그림 3. 직각 좌표계 위에 표현된 네 개의 점
+</p>
+
+가령 그림 3과 같이 네 개의 점을 직각 좌표게에 표현해볼 수 있는데, 만약 이 평면이 복소평면이었다면 네 개의 점들은 각각 다음과 같은 복소수를 표현한 것이다.
+
+$$(2,3): 2+j3$$
+
+$$(0, 0): 0+j0$$
+
+$$(-3,1): -3+j1$$
+
+$$(-2,-2): -2-j2$$
 
 ## 극 좌표형
 
