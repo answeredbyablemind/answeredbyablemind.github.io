@@ -98,12 +98,19 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
 
 기본적으로 코사인 함수 $cos(\theta)$는 +1과 -1 사이에서 진동하므로 $A\cos(\theta)$는 $-A$에서 $+A$ 사이에서 진동한다.
 
-다만, 정현파를 그릴 때, 가로축을 시간, 세로축을 amplitude라고 많이들 적는데, 그것은 올바른 표현은 아니라는 점은 짚고 넘어갔으면 좋을 것 같다.
-
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic6.png">
   <br>
-  그림 6. 세로축의 label을 amplitude라고 쓰는 것은 잘못 표기하는 것이다.
+  그림 6. 서로 다른 진폭을 가지는 세 개의 사인파
+</p>
+
+
+다만, 정현파를 그릴 때, 가로축을 시간, 세로축을 amplitude라고 많이들 적는데, 그것은 올바른 표현은 아니라는 점은 짚고 넘어갔으면 좋을 것 같다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic7.png">
+  <br>
+  그림 7. 세로축의 label을 amplitude라고 쓰는 것은 잘못 표기하는 것이다.
 </p>
 
 ## 주파수 (frequency)
@@ -114,15 +121,21 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic7.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic8.mp4">
   </video>
   <br>
-  그림 7. 서로 다른 크기의 주파수를 갖는 원의 회전
+  그림 8. 서로 다른 크기의 주파수를 갖는 원의 회전
 </p>
 
 주파수는 주기의 역수인데, 1/s 단위를 Hz(헤르츠)라고 읽는다.
 
 따라서, 0.25 Hz는 4초에 한번 회전, 1 Hz는 1초에 한번 회전, 2 Hz는 0.5초에 한번 회전하는 경우를 의미한다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic9.png">
+  <br>
+  그림 9. 0.25 Hz와 2Hz의 서로 다른 주파수를 갖는 사인파의 형태 비교
+</p>
 
 정현파의 주파수와 관련해 어렵게 여기는 개념중 하나는 라디안 주파수이다. 라디안 주파수는 보통 $\omega$(오메가 라고 읽는다.)를 기호로 사용한다.
 
@@ -147,9 +160,9 @@ $$\omega = 2\pi f$$
 phase shift가 되면 아래 그림과 같이 정현파가 좌/우로 옮겨지게 된다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic8.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic10.png">
   <br>
-  그림 8. phase shift가 일어나면 정현파가 좌/우로 움직이게 된다.
+  그림 10. phase shift가 일어나면 정현파가 좌/우로 움직이게 된다.
 </p>
 
 좌/우로 움직이는 현상에 대해 헷갈린다면 정현파의 고향인 원의 회전을 다시 생각해보자.
@@ -160,10 +173,10 @@ phase shift가 되면 아래 그림과 같이 정현파가 좌/우로 옮겨지�
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay controls muted>
-    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic9.mp4">
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic11.mp4">
   </video>
   <br>
-  그림 9. 서로 다른 위상 변위를 갖는 원의 회전에 대한 sine 파 도시
+  그림 11. 서로 다른 위상 변위를 갖는 원의 회전에 대한 sine 파 도시
 </p>
 
 그래서 phase를 shift해줬다는 것을 고려할 때는 어디서부터 회전을 시작할 것인가를 생각하면 충분한 것이다.

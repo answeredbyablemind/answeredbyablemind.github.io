@@ -243,9 +243,34 @@ for i_t = 1:length(t)
 end
 close(newVid);
 
-%% pic 7 서로 다른 주파수를 갖는 원 세개
+%% pic 6 진폭이 다른 사인파
 
-newVid = VideoWriter('pic7','MPEG-4');
+t = linspace(0, 1, 100);
+
+x1 = 0.5 * sin(2*pi*1*t);
+x2 = 1.0 * sin(2*pi*1*t);
+x3 = 2.0 * sin(2*pi*1*t);
+
+clear h
+
+figure;
+h(1) = plot(t, x1,'linewidth',2);
+hold on;
+h(2) = plot(t, x2,'linewidth',2);
+h(3) = plot(t, x3,'linewidth',2);
+
+xlabel('time (s)');
+ylabel('x(t)');
+grid on;
+title('진폭이 다른 세 사인파');
+set(gca,'fontname','나눔고딕');
+legend(h, '0.5sin(2\pi t)', 'sin(2\pi t)', '2sin(2\pi t)','location','best');
+
+
+
+%% pic 8 서로 다른 주파수를 갖는 원 세개
+
+newVid = VideoWriter('pic8','MPEG-4');
 
 newVid.FrameRate = 60;
 newVid.Quality = 100;
@@ -292,7 +317,26 @@ for i_t = 1:length(t)
 end
 close(newVid);
 
-%% pic 8
+%% pic 9
+
+t = 0:1/100:4;
+
+x1 = sin(2*pi*0.25*t);
+x2 = sin(2*pi*2*t);
+
+clear h
+figure('position',[680, 558, 1050, 208]);
+h(1) = plot(t, x1,'linewidth',2);
+hold on;
+h(2) = plot(t, x2,'linewidth',2);
+legend(h,'f = 0.25 Hz','f = 2 Hz');
+xlabel('time (s)');
+ylabel('x(t)');
+title('서로 다른 주파수를 갖는 두 사인파');
+grid on;
+set(gca,'fontname','나눔고딕');
+
+%% pic 10
 
 figure('position',[680, 707, 970, 270]);
 set(gca,'visible','off')
@@ -305,10 +349,10 @@ xlim([-0.5, 8])
 plot(tt, sin(tt), 'k','linewidth',2);
 plot(tt + pi/4, sin(tt),'k--','linewidth',2);
 set(gca,'xtick', [0, pi/4, pi/2, pi])
-%% pic9
+%% pic11
 
 
-newVid = VideoWriter('pic9','MPEG-4');
+newVid = VideoWriter('pic11','MPEG-4');
 
 newVid.FrameRate = 60;
 newVid.Quality = 100;
