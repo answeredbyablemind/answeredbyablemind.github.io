@@ -5,12 +5,14 @@ params.CaseSensitive = false;
 params.addParameter('newFigure', true);
 params.addParameter('fontsize', 12);
 params.addParameter('complex_plane', false);
+params.addParameter('plot_polar',false);
 
 params.parse(varargin{:});
 %Extract values from the inputParser
 h_newfig = params.Results.newFigure;
 fontsize = params.Results.fontsize;
 h_complex_plane = params.Results.complex_plane;
+h_plot_polar = params.Results.plot_polar;
 
 % fontsize= 20;
 if h_newfig
@@ -18,6 +20,23 @@ if h_newfig
     set(gcf,'position',[500,100,1000,650])
     set(gcf,'color','w');
 end
+
+if h_plot_polar
+    hold on;
+    rs = 0:0.5:x2;
+    theta = linspace(0, 2*pi, 1000);
+    for i_r = 1:length(rs)
+        plot(rs(i_r) * cos(theta), rs(i_r) * sin(theta),'color', ones(1,3) * 0.8)
+    end
+    
+    thetas = 0:pi/6:(2*pi-pi/6);
+    for i_theta = 1:length(thetas)
+        plot([0, rs(end) * cos(thetas(i_theta))], [0, rs(end) * sin(thetas(i_theta))],'color',ones(1,3) * 0.8);
+        text((rs(end) + 0.3) * cos(thetas(i_theta)), (rs(end) + 0.1) * sin(thetas(i_theta)), [num2str(0 + 30 * (i_theta - 1)),'¡Æ'],...
+            'HorizontalAlignment','center');
+    end
+end
+
 
 mArrow2(x1,0,x2,0,{'color','k'});
 mArrow2(0,y1,0,y2,{'color','k'});

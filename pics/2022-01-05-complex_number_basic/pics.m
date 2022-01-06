@@ -28,3 +28,25 @@ for i_dot = 1:size(dots,1)
     line([0, dots(i_dot,1)], ones(1,2) * dots(i_dot, 2),  'color', my_color(i_dot,:),'linestyle','--')
     text(dots(i_dot,1)+0.2, dots(i_dot,2)+0.2, ['(',num2str(dots(i_dot,1)),',', num2str(dots(i_dot,2)),')'],'HorizontalAlignment','left','fontsize',15,'color',my_color(i_dot,:))
 end
+
+%% pic 4. 복소수 1+j0.5를 polar coordinate으로 표현
+
+plotXY(-2.5, 2.5, -2.5, 2.5, 'newFigure', true,'complex_plane',true,'plot_polar',true)
+hold on;
+
+plot([0, 1], [0, 0.5],'color','k','linestyle','--','linewidth',2)
+plot(1, 0.5, 'o', 'markerfacecolor', 'r' ,'markeredgecolor','k','markersize',10,'linewidth',1.5)
+
+th = linspace(0, atan(0.5), 100);
+plot(0.3 * cos(th), 0.3 * sin(th),'k')
+text(0.35, 0.1, '\theta','fontsize',15)
+text(0.45, 0.4, '$$r$$','fontsize',15,'interpreter','latex')
+
+%% pic 5. r = 2, theta = 30도 --> 60도 두 개의 점
+
+plotXY(-2.5, 2.5, -2.5, 2.5, 'newFigure', true,'complex_plane',true,'plot_polar',true)
+hold on;
+plot(2 * cosd(15), 2 * sind(15),'o','markerfacecolor','r','MarkerEdgeColor','k','markersize',10);
+plot(2 * cosd(40), 2 * sind(40),'o','markerfacecolor','b','MarkerEdgeColor','k','MarkerSize',10);
+
+    
