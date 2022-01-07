@@ -246,3 +246,20 @@ $$z_1^*=(r_1e^{j\theta_1})^*=r_1e^{-j\theta_1}$$
 
 ## 복소수 사칙 연산의 시각화
 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic6.png">
+  <br>
+  그림 6. 복소수 덧셈의 시각적 표현
+</p>
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic7.png">
+  <br>
+  그림 7. 복소수 뺄셈의 시각적 표현
+</p>
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic8.png">
+  <br>
+  그림 8. 복소수 곱셈의 시각적 표현
+</p>
