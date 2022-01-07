@@ -128,9 +128,6 @@ $$z=r\cos(\theta) + j r\sin(\theta)$$
 
 $$\begin{cases}r=\sqrt{x^2+y^2}\\\theta = \tan^{-1}(y/x)\end{cases}$$
 
-
-
-
 # 오일러 공식
 
 # 복소수 사칙 연산의 시각화
