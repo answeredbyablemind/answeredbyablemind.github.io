@@ -130,4 +130,53 @@ $$\begin{cases}r=\sqrt{x^2+y^2}\\\theta = \tan^{-1}(y/x)\end{cases}$$
 
 # 오일러 공식
 
+원점으로부터의 거리가 1이고 실수축과의 각도가 $\theta$ rad인 복소수 $z$를 생각해보자.
+
+$$z = \cos(\theta) + j \sin(\theta)$$
+
+위 식을 $\theta$에 대해 미분해보면 다음과 같은 결과를 얻을 수 있다.
+
+$$\frac{dz}{d\theta}=-\sin(\theta) + j \cos(\theta)$$
+
+여기서 $j^2 = - 1$ 이므로,
+
+$$\frac{dz}{d\theta}=j^2 \sin(\theta) + j\cos(\theta) = j(\cos(\theta) + j \sin(\theta)) = jz$$
+
+이고 양변을 $z$로 나눠
+
+$$\frac{1}{z} \frac{dz}{d\theta} = j$$
+
+와 같이 바꿔 쓸 수 있다.
+
+여기서 양변을 적분하면,
+
+$$\int \frac{1}{z}dz = \int j d\theta$$
+
+$$\Rightarrow \ln(z)=j\theta + C$$
+
+($C$는 적분 상수)
+
+여기서 $\ln$ 안의 $z$에 절대값을 씌우지 않은 것은 복소수의 길이는 항상 0보다 크기 때문이다.
+
+이제 $C$ 값을 확인해보자. $\theta=0$인 경우를 생각해보면,
+
+$$\ln(z)=0+C=C$$
+
+그리고 $z$ 값은 본디 $z=\cos(\theta) + j\sin(\theta)$이므로,
+
+$$z= \cos(0) + j\sin(0) = 1$$ 
+
+과 같다. 따라서, $\ln(z) = \ln(1) = 0 = C$와 같다.
+
+따라서 적분 상수를 확인하였으므로,
+
+$$\ln(z)=j\theta$$
+
+이고,
+
+$$z=e^{j\theta}=\cos(\theta)+j\sin(\theta)$$
+
+이다.
+
+
 # 복소수 사칙 연산의 시각화
