@@ -102,7 +102,34 @@ $$\theta = \tan^{-1}\left(\frac{0.5}{1}\right)=0.4636 \text{ rad}$$
 
 $$r\angle \theta$$
 
+이 때 $\theta$의 표기에 관해 주의할 점은 $\theta$는 $2\pi$ 라디안 혹은 360도를 주기로 하는 각도라는 점이다. 극좌표형의 표기에서 $\theta$는 $-\pi<\theta<\pi$ 혹은 $-180°\lt \theta \lt 180°$ 사이의 각도로 표시하는 것이 관레이다. 만약 각도가 이 범위 안에 있지 않으면 360°의 배수를 더하거나 빼서 기본각의 범위 안에 들어가도록 만들어 표기해준다.
+
+예를 들어, $3\angle 280°$ 는 360도를 빼줘서 $3\angle-80°$로 써주어야 한다.
+
 ## 두 좌표계 간의 변환
+
+복소수를 표현할 때 직교 좌표계와 극 좌표계 둘 다 많이 사용되지만, 신호 처리를 공부할 때에는 극 좌표계를 더 자주 이용한다. 그 이유는 결국 정현파는 원의 회전으로부터 출발하는 개념이기 때문에 회전을 표현하기에 더 적합한 극좌표계를 사용하는 것이라고 볼 수 있다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic5.png">
+  <br>
+  그림 5. 직각 좌표계와 극 좌표계의 관계
+</p>
+
+삼각비를 생각해본다면 $x$와 $y$의 좌표는 다음과 같이 표현할 수 있다.
+
+$$\begin{cases} x = r\cos(\theta) \\ y = r\sin(\theta) \end{cases}$$
+
+즉, 극 좌표계의 $r$, $\theta$를 이용해 임의의 복소수 $z$ 를 다음과 같이 표현할 수 있다.
+
+$$z=r\cos(\theta) + j r\sin(\theta)$$
+
+한편, 직교 좌표계에서 극좌표계로 표현을 수정하기 위해서는 원점으로부터 점까지의 길이와 각도를 계산하면 된다.
+
+$$\begin{cases}r=\sqrt{x^2+y^2}\\\theta = \tan^{-1}(y/x)\end{cases}$$
+
+
+
 
 # 오일러 공식
 

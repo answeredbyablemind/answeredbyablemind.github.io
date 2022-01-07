@@ -49,4 +49,28 @@ hold on;
 plot(2 * cosd(15), 2 * sind(15),'o','markerfacecolor','r','MarkerEdgeColor','k','markersize',10);
 plot(2 * cosd(40), 2 * sind(40),'o','markerfacecolor','b','MarkerEdgeColor','k','MarkerSize',10);
 
-    
+%% pic 6. Á÷±³ÁÂÇ¥°è¿Í ±ØÁÂÇ¥°èÀÇ °ü°è¸¦ Ç¥ÇöÇÏ´Â ±×¸²
+
+figure('color','w','position',[680, 546, 620, 350]);
+gca
+xlim([-0.2, 2.5])
+ylim([-0.2, 2])
+set(gca,'visible','off');
+mArrow2(0, 0, 2.5, 0, {'color','k','linewidth',1.5});
+mArrow2(0, 0, 0, 2, {'color','k','linewidth',1.5});
+text(2.5, -0.15, '½Ç¼ö Ãà','fontsize',12,'fontname','³ª´®°íµñ','HorizontalAlignment','center');
+text(0, 2.1, 'Çã¼ö Ãà','fontsize',12,'fontname','³ª´®°íµñ','HorizontalAlignment','center');
+text(-0.02, 0, '0','fontsize',12,'fontname','³ª´®°íµñ','HorizontalAlignment','right','VerticalAlignment','top');
+
+mArrow2(0, 0, 2, 1.5, {'color', lines(1),'linewidth',2});
+mArrow2(0, -0.1, 2, -0.1, {'color', [0.85, 0.325, 0.098], 'linewidth',2},'arrow_type','doublearrow');
+mArrow2(2, 0.05, 2, 1.5-0.05, {'color', [0.85, 0.325, 0.098], 'linewidth',2},'arrow_type','doublearrow');
+text(1, -0.2, '$$x$$', 'interpreter','latex','HorizontalAlignment','center','fontsize',15,'color', [0.85, 0.325, 0.098]);
+text(2.1, 0.75, '$$y$$', 'interpreter','latex','HorizontalAlignment','center','fontsize',15,'color',[0.85, 0.325, 0.098]);
+text(2.05, 1.5, '$$z=x+jy$$', 'interpreter','latex','HorizontalAlignment','left','fontsize',15,'color',[0.85, 0.325, 0.098]);
+
+% th = linspace(0, atan(1.5/2)-0.05, 8);
+% xx = 0.4 * cos(th);
+% yy = 0.4 * sin(th);
+% hold on;
+% plot(xx, yy, 'k.','color',lines(1))
