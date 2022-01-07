@@ -190,6 +190,8 @@ $$e^{j\theta}=\cos(\theta) + j \sin(\theta)$$
 
 # 복소수 사칙 연산과 시각화
 
+## 복소수의 사칙 연산
+
 복소수에 대한 사칙 연산은 $j^2=-1$ 인 것만 염두해둔다면 실수에서의 사칙연산과 크게 다르지 않다. $j$를 하나의 특별한 변수로 보는 것도 좋을 것 같다.
 
 우선은 직교좌표형으로 쓴 복소수의 사칙연산을 확인해보자.
@@ -231,3 +233,16 @@ $$z_1^*=(x_1+jy_1)^*=x_1-jy_1$$
 $$z_1\times z_2 = r_1e^{j\theta_1}r_2e^{j\theta_2} \notag $$ 
 
 $$ = (r_1r_2)e^{j(\theta_1+\theta_2)}$$
+
+- 오일러 공식 이용 나눗셈
+
+$$z_1\div z_2 = \frac{r_1e^{j\theta_1}}{r_2e^{j\theta_2}}=\frac{r_1}{r_2}e^{j(\theta_1-\theta_2)}$$
+
+한편 complex conjugate은 각도의 부호만 바꾸어 계산할 수 있다.
+
+- complex conjugate
+
+$$z_1^*=(r_1e^{j\theta_1})^*=r_1e^{-j\theta_1}$$
+
+## 복소수 사칙 연산의 시각화
+
