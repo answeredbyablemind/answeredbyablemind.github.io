@@ -259,7 +259,7 @@ $$z_1^*=(r_1e^{j\theta_1})^*=r_1e^{-j\theta_1}$$
 </p>
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic8.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic8.png">
   <br>
   그림 8. 복소수 곱셈의 시각적 표현
 </p>
