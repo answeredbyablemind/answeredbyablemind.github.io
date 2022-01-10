@@ -246,17 +246,31 @@ $$z_1^*=(r_1e^{j\theta_1})^*=r_1e^{-j\theta_1}$$
 
 ## 복소수 사칙 연산의 시각화
 
+복소수의 사칙 연산 중 덧셈과 뺄셈은 직교 좌표계의 2차원 벡터로 표현하는 것이 시각적으로 가장 이해하기 쉽다.
+
+생각해보면 복소수의 실수부와 허수부는 각각 독립적으로 작용하기 때문에 기하학적으로 2차원 평면 상에 도시한 2차원 벡터와 기능은 완전히 동일하다.
+
+복소수 덧셈의 경우는 벡터 합의 평행사변형 규칙을 생각하면 쉽게 생각해볼 수 있다.
+
+혹은 더해지는 두 벡터 중 하나의 사본의 종점(end point)을 다른 한 벡터의 시점(starting point)에 둔 뒤, 합쳐진 벡터들의 양 끝을 연결시켜주면 두 벡터를 합한 결과를 얻을 수 있게 된다.
+
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic6.png">
   <br>
   그림 6. 복소수 덧셈의 시각적 표현
 </p>
 
+뺄셈의 경우에는 $z_1-z_2$를 $z_1+(-z_2)$와 같이 생각하여 뺄셈을 당하는 벡터에 대해 반대방향으로 향하는 벡터를 상정한 뒤 더하면 된다.
+
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic7.png">
   <br>
   그림 7. 복소수 뺄셈의 시각적 표현
 </p>
+
+복소수 곱셈의 경우에는 극좌표계로 표현된 벡터를 생각하는 것이 좋다. 식 (28)을 보면 두 복소수를 곱해주면 두 복소수의 크기는 곱해지고 각도는 더해지는 것을 알 수 있다.
+
+아래 그림에서 $\theta_3 = \theta_1+\theta_2$가 된다. 하지만 각도는 $-180°$에서 $180°$ 사이의 값으로 표현해주는 편이기 때문에 이 부분은 주의해서 360도의 배수를 더해주어 조정해주자.
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-05-complex_number_basic/pic8.png">
