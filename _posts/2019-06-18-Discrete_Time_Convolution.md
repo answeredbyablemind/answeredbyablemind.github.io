@@ -62,24 +62,30 @@ $$=\cdots + x[-2]\delta[n+2]+x[-1]\delta[n+1]+x[0]\delta[n]+x[1]\delta[n-1]+x[2]
 
 여기서 상수는 $x[k]$를 의미한다. $x[k]$는 $k$번째 함수값이라는 의미이기 때문에 더 이상 함수가 아닌 상수이다.
 
----
+식 (3)은 다음과 같이 기호로 표기하기도 한다.
 
-또 한편, 입력 $x[n]$ 과 출력 $y[n]$ 의 관계를 다음과 같이 생각해보자.
+$$\Rightarrow x[n] * \delta[n]$$
 
-출력 $y[n]$ 을 입력 $x[n]$ 의 어떠한 변환이라고 생각한다면, $y[n]=T \left(x[n] \right)$ 이라고 생각할 수 있다.
+이 때, $*$ 연산을 컨볼루션 합이라고 부르기도 한다.
 
-현재 고려하는 시스템은 LTI 시스템이기 때문에 다음이 성립한다.
+일반적으로 임의의 이산 함수 $x[n]$과 $h[n]$에 대해 두 함수의 컨볼루션 합은 다음과 같다.
+
+$$x[n] * h[n] = \sum_{k=-\infty}^{\infty}x[k]h[n-k]$$
+
+# LTI 시스템과 컨볼루션 합
+
+입력 $x[n]$ 과 출력 $y[n]$ 의 관계를 다음과 같이 생각해보자. 출력 $y[n]$ 을 입력 $x[n]$ 의 어떠한 변환이라고 생각한다면, $y[n]=T \left(x[n] \right)$ 이라고 생각할 수 있다.
+
+만약, 현재 고려하는 시스템이 LTI 시스템이라고 한다면 선형성에 의해 다음이 성립한다.
 
 $$ T\left( \sum_{k=-\infty}^{\infty}c_kx_k[n]\right) = \sum_{k=-\infty}^{\infty}{c_kT(x_k[n])}=\sum_{k=-\infty}^{\infty}{c_ky_k[n]} $$
 
-$$(\because Linear System) \notag$$
+또, 시변성에 의해 다음이 성립한다.
 
 $$T \left(x[n-k] \right)=y[n-k]$$
 
-$$(\because Time-Invariant\space system) \notag$$
 
-
-그렇다면, 다시 한번 식 (3)의 양변에 모두 변환 $T$를 취할 수 있기 때문에 다음이 성립한다.
+그렇다면, 다시 한번 식 (3)을 이용하여 아래의 식을 좀 더 전개해보자.
 
 $$y[n] =T(x[n])\notag$$
 
@@ -91,7 +97,9 @@ $$=T\left( \sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}\right)$$
 
 $$\Rightarrow \sum_{k=-\infty}^{\infty}{\left(x[k]T\left(\delta[n-k]\right) \right)}$$
 
-라고 할 수 있다. 이 때, $h[n]=T\left(\delta[n]\right)$ 라는 정의와 Time-Invariant의 성질에 의해서
+라고 할 수 있다. 이 때, $h[n]=T\left(\delta[n]\right)$ 라고 하자.
+
+그러면 Time-Invariant의 성질에 의해서
 
 $$ \sum_{k=-\infty}^{\infty}{\left(x[k]T\left(\delta[n-k]\right) \right)} = \sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$$
 
@@ -102,5 +110,7 @@ $$ \sum_{k=-\infty}^{\infty}{\left(x[k]T\left(\delta[n-k]\right) \right)} = \sum
 $$y[n] = \sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$$
 
 라고 할 수 있다.
+
+여기서 $h[n] = T\left(\delta[n]\right)$는 $\delta[n]$을 입력으로 했을 때의 변환이므로 해당 시스템에 대해 임펄스 입력을 줬을 때의 응답이다. 이를 임펄스 응답이라고 부른다.
 
 다시 말해 모든 LTI 시스템은 입력과 임펄스 응답($h[n]$)의 콘볼루션 합으로 표현할 수 있음을 알 수 있다.
