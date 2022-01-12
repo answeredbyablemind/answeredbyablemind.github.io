@@ -93,11 +93,72 @@ $$x[n-n_0] \longmapsto y[n-n_0]$$
 
 시스템의 시불변성을 체크해보기 위해서는 입력 신호에 delay를 먼저 걸고 system을 통과시켜 본 결과와 입력 신호를 시스템에 통과 시킨 후 delay를 걸어줘서 얻은 결과를 비교해보면 된다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-11-LTI_system/pic4.png">
+  <br>
+  그림 4. 시불변 특성을 검사하기 위해 수행할 수 있는 테스트의 모식도
+</p>
 
+가령, 아래와 같은 시스템을 생각해보자.
+
+$$y[n]=(x[n])^2$$
+
+이 시스템이 시불변 시스템인지 보기 위해서 다음 두 가지를 확인해보자.
+
+$$w[n]=(x[n-n_0])^2$$
+
+$$y[n-n_0]=(x[n-n_0])^2$$
+
+여기서 $w[n]=y[n-n_0]$ 이므로 이 시스템은 시불변 시스템이다.
+
+반면에 아래와 같은 시스템을 생각해보자.
+
+$$y[n]=x[-n]$$
+
+이 시스템이 시불변 시스템인지 확인하기 위해 다음 두 가지를 확인해보자.
+
+$$w[n]=x[(-n)-n_0]$$
+
+$$y[n-n_0]=x[-(n-n_0)]$$
+
+여기서 $w[n]\neq y[n-n_0]$이므로 이 시스템은 시불변 시스템이 아니다.
 
 ## 선형성
 
-중첩의 원리
+앞서 설명했던 바와 같이 신호 내 성분별로 시스템이 다르게 적용되어야 하면 시스템이 복잡해진다. 따라서, 선형성을 만족하는 시스템을 이용하면 시스템을 적용시키는 연산을 단순화시킬 수 있다.
 
-거의 모든 신호는 정현파의 중첩으로 표현할 수 있다. (몇 가지 조건들이 붙긴 하지만)
+선형성은 다음과 같이 정의된다. $x_1[n]\longmapsto y_1[n]$이고 $x_2[n] \longmapsto y_2[n]$이라고 했을 때 다음이 성립하면 선형적이다.
 
+$$x[n]=\alpha x_1[n]+\beta x_2[n] \longmapsto y[n]=\alpha y_1[n]+\beta y_2[n]$$
+
+선형성이 성립하는 시스템에서는 신호 내에 있는 신호 성분별로 시스템을 각각 적용해 상수배해주어 합해주는 것이 가능해진다. (어렵게 말하면 중첩의 원리라고도 부른다.)
+
+위 식을 잘 생각해보면 $\alpha,\beta = 1$인 경우에는
+
+$$x[n]=x_1[n]+x_2[n] \longmapsto y[n]=y_1[n]+y_2[n]$$
+
+이고, 상수 하나만 이용하면,
+
+$$x[n]=\alpha x_1[n] \longmapsto y[n]=\alpha y_1[n]$$
+
+이다. 이것은 [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)을 써놓은 것과 같다는 것을 알 수 있다.
+
+따라서, 선형성이 성립한다는 말은 신호를 벡터로 볼 수 있다는 말과도 같다. 
+
+또, 선형성이 성립하는 시스템은 [선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)으로 볼 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-11-LTI_system/pic5.png">
+  <br>
+  그림 5. 선형성을 검사하기 위해 수행할 수 있는 테스트의 모식도
+</p>
+
+선형시스템 판별에 대해 예를 들어 $y[n]=(x[n])^2$과 같은 시스템을 생각해보자.
+
+이 시스템이 선형적인지 판별하기 위해 아래의 두 함수를 생각해보면,
+
+$$w[n]=\alpha(x_1[n])^2 + \beta (x_2[n])^2$$
+
+$$y[n]=(\alpha x_1[n])+\beta x_2[n])^2 = \alpha^2 (x_1[n])^2 + 2\alpha\beta x_1[n]x_2[n]+\beta ^2 (x_2[n])^2$$
+
+이 두 함수가 다르다는 것을 알 수 있으므로, 제곱 시스템은 비선형 시스템이다.
