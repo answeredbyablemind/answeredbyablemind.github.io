@@ -336,7 +336,7 @@ docs-ko:
       - title:  페이저 (phasor)
         url:    2019/06/18/phasor.html
 
-  - title:      신호 처리 기초
+  - title:      신호 처리
     children:
       - title:  신호 처리 서론
         url:    2022/01/03/signal_processing_introduction.html
