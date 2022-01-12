@@ -20,6 +20,11 @@ tags: 신호처리
 * [정현파 기초](https://angeloyeo.github.io/2022/01/04/sinusoids.html)
 * [Phasor](https://angeloyeo.github.io/2022/01/04/sinusoids.html)
 
+아래의 내용은 알고 계시면 좋지만 꼭 몰라도 전체 내용에는 지장 없을 선행 지식입니다.
+
+* [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
+* [행렬과 선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
+
 # 어떤 신호라도 정현파의 조합으로 표현할 수 있다.
 
 신호 시스템을 공부함에 있어 가장 핵심 포인트를 하나 꼽으라면 "어떤 신호라도 정현파의 조합으로 표현할 수 있다"는 말이다.
