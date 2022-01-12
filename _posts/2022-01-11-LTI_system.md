@@ -59,7 +59,7 @@ tags: 신호처리
 신호는 시간에 따른 변화 뿐만 아니라 주파수 성분별로도 구별할 수 있다고 보자는 것이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-11-LTI_system/fourier-transform.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-11-LTI_system/pic3.png">
   <br>
   그림 3. 임의의 신호를 주파수 성분별로 생각하면, 시간 축, 주파수 축의 여러 요소로 분해해 볼 수 있다.
 </p>
