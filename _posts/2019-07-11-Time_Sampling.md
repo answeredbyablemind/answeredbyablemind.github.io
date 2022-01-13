@@ -17,6 +17,7 @@ tags: 신호처리
 
 </center>
 
+{% raw %}
 
 ## 시간 샘플링?
 
@@ -144,9 +145,9 @@ $$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty}
 \delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
 
 
-여기서 우리는 식 (25)의 $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 를 다음과 같이 생각할 수 있다.
+여기서 우리는 식 (25)의 $\int_{-\infty}^{\infty}\delta(\tau-\frac{k}{T})X_c(f-\tau)d\tau$ 를 다음과 같이 생각할 수 있다.
 
-$$\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}= \delta(f-\frac{k}{T})\otimes X_c(f)$$
+$$\int_{-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau= \delta\left(f-\frac{k}{T}\right)\otimes X_c(f)$$
 
 > 왜냐하면, 다음과 같이 볼 수 있기 때문이다.
 >
@@ -250,3 +251,5 @@ Q.E.D.
 ---
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/5wyYgy6LPyQ" frameborder="0" allowfullscreen></iframe></center>
+
+{% endraw %}
