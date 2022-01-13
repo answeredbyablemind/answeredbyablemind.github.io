@@ -17,7 +17,6 @@ tags: 신호처리
 
 </center>
 
-{% raw %}
 
 ## 시간 샘플링?
 
@@ -251,5 +250,3 @@ Q.E.D.
 ---
 
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/5wyYgy6LPyQ" frameborder="0" allowfullscreen></iframe></center>
-
-{% endraw %}

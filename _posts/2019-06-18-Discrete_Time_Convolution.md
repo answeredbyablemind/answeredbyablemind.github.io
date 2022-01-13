@@ -139,7 +139,7 @@ $$x[n] * h[n] = h[n] * x[n]$$
   그림 4. 이산 컨볼루션의 교환 법칙이 성립한다는 것은 입력 신호와 임펄스 응답의 역할이 바뀌어도 시스템은 출력이 유지된다는 것을 의미한다.
 </p>
 
-또, 다른 해석으로는 두 개의 시스템이 연속적으로 적용되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것 또한 생각해볼 수 있다.
+또, 다른 해석으로는 두 개의 시스템이 직렬로 연결되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것 또한 생각해볼 수 있다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic5.png">
@@ -153,7 +153,7 @@ $$x[n] * h[n] = h[n] * x[n]$$
 
 $$(x[n] * h_1[n]) * h_2[n] = x[n] * (h_1[n] * h_2[n])$$
 
-예를 들어 두 개의 시스템이 연속적으로 연결되어 있는 경우, 두 개의 시스템을 컨볼루션으로 결합한 시스템 하나로 두 개 시스템의 결합을 대체할 수 있다는 것을 의미한다.
+예를 들어 두 개의 시스템이 직렬로 연결되어 있는 경우, 두 개의 시스템을 컨볼루션으로 결합한 시스템 하나로 두 개 시스템의 결합을 대체할 수 있다는 것을 의미한다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic6.png">
@@ -167,7 +167,13 @@ $$(x[n] * h_1[n]) * h_2[n] = x[n] * (h_1[n] * h_2[n])$$
 
 $$x[n]*(h_1[n] + h_2[n])= x[n]*h_1[n] + x[n]*h_2[n]$$
 
-[//]:# (그림 넣기)
+분배 법칙은 두 개의 시스템이 병렬로 연결되어 있을 경우 각 시스템의 임펄스 응답을 더한 것으로 전체 시스템을 대체할 수 있다는 것을 의미한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic7.png">
+  <br>
+  그림 7. 이산 컨볼루션의 분배 법칙의 의미. 
+</p>
 
 # 예제
 
