@@ -8,27 +8,7 @@ key: 20190711
 tags: 신호처리
 ---
 
-
-<style>
-  @media screen and (max-width:500px){
-    iframe {
-        width: 100vw; 
-        height: 55vw;
-        background:white;  
-    }
-  }
-
-  @media screen and (min-width:500px){
-    iframe {
-        width: 60vw; 
-        height: 20vw;
-        background:white;  
-    }
-  }
-
-</style>
-
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/" frameborder="0"></iframe></p>
+<p align="center"><iframe width = "802" height = "302" src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/" frameborder="0"></iframe></p>
 
 시간 샘플링 이론이 말해주는 것:
 <center>

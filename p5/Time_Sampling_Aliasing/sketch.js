@@ -9,7 +9,7 @@ let yscl
 let h_mobile;
 
 function setup() {
-     createCanvas(windowWidth - 20, windowHeight - 20);
+     createCanvas(800, 300);
 
      for (let i = 0; i < 6 - 1 / 100; i += 1 / 100) {
           t.push(i)
@@ -18,14 +18,6 @@ function setup() {
           sineWave.push(sin(2 * PI * 1 / 2 * t[i]))
      }
 
-     if (FRUBIL.device.class == "Desktop") {
-          h_mobile = 0;
-          console.log("its Desktop")
-     } else {
-          h_mobile = 1;
-          slider1 = createSlider(0.5, 10, 0.8, 0.01);
-          slider1.position(30, height * 0.92);
-     }
 }
 
 function draw() {
@@ -37,11 +29,8 @@ function draw() {
      // plotting axis
      plottingAxis(xscl);
 
-     if(h_mobile == 0){
-          my_str = "마우스를 움직여 보세요!"
-     } else {
-          my_str = "슬라이더를 움직여 보세요!"
-     }
+     
+     my_str = "마우스를 움직여 보세요!"
      textSize(15);
      text(my_str, width/2, height* 0.15)
 
@@ -58,12 +47,7 @@ function draw() {
      pop();
 
      t_sampled = [];
-     if (h_mobile == 1) {
-          fs = slider1.value();
-     } else {
-          fs = mouseX / width * 5;
-     }
-     // fs = mouseX/width * 5;
+     fs = mouseX / width * 5;
      for (let i = 0; i <= 6; i += 1 / fs) {
           t_sampled.push(i)
      }
