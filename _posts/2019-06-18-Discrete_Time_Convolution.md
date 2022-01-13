@@ -84,7 +84,7 @@ $$x[n] * h[n] = \sum_{k=-\infty}^{\infty}x[k]h[n-k]$$
 
 $$ T\left( \sum_{k=-\infty}^{\infty}c_kx_k[n]\right) = \sum_{k=-\infty}^{\infty}{c_kT(x_k[n])}=\sum_{k=-\infty}^{\infty}{c_ky_k[n]} $$
 
-또, 시변성에 의해 다음이 성립한다.
+또, 시불변성에 의해 다음이 성립한다.
 
 $$T \left(x[n-k] \right)=y[n-k]$$
 
@@ -97,13 +97,13 @@ $$=T\left(\cdots + x[-2]\delta[n+2]+x[-1]\delta[n+1]+x[0]\delta[n]+x[1]\delta[n-
 
 $$=T\left( \sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}\right)$$
 
-이 때, $x[k]$ 는 $n$에 대해서는 함수가 아닌 상수이기 때문에 linearity의 성질에 의해서 위 식은 다음과 같다.
+이 때, $x[k]$ 는 $n$에 대해서는 함수가 아닌 상수이기 때문에 선형성에 의해서 위 식은 다음과 같다.
 
 $$\Rightarrow \sum_{k=-\infty}^{\infty}{\left(x[k]T\left(\delta[n-k]\right) \right)}$$
 
 라고 할 수 있다. 이 때, $h[n]=T\left(\delta[n]\right)$ 라고 하자.
 
-그러면 Time-Invariant의 성질에 의해서
+그러면 시불변성에 의해서
 
 $$ \Rightarrow \sum_{k=-\infty}^{\infty}{\left(x[k]T\left(\delta[n-k]\right) \right)} = \sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$$
 
