@@ -70,13 +70,13 @@ $$=\cdots + x[-2]\delta[n+2]+x[-1]\delta[n+1]+x[0]\delta[n]+x[1]\delta[n-1]+x[2]
 
 $$\Rightarrow x[n] * \delta[n]$$
 
-이 때, $*$ 연산을 컨볼루션 합이라고 부르기도 한다.
+이 때, $*$ 연산을 컨볼루션이라고 부르기도 한다.
 
-일반적으로 임의의 이산 함수 $x[n]$과 $h[n]$에 대해 두 함수의 컨볼루션 합은 다음과 같다.
+일반적으로 임의의 이산 함수 $x[n]$과 $h[n]$에 대해 두 함수의 컨볼루션은 다음과 같다.
 
 $$x[n] * h[n] = \sum_{k=-\infty}^{\infty}x[k]h[n-k]$$
 
-## LTI 시스템과 컨볼루션 합
+## LTI 시스템과 컨볼루션
 
 입력 $x[n]$ 과 출력 $y[n]$ 의 관계를 다음과 같이 생각해보자. 출력 $y[n]$ 을 입력 $x[n]$ 의 어떠한 변환이라고 생각한다면, $y[n]=T \left(x[n] \right)$ 이라고 생각할 수 있다.
 
@@ -118,6 +118,56 @@ $$y[n] = \sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$$
 여기서 $h[n] = T\left(\delta[n]\right)$는 $\delta[n]$을 입력으로 했을 때의 변환이므로 해당 시스템에 대해 임펄스 입력을 줬을 때의 응답이다. 이를 임펄스 응답이라고 부른다.
 
 다시 말해 다루고자 하는 시스템이 LTI 시스템이라면 입력과 임펄스 응답($h[n]$)의 이산 컨볼루션으로 시스템의 입출력 관계를 표현할 수 있다.
+
+## 이산 컨볼루션의 성질
+
+### 교환 법칙
+
+컨볼루션은 두 신호 $x[n]$과 $h[n]$에 대해 다음과 같이 교환 법칙이 성립한다.
+
+$$x[n] * h[n] = h[n] * x[n]$$
+
+식 (5)의 컨볼루션의 정의를 보면 한쪽 신호를 뒤집어 줘서 합해주는 것을 알 수 있는데, 교환 법칙이 성립한다는 것은 두 신호 중 어떤 것을 뒤집더라도 결과는 같다는 것을 말해준다.
+
+즉, 계산이 편해지는 쪽의 신호를 뒤집어서 연산을 수행해주면 된다.
+
+이를 시스템적인 관점에서 접근하자면 입력 신호와 시스템의 임펄스 응답의 역할을 바꾸어도 시스템의 출력이 여전히 같다는 것을 의미한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic4.png">
+  <br>
+  그림 4. 이산 컨볼루션의 교환 법칙이 성립한다는 것은 입력 신호와 임펄스 응답의 역할이 바뀌어도 시스템은 출력이 유지된다는 것을 의미한다.
+</p>
+
+또, 다른 해석으로는 두 개의 시스템이 연속적으로 적용되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것 또한 생각해볼 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic5.png">
+  <br>
+  그림 5. 이산 컨볼루션의 교환 법칙이 성립한다는 것은 연속 적용되는 시스템의 순서를 바꾸어도 전체 시스템은 동일하다는 것을 의미한다.
+</p>
+
+### 결합 법칙
+
+컨볼루션은 셋 또는 그 이상의 신호에 대해 조합된 컨볼루션의 계산 순서에 영향을 받지 않는다.
+
+$$(x[n] * h_1[n]) * h_2[n] = x[n] * (h_1[n] * h_2[n])$$
+
+예를 들어 두 개의 시스템이 연속적으로 연결되어 있는 경우, 두 개의 시스템을 컨볼루션으로 결합한 시스템 하나로 두 개 시스템의 결합을 대체할 수 있다는 것을 의미한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic6.png">
+  <br>
+  그림 6. 이산 컨볼루션의 결합 법칙의 의미. 두 시스템을 컨볼루션으로 합쳐 하나의 시스템처럼 다룰 수 있다.
+</p>
+
+### 분배 법칙
+
+컨볼루션 연산은 다음과 같이 덧셈에 대한 분배법칙을 만족한다.
+
+$$x[n]*(h_1[n] + h_2[n])= x[n]*h_1[n] + x[n]*h_2[n]$$
+
+[//]:# (그림 넣기)
 
 # 예제
 
@@ -200,9 +250,14 @@ $n= 4$일 때 $y[4]=\cdots + x[-1]h[5]+x[0]h[4]+x[1]h[3]+x[2]h[2]+\cdots = 0$
 이 과정을 그림으로 표현하자면 다음과 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic4.gif">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic6.gif">
   <br>
-  그림 4. 이산 컨볼루션을 통해 출력값을 계산하게 되는 과정
+  그림 8. 이산 컨볼루션을 통해 출력값을 계산하게 되는 과정
   <br>
   <a href = "https://dspfirst.gatech.edu/matlab/">사용 GUI: DSP First의 MATLAB GUI 중 Discrete Convolution Demo</a>
 </p>
+
+# 참고 문헌
+
+* Hello! 신호 처리, James H. McClellan 등, 홍릉과학출판사
+* 디지털 신호 처리, 이철희, 한빛아카데미
