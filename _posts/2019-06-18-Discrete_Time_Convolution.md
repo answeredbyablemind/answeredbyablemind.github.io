@@ -1,5 +1,5 @@
 ---
-title: 이산 컨볼루션과 LTI 시스템
+title: 이산 컨볼루션과 임펄스 응답
 sidebar:
   nav: docs-ko
 aside:
@@ -174,6 +174,30 @@ $$x[n]*(h_1[n] + h_2[n])= x[n]*h_1[n] + x[n]*h_2[n]$$
   <br>
   그림 7. 이산 컨볼루션의 분배 법칙의 의미. 
 </p>
+
+# 임펄스 응답
+
+임펄스에 의한 응답 하나만을 가지고 시스템의 특성을 파악할 수 있다.
+
+선형, 시불변 시스템 외에도
+
+순시적(instantaneous) system
+
+동적(dynamic) system
+
+causal system
+
+non causal system
+
+BIBO stable system
+
+non-stable system
+
+FIR system
+
+IIR system
+
+으로 system을 구별할 수 있음.
 
 # 예제
 
