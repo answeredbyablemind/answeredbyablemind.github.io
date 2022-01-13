@@ -138,14 +138,16 @@ $$Y_c(f) = X_c(f) \otimes P_c(f) = P_c(f) \otimes X_c(f)$$
 
 $$ = \int_{-\infty}^{\infty}P_c(\tau)X_c(f-\tau)d\tau$$
 
-$$=\int_{-\infty}^{\infty}\frac{1}{T}\sum_{k=-\infty}^{\infty}
-\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
+$$=\int_{-\infty}^{\infty}\frac{1}{T}\sum_{k=-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
 
-$$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty}
-\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
+$$=\frac{1}{T}\sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau$$
 
 
-여기서 우리는 식 (25)의 $\int_{-\infty}^{\infty}\delta(\tau-\frac{k}{T})X_c(f-\tau)d\tau$ 를 다음과 같이 생각할 수 있다.
+여기서 우리는 식 (25)의 
+
+$$\int_{-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c(f-\tau)d\tau$$
+
+ 를 다음과 같이 생각할 수 있다.
 
 $$\int_{-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\right)d\tau= \delta\left(f-\frac{k}{T}\right)\otimes X_c(f)$$
 
@@ -155,7 +157,11 @@ $$\int_{-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c\left(f-\tau\righ
 >
 > $$X(f)\otimes Y(f) = \int_{-\infty}^{\infty}X(\tau)Y(f-\tau)d\tau$$
 >
-> 마찬가지의  방식을 적용해서 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 에서도 왼쪽의 델타함수에 있는 $f$ 는 $\tau$ 로 바꿔주고, $X_c$ 에 있는 $f$ 는 $f-\tau$로 바꿔주면  $\int_{-\infty}^{\infty}{{\delta(\tau-\frac{k}{T})X_c(f-\tau)}d\tau}$ 와 같기 때문이다.
+> 마찬가지의  방식을 적용해서 $\delta(f-\frac{k}{T})\otimes X_c(f)$ 에서도 왼쪽의 델타함수에 있는 $f$ 는 $\tau$ 로 바꿔주고, $X_c$ 에 있는 $f$ 는 $f-\tau$로 바꿔주면  
+> 
+> $$\int_{-\infty}^{\infty}\delta\left(\tau-\frac{k}{T}\right)X_c(f-\tau)d\tau$$
+> 
+> 와 같기 때문이다.
 >
 
 따라서,
