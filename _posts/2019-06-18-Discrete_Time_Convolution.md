@@ -177,27 +177,53 @@ $$x[n]*(h_1[n] + h_2[n])= x[n]*h_1[n] + x[n]*h_2[n]$$
 
 # 임펄스 응답
 
-임펄스에 의한 응답 하나만을 가지고 시스템의 특성을 파악할 수 있다.
+## 임펄스 응답의 물리적 의미
 
-선형, 시불변 시스템 외에도
+임펄스 응답은 이산 컨볼루션을 유도해내는 과정에서 나오게된 결과로써, 임펄스를 입력으로 줬을 때 시스템에서 보여주는 출력이다. 
+
+하지만, 임펄스 응답은 이보다 더 큰 의미를 갖는다. 임펄스 응답은 과거의 입력 값들이 현재의 출력 값에 기여하는 정도가 얼마인지 알려주는 가중치의 역할을 한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic_physical_meaning_of_impulse_response.png">
+  <br>
+  그림 8. 임펄스 응답의 물리적 의미
+</p>
+
+그러다보니 임펄스 응답 하나만을 가지고 시스템의 특성을 파악할 수 있다.
+
+또, 임펄스를 입력으로 넣어주는 것은 시스템에 일종의 시동을 걸어주는 것 처럼 볼 수 있다. $n=0$인 시점에 임펄스 입력을 넣어줌으로써 $n>0$ 인 시점에서 시스템이 작동하는데,
+
+이것은 외부 입력에 의한 응답이라기 보다는 시스템의 내부적인 특성을 반영한 출력이기 때문에 시스템의 특성에 관한 정보를 임펄스 응답을 통해서 알 수 있게 되는 것이다.
+
+## 임펄스 응답과 시스템의 특성
+
+앞서 [선형 시불변(LTI) 시스템](https://angeloyeo.github.io/2022/01/11/LTI_system.html) 편에서는 선형, 시불변 시스템에 대해서 알아보았는데, 이 외에도 여러가지 시스템의 특성이라 할 수 있는 것들이 있다.
+
+### 순시적 시스템과 동적 시스템
 
 순시적(instantaneous) system
 
 동적(dynamic) system
 
+### 인과 시스템과 비인과 시스템
+
 causal system
 
 non causal system
+
+### 안정 시스템과 불안정 시스템
 
 BIBO stable system
 
 non-stable system
 
+### 유한/무한 길이의 임펄스 응답에 따른 구분
+
 FIR system
 
 IIR system
 
-으로 system을 구별할 수 있음.
+
 
 # 예제
 
@@ -282,7 +308,7 @@ $n= 4$일 때 $y[4]=\cdots + x[-1]h[5]+x[0]h[4]+x[1]h[3]+x[2]h[2]+\cdots = 0$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/pic6.gif">
   <br>
-  그림 8. 이산 컨볼루션을 통해 출력값을 계산하게 되는 과정
+  그림 9. 이산 컨볼루션을 통해 출력값을 계산하게 되는 과정
   <br>
   <a href = "https://dspfirst.gatech.edu/matlab/">사용 GUI: DSP First의 MATLAB GUI 중 Discrete Convolution Demo</a>
 </p>

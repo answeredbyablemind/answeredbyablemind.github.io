@@ -43,3 +43,25 @@ for i = 1:length(n)
     xlim([n(1), n(end)]);
     ylim([-0.5, 6.5])
 end
+
+%% physical meaning of impulse response
+
+x = linspace(-5, 17, 100);
+y = 3*normpdf(x, 3, 5)+0.5;
+
+xs1 = -3:15;
+ys1 = 3*normpdf(xs1, 3, 5) + 0.5;
+
+xs2 = xs1(6:end-5);
+
+hs = exp(1/10*(xs2-10));
+
+figure;
+plot(x, y,'k--');
+hold on;
+stem(xs1, ys1,'k','linewidth',2)
+stem(xs2, hs,'b','linewidth',2)
+xlim([-5, 17])
+ylim([0, 1.2])
+
+set(gca,'visible','off')
