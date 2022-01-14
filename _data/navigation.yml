@@ -1,23 +1,5 @@
 header:
-
   - titles:
-      ko      : &KO       블로그 사용법
-      ko-KR   : *KO
-    url: 2019/01/02/how_to_use_blog.html
-
-  - titles:
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  关于
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  關於
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
       ko      : &KO       저자 소개
       ko-KR   : *KO
     url: /about.html
@@ -28,20 +10,15 @@ header:
     url: 2019/01/01/donation.html
     
   - titles:
-      ko      : &KO       Github 소스코드
+      ko      : &KO       태그 검색
       ko-KR   : *KO
-    url: https://github.com/angeloyeo/gongdols
+    url: /archive.html
 
   - titles:
       ko      : &KO       Youtube 채널
       ko-KR   : *KO
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
-docs-en:
-  - title:      Basic Math
-    children:
-      - title:  Angle and Radian
-        url:    en/2019/06/04/2-1-angle_rad.html
 docs-ko:
   - title:      기초 선형대수학 이론
     children:
@@ -350,6 +327,8 @@ docs-ko:
         url:    2022/01/11/LTI_system.html
       - title:  이산 컨볼루션과 임펄스 응답
         url:    2019/06/18/Discrete_Time_Convolution.html
+      - title:  연속 신호의 샘플링
+        url:    2022/01/14/sampling_CT_signals.html
       - title:  신호 공간 (signal space)
         url:    2022/01/12/signal_space.html
       - title:  연속시간 컨볼루션
@@ -386,7 +365,7 @@ docs-ko:
         url:    2019/07/08/DTFS.html
       - title:  이산시간 푸리에 변환 (DTFT)
         url:    2019/07/09/DTFT.html
-      - title:  시간 샘플링과 나이퀴스트 이론
+      - title:  시간 샘플링과 나이퀴스트 이론 (폐기 예정)
         url:    2019/07/11/Time_Sampling.html
       - title:  주파수 샘플링과 이산 푸리에 변환 (DFT)
         url:    2019/07/14/Freq_Sampling.html
