@@ -8,6 +8,11 @@ key: 20190711
 tags: 신호처리
 ---
 
+※ 이 포스팅은 구버전입니다. 신버전은 아래의 링크를 참고해주세요.
+
+[시간 샘플링 관련 신버전 링크](https://angeloyeo.github.io/2022/01/14/sampling_CT_signals.html)
+
+
 <p align="center"><iframe width = "802" height = "302" src="https://angeloyeo.github.io/p5/Time_Sampling_Aliasing/" frameborder="0"></iframe></p>
 
 시간 샘플링 이론이 말해주는 것:
