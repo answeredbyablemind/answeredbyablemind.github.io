@@ -21,10 +21,7 @@ key: page-about
 반갑습니다. 아래의 링크를 클릭하시면 저에 대한 정보를 확인하실 수 있습니다.
 
 LinkedIn의 일촌신청은 언제나 환영입니다.
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
-<p align = "center">
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-
-<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="ko_KR" data-type="horizontal" data-theme="dark" data-vanity="angeloyeo"><a class="LI-simple-link" href='https://kr.linkedin.com/in/angeloyeo?trk=profile-badge'>여동훈</a></div>
-
-</p>
+<div class="badge-base LI-profile-badge" data-locale="ko_KR" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="angeloyeo" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://kr.linkedin.com/in/angeloyeo?trk=profile-badge">여동훈</a></div>
+              
