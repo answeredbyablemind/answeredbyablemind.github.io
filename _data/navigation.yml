@@ -323,6 +323,8 @@ docs-ko:
         url:    2022/01/11/LTI_system.html
       - title:  이산 컨볼루션과 임펄스 응답
         url:    2019/06/18/Discrete_Time_Convolution.html
+      - title:  연속 신호의 샘플링
+        url:    2022/01/14/sampling_CT_to_DT.html
       - title:  신호 공간 (signal space)
         url:    2022/01/12/signal_space.html
       - title:  섀넌의 샘플링 정리
