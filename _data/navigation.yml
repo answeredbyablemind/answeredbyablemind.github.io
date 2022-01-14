@@ -94,8 +94,6 @@ docs-ko:
         url:    2019/09/02/Taylor_Series.html
       - title:  로피탈 정리의 기하학적 의미
         url:    2019/09/08/LHopital_rule.html
-      - title:  $\frac{dx}{dy}$는 $\frac{dy}{dx}$의 역수인가?
-        url:    2020/09/02/is_dxdy_inverse_of_dydx.html
       - title:  $\int x^{dx}-1=$?
         url:    2020/09/01/int_x_to_the_dx_minus_1.html
 
@@ -206,8 +204,6 @@ docs-ko:
         url:    2020/10/11/VAE.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation.html
-      - title:  k-means 알고리즘
-        url:    2021/02/07/k_means.html
       - title:  GMM과 EM 알고리즘
         url:    2021/02/08/GMM_and_EM.html
       
@@ -338,46 +334,6 @@ docs-ko:
       - title:  Z-변환
         url:    2019/08/13/Z_transform.html
       - title:  라플라스 변환과 z-변환
-        url:    2020/07/23/laplace_and_z.html
-      - title:  힐버트 변환
-        url:    2019/08/09/Hilbert_Transform.html
-
-  - title:      신호 필터링
-    children:
-      - title:  버터워스 필터
-        url:    2020/09/25/Butterworth.html
-      - title:  체비세브 필터
-        url:    2020/09/27/Chebyshev.html
-      - title:  주파수 변환
-        url:    2020/09/29/frequency_transformation.html
-      - title:  사비츠키-골레이 필터
-        url:    2020/10/21/Savitzky_Golay.html
-      - title:  칼만 필터
-        url:    2021/04/07/Kalman_filter.html
-
-  - title:      푸리에 해석
-    children:
-      - title:  연속시간 푸리에 급수 (CTFS)
-        url:    2019/06/23/Fourier_Series.html
-      - title:  연속시간 푸리에 변환 (CTFT)
-        url:    2019/07/07/CTFT.html
-      - title:  이산시간 푸리에 급수 (DTFS)
-        url:    2019/07/08/DTFS.html
-      - title:  이산시간 푸리에 변환 (DTFT)
-        url:    2019/07/09/DTFT.html
-      - title:  시간 샘플링과 나이퀴스트 이론 (폐기 예정)
-        url:    2019/07/11/Time_Sampling.html
-      - title:  주파수 샘플링과 이산 푸리에 변환 (DFT)
-        url:    2019/07/14/Freq_Sampling.html
-      - title:  푸리에 변환과 위상(phase)
-        url:    2019/10/11/Fourier_Phase.html
+        url:    2020/07/23/laplace_and_z.html        
       - title:  음의 주파수
         url:    2019/07/22/Negative_Frequency.html
-      - title:  time window 길이와 주파수 해상도
-        url:    2019/10/12/Frequency_Resolution.html
-      - title:  시간-주파수 불확정도
-        url:    2020/01/16/time_frequency_uncertainty.html
-      - title:  위너-킨친 정리
-        url:    2020/10/04/Wiener_Khinchin.html
-      - title:  Wold's theorem
-        url:    2020/10/05/Wold_theorem.html
