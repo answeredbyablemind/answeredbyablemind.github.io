@@ -375,6 +375,122 @@ $n= 4$일 때 $y[4]=\cdots + x[-1]h[5]+x[0]h[4]+x[1]h[3]+x[2]h[2]+\cdots = 0$
   <a href = "https://dspfirst.gatech.edu/matlab/">사용 GUI: DSP First의 MATLAB GUI 중 Discrete Convolution Demo</a>
 </p>
 
+## 문제 2.
+
+아래와 같은 입출력 관계를 갖는 자기 회귀 시스템에 대하여,
+
+$$y[n] = a y[n-1] + b x[n]$$
+
+단, 아래의 조건이 만족된다고 가정한다.
+
+$$x[n] = 0 \text{ for } n\lt 0$$
+
+$$y[n]=0 \text{ for }n=-\infty$$
+
+### 1) 이 시스템이 LTI 시스템인지 판별하시오.
+
+이 시스템이 LTI 시스템인지 판별하기 위해선 시스템의 입출력 관계를 수정해서 표현해야 한다.
+
+$y[-\infty]=0$이라는 조건에 의해 $n=-1$ 일 때, $y[-1]=0$ 이다.
+
+그리고, $n = 0$일 때, $y[0]=b x[0]$ 이다. 이와 같은 방법으로 $n=1,2,\cdots$에 대하여,
+
+$$y[1]=ab x[0]+n x[1]$$
+
+$$y[2] = a^2b x[0]+ab x[1] + n x[2]$$
+
+$$\vdots \notag$$
+
+$$y[n]=\sum_{k=0}^{n}a^k b x[n-k]$$
+
+이제 위 식을 이용해 선형성과 시불변성을 판별하자.
+
+우선 선형성부터 판별해보자.
+
+시스템을 $\mathcal{T}(\cdot)$이라고 이름 붙이도록 하자.
+
+그러면, 아래가 성립한다면 선형 시스템이다.
+
+$$\mathcal{T}(\alpha x_1[n]+\beta x_2[n])=\alpha\mathcal{T}(x_1[n])+\beta\mathcal{T}(x_2[n])$$
+
+좌변은 아래와 같고,
+
+$$\mathcal{T}(\alpha x_1[n]+\beta x_2[n])=\alpha\left[\sum_{k=0}^{n}a^k b x_1[n-k]\right]+\beta\left[\sum_{k=0}^{n}a^k b x_2[n-k]\right]$$
+
+우변은 아래와 같다.
+
+$$\alpha\mathcal{T}(x_1[n])+\beta\mathcal{T}(x_2[n]) = \sum_{k=0}^{n}a^k b\left[\alpha x_1[n-k]+\beta x_2[n-k]\right]$$
+
+따라서, 좌변과 우변이 일치하므로 이 시스템은 선형 시스템이다.
+
+이번엔 시불변성을 판별해보자. 아래가 성립한다면 시불변 시스템이다.
+
+$$\mathcal{T}(x[n-\tau]) = y[n-\tau]$$
+
+여기서 좌변은 아래와 같다.
+
+$$\mathcal{T}(x[n-\tau]) = \sum_{k=0}^{n}a^k b x[n-\tau-k]$$
+
+그런데 summation notation 내의 $n-\tau+1$ 번째부터 $n$번째 값은 0과 같다. 
+
+왜냐면 각각의 $x[k]$ 값은 $x[n-\tau-(n-\tau+1)] = x[-1]$에서 $x[n-\tau-n]=x[-\tau]$에 해당하는데 $x[k]  = 0\text{ for } k\lt 0 $이기 때문이다.
+
+따라서 좌변의 식은 다음과 같이 고쳐쓸 수 있다.
+
+$$\Rightarrow \sum_{k=0}^{n-\tau}a^k b x[n-\tau-k]$$
+
+또, 우변은 아래와 같으며 좌변과 동일하다.
+
+$$y[n-\tau]=\sum_{k=0}^{n-\tau}a^k b x[n-\tau-k]$$
+
+그러므로 이 시스템은 시불변 시스템이기도 하다.
+
+정리하면 이 시스템은 선형 시불변 시스템이다.
+
+### 2) 이 시스템의 임펄스 응답을 구하시오.
+
+위의 LTI 여부를 판별하기 위해 만든 입/출력의 관계에 따라,
+
+$$y[n]=\sum_{k=0}^{n}a^k b x[n-k]$$
+
+이며 임펄스 응답은
+
+$$h[n]=a^n b$$
+
+이다.
+
+### 3) 특정 입력에 대한 출력을 계산하시오.
+
+입력이 아래와 같다고 했을 때 출력을 계산하시오.
+
+$$x[n]=\begin{cases} 1 & n = 0, 1, 2 \\ 0 & \text{otherwise} \end{cases}$$
+
+LTI 시스템에선 입출력 관계를 입력과 임펄스 응답의 컨볼루션으로 계산할 수 있다.
+
+$n=0$ 인 경우 $y[0]=a^0 b x[0] = b$
+
+$n=1$ 인 경우 $y[1]=\sum_{k=0}^{1}a^k b x[1-k] = a^0 b x[1-0] + a^1 b x[1-1] = b + ab$
+
+$n=2$ 인 경우 $y[2]=\sum_{k=0}^{2}a^k b x[2-k] = a^0 b x[2-0] + a^1 b x[2-1] + a^2 b x[2-2] = ab+a^2b$
+
+이와 같은 방법으로
+
+$$y[n] = a^(n-1)b+a^n b $$
+
+임을 알 수 있다.
+
+
+아래 그림에서는 $a=0.8$, $b = 1$인 경우를 상정하였으며 임펄스 응답은 길이를 10개까지만 표시하였다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-18-Discrete_Time_Convolution/dconv_demo2.gif">
+  <br>
+  그림 10. 이산 컨볼루션을 통해 출력값을 계산하게 되는 과정
+  <br>
+  <a href = "https://dspfirst.gatech.edu/matlab/">사용 GUI: DSP First의 MATLAB GUI 중 Discrete Convolution Demo</a>
+</p>
+
+
 # 참고 문헌
 
 * Hello! 신호 처리, James H. McClellan 등, 홍릉과학출판사
