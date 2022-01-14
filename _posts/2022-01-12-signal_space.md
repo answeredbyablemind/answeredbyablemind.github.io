@@ -7,6 +7,16 @@ aside:
 key: 20220112
 tags: 신호처리
 ---
+<div class="hero hero--dark" style='background-image: url("https://www.seti.org/sites/default/files/styles/original/public/2018-05/space-signal.jpg");'>
+  <div class="hero__content">
+    <h1>Signal Space</h1>
+    <p>
+  There's a hero, If you look inside your heart,
+
+  You don't have to be afraid of what you are.
+  </p>
+  </div>
+</div>
 
 # 참고 문헌
 
