@@ -84,7 +84,7 @@ stem(t_3, x3_dt, 'linewidth', 2)
 title('cos(4\pit), T_s = 0.05');
 xlabel('time (s)');
 
-%% 
+%%
 Ts = 0.001;
 t = -2:Ts:4;
 x1 = cos(pi*t);
@@ -140,3 +140,48 @@ title('비주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * \surd 110');
 xlabel('time (s)');
 grid on;
 set(gca,'fontname','나눔고딕');
+
+%% Replicated frequency spectrum of sampled signal
+
+xx = linspace(-0.8,0.8,100);
+yy = normpdf(xx, 0, 1/4);
+
+figure('position',[680, 558, 940, 400]);
+
+subplot(2,1,1);
+plot(xx, yy,'b','linewidth',2)
+hold on;
+
+plot([0, 0], [-1, 2.5],'k','linewidth',2)
+
+ylim([0, 2.5])
+xlim([-4, 4])
+set(gca,'xtick', [-0.8, 0.8]);
+set(gca,'xticklabel',{'-\omega_B','\omega_B'})
+
+set(gca,'ytick',[]);
+title('연속 신호의 주파수 스펙트럼');
+set(gca,'fontname','나눔고딕');
+xlabel('각주파수 \omega [rad/s]');
+
+subplot(2,1,2);
+plot(xx, yy,'b','linewidth',2)
+hold on;
+
+for i = [-4, -2, 2, 4]
+    plot(xx+i, yy,'k--','linewidth', 2)
+end
+
+plot([0, 0], [-1, 2.5],'k','linewidth',2)
+
+for i = [-3, -1, 1, 3]
+    plot(ones(1,2) * i, [-1, 2.5],'r--','linewidth',0.5)
+end
+ylim([0, 2.5])
+xlim([-4, 4])
+set(gca,'xtick', [-4:-1, -0.8, 0, 0.8, 1:4]);
+set(gca,'xticklabel', {'-4\pi','-3\pi','-2\pi','-\pi','-\Omega_B','0','\Omega_B','\pi','2\pi','3\pi','4\pi'})
+set(gca,'ytick',[]);
+title('샘플된 이산 신호의 주파수 스펙트럼');
+set(gca,'fontname','나눔고딕');
+xlabel('디지털 각주파수 \Omega [rad]');
