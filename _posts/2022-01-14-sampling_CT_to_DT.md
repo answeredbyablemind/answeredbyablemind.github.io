@@ -167,7 +167,7 @@ $$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_periodic_nonperiodic_discrete_sinusoids.png">
   <br>
-  그림 5. 디지털 주파수가 유리수일 대만 이산 신호가 주기신호가 된다.
+  그림 5. 디지털 주파수가 유리수일 때만 이산 신호가 주기신호가 된다.
 </p>
 
 이 꼭지의 내용을 요약해서 정리하면 이산 정현파 신호는 $-\pi$에서 $\pi$ 내에 모든 주파수 성분을 다 표시할 수 있는데 $2\pi$ 만큼의 주기성을 동시에 갖는다.
