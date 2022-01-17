@@ -12,6 +12,12 @@ tags: 신호처리
 
 [//]:# (섀넌 샘플링 정리는 추후에 다룰 것. 아직 푸리에 변환/급수에 대해 알지 못하기 때문. 여기선 가볍게 정리하고 넘어가도록 하자.)
 
+※ 섀넌-나이퀴스트의 샘플링 이론의 증명은 [이 포스팅](https://angeloyeo.github.io/2019/07/11/Shannon_sampling_theorem.html)을 확인하세요.
+
+<p align="center"><iframe width = "802" height = "302" src="https://angeloyeo.github.io/p5/2019-07-11-Shannon_sampling_theorem/" frameborder="0"></iframe>
+<br><b>샘플링 전 연속 신호(흰색)와 샘플링하여 복원한 신호(파란색)의 차이 비교</b>
+</p>
+
 # 연속 신호, 이산 신호, 디지털 신호의 관계
 
 요즘에는 디지털 기기가 보편화 되었다. 카세트 테이프 보다는 MP3 플레이어를 사용하게 되었고, 종이책과 e-book이 공존하며, 아날로그 TV 방송이 모두 디지털 방송으로 전환되었다.
@@ -50,20 +56,67 @@ tags: 신호처리
 
 # 시간 샘플링의 부수 효과(side effects)
 
-## 에일리어싱
+시간 샘플링 과정을 자세히 보면 생각할 거리들이 몇 가지 있다. 
 
-시간 샘플링 과정을 자세히 보면 생각할 거리들이 몇가지 있다는 걸 알 수 있다. 그 중 첫 번째가 에일리어싱 문제이다.
+## 서로 다른 연속 정현파에서 동일한 이산 정현파가 나올 수 있다.
 
-에일리어싱(aliasing)이라는 말은 평소에 쉽게 접할 수 있는 영단어가 아니다.
+임의의 정현파 $x(t)$를 생각해보자.
 
-aliasing의 어원은 alias인데, 이는 '본래의 신분을 속이기 위해 사용하는 가짜 이름'이라는 뜻을 갖고 있다. 예문을 써보면 다음과 같다.
+$$x(t) = A\cos(\omega_0 t)$$
 
-<center><b>The police files indicate that "Smith" is an alias for Simpson.<br> 경찰 자료에는 스미스라는 이름이 심슨의 가명으로 나와있다.</b></center>
+이 신호를 주기 $T_s$로 샘플링해주면 다음과 같은 이산 신호를 얻게 되는 것이다.
 
-이런 맥락에서 신호 처리 분야에서는 '연속 신호로 복원한 얻어낸 결과물이 본래의 신호와 다른 경우'를 상정하기 위해 aliasing이라는 용어를 붙인 것으로 보인다.
+$$x[n]=x(nT_s) = A\cos(\omega_0 nT_s) = A \cos(\Omega_0 n)$$
 
-[//]:# (alising picture 넣을 자리, 출처: 위키피디아 에일리어싱)
+여기서 $\Omega_0=\omega_0 T_s \text{[rad]}$는 이산 정현파 신호의 각주파수이다. 이는 연속 정현파 신호의 각주파수 $\omega_0 \text{[rad/sec]}$와 차이를 보인다.
 
+(참고로 각주파수는 주파수에 $2\pi$를 곱하여 계산하는 주파수를 말한다. 가령 1초 주기로 회전하는 원으로부터 얻은 정현파의 각주파수는 $2\pi$이다.)
+
+$\Omega_0$는 단위가 라디안이고 $\omega_0$는 단위가 라디안/초 라는 점에 주목해보자. 즉, $\Omega_0$에서는 시간 정보가 사라지게 된다.
+
+그러다보니 $\omega_0$이 크고 $T_s$가 작은 경우나 $\omega_0$이 작고 $T_s$가 큰 경우로 적당히 조합되면 연속 신호의 주파수는 다르더라도 이산 신호는 동일하게 얻어질 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_dif_freq_dif_time_sampling.png">
+  <br>
+  그림 2. 서로 다른 주파수와 샘플링 주기를 갖는 경우에도 동일한 이산 신호를 얻게될 수 있다.
+</p>
+
+즉, 주파수가 $f_0+ k f_s$ (여기서 $k$는 정수)인 정현파를 샘플링 주파수 $f_s$로 샘플링하면 주파수 $f_0$인 정현파를 샘플링한 것과 같은 결과를 얻게 된다.
+
+$$\cos(2\pi(f_0+kf_s)nTs)=\cos(2\pi f_0nTs+2\pi knf_s T_s)$$
+
+$$=\cos(2\pi f_0 nTs + 2\pi k n) = \cos(2\pi f_0 nT_s)$$
+
+## 이산 정현파를 연속 정현파로 복원할 때의 문제: 에일리어싱
+
+위의 문제를 거꾸로 생각해보면, 임의의 이산 정현파를 연속 신호로 복원한다고 해서 무조건 원래의 신호로 그대로 복원하지 못할 수 있다는 말이 된다.
+
+다른 주파수의 정현파를 샘플링 했음에도 동일한 $f_0$의 주파수를 갖는 이산 신호를 얻게 되기 때문에, $f_0 + k f_s$를 샘플링 주파수 $f_s$에 대한 주파수 $f_0$의 에일리어스(alias)라고 부르고,
+
+이처럼 샘플링 과정에서 원래 신호가 무엇인지 구별하지 못하게 되버리는 현상을 에일리어싱(aliasing)이라곡 부른다[^1].
+
+[^1]: aliasing의 어원은 alias인데, 이는 '본래의 신분을 속이기 위해 사용하는 가짜 이름'이라는 뜻을 갖고 있다. 이런 맥락에서 신호 처리 분야에서는 '연속 신호로 복원한 얻어낸 결과물이 본래의 신호와 다른 경우'를 상정하기 위해 aliasing이라는 용어를 붙인 것으로 보인다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_aliasing.png">
+  <br>
+  그림 3. 에일리어싱 현상
+</p>
+
+에일리어싱 현상을 방지하기 위해선 충분히 높은 주파수로 샘플링 해주어야 한다.
+
+이 포스팅 맨 위의 애플릿을 통해서도 볼 수 있듯이 어느정도 이상의 빠른 주기로 샘플링을 해주면 원래의 신호 형태에 가깝게 이산 신호를 연속 신호로 복원할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_aliasing2.png">
+  <br>
+  그림 4. 에일리어싱을 방지하기 위해선 충분히 큰 주파수로 샘플링 해주어야 한다.
+</p>
+
+수학적으로 '얼마나 빠르게 샘플링 해야하는가?'라는 문제를 해결한 이론이 [섀넌-나이퀴스트 샘플링 정리](https://angeloyeo.github.io/2019/07/11/Shannon_sampling_theorem.html)인데 이 정리의 내용을 이해하려면 푸리에 급수/변환에 대한 이해가
+
+선행되어야 하므로 추후에 더 자세히 다루고자 한다. 결론만 말하자면 복원하고자 하는 정현파의 두 배 크기의 주파수로 샘플링 해주면 원래 신호로 복원할 수 있다.
 
 ## 이산 신호의 주파수 특성
 

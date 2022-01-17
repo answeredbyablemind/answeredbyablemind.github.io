@@ -66,20 +66,23 @@ figure('position',[680, 409, 1100, 568]);
 subplot(3,1,1);
 plot(t, x1_ct,'--');
 hold on;
-stem(t_1, x1_dt)
+stem(t_1, x1_dt, 'linewidth', 2)
 title('cos(\pit), T_s = 0.2');
+xlabel('time (s)');
 
 subplot(3,1,2);
 plot(t, x2_ct,'--');
 hold on;
-stem(t_2, x2_dt)
+stem(t_2, x2_dt, 'linewidth', 2)
 title('cos(2\pit), T_s = 0.1');
+xlabel('time (s)');
 
 subplot(3,1,3);
 plot(t, x3_ct,'--');
 hold on;
-stem(t_3, x3_dt)
+stem(t_3, x3_dt, 'linewidth', 2)
 title('cos(4\pit), T_s = 0.05');
+xlabel('time (s)');
 
 %% 
 Ts = 0.001;
