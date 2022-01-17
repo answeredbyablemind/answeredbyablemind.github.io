@@ -84,7 +84,7 @@ $$(f+g)(x) = f(x)+g(x) % 식 (2)$$
   <br>
   그림 2. 두 함수의 합
   <br>
-  <a href = "https://en.wikipedia.org/wiki/Function_space"> 그림 출처: Fucntion space, Wikipeda </a>
+  <a href = "https://en.wikipedia.org/wiki/Function_space"> 그림 출처: Function space, Wikipeda </a>
 </p>
 
 이렇게 되면 벡터가 벡터 공간의 원소로 정의되었던 것 처럼, 함수도 벡터 공간의 원소로 정의될 수 있는 벡터가 되며, 이 때 함수가 포함되어 있는 벡터 공간을 <span style="color:red"><b>"함수 공간(function space)"</b></span>이라고 부른다.
