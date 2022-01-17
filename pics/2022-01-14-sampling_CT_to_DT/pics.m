@@ -108,4 +108,35 @@ stem(t_dt, x3_dt,'color','k','linewidth',2);
 xlabel('time (s)');
 grid on;
 
+%%
+tt = linspace(-0.3, 1.3, 100);
+xx = cos(2*pi*1*tt);
 
+Ts1 = 10;
+tt_d1 = unique([0:-1/Ts1:-0.3, 0:1/Ts1:1.3]);
+Ts2 = sqrt(110);
+tt_d2 = unique([0:-1/Ts2:-0.3, 0:1/Ts2:1.3]);
+
+xx_d1 = cos(2*pi*1*tt_d1);
+xx_d2 = cos(2*pi*1*tt_d2);
+
+figure('position',[680, 501, 830, 478]);
+subplot(2,1,1);
+plot(tt, xx,'--')
+hold on;
+stem(tt_d1, xx_d1, 'color','k','linewidth',2);
+axis tight
+title('주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * 10');
+xlabel('time (s)');
+grid on;
+set(gca,'fontname','나눔고딕');
+
+subplot(2,1,2);
+plot(tt, xx,'--')
+hold on;
+stem(tt_d2, xx_d2, 'color','k','linewidth',2);
+axis tight
+title('비주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * \surd 110');
+xlabel('time (s)');
+grid on;
+set(gca,'fontname','나눔고딕');
