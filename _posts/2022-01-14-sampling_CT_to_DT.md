@@ -177,7 +177,7 @@ $$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
 (마지막 문구가 이해하기 어렵다면 Discrete Time Fourier Series, Discrete Time Fourier Transform을 보고 오도록 하자.)
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/frequency_spectrum_of_sampled_signal.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_frequency_spectrum_of_sampled_signal.png">
   <br>
   그림 6. 이산 신호의 주파수 스펙트럼은 원래 연속 신호의 복사물이 $2\pi$ 간격으로 주기적으로 표시되게 된다.
 </p>
