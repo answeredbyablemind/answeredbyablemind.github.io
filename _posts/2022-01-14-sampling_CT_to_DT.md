@@ -152,13 +152,13 @@ $$x[n]=x[N+n]$$
 
 $$\Rightarrow A\cos(\Omega_0 n) = A\cos(\Omega_0 (n+N))$$
 
-따라서,
+따라서 디지털 각주파수 $\Omega_0$는
 
 $$\Omega_0 N = 2\pi k \Rightarrow \Omega_0 = \frac{2\pi k}{N}$$
 
-를 만족해야 한다. (여기서 $k$는 정수)
+를 만족하거나, (여기서 $k$는 정수)
 
-혹은 디지털 주파수 $F_0 = \Omega_0/2\pi$는 
+혹은 디지털 주파수 $F_0 = \Omega_0/2\pi$가
 
 $$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
 
