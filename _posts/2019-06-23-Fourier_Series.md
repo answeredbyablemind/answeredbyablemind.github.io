@@ -39,7 +39,7 @@ $$x(t)=\sum_i c_i \psi_i(t)$$
 이 처럼 기저 신호의 성분량만을 이용해 원 신호를 표현해주는 방법을 스펙트럼 표현이라고 부른다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-12-Fourier_Series/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic1.png">
   <br>
   그림 1. 임의의 연속 신호 $x(t)$에 대한 스펙트럼 표현
 </p>
