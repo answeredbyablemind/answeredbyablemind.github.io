@@ -64,13 +64,13 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 어떤 신호 $x[n]$과 $z[n]$를 더하더라도 $x[n]+z[n]$ 역시 신호다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic1.png">
   <br>
   그림 2. 임의의 이산 신호에 상수배를 해주어도 여전히 이산 신호이다.
 </p>
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic2.png">
   <br>
   그림 3. 서로 다른 임의의 두 이산 신호를 더하더라도 여전히 이산 신호이다.
 </p>
@@ -110,7 +110,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 아래 그림은 좌표가 (3,4) 인 벡터와 2차원 벡터 공간 상의 기저벡터 두 개 $\hat{i}$와 $\hat{j}$를 표시한 것이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic3.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic3.png">
   <br>
   그림 5. 좌표가 (3,4)인 벡터와 표준기저벡터 $\hat{i}$와 $\hat{j}$
 </p>
@@ -118,7 +118,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 그리고 또 다른 아래의 그림에서는 (3,4) 좌표의 벡터가 기저벡터 3개, 4개를 각각 더해 구성할 수 있는 것임을 알 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic4.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic4.png">
   <br>
   그림 6. 좌표가 (3,4)라는 말은 한 기저벡터 3개와 다른 기저벡터 4개의 합으로 그 벡터를 표현할 수 있다는 의미이다.
 </p>
@@ -128,7 +128,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 아래 그림은 좌표계를 반시계방향으로 10' 회전시켜 만든 새로운 좌표계이다. 그리고 이 때의 기저벡터는 $\hat{i}_{new}$와 $\hat{j}_{new}$로 표시했다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic5.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic5.png">
   <br>
   그림 7. 위에서 (3,4)로 표현했던 벡터에 대해 새로운 기저벡터가 적용되는 좌표계로 다시 이 벡터를 표현할 수 있을까?
 </p>
@@ -136,7 +136,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 새로운 기저벡터를 이용해 원래의 벡터를 표현하면 좌표는 (3.6, 3.4)이다. 이것은 기저벡터가 몇 개 들어가는지를 표시하는 것과 동일하다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic6.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic6.png">
   <br>
   그림 8. 새로운 기저벡터를 이용하면 각각의 기저벡터를 3.6개, 3.4개 사용하여 원래의 벡터를 표현할 수 있다.
 </p>
@@ -174,15 +174,15 @@ $$x(t) = \sum_i q_i \psi_i(t)$$
 
 임의의 아래와 같은 $n$차원 실수 벡터 $\vec{a}$와 $\vec{b}$에 대하여,
 
-$$\vec{a} = \begin{bmatrix}a_1\\ a_2 \\ \vdots \\ a_n\end{bmatrix} % 식 (3)$$
+$$\vec{a} = \begin{bmatrix}a_1\\ a_2 \\ \vdots \\ a_n\end{bmatrix} % 식 (6)$$
 
-$$\vec{b} = \begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_n\end{bmatrix} % 식 (4)$$
+$$\vec{b} = \begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_n\end{bmatrix} % 식 (7)$$
 
-$$\text{dot}(\vec{a}, \vec{b})=a_1b_1 + a_2b_2 +\cdots + a_nb_n % 식 (5)$$
+$$\text{dot}(\vec{a}, \vec{b})=a_1b_1 + a_2b_2 +\cdots + a_nb_n % 식 (8)$$
 
 만약 $\vec{a}$와 $\vec{b}$가 복소 벡터였다고 하면 내적은 다음과 같이 정의된다.
 
-$$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % 식 (6)$$
+$$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % 식 (9)$$
 
 여기서 $*$은 복소 켤레(complex conjugate) 연산이다.
 
@@ -190,27 +190,33 @@ $$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % 식 (6)$
 
 어떤 실수 벡터 $\vec{a}$의 크기(보통 L2-norm)는 다음과 같이 정의된다.
 
-$$\text{norm}_2(\vec{a}) = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} % 식 (7)$$
+$$\text{norm}_2(\vec{a}) = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} % 식 (10)$$
 
 즉,
 
-$$\text{norm}_2(\vec{a}) = \sqrt{\text{dot}(\vec{a}, \vec{a})}=\sqrt{a_1a_1+a_2a_2+\cdots+a_na_n} % 식 (8)$$
+$$\text{norm}_2(\vec{a}) = \sqrt{\text{dot}(\vec{a}, \vec{a})}=\sqrt{a_1a_1+a_2a_2+\cdots+a_na_n} % 식 (11)$$
 
 이 개념을 복소벡터에까지 확장시키면, 복소 벡터 $\vec{a}$에 대해서
 
-$$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2+\cdots +a_n^*a_n}=\sqrt{\text{dot}(\vec{a},\vec{a})} % 식 (9)$$
+$$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2+\cdots +a_n^*a_n}=\sqrt{\text{dot}(\vec{a},\vec{a})} % 식 (12)$$
 
-이어야 하므로 복소벡터의 내적연산은 식 (6)과 같이 정의되어야 하는 것이다.
+이어야 하므로 복소벡터의 내적연산은 식 (9)과 같이 정의되어야 하는 것이다.
 
-이제 식 (6)의 방식을 확장해 신호의 내적을 정의해보도록 하자.
+이제 식 (9)의 방식을 확장해 신호의 내적을 정의해보도록 하자.
 
-미분방정식을 다룰 때 사용되는 신호들은 실수 신호 범위에서 그치지않고 신호값이 복소수가 될 수 도 있기 때문에 다음과 같이 복소 벡터의 내적의 정의를 확장해 다음과 같이 정의한다.
+신호들은 실수 신호 범위에서 그치지않고 신호값이 복소수가 될 수 도 있기 때문에 다음과 같이 복소 벡터의 내적의 정의를 확장해 다음과 같이 정의한다.
 
-실수 입력 복소수 출력을 갖는 구간 $(a, b)$에서 정의된 임의의 복소신호 $f$, $g$에 대해 두 신호의 inner product $\langle f, g\rangle$은 
+이산 신호의 경우 다음과 같이 정의된다. 임의의 복소 이산 신호 $x[k]$와 $z[k]$ $, k = 1, 2, \cdots, n$ 에 대하여
+
+$$\langle x, z, \rangle \equiv \sum_{k=1}^n x[k]z^*[k]$$
+
+이다. 여기서 $z^*[k]$는 $z[k]$의 complex conjugate이다.
+
+또, 구간 $(a, b)$에서 정의된 임의의 복소 연속 신호 $x(t)$, $z(t)$에 대해 두 신호의 inner product $\langle f, g\rangle$은 
 
 $$\langle x, z\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
 
-이다. 여기서 $x^*(t)$는 $x(t)$의 complex conjugate이다.
+이다. 여기서 $z^*(t)$는 $z(t)$의 complex conjugate이다.
 
 
 # 참고 문헌
