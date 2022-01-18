@@ -15,8 +15,12 @@ tags: 푸리에 신호처리
 이번 포스팅을 더 잘 이해하기 위해서는 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
 * [신호 공간(signal space)](https://angeloyeo.github.io/2022/01/12/signal_space.html)
+* [미분방정식을 이용한 오일러 공식 유도](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
+* [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 
-# 기저 함수의 선택과 표현
+# 기저 신호 (basis signal)
+
+## 기저 신호의 선택과 스펙트럼 표현
 
 좌표 평면 상에 존재하는 $(3,4)$라는 벡터는 두 개의 서로 다른 기저벡터의 선형결합으로 표현될 수 있다는 것을 간략화하여 표기한 것과 같다.
 
@@ -39,7 +43,7 @@ $$x(t)=\sum_i c_i \psi_i(t)$$
 이 처럼 기저 신호의 성분량만을 이용해 원 신호를 표현해주는 방법을 스펙트럼 표현이라고 부른다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic1.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic1.png">
   <br>
   그림 1. 임의의 연속 신호 $x(t)$에 대한 스펙트럼 표현
 </p>
@@ -50,31 +54,68 @@ $$x(t)=\sum_i c_i \psi_i(t)$$
 
 [^1]: 디지털 신호 처리, 이철희, 한빛아카데미
 
-* 형태가 단순하고, 신호의 표현을 구하기 쉬워야 한다.
-* 다양하고 폭넓은 신호들을 표현할 수 있어야 한다.
-* 표현된 신호에 대한 시스템의 응답을 편리하게 표기할 수 있어야 한다.
-* 한 주파수에 대해 오직 하나의 기본 신호만 존재(일대일 대응)해야 한다.
+1. 형태가 단순하고, 신호의 표현을 구하기 쉬워야 한다.
+2. 다양하고 폭넓은 신호들을 표현할 수 있어야 한다.
+3. 표현된 신호에 대한 시스템의 응답을 편리하게 표기할 수 있어야 한다.
+4. 한 주파수에 대해 오직 하나의 기본 신호만 존재(일대일 대응)해야 한다.
 
 그리고 이러한 네 가지 특성을 가장 잘 만족하는 기저함수 중 하나가 삼각함수[^2]이다.
 
-[^2]: 단, 기저 함수가 삼각 함수에만 국한 되는 것이 아니라는 점을 꼭 언급하고 싶다. 여러가지 기저 함수를 사용할 수 있다. 가령 신호가 사각파 펄스라면 여러 너비의 사각파 기저를 가지고 신호를 표현하는 것이 더 쉬울 수 있다. 아울러, [연산자 이론을 더 깊게 공부해보면](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 삼각함수는 기저 신호로 사용할 수 있는 어마어마하게 다양한 신호 중 하나라는 것을 금방 알 수 있을 것이다.
+[^2]: 단, 기저 함수가 삼각 함수에만 국한 되는 것이 아니라는 점을 꼭 언급하고 싶다. 여러가지 기저 함수를 사용할 수 있다. 가령 신호가 사각파 펄스라면 여러 너비와 delay의 사각파 기저를 가지고 신호를 표현하는 것이 더 쉬울 수 있다. 아울러, [연산자 이론을 더 깊게 공부해보면](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 삼각함수는 기저 신호로 사용할 수 있는 어마어마하게 다양한 신호 중 하나라는 것을 금방 알 수 있을 것이다.
 
 
+그런데, 삼각 함수는 주기 함수이기 때문에 삼각 함수를 기저 신호로 하여 선형결합해 신호를 표현하기 위해선 표현해주고자 하는 신호가 주기함수여야 한다.
 
+푸리에의 결과에 따르면 주기 신호는 같은 주기를 갖는 정현파와 이 정현파의 정수배의 주파수를 갖는 정현파의 합으로 표현할 수 있기 때문에[^3], 주기가 $T$인 임의의 연속 신호 $x(t)$를 다음과 같이 정현파의 선형결합으로 표현할 수 있다.
 
+[^3]: 2차 미분 연산자 대한 고유함수 전개에서 얻게 되는 trivial solution을 방지하기 위한 조건이다. 좀 더 자세한 내용은 [고유함수 전개 편의 예시 문제](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html#%EC%98%88%EC%A0%9C-%EB%AC%B8%EC%A0%9C)를 참고.
 
+$$x(t)=a_0+\sum_{k=1}^\infty a_k\cos\left(\frac{2\pi k t}{T}\right)+\sum_{k=1}^{\infty} b_k \sin\left(\frac{2\pi k t}{T}\right)$$
 
+여기서 수식의 형태를 단순화 시키고(위의 조건 중 1번) 시스템 응답을 편리하게 표기하기 위해(위의 조건 중 3번) 실수 정현파가 아니라 복소 정현파를 사용하자[^4].
 
+[^4]: 당연히 실수 정현파를 이용한 푸리에 급수도 이용할 수 있으나 수식의 전개과정이 번거로운게 많다.
 
+복소 정현파는 다음과 같이 오일러 공식을 가지고 얻게 된다.
 
+$$\exp(j\theta) = \cos(\theta) + j \sin(\theta)$$
 
+여기서 $j=\sqrt{-1}$이다.
 
+그러므로,
 
+$$\cos(\theta) = \frac{\exp(j\theta)+\exp(-j\theta)}{2}$$
 
+$$\sin(\theta) = \frac{\exp(j\theta)-\exp(-j\theta)}{2j}$$
 
+와 같다는 것을 알 수 있기 때문에 $x(t)$를 다시 써보면 다음과 같다.
 
+$$x(t)=a_0+\sum_{k=1}^\infty a_k\cos\left(\frac{2\pi k t}{T}\right)+\sum_{k=1}^{\infty} b_k \sin\left(\frac{2\pi k t}{T}\right)$$
 
+$$=a_0+\sum_{k=1}^{\infty}\left(
+  a_k\frac{\exp\left(j 2\pi k t/T\right)+\exp\left(-j2\pi k t/T\right)}{2}
+  + b_k\frac{\exp\left(j 2\pi k t/T\right)-\exp\left(-j 2\pi k t/T\right)}{2j}
+  \right)$$
 
+$$=a_0+\sum_{k=1}^{\infty}\left(
+  \frac{a_k-jb_k}{2}\exp\left(j\frac{2\pi k t}{T}\right)+\frac{a_k+jb_k}{2}\exp\left(-j\frac{2\pi kt}{T}\right)
+  \right)$$
+
+$$=\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi k t}{T}\right)$$
+
+여기서 $c_k$는 $a_0, a_k, b_k$와 다음과 같은 관계를 갖는다고 볼 수 있다.
+
+$$c_k = \begin{cases}\frac{1}{2}(a_k-jb_k),&& k >0 \\ a_0, && k = 0\\ \frac{1}{2}(a_k+jb_k), && k < 0 \end{cases}$$
+
+## 기저 신호로써의 삼각함수
+
+특별히 삼각함수가 기저 신호로써 유용한 이유는 서로 다른 주파수의 삼각 함수 끼리는 직교하는 성질을 보여 신호의 표현을 구하기 쉬워지기 때문이다.
+
+여기서 신호가 직교한다는 것은 신호 간의 내적이 0임을 의미하는데, 구간 $(a, b)$에서 정의된 임의의 신호 $x(t)$와 $z(t)$에 대해 다음이 성립하면 두 신호는 직교한다고 표현한다.
+
+$$\lt x(t), z(t) \gt = \int_{a}^{b}x(t)z^*(t) dt= 0$$
+
+가령, 구간 $(a, b)$에서 정의된 서로 다른 주파수를 갖는 
 
 
 
@@ -124,7 +165,7 @@ $$(f_1, f_2) = \int_a^b{f_1(x) f^*_2(x) dx = 0}$$
 
 $$(\phi_m, \phi_n) = \int_a^b{\phi_m(x)\phi^*_n(x) dx} = 0, \space for \space m \neq n$$
 
-여기서 $\phi_n$, $n=0,1,2,\cdots$ 을 *기저함수(basis function)* 라고 부른다.|
+여기서 $\phi_n$, $n=0,1,2,\cdots$ 을 *기저함수(basis function)* 라고 부른다.
 
 그렇다면 이 orthogonal Set은 왜 중요한 것일까? 그것은 구간 $[a, b]$ 에서 정의된 함수 $y=f(x)$ 는 같은 구간 $[a,b]$ 에서 정의된 기저 함수와 상수 $c_n, \space$ $n=0,1,2,\cdots$ 를 이용하여 선형적으로 분해할 수 있기 때문이다. 즉,
 
