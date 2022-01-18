@@ -325,12 +325,20 @@ docs-ko:
         url:    2019/06/18/Discrete_Time_Convolution.html
       - title:  연속 신호의 샘플링
         url:    2022/01/14/sampling_CT_to_DT.html
+      - title:  연속 시간 컨볼루션
+        url:    2019/07/01/Continuous_Time_Convolution.html
       - title:  신호 공간 (signal space)
         url:    2022/01/12/signal_space.html
+      - title:  푸리에 급수(Fourier Series)
+        url:    2019/06/23/Fourier_Series.html
+      - title:  푸리에 변환(Fourier Transform)
+        url:    2019/07/07/CTFT.html
+      - title:  이산 시간 푸리에 급수(DTFS)
+        url:    2019/07/08/DTFS.html
+      - title:  이산 시간 푸리에 변환(DTFT)
+        url:    2019/07/09/DTFT.html  
       - title:  섀넌의 샘플링 정리
         url:    2019/07/11/Shannon_sampling_theorem.html
-      - title:  연속시간 컨볼루션
-        url:    2019/07/01/Continuous_Time_Convolution.html
       - title:  라플라스 변환
         url:    2019/08/12/Laplace_transform.html
       - title:  Z-변환
