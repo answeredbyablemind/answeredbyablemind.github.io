@@ -1,5 +1,5 @@
 ---
-title: 연속시간  푸리에 급수(Continuous Time Fourier Series)
+title: 푸리에 급수(Fourier Series)
 sidebar:
   nav: docs-ko
 aside:
