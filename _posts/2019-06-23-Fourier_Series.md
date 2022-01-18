@@ -40,7 +40,7 @@ $$x(t)=\sum_i c_i \psi_i(t)$$
 
 그러면 이 신호는 다음과 같이 $c$ 축 위에 기저 신호의 성분량만을 표시해주면 충분하다.
 
-이 처럼 기저 신호의 성분량만을 이용해 원 신호를 표현해주는 방법을 스펙트럼 표현이라고 부른다.
+이처럼 기저 신호의 성분량만을 이용해 원 신호를 표현해주는 방법을 스펙트럼 표현이라고 부른다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic1.png">
@@ -133,11 +133,35 @@ $$\Rightarrow \int_{0}^{T}\exp(0)dt = T$$
 
 반면 $k\neq p$인 경우에는 $q=k-p$로 치환하여
 
-$$\Rightarrow \int_{0}^{T}\exp(j\frac{2\pi q t}{T})dt $$
+$$\Rightarrow \int_{0}^{T}\exp\left(j\frac{2\pi q t}{T}\right)dt $$
 
 $$ = \frac{T}{j2\pi q}\left|\exp\left(j\frac{2\pi q t}{T}\right)\right|_{0}^{T}=\frac{T}{j2\pi q}(\exp(j2\pi q) - 0) = \frac{T}{j2\pi q}(0-0) = 0$$
 
 이므로 서로 다른 주파수를 갖는 복소 정현파끼리는 서로 직교한다는 사실을 알 수 있으며, 같은 주파수를 갖는 복소 정현파끼리는 내적한 결과가 $T$와 같다는 것을 알 수 있다.
+
+## 계수 $c_k$의 계산
+
+한편 식 (10)에서부터,
+
+$$x(t)=\sum_{k=-\infty}^{\infty }c_k \exp\left(j\frac{2\pi k t}{T}\right)$$
+
+임을 알 수 있다.
+
+이 때, $c_k$를 구하기 위해 다음과 같은 내적을 취해보면,
+
+$$\lt x(t), \exp\left(j\frac{2\pi p t}{T}\right)$$
+
+$$=\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi p t}{T}\right)$$
+
+식 (16)과 식 (18)의 결과를 생각해보면
+
+$$\Rightarrow c_k T$$
+
+이다.
+
+따라서, 계수 $c_k$는 다음과 같이 계산할 수 있다.
+
+$$c_k =\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)$$
 
 # 참고 문헌
 
