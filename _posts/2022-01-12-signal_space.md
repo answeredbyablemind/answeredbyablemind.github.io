@@ -120,7 +120,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic4.png">
   <br>
-  그림 5. 좌표가 (3,4)라는 말은 한 기저벡터 3개와 다른 기저벡터 4개의 합으로 그 벡터를 표현할 수 있다는 의미이다.
+  그림 6. 좌표가 (3,4)라는 말은 한 기저벡터 3개와 다른 기저벡터 4개의 합으로 그 벡터를 표현할 수 있다는 의미이다.
 </p>
 
 그러면 이 표준기저벡터들을 항상 사용해야하는것일까? 사실은 2차원 벡터 중 아무거나 두개를 골라서 기저벡터로 삼을 수 있다.
@@ -130,7 +130,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic5.png">
   <br>
-  그림 6. 위에서 (3,4)로 표현했던 벡터에 대해 새로운 기저벡터가 적용되는 좌표계로 다시 이 벡터를 표현할 수 있을까?
+  그림 7. 위에서 (3,4)로 표현했던 벡터에 대해 새로운 기저벡터가 적용되는 좌표계로 다시 이 벡터를 표현할 수 있을까?
 </p>
 
 새로운 기저벡터를 이용해 원래의 벡터를 표현하면 좌표는 (3.6, 3.4)이다. 이것은 기저벡터가 몇 개 들어가는지를 표시하는 것과 동일하다.
@@ -138,7 +138,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-12-signal_space/pic6.png">
   <br>
-  그림 7. 새로운 기저벡터를 이용하면 각각의 기저벡터를 3.6개, 3.4개 사용하여 원래의 벡터를 표현할 수 있다.
+  그림 8. 새로운 기저벡터를 이용하면 각각의 기저벡터를 3.6개, 3.4개 사용하여 원래의 벡터를 표현할 수 있다.
 </p>
 
 ---
