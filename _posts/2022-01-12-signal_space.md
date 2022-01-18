@@ -157,7 +157,7 @@ $$\vec{v}=c_1 \hat{i} + c_2 \hat{j} = d_1 \hat{i}_{new} + d_2\hat{j}_{new}$$
 
 신호도 마찬가지로 임의의 신호를 기저 신호의 선형결합으로 표현할 수 있다.
 
-임의의 신호 $x[k], k = 1, 2,\cdots n$이 포함되어 있는 신호 공간에 대한 기저 신호를 $\lbrace \phi_i, i = 1,2,\cdots, n\rbrace$라고 잡는다면 임의의 신호 $x[n]$은 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
+임의의 신호 $x[k], k = 1, 2,\cdots n$이 포함되어 있는 신호 공간에 대한 기저 신호를 $\lbrace \phi_i[k] \| i = 1,2,\cdots, n\rbrace$라고 잡는다면 임의의 신호 $x[n]$은 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
 
 $$x[k]=\sum_{i=1}^{n}p_i \phi_i[k]$$
 
@@ -208,13 +208,13 @@ $$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a
 
 이산 신호의 경우 다음과 같이 정의된다. 임의의 복소 이산 신호 $x[k]$와 $z[k]$ $, k = 1, 2, \cdots, n$ 에 대하여
 
-$$\langle x, z, \rangle \equiv \sum_{k=1}^n x[k]z^*[k]$$
+$$\langle x[k], z[k] \rangle \equiv \sum_{k=1}^n x[k]z^*[k]$$
 
 이다. 여기서 $z^*[k]$는 $z[k]$의 complex conjugate이다.
 
 또, 구간 $(a, b)$에서 정의된 임의의 복소 연속 신호 $x(t)$, $z(t)$에 대해 두 신호의 inner product $\langle f, g\rangle$은 
 
-$$\langle x, z\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
+$$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
 
 이다. 여기서 $z^*(t)$는 $z(t)$의 complex conjugate이다.
 
