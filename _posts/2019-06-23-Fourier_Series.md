@@ -18,7 +18,7 @@ tags: 푸리에 신호처리
 * [미분방정식을 이용한 오일러 공식 유도](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
 * [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)
 
-# 기저 신호 (basis signal)
+# 푸리에 급수의 유도 과정
 
 ## 기저 신호의 선택과 스펙트럼 표현
 
@@ -125,7 +125,7 @@ $$\lt \exp\left(j\frac{2\pi k t}{T}\right), \exp\left(j\frac{2\pi p t}{T}\right)
 
 $$=\int_{0}^{T}\exp\left(j\frac{2\pi k t}{T}\right)\exp\left(-j\frac{2\pi p t}{T}\right)dt$$
 
-$$=\int_{0}^{T}\exp\left(j\frac{2\pi (k-p) t}{T}\right)$$
+$$=\int_{0}^{T}\exp\left(j\frac{2\pi (k-p) t}{T}\right)dt$$
 
 여기서 $k=p$ 인 경우에는
 
@@ -149,9 +149,9 @@ $$x(t)=\sum_{k=-\infty}^{\infty }c_k \exp\left(j\frac{2\pi k t}{T}\right)$$
 
 이 때, $c_k$를 구하기 위해 다음과 같은 내적을 취해보면,
 
-$$\lt x(t), \exp\left(j\frac{2\pi p t}{T}\right)$$
+$$\lt x(t), \exp\left(j\frac{2\pi p t}{T}\right)\gt$$
 
-$$=\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi p t}{T}\right)$$
+$$=\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi p t}{T}\right)dt$$
 
 식 (16)과 식 (18)의 결과를 생각해보면
 
@@ -161,7 +161,43 @@ $$\Rightarrow c_k T$$
 
 따라서, 계수 $c_k$는 다음과 같이 계산할 수 있다.
 
-$$c_k =\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)$$
+$$c_k =\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
+
+## 요약
+
+푸리에 급수에 대해 요약하면 다음과 같이 두 개의 수식으로 쓸 수 있다.
+
+구간 $(0, T)$에서 정의된 $T$를 주기로하는 연속 신호 $x(t)$에 대해,
+
+$$x(t)=\sum_{k=-\infty}^{\infty}c_k\exp\left(j \frac{2\pi k t}{T}\right)$$
+
+$$c_k = \int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
+
+# 예제
+
+## 문제 1. 다음의 사각 펄스의 푸리에 급수를 계산하시오.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic2.png">
+  <br>
+  그림 2. 문제 1의 사각 펄스 주기 신호
+</p>
+
+
+<p align = "center">
+  <video width = "400" height = "auto" loop autoplay muted>
+    <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/Problem_1.mp4">
+  </video>
+  <br>
+  그림 3. 푸리에 급수의 합을 계속해서 더해가면 원래의 펄스 주기 신호와 유사해진다.
+</p>
+
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic3.png">
+  <br>
+  그림 2. 사각 펄스 주기 신호의 푸리에 계수(스펙트럼), $T = 3, \tau = 0.5, A = 2$ 인 경우
+</p>
 
 # 참고 문헌
 
