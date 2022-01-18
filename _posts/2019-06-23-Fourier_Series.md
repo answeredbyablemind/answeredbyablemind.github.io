@@ -183,7 +183,6 @@ $$c_k = \int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
   그림 2. 문제 1의 사각 펄스 주기 신호
 </p>
 
-
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/Problem_1.mp4">
@@ -191,7 +190,6 @@ $$c_k = \int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
   <br>
   그림 3. 푸리에 급수의 합을 계속해서 더해가면 원래의 펄스 주기 신호와 유사해진다.
 </p>
-
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic3.png">

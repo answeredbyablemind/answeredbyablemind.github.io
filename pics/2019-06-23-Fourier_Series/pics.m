@@ -53,7 +53,7 @@ close all;
 x = 0;
 t = linspace(-4, 8, 1000);
 total_k = 100;
-figure;
+figure('color','w');
 gca;
 hold on;
 set(gca,'visible','off')
