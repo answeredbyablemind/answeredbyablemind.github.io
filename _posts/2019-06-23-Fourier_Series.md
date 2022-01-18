@@ -133,9 +133,9 @@ $$x(t) = \sum_{k=-\infty}^{\infty}{a_k \exp\left(j \frac{2\pi k}{T} t \right)}$$
 
 양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
 
-$$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right) exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
+$$\int_{0}^{T}{x(t)\phi^*_p(t) dt } = \int_{0}^{T}{\sum_{k=-\infty}^{\infty}{a_k \exp\left(j \frac{2\pi k}{T} t\right) \exp\left(-j \frac{2\pi p}{T} t\right)} dt } \notag$$
 
-$$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
+$$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}\exp\left(j \frac{2\pi(k-p)}{T}t\right)dt$$
 
 
 이 때, 정수 k와 p에 대하여 두 가지 경우가 있을 수 있다.
@@ -148,7 +148,7 @@ $$= \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)\left| \exp\le
 
 $$= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
 \{\exp(
-j 2\pi (k-p))-exp(0)
+j 2\pi (k-p))-\exp(0)
 \} \notag$$
 
 여기서 $k-p$ 는 0이 아닌 정수이고 0이 아닌 정수 $x$에 대하여  $exp(j 2\pi x) =exp(0)$  이므로,
@@ -173,7 +173,7 @@ $$\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) \exp\left(-j \frac{2\pi k}{T}t\ri
 
 위의 내용에서 확인한 바는 다음과 같다. $T$ 를 주기로 하는 주기함수 $x(t)$ 에 대해서
 
-$$x(t) = \sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)$$
+$$x(t) = \sum_{k=-\infty}^{\infty} a_k \exp\left(j \frac{2\pi k}{T}t\right)$$
 
 <center> where </center>
 
