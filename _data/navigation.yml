@@ -339,6 +339,8 @@ docs-ko:
         url:    2019/07/09/DTFT.html  
       - title:  섀넌의 샘플링 정리
         url:    2019/07/11/Shannon_sampling_theorem.html
+      - title:  주파수 샘플링과 DFT
+        url:    2019/07/14/Freq_Sampling.html
       - title:  라플라스 변환
         url:    2019/08/12/Laplace_transform.html
       - title:  Z-변환

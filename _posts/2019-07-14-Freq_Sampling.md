@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190714
-tags: 신호처리
+tags: 신호처리 푸리에
 ---
 
 {% raw %}
