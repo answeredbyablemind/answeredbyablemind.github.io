@@ -16,6 +16,92 @@ tags: 푸리에 신호처리
 
 * [신호 공간(signal space)](https://angeloyeo.github.io/2022/01/12/signal_space.html)
 
+# 기저 함수의 선택과 표현
+
+좌표 평면 상에 존재하는 $(3,4)$라는 벡터는 두 개의 서로 다른 기저벡터의 선형결합으로 표현될 수 있다는 것을 간략화하여 표기한 것과 같다.
+
+$$(3,4) \Longleftrightarrow 3 \hat{i}+4\hat{j}$$
+
+이전 포스팅 중 [신호 공간(signal space)](https://angeloyeo.github.io/2022/01/12/signal_space.html) 편에서는 신호가 일종의 벡터로 생각될 수 있다고 언급했다.
+
+임의의 벡터가 기저벡터들의 선형 결합으로 표현할 수 있는 것 처럼 임의의 신호는 기저 신호(basis signals)의 선형결합으로 표현될 수 있다.
+
+임의의 연속 신호 $x(t)$에 대해 기저 신호가 $\lbrace \psi_i(t)\rbrace$라고 하면 다음과 같이 기저 신호들의 선형 결합으로 표현할 수 있다.
+
+$$x(t)=\sum_i c_i \psi_i(t)$$
+
+생각해보면 우리가 적절히 얻어낸 $\lbrace \psi_i(t)\rbrace$를 알고만 있다면 $c_i$를 구하는 것 만으로 $x(t)$를 표현할 수 있게 되는 것이다.
+
+예를 들어 임의의 연속 신호 $x(t)$와 기저 신호 집합 $\lbrace \psi_i(t)\rbrace$에 대해 $i=1$일 때 $c_1=1$이고 $c_2=3$이라고 하자. 그 외의 $c_i=0$이라고 해보자.
+
+그러면 이 신호는 다음과 같이 $c$ 축 위에 기저 신호의 성분량만을 표시해주면 충분하다.
+
+이 처럼 기저 신호의 성분량만을 이용해 원 신호를 표현해주는 방법을 스펙트럼 표현이라고 부른다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-12-Fourier_Series/pic1.png">
+  <br>
+  그림 1. 임의의 연속 신호 $x(t)$에 대한 스펙트럼 표현
+</p>
+
+---
+
+신호 처리에 있어서 적절한 기저 신호는 어떤 특성을 만족해야 할까? 특별히 정해진 규칙은 없지만 한 참고문헌[^1]에서는 아래와 같이 특성을 제시하고 있다.
+
+[^1]: 디지털 신호 처리, 이철희, 한빛아카데미
+
+* 형태가 단순하고, 신호의 표현을 구하기 쉬워야 한다.
+* 다양하고 폭넓은 신호들을 표현할 수 있어야 한다.
+* 표현된 신호에 대한 시스템의 응답을 편리하게 표기할 수 있어야 한다.
+* 한 주파수에 대해 오직 하나의 기본 신호만 존재(일대일 대응)해야 한다.
+
+그리고 이러한 네 가지 특성을 가장 잘 만족하는 기저함수 중 하나가 삼각함수[^2]이다.
+
+[^2]: 단, 기저 함수가 삼각 함수에만 국한 되는 것이 아니라는 점을 꼭 언급하고 싶다. 여러가지 기저 함수를 사용할 수 있다. 가령 신호가 사각파 펄스라면 여러 너비의 사각파 기저를 가지고 신호를 표현하는 것이 더 쉬울 수 있다. 아울러, [연산자 이론을 더 깊게 공부해보면](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html) 삼각함수는 기저 신호로 사용할 수 있는 어마어마하게 다양한 신호 중 하나라는 것을 금방 알 수 있을 것이다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(아래는 구버전이며 편집 중)
+
 # Orthogonal Functions
 
 Fourier Analysis의 Formulae를 공부할 때, 가장 쉽게 간과하는 부분이 바로 푸리에 급수의 공식 유도 방법이다. 푸리에 급수의 공식은 가장 먼저 함수의 Orthogonality에서부터 출발해야 한다. 함수의 Orthogonality에 대한 개념은, 수학에서는 함수를 벡터처럼 다룰 수도 있다는 것에서 부터 출발한다. 즉, 수학적인 의미에서 함수 역시 마찬가지로 Inner Product를 정의할 수 있다.
@@ -192,3 +278,7 @@ $\phi_k(t) = exp(j\frac{2\pi k}{T}t)$ 가 sinusoidal function과 연관되어 �
 <center><iframe width="420" height="315" src="https://www.youtube.com/embed/7JRwjCpKewQ" frameborder="0" allowfullscreen></iframe></center>
 
 
+
+# 참고 문헌
+
+* 디지털 신호 처리, 이철희, 한빛아카데미
