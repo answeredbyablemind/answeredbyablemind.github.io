@@ -184,7 +184,7 @@ $$c_k = \int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
 </p>
 
 <p align = "center">
-  <video width = "400" height = "auto" loop autoplay muted>
+  <video width = "600" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/Problem_1.mp4">
   </video>
   <br>
