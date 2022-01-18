@@ -59,9 +59,9 @@ Continuous Time Fourier Series의 정의는 아래와 같다.
 
 x(t)=x(t+T)를 만족하는 어떠한 신호 x(t)도 다음과 같이 쓸 수 있다.
 
-$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t\right)}$$
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k \exp\left(j \frac{2\pi k}{T} t\right)}$$
 
-$$a_k =  \frac{1}{T}  \int_{-{T}\over{2}}^{{T}\over{2}}{x(t) exp\left(-j \frac{2\pi k}{T}t\right)dt}$$
+$$a_k =  \frac{1}{T} \int_{-T/2}^{T/2}{x(t) \exp\left(-j \frac{2\pi k}{T}t\right)dt}$$
 
 orthogonality를 통해 얻게 되는 $x(t)$ 의 식이 갖고 있는 의미에 집중하자.
 
@@ -69,11 +69,11 @@ orthogonality를 통해 얻게 되는 $x(t)$ 의 식이 갖고 있는 의미에 
 
 먼저, 다시 한번 CTFS의 식, x(t)를 살펴보자.
 
-$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp \left(j \frac{2\pi k}{T} t\right)}$$
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k \exp \left(j \frac{2\pi k}{T} t\right)}$$
 
 위 식에서 알 수 있는 사실은 어떠한 주기함수 x(t)는 특정한 함수의 집합
 
-$$\{\phi_k(t) | \phi_k(t) = exp \left(j \frac{2\pi k}{T} t\right), \space k=\cdots,-2,-1,0,1,2,\cdots \space on [0, T]\}$$
+$$\{\phi_k(t) | \phi_k(t) = \exp \left(j \frac{2\pi k}{T} t\right), \space k=\cdots,-2,-1,0,1,2,\cdots \space on [0, T]\}$$
 
 에 의해서 decompose되었다는 것이다. 그렇다면, $x(t)$ 의 식의 수학적 타당성에 대해서는 집합 {$\phi_k(t)$} 가 an orthogonal set이라는 것을 증명하면 입증되는 것이라고 할 수 있다.
 
@@ -81,7 +81,7 @@ $$\{\phi_k(t) | \phi_k(t) = exp \left(j \frac{2\pi k}{T} t\right), \space k=\cdo
 
 아래의 집합의 직교성에 관한 증명
 
-$$\{ \phi_k(t) | \phi_k(t) = exp(j \frac{2\pi k}{T} t), \space k =\cdots, -2,-,1, 0, 1, 2, \cdots, \}$$
+$$\{ \phi_k(t) | \phi_k(t) = \exp\left(j \frac{2\pi k}{T} t\right), \space k =\cdots, -2,-,1, 0, 1, 2, \cdots, \}$$
 
 Proof)
 
@@ -89,9 +89,9 @@ Proof)
 
 $$\int_{0}^{T}{\phi_k(t)\phi^*_p(t) dt} \notag$$
 
-$$= \int_{0}^{T}{ exp\left( j \frac{2\pi k}{T} t \right) exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
+$$= \int_{0}^{T}{ \exp\left( j \frac{2\pi k}{T} t \right) \exp\left( -j \frac{2\pi p}{T} t \right)}dt \notag$$
 
-$$ = \int_{0}^{T}{exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
+$$ = \int_{0}^{T}{\exp \left(j \frac{2\pi(k-p)}{T}t\right) dt }$$
 
 (1) $k=p$ 일 때,
 
@@ -99,17 +99,17 @@ $$ eq (12)  = \int_{0}^{T}{1 dt}= T$$
 
 (2) $k\neq p$ 일 때,
 
-$$ eq(12) = \frac{T}{j 2\pi (k-p)} \left| exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
+$$ eq(12) = \frac{T}{j 2\pi (k-p)} \left| \exp\left( j \frac{2\pi(k-p)}{T} t \right)\right| ^{T}_{0} \notag$$
 
-$$=\frac{T}{j 2\pi (k-p)}\left(exp \left( j2\pi(k-p)\right) -1\right)$$
+$$=\frac{T}{j 2\pi (k-p)}\left(\exp \left( j2\pi(k-p)\right) -1\right)$$
 
 여기서, k와 p는 서로 다른 정수이므로, k-p도 정수이다.
 
-$$\therefore \frac{T}{j2\pi (k-p)} \left(exp(j2\pi(k-p)) -1\right) =0$$
+$$\therefore \frac{T}{j2\pi (k-p)} \left(\exp(j2\pi(k-p)) -1\right) =0$$
 
 그러므로 집합
 
-$$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
+$$\{\phi_k(t) | \phi_k(t) = \exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots, -2, -1, 0, 1, 2, \cdots \}$$
 
  은 직교 집합이다.
 
@@ -117,7 +117,7 @@ $$\{\phi_k(t) | \phi_k(t) = exp\left(j\frac{2\pi k}{T}t\right),\space k = \cdots
 
 즉, $\{\phi_k(t)\}$ 가 an orthogonal set이기 때문에 같은 구간 $[0,T]$ 에서 정의되는 함수 $x(t)$ 는 $\{ \phi_k(t) \}$ 를 통해서 decompose될 수 있다. 그러므로, 식
 
-$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k \exp\left(j \frac{2\pi k}{T} t \right)}$$
 
 는 수학적으로 타당하다고 할 수 있다.
 
@@ -129,7 +129,7 @@ $$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
 
 Proof) PROOF 1로 부터, $x(t)$ 는 다음과 같이 나타낼 수 있다.
 
-$$x(t) = \sum_{k=-\infty}^{\infty}{a_k exp\left(j \frac{2\pi k}{T} t \right)}$$
+$$x(t) = \sum_{k=-\infty}^{\infty}{a_k \exp\left(j \frac{2\pi k}{T} t \right)}$$
 
 양변에 $\phi^{*}_p (t)=exp(-j\frac{2\pi p}{T}t)$ 를 곱하고 적분을 취해주면 다음과 같은 식을 얻는다.
 
@@ -142,12 +142,12 @@ $$= \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi(k-p)}{T}t\righ
 
 case 1. $k\neq p$ 일 때,
 
-$$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag$$
+$$ \Rightarrow \sum_{k=-\infty}^{\infty}a_k\int_{0}^{T}\exp\left(j \frac{2\pi (k-p)}{T} t \right) dt \notag$$
 
-$$= \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)\left| exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag$$
+$$= \sum_{k=-\infty}^{\infty}a_k\left(\frac{T}{j 2\pi(k-p)}\right)\left| \exp\left(j \frac{2\pi(k-p)}{T} t\right) \right|_{0}^{T}\notag$$
 
 $$= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)
-\{exp(
+\{\exp(
 j 2\pi (k-p))-exp(0)
 \} \notag$$
 
@@ -157,13 +157,13 @@ $$= \sum_{k=-\infty}^{\infty} a_k\left( \frac{T}{j 2\pi (k-p)} \right)\times{0} 
 
 case 2. $k=p$ 일 때,
 
-$$\Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} exp \left(j \frac{2\pi  (k-p)}{T} t \right) dt \notag$$
+$$\Rightarrow \sum_{k=-\infty}^{\infty} a_k \int_{0}^{T} \exp \left(j \frac{2\pi  (k-p)}{T} t \right) dt \notag$$
 
 여기서 $k=p$ 인 경우만을 확인하므로,
 
-$$= a_p\int_{0}^{T} exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T$$
+$$= a_p\int_{0}^{T} \exp(0) dt = a_p \int_{0}^{T} 1 dt =a_p \times T$$
 
-$$\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) exp\left(-j \frac{2\pi k}{T}t\right)dt$$
+$$\therefore a_k = \frac{1}{T}\int_{0}^{T}x(t) \exp\left(-j \frac{2\pi k}{T}t\right)dt$$
 
 ***
 
@@ -177,13 +177,13 @@ $$x(t) = \sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)$$
 
 <center> where </center>
 
-$$a_k = \frac{1}{T}\int_{0}^{T} x(t)exp\left(-j \frac{2\pi k}{T} t\right) dt$$
+$$a_k = \frac{1}{T}\int_{0}^{T} x(t)\exp\left(-j \frac{2\pi k}{T} t\right) dt$$
 
 은 수학적으로 타당한 것이다.
 
 그렇다면 신호처리에 있어서 Fourier의 이론은 왜 중요한 것인가? 그것은 CTFS라고 불리는 위의 Fourier Series의 kernel function인
 
-$$\phi_k(t) = exp\left(j \frac{2\pi k}{T}t\right)$$
+$$\phi_k(t) = \exp\left(j \frac{2\pi k}{T}t\right)$$
 
 에 있다.간단히 설명하자면, CTFS는 주기함수를 또 다른 주기 함수인 sinusoidal function을 통해서 나타낼 수 있다는 것을 증명했기 때문이다. 특히, 기초적이고 수학적으로 다루기 쉬운 sinusoidal function을 통해서 모든 주기함수를 decompose할 수 있다는 점에서 CTFS는 중요한 것이다.
 
