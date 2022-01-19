@@ -247,7 +247,7 @@ $$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
 이 때, 만약 어떤 행렬이 벡터를 입력 받아 출력했는데, 출력된 벡터가 입력된 벡터와 비교했을 때 크기만 바뀌고 방향은 그대로인 경우가 있을 수 있다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
   <br>
   그림 10. 입력 벡터 ($x$)와 출력 벡터($Ax$)가 방향은 동일하고 크기만 차이나는 경우
 </p>
@@ -304,11 +304,11 @@ $$y(t) = (\mathfrak{L}x)(t)=\frac{1}{2}\left(\mathfrak{L}(e^{j\omega t} + \mathf
 
 $$H(\omega) = |H(\omega)|e^{j \angle H(\omega)}$$
 
-$$H(-\omega) = H*(\omega) = |H(\omega)|e^{-j\angle H(\omega)}$$
+$$H(-\omega) = H^*(\omega) = |H(\omega)|e^{-j\angle H(\omega)}$$
 
 이므로, $y(t)$를 다시 쓰면 다음과 같을 것이다.
 
-$$y(t) = \frac{1}{2}|H(\omega)|\left(e^{j(\omega t +\angleH(\omega))} + e^{-j(\omega t +\angleH(\omega))}\right)$$
+$$y(t) = \frac{1}{2}|H(\omega)|\left(e^{j(\omega t +\angle H(\omega))} + e^{-j(\omega t +\angle H(\omega))}\right)$$
 
 $$=|H(\omega)|\cos(\omega t + \angle H(\omega))$$
 
