@@ -218,6 +218,111 @@ $$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
 
 이다. 여기서 $z^*(t)$는 $z(t)$의 complex conjugate이다.
 
+## 고유함수
+
+고유함수에 관해 더 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
+
+* [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
+* [오일러 공식](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
+* [페이저(phasor)](https://angeloyeo.github.io/2019/06/18/phasor.html)
+
+고유함수에 대해 이해하게 되면 왜 신호/시스템 분야에서 신호를 복소 정현파를 이용해 서술하는지 알 수 있다.
+
+---
+
+지금까지의 논의에서 신호(즉, 함수)가 벡터라는 것에 관해 알아보았다. 그리고, 신호가 벡터라면 선형대수학에서 논의되고 개발된 용어들을 확장해 적용할 수 있고 선형대수학에서 개발된 메소드마저도 이용할 수 있다는 사실을 일부 확인했다.
+
+선형대수학에서 아주 중요한 주제 중 하나인 고윳값과 고유벡터를 신호 처리에 관해서도 일부 적용해볼 수 있다.
+
+고유벡터의 개념에 대해서 조금 더 잘 알기 위해선 벡터와 행렬의 관계에 대해 알아야 한다. 
+
+행렬은 벡터에 관한 함수라고 할 수 있다. 그리고, 행렬은 벡터를 입력 받아 또 다른 벡터를 출력하는 역할을 한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic1.png">
+  <br>
+  그림 9. 행렬은 벡터를 입력 받아 벡터를 출력해주는 함수이다.
+</p>
+
+이 때, 만약 어떤 행렬이 벡터를 입력 받아 출력했는데, 출력된 벡터가 입력된 벡터와 비교했을 때 크기만 바뀌고 방향은 그대로인 경우가 있을 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
+  <br>
+  그림 10. 입력 벡터 ($x$)와 출력 벡터($Ax$)가 방향은 동일하고 크기만 차이나는 경우
+</p>
+
+이런 경우에 이 벡터 $x$의 방향으로 향하는 단위 벡터를 행렬 $A$에 대한 고유벡터라고 하고, 크기의 변화량을 고윳값이라고 부른다.
+
+그런데, 우리가 공부하는 신호 시스템에서는 어떨까? 신호가 벡터라고 한다면 시스템은 행렬에 대응하는 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic_system.png">
+  <br>
+  그림 11. 신호가 벡터에 대응되는 개념이라면 시스템은 행렬에 대응되는 개념이다.
+</p>
+
+그렇다면 우리가 다루는 시스템도 고유벡터에 대응하는 개념이 있을까?
+
+신호, 시스템에서 고유벡터에 대응되는 개념을 우리는 보통 고유함수(eigenfunction)이라고 부른다. (고유 신호라고는 보통 부르지 않음.)
+
+보통 가장 중요하게 다루는 선형시불변(Linear Time-Invariant) 시스템에서는 복소 정현파가 고유함수가 된다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic_system2.png">
+  <br>
+  그림 12. LTI system에서는 복소 정현파가 고유함수가 된다.
+</p>
+
+조금 더 자세하게 보면, 입력이 $x(t)=e^{j\omega t}$ 이고 시스템의 impulse response가 $h(t)$라고 하면 출력은
+
+$$y(t) = \int_{-\infty}^{\infty}e^{j\omega (t-\tau)}h(\tau)d\tau$$
+
+$$=e^{j\omega t}\int_{-\infty}^{\infty}h(\tau)e^{-j\omega\tau}d\tau$$
+
+와 같다. 여기서 $H(\omega)$를 아래와 같이 정의하였는데, 이것은 $h(t)$의 [푸리에 변환](https://angeloyeo.github.io/2019/07/07/CTFT.html)이라고 부르는 것이다.
+
+$$H(\omega) = \int_{-\infty}^{\infty}h(\tau)e^{-j\omega\tau}d\tau$$
+
+중요한 것은 원래의 식을 다시 써보면,
+
+$$y(t)=H(\omega)e^{j\omega t}$$
+
+가 되는데, 출력 함수를 보면 원래의 입력 함수 $e^{j\omega t}$가 그대로 들어있고 그것에 $H(\omega)$이 곱해져서 출력되는 것을 알 수 있다.
+
+생각해보면 너무 자연스럽게 $e^{j\omega t}$가 나오다보니 이게 뭐가 그렇게 특별한가 싶을지도 모르지만, 이번엔 코사인 함수를 입력으로 넣어보자.
+
+코사인 함수는 [오일러 공식](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)에 의해 다음과 같이 수정해서 쓸 수도 있다.
+
+$$x(t) = \cos(\omega t)=\frac{1}{2}(e^{j\omega t}+e^{-j\omega t})$$
+
+시스템을 $\mathfrak L$이라고 하면, 우리의 시스템은 선형 시스템이기 때문에 다음이 성립한다.
+
+$$y(t) = (\mathfrak{L}x)(t)=\frac{1}{2}\left(\mathfrak{L}(e^{j\omega t} + \mathfrak{L}(e^{-j\omega t})\right)$$
+
+여기서 [복소수 표현](https://angeloyeo.github.io/2019/06/18/phasor.html)을 이용해 $H(\omega)$를 표현하면,
+
+$$H(\omega) = |H(\omega)|e^{j \angle H(\omega)}$$
+
+$$H(-\omega) = H*(\omega) = |H(\omega)|e^{-j\angle H(\omega)}$$
+
+이므로, $y(t)$를 다시 쓰면 다음과 같을 것이다.
+
+$$y(t) = \frac{1}{2}|H(\omega)|\left(e^{j(\omega t +\angleH(\omega))} + e^{-j(\omega t +\angleH(\omega))}\right)$$
+
+$$=|H(\omega)|\cos(\omega t + \angle H(\omega))$$
+
+와 같다.
+
+따라서, 코사인 함수를 입력으로 넣어주면 시스템에 의해 크기가 $\|H(\omega)\|$만큼 커질 뿐만 아니라 위상도 $\angle H(\omega)$만큼 shift되어 표현해주어야 한다.
+
+그러므로 코사인 함수를 입력으로 넣어줬을 때는 출력에 원래의 입력이 그대로 출력되지 않으므로 코사인 함수는 선형 시스템에 대한 고유함수가 아니다.
+
+---
+
+여기서 알 수 있는 사실은 신호/시스템 분야에서는 신호를 표현할 때 복소 정현파를 이용해서 표현한다.
+
+그 이유는 복소 정현파를 이용해 입력을 표현해주면 출력에는 시스템의 특성(임펄스 함수의 푸리에 변환)만 서술해주면 되어서 출력에 관한 서술이 간결해지기 때문이다.
 
 # 참고 문헌
 
