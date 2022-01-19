@@ -68,7 +68,7 @@ $$x(t)=\sum_i c_i \psi_i(t)$$
 
 푸리에의 결과에 따르면 주기 신호는 같은 주기를 갖는 정현파와 이 정현파의 정수배의 주파수를 갖는 정현파의 합으로 표현할 수 있기 때문에[^3], 주기가 $T$인 임의의 연속 신호 $x(t)$를 다음과 같이 정현파의 선형결합으로 표현할 수 있다.
 
-[^3]: 2차 미분 연산자 대한 고유함수 전개에서 얻게 되는 trivial solution을 방지하기 위한 조건이다. 좀 더 자세한 내용은 [고유함수 전개 편의 예시 문제](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html#%EC%98%88%EC%A0%9C-%EB%AC%B8%EC%A0%9C)를 참고.
+[^3]: 2차 미분 연산자 대한 고유함수 전개를 수행할 때 trivial solution이 나오는 것을 방지하기 위한 조건이다. 좀 더 자세한 내용은 [고유함수 전개 편의 예시 문제](https://angeloyeo.github.io/2021/06/01/eigenfunction_expansions.html#%EC%98%88%EC%A0%9C-%EB%AC%B8%EC%A0%9C)를 참고.
 
 $$x(t)=a_0+\sum_{k=1}^\infty a_k\cos\left(\frac{2\pi k t}{T}\right)+\sum_{k=1}^{\infty} b_k \sin\left(\frac{2\pi k t}{T}\right)$$
 
@@ -135,7 +135,7 @@ $$\Rightarrow \int_{0}^{T}\exp(0)dt = T$$
 
 $$\Rightarrow \int_{0}^{T}\exp\left(j\frac{2\pi q t}{T}\right)dt $$
 
-$$ = \frac{T}{j2\pi q}\left|\exp\left(j\frac{2\pi q t}{T}\right)\right|_{0}^{T}=\frac{T}{j2\pi q}(\exp(j2\pi q) - 0) = \frac{T}{j2\pi q}(0-0) = 0$$
+$$ = \frac{T}{j2\pi q}\left|\exp\left(j\frac{2\pi q t}{T}\right)\right|_{0}^{T}=\frac{T}{j2\pi q}(\exp(j2\pi q) - \exp(0)) = \frac{T}{j2\pi q}(1-1) = 0$$
 
 이므로 서로 다른 주파수를 갖는 복소 정현파끼리는 서로 직교한다는 사실을 알 수 있으며, 같은 주파수를 갖는 복소 정현파끼리는 내적한 결과가 $T$와 같다는 것을 알 수 있다.
 
@@ -153,9 +153,9 @@ $$\lt x(t), \exp\left(j\frac{2\pi p t}{T}\right)\gt$$
 
 $$=\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi p t}{T}\right)dt$$
 
-$$=\int_{0}^{T}\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi kt}{T}\right)\exp\left(-j\frac{2\pi pt}{T}\right)$$
+$$=\int_{0}^{T}\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi kt}{T}\right)\exp\left(-j\frac{2\pi pt}{T}\right)dt$$
 
-$$=\int_{0}^{T}\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi (k-p)t}{T}\right)$$
+$$=\int_{0}^{T}\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi (k-p)t}{T}\right)dt$$
 
 식 (16)과 식 (18)의 결과를 생각해보면
 
@@ -217,7 +217,7 @@ sinc 함수의 형태는 다음과 같다.
 
 계수를 구했으니 원래의 신호 $x(t)$를 다음과 같이도 표현할 수 있음을 알 수 있다.
 
-$$x(t) = \sum_{k=-\infty}^{\infty}c_k\exp\left(\frac{2\pi k t}{T}\right)=\frac{2A\tau}{T}\text{sinc}\left(\frac{2k\tau}{T}\right)\exp\left(\frac{2\pi k t}{T}\right)$$
+$$x(t) = \sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi k t}{T}\right)=\frac{2A\tau}{T}\sum_{k=-\infty}^{\infty}\text{sinc}\left(\frac{2k\tau}{T}\right)\exp\left(j\frac{2\pi k t}{T}\right)$$
 
 위의 형태는 $k=0$일 때부터 $k=\pm 1$, $k=\pm 2$ 일 때 하나씩 더해가면서 얻게 되는 급수의 형태이다.
 
