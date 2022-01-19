@@ -153,6 +153,10 @@ $$\lt x(t), \exp\left(j\frac{2\pi p t}{T}\right)\gt$$
 
 $$=\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi p t}{T}\right)dt$$
 
+$$=\int_{0}^{T}\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi kt}{T}\right)\exp\left(-j\frac{2\pi pt}{T}\right)$$
+
+$$=\int_{0}^{T}\sum_{k=-\infty}^{\infty}c_k\exp\left(j\frac{2\pi (k-p)t}{T}\right)$$
+
 식 (16)과 식 (18)의 결과를 생각해보면
 
 $$\Rightarrow c_k T$$
@@ -161,7 +165,7 @@ $$\Rightarrow c_k T$$
 
 따라서, 계수 $c_k$는 다음과 같이 계산할 수 있다.
 
-$$c_k =\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
+$$c_k =\frac{1}{T}\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
 
 ## 요약
 
@@ -171,30 +175,68 @@ $$c_k =\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
 
 $$x(t)=\sum_{k=-\infty}^{\infty}c_k\exp\left(j \frac{2\pi k t}{T}\right)$$
 
-$$c_k = \int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
+$$c_k = \frac{1}{T}\int_{0}^{T}x(t)\exp\left(-j\frac{2\pi k t}{T}\right)dt$$
 
 # 예제
 
 ## 문제 1. 다음의 사각 펄스의 푸리에 급수를 계산하시오.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic2.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic2.png">
   <br>
   그림 2. 문제 1의 사각 펄스 주기 신호
 </p>
 
+위 그림을 보면 적분 주기를 $(-T/2, T/2)$로 두고 적분하면 한 주기에 대해 적분하면서도 함수가 끊기지 않고 적분할 수 있다는 것을 알 수 있다.
+
+따라서, 푸리에 급수의 $c_k$는 다음과 같이 계산할 수 있다.
+
+$$c_k = \frac{1}{T}\int_{-\tau}^{\tau}A\exp\left(-j\frac{2\pi k t}{T}\right)dt=\frac{A}{T}\left(-\frac{T}{j2\pi k}\right)\left|\exp\left(-j\frac{2\pi k t}{T}\right)\right|_{-\tau}^{\tau}$$
+
+$$=\frac{A}{T}\frac{T}{(-j2\pi k)}\left\lbrace\cos\left(\frac{2\pi k\tau}{T}\right)-j\sin\left(\frac{2\pi k\tau}{T}\right)-\cos\left(\frac{2\pi k\tau}{T}\right)-j\sin\left(\frac{2\pi k\tau}{T}\right)\right\rbrace$$
+
+$$=\frac{A}{T}\frac{T}{2\pi k}2\sin\left(\frac{2\pi k \tau}{T}\right)$$
+
+여기서 사인함수를 sinc 함수로 맞춰주기 위해서 아래와 같이 두 번째 분수의 분자분모에 $\tau$를 곱하자.
+
+$$=\frac{A}{T}\frac{T\tau}{2\pi k\tau}2\sin\left(\frac{2\pi k \tau}{T}\right)$$
+
+$$=\frac{2A\tau}{T}\text{sinc}\left(\frac{2k\tau}{T}\right)$$
+
+여기서 sinc 함수는 다음과 같은 함수이다.
+
+$$\text{sinc}(x)=\frac{\sin(\pi x)}{\pi x}$$
+
+sinc 함수의 형태는 다음과 같다.
+
 <p align = "center">
-  <video width = "600" height = "auto" loop autoplay muted>
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic_sinc.png">
+  <br>
+  그림 3. 사각 펄스 주기 신호의 푸리에 계수(스펙트럼), $T = 3, \tau = 0.5, A = 2$ 인 경우
+</p>
+
+계수를 구했으니 원래의 신호 $x(t)$를 다음과 같이도 표현할 수 있음을 알 수 있다.
+
+$$x(t) = \sum_{k=-\infty}^{\infty}c_k\exp\left(\frac{2\pi k t}{T}\right)=\frac{2A\tau}{T}\text{sinc}\left(\frac{2k\tau}{T}\right)\exp\left(\frac{2\pi k t}{T}\right)$$
+
+위의 형태는 $k=0$일 때부터 $k=\pm 1$, $k=\pm 2$ 일 때 하나씩 더해가면서 얻게 되는 급수의 형태이다.
+
+이를 컴퓨터를 이용해 그려보면 $k$가 변해감에 따라 원래의 그림 2의 사각 펄스 신호와 같은 형태를 띄게 되는 것을 알 수 있다.
+
+<p align = "center">
+  <video width = "500" height = "auto" loop autoplay muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/Problem_1.mp4">
   </video>
   <br>
-  그림 3. 푸리에 급수의 합을 계속해서 더해가면 원래의 펄스 주기 신호와 유사해진다.
+  그림 4. 푸리에 급수의 합을 계속해서 더해가면 원래의 펄스 주기 신호와 유사해진다.
 </p>
 
+한편, $c_k$를 $k$의 변화에 따라 그리면 다음과 같다. sinc 함수의 형태를 그대로 띄게 되며, 띄엄 띄엄 샘플되어 있는 형태를 볼 수 있다.
+
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic3.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-06-23-Fourier_Series/pic3.png">
   <br>
-  그림 2. 사각 펄스 주기 신호의 푸리에 계수(스펙트럼), $T = 3, \tau = 0.5, A = 2$ 인 경우
+  그림 5. 사각 펄스 주기 신호의 푸리에 계수(스펙트럼), $T = 3, \tau = 0.5, A = 2$ 인 경우
 </p>
 
 # 참고 문헌

@@ -127,3 +127,19 @@ xlabel('k');
 ylabel('c_k');
 title('펄스 함수의 푸리에 계수(스펙트럼)');
 set(gca,'fontname','나눔고딕');
+
+%% sinc function
+
+x = linspace(-6,6, 1000);
+y = sinc(x);
+
+figure;
+plot(x, y,'linewidth',2);
+axis tight
+set(gca,'xtick',-6:6)
+grid on;
+set(gca,'fontsize',12)
+ylim([min(y), 1])
+title('sinc 함수의 형태');
+xlabel('x');
+ylabel('sinc(x)')
