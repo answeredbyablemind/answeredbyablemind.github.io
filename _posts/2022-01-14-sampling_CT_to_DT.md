@@ -174,12 +174,20 @@ $$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
 
 따라서, 이산 신호는 디지털 각주파수 $-\pi$에서 $\pi$ 사이의 주파수 스펙트럼이 $2\pi$의 주기를 갖고 복사되어 있는 주기성을 띈다.
 
-(마지막 문구가 이해하기 어렵다면 Discrete Time Fourier Series, Discrete Time Fourier Transform을 보고 오도록 하자.)
+아래 그림은 주기 신호의 스펙트럼과 그것을 시간 샘플링하여 이산화 했을 때의 결과물을 비교한 것이다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_frequency_spectrum_of_sampled_signal.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_frequency_spectrum_of_periodic_discrete_signal.png">
   <br>
-  그림 6. 이산 신호의 주파수 스펙트럼은 원래 연속 신호의 복사물이 $2\pi$ 간격으로 주기적으로 표시되게 된다.
+  그림 6. 이산 주기 신호의 주파수 스펙트럼은 원래 연속 주기 신호의 복사물이 $2\pi$ 간격으로 표시되게 된다.
+</p>
+
+또, 아래 그림은 비주기 신호의 스펙트럼과 그것을 시간 샘플링하여 이산화 했을 때의 결과물을 비교한 것이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_frequency_spectrum_of_nonperiodic_discrete_signal.png">
+  <br>
+  그림 7. 이산 비주기 신호의 주파수 스펙트럼은 원래 연속 신호의 복사물이 $2\pi$ 간격으로 표시되게 된다.
 </p>
 
 # 참고 문헌

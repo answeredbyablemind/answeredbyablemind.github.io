@@ -31,6 +31,7 @@ for i = -1:2
 end
 ylim([-0.5, 3])
 
+addpath(genpath('..\..\MATLAB\'))
 h = Annotate(gca,'arrow', [-4, 8], [0, 0]);
 h.Primitive.Color = 'k';
 h = Annotate(gca,'arrow', [0, 0], [-0.5, 3]);
