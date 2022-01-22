@@ -24,3 +24,7 @@ plot(t, exp(sigma*t/10) .* cos(2*pi*f2*t),'color','r','linewidth',2)
 ylim([-2, 2])
 xlabel('t');
 ylabel('Laplace basis');
+
+%%
+
+plotXY(-2.5, 2.5, -2.5, 2.5)

@@ -87,7 +87,15 @@ $$x(t)\exp(-\sigma t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\sigma+j\omega)\exp
 
 $$x(t) = \frac{1}{j2\pi}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)\exp(st)ds$$
 
-와 같이 쓸 수 있다. 그리고 이 마지막 식을 라플라스 역변환(inverse Laplace transform)이라고 부른다. 이 적분은 복소 공간에서 선적분에 해당하게 된다. 다만 라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
+와 같이 쓸 수 있다. 그리고 이 마지막 식을 라플라스 역변환(inverse Laplace transform)이라고 부른다. 이 적분은 복소 공간에서 선적분에 해당하게 된다. 
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/line_integral_interval.png">
+  <br>
+  그림 2. 라플라스 역변환의 선적분구간
+</p>
+
+다만 라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
 
 (편집중, 아래는 구 버전)
 
