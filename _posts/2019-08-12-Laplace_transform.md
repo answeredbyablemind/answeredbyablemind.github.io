@@ -8,13 +8,28 @@ key: 20190812
 tags: 신호처리
 ---
 
-<p align = "center">
-  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
-  <br>
-  라플라스 변환이 말하는 것: 신호(정확히는 시스템)의 특성을 s-plane에 한번에 표현해보고 싶다.
-  <br>
-  (빨간 포인터를 마우스로 움직여 보세요!)
-</p>
+# Prerequisites
+
+이번 포스팅을 더 잘 이해하기 위해서는 아래의 내용에 대해 알고 오시는 것이 좋습니다.
+
+* [신호 공간(signal space)](https://angeloyeo.github.io/2022/01/12/signal_space.html)
+* [푸리에 급수(Fourier Series)](https://angeloyeo.github.io/2019/06/23/Fourier_Series.html)
+* [푸리에 변환(Fourier Transform)](https://angeloyeo.github.io/2019/07/07/CTFT.html)
+
+# 푸리에 해석의 한계점
+
+앞서 푸리에 급수와 푸리에 변환에 대해 공부하면서 연속 시간 신호에 대한 주파수 해석을 할 수 있게 되었을 것이다. 그 뿐만 아니라 푸리에 해석 방법은 LTI system에 아주 유용하게 적용할 수 있어서 푸리에 해석을 이용하면 LTI system에 대한 분석이 가능했다. 
+
+디리클레 조건 --> absolutely integrable 한 신호와 stable system에 대해서만 푸리에 변환을 적용할 수 있다.
+
+가령 $x(t) = t u(t)$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 해석을 통해 분석할 수가 없다.
+
+이 문제가 --> 어떻게 새로운 기저를 정할 것인가?에 관한 문제로 넘어가게 되고
+
+--> 결국은 amplitude가 시간에 따라 커지거나 작아지기도 하는 복소 정현파를 기저로 하는 변환으로 넘어가게 된다는 것을 설명하는 것이 좋음.
+
+참고 문헌: Signals and systems, Oktay Alkin, CRC Press
+
 
 # 라플라스 변환
 
