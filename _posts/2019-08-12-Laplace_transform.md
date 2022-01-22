@@ -40,12 +40,6 @@ $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 
 와 같이 자연상수의 지수로 올라가게 되는 값으로 보는 것이라 약속해보자. 여기서 $t$는 시간으로 해석하자.
 
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_basis_comparison.png">
-  <br>
-  그림 1. 푸리에 변환과 라플라스 변환의 기저 함수 비교
-</p>
-
 그렇다면 $s$의 위치에 따라 $\exp(st)$의 형태 변화는 아래와 같이 달라진다. (실수부만 표현한 것)
 
 <p align = "center">
@@ -61,14 +55,9 @@ $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
   <br>
-  그림 2. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
+  그림 1. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
 </p>
 
-그렇다면, 새로운 변환을 생각해내기 위해서는 새로운 기저함수의 선형조합으로 신호를 표현할 수 있어야 한다는 것을 의미한다. 
-
-이 때, 새로운 기저함수들은 아래와 같은데,
-
-$$\exp(st)=\exp(\sigma t)\exp(j\omega t)$$
 
 기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보면 다음과 같다.
 
