@@ -16,58 +16,88 @@ tags: 신호처리
 * [푸리에 급수(Fourier Series)](https://angeloyeo.github.io/2019/06/23/Fourier_Series.html)
 * [푸리에 변환(Fourier Transform)](https://angeloyeo.github.io/2019/07/07/CTFT.html)
 
-# 푸리에 해석의 한계점
+# 라플라스 변환의 등장 배경
 
-앞서 푸리에 급수와 푸리에 변환에 대해 공부하면서 연속 시간 신호에 대한 주파수 해석을 할 수 있게 되었을 것이다. 그 뿐만 아니라 푸리에 해석 방법은 LTI system에 아주 유용하게 적용할 수 있어서 푸리에 해석을 이용하면 LTI system에 대한 분석이 가능했다. 
+앞서 푸리에 급수와 푸리에 변환에 대해 공부하면서 연속 시간 신호에 대한 주파수 해석을 할 수 있게 되었다. 그 뿐만 아니라 푸리에 해석 방법은 LTI system에 아주 유용하게 적용할 수 있어서 시스템의 impulse response에 푸리에 변환을 적용하면 LTI system에 대한 주파수 응답 특성을 이해할 수 있었다.
 
-디리클레 조건 --> absolutely integrable 한 신호와 stable system에 대해서만 푸리에 변환을 적용할 수 있다.
+그런데, 푸리에 급수 혹은 변환을 이용하기 위해선 조건이 붙는다. 일명 디리클레 조건이라고 하는 것인데, 말하자면 변환하고자 하는 신호가 absolutely integrable해야한다는 것이다. 만약 변환하고자 하는 것이 신호라면 발산하지 않는 신호여야 할 것이고 만약 impulse response라면 stable system의 impulse response만 푸리에 분석을 적용할 수 있다는 의미이다. 
 
 가령 $x(t) = t u(t)$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 해석을 통해 분석할 수가 없다.
 
-이 문제가 --> 어떻게 새로운 기저를 정할 것인가?에 관한 문제로 넘어가게 되고
+하지만 어떤 경우에는 불안정한 시스템을 분석하고, 어떤 입력 조건인 경우에 발산하는 출력을 내지 않게 제어해줄 수 있는지를 고려할 필요가 있다.다시 말해, 푸리에 변환의 개념을 더 확장시켜 안정 시스템이 아닌 경우에도 적용할 수 있는 변환 방법을 고려해보아야 한다는 뜻이다.
 
---> 결국은 amplitude가 시간에 따라 커지거나 작아지기도 하는 복소 정현파를 기저로 하는 변환으로 넘어가게 된다는 것을 설명하는 것이 좋음.
+피에르 시몽 라플라스(Pierre Simon Laplace, 1749-1827)는 이런 한계를 극복할 수 있게 푸리에 변환을 일반화시킬 수 있는 변환을 생각해냈다[^1]. 
 
-참고 문헌: Signals and systems, Oktay Alkin, CRC Press
+[^1]: Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1
 
+푸리에 변환의 한계점의 원인을 라플라스는 다음과 같이 생각했다. 아래의 그림은 가로축은 $\sigma$, 세로축은 $j\omega$에 해당하는 값을 나타낸 것이다. 그리고 이 값들은 두개가 더해져
 
-# 라플라스 변환
+$$s=\sigma + j\omega$$
 
-## 라플라스 변환의 정의
+라는 값을 갖게 되며, 최종적으로는
 
-라플라스 변환은 라플라스가 1785년에 고안해낸 함수 변환 기법이고, 라플라스 변환 역시 푸리에 변환처럼 적분 변환의 일종이다. 
+$$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 
-라플라스 변환의 수학적 정의를 보자.
+와 같이 자연상수의 지수로 올라가게 되는 값으로 보는 것이라 약속해보자. 여기서 $t$는 시간으로 해석하자.
 
-
-| DEFINITION 1. 라플라스 변환 |
-| --------- |
-| 함수 $f$가 $t\geq 0$에 대해 정의된 함수라고 하자. 이 때, 아래의 적분 변환은 함수 $f$의 라플라스 변환이라 한다.<br><center> $$ \mathfrak{L} \left[f(t)\right] = \int_{0^{-}}^{\infty}\exp(-st)f(t) dt \space \text{where} \space s = \sigma + j\omega$$</center>|
-
-사실 Laplace Transform은 정적분의 범위에 따라서 Double-Sided Laplace Transform, Single-sided Laplace Transform 등으로 나뉘기도 하며, 위의 Definition 1은 엄밀하게 말하자면 Single-Sided Laplace Transform이다. 
-
-하지만, 대부분의 라플라스 변환과 관련된 문제를 풀 때에는 Single-Sided Laplace Transform을 사용하고, 공업수학 책 Advanced Engineering Mathematics / Dennis G. Zill et al./ Third Edition /Jones and Barlett
-에서조차 Double-Sided Laplace Transform을 언급하지 않는다. 
-
-왜 그럴까? 그 이유는 Laplace Transform을 고안하게 된 이유와 밀접한 관련이 있다.
-
-원래 Laplace Transform은 비단 Ordinary Differential Equation을 풀기 위해서만 고안된 방법은 아니다. 
-
-원래 라플라스 변환은 자연계의 운동들, 예를 들어 포락선(envelope)같은 감쇄현상을 설명하기 위해서 고안된 개념이다. DEFINITION 1의 복소수 $s= \sigma + j\omega$에 대해서 생각해보자. $s$는 자연상수 $e$의 지수 형태로 표현되어 있는데, 이를 분리해서 생각해보면 상수부와 허수부로 분리된다는 것을 알 수 있다. 
-
-상수부분 $\exp(-\sigma t)$는 감쇄를, 허수부분 $\exp(-j\omega t)$는 오일러 공식에 의해 정현파 형태로 표현되게 된다. 이 실수부와 허수부를 곱하게 되면 감쇄하는 진동운동이 표현되는 것이다.
+그렇다면 $s$의 위치에 따라 $\exp(st)$의 형태 변화는 아래와 같이 달라진다. (실수부만 표현한 것)
 
 <p align = "center">
-  <img width = "400" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/DampedSine.png/525px-DampedSine.png">
+  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
   <br>
-  그림 1. 진동하며 감쇄하는 운동의 표현. $y=(e^{-x})(\cos(2*\pi*x))$을 그린 것. 출처: Wikipedia
+  라플라스 변환에서 $s$의 위치에 따른 기저 함수의 변화
+  <br>
+  빨간색 마커를 마우스로 움직여 보세요 ^^
 </p>
 
-거기에 라플라스 변환을 이용해서 분석하게 되는 시스템은 대부분 causal system이다. Causal System이 의미하는 것은 무언인가? 그것은 input signal이 $t\geq 0$ 에서 시작된다는 것을 의미하거나 또는 $t<0$에서 input signal 값이 0인 경우를 의미한다. 
+그리고 라플라스는 아래의 그림과 같이 $s=\sigma+j\omega$와 같은 복소수에 대해 $s=j\omega$인 경우가 푸리에 변환이 담당해주는 주파수 대역이라고 해석했다.
 
-그리고 자연 현상은 대부분 causal system이다. 그러므로, 일반적으로 라플라스 변환은 single-sided 라플라스 변환을 의미하며, 그것은 자연현상을 해석하기 위한 라플라스 변환의 원래의 고안 의도에 부합한다고도 말 할 수 있다.
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
+  <br>
+  그림 1. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
+</p>
 
-## 라플라스 변환의 활용
+
+그렇다면, 새로운 변환을 생각해내기 위해서는 새로운 기저함수의 선형조합으로 신호를 표현할 수 있어야 한다는 것을 의미한다. 
+
+이 때, 새로운 기저함수들은 아래와 같은데,
+
+$$\exp(st)=\exp(\sigma t)\exp(j\omega t)$$
+
+기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보면 다음과 같다.
+
+푸리에 변환은
+
+$$X(j\omega) = \int_{-\infty}^{\infty}x(t)\exp(-j\omega t)dt$$
+
+인데, 여기서 $j\omega$를 $s=\sigma + j\omega$로 치환하자.
+
+$$\Rightarrow X(\sigma+j\omega) = \int_{-\infty}^{\infty}x(t)\exp(-\sigma t)\exp(-j\omega t)dt$$
+
+$$=\int_{-\infty}^{\infty}x(t)\exp(-st)dt$$
+
+와 같다. 맨 마지막에 있는 식을 라플라스 변환(Laplace transform)이라고 부른다.
+
+그런데, 보통 라플라스 변환은 시스템에 대한 분석에 많이 사용하며 분석에 이용되는 대부분의 시스템은 causal system이기 때문에 적분 구간을 다음과 같이 변경하여 정의하는 것이 일반적이다. 혹은 미분방정식의 풀이에 이용하기 때문에 초기값 문제에 적용하기 위해 아래와 같이 변경해서 정의하는 것이 일반적이기도 하다. (이를 unilateral Laplace transform이라고도 부른다.) 
+
+$$\mathfrak{L}\lbrace x(t) \rbrace=\int_{0^-}^{\infty}x(t)\exp(-st)dt$$
+
+여기서 $0^-$은 0에 대한 좌극한이다.
+
+한편, 원래의 함수 $x(t)$를 기저함수들로 표현하면 다음과 같다. $X(\sigma+j\omega)$는 $x(t)\exp(-\sigma t)$를 푸리에 변환한 것이므로,
+
+$$x(t)\exp(-\sigma t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\sigma+j\omega)\exp(\sigma+j\omega)t d\omega$$
+
+여기서 변수 변환을 이용해 $s=\sigma + j\omega$라고 쓰면, $ds = jd\omega$이므로,
+
+$$x(t) = \frac{1}{j2\pi}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)\exp(st)ds$$
+
+와 같이 쓸 수 있다. 그리고 이 마지막 식을 라플라스 역변환(inverse Laplace transform)이라고 부른다. 이 적분은 복소 공간에서 선적분에 해당하게 된다. 다만 라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
+
+(편집중, 아래는 구 버전)
+
+# 라플라스 변환의 활용
 
 라플라스 변환은 연속시간 시스템 또는 아날로그 시스템에서 시스템의 안정성을 확인하기 위해서 주로 사용된다. 이 때, 특히 주목할 것은 s-plane 상의 pole의 위치이다. 일반적인 전달 함수는 다음과 같이 나타낼 수 있다.
 
@@ -151,11 +181,6 @@ $$\mathfrak{L}\left[f(t)\right] = \mathfrak{F}\left[\exp(-\sigma t)f(t)\right]$$
 
 [^2]: 그래서 우리가 배우는 과목 이름이 Signals and System이고 주인공들이 푸리에 변환과 라플라스 변환이다. 물론 Continuous Time Domain에 한해서...
 
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
-  <br>
-  그림 4. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
-</p>
 
 그림 4에서는 s-plane과 Fourier transform domain과의 관계도 표현하고 있다. 즉, 전달함수 $X(s)$를 구한 뒤 $s=j\omega$를 대입하면 주파수 응답을 얻을 수 있다는 것이다. 그것을 그림으로 표현한 것은 다음과 같다. 
 
@@ -190,5 +215,8 @@ $$|H(j\omega)| = \frac{A_0\omega_0^2}{\sqrt{(\omega_0^2-\omega^2)^2 +(\alpha\ome
 $$\angle H(j\omega) = \tan^{-1}\left(\frac{-\alpha\omega_0\omega}{\omega_0^2-\omega^2}\right)$$
 
 가 된다.
-<p align = "center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6LKCyaPRTr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+# 참고문헌
+
+* Signals and systems, Oktay Alkin, CRC Press
+* [7. Laplace transform, EEE2047S: Signals and Systems I, Fred Nicolls, University of Cape Town](https://www.dip.ee.uct.ac.za/~nicolls/lectures/eee2047s/notes/07_laplace_notes.pdf)
