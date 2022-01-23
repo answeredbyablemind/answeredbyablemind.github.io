@@ -33,6 +33,18 @@ tags: 신호처리
 푸리에 변환의 한계점의 원인을 라플라스는 기저 함수가 진폭에 변화가 없는 주기함수로만 구성되어 있기 때문에 위와 같은 한계가 있다고 생각했다. 
 
 <p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_fourier_summary.png">
+  <br>
+  그림 1. 푸리에 변환은 복소 정현파들과 닮은 정도를 각각의 각 주파수 $\omega$에 대해 계산한 것이다.
+</p>
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_summary.png">
+  <br>
+  그림 2. 라플라스 변환은 서서히 작아지거나 커지는 복소 정현파들과 닮은 정도를 각각의 decaying factor $\sigma$와 각 주파수 $\omega$에 대해 계산한 것이다.
+</p>
+
+<p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_s_plane.png">
   <br>
   그림 1. 임의의 복소수에 대응되는 변수 $s=\sigma+j\omega$를 나타내는 $s$-plane
