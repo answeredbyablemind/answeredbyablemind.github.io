@@ -30,11 +30,19 @@ tags: 신호처리
 
 [^1]: Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1
 
-푸리에 변환의 한계점의 원인을 라플라스는 다음과 같이 생각했다. 아래의 그림은 가로축은 $\sigma$, 세로축은 $j\omega$에 해당하는 값을 나타낸 것이다. 그리고 이 값들은 두개가 더해져
+푸리에 변환의 한계점의 원인을 라플라스는 기저 함수가 진폭에 변화가 없는 주기함수로만 구성되어 있기 때문에 위와 같은 한계가 있다고 생각했다. 
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_s_plane.png">
+  <br>
+  그림 1. 임의의 복소수에 대응되는 변수 $s=\sigma+j\omega$를 나타내는 $s$-plane
+</p>
+
+위 그림은 가로축은 $\sigma$, 세로축은 $j\omega$에 해당하는 값을 나타낸 것이다. 그리고 이 값들은 두개가 더해져
 
 $$s=\sigma + j\omega$$
 
-라는 값을 갖게 되며, 최종적으로는
+라는 임의의 복소수 값을 갖게 되며, 최종적으로는
 
 $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 
@@ -55,7 +63,7 @@ $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
   <br>
-  그림 1. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
+  그림 2. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
 </p>
 
 
@@ -92,7 +100,7 @@ $$x(t) = \frac{1}{j2\pi}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)\exp(st)ds$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/line_integral_interval.png">
   <br>
-  그림 2. 라플라스 역변환의 선적분구간
+  그림 3. 라플라스 역변환의 선적분구간
 </p>
 
 다만 라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
