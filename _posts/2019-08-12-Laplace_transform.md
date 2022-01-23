@@ -53,7 +53,7 @@ tags: 신호처리
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_s_plane.png">
   <br>
-  그림 1. 임의의 복소수에 대응되는 변수 $s=\sigma+j\omega$를 나타내는 $s$-plane
+  그림 2. 임의의 복소수에 대응되는 변수 $s=\sigma+j\omega$를 나타내는 $s$-plane
 </p>
 
 위 그림은 가로축은 $\sigma$, 세로축은 $j\omega$에 해당하는 값을 나타낸 것이다. 그리고 이 값들은 두개가 더해져
@@ -71,7 +71,19 @@ $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_summary.png">
   <br>
-  그림 2. 라플라스 변환은 서서히 작아지거나 커지는 복소 정현파들과 닮은 정도를 각각의 decaying factor $\sigma$와 각 주파수 $\omega$에 대해 계산한 것이다.
+  그림 3. 라플라스 변환은 서서히 작아지거나 커지는 복소 정현파들과 닮은 정도를 각각의 decaying factor $\sigma$와 각 주파수 $\omega$에 대해 계산한 것이다.
+</p>
+
+위 그림에 대해 복소수 $s=\sigma+j\omega$의 위치에 따른 특성을 써보자면 다음과 같을 것이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic3.png">
+  <br>
+  그림 4. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 
+  <br>
+  그림 출처: MATLAB in use, transfer function
+  <br>
+  (지금은 이 사이트가 사라졌더군요 ㅠㅠ 교주 LHS님 돌아오십시오...)
 </p>
 
 라플라스 변환의 식을 유도하기 위해 기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보자.
@@ -107,131 +119,76 @@ $$x(t) = \frac{1}{j2\pi}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)\exp(st)ds$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/line_integral_interval.png">
   <br>
-  그림 3. 라플라스 역변환의 선적분구간
+  그림 5. 라플라스 역변환의 선적분구간
 </p>
 
-다만 라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
-
-(편집중, 아래는 구 버전)
-
-# 라플라스 변환의 활용
-
-라플라스 변환은 연속시간 시스템 또는 아날로그 시스템에서 시스템의 안정성을 확인하기 위해서 주로 사용된다. 이 때, 특히 주목할 것은 s-plane 상의 pole의 위치이다. 일반적인 전달 함수는 다음과 같이 나타낼 수 있다.
-
-$$H(s) = \frac
-{b(s-z_0)(s-z_1)\cdots(s-z_{n-1})}
-{a(s-p_0)(s-p_1)\cdots(s-p_{n-1})}$$
-
-이 때, 문제를 단순화 시키기 위해 아래 식 (3)의 time-domain representation은 어떠한 것인지 생각해보자[^1]. 
-
-[^1]: 다시 말해, 식 (3)과 같은 transfer function을 얻기 위해선 어떤 time-domain representation이 있었어야 하는지를 유추해보고자 하는데, 여기선 본래는 inverse Laplace transform을 사용해야 하지만 답을 알고있다고 생각하고 time-domain representation을 Laplace 변환해서 식 (3)과 같은 결과를 얻고자 한다.
-
-$$H(s) = \frac{1}{s-p_l}$$
-
-$$\Rightarrow \mathfrak{L}\left[k_l\exp(p_l t)\right] =\int_{0}^{\infty}k_l\exp(p_l t) \exp(-st) dt$$
-
-$$=\int_{0}^{\infty}k_l \exp\left((p_l-s)t\right)dt$$
-
-[//]:# (식 5)
-
-$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\exp\left((p_l-s)t\right)|^{b}_{0}$$
-
-$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\left\lbrace\exp\left((p_l-s)b\right)- 1\right\rbrace$$
-
-$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\left\lbrace\exp\left(p_lb-sb\right)- 1\right\rbrace$$
-
-$$=\lim_{b\rightarrow \infty}\frac{k_l}{p_l-s}\left\lbrace\exp(p_lb)\cdot \exp(-sb) - 1\right\rbrace$$
-
-$$=\frac{k_l}{p_l-s}\left\lbrace 0 - 1\right\rbrace$$
-
-[//]:# (식 10)
-
-$$ = \frac{k_l}{s-p_l}$$
-
-이 때, $p_l$은 pole의 위치를 의미하게 된다.
-
-다시 한번 여기서 $p_l$을 실수부와 허수부로 나눠서 생각해보자.
-
-$$p_l = \sigma_l + j\omega$$
-
-$$\therefore \exp(p_l t) =\exp(\sigma_l t+ j\omega t) = \exp(\sigma_l t) \times \exp(j\omega t)$$
-
-식 (13)에서 $\exp(j\omega t)$가 의미하는 것은 각속도 $\omega$로 회전하는 원의 표현이며, $\omega$의 크기가 커질 수록 빠르게 회전하는 것을 의미한다.
-
-
-한편, $\exp(\sigma_l t)$는 원의 반지름이 시간에 따라 어떻게 변하는가를 의미하는데, $\sigma_l < 0$인 경우 원의 반지름은 시간이 지나갈 수록 줄어들게 되며, $\sigma_l = 0$인 경우 원의 반지름은 그대로 유지되며, $\sigma_l > 0$인 경우 원의 반지름은 시간이 지나갈수록 커진다는 뜻이다. 따라서 입력신호 $k_l \exp(p_l t)$의 $p_l$의 실수부의 값의 부호에 따라 입력 신호는 다음과 같이 표현될 수 있다. 
-
-<p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic2.png">
-  <br>
-  그림 2. pole의 실수부 부호에 따른 입력 신호의 시간 domain 상 표현
-</p>
-
-그렇기 때문에 s-plane 상에서 stability를 결정하게 되는 요소는 pole의 실수부의 부호가 되고, 복소 평면 상에서 pole이 어디에 있는지에 따라 stability를 판단할 수 있게 된다. 그림으로 표현한 것은 다음과 같다.
-
-<p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic3.png">
-  <br>
-  그림 3. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: MATLAB in use, transfer function
-</p>
-
-
-# 푸리에 변환과 라플라스 변환
-
-푸리에 변환(Fourier Transform)과 라플라스 변환(Laplace Transform)은 가장 널리 사용되는 두 개의 적분변환이다. 사실, ‘푸리에 변환(조금 더 정확하게 말하면 Continuous Time Fourier Transform)을 일반화 시킨 것을 라플라스 변환이다’라고 말할 수도 있는 것이고, 반대로 ‘라플라스 변환의 특별한 경우가 푸리에 변환이다’라고 말할 수도 있는 것이다. 
-
-그것은 수식의 관계를 통해서 보면 더욱 명확해진다. 푸리에 변환의 수식은 다음과 같이 정의되어 있다는 것을 알고 있다.
-
-$$\mathfrak{F}\left[f(t)\right] = \int_{-\infty}^{\infty}f(t)\exp(-j2\pi f t) dt = \int_{-\infty}^{\infty}f(t)\exp(-j\omega t) dt$$
-
-그리고 라플라스 변환의 수식은 다음과 같이 정의되어 있다는 것도 알고 있다.
-
-$$\mathfrak{L}\left[f(t)\right]=\int_{-\infty}^{\infty}f(t) \exp(-st) dt = \int_{-\infty}^{\infty}f(t)\exp(-(\sigma+j\omega)t) dt$$
-
-$$=\int_{-\infty}^{\infty}f(t) \exp(-\sigma t) \exp(-j\omega t) dt$$
-
-그러므로, 라플라스 변환과 푸리에 변환의 수식적 관계는 다음과 같다고 할 수 있다.
-
-$$\mathfrak{L}\left[f(t)\right] = \mathfrak{F}\left[\exp(-\sigma t)f(t)\right]$$
-
-즉, $f(t)$의 라플라스 변환은 $f(t)$에 감쇠함수 $\exp(-\sigma t)$를 곱해서 푸리에 변환한 것과 같다.이 작은 차이에 의해서 **푸리에 변환은 신호를 분석하는데 적절하게 이용** 되고, **라플라스 변환은 시스템을 분석하는데 적절하게 이용**된다. [^2]
-
-[^2]: 그래서 우리가 배우는 과목 이름이 Signals and System이고 주인공들이 푸리에 변환과 라플라스 변환이다. 물론 Continuous Time Domain에 한해서...
-
-
-그림 4에서는 s-plane과 Fourier transform domain과의 관계도 표현하고 있다. 즉, 전달함수 $X(s)$를 구한 뒤 $s=j\omega$를 대입하면 주파수 응답을 얻을 수 있다는 것이다. 그것을 그림으로 표현한 것은 다음과 같다. 
+여기서 재밌는 점은 $\sigma_1 = 0$으로 선택하게 되면 푸리에 변환-역변환과 같은 결과를 얻게 된다는 것이다. 
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic5.png">
   <br>
-  그림 5. 복소평면(특히, s 평면) 상에 표현된 라플라스 변환과 푸리에 변환의 관계
+  그림 6. 복소평면(특히, s 평면) 상에 표현된 라플라스 변환과 푸리에 변환의 관계
   <br>
   <a href = "https://www.quora.com/Signal-Processing-What-are-the-differences-between-Laplace-and-Fourier-Transform"> 그림 출처: Quora의 라플라스 변환과 푸리에 변환의 차이점 </a>
 </p>
 
-예를 들어 다음과 같은 lowpass filter의 transfer function을 얻었다고 하자.
+라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
 
-$$H(s) = \frac{A_0\omega_0^2}{s^2+\alpha\omega_0 s +\omega_0^2}$$
+# 라플라스 변환의 예시와 시각화
 
-이 때, $s=j\omega$를 대입해주면 이 시스템의 bode plot을 얻을 수 있게 되어서 주파수 응답을 확인할 수 있게 된다.
+## 예시 1
 
-$$H(j\omega) = \frac{A_0\omega_0^2}{s^2 + \alpha \omega_0 s + \omega_0^2}\big|_{s=j\omega}$$
+아주 간단한 신호부터 라플라스 변환을 수행해보자. 라플라스 변환이 어려운 이유는 배경에 대한 이해가 어렵기 때문인 것도 있지만 수식이 압도적이기 때문인 것도 있다.
 
-$$=\frac{A_0\omega_0^2}{-\omega^2+j\alpha\omega_0\omega+\omega_0^2}$$
+하지만, 사실상 수행해주는 적분은 크게 어렵지 않으므로 한번 도전해보자.
 
-$$=\frac{A_0\omega_0^2}{(\omega_0^2 - \omega^2)+j\alpha\omega_0\omega}$$
+다음과 같은 unit impulse 함수에 라플라스 변환을 수행해보자.
 
-$$=\frac{A_0\omega_0^2\left((\omega_0^2-\omega^2)-j\alpha\omega_0\omega\right)}{(\omega_0^2-\omega^2)^2+(\alpha\omega_0\omega)^2}$$
+$$x(t) = \delta(t)$$
 
-따라서,
+위 신호에 대해 라플라스 변환을 계산하면 아래와 같다.
 
-$$|H(j\omega)| = \frac{A_0\omega_0^2}{\sqrt{(\omega_0^2-\omega^2)^2 +(\alpha\omega_0\omega)^2}}$$
+$$X(s) = \int_{-\infty}^{\infty}\delta(t)\exp(-st)dt = \exp(-s(0))=1$$
 
-이고,
+## 예시 2
 
-$$\angle H(j\omega) = \tan^{-1}\left(\frac{-\alpha\omega_0\omega}{\omega_0^2-\omega^2}\right)$$
+다음과 같은 사각펄스에 대해 라플라스 변환을 구해보자.
 
-가 된다.
+$$x(t) = \begin{cases} 1 && 0\lt t \lt \tau \\ 0 && \text{else}\end{cases}$$
+
+위 신호에 대해 라플라스 변환을 계산하면 다음과 같다.
+
+$$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\frac{1-\exp(-s\tau)}{s}$$
+
+잘 생각해보면 $s=\sigma+j\omega$이기 때문에 $X(s)$는 $X(\sigma, \omega)$라고 쓸 수도 있다. 다시 말해 입력 변수를 두 개 받는 함수라는 뜻이며 그 출력값이 복소수인 함수이다.
+
+이 함수를 그리기 위해서는 $x, y$ 평면에 $\sigma$, $j\omega$가 오고 $z$축에 $\|X(\sigma,\omega)\|$와 같이 $X(s)$의 크기가 오는 방법으로 그리는 것이 좋다. (크기 외에도 위상 $\angle X(s)$도 고려할 수 있지만 여기서는 생략하자.)
+
+이것을 그리면 다음과 같은 결과를 얻게 된다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization.png">
+  <br>
+  그림 7. 예시 문제에서 $X(s)$의 시각화. 이와 함께 $s=j\omega$인 경우에 해당하는 magnitude plot도 함께 확인할 수 있으며 이는 푸리에 변환의 주파수 응답이다.
+  <br>
+  코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
+</p>
+
+이 때, $s=j\omega$ 부분만 따로 떼서 그리면 아래 그림과 같으며, 이것은 사각펄스 $x(t)$의 푸리에 변환 결과에 대해 magnitude만 확인한 것과 같은 것이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization2.png">
+  <br>
+  그림 8. 푸리에 변환의 주파수 응답 부분만 따로 떼서 시각화 한 것
+  <br>
+  코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
+</p>
+
+## 예시 3
+
+# 라플라스 변환쌍
+
+# 미분방정식의 풀이를 위한 용법
 
 # 참고문헌
 
