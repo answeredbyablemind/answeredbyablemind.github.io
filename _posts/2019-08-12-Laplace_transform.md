@@ -8,6 +8,14 @@ key: 20190812
 tags: 신호처리
 ---
 
+<p align = "center">
+  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
+  <br>
+  라플라스 변환에서 $s$의 위치에 따른 기저 함수의 변화
+  <br>
+  빨간색 마커를 마우스로 움직여 보세요 ^^
+</p>
+
 # Prerequisites
 
 이번 포스팅을 더 잘 이해하기 위해서는 아래의 내용에 대해 알고 오시는 것이 좋습니다.
@@ -33,16 +41,14 @@ tags: 신호처리
 푸리에 변환의 한계점의 원인을 라플라스는 기저 함수가 진폭에 변화가 없는 주기함수로만 구성되어 있기 때문에 위와 같은 한계가 있다고 생각했다. 
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_fourier_summary.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_fourier_summary.png">
   <br>
   그림 1. 푸리에 변환은 복소 정현파들과 닮은 정도를 각각의 각 주파수 $\omega$에 대해 계산한 것이다.
 </p>
 
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_summary.png">
-  <br>
-  그림 2. 라플라스 변환은 서서히 작아지거나 커지는 복소 정현파들과 닮은 정도를 각각의 decaying factor $\sigma$와 각 주파수 $\omega$에 대해 계산한 것이다.
-</p>
+위 그림에서 볼 수 있듯이 푸리에 변환은 복소 정현파를 기저함수로 하는 변환이며, 푸리에 변환의 기저 함수들은 허수축 위에 나열할 수 있다.
+
+라플라스는 이러한 관점에서 시간에 따라 크기가 작아지거나 커지는 함수들을 포함하여 기저로 삼을 수 있도록 허수 축 하나에 실수축을 덧대어 s-plane을 생각해냈다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_s_plane.png">
@@ -60,26 +66,15 @@ $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
 
 와 같이 자연상수의 지수로 올라가게 되는 값으로 보는 것이라 약속해보자. 여기서 $t$는 시간으로 해석하자.
 
-그렇다면 $s$의 위치에 따라 $\exp(st)$의 형태 변화는 아래와 같이 달라진다. (실수부만 표현한 것)
-
-<p align = "center">
-  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
-  <br>
-  라플라스 변환에서 $s$의 위치에 따른 기저 함수의 변화
-  <br>
-  빨간색 마커를 마우스로 움직여 보세요 ^^
-</p>
-
 그리고 라플라스는 아래의 그림과 같이 $s=\sigma+j\omega$와 같은 복소수에 대해 $s=j\omega$인 경우가 푸리에 변환이 담당해주는 주파수 대역이라고 해석했다.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic4.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_summary.png">
   <br>
-  그림 2. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 그림 출처: dsprelated.com
+  그림 2. 라플라스 변환은 서서히 작아지거나 커지는 복소 정현파들과 닮은 정도를 각각의 decaying factor $\sigma$와 각 주파수 $\omega$에 대해 계산한 것이다.
 </p>
 
-
-기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보면 다음과 같다.
+라플라스 변환의 식을 유도하기 위해 기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보자.
 
 푸리에 변환은
 
