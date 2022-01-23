@@ -83,7 +83,7 @@ $$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
   <br>
   그림 출처: MATLAB in use, transfer function
   <br>
-  (지금은 이 사이트가 사라졌더군요 ㅠㅠ 교주 LHS님 돌아오십시오...)
+  (지금은 이 사이트가 사라졌더군요 ㅠㅠ 교주 LGS님 돌아오십시오...)
 </p>
 
 라플라스 변환의 식을 유도하기 위해 기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보자.
