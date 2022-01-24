@@ -186,6 +186,42 @@ $$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\fra
 
 ## 예시 3
 
+아래의 신호에 대해 라플라스 변환을 계산하시오.
+
+$$x(t)=\exp(at)u(t)$$
+
+여기서 $u(t)$는 unit step function으로 아래와 같은 함수이다.
+
+$$u(t)=\begin{cases} 1 && t \geq 0 \\ 0 && \text{otherwise} \end{cases}$$
+
+또, $a$는 임의의 복소수이다.
+
+라플라스 변환은 다음과 같이 계산된다.
+
+$$X(s) = \int_{-\infty}^{\infty}\exp(at)u(t)\exp(-st)dt$$
+
+$$=\int_{0}^{\infty}\exp(at)\exp(-st)dt=\int_{0}^{\infty}\exp((a-s)t) dt=\frac{1}{a-s}\exp((a-s)t)\big|_{0}^{\infty}$$
+
+여기서 $a$를 실수부 $a_r$과 허수부 $a_i$로 구별하여 $a=a_r+ja_i$로 쓰자. 그리고 $s=\sigma+j\omega$로 치환하여 써보면 다음과 같다.
+
+$$\Rightarrow X(s) = \frac{1}{a_r+ja_i-\sigma-j\omega}\exp(a_r+ja_i-\sigma -j\omega)t\big|_{0}^{\infty}$$
+
+$$=\frac{1}{a_r+ja_i-\sigma-j\omega}\exp((a_r-\sigma)t)\exp(j(a_i-\omega)t)\big|_{0}^{\infty}$$
+
+여기서 $\exp((a_r-\sigma)t)$에 $t=\infty$를 넣는다고 하면 이 함수가 발산하지 않기 위해선 아래의 조건이 만족되어야 한다.
+
+$$a_r-\sigma \lt 0 \Longrightarrow \sigma \gt a_r$$
+
+즉,
+
+$$\text{Re}\lbrace s \rbrace \gt \text{Re}\lbrace a \rbrace$$
+
+인 조건을 만족해야 한다는 의미이다. 라플라스 변환을 수행할 때는 라플라스 변환 값이 수렴하기 위한 조건들이 따라붙는다. 영어로는 Region of Convergence(ROC)라고 많이 부른다. 동일한 라플라스 변환 결과를 얻게 되더라도 ROC가 다른 경우들도 있기 때문에 라플라스 변환을 구해준 뒤에는 ROC 조건을 함께 써주는 것이 일반적이다.
+
+결론적으로 라플라스 변환 $X(s)$는 다음과 같다.
+
+$$X(s) = \frac{1}{a-s}[0-1]=\frac{1}{s-a},\space \text{Re}\lbrace s\rbrace \gt \text{Re}\lbrace a\rbrace$$
+
 # 라플라스 변환쌍
 
 # 미분방정식의 풀이를 위한 용법
