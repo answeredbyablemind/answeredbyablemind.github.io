@@ -40,7 +40,7 @@ tags: 신호처리
 
 그런데, 푸리에 급수 혹은 변환을 이용하기 위해선 조건이 붙는다. 일명 디리클레 조건이라고 하는 것인데, 말하자면 변환하고자 하는 신호가 absolutely integrable해야한다는 것이다. 만약 변환하고자 하는 것이 신호라면 발산하지 않는 신호여야 할 것이고 만약 impulse response라면 stable system의 impulse response만 푸리에 분석을 적용할 수 있다는 의미이다. 
 
-가령 $x(t) = e^{at}\cos(\omega t)u(t),\space \text{ for }a>0$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 해석을 통해 분석할 수가 없다.
+가령 $x(t) = e^{at}\cos(\omega t)u(t),\space \text{ for }a>0$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 변환이 존재하지 않기 때문에 푸리에 해석을 통해 주파수 분석을 수행할 수 없다. 시간이 흘러감에 따라 신호의 크기가 무한대로 발산하기 때문이다
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_diverging_cosine.png">
@@ -48,21 +48,15 @@ tags: 신호처리
   그림 1. 시간이 지남에 따라 발산하는 정현파
 </p>
 
-이유는 적분이 불가능하기 때문이다. 실제로 $x(t)$를 푸리에 변환해보면,
-
-$$X(f)=\int_{-\infty}^{\infty}x(t)\exp(-j2\pi ft)dt = \int_{-\infty}^{\infty}\exp(t)\cos(2\pi 3 t)u(t)\exp(-j2\pi ft)dt$$
-
-$$=\int_{0}^{\infty}\cos(6\pi t)\exp(t)\exp(-j2\pi ft)dt$$
-
-$$=\left|\frac{1}{6\pi}\sin(6\pi t)\exp(t)\exp(-j2\pi ft)\right|_{0}^{\infty}\\-\int_{0}^{\infty}\frac{1}{6\pi}\sin(6\pi t)\left(\frac{1}{1-j2\pi f}\exp(t)\exp(-j2\pi ft)\right)dt$$
-
-문제는 $\exp(\infty)$는 무한대이기 때문에 위 적분값은 발산하며 푸리에 변환이 존재하지 않는다. 다시 말해, 푸리에 변환의 주된 응용 분야인 주파수 분석이 불가능해진다는 뜻이다. 하지만 불안정한 시스템도 주파수 분석을 할 수만 있다면 유용한 점이 많을 것이다. 가령, 이 신호 혹은 임펄스 응답이 얼마나 빠른 속도로 발산하게 되는지, 그리고 어떤 주파수로 oscilating하는지 등에 대해 알 수 있게 된다는 것이다.
+하지만 불안정한 시스템도 주파수 분석을 할 수만 있다면 유용한 점이 많을 것이다. 가령, 이 신호 혹은 임펄스 응답이 얼마나 빠른 속도로 발산하게 되는지, 그리고 어떤 주파수로 oscilating하는지 등에 대해 알 수 있게 된다는 것이다.
 
 피에르 시몽 라플라스(Pierre Simon Laplace, 1749-1827)는 이런 한계를 극복할 수 있게 푸리에 변환을 일반화시킬 수 있는 변환을 생각해냈다[^1]. 
 
 [^1]: Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1
 
 아이디어는 아주 간단하다. 임의의 실수 $\sigma$를 상정하고 oscilating term을 상쇄시킬 수 있는 적절한 $\exp(-\sigma t)$를 곱해서 푸리에 변환하는 것이다.
+
+
 
 # 라플라스 변환의 예시와 시각화
 
