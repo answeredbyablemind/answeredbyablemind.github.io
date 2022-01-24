@@ -9,11 +9,21 @@ tags: 신호처리
 ---
 
 <p align = "center">
-  <iframe width = "810" height = "410" src = "https://angeloyeo.github.io/p5/2019-08-12-Laplace_Transform_preview/" frameborder = "0"></iframe>
+  <iframe width = "101%" height = "650" src = "https://mathlets.org/javascript/build/polesVibrations.html" frameborder = "0"></iframe>
   <br>
-  라플라스 변환에서 $s$의 위치에 따른 기저 함수의 변화
+  pole의 위치와 입력 함수의 관계
   <br>
-  빨간색 마커를 마우스로 움직여 보세요 ^^
+  출처: MIT Mathlets, 
+  <a href = "https://mathlets.org/mathlets/poles-and-vibrations/">https://mathlets.org/mathlets/poles-and-vibrations/</a>
+</p>
+
+<p align = "center">
+  <iframe width = "101%" height = "650" src = "https://mathlets.org/javascript/build/ampRespPoleDiagram.html" frameborder = "0"></iframe>
+  <br>
+  pole diagram과 주파수 응답의 관계
+  <br>
+  출처: MIT Mathlets, 
+  <a href = "https://mathlets.org/mathlets/amplitude-response-pole-diagram/">https://mathlets.org/mathlets/amplitude-response-pole-diagram/</a>
 </p>
 
 # Prerequisites
