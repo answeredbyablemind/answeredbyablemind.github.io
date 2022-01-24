@@ -82,40 +82,6 @@ $$X(s) = \int_{-\infty}^{\infty}\delta(t)\exp(-st)dt = \exp(-s(0))=1$$
 
 ## 예시 2
 
-다음과 같은 사각펄스에 대해 라플라스 변환을 구해보자.
-
-$$x(t) = \begin{cases} 1 && 0\lt t \lt \tau \\ 0 && \text{else}\end{cases}$$
-
-위 신호에 대해 라플라스 변환을 계산하면 다음과 같다.
-
-$$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\frac{1-\exp(-s\tau)}{s}$$
-
-잘 생각해보면 $s=\sigma+j\omega$이기 때문에 $X(s)$는 $X(\sigma, \omega)$라고 쓸 수도 있다. 다시 말해 입력 변수를 두 개 받는 함수라는 뜻이며 그 출력값이 복소수인 함수이다.
-
-이 함수를 그리기 위해서는 $x, y$ 평면에 $\sigma$, $j\omega$가 오고 $z$축에 $\|X(\sigma,\omega)\|$와 같이 $X(s)$의 크기가 오는 방법으로 그리는 것이 좋다. (크기 외에도 위상 $\angle X(s)$도 고려할 수 있지만 여기서는 생략하자.)
-
-이것을 그리면 다음과 같은 결과를 얻게 된다.
-
-<p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization.png">
-  <br>
-  그림 7. 예시 문제에서 $X(s)$의 시각화. 이와 함께 $s=j\omega$인 경우에 해당하는 magnitude plot도 함께 확인할 수 있으며 이는 푸리에 변환의 주파수 응답이다.
-  <br>
-  코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
-</p>
-
-이 때, $s=j\omega$ 부분만 따로 떼서 그리면 아래 그림과 같으며, 이것은 사각펄스 $x(t)$의 푸리에 변환 결과에 대해 magnitude만 확인한 것과 같은 것이다.
-
-<p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization2.png">
-  <br>
-  그림 8. 푸리에 변환의 주파수 응답 부분만 따로 떼서 시각화 한 것
-  <br>
-  코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
-</p>
-
-## 예시 3
-
 아래의 신호에 대해 라플라스 변환을 계산하시오.
 
 $$x(t)=\exp(at)u(t)$$
@@ -152,6 +118,39 @@ $$\text{Re}\lbrace s \rbrace \gt \text{Re}\lbrace a \rbrace$$
 
 $$X(s) = \frac{1}{a-s}[0-1]=\frac{1}{s-a},\space \text{Re}\lbrace s\rbrace \gt \text{Re}\lbrace a\rbrace$$
 
+## 예시 3
+
+다음과 같은 사각펄스에 대해 라플라스 변환을 구해보자.
+
+$$x(t) = \begin{cases} 1 && 0\lt t \lt \tau \\ 0 && \text{else}\end{cases}$$
+
+위 신호에 대해 라플라스 변환을 계산하면 다음과 같다.
+
+$$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\frac{1-\exp(-s\tau)}{s}$$
+
+잘 생각해보면 $s=\sigma+j\omega$이기 때문에 $X(s)$는 $X(\sigma, \omega)$라고 쓸 수도 있다. 다시 말해 입력 변수를 두 개 받는 함수라는 뜻이며 그 출력값이 복소수인 함수이다.
+
+이 함수를 그리기 위해서는 $x, y$ 평면에 $\sigma$, $j\omega$가 오고 $z$축에 $\|X(\sigma,\omega)\|$와 같이 $X(s)$의 크기가 오는 방법으로 그리는 것이 좋다. (크기 외에도 위상 $\angle X(s)$도 고려할 수 있지만 여기서는 생략하자.)
+
+이것을 그리면 다음과 같은 결과를 얻게 된다.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization.png">
+  <br>
+  그림 7. 예시 문제에서 $X(s)$의 시각화. 이와 함께 $s=j\omega$인 경우에 해당하는 magnitude plot도 함께 확인할 수 있으며 이는 푸리에 변환의 주파수 응답이다.
+  <br>
+  코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
+</p>
+
+이 때, $s=j\omega$ 부분만 따로 떼서 그리면 아래 그림과 같으며, 이것은 사각펄스 $x(t)$의 푸리에 변환 결과에 대해 magnitude만 확인한 것과 같은 것이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization2.png">
+  <br>
+  그림 8. 푸리에 변환의 주파수 응답 부분만 따로 떼서 시각화 한 것
+  <br>
+  코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
+</p>
 # 라플라스 변환쌍
 
 # 미분방정식의 풀이를 위한 용법
