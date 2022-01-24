@@ -40,109 +40,29 @@ tags: 신호처리
 
 그런데, 푸리에 급수 혹은 변환을 이용하기 위해선 조건이 붙는다. 일명 디리클레 조건이라고 하는 것인데, 말하자면 변환하고자 하는 신호가 absolutely integrable해야한다는 것이다. 만약 변환하고자 하는 것이 신호라면 발산하지 않는 신호여야 할 것이고 만약 impulse response라면 stable system의 impulse response만 푸리에 분석을 적용할 수 있다는 의미이다. 
 
-가령 $x(t) = t u(t)$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 해석을 통해 분석할 수가 없다.
+가령 $x(t) = e^{at}\cos(\omega t)u(t),\space \text{ for }a>0$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 해석을 통해 분석할 수가 없다.
 
-하지만 어떤 경우에는 불안정한 시스템을 분석하고, 어떤 입력 조건인 경우에 발산하는 출력을 내지 않게 제어해줄 수 있는지를 고려할 필요가 있다.다시 말해, 푸리에 변환의 개념을 더 확장시켜 안정 시스템이 아닌 경우에도 적용할 수 있는 변환 방법을 고려해보아야 한다는 뜻이다.
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_diverging_cosine.png">
+  <br>
+  그림 1. 시간이 지남에 따라 발산하는 정현파
+</p>
+
+이유는 적분이 불가능하기 때문이다. 실제로 $x(t)$를 푸리에 변환해보면,
+
+$$X(f)=\int_{-\infty}^{\infty}x(t)\exp(-j2\pi ft)dt = \int_{-\infty}^{\infty}\exp(t)\cos(2\pi 3 t)u(t)\exp(-j2\pi ft)dt$$
+
+$$=\int_{0}^{\infty}\cos(6\pi t)\exp(t)\exp(-j2\pi ft)dt$$
+
+$$=\left|\frac{1}{6\pi}\sin(6\pi t)\exp(t)\exp(-j2\pi ft)\right|_{0}^{\infty}\\-\int_{0}^{\infty}\frac{1}{6\pi}\sin(6\pi t)\left(\frac{1}{1-j2\pi f}\exp(t)\exp(-j2\pi ft)\right)dt$$
+
+문제는 $\exp(\infty)$는 무한대이기 때문에 위 적분값은 발산하며 푸리에 변환이 존재하지 않는다. 다시 말해, 푸리에 변환의 주된 응용 분야인 주파수 분석이 불가능해진다는 뜻이다. 하지만 불안정한 시스템도 주파수 분석을 할 수만 있다면 유용한 점이 많을 것이다. 가령, 이 신호 혹은 임펄스 응답이 얼마나 빠른 속도로 발산하게 되는지, 그리고 어떤 주파수로 oscilating하는지 등에 대해 알 수 있게 된다는 것이다.
 
 피에르 시몽 라플라스(Pierre Simon Laplace, 1749-1827)는 이런 한계를 극복할 수 있게 푸리에 변환을 일반화시킬 수 있는 변환을 생각해냈다[^1]. 
 
 [^1]: Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1
 
-푸리에 변환의 한계점의 원인을 라플라스는 기저 함수가 진폭에 변화가 없는 주기함수로만 구성되어 있기 때문에 위와 같은 한계가 있다고 생각했다. 
-
-<p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_fourier_summary.png">
-  <br>
-  그림 1. 푸리에 변환은 복소 정현파들과 닮은 정도를 각각의 각 주파수 $\omega$에 대해 계산한 것이다.
-</p>
-
-위 그림에서 볼 수 있듯이 푸리에 변환은 복소 정현파를 기저함수로 하는 변환이며, 푸리에 변환의 기저 함수들은 허수축 위에 나열할 수 있다.
-
-라플라스는 이러한 관점에서 시간에 따라 크기가 작아지거나 커지는 함수들을 포함하여 기저로 삼을 수 있도록 허수 축 하나에 실수축을 덧대어 s-plane을 생각해냈다.
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_s_plane.png">
-  <br>
-  그림 2. 임의의 복소수에 대응되는 변수 $s=\sigma+j\omega$를 나타내는 $s$-plane
-</p>
-
-위 그림은 가로축은 $\sigma$, 세로축은 $j\omega$에 해당하는 값을 나타낸 것이다. 그리고 이 값들은 두개가 더해져
-
-$$s=\sigma + j\omega$$
-
-라는 임의의 복소수 값을 갖게 되며, 최종적으로는
-
-$$\exp(st)=\exp((\sigma+j\omega)t)=\exp(\sigma t)\exp(j\omega t)$$
-
-와 같이 자연상수의 지수로 올라가게 되는 값으로 보는 것이라 약속해보자. 여기서 $t$는 시간으로 해석하자.
-
-그리고 라플라스는 아래의 그림과 같이 $s=\sigma+j\omega$와 같은 복소수에 대해 $s=j\omega$인 경우가 푸리에 변환이 담당해주는 주파수 대역이라고 해석했다.
-
-<p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_summary.png">
-  <br>
-  그림 3. 라플라스 변환은 서서히 작아지거나 커지는 복소 정현파들과 닮은 정도를 각각의 decaying factor $\sigma$와 각 주파수 $\omega$에 대해 계산한 것이다.
-</p>
-
-위 그림에 대해 복소수 $s=\sigma+j\omega$의 위치에 따른 특성을 써보자면 다음과 같을 것이다.
-
-<p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic3.png">
-  <br>
-  그림 4. pole의 실수부 부호에 따른 입력 신호의 시간 stability. 
-  <br>
-  그림 출처: MATLAB in use, transfer function
-  <br>
-  (지금은 이 사이트가 사라졌더군요 ㅠㅠ 교주 LGS님 돌아오십시오...)
-</p>
-
-라플라스 변환의 식을 유도하기 위해 기존에 알고 있는 푸리에 변환을 이용해 라플라스 변환을 써보자.
-
-푸리에 변환은
-
-$$X(j\omega) = \int_{-\infty}^{\infty}x(t)\exp(-j\omega t)dt$$
-
-인데, 여기서 $j\omega$를 $s=\sigma + j\omega$로 치환하자.
-
-$$\Rightarrow X(\sigma+j\omega) = \int_{-\infty}^{\infty}x(t)\exp(-\sigma t)\exp(-j\omega t)dt$$
-
-$$=\int_{-\infty}^{\infty}x(t)\exp(-st)dt$$
-
-와 같다. 맨 마지막에 있는 식을 라플라스 변환(Laplace transform)이라고 부른다.
-
-그런데, 보통 라플라스 변환은 시스템에 대한 분석에 많이 사용하며 분석에 이용되는 대부분의 시스템은 causal system이기 때문에 적분 구간을 다음과 같이 변경하여 정의하는 것이 일반적이다. 혹은 미분방정식의 풀이에 이용하기 때문에 초기값 문제에 적용하기 위해 아래와 같이 변경해서 정의하는 것이 일반적이기도 하다. (이를 unilateral Laplace transform이라고도 부른다.) 
-
-$$\mathfrak{L}\lbrace x(t) \rbrace=\int_{0^-}^{\infty}x(t)\exp(-st)dt$$
-
-여기서 $0^-$은 0에 대한 좌극한이다.
-
-한편, 원래의 함수 $x(t)$를 기저함수들로 표현하면 다음과 같다. $X(\sigma+j\omega)$는 $x(t)\exp(-\sigma t)$를 푸리에 변환한 것이므로,
-
-$$x(t)\exp(-\sigma t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\sigma+j\omega)\exp(\sigma+j\omega)t d\omega$$
-
-여기서 변수 변환을 이용해 $s=\sigma + j\omega$라고 쓰면, $ds = jd\omega$이므로,
-
-$$x(t) = \frac{1}{j2\pi}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)\exp(st)ds$$
-
-와 같이 쓸 수 있다. 그리고 이 마지막 식을 라플라스 역변환(inverse Laplace transform)이라고 부른다. 이 적분은 복소 공간에서 선적분에 해당하게 된다. 
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/line_integral_interval.png">
-  <br>
-  그림 5. 라플라스 역변환의 선적분구간
-</p>
-
-여기서 재밌는 점은 $\sigma_1 = 0$으로 선택하게 되면 푸리에 변환-역변환과 같은 결과를 얻게 된다는 것이다. 
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic5.png">
-  <br>
-  그림 6. 복소평면(특히, s 평면) 상에 표현된 라플라스 변환과 푸리에 변환의 관계
-  <br>
-  <a href = "https://www.quora.com/Signal-Processing-What-are-the-differences-between-Laplace-and-Fourier-Transform"> 그림 출처: Quora의 라플라스 변환과 푸리에 변환의 차이점 </a>
-</p>
-
-라플라스 변환의 역변환을 구할 때는 실제 위와 같은 적분 식을 계산하기 보단 라플라스 변환의 변환쌍들을 가지고 역추적하는 방식을 더 많이 이용하기 때문에 위와 같은 적분을 수행할 일은 없다.
+아이디어는 아주 간단하다. 임의의 실수 $\sigma$를 상정하고 oscilating term을 상쇄시킬 수 있는 적절한 $\exp(-\sigma t)$를 곱해서 푸리에 변환하는 것이다.
 
 # 라플라스 변환의 예시와 시각화
 

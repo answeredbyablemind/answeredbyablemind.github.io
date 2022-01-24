@@ -1,9 +1,22 @@
 clear; close all; clc;
+
+
+%%
+fs = 1000;
+t = -1:1/fs:3;
+figure;
+plot(t, exp(1*t).*cos(2*pi*3*t).*unit_step(t, 0),'linewidth',2)
+grid on;
+xlabel('time (s)');
+ylabel('$$x(t)$$','interpreter','latex');
+set(gca,'fontsize',12)
+title('$$x(t) = e^t \cos(2\pi(3)t) u(t)$$','interpreter','latex','fontsize',15)
+
 %%
 close all;
+
 fs = 1000;
 t = 0:1/fs:3;
-
 f =(-6*pi):2*pi:(6*pi);
 for i_f = 1:length(f)
     x = exp(1j*f(i_f)*t);
