@@ -43,7 +43,7 @@ tags: 신호처리
 가령 $x(t) = e^{at}\cos(b t)u(t), \text{ for }a\gt 0$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 변환이 존재하지 않기 때문에 푸리에 해석을 통해 주파수 분석을 수행할 수 없다. 시간이 흘러감에 따라 신호의 크기가 무한대로 발산하기 때문이다
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_diverging_cosine.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_diverging_cosine.png">
   <br>
   그림 1. 시간이 지남에 따라 발산하는 정현파
 </p>
