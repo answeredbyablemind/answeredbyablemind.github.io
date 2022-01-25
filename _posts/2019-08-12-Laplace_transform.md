@@ -40,7 +40,7 @@ tags: 신호처리
 
 그런데, 푸리에 급수 혹은 변환을 이용하기 위해선 조건이 붙는다. 일명 디리클레 조건이라고 하는 것인데, 말하자면 변환하고자 하는 신호가 absolutely integrable해야한다는 것이다. 만약 변환하고자 하는 것이 신호라면 발산하지 않는 신호여야 할 것이고 만약 impulse response라면 stable system의 impulse response만 푸리에 분석을 적용할 수 있다는 의미이다. 
 
-가령 $x(t) = e^{at}\cos(\omega t)u(t),\space \text{ for }a>0$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 변환이 존재하지 않기 때문에 푸리에 해석을 통해 주파수 분석을 수행할 수 없다. 시간이 흘러감에 따라 신호의 크기가 무한대로 발산하기 때문이다
+가령 $x(t) = e^{at}\cos(b t)u(t), \text{ for }a\gt 0$ 같은 신호 혹은 이와 같은 impulse response를 갖는 시스템은 푸리에 변환이 존재하지 않기 때문에 푸리에 해석을 통해 주파수 분석을 수행할 수 없다. 시간이 흘러감에 따라 신호의 크기가 무한대로 발산하기 때문이다
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_diverging_cosine.png">
@@ -55,6 +55,19 @@ tags: 신호처리
 [^1]: Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1
 
 아이디어는 아주 간단하다. 임의의 실수 $\sigma$를 상정하고 oscilating term을 상쇄시킬 수 있는 적절한 $\exp(-\sigma t)$를 곱해서 푸리에 변환하는 것이다.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_core_of_laplace_transform.png">
+  <br>
+  그림 2. 라플라스 변환의 핵심: 발산하는 신호에 감쇄하는 신호를 곱해줘 발산을 방지하여 푸리에 변환할 수 있도록 만듦
+</p>
+
+가령 $x(t) = e^{2t}\cos(3t)$와 같았다고 생각해보자. 이 신호는 여전히 시간이 지남에 따라 발산하는 신호이지만 여기에 $e^{-2t}$를 곱해버린다면 $x(t)e^{-2t}=\cos(3t)$는 푸리에 변환이 존재한다. 
+
+그런데, 우리가 임의의 신호 $x(t)$를 받았을 때, 적절한 $\sigma$를 잘 아는 것은 사실상 불가능하다. 따라서 라플라스 변환에서는 가능한 모든 $\sigma\in\mathbb{R}$에 대해 감쇄신호 $\exp(-\sigma t)$를 곱하고 푸리에 변환을 취하게 된다.
+
+
+
 
 
 

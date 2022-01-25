@@ -5,22 +5,40 @@ clear; close all; clc;
 fs = 1000;
 t = -1:1/fs:3;
 figure;
-plot(t, exp(1*t).*cos(3*t).*unit_step(t, 0),'linewidth',2)
-grid on;
-xlabel('time (s)');
-ylabel('$$x(t)$$','interpreter','latex');
-set(gca,'fontsize',12)
-title('$$x(t) = e^t \cos(2\pi(3)t) u(t)$$','interpreter','latex','fontsize',15)
+plot(t, exp(1*t).*cos(2*pi*3*t).*unit_step(t, 0),'linewidth',2)
+% grid on;
+% xlabel('time (s)');
+% ylabel('$$x(t)$$','interpreter','latex');
+% set(gca,'fontsize',12)
+% title('$$x(t) = e^t \cos(2\pi(3)t) u(t)$$','interpreter','latex','fontsize',15)
+set(gca,'visible','off')
+YLIMs = ylim;
+
+figure('position',[1575, 757, 560, 222]);
+plot(t, exp(-1*t),'linewidth',2);
+set(gca,'visible','off')
+ylim([0, 1])
+
+
+figure('position', [1000, 558, 560, 57]);
+plot(t, exp(-1*t).*cos(2*pi*3*t).*unit_step(t, 0),'linewidth',2)
+% grid on;
+% xlabel('time (s)');
+% ylabel('$$x(t)$$','interpreter','latex');
+% set(gca,'fontsize',12)
+% title('$$x(t) = e^t \cos(2\pi(3)t) u(t)$$','interpreter','latex','fontsize',15)
+set(gca,'visible','off')
+YLIMs = ylim;
 
 %%
 
 Lx = @(s, a, b) (s-a)./((s-a).^2+b^2); % e^(at)cos(bt)의 라플라스 변환
 
-[x, y] = meshgrid(-10:0.1:10, -50:0.05:50);
+[x, y] = meshgrid(-10:0.1:10);
 
 figure;
 shading interp
-z = abs(Lx(x+1j*y, 1, 2*pi*3)); % e^(2t)cos(3t)
+z = abs(Lx(x+1j*y, 2, 3)); % e^(2t)cos(3t)
 % 
 % for i = 1:size(z,1)
 %     for j = 1:size(z,2)
@@ -44,7 +62,7 @@ sigma = x(1,:);
 
 %%
 % close all
-my_sig = 3;
+my_sig = 1;
 idx = find(sigma == my_sig);
 clear colorVector
 for i_x = 1:size(x, 1)
