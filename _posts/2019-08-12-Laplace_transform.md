@@ -9,7 +9,7 @@ tags: 신호처리
 ---
 
 <p align = "center">
-  <iframe width = "101%" height = "600" src = "https://mathlets.org/javascript/build/polesVibrations.html" frameborder = "0"></iframe>
+  <iframe width = "101%" height = "630" src = "https://mathlets.org/javascript/build/polesVibrations.html" frameborder = "0"></iframe>
   <br>
   pole의 위치와 기저 함수 $\exp(\sigma t)$의 관계
   <br>
@@ -18,7 +18,7 @@ tags: 신호처리
 </p>
 
 <p align = "center">
-  <iframe width = "101%" height = "600" src = "https://mathlets.org/javascript/build/ampRespPoleDiagram.html" frameborder = "0"></iframe>
+  <iframe width = "101%" height = "630" src = "https://mathlets.org/javascript/build/ampRespPoleDiagram.html" frameborder = "0"></iframe>
   <br>
   pole diagram과 주파수 응답의 관계
   <br>
