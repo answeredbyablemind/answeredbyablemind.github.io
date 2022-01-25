@@ -54,15 +54,15 @@ shading interp
 set(m1, 'EdgeColor','none')
 xlabel('$$\sigma$$','interpreter','latex','fontsize',15);
 ylabel('$$j\omega$$','interpreter','latex','fontsize',15);
-zlabel('$$|\mathcal{L}(x(t))|$$','interpreter','latex','fontsize',15);
+zlabel('$$|X(s)|$$','interpreter','latex','fontsize',15);
 view(-323, 34)
-zlim([0, 0.5])
+% zlim([0, 0.5])
 
 sigma = x(1,:);
 
 %%
 % close all
-my_sig = 1;
+my_sig = 4;
 idx = find(sigma == my_sig);
 clear colorVector
 for i_x = 1:size(x, 1)
@@ -78,25 +78,22 @@ end
 
 figure;
 for i = 1:size(colorVector, 1)-1
-    plot(m1.YData(i:i+1, idx), m1.ZData(i:i+1, idx), 'color', colorVector(i,:),'linewidth',2);
+    plot(m1.YData(i:i+1, idx), m1.ZData(i:i+1, idx), 'color', colorVector(i,:),'linewidth',3);
     hold on;
 end
-ylim([0, 0.5])
+ylim([0, 1])
 xlabel('$$j\omega$$','interpreter','latex','fontsize',15)
 ylabel(['$$|X(s)|$$'],'interpreter','latex','fontsize',15)
 title(['$$|X(s)|, \sigma = ',num2str(my_sig),'$$'],'interpreter','latex','fontsize',15)
-
-
-figure;
-for i = 1:size(colorVector, 1)-1
-    plot(my_sig*ones(1,2), y(i:i+1, 1)', 'color', colorVector(i,:),'linewidth',2);
-    hold on;
-end
-xlabel('$$\sigma$$','interpreter','latex','fontsize',15)
-ylabel(['$$|X(s)|$$'],'interpreter','latex','fontsize',15)
-title(['$$|X(s)|, \sigma = ',num2str(my_sig),'$$'],'interpreter','latex','fontsize',15)
-
-
+grid on;
+set(gca,'fontsize',15)
+% 
+% figure;
+% for i = 1:size(colorVector, 1)-1
+%     plot(my_sig*ones(1,2), y(i:i+1, 1)', 'color', colorVector(i,:),'linewidth',2);
+%     hold on;
+% end
+% set(gca,'visible','off')
 
 %%
 close all;

@@ -34,7 +34,15 @@ tags: 신호처리
 * [푸리에 급수(Fourier Series)](https://angeloyeo.github.io/2019/06/23/Fourier_Series.html)
 * [푸리에 변환(Fourier Transform)](https://angeloyeo.github.io/2019/07/07/CTFT.html)
 
-# 라플라스 변환의 등장
+이하의 내용에서 $\delta(t)$는 디랙 델타 함수를 의미합니다.
+
+$$\delta(t) =\begin{cases} \infty, && t = 0 \\ 0 && \text{otherwise}\end{cases}, \quad \int_{-\infty}^{\infty}\delta(t)dt = 1$$
+
+또, $u(t-t_0)$는 unit step function 을 나타냅니다.
+
+$$u(t-t_0)=\begin{cases} 1 && t \geq t_0 \\ 0 && \text{otherwise}\end{cases}$$
+
+# 푸리에 변환의 한계
 
 앞서 푸리에 급수와 푸리에 변환에 대해 공부하면서 연속 시간 신호에 대한 주파수 해석을 할 수 있게 되었다. 그 뿐만 아니라 푸리에 해석 방법은 LTI system에 아주 유용하게 적용할 수 있어서 시스템의 impulse response에 푸리에 변환을 적용하면 LTI system에 대한 주파수 응답 특성을 이해할 수 있었다.
 
@@ -54,6 +62,8 @@ tags: 신호처리
 
 [^1]: Grattan-Guinness, I (1997), "Laplace's integral solutions to partial differential equations", in Gillispie, C. C. (ed.), Pierre Simon Laplace 1749–1827: A Life in Exact Science, Princeton: Princeton University Press, ISBN 978-0-691-01185-1
 
+# 라플라스 변환의 아이디어
+
 아이디어는 아주 간단하다. 임의의 실수 $\sigma$를 상정하고 oscilating term을 상쇄시킬 수 있는 적절한 $\exp(-\sigma t)$를 곱해서 푸리에 변환하는 것이다.
 
 <p align = "center">
@@ -62,7 +72,7 @@ tags: 신호처리
   그림 2. 라플라스 변환의 핵심: 발산하는 신호에 감쇄하는 신호를 곱해줘 발산을 방지하여 푸리에 변환할 수 있도록 만듦
 </p>
 
-가령 $x(t) = e^{2t}\cos(3t)$와 같았다고 생각해보자. 이 신호는 여전히 시간이 지남에 따라 발산하는 신호이지만 여기에 $e^{-2t}$를 곱해버린다면 $x(t)e^{-2t}=\cos(3t)$는 푸리에 변환이 존재한다. 
+가령 $x(t) = e^{2t}\cos(3t)u(t)$와 같았다고 생각해보자. 이 신호는 여전히 시간이 지남에 따라 발산하는 신호이지만 여기에 $e^{-2t}$를 곱해버린다면 $x(t)e^{-2t}=\cos(3t)u(t)$는 푸리에 변환이 존재한다. 
 
 그런데, 우리가 임의의 신호 $x(t)$를 받았을 때, 적절한 $\sigma$를 잘 아는 것은 사실상 불가능하다. 따라서 라플라스 변환에서는 가능한 모든 $\sigma\in\mathbb{R}$에 대해 감쇄신호 $\exp(-\sigma t)$를 곱하고 푸리에 변환을 취하게 된다. 그래서 아래 그림과 같이 모든 $\sigma$에 대해 푸리에 변환을 취한 것을 한 평면 상에 모아줄 수 있다.
 
@@ -103,7 +113,7 @@ $$X(s)=\int_{0^-}^{\infty}x(t)\exp(-st)dt$$
 
 라플라스 변환을 공부할 때 중요한 개념 중 하나가 ROC(Region of Convergence)이다. 한국말로 하면 수렴영역 정도 될 것 같다. 이것의 개념은 위의 그림 3에서 다시 출발할 수 있다. 아주 간단하게 그림 3의 $x(t)$가 다음과 같다고 상정해보자.
 
-$$x(t) = \exp(2t)\cos(3t)$$
+$$x(t) = \exp(2t)\cos(3t)u(t)$$
 
 그러면 $\sigma$가 2보다 크다면 푸리에 변환을 취해주기 전에 곱해주는 함수는 아래와 같은 것들일 것이다.
 
@@ -117,7 +127,21 @@ $$\exp(-t), \exp(0), \exp(t), \cdots$$
 
 그러므로 $x(t) = \exp(2t)\cos(3t)$ 인 경우에는 ROC가 $\sigma>2$라고 할 수 있다.
 
+# 라플라스 변환 수행 예시
+
+앞서 예시로 들었던 신호인 $x(t)=e^{2t}\cos(3t)u(t)$에 대해 그림 3의 방식으로 라플라스 변환을 구해보자.
+
+결과는 아래와 같다. 다만, 실제로 라플라스 변환을 수행할 때는 식 (4) 혹은 식 (5)와 같이 계산하며, 아래와 같이 슬라이스 별로 푸리에 변환을 수행하지 않으니 아래는 개념적으로만 이해하는데 도움을 받고 넘어가도록 하자.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_according_to_pic3.png">
+  <br>
+  그림 4. $x(t)=e^{2t}\cos(3t) u(t)$에 대한 라플라스 변환을 $\sigma$ 값 별로 슬라이스 하여 확인한 결과
+</p>
+
 # 라플라스 변환의 예시와 시각화
+
+이제부터는 라플라스 변환을 이용해 문제를 풀어보자.
 
 ## 예시 1
 
