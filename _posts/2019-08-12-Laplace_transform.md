@@ -66,6 +66,11 @@ tags: 신호처리
 
 그런데, 우리가 임의의 신호 $x(t)$를 받았을 때, 적절한 $\sigma$를 잘 아는 것은 사실상 불가능하다. 따라서 라플라스 변환에서는 가능한 모든 $\sigma\in\mathbb{R}$에 대해 감쇄신호 $\exp(-\sigma t)$를 곱하고 푸리에 변환을 취하게 된다.
 
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_fourier_to_laplace.png">
+  <br>
+  그림 3. 라플라스 변환은 입력 신호에 발산/감쇄하는 지수함수를 곱한 뒤 푸리에 변환을 수행한 것들을 모아둔 결과물이다.
+</p>
 
 
 
