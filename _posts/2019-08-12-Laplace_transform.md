@@ -241,9 +241,11 @@ $$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\fra
   코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
 </p>
 
+# zero-pole plot
+
+
+
 # 라플라스 변환쌍
-
-
 
 # 미분방정식의 풀이를 위한 용법
 
