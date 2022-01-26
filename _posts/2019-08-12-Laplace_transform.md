@@ -226,7 +226,7 @@ $$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\fra
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization.png">
   <br>
-  그림 7. 예시 문제에서 $X(s)$의 시각화. 이와 함께 $s=j\omega$인 경우에 해당하는 magnitude plot도 함께 확인할 수 있으며 이는 푸리에 변환의 주파수 응답이다.
+  그림 5. 예시 문제에서 $X(s)$의 시각화. 이와 함께 $s=j\omega$인 경우에 해당하는 magnitude plot도 함께 확인할 수 있으며 이는 푸리에 변환의 주파수 응답이다.
   <br>
   코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
 </p>
@@ -236,12 +236,29 @@ $$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\fra
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_ex_visualization2.png">
   <br>
-  그림 8. 푸리에 변환의 주파수 응답 부분만 따로 떼서 시각화 한 것
+  그림 6. 푸리에 변환의 주파수 응답 부분만 따로 떼서 시각화 한 것
   <br>
   코드 소스: Ex 7.7, Ch 7. Laplace Transform, Signals and Systems, Oktay Alkin
 </p>
 
-# zero-pole plot
+# pole-zero plot
+
+라플라스 변환 결과는 그림 4 혹은 그림 5에서 처럼 3차원 함수로 표현할 수 있다. 그러나, 그림 4 혹은 그림 5처럼 항상 3차원 그래프로 나타내기에는 사람의 손으로 그리는 것이 거의 불가능하다보니 pole-zero plot이라는 것을 이용해 정보를 나타낸다.
+
+라플라스 변환을 수행한 결과를 보면 그림 4 혹은 그림 7에서 처럼 어떤 $s$ 점에서는 $X(s)$의 크기가 발산하거나 크기가 0이 되는 경우들이 많다. 라플라스 변환에서 가장 중요한 것은 전체적인 3차원 그래프의 형태가 아니라 Region of Convergence가 어디에서 정의되며, 어떤 $s$ 값에서 $X(s)$의 크기가 발산하고 어떤 $s$ 값에서 $X(s)$의 크기가 0이 되는지라고 할 수 있다.
+
+따라서, 2차원 복소평면 상에서 발산하는 $s$의 위치에 x를 그리고 0으로 수렴하는 $s$의 위치에 o를 그려서 이를 표현한다. 이 그래프를 pole-zero plot이라고 부른다.
+
+가령 그림 4에서와 같은 형태의 pole-zero plot은 아래와 같다.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_pole_zero.png">
+  <br>
+  그림 7. 그림 4의 $\|X(s)\|$를 pole, zero 만으로 표현한 pole-zero plot
+</p>
+
+
+
 
 
 

@@ -6,6 +6,7 @@ params.addParameter('newFigure', true);
 params.addParameter('fontsize', 12);
 params.addParameter('complex_plane', false);
 params.addParameter('plot_polar',false);
+params.addParameter('xylabel',{});
 
 params.parse(varargin{:});
 %Extract values from the inputParser
@@ -13,6 +14,7 @@ h_newfig = params.Results.newFigure;
 fontsize = params.Results.fontsize;
 h_complex_plane = params.Results.complex_plane;
 h_plot_polar = params.Results.plot_polar;
+custom_xylabel = params.Results.xylabel;
 
 % fontsize= 20;
 if h_newfig
@@ -67,16 +69,26 @@ for i = unique(round([linspace(x1*0.9, x2*0.9,7),0]))
 end
 
 if ~h_complex_plane
-    t = text(x2*0.97,(y2-y1)*0.03,'$$x$$','Interpreter','latex');
-    t.FontSize = fontsize;
-    t = text(-(x2-x1)*0.03,y2*1,'$$y$$','Interpreter','latex');
-    t.FontSize = fontsize;
+    t1 = text(x2*0.97,(y2-y1)*0.03,'$$x$$','Interpreter','latex');
+    t1.FontSize = fontsize;
+    t2 = text(-(x2-x1)*0.03,y2*1,'$$y$$','Interpreter','latex');
+    t2.FontSize = fontsize;
 else
-    t = text(x2*0.97,(y2-y1)*0.03,'½Ç¼ö Ãà','fontname','³ª´®°íµñ');
-    t.FontSize = fontsize;
-    t = text((x2-x1)*0.03 ,y2*1,'Çã¼ö Ãà','fontname','³ª´®°íµñ');
-    t.FontSize = fontsize;
+    t1 = text(x2*0.97,(y2-y1)*0.03,'½Ç¼ö Ãà','fontname','³ª´®°íµñ');
+    t1.FontSize = fontsize;
+    t2 = text((x2-x1)*0.03 ,y2*1,'Çã¼ö Ãà','fontname','³ª´®°íµñ');
+    t2.FontSize = fontsize;
 end
+
+if ~isempty(custom_xylabel)
+    delete(t1); delete(t2);
+    
+    t1 = text(x2*0.97,(y2-y1)*0.03,custom_xylabel{1},'fontname','³ª´®°íµñ');
+    t1.FontSize = fontsize;
+    t2 = text((x2-x1)*0.03 ,y2*1, custom_xylabel{2},'fontname','³ª´®°íµñ');
+    t2.FontSize = fontsize;
+end
+    
 
 axis square
 

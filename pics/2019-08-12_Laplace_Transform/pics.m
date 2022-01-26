@@ -95,6 +95,18 @@ set(gca,'fontsize',15)
 % end
 % set(gca,'visible','off')
 
+%% pole-zero plot
+
+Lx = @(s, a, b) (s-a)./((s-a).^2+b^2); % e^(at)cos(bt)의 라플라스 변환
+% 여기서 a: 2, b: 3으로 넣기 때문에 zero = 2, pole = 2+- 3j
+
+plotXY(-3.5,3.5,-3.5,3.5,'xylabel',{'\sigma','j\omega'},'fontsize',15)
+hold on;
+plot(2, 0, 'ro','markersize',10,'linewidth',2);
+plot(2, 3, 'rx','markersize',10,'linewidth',2);
+plot(2, -3, 'rx','markersize',10,'linewidth',2);
+
+
 %%
 close all;
 
