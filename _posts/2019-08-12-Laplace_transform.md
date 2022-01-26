@@ -127,6 +127,8 @@ $$\exp(-t), \exp(0), \exp(t), \cdots$$
 
 그러므로 $x(t) = \exp(2t)\cos(3t)$ 인 경우에는 ROC가 $\sigma>2$라고 할 수 있다.
 
+ROC를 볼 때 가장 기초적이고도 중요한 내용으로써는 ROC가 허수 축을 포함하고 있느냐의 여부인데, 만약 ROC에 허수 축이 포함되는 경우는 $\exp(-\sigma t)$를 곱하지 않더라도 푸리에 변환이 존재한다는 의미이다. 그래서 입력 신호가 impulse response라면 이 시스템은 안정 시스템(Bounded Input Bounded Output, BIBO)이라는 것을 알 수 있다.
+
 # 라플라스 변환 수행 예시
 
 앞서 예시로 들었던 신호인 $x(t)=e^{2t}\cos(3t)u(t)$에 대해 그림 3의 방식으로 라플라스 변환을 구해보자.
@@ -252,15 +254,24 @@ $$X(s) = \int_{0}^{\tau}(1)\exp(-st)dt=\frac{\exp(-st)}{-s}\big|_{0}^{\tau}=\fra
 가령 그림 4에서와 같은 형태의 pole-zero plot은 아래와 같다.
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_pole_zero.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_pole_zero.png">
   <br>
-  그림 7. 그림 4의 $\|X(s)\|$를 pole, zero 만으로 표현한 pole-zero plot
+  그림 7. 그림 4의 $|X(s)|$를 pole, zero 만으로 표현한 pole-zero plot
 </p>
 
+일반적으로 라플라스 변환의 결과인 $X(s)$는 아래와 같은 형태를 띈다고 할 수 있다.
 
+$$X(s) = 
 
+\frac
+{b_ms^m+b_{m-1}s^{m-1}+\cdots+b_1s+b_0}
+{a_ns^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0}$$
 
+$$=K\frac
+{(s-z_1)(s-z_2)\cdots(s-z_{m-1})(s-z_m)}
+{(s-p_1)(s-p_2)\cdots(s-p_{n-1})(s-p_n)}$$
 
+위 식에서 $z_1, \cdots, z_m$을 zeros라고 하고 $p_1, \cdots, p_n$을 poles라고 한다. 다시 한번 zeros는 $X(s)$가 0이 되도록 만드는 $s$ 값이고 poles는 $X(s)$가 무한대로 발산할 수 있도록 만드는 $s$ 값이다.
 
 # 라플라스 변환쌍
 
