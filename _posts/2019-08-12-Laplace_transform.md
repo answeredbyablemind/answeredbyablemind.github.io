@@ -278,7 +278,7 @@ $$=K\frac
 라플라스 변환을 응용할 때는 위의 예제 1~3에서와 같이 직접 적분을 계산하지 않고, 보통은 잘 알려진 변환쌍을 보고 변환 전/후의 결과물들을 매칭해 사용한다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_transform_pairs">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_transform_pairs.png">
   <br>
   그림 8. 라플라스 변환쌍
   <br>
@@ -294,6 +294,18 @@ $$=K\frac
 그림 8의 라플라스 변환쌍 중에는 미분계수에 대한 라플라스 변환 결과가 있다. 수식으로 쓰면 다음과 같다.
 
 $$\frac{d}{dt}f(t) \Longleftrightarrow s\cdot F(s) - f(0^-)$$
+
+여기서 우변의 $f(0^-)$은 신호 $f(t)$의 초기값으로 보통 0으로 놓고 문제를 푸는 경우가 많다. 만약, 특별히 초기값이 지정된다면 초기값은 상수값에 불과하므로 특별히 어렵지 않게 처리할 수 있으니 크게 신경쓰지 않아도 될 문제이다.
+
+또, 2차 미분계수에 관한 라플라스 변환 결과는 다음과 같이 쓰여있는데,
+
+$$\frac{d^2f(t)}{dt^2} \Longleftrightarrow s^2F(s)-s\cdot f(0^-)-f'(0^-)$$
+
+$f(t)$든 $f'(t)$든 모든 $t=0$일 때의 값이 0이라고 가정한다면 미분을 몇번 했던지 관에 관계없이 다음이 성립한다는 것을 알 수 있다.
+
+$$\frac{d^nf(t)}{dt^n} \Longleftrightarrow s^nF(s)$$
+
+## 라플라스 변환을 이용한 미분방정식 풀이 예시
 
 
 
