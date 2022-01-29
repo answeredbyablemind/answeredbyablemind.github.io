@@ -1,5 +1,5 @@
 ---
-title: 라플라스 변환
+title: 라플라스 변환(Laplace transform)
 sidebar:
   nav: docs-ko
 aside:
@@ -275,7 +275,27 @@ $$=K\frac
 
 # 라플라스 변환쌍
 
+라플라스 변환을 응용할 때는 위의 예제 1~3에서와 같이 직접 적분을 계산하지 않고, 보통은 잘 알려진 변환쌍을 보고 변환 전/후의 결과물들을 매칭해 사용한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-12_Laplace_Transform/pic_laplace_transform_pairs">
+  <br>
+  그림 8. 라플라스 변환쌍
+  <br>
+  <a href = "https://www.chegg.com/homework-help/questions-and-answers/1-determine-laplace-transform-following-signals-f-t-1-1-e-24u-t-b-g-t-cos-2t-sin-2t-u-t-3--q47208384">출처: Chegg</a>
+</p>
+
+위 그림에서는 자주 사용되는 라플라스 변환쌍들이 있으니 필요한 것들을 가져다 쓰면 좋을 것 같다.
+
+이 중 우리는 미분계수에 관한 라플라스 변환에 집중해 아래의 내용에서 미분방정식의 풀이를 위한 용법에 대해 좀 더 자세히 생각해보고자 한다.
+
 # 미분방정식의 풀이를 위한 용법
+
+그림 8의 라플라스 변환쌍 중에는 미분계수에 대한 라플라스 변환 결과가 있다. 수식으로 쓰면 다음과 같다.
+
+$$\frac{d}{dt}f(t) \Longleftrightarrow s\cdot F(s) - f(0^-)$$
+
+
 
 # 참고문헌
 
