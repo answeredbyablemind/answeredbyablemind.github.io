@@ -305,7 +305,71 @@ $f(t)$든 $f'(t)$든 모든 $t=0$일 때의 값이 0이라고 가정한다면 �
 
 $$\frac{d^nf(t)}{dt^n} \Longleftrightarrow s^nF(s)$$
 
+즉, 미분 계수 연산자가 단순화되는 것을 알 수 있다.
+
+라플라스 변환을 이용해 미분방정식을 풀면 좋은 점은 크게 두 가지라고 할 수 있다. 첫번째는 어려운 미분방정식의 풀이법이 간단한 대수방정식의 형태로 바뀐다는 점이다. 두번째는 라플라스 변환을 이용하면 비제차미분방정식을 풀 때도 homogeneous solution, particular solution에 대해 따로 고려하지 않고도 한번에 풀어낼 수 있다는 점이다. 비제차 미분방정식에 관해서는 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편을 참고하도록 하자.
+
 ## 라플라스 변환을 이용한 미분방정식 풀이 예시
+
+### 예제 1
+
+이 예제는 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html#general-solution--homogeneous--particular-solution-%EC%9D%B8-%EC%9D%B4%EC%9C%A0) 편에 있는 예시와 같은 것이며 초기값 조건을 추가한 것이다.
+
+$$x''-4x'+3x=t; \quad x(0)= 0, x'(0)=0$$
+
+위의 미분방정식에 대해 라플라스 변환을 취해보자.
+
+$$\mathcal{L}\lbrace x''-4x'+3x\rbrace=\mathcal{L}\lbrace t\rbrace$$
+
+라플라스 변환의 선형성에 의해,
+
+$$\Rightarrow \mathcal{L}\lbrace x''\rbrace-4\mathcal{L}\lbrace x'\rbrace+3\mathcal{L}\lbrace x\rbrace=\mathcal{L}\lbrace t\rbrace$$
+
+$x(t)$와 $x'(t)$의 초기값은 모두 0이다. $x(t)$의 라플라스 변환을 $X(s)$라고 하면,
+
+$$\Rightarrow s^2X(s)-4sX(s)+3X(s) = \frac{1}{s^2}$$
+
+$$=(s^2-4s+3)X(s)=\frac{1}{s^2}$$
+
+$$\Rightarrow X(s) = \frac{1}{s^2(s-1)(s-3)}$$
+
+여기서 부분 분수로 위의 식을 분할해보자.
+
+$$\Rightarrow X(s) = \frac{a}{s}+\frac{b}{s^2}+\frac{c}{s-1}+\frac{d}{s-3}$$
+
+다시 원래의 분수로 합쳐보면,
+
+$$\Rightarrow \frac
+{as(s^2-4s+3)+b(s^2-4s+3)+cs^2(s-3)+ds^2(s-1)}
+{s^2(s-1)(s-3)}$$
+
+$$=\frac
+{s^3(a+c+d)+s^2(-4a+b-3c-d)+s(3a-4b)+3b}
+{s^2(s-1)(s-3)}$$
+
+따라서 위 식의 분자는 1이라는 값을 가져야 한다. 그러므로 우선
+
+$$b=\frac{1}{3}$$
+
+이고, 나머지 세 개의 식을 연립하자.
+
+$$\begin{cases}a+c+d = 0 \\ -4a+1/3-3c-d = 0 \\ 3a-4\cdot(1/3) = 0\end{cases}$$
+
+그러면 결과로써 다음과 같은 결과를 얻는다.
+
+$$a=\frac{4}{9}, b = \frac{1}{3}, c = -\frac{1}{2}, d = \frac{1}{18}$$
+
+그러므로 $X(s)$를 다시 써보면,
+
+$$X(s) = \left(\frac{4}{9}\cdot\frac{1}{s}\right)+\left(\frac{1}{3}\cdot\frac{1}{s^2}\right)+\left(\left(-\frac{1}{2}\right)\cdot\frac{1}{s-1}\right)+\left(\frac{1}{18}\cdot\frac{1}{s-3}\right)$$
+
+이 $X(s)$를 다시 라플라스 역변환하면 다음과 같다.
+
+$$x(t) = \frac{4}{9}+\frac{1}{3}t-\frac{1}{2}e^t+\frac{1}{18}e^{3t}$$
+
+여기서 역변환에 이용한 라플라스 변환쌍은 다음과 같다.
+
+$$\begin{cases}\mathcal{L}\lbrace u(t)\rbrace=1/s \\ \mathcal{L}\lbrace tu(t)\rbrace=1/s^2\\ \mathcal{L}\lbrace e^{at}\rbrace=1/(s-a)\end{cases}$$
 
 
 
