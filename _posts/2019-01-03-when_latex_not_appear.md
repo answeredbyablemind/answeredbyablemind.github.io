@@ -102,6 +102,6 @@ Github Desktop에는 아래와 같은 화면이 출력된다.
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-01-03-when_latex_not_appear/pic09.png">
   <br>
-  그림 9. markdown preview 버튼의 위치
+  그림 9. markdown preview를 통해 내용물을 읽는 모습
 </p>
 
