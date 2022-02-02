@@ -4,7 +4,7 @@ sidebar:
   nav: docs-ko
 aside:
   toc: true
-key: 99990101
+key: 20990101
 tags: 도움말
 ---
 
