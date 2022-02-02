@@ -1,5 +1,10 @@
 header:
   - titles:
+      ko      : &KO       수식이 깨져 보일 때
+      ko-KR   : *KO
+    url: 2019/01/03/when_latex_not_appear.html
+
+  - titles:
       ko      : &KO       저자 소개
       ko-KR   : *KO
     url: /about.html
