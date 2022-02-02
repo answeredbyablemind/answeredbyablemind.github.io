@@ -3,8 +3,8 @@ title: 수식이 깨져 보일 때 대처법
 sidebar:
   nav: docs-ko
 aside:
-  toc: true
-key: 20290101
+  toc: false
+key: 20190103
 tags: 도움말
 ---
 
