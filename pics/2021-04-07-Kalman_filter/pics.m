@@ -98,7 +98,7 @@ for i_tau = 1:length(tautau)
     ylabel('pdf');
     set(gca,'fontname','³ª´®°íµñ');
     title('µÎ Á¤±Ô ºÐÆ÷ÀÇ ÇÕ¼º°ö');
-    legend(h,'f(\tau)','f(t-\tau)','Area under f(\tau)g(t-\tau)','(f*g)(t)')
+    legend(h,'f(\tau)','g(t-\tau)','Area under f(\tau)g(t-\tau)','(f*g)(t)')
     writeVideo(newVid, getframe(gcf))
 
     drawnow;
