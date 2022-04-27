@@ -160,7 +160,7 @@ $$\therefore \hat{x}=(A^TA)^{-1}A^T\vec{b}$$
 
 이것을 [4개 주요 부분 공간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)편에서 본 내용을 토대로 생각하면 $\vec{e}$는 left nullspace에 있는 벡터임을 알 수 있다.
 
-다시 말해 벡터 $\vec{b}$는 column space 상에서 만들 수 있는 기저벡터들과 left null space 상에서 만들 수 있는 기저벡터들을 합친 기저벡터들로만 구성할 수 있는 공간에 위치하고 있으며 $\vec{p}$는 그 중 가장 가까운 column space 상에 있는 벡터, $\vec{e}$는 null space 상에 있는 벡터를 의미하게 된다.
+다시 말해 벡터 $\vec{b}$는 column space 상에서 만들 수 있는 기저벡터들과 left null space 상에서 만들 수 있는 기저벡터들을 합친 기저벡터들로만 구성할 수 있는 공간에 위치하고 있으며 $\vec{p}$는 그 중 가장 가까운 column space 상에 있는 벡터, $\vec{e}$는 left null space 상에 있는 벡터를 의미하게 된다.
 
 그림으로 표시하면 아래와 같다.
 
