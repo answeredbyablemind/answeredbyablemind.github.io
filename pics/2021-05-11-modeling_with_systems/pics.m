@@ -1,9 +1,14 @@
 clear; close all; clc;
 
 %% Prey-Predator model
+a=2;
+b=1;
+c=5;
+d=1;
+
 figure('position',[227, 480, 1432, 420],'color','w');
 subplot(1,2,2);
-fun_dirfield_system(@(x,y) 2*x - x.*y, @(x,y) -5*y + x.*y,0:0.5:15)
+fun_dirfield_system(@(x,y) a*x - b * x.*y, @(x,y) -c*y + d*x.*y,0:0.5:15)
 hold on;
 dzdt = @(t, z) fun_prey_predator(z);
 opts = odeset('Refine', 10);
@@ -26,9 +31,15 @@ legend(h, 'prey population','predator population');
 title('prey, predator populations over time');
 
 %% Prey-Predator model (logistic growth)
+a = 2;
+b = 1;
+c = 5;
+d = 1;
+N = 10;
+
 figure('position',[227, 480, 1432, 420],'color','w');
 subplot(1,2,2);
-fun_dirfield_system(@(x,y) 2*x .* (1-x/10) - x.*y, @(x,y) -5*y + x.*y,0:0.2:10, 0:0.2:3)
+fun_dirfield_system(@(x,y) a*x .* (1-x/N) - b * x.*y, @(x,y) -c*y + d *x.*y,0:0.2:10, 0:0.2:3)
 hold on;
 dzdt = @(t, z) fun_prey_predator_logistic(z);
 opts = odeset('Refine', 10);
