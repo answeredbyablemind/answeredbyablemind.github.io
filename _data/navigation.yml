@@ -25,6 +25,10 @@ header:
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
 docs-ko:
+  - title:      MATLAB
+    children:
+      - title: C에서 MATLAB 호출하기
+        url: 2022/06/20/calling_MATLAB_in_C.html
   - title:      기초 선형대수학 이론
     children:
       - title:  벡터의 기본 연산(상수배, 덧셈)
