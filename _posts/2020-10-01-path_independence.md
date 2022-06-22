@@ -22,7 +22,7 @@ path independence의 결과는 그 벡터장이 어떤 스칼라 함수 $F$의 g
 # 1. 보존장 (conservative field)
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/7180/noname01.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-01-path_independence/pic1.png">
   <br>그림 1 어떤 벡터장에서 임의의 시작점과 끝점이 같은 세 curves, $C_1$, $C_2, $C_3$
 </p>
 
