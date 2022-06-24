@@ -26,16 +26,15 @@ Visual Studio에서 MATLAB을 열기 위해선 여러가지 설정이 수행되�
 
 Visual Studio 설정과 관련된 내용은 StackOverflow Question 중 하나인 [Calling MATLAB Engine error: libeng.dll is missing from your computer](https://stackoverflow.com/questions/37470396/calling-matlab-engine-error-libeng-dll-is-missing-from-your-computer)에서 찾은 것임을 밝힌다.
 
-1. 우선 MATLAB을 COM Server로 등록해야 한다. 만약 여러개 MATLAB을 가지고 있다면 C/C++에서 부르고자 하는 MATLAB 버전과 동일한 버전의 MATLAB을 등록해야 한다. MATLAB을 관리자 권한으로 열고 아래와 같이 Command Window에 타이핑하자.
+(1) 우선 MATLAB을 COM Server로 등록해야 한다. 만약 여러개 MATLAB을 가지고 있다면 C/C++에서 부르고자 하는 MATLAB 버전과 동일한 버전의 MATLAB을 등록해야 한다. MATLAB을 관리자 권한으로 열고 아래와 같이 Command Window에 타이핑하자.
 
->>!matlab -regserver
+>!matlab -regserver
 
-이 때, 창이 하나 뜨게 되는데 이 창은 닫아도 괜찮다. 더 자세한 사항은 아래의 MathWorks 홈페이지를 참고해보자.
+이 때, MATLAB Command Window 창이 하나 뜨게 되는데 이 창은 닫아주자. 더 자세한 사항은 아래의 MathWorks 홈페이지를 참고해보자.
 
-- Register MATLAB as a COM server
-https://www.mathworks.com/help/matlab/matlab_external/registering-matlab-software-as-a-com-server.html
+- [Register MATLAB as a COM server](https://www.mathworks.com/help/matlab/matlab_external/registering-matlab-software-as-a-com-server.html)  
 
-2. Visual Studio에서 Debugger를 실행시킬 때 참고할 경로를 설정해주자. 내 컴퓨터를 우클릭하여 "설정"을 누르면 시스템 설정 창이 뜨게 된다. 여기서 "고급 시스템 설정"에 들어가서 "환경 변수 > 시스템 변수"로 들어가 "Path"를 수정(Edit)해주자. 아래와 같은 경로를 추가하자.
+(2) Visual Studio에서 Debugger를 실행시킬 때 참고할 경로를 설정해주자. 내 컴퓨터를 우클릭하여 "설정"을 누르면 시스템 설정 창이 뜨게 된다. 여기서 "고급 시스템 설정"에 들어가서 "환경 변수 > 시스템 변수"로 들어가 "Path"를 수정(Edit)해주자. 아래와 같은 경로를 추가하자.
 
 "C:\Program Files\MATLAB\R2021b\bin\win64"
 
@@ -43,7 +42,7 @@ https://www.mathworks.com/help/matlab/matlab_external/registering-matlab-softwar
 
 만약, Visual Studio를 켜둔 상태에서 이 과정이 수행되었다면 반드시 Visual Studio를 재시작하자. 
 
-3. Visual Studio를 켜고 C/C++을 위한 project를 생성하자. 그리고 project의 Property를 열어보자.
+(3) Visual Studio를 켜고 C/C++을 위한 project를 생성하자. 그리고 project의 Property를 열어보자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-06-20-calling_MATLAB_in_C/pic1.jpg">
@@ -51,7 +50,7 @@ https://www.mathworks.com/help/matlab/matlab_external/registering-matlab-softwar
   그림 1. Project의 Property
 </p>
 
-4. 64-bit MATLAB을 구동한다면 "Configuration Manager"를 열고 active solution platform이 "x64"로 설정되어 있는지 확인하자.
+(4) 64-bit MATLAB을 구동한다면 "Configuration Manager"를 열고 active solution platform이 "x64"로 설정되어 있는지 확인하자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-06-20-calling_MATLAB_in_C/pic2.jpg">
@@ -59,7 +58,7 @@ https://www.mathworks.com/help/matlab/matlab_external/registering-matlab-softwar
   그림 2. 64 bit 매트랩을 사용한다면 꼭 64비트 platform에서 C코드가 동작할 수 있도록 확인하자
 </p>
 
-5. VC++ Directiries > Library Directories에 아래와 같은 path를 입력해주자.
+(5) VC++ Directiries > Library Directories에 아래와 같은 path를 입력해주자.
 
 C:\Program Files\MATLAB\R2021b\bin\win64
 
@@ -69,7 +68,7 @@ C:\Program Files\MATLAB\R2021b\bin\win64
   그림 3. Library directory path
 </p>
 
-6. C/C++ IDE에서 MATLAB을 호출하기 위해선 "engine.h"를 불러와야 한다. 이 header 파일은 아래의 경로에서 찾을 수 있다.
+(6) C/C++ IDE에서 MATLAB을 호출하기 위해선 "engine.h"를 불러와야 한다. 이 header 파일은 아래의 경로에서 찾을 수 있다.
 
 C:\Program Files\MATLAB\R2021b\extern\include
 
@@ -81,7 +80,7 @@ C:\Program Files\MATLAB\R2021b\extern\include
   그림 4. "engine.h" Header 파일의 경로 추가
 </p>
 
-7. MATLAB engine 사용 시에 사용되는 Linker 파일들은 "libeng.lib"와 "libmx.lib" 인데 이 파일들은 아래의 경로에서 찾을 수 있다.
+(7) MATLAB engine 사용 시에 사용되는 Linker 파일들은 "libeng.lib"와 "libmx.lib" 인데 이 파일들은 아래의 경로에서 찾을 수 있다.
 
 C:\Program Files\MATLAB\R2021b\extern\lib\win64\microsoft
 
@@ -93,7 +92,7 @@ C:\Program Files\MATLAB\R2021b\extern\lib\win64\microsoft
   그림 5. Linker 파일 경로 추가
 </p>
 
-8. 또 앞서 언급한 *.lib 파일들을 아래와 같이 Linker > Input에 추가해주자.
+(8) 또 앞서 언급한 *.lib 파일들을 아래와 같이 Linker > Input에 추가해주자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-06-20-calling_MATLAB_in_C/pic6.jpg">
