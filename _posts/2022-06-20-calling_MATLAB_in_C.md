@@ -24,7 +24,30 @@ MATLAB에서 알고리즘 개발이 용이한 이유는 자료의 시각화 기�
 
 Visual Studio에서 MATLAB을 열기 위해선 여러가지 설정이 수행되어야 한다.
 
-(작성 예정)
+Visual Studio 설정과 관련된 내용은 StackOverflow Question 중 하나인 [Calling MATLAB Engine error: libeng.dll is missing from your computer](https://stackoverflow.com/questions/37470396/calling-matlab-engine-error-libeng-dll-is-missing-from-your-computer)에서 찾은 것임을 밝힌다.
+
+1. 우선 MATLAB을 COM Server로 등록해야 한다. 만약 여러개 MATLAB을 가지고 있다면 C/C++에서 부르고자 하는 MATLAB 버전과 동일한 버전의 MATLAB을 등록해야 한다. MATLAB을 관리자 권한으로 열고 아래와 같이 Command Window에 타이핑하자.
+
+>>!matlab -regserver
+
+이 때, 창이 하나 뜨게 되는데 이 창은 닫아도 괜찮다. 더 자세한 사항은 아래의 MathWorks 홈페이지를 참고해보자.
+
+- Register MATLAB as a COM server
+https://www.mathworks.com/help/matlab/matlab_external/registering-matlab-software-as-a-com-server.html
+
+2. Visual Studio에서 Debugger를 실행시킬 때 참고할 경로를 설정해주자. 내 컴퓨터를 우클릭하여 "설정"을 누르면 시스템 설정 창이 뜨게 된다. 여기서 "고급 시스템 설정"에 들어가서 "환경 변수 > 시스템 변수"로 들어가 "Path"를 수정(Edit)해주자. 아래와 같은 경로를 추가하자.
+
+"C:\Program Files\MATLAB\R2021b\bin\win64"
+
+(현재는 R2021b 버전을 기준으로 작성하였지만 사용하는 버전에 맞춰 작성하면 됨)
+
+만약, Visual Studio를 켜둔 상태에서 이 과정이 수행되었다면 반드시 Visual Studio를 재시작하자. 
+
+3. Visual Studio를 켜고 C/C++을 위한 project를 생성하자. 그리고 project의 Property를 열어보자.
+
+
+
+
 
 # 예시
 
