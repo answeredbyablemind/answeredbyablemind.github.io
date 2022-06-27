@@ -29,7 +29,7 @@ docs-ko:
     children:
       - title: C에서 MATLAB 호출하기
         url: 2022/06/20/calling_MATLAB_in_C.html
-      - title: MATLAB의 tcp/ip 통신
+      - title: MATLAB의 TCP/IP 통신
         url: 2022/06/25/MATLAB_tcpip.html
   - title:      기초 선형대수학 이론
     children:
