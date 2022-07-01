@@ -31,6 +31,8 @@ docs-ko:
         url: 2022/06/20/calling_MATLAB_in_C.html
       - title: MATLAB의 TCP/IP 통신
         url: 2022/06/25/MATLAB_tcpip.html
+      - title: MATLAB으로 email 보내기
+        url: 2022/07/01/MATLAB_email.html
   - title:      기초 선형대수학 이론
     children:
       - title:  벡터의 기본 연산(상수배, 덧셈)
