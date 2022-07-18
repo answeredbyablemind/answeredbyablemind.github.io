@@ -73,3 +73,5 @@ for i in range(len(mo_all)):
             
 #%%
 # my_text를 직접 열어보고 괜찮으면 원래의 md 파일에 붙여넣기.
+# 필요한 경우 my_text를 직접 수정하고 붙여넣도록 하자.
+# 결국은 visual studio code에서 직접 수정할 일이 많을수도 ㅠ
