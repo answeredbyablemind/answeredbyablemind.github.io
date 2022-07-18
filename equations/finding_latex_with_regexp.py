@@ -43,14 +43,14 @@ mo_newline = regex_newline.findall(my_text)
 is_newline = find_newline(mo_all, mo_newline)
 
 #%%
-# path2save = 'D:/angeloyeo.github.io/equaions/'+filename
-# isExist = os.path.exists(path2save)
+path2save = 'D:/angeloyeo.github.io/equations/'+filename
+isExist = os.path.exists(path2save)
 
-# if not isExist:
-#     os.makedirs(path2save)
+if not isExist:
+    os.makedirs(path2save)
     
-# for i, eq in enumerate(mo_all):
-#     formula_as_file(eq, path2save+'/eq'+str(i+1)+'.png')
+for i, eq in enumerate(mo_all):
+    formula_as_file(eq, path2save+'/eq'+str(i+1)+'.png')
     
 #%%
 # 모든 equation이 invalid가 없는지 점검한 후에 md 파일의 내용물을 수정할 것.
@@ -60,9 +60,10 @@ is_newline = find_newline(mo_all, mo_newline)
 for i in range(len(mo_all)):
     match = re.search("\${1,2}(.*?)\${1,2}", my_text)
     if not is_newline[i]:
-        my_text = my_text[:match.start()] + '<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equaions/'+filename+'/eq'+str(i+1)+'.png">' + my_text[match.end():]
+        my_text = my_text[:match.start()] + '<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/'+filename+'/eq'+str(i+1)+'.png">' + my_text[match.end():]
     else:
-        my_text = my_text[:match.start()] + '<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equaions/'+filename+'/eq'+str(i+1)+'.png"> </p>' + my_text[match.end():]
+        my_text = my_text[:match.start()] + '<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/'+filename+'/eq'+str(i+1)+'.png"> </p>' + my_text[match.end():]
             
             
-            
+#%%
+# my_text를 직접 열어보고 괜찮으면 원래의 md 파일에 붙여넣기.
