@@ -22,7 +22,7 @@ def find_newline(list_all, list_to_find):
 def formula_as_file( formula, file):
     # https://gist.github.com/JackMorganNZ/6aeb18c74be3765d3d00de0d8c894e32
     formula = formula.replace('\n', ' ')
-    r = requests.get( 'http://latex.codecogs.com/png.latex?\dpi{{1500}} {formula}'.format(formula=formula))
+    r = requests.get( 'http://latex.codecogs.com/png.latex?\dpi{{100}} {formula}'.format(formula=formula))
     f = open(file, 'wb')
     f.write(r.content)
     f.close()
@@ -51,3 +51,16 @@ if not isExist:
     
 for i, eq in enumerate(mo_all):
     formula_as_file(eq, path2save+'/eq'+str(i+1)+'.png')
+    
+#%%
+# 모든 equation이 invalid가 없는지 점검한 후에 md 파일의 내용물을 수정할 것.
+
+# regexp의 위치 찾아낼 것
+
+
+# for i, match in enumerate(re.finditer("\${1,2}(.*?)\${1,2}", my_text)):
+#     if not is_newline[i]:
+#         my_text[match.start():match.end()] = '<img height = "30" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equaions/'+filename+'/eq'+str(i+1)+'.png">'
+#     else:
+#         my_text[match.start():match.end()]
+    
