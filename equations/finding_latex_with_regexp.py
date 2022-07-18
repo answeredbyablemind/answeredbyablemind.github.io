@@ -8,6 +8,7 @@ Created on Sun Jul 17 20:59:41 2022
 import re
 import requests
 import os
+import glob
 
 def find_newline(list_all, list_to_find):
     res = []
@@ -28,8 +29,13 @@ def formula_as_file( formula, file):
     f.close()
     
 basefolder = 'D:/angeloyeo.github.io/_posts/'
-filename = '2019-06-04-2-1-angle_rad'
 extension = '.md'
+
+filenames = glob.glob(basefolder+'*.md')
+for i in range(len(filenames)):
+    filenames[i] = filenames[i][len(basefolder):-3]
+    
+filename = filenames[4]
 
 f = open(basefolder+filename+extension ,encoding = 'UTF-8')
 my_text = f.read()
