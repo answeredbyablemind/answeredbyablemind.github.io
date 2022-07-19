@@ -26,13 +26,13 @@ tags: 푸리에 신호처리
 
 이번 시간에는 연속 시간 도메인에서 컨볼루션에 대해 생각해보고자 한다. 우리가 수학을 배울 때 연속 시간 신호(즉, 실수 함수)에 대해 먼저 배우고 대학에 와서야 이산 신호에 대해 배우지만, 사실 이해를 돕기위해서는 이산 시간 도메인에서 개념을 먼저 생각해본 뒤 연속 시간 신호의 관점으로 확장시키는 것이 도움이 되는 경우가 많다.
 
-이산 시간에서 convolution이 의미하는 것은 **임의의 함수 $x[n]$ 를 델타 함수 $\delta [n]$ 를 이용해 분해해서 생각할 수 있다**는 것이었다. 식으로 쓰자면,
+이산 시간에서 convolution이 의미하는 것은 **임의의 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq1.png"> 를 델타 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq2.png"> 를 이용해 분해해서 생각할 수 있다**는 것이었다. 식으로 쓰자면,
 
-$$ x[n]=\cdots + x[-2]\delta[n+2]+x[-1]\delta[n+1]+x[0]\delta[n]+x[1]\delta[n-1]+x[2]\delta[n-2]+\cdots \notag $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq3.png"> </p>
 
-$$ = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\delta[k] $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq4.png"> </p>
 
-그러니까, 식 (1)은 조금 자세히 보면 함수 $x[n]$ 을 "함수 값 $\times \delta[n]$" 으로 나타낼 수 있다는 걸 알 수 있다. 그렇다면 연속 시간 신호도 함수값과 delta 함수를 이용하면 임의의 신호 $x(t)$ 를 분해할 수 있지 않을까?
+그러니까, 식 (1)은 조금 자세히 보면 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq5.png"> 을 "함수 값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq6.png">" 으로 나타낼 수 있다는 걸 알 수 있다. 그렇다면 연속 시간 신호도 함수값과 delta 함수를 이용하면 임의의 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq7.png"> 를 분해할 수 있지 않을까?
 
 이산 신호는 경우에 따라 연속 신호를 sampling한 것으로 볼 수 있다. 이산 신호의 컨볼루션 개념에서부터 연속 신호 컨볼루션의 개념을 이해하고자 한다면 그 연결고리는 sampling에서 찾을 수 있을 것이다. 따라서, 연속신호의 간단한 샘플링 방법에 대해 소개하고자 한다.
 
@@ -58,7 +58,7 @@ $$ = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\
 
 # 3. sampled signal의 수학적 표현
 
-아래 그림에서 등호 좌측의 그래프는 연속 신호를 주기 $T_s$에 맞추어 sampling한 신호를 표현하고 있다. 그리고 등호 우측의 그래프들은 등호 좌측의 신호는 각각의 sample된 신호들을 합쳐놓은 것으로 생각할 수 있다는 것을 말해주고 있다.
+아래 그림에서 등호 좌측의 그래프는 연속 신호를 주기 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq8.png">에 맞추어 sampling한 신호를 표현하고 있다. 그리고 등호 우측의 그래프들은 등호 좌측의 신호는 각각의 sample된 신호들을 합쳐놓은 것으로 생각할 수 있다는 것을 말해주고 있다.
 
 <p align="center">
    <img width = "700" src="https://angeloyeo.github.io/pics/CT_Convolution/pics/pic2.png">
@@ -71,7 +71,7 @@ $$ = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\
 
 | DEFINITION 1. 사각파 |
 | --------- |
-| 사각파 $\Pi(t)$ 는 다음과 같이 정의한다. <br><center> $$\Pi(t) = \left\{ \begin{matrix} 1, & -0.5\leq t \leq 0.5\\ 0, & otherwise. \end{matrix} \right . $$</center>|
+| 사각파 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq9.png"> 는 다음과 같이 정의한다. <br><center> <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq10.png"> </p></center>|
 
 <p align="center">
    <img width = "400" src="https://upload.wikimedia.org/wikipedia/commons/1/11/Rectangular_function.svg">
@@ -82,7 +82,7 @@ $$ = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k] = \sum_{k=-\infty}^{\infty}x[n-k]\
 
 사각파를 a만큼 평행이동하고, b만큼 늘려준 파형은 다음과 같다.
 
-$$\Pi\left(\frac{t-a}{b}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq11.png"> </p>
 
 <p align="center">
    <img width = "400" src="https://angeloyeo.github.io/pics/CT_Convolution/pics/pic3.png">
@@ -90,60 +90,60 @@ $$\Pi\left(\frac{t-a}{b}\right)$$
    그림 5. 평행이동 및 scaling한 사각파
 </p>
 
-사각파의 정의를 이용해 그림 3에서 $x(t)$ 를 샘플링한 신호는 다음과 같이 표현할 수 있다.
+사각파의 정의를 이용해 그림 3에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq12.png"> 를 샘플링한 신호는 다음과 같이 표현할 수 있다.
 
-$$x(t) \rightarrow (샘플링) \rightarrow \sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi\left(\frac{t-kT_s}{T_s}\right)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq13.png"> </p>
 
-위 식에서 $1/T_s$가 들어간 것은 sampling period $T_s$의 길이에 따른 결과의 변화를 방지해주고자 normalize하고자 하는 이유에서이다.
+위 식에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq14.png">가 들어간 것은 sampling period <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq15.png">의 길이에 따른 결과의 변화를 방지해주고자 normalize하고자 하는 이유에서이다.
 
 
 # 4. 연속신호 컨볼루션
 
 연속신호를 sampling한 신호에서 sampling 주기를 매우 짧게 만들면 다시 연속신호로 완벽히 복원할 수 있다.
 
-따라서, 아래의 식과 같이 $T_s$ 에 극한을 취해줄 수 있다.
+따라서, 아래의 식과 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq16.png"> 에 극한을 취해줄 수 있다.
 
-$$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi\left(\frac{t-kT_s}{T_s}\right)}\right\}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq17.png"> </p>
 
 위 식에서 나타내는 과정이 이 포스트 맨 위의 애플릿에서 슬라이드를 오른쪽으로 움직였을 때 표현되어 있다.
 
-그렇다면, 위 식에서 $T_s$ 가 매우 작아질 때 $x(kT_s)$ 부분은 함수 값들을 의미한다는 것을 알겠지만 $\frac{1}{T_s} \Pi(\frac{t-kT_s}{T_s})$ 부분은 델타 함수를 정의함으로써 이해할 수 있을 것이다.
+그렇다면, 위 식에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq18.png"> 가 매우 작아질 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq19.png"> 부분은 함수 값들을 의미한다는 것을 알겠지만 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq20.png"> 부분은 델타 함수를 정의함으로써 이해할 수 있을 것이다.
 
 | DEFINITION 2. 연속시간 델타 함수 |
 | --------- |
-| 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다. <br> <center> $$\delta(t) = \lim_{h\rightarrow 0^+}\frac{1}{h}\Pi\left(\frac{t}{h}\right)$$</center>|
+| 디렉 델타 함수를 표현할 수 있는 방법 중 하나는 다음과 같다. <br> <center> <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq21.png"> </p></center>|
 
 따라서 식 (5)는 정적분의 정의와 델타 함수의 정의에 의해 다음과 같이 쓸 수 있다.
 
-$$\lim_{T_s\rightarrow 0}\left\{\sum_{k=-\infty}^{\infty}{x(k T_s) \frac{1}{T_s} \Pi\left(\frac{t-kT_s}{T_s}\right)}\right\} = \int_{-\infty}^{\infty}{x(k) \delta(t-k)dk}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq22.png"> </p>
 
-신호 이론에서는 보통 k 대신에 $\tau$ 를 종종 사용한다.
+신호 이론에서는 보통 k 대신에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq23.png"> 를 종종 사용한다.
 
 # 5. 연속 시간 도메인의 impulse response
 
 DT Signal에서와 마찬가지로 LTI(Linear Time Invariant) system의 성질을 이용하면,
 
-입출력의 관계를 linear operator $O$로 나타낼 수 있다고 하자.
+입출력의 관계를 linear operator <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq24.png">로 나타낼 수 있다고 하자.
 
-$$y(t) = O_n\{x(t)\}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq25.png"> </p>
 
 그렇다면, 앞서 확인한 연속신호 컨볼루션의 정의에 의해
 
-$$ = O_n\left\lbrace\int_{-\infty}^{\infty}{x(k) \delta(t-k)dk}\right\rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq26.png"> </p>
 
 LTI system의 성질에 의해,
 
-$$=\int_{-\infty}^{\infty}{x(k) O_n\{\delta(t-k)\}dk}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq27.png"> </p>
 
 다시 impulse response의 정의에 의해서
 
-$$=\int_{-\infty}^{\infty}{x(k) h(t-k)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq28.png"> </p>
 
 와 같이 확인할 수 있다.
 
-일반적으로 $k$ 대신에 많이 사용하는 $\tau$ 를 이용해 입력, 출력, impulse response의 관계를 적자면,
+일반적으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq29.png"> 대신에 많이 사용하는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq30.png"> 를 이용해 입력, 출력, impulse response의 관계를 적자면,
 
-$$y(t) = \int_{-\infty}^{\infty}{x(\tau)h(t-\tau) d\tau}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-01-Continuous_Time_Convolution/eq31.png"> </p>
 
 라는 사실을 알 수 있다 [^1].
 

@@ -8,74 +8,62 @@ key: 20190715
 tags: 선형대수
 ---
 
-{% raw %}
 
 ## 행렬은 선형 변환이다.
 
-임의의 벡터 $\vec a$, $\vec b$와 스칼라 $c$ 에 대하여 변환 $T$ 가 다음의 두 조건을 만족한다면 이 변환 $T$ 는 선형변환이다.
+임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq1.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq2.png">와 스칼라 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq3.png"> 에 대하여 변환 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq4.png"> 가 다음의 두 조건을 만족한다면 이 변환 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq5.png"> 는 선형변환이다.
 
-$$T(\vec a + \vec b) = T(\vec a)+T(\vec b)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq6.png"> </p>
 
-$$T(c \vec a) = c T(\vec a)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq7.png"> </p>
 
 따라서, 위의 선형 변환의 성질에 따라, 임의의 벡터
 
-$$ \left[
-\begin{array}{c}
-  x\\
-  y
-\end{array}
-\right] $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq8.png"> </p>
 
 에 대해 다음이 성립한다.
 
-$$ T \left ( \begin{bmatrix}x \\ y \end{bmatrix} \right ) = T\left ( x \begin{bmatrix}1 \\ 0 \end{bmatrix} + y \begin{bmatrix}0 \\ 1 \end{bmatrix} \right ) = x T \left ( \begin{bmatrix}1 \\ 0 \end{bmatrix} \right ) + y T\left ( \begin{bmatrix}0 \\ 1 \end{bmatrix} \right )$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq9.png"> </p>
 
 -----
 
-여기서 눈여겨 볼 점은, 원래의 기저 벡터 두 개를 아래와 같이 $\hat{i}$, $\hat{j}$ 라 하고,
+여기서 눈여겨 볼 점은, 원래의 기저 벡터 두 개를 아래와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq10.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq11.png"> 라 하고,
 
 
-$$\hat i = \begin{bmatrix}1 \\ 0 \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq12.png"> </p>
 
-$$\hat j = \begin{bmatrix}0 \\ 1 \end{bmatrix}$$
-
-
-
-새로운 기저 벡터를 $\hat i_{new}$, $\hat j_{new}$ 라 했을 때,
-
-
-$$\hat i_{new} = T\left ( \begin{bmatrix}1 \\ 0 \end{bmatrix} \right )$$
-
-$$\hat j_{new} = T\left ( \begin{bmatrix}0 \\ 1 \end{bmatrix} \right )$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq13.png"> </p>
 
 
 
-$T$ 가 선형변환이라면, 벡터 $\begin{bmatrix}x \\ y \end{bmatrix}$ 는 선형 변환 후에
+새로운 기저 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq14.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq15.png"> 라 했을 때,
 
-새로운 기저 벡터 $\hat i_{new}$ 와 $\hat j_{new}$ 의 $x$ 배와 $y$ 배의 합으로 표현되어야 한다는 것이다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq16.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq17.png"> </p>
+
+
+
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq18.png"> 가 선형변환이라면, 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq19.png"> 는 선형 변환 후에
+
+새로운 기저 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq20.png"> 와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq21.png"> 의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq22.png"> 배와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq23.png"> 배의 합으로 표현되어야 한다는 것이다.
 
 -----
 
 
 예를 들어, 행렬
 
-$$A=\begin{bmatrix}
- 2 & -3 \\
- 1 & 1
- \end{bmatrix} $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq24.png"> </p>
 
  를 이용해 벡터
 
- $$\vec x=\begin{bmatrix} 1 \\ 1 \end{bmatrix}$$
+ <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq25.png"> </p>
 
  를 변환시켜 보면,
 
 
- $$A\vec x =\begin{bmatrix}
- 2 & -3 \\
- 1 & 1
- \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix}=\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$
+ <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq26.png"> </p>
 
 
  임을 알 수 있는데, 아래의 영상에서 처럼 이 값은 새로운 두 기저벡터의 1배와 1배의 합으로
@@ -92,7 +80,7 @@ $$A=\begin{bmatrix}
 
 이를 보면 선형 변환의 결과로써의 빨간 점은 원래 기저 벡터의 -1, 2 배로 표현되었지만,
 
-선형 변환 이후의 새로운 기저 벡터 $\hat i_{new}$, $\hat j_{new}$에 대해서는 각각 1,1 배로 표현되는
+선형 변환 이후의 새로운 기저 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq27.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq28.png">에 대해서는 각각 1,1 배로 표현되는
 것을 알 수 있다.
 
 
@@ -116,37 +104,35 @@ $$A=\begin{bmatrix}
 
 ### shearing
 
-$$\begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq29.png"> </p>
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/shear/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
 ### rotation
 
-$$\begin{bmatrix} \cos(\pi/2) & -\sin(\pi/2) \\ \sin(\pi/2) & \cos(\pi/2) \end{bmatrix} $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq30.png"> </p>
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/rotation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 ### permutation
 
-$$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq31.png"> </p>
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/permutation/" width="325" height = "260" frameborder="0"></iframe></p>
 
 
 ### projection on x-axis
 
-$$\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq32.png"> </p>
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/projection_on_x/" width="325" height = "260" frameborder="0"></iframe></p>
 
-### projection on a vector $\begin{bmatrix} 1 \\ 2 \end{bmatrix}$
+### projection on a vector <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq33.png">
 
-$$\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix} $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-15-Matrix_as_Linear_Transformation/eq34.png"> </p>
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/projection_on_vector/" width="325" height = "260" frameborder="0"></iframe></p>
-
-{% endraw %}
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/euMsKPfj_Ss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
