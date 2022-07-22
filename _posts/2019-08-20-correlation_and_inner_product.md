@@ -32,10 +32,7 @@ tags: 선형대수
 
 n개의 dataset 에 대해서
 
-$$r = \frac{1}{n-1}\sum_{i=1}^{n}
-  \left(\frac{x_i-\bar{X}}{s_{\bar{X}}}\right)
-  \left(\frac{y_i-\bar{Y}}{s_{\bar{Y}}}\right)
-$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq1.png"> </p>
 
 그림 1에서와 같이 500명의 데이터에 대해 상관 관계를 확인하라고 하면 
 
@@ -46,15 +43,15 @@ $$
 
 # 벡터의 내적
 
-임의의 2차원 벡터 $\vec{a}$, $\vec{b}$를 생각해보자.
+임의의 2차원 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq2.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq3.png">를 생각해보자.
 
 두 벡터의 내적은 다음과 같이 정의된다.
 
-$$\vec{a}\cdot\vec{b} = \sum_{i=1}^{n}a_ib_i$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq4.png"> </p>
 
-가령, 벡터 $\vec{a}$, $\vec{b}$를 각각 (2,3), (3,0)이라고 한다면 두 벡터의 내적은 
+가령, 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq5.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq6.png">를 각각 (2,3), (3,0)이라고 한다면 두 벡터의 내적은 
 
-$$\vec{a}\cdot\vec{b} = \sum_{i=1}^{n}a_ib_i = (2\times 3)+(3\times 0) =6$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq7.png"> </p>
 
 이다.
 
@@ -67,13 +64,13 @@ $$\vec{a}\cdot\vec{b} = \sum_{i=1}^{n}a_ib_i = (2\times 3)+(3\times 0) =6$$
 
 한편, 벡터의 내적은 기하학적으로 
 
-'$\vec{a}$의 $\vec{b}$로의 정사영에 $\vec{b}$의 크기를 곱한 것'
+\'<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq8.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq9.png">로의 정사영에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq10.png">의 크기를 곱한 것\'
 
 이라는 의미도 가진다. 
 
 즉, 아래의 그림 3에서 볼 수 있듯이 기하학적 의미로 두 벡터의 내적은
 
-$$\vec{a}\cdot\vec{b} = |\vec{a}|\cos(\theta)\times|\vec{b}|$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq11.png"> </p>
 
 이다.
 
@@ -87,26 +84,26 @@ $$\vec{a}\cdot\vec{b} = |\vec{a}|\cos(\theta)\times|\vec{b}|$$
   그림 3. 벡터 a에서 벡터 b로 향하는 정사영
 </p>
 
-그렇다면 두 벡터의 내적과 $\vec{b}$의 크기를 이용하면 $\vec{a}$의 $\vec{b}$로의 정사영의 길이를 알 수 있다.
+그렇다면 두 벡터의 내적과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq12.png">의 크기를 이용하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq13.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq14.png">로의 정사영의 길이를 알 수 있다.
 
-즉, $\vec{a}$의 $\vec{b}$로의 정사영의 길이 $proj_b a$ 는 다음과 같다.
+즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq15.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq16.png">로의 정사영의 길이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq17.png"> 는 다음과 같다.
 
-$$proj_ba = \frac{\vec{a}\cdot\vec{b}}{|\vec{b}|}$$
-
-
-이 때 우리는 $proj_ba$의 의미를 조금 다르게 해석해 볼 수도 있다.
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq18.png"> </p>
 
 
-한편, $\vec{a}\cdot\vec{b}=\vec{b}\cdot\vec{a}$이다. 
+이 때 우리는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq19.png">의 의미를 조금 다르게 해석해 볼 수도 있다.
 
-즉, 내적의 순서는 상관없다. 다시 말하면 $\vec{b}$의 $\vec{a}$로의 정사영의 길이, $proj_ab$는 다음과 같이 구할 수 있다.
 
-$$prok_ab = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}$$
+한편, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq20.png">이다. 
 
-마찬가지로 $proj_ab$ 또한 이렇게 해석해 볼 수 있겠다.
+즉, 내적의 순서는 상관없다. 다시 말하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq21.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq22.png">로의 정사영의 길이, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq23.png">는 다음과 같이 구할 수 있다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq24.png"> </p>
+
+마찬가지로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq25.png"> 또한 이렇게 해석해 볼 수 있겠다.
 
 <p align = "center">
-<b>"$\vec{b}$의 변화를 $\vec{a}$가 얼마만큼 설명해줄 수 있는가?”</b><br><br>
+<b>"<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq26.png">의 변화를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq27.png">가 얼마만큼 설명해줄 수 있는가?”</b><br><br>
 
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic4.png">
   <br>
@@ -116,25 +113,25 @@ $$prok_ab = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}$$
 
 종합하자면 다음과 같이 설명할 수 있을 것이다.
 
-① $\vec{a}$와 $\vec{b}$의 관계를 알고싶다. 
+① <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq28.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq29.png">의 관계를 알고싶다. 
 
-$$\Rightarrow \vec{a}\cdot\vec{b}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq30.png"> </p>
 
-② $\vec{a}$가 $\vec{b}$를 설명하는 정도를 파악하려면? 
+② <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq31.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq32.png">를 설명하는 정도를 파악하려면? 
 
-$$\Rightarrow \times \frac{1}{|\vec{a}|}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq33.png"> </p>
 
-③ $\vec{b}$가 $\vec{a}$를 설명하는 정도를 파악하려면? 
+③ <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq34.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq35.png">를 설명하는 정도를 파악하려면? 
 
-$$\Rightarrow \times \frac{1}{|\vec{b}|}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq36.png"> </p>
 
-따라서 $\vec{a}$와 $\vec{b}$가 서로를 설명하려면
+따라서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq37.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq38.png">가 서로를 설명하려면
 
-$$\rightarrow \times \frac{1}{|\vec{a}|} \times \frac{1}{|\vec{b}|}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq39.png"> </p>
 
-그러니까 $\vec{a}$와 $\vec{b}$가 서로를 설명하는 양은
+그러니까 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq40.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq41.png">가 서로를 설명하는 양은
 
-$$\frac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|} = \cos(\theta)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq42.png"> </p>
 
 라고 할 수 있다.
 
@@ -142,22 +139,19 @@ $$\frac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|} = \cos(\theta)$$
 
 다시 상관 계수의 식을 보자.
 
-$$r = \frac{1}{n-1}\sum_{i=1}^{n}
-  \left(\frac{x_i-\bar{X}}{s_{\bar{X}}}\right)
-  \left(\frac{y_i-\bar{Y}}{s_{\bar{Y}}}\right)
-  $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq43.png"> </p>
 
 이 중에서
 
-$$\frac{x_i-\bar{X}}{s_{\bar{X}}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq44.png"> </p>
 
 와
 
-$$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq45.png"> </p>
 
-는 정규화 과정과 매우 관련이 있어 보이긴 한다. 하지만 이번에는 $(x_i-\bar{X})$와 $(y_i-\bar{Y})$를 떼어서
+는 정규화 과정과 매우 관련이 있어 보이긴 한다. 하지만 이번에는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq46.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq47.png">를 떼어서
 
-생각해보자. 그리고 $s_{\bar{X}}$와 $s_{\bar{Y}}$는 본래의 정의를 이용해 $(x_i-\bar{X})$, $(y_i-\bar{Y})$를 이용해서 풀어서 써보도록 하자.
+생각해보자. 그리고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq48.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq49.png">는 본래의 정의를 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq50.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq51.png">를 이용해서 풀어서 써보도록 하자.
 
 
 
@@ -165,7 +159,7 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-20_correlation_and_inner_product/pic_eq1.png">
 </p>
 
-여기서 $a_i=x_i-\bar{X}$, $b_i=y_i-\bar{Y}$라 하자.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq52.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq53.png">라 하자.
 
 그러면 위 식은 다음과 같이 쓸 수 있다.
 
@@ -174,13 +168,13 @@ $$\frac{y_i-\bar{X}}{s_{\bar{Y}}}$$
 </p>
 
 
-다시 말하면 상관 계수 $r$은
+다시 말하면 상관 계수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq54.png">은
 
-_**"$\vec{a}$와 $\vec{b}$의 관계에 대해 서로가 얼마나 서로를 설명하는가?"**_
+_**"<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq55.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq56.png">의 관계에 대해 서로가 얼마나 서로를 설명하는가?"**_
 
 또는
 
-_**"$x_i-\bar{X}$와 $y_i-\bar{Y}$의 관계에 대해 서로가 얼마나 서로를 설명하는가?"**_
+_**"<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq57.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq58.png">의 관계에 대해 서로가 얼마나 서로를 설명하는가?"**_
 
 라는 뜻이 라고 해석할 수 있겠다. 이 말은 다시 말하자면 dataset이 원점으로부터 얼마나 떨어져있는지는 무시하고 서로 퍼진 정도만 보겠다는 의미이다.
 
@@ -194,15 +188,15 @@ _**"$x_i-\bar{X}$와 $y_i-\bar{Y}$의 관계에 대해 서로가 얼마나 서�
 
 또 한편,
 
-$$\frac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|} = \cos(\theta)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq59.png"> </p>
 
 이었는데,
 
-$$-1\leq\cos(\theta)\leq 1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq60.png"> </p>
 
 이므로,
 
-$$-1\leq r\leq 1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-20-correlation_and_inner_product/eq61.png"> </p>
 
 라고 말하는 것은 매우 자연스럽게 생각할 수 있다.
 
@@ -210,7 +204,7 @@ $$-1\leq r\leq 1$$
 
 질문이 들어온 것을 다시 한번 글에서 설명하자면,
 
-상관계수와 공분산 모두 공통적으로 벡터의 내적을 이용해 설명할 수 있고, 데이터 간의 (즉, 벡터 사이의) '닮음'과 연결 지을 수 있다.
+상관계수와 공분산 모두 공통적으로 벡터의 내적을 이용해 설명할 수 있고, 데이터 간의 (즉, 벡터 사이의) \'닮음\'과 연결 지을 수 있다.
 
 다만, 둘 사이의 가장 두드러지는 차이점은 정규화의 방법인데, 상관계수는 벡터의 크기로 정규화해주는 반면 공분산은 벡터의 원소 수를 가지고 정규화해준다.
 

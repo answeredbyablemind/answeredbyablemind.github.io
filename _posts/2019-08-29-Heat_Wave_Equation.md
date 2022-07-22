@@ -12,11 +12,11 @@ tags: 미적분학
 
 위키피디아에 따르면 열 방정식(heat equation)은 열 따위의 성질이 시간에 따라 전도되는 과정을 나타내는 2차 편미분 방정식이라고 한다.
 
-일단 '2차 편미분 방정식'이라는 복잡한 말은 배제하자('2차'라는 말이 들어간 것은 순전히 미분을 두 번 했다는 뜻이다.). 일단 여기서 중요한 키워드는 '시간'에 따른 '전도'라고 할 수 있을 것 같다. 시간은 말 그대로 시간인데, '전도'는 공간에 대한 퍼짐이다.
+일단 \'2차 편미분 방정식\'이라는 복잡한 말은 배제하자(\'2차\'라는 말이 들어간 것은 순전히 미분을 두 번 했다는 뜻이다.). 일단 여기서 중요한 키워드는 \'시간\'에 따른 \'전도\'라고 할 수 있을 것 같다. 시간은 말 그대로 시간인데, \'전도\'는 공간에 대한 퍼짐이다.
 
-여기서 힌트를 얻을 수 있는 것은, 열 방정식에는 하나 이상의 변수가 관여한다는 것이다. 열 방정식은 '열(heat)'을 출력으로 하고, 시간과 공간을 입력으로하는 함수라고 알 수 있다.
+여기서 힌트를 얻을 수 있는 것은, 열 방정식에는 하나 이상의 변수가 관여한다는 것이다. 열 방정식은 \'열(heat)\'을 출력으로 하고, 시간과 공간을 입력으로하는 함수라고 알 수 있다.
 
-보통 '공간'이라고 하면 3차원 공간을 생각하게 되는데, 우리는 1차원 공간에 시간을 더한 함수에 대해 생각해보도록 하자.
+보통 \'공간\'이라고 하면 3차원 공간을 생각하게 되는데, 우리는 1차원 공간에 시간을 더한 함수에 대해 생각해보도록 하자.
 
 ## 열방정식의 intuition
 
@@ -29,9 +29,9 @@ tags: 미적분학
   그림 1. 쇠막대기의 중간 지점을 어느정도 시간동안 불로 지져뒀다고 생각해보자.
 </p>
 
-그러면, 막대기의 길이에 따른 온도[^1]를 $u(x)$라 하면, $u(x)$의 분포는 대략적으로 아래와 같을 것이다. 
+그러면, 막대기의 길이에 따른 온도[^1]를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq1.png">라 하면, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq2.png">의 분포는 대략적으로 아래와 같을 것이다. 
 
-[^1]: 물리학적으로 정확히는 '열(heat)'이지만 설명의 편의를 위해 '온도'로 서술하고자 한다.
+[^1]: 물리학적으로 정확히는 \'열(heat)\'이지만 설명의 편의를 위해 \'온도\'로 서술하고자 한다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/pic2_u_x.png">
@@ -65,9 +65,9 @@ tags: 미적분학
 
 이것을 수학적으로는 어떻게 표현할 수 있을까?
 
-'빨리'는 속도에 관련된 것이고, '주변 값과의 관계'는 볼록, 오목이라는 개념을 도입해 생각할 수 있다. 여기서 '볼록', '오목'은 2차 미분 계수로 표현할 수 있다.
+\'빨리\'는 속도에 관련된 것이고, \'주변 값과의 관계\'는 볼록, 오목이라는 개념을 도입해 생각할 수 있다. 여기서 \'볼록\', \'오목\'은 2차 미분 계수로 표현할 수 있다.
 
-## 2차 미분계수와 '볼록', '오목'
+## 2차 미분계수와 \'볼록\', \'오목\'
 
 고등학교 시시절 변곡점(point of inflection)이라는 용어를 들어본 적이 있을 것이다. 변곡점은 2차 미분계수가 0이 되는 지점으로, 위로 볼록인 상태에서 아래로 오목인 상태로 변하거나 반대로 상태가 변하는 그 시점을 말한다.
 
@@ -77,13 +77,13 @@ tags: 미적분학
   그림 4. 변곡점은 볼록>오목 혹은 오목>볼록으로 변하는 시점을 의미한다
 </p>
 
-다시 말해 수학적으로 '위로 볼록'은
+다시 말해 수학적으로 \'위로 볼록\'은
 
-$$f''(x) < 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq3.png"> </p>
 
-으로, '아래로 오목'은 
+으로, \'아래로 오목\'은 
 
-$$f''(x) > 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq4.png"> </p>
 
 으로 쓸 수 있다는 사실을 기억하도록 하자.
 
@@ -91,31 +91,31 @@ $$f''(x) > 0$$
 
 다시 열 방정식의 의미를 생각해보면, 주변 온도가 높을 수록 온도는 빨리 올라가게 될 것이고, 주변 온도가 낮을 수록 온도가 빨리 내려가게 되는 것이라고 했다.
 
-우리의 온도 분포 $u$는 시간과 공간의 함수이므로,
+우리의 온도 분포 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq5.png">는 시간과 공간의 함수이므로,
 
-$$u = f(x,t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq6.png"> </p>
 
 라고 쓸 수 있다.
 
 온도 분포의 시간에 따른 변화(속도)는 
 
-$$\frac{\partial u}{\partial t}\text{ 혹은 } u_t$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq7.png"> </p>
 
 라고 쓸 수 있다.
 
 또, 주변 온도가 높거나 낮은 정도는 2차 미분계수를 이용해
 
-$$\frac{\partial^2u}{\partial x^2}\text{ 혹은 }u_{xx}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq8.png"> </p>
 
 라고 쓸 수 있다.
 
 온도의 변화 속도는 주변의 온도가 높거나 낮은 정도에 비례한다고 할 수 있으므로,
 
-$$u_t \propto u_{xx}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq9.png"> </p>
 
-비례 상수 $k$를 이용해 표현하면,
+비례 상수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq10.png">를 이용해 표현하면,
 
-$$u_t = k u_{xx}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq11.png"> </p>
 
 이며, 이것이 1차원 공간에서의 열 방정식이다.
 
@@ -131,7 +131,7 @@ $$u_t = k u_{xx}$$
   그림 5. 쇠막대기의 온도 변화를 시뮬레이션 한 것
 </p>
 
-아래의 3D 그림은 쇠막대기의 온도 변화 $u(x, t)$를 3차원 공간 상에 도시한 것이다.
+아래의 3D 그림은 쇠막대기의 온도 변화 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq12.png">를 3차원 공간 상에 도시한 것이다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-29_Heat_Wave_Equation/heat_3D_result.gif">
@@ -159,26 +159,26 @@ $$u_t = k u_{xx}$$
 
 ## 파동 방정식의 intuition
 
-열 방정식이 볼록한 정도와 속도의 관계였다면 파동 방정식은 볼록한 정도와 '힘'의 관계이다. 즉, 볼록할 수록 더 힘을 받는다.
+열 방정식이 볼록한 정도와 속도의 관계였다면 파동 방정식은 볼록한 정도와 \'힘\'의 관계이다. 즉, 볼록할 수록 더 힘을 받는다.
 
 수식으로 표현하면 다음과 같다.
 
-$$\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq13.png"> </p>
 
 또는
 
-$$u_{tt} = c^2 u_{xx}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq14.png"> </p>
 
-여기서 $c^2$는 양의 상수이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq15.png">는 양의 상수이다.
 
-즉 좌변은 '가속도'에 관한 항이고 우변은 '볼록한 정도'에 관한 항이다.
+즉 좌변은 \'가속도\'에 관한 항이고 우변은 \'볼록한 정도\'에 관한 항이다.
 
 즉, 1차원 공간에 놓여있는 로프에 대해서 파동의 형태와 가해지는 힘을 표시하면 다음과 같다.
 
 <p align = "center">
   <img src = "https://i.stack.imgur.com/6IR0J.gif">
   <br>
-  그림 7. 파동의 볼록한 정도에 따라 받는 '힘'이 시시각각 변한다.
+  그림 7. 파동의 볼록한 정도에 따라 받는 \'힘\'이 시시각각 변한다.
   <br>
   출처: Meaning of Vector Wave Equation, StackExchange
 </p>
@@ -214,7 +214,7 @@ $$u_{tt} = c^2 u_{xx}$$
 
 ※ 시뮬레이션에 사용된 MATLAB 코드는 공돌이의 수학정리노트 Github Repo에서 받으실 수 있습니다.
 
-$\Rightarrow$ [공돌이의 수학정리노트 Github Repo](https://github.com/angeloyeo/gongdols/tree/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99)
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-29-Heat_Wave_Equation/eq16.png"> [공돌이의 수학정리노트 Github Repo](https://github.com/angeloyeo/gongdols/tree/master/%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99)
 
 <center>
 
