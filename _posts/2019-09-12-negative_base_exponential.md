@@ -20,9 +20,11 @@ tags: 기초수학
 
 일반적으로 지수함수는 밑이 양수인 경우에 대해 취급한다. 위키피디아에서는 다음과 같이 지수함수를 정의하고 있다.
 
-| DEFINITION 1. 지수 함수 |
-| --------- |
-|$a$를 양의 상수, $x$를 모든 실수 값을 취하는 변수라고 할 때,<br><center>$$y = a^x$$</center>로 주어지는 함수를 말한다.|
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq1.png">를 양의 상수, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq2.png">를 모든 실수 값을 취하는 변수라고 할 때,
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq3.png"> </p>
+
+로 주어지는 함수를 말한다.
 
 우리가 흔히 아는 지수함수를 시각화 하자면 다음과 같다.
 
@@ -34,9 +36,9 @@ tags: 기초수학
 
 생각해보면 밑이 음수인 경우 실수 지수를 가지는 지수함수의 값은 어떻게 표현하면 좋을까?
 
-가령, $y=(-1)^x$만 보더라도 $x$가 정수인 경우는 곱셈의 정의를 이용해 쉽게 처리하겠지만, 지수 $x$가 실수인 경우에는 그 처리가 어렵다.
+가령, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq4.png">만 보더라도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq5.png">가 정수인 경우는 곱셈의 정의를 이용해 쉽게 처리하겠지만, 지수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq6.png">가 실수인 경우에는 그 처리가 어렵다.
 
-그런데 잘 생각해보면 $y=(-1)^x$에서 $x=1/2$인 경우 우리는 이 값이 허수 $i$라는 사실을 알고 있다. 즉, 우리는 밑이 음수인 지수함수에 대해서는 복소수에서 그 해법을 찾아볼 수 있을 것 같다.
+그런데 잘 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq7.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq8.png">인 경우 우리는 이 값이 허수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq9.png">라는 사실을 알고 있다. 즉, 우리는 밑이 음수인 지수함수에 대해서는 복소수에서 그 해법을 찾아볼 수 있을 것 같다.
 
 # 수에 대한 이해: 크기와 방향
 
@@ -75,9 +77,9 @@ tags: 기초수학
 
 이로써 2차원 공간 상에서의 회전을 모두 표현할 수 있게 되는데, 이 때 유용한 공식은 오일러 공식이다.
 
-오일러 공식은 크기 $r$과 $x$축으로부터의 각도 $\theta$만큼을 가지는 숫자를 표현하기에 유용하다.
+오일러 공식은 크기 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq10.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq11.png">축으로부터의 각도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq12.png">만큼을 가지는 숫자를 표현하기에 유용하다.
 
-$$r e^{i\theta} = r (\cos\theta + i \sin\theta)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq13.png"> </p>
 
 <p align = "center">
 <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic5.png">
@@ -85,23 +87,23 @@ $$r e^{i\theta} = r (\cos\theta + i \sin\theta)$$
 그림 5. 오일러 공식을 이용하면 크기와 방향을 이용해 복소수를 표현하기에 용이하다.
 </p>
 
-다시 음수로 돌아와서, 복소 평면과 오일러 공식을 이용해 $-1$을 표현하자면, 크기는 1이고 각도는 $\pi \space rad$이므로 아래의 그림 6과 같이 표현할 수 있을 것이다.
+다시 음수로 돌아와서, 복소 평면과 오일러 공식을 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq14.png">을 표현하자면, 크기는 1이고 각도는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq15.png">이므로 아래의 그림 6과 같이 표현할 수 있을 것이다.
 
 <p align = "center">
 <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic6.png">
 <br>
-그림 6. 복소 평면에서 -1은 크기는 1이고, 실수축으로부터의 각도는 180'(pi 라디안)인 숫자이다.
+그림 6. 복소 평면에서 -1은 크기는 1이고, 실수축으로부터의 각도는 180\'(pi 라디안)인 숫자이다.
 </p>
 
 # 밑이 음수인 지수함수
 
 ## -1의 x 승은? (x는 실수)
 
-오일러 공식을 이용해 $-1$을 쓰면 $e^{i\pi}$와 같으므로, $(-1)^x$는 다음과 같이 쓸 수 있다.
+오일러 공식을 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq16.png">을 쓰면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq17.png">와 같으므로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq18.png">는 다음과 같이 쓸 수 있다.
 
-$$(-1)^x = (e^{i\pi})^x = e^{ix\pi}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq19.png"> </p>
 
-식 3을 해석할 때, 오일러 공식을 이용하면 $(-1)^x$는 $x$축으로부의 각도가 $x \pi \space rad$ 인 점의 위치를 나타낸다고 할 수 있다.
+식 3을 해석할 때, 오일러 공식을 이용하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq20.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq21.png">축으로부의 각도가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq22.png"> 인 점의 위치를 나타낸다고 할 수 있다.
 
 <p align = "center">
 <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic7.gif">
@@ -113,9 +115,9 @@ $$(-1)^x = (e^{i\pi})^x = e^{ix\pi}$$
 
 마찬가지 방법을 이용해서 밑이 -1이 아니라 -1.5이면 어떨까?
 
-$$(-1.5)^x = (1.5 \times (-1))^x = (1.5 \times e^{i\pi})^x = 1.5^x \times e^{ix\pi}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq23.png"> </p>
 
-식 4를 자세히 보면 가장 우측 식에서 $1.5^x$는 x가 커질 수록 값이 커지고, $e^{ix\pi}$는 식 3 및 그림 7에서 보았듯이 x의 크기에 따라 회전한다.
+식 4를 자세히 보면 가장 우측 식에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq24.png">는 x가 커질 수록 값이 커지고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq25.png">는 식 3 및 그림 7에서 보았듯이 x의 크기에 따라 회전한다.
 
 따라서, 식 4의 결과를 보면 x가 커질 수록 값이 커지면서 회전하는 결과를 보일 것이다.
 
@@ -141,7 +143,7 @@ $$(-1.5)^x = (1.5 \times (-1))^x = (1.5 \times e^{i\pi})^x = 1.5^x \times e^{ix\
 
 다만 이 방법에서는 치역의 실수부와 허수부를 따로 그려야 한다.
 
-가령 $y=(-1.5)^x$의 그래프는 아래의 그림 10과 같다.
+가령 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-12-negative_base_exponential/eq26.png">의 그래프는 아래의 그림 10과 같다.
 
 <p align = "center">
 <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-12_negative_base_exponential/pic10.png">
