@@ -61,7 +61,7 @@ tags: 미적분학
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq19.png"> </p>
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq20.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq20.png"> <br> 식 (5) </p>
 
 한번에 적분식을 계산하기에는 식 (5)가 복잡하기 때문에, 식 (5)의 적분을 계산할 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq21.png"> 성분에 대한 결과와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq22.png"> 성분에 대한 결과를 각각 계산해서 더해주는 방식으로 계산을 진행하자. 
 
