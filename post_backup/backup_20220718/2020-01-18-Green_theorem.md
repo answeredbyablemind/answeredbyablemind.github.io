@@ -250,7 +250,7 @@ $$\oint_{C_k}\vec{f}\cdot d\vec{r}$$
 
 따라서 식 (26)은 다음과 같이 고려해줄 수 있다.
 
-$$식(5) \Rightarrow \oint_C\vec{f}\cdot d\vec{r}=\sum_{k=1}^{N}\oint_{C_k}\vec{f}\cdot d\vec{r}\approx \sum_{k=1}^{N}\text{2d-curl}\left\{F(x_k, y_k)\right\}|R_k|$$
+$$\Rightarrow \oint_C\vec{f}\cdot d\vec{r}=\sum_{k=1}^{N}\oint_{C_k}\vec{f}\cdot d\vec{r}\approx \sum_{k=1}^{N}\text{2d-curl}\left\{F(x_k, y_k)\right\}|R_k|$$
 
 이 때 $N$을 무한하게 크게 만들면 $\|R_k\|\rightarrow dA$가 되고,
 
