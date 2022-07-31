@@ -284,13 +284,15 @@ tags: 미적분학
 
 따라서, 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq82.png">는 주어진 것이므로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq83.png">은 아래와 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq84.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq84_1.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq84_2.png"> </p>
 
 이를 이용하면 원래의 식 (23)의 선적분은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq85.png">에 대한 적분으로 바꿀 수 있다.
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq86.png"> </p>
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq87.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq88.png">에 대해 묶으면,
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq87.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq88.png"> 에 대해 묶으면,
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-22-stokes_theorem/eq89.png"> </p>
 
