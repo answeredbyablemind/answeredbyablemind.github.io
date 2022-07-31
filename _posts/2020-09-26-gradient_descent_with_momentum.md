@@ -50,43 +50,43 @@ Momentum의 개념을 도입한 Gradient Descent는 iteration에 따라 방향�
 
 이 method의 이름을 Momentum이라고 하고 pseudo-code를 통해 알고리즘을 우선 보도록 하자.
 
-여기서는 모델의 파라미터가 $W$, $b$ 두 개라고 생각해보자.
+여기서는 모델의 파라미터가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq1.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq2.png"> 두 개라고 생각해보자.
 
-또, subscript로 쓴 $(t)$는 $t$ 번째 iteration에서 계산한 것이라는 걸 말해준다고 하자.
+또, subscript로 쓴 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq3.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq4.png"> 번째 iteration에서 계산한 것이라는 걸 말해준다고 하자.
 
 ---
 
 [Momentum 알고리즘]
 
-Initialize $V_{dw(0)} = \vec 0$, $V_{db(0)} = \vec 0$
+Initialize <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq5.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq6.png">
 
-(여기서 $V_{dw(0)}$의 차원은 $W$의 차원과 같고, $V_{db(0)}$의 차원은 $b$의 차원과 같음.)
+(여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq7.png">의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq8.png">의 차원과 같고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq9.png">의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq10.png">의 차원과 같음.)
 
-$t$ 번째 iteration에서:
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq11.png"> 번째 iteration에서:
 
-$\quad$ 현재 batch에 대한 $dW_{(t)}$, $db_{(t)}$을 계산함. 
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq12.png"> 현재 batch에 대한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq13.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq14.png">을 계산함. 
 
-$\quad$ 그 뒤 아래의 term들을 계산함.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq15.png"> 그 뒤 아래의 term들을 계산함.
 
-$$V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW_{(t)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq16.png"> <br> 식 (1)  </p>
 
 [//]:# (식 1)
 
-$$V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db_{(t)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq17.png"> <br> 식 (2)  </p>
 
 [//]:# (식 2)
 
-$\quad$ Weight, bias 업데이트:
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq18.png"> Weight, bias 업데이트:
 
-$$W := W - \alpha V_{dw(t)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq19.png"> <br> 식 (3)  </p>
 
 [//]:# (식 3)
 
-$$b:= b - \alpha V_{db(t)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq20.png"> <br> 식 (4)  </p>
 
 [//]:# (식 4)
 
-(여기서 $\alpha$는 learning rate이다.)
+(여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq21.png">는 learning rate이다.)
 
 ---
 
@@ -94,62 +94,62 @@ Momentum 알고리즘의 핵심은 식 (1)과 식 (2)인데, 형태는 거의 �
 
 식 (1)은 재귀적으로 계산되는 term인데, iteration 1부터 차근히 살펴보면 다음과 같을 것이다.
 
-$$V_{dw(1)} = \beta_1 V_{dw(0)} + (1-\beta_1)dW_{(1)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq22.png"> <br> 식 (5)  </p>
 
 [//]:# (식 5)
 
 
 두 번째 iteration에서는,
 
-$$V_{dw(2)} = \beta_1 V_{dw(1)} + (1-\beta_1)dW_{(2)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq23.png"> <br> 식 (6)  </p>
 
 [//]:# (식 6)
 
-$$=\beta_1(\beta_1 V_{dw(0)}+(1-\beta_1)dW_{(1)})+ (1-\beta_1)dW_{(2)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq24.png"> <br> 식 (7)  </p>
 
 [//]:# (식 7)
 
-$$=\beta_1^2V_{dw(0)}+ \beta_1(1-\beta_1)dW_{(1)}+(1-\beta_1)dW_{(2)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq25.png"> <br> 식 (8)  </p>
 
 [//]:# (식 8)
 
 세 번째 iteration에서는 다음과 같다.
 
-$$V_{dw(3)} = \beta_1 V_{dw(2)}+ (1-\beta_1)dW_{(3)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq26.png"> <br> 식 (9)  </p>
 
 [//]:# (식 9)
 
-$$= \beta_1 \left\lbrace\beta_1^2V_{dw(0)}+ \beta_1(1-\beta_1)dW_{(1)}+(1-\beta_1)dW_{(2)}\right\rbrace+ (1-\beta_1)dW_{(3)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq27.png"> <br> 식 (10)  </p>
 
 [//]:# (식 10)
 
-$$=\beta_1^3V_{dw(0)}+ \beta_1^2(1-\beta_1)dW_{(1)}+\beta_1(1-\beta_1)dW_{(2)}+(1-\beta_1)dW_{(3)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq28.png"> <br> 식 (11)  </p>
 
 [//]:# (식 11)
 
-이를 일반화해서 생각해보면 $k$ 번째 iteration에서는 다음과 같을 것이다.
+이를 일반화해서 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq29.png"> 번째 iteration에서는 다음과 같을 것이다.
 
-$$V_{dw(k)} = \beta_1^k V_{dw(0)}+\beta_1^{k-1}(1-\beta_1) V_{dw(1)}+\beta_1^{k-2}(1-\beta_1) V_{dw(2)}+\cdots +\beta_1^0(1-\beta_1)V_{dw(k)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq30.png"> <br> 식 (12)  </p>
 
 [//]:# (식 12)
 
-$$=\beta_1^kV_{dw(0)}+\sum_{i=1}^{k}\beta_1^{k-i}(1-\beta_1)V_{dw(i)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq31.png"> <br> 식 (13)  </p>
 
 [//]:# (식 13)
 
-보통 $V_{dw(0)}$은 0으로 초기화하므로,
+보통 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq32.png">은 0으로 초기화하므로,
 
-$$식(13) \Rightarrow \sum_{i=1}^{k}\beta_1^{k-i}(1-\beta_1)V_{dw(i)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq33.png"> <br> 식 (14)  </p>
 
 이다.
 
 [//]:# (식 14)
 
-여기서 $\beta_1$ 값은 0.9 정도로 잡는게 보통이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq34.png"> 값은 0.9 정도로 잡는게 보통이다.
 
 이제, 이 Momentum의 의미를 다시 생각해보기 위해 식 (11)을 한번 다시 보도록 하자.
 
-식 (11)을 보면 현재의 속도 $V_{dw(3)}$은 과거의 속도들에 영향을 받는데, 현재 iteration 대비 이전 값일 수록 $\beta_1$ 값이 더 많이 곱해져있어서 최근의 속도 값들이 더 큰 영향을 주는 것을 알 수 있다.
+식 (11)을 보면 현재의 속도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq35.png">은 과거의 속도들에 영향을 받는데, 현재 iteration 대비 이전 값일 수록 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq36.png"> 값이 더 많이 곱해져있어서 최근의 속도 값들이 더 큰 영향을 주는 것을 알 수 있다.
 
 즉, Gradient의 진행이 그림 1에서와 같았다면 위 아래로 변하는 b축 gradient factor들은 더하기 빼기 해주게 되면서 서서히 속도가 0으로 가까워 질 것이고, 오른쪽으로 계속 진행되는 gradient의 W축 방향 factor들은 계속 더해주게 되어 관성이 작용하는 것 처럼 속도가 점점 붙을 것이다.
 
@@ -165,37 +165,37 @@ RMSProp은 Momentum을 이용한 Gradient와 사용 방식은 거의 유사한�
 
 [RMSProp 알고리즘]
 
-Initialize $S_{dw(t)} = \vec{0}$, $S_{db(t)} = \vec{0}$
+Initialize <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq37.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq38.png">
 
-(여기서 $S_{dw(0)}$의 차원은 $W$의 차원과 같고, $S_{db(0)}$의 차원은 $b$의 차원과 같음.)
+(여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq39.png">의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq40.png">의 차원과 같고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq41.png">의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq42.png">의 차원과 같음.)
 
-On iteration $t$:
+On iteration <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq43.png">:
 
-$\quad$ 현재 batch에 대한 $dW_{(t)}$, $db_{(t)}$을 계산함. 
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq44.png"> 현재 batch에 대한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq45.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq46.png">을 계산함. 
 
-$\quad$ 그 뒤 아래의 term들을 계산함.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq47.png"> 그 뒤 아래의 term들을 계산함.
 
-$$S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW_{(t)}^2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq48.png"> </p>
 
-$$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db_{(t)}^2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq49.png"> </p>
 
-$\quad$ Weight, bias 업데이트:
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq50.png"> Weight, bias 업데이트:
 
-$$W := W - \alpha \frac{dW_{(t)}}{\sqrt{S_{dw(t)}}+\epsilon}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq51.png"> </p>
 
-$$b:= b - \alpha \frac{db_{(t)}}{\sqrt{S_{db(t)}}+\epsilon}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq52.png"> </p>
 
-(여기서 $\epsilon$은 $S$가 매우 작아졌을 때 0으로 나누는 것을 방지하기 위한 값으로 1보다 매우 작은 양수이다.)
+(여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq53.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq54.png">가 매우 작아졌을 때 0으로 나누는 것을 방지하기 위한 값으로 1보다 매우 작은 양수이다.)
 
 ---
 
-Momentum 알고리즘과 RMSProp 알고리즘의 차이는 $S_dw$ 혹은 $S_db$라는 term에 있다고 할 수 있다.
+Momentum 알고리즘과 RMSProp 알고리즘의 차이는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq55.png"> 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq56.png">라는 term에 있다고 할 수 있다.
 
-가령 그림 1과 같은 상황에서 RMSProp 알고리즘을 적용시켜준다고 하면, iteration이 진행됨에 따라 gradient의 크기가 $W$ 방향으로는 크지 않고 $b$ 방향으로는 큰 것을 알 수 있다.
+가령 그림 1과 같은 상황에서 RMSProp 알고리즘을 적용시켜준다고 하면, iteration이 진행됨에 따라 gradient의 크기가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq57.png"> 방향으로는 크지 않고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq58.png"> 방향으로는 큰 것을 알 수 있다.
 
-따라서, $S_{dw}$는 값이 작을 것이고 $S_{db}$는 값이 클 것임을 예상할 수 있다.
+따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq59.png">는 값이 작을 것이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq60.png">는 값이 클 것임을 예상할 수 있다.
 
-그래서 식 (17)과 식 (18)에서 $S_{dw(t)}$와 $S_{db(t)}$로 나눠주는 과정은 $W$ 방향으로는 더 빨리 학습이 진행되고, $b$ 방향으로는 더 천천히 학습이 진행되도록 조정하는 과정인 것이다.
+그래서 식 (17)과 식 (18)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq61.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq62.png">로 나눠주는 과정은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq63.png"> 방향으로는 더 빨리 학습이 진행되고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq64.png"> 방향으로는 더 천천히 학습이 진행되도록 조정하는 과정인 것이다.
 
 다시 말해 RMSProp이 가지는 의의는 각 parameter 별로 적절히 learning rate의 크기를 조절해줄 수 있다는데 있다.
 
@@ -209,50 +209,50 @@ ADAM의 알고리즘을 보면 바로 이 말이 무엇인지 이해할 수 있�
 
 [ADAM 알고리즘]
 
-Initialize $V_{dw(0)} = \vec 0$, $V_{db(0)} = \vec 0$, $S_{dw(0)} = \vec{0}$, $S_{db(0)} = \vec{0}$
+Initialize <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq65.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq66.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq67.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq68.png">
 
-(여기서 $V_{dw(0)}$와 $S_{dw(0)}$의 차원은 $W$의 차원과 같고, $V_{db(0)}$와 $S_{db(0)}$의 차원은 $b$의 차원과 같음.)
+(여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq69.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq70.png">의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq71.png">의 차원과 같고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq72.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq73.png">의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq74.png">의 차원과 같음.)
 
-$t$ 번째 iteration에서:
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq75.png"> 번째 iteration에서:
 
-$\quad$ 현재 batch에 대한 $dW$, $db$을 계산함. 
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq76.png"> 현재 batch에 대한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq77.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq78.png">을 계산함. 
 
-$\quad$ 그 뒤 아래의 term들을 계산함.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq79.png"> 그 뒤 아래의 term들을 계산함.
 
-$$V_{dw(t)} =\beta_1 V_{dw(t-1)} + (1-\beta_1)dW_{(t)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq80.png"> </p>
 
-$$V_{db(t)} = \beta_1 V_{db(t-1)} + (1-\beta_1)db_{(t)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq81.png"> </p>
 
-$$S_{dw(t)} =\beta_2 S_{dw(t-1)} + (1-\beta_2)dW_{(t)}^2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq82.png"> </p>
 
-$$S_{db(t)} = \beta_2 S_{db(t-1)} + (1-\beta_2)db_{(t)}^2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq83.png"> </p>
 
 
-$\quad$ Weight, bias 업데이트:
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq84.png"> Weight, bias 업데이트:
 
-$$W := W - \alpha V_{dw(t)}/\sqrt{S_{dw(t)}+\epsilon}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq85.png"> </p>
 
-$$b:= b - \alpha V_{db(t)}/\sqrt{S_{db(t)}+\epsilon}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq86.png"> </p>
 
 ---
 
-[ADAM의 원래 논문(King & Ba, 2015)](https://arxiv.org/pdf/1412.6980.pdf)에서는 다음과 같이 $\beta_1$, $\beta_2$, $\epsilon$의 값을 추천해주고 있다.
+[ADAM의 원래 논문(King & Ba, 2015)](https://arxiv.org/pdf/1412.6980.pdf)에서는 다음과 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq87.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq88.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq89.png">의 값을 추천해주고 있다.
 
-$$\begin{cases}\beta_1: 0.9 \\ \beta_2: 0.99 \\ \epsilon: 10^{-8}\end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq90.png"> </p>
 
 # Bias Correction
 
-앞서 확인한 Gradient Descent with Momentum, RMSProp, ADAM은 모두 $beta<1$ 값을 이용해 이전 값들을 서서히 잊어가는 Exponentially Weighted Moving Average (EWMA)의 일종이라고 할 수 있다.
+앞서 확인한 Gradient Descent with Momentum, RMSProp, ADAM은 모두 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq91.png"> 값을 이용해 이전 값들을 서서히 잊어가는 Exponentially Weighted Moving Average (EWMA)의 일종이라고 할 수 있다.
 
 EWMA는 일반적으로 아래와 같은 수식으로 쓸 수 있다.
 
-데이터 포인트를 $x(t)$라고 하고, $v(0)=0$이라고 했을 때,
+데이터 포인트를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq92.png">라고 하고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq93.png">이라고 했을 때,
 
-$$v(t) := \beta v(t-1) + (1-\beta)x(t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq94.png"> </p>
 
 이다.
 
-일반적으로 $\beta$값은 1보다는 작은 값인데 1에 가까워질 수록 smoothing이 더 많이 된 것이라는 것을 알 수 있다.
+일반적으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq95.png">값은 1보다는 작은 값인데 1에 가까워질 수록 smoothing이 더 많이 된 것이라는 것을 알 수 있다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
@@ -262,13 +262,13 @@ $$v(t) := \beta v(t-1) + (1-\beta)x(t)$$
   그림 N. 여러가지 beta값에 따른 EWMA의 결과
 </p>
 
-위의 그림 N을 보면 알수있는 것이지만 smoothing이 많이 필요한 경우 $\beta$값을 키워주게 되면 초기 time의 smoothing 결과가 원래의 데이터 포인트들에 비해 낮게 나온다는 것을 알 수 있다.
+위의 그림 N을 보면 알수있는 것이지만 smoothing이 많이 필요한 경우 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq96.png">값을 키워주게 되면 초기 time의 smoothing 결과가 원래의 데이터 포인트들에 비해 낮게 나온다는 것을 알 수 있다.
 
-이 에러를 잡기 위해 각 iteration의 출력값 $v(t)$을 보정해줄 수 있으며, 보정 식은 다음과 같다.
+이 에러를 잡기 위해 각 iteration의 출력값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq97.png">을 보정해줄 수 있으며, 보정 식은 다음과 같다.
 
-$$v(t) := v(t) / (1-\beta^t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq98.png"> </p>
 
-여기서 $t$는 현재 iteration 혹은 time 이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-26-gradient_descent_with_momentum/eq99.png">는 현재 iteration 혹은 time 이다.
 
 [//]:# (이런식으로 보정해주는 이유 적을 것.)
 
