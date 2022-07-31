@@ -24,9 +24,9 @@ tags: 통계학
 * 확률밀도함수의 개념과 특성
 * [가우스 적분](https://angeloyeo.github.io/2020/01/17/Gaussian_Integral.html)
 
-# $e^{-x^2}$의 꼴의 유도
+# <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq1.png">의 꼴의 유도
 
-우선은 $f(x)$가 $e^{-x^2}$의 꼴을 따른다는 것을 유도해보고자 한다.
+우선은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq2.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq3.png">의 꼴을 따른다는 것을 유도해보고자 한다.
 
 ## 필요 가정
 
@@ -53,100 +53,114 @@ tags: 통계학
 
 ## 유도 과정
 
-앞서 언급한 세 가지의 가정을 생각하면서, 직교 좌표 상에 임의의 위치 $(x, y)$에서 너비가 $\Delta x$이고 높이가 $\Delta y$인 사각형 $A$에 다트가 맞을 기댓값을 생각해보자.
+앞서 언급한 세 가지의 가정을 생각하면서, 직교 좌표 상에 임의의 위치 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq4.png">에서 너비가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq5.png">이고 높이가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq6.png">인 사각형 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq7.png">에 다트가 맞을 기댓값을 생각해보자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-14-normal_distribution_derivation/pic4.png">
   <br> 그림 4. 기댓값을 계산해볼 사각형 A
 </p>
 
-여기서 $x$축과 $y$축에서 다트가 안착할 확률에 대한 확률밀도 함수를 $f(x, y)$라고 하자.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq8.png">축과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq9.png">축에서 다트가 안착할 확률에 대한 확률밀도 함수를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq10.png">라고 하자.
 
-이 때, $x$축과 $y$축에 다트가 안착할 확률은 서로 독립적이므로 $x$축과 $y$축에 대한 다트가 안착할 확률밀도함수는 각각 $f(x)$와 $f(y)$이다.
+이 때, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq11.png">축과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq12.png">축에 다트가 안착할 확률은 서로 독립적이므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq13.png">축과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq14.png">축에 대한 다트가 안착할 확률밀도함수는 각각 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq15.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq16.png">이다.
 
-따라서, 사각형 $A$에 다트가 안착할 기댓값은 다음과 같다.
+따라서, 사각형 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq17.png">에 다트가 안착할 기댓값은 다음과 같다.
 
-$$f(x)\Delta x f(y)\Delta y$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq18.png"> <br> 식 (1) </p>
+
+[//]:# (식 1)
 
 한편, 위의 가정 중 회전에 관한 가정을 이용하기 위해 극좌표계를 이용해 같은 확률밀도를 서술해보자.
 
-극좌표계에서 표현한 확률밀도함수를 $g(r,\theta)$라고 했을 때, 가정 1번에 따라 이 확률밀도함수는 회전에 독립적이므로 $g(r, \theta) = g(r)$이라고 써도 무관하다.
+극좌표계에서 표현한 확률밀도함수를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq19.png">라고 했을 때, 가정 1번에 따라 이 확률밀도함수는 회전에 독립적이므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq20.png">이라고 써도 무관하다.
 
 따라서, 사각형 A에 다트가 안착할 기댓값을 극좌표계를 이용해 서술하면 아래와 같다.
 
-$$g(r)\Delta x\Delta y$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq21.png"> <br> 식 (2) </p>
+
+[//]:# (식 2)
 
 이 때, 식 (1)과 식 (2)는 같은 값이므로,
 
-$$f(x)\Delta x f(y) \Delta y = g(r) \Delta x \Delta y$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq22.png"> <br> 식 (3) </p>
 
-이며, $\Delta x$와 $\Delta y$를 소거하면,
+[//]:# (식 3)
 
-$$f(x)f(y) = g(r)$$
+이며, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq23.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq24.png">를 소거하면,
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq25.png"> <br> 식 (4)  </p>
+
+[//]:# (식 4)
 
 이다.
 
-여기서 가정 1을 한번 더 이용해 식 (4)를 $\theta$에 대해 미분해주도록 하자.
+여기서 가정 1을 한번 더 이용해 식 (4)를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq26.png">에 대해 미분해주도록 하자.
 
 그러면 확률밀도함수는 회전에 독립적이므로 회전에 대한 미분의 결과는 0이 되어야 한다.
 
-$$\frac{df(x)}{d\theta}f(y) + f(x)\frac{df(y)}{d\theta}=\frac{g(r)}{d\theta} = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq27.png"> </p>
 
 이 식은 아래와 같이 써주어도 무관하다.
 
-$$\frac{df(x)}{dx}\frac{dx}{d\theta}f(y) + f(x)\frac{df(y)}{dy}\frac{dy}{d\theta}=\frac{g(r)}{d\theta} = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq28.png"> <br> 식 (6) </p>
 
-여기서 $x = r\cos(\theta)$, $y=r\sin(\theta)$이므로,
+[//]:# (식 6)
 
-$$\frac{dx}{d\theta}=-r\sin(\theta)$$
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq29.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq30.png">이므로,
 
-$$\frac{dy}{d\theta}=r\cos(\theta)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq31.png"> <br> 식 (7) </p>
+
+[//]:# (식 7)
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq32.png"> <br> 식 (8)  </p>
+
+[//]:# (식 8)
 
 이다.
 
 따라서, 식 (7)과 식 (8)을 식 (6)에 대입해주면,
 
-$$식(6) \Rightarrow \frac{df}{dx}(-r\sin(\theta))f(y) + f(x)\frac{df}{dy}(r\cos(\theta))$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq33.png"> </p>
 
-여기서 $r\sin(\theta)=y$이고, $r\cos(\theta)=x$이므로,
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq34.png">이고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq35.png">이므로,
 
-$$\Rightarrow \frac{df}{dx}(-y)f(y) + f(x)\frac{df}{dy}x = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq36.png"> </p>
 
 여기서 첫번째 항을 우변으로 넘겨 정리해주면 아래와 같다.
 
-이 때 시각적인 편의를 위해, $df/dx = f'(x)$, $df/dy = f'(y)$로 적어주자.
+이 때 시각적인 편의를 위해, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq37.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq38.png">로 적어주자.
 
-$$\Rightarrow f(x)f'(y)x = f(y)f'(x)y$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq39.png"> </p>
 
-이제 이 식은 상미분방정식임이 확실히 보이는데, [변수분리법](https://angeloyeo.github.io/2021/05/06/separable_differential_equations.html)으로 풀어주기 위해 좌변과 우변을 $x$와 $y$에 대한 식으로만 나타내보자.
+이제 이 식은 상미분방정식임이 확실히 보이는데, [변수분리법](https://angeloyeo.github.io/2021/05/06/separable_differential_equations.html)으로 풀어주기 위해 좌변과 우변을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq40.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq41.png">에 대한 식으로만 나타내보자.
 
-$$\Rightarrow \frac{xf(x)}{f'(x)}=\frac{yf(y)}{f'(y)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq42.png"> <br> 식 (12) </p>
 
 [//]: # (위는 식 12)
 
-식 (12)를 잘 보면 식 (12)가 의미하는 것은 양변에서 분자, 분모의 비율이 모두 일정하다는 것을 의미한다. 따라서 식 (12)의 양변의 값은 모두 어떤 상수 $C$와 같다고 할 수 있다.
+식 (12)를 잘 보면 식 (12)가 의미하는 것은 양변에서 분자, 분모의 비율이 모두 일정하다는 것을 의미한다. 따라서 식 (12)의 양변의 값은 모두 어떤 상수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq43.png">와 같다고 할 수 있다.
 
-$$식(12) \Rightarrow \frac{xf(x)}{f'(x)}=\frac{yf(y)}{f'(y)} = C$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq44.png"> <br> 식 (13) </p>
 
 [//]: # (위는 식 13)
 
-이제 식 (13)에서 미분 방정식을 풀어주도록 하자. $x$나 $y$나 같은 결과를 내기 때문에 $x$에 대해서만 풀어주자.
+이제 식 (13)에서 미분 방정식을 풀어주도록 하자. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq45.png">나 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq46.png">나 같은 결과를 내기 때문에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq47.png">에 대해서만 풀어주자.
 
-$$\frac{xf(x)}{f'(x)}=C$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq48.png"> </p>
 
-여기서 좌변에 $x$만 남기도록 식을 한번 정리해주자.
+여기서 좌변에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq49.png">만 남기도록 식을 한번 정리해주자.
 
-$$x = C\frac{f'(x)}{f(x)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq50.png"> </p>
 
 여기서 양변을 적분해주면,
 
-$$\frac{1}{2}x^2=C \ln(f(x)) + C'$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq51.png"> </p>
 
-여기서 $C'$은 적분에 의해 생긴 또 다른 상수이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq52.png">은 적분에 의해 생긴 또 다른 상수이다.
 
-따라서 우리는 $f(x)$를 다음과 같이 쓸 수 있게 된다.
+따라서 우리는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq53.png">를 다음과 같이 쓸 수 있게 된다.
 
-$$\therefore f(x) = A_0 \exp\left(\frac{1}{2}cx^2\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq54.png"> <br> 식 (17) </p>
 
 [//]: # (위는 식 17)
 
@@ -154,37 +168,37 @@ $$\therefore f(x) = A_0 \exp\left(\frac{1}{2}cx^2\right)$$
 
 따라서, 식 (17)을 다음과 같이 서술하여 내부의 값이 음수임을 강조하도록 하자.
 
-$$식(17) \Rightarrow f(x) = A_0 \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq55.png"> <br> 식 (18) </p>
 
 [//]: # (위는 식 18)
 
-# $1/(\sigma\sqrt{2\pi})$의 유도
+# <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq56.png">의 유도
 
-이번 꼭지에서는 앞서 유도한 식 (18)에서 $A_0$의 값이 $1/\sigma\sqrt{2\pi}$라는 것을 유도해보고자 한다.
+이번 꼭지에서는 앞서 유도한 식 (18)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq57.png">의 값이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq58.png">라는 것을 유도해보고자 한다.
 
 확률밀도함수의 특성을 생각해보면 확률밀도함수의 전체면적은 1이 되어야 한다.
 
-$$\int_{-\infty}^{\infty}f(x)dx = 1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq59.png"> </p>
 
 따라서 다음 식이 만족되어야 한다.
 
-$$\int_{-\infty}^{\infty}A_0 \exp\left(\frac{1}{2}-kx^2\right)dx = 1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq60.png"> </p>
 
-여기서 $A_0$는 상수이므로,
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq61.png">는 상수이므로,
 
-$$\Rightarrow \int_{-\infty}^{\infty}\exp\left(\frac{1}{2}-kx^2\right)dx = \frac{1}{A_0}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq62.png"> <br> 식 (21) </p>
 
 [//]: # (위는 식 21)
 
-식 (21)의 값을 $I$라고 하면,
+식 (21)의 값을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq63.png">라고 하면,
 
-$$\Rightarrow I^2 = \iint_{-\infty}^{\infty}\exp\left(-\frac{1}{2}k(x^2+y^2)\right)dxdy$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq64.png"> <br> 식 (22) </p>
 
 [//]: # (위는 식 22)
 
 인데, 중적분의 적분 domain을 직교좌표계에서 극좌표계로 바꿔써주면,
 
-$$\Rightarrow I^2 = \int_{\theta = 0}^{\theta = 2\pi}\int_{r = 0}^{r=\infty}\exp\left(-\frac{1}{2}kr^2\right)rdrd\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq65.png"><br> 식 (23)  </p>
 
 [//]: # (위는 식 23)
 
@@ -192,130 +206,134 @@ $$\Rightarrow I^2 = \int_{\theta = 0}^{\theta = 2\pi}\int_{r = 0}^{r=\infty}\exp
 
 여기서 다음과 같이 치환해주자.
 
-$$-\frac{1}{2}kr^2 = u$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq66.png"> </p>
 
 그러면,
 
-$$-krdr=du$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq67.png"> </p>
 
 이고,
 
-$$rdr = -\frac{1}{k}du$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq68.png"> </p>
 
 이다.
 
 따라서 식 (23)은 다음과 같이 쓸 수 있다.
 
-$$식(23) \Rightarrow I^2 = \int_{\theta = 0}^{\theta = 2\pi}\int_{u = 0}^{u=-\infty}\exp\left(u\right)(-\frac{1}{k}du)d\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq69.png"> </p>
 
-$$= -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}\int_{u = 0}^{u=-\infty}\exp\left(u\right)(du)d\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq70.png"> </p>
 
-$$=-\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}\left[e^u\right]_{0}^{-\infty}d\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq71.png"> </p>
 
-여기서 $\exp(-\infty) = 0$이고 $\exp(0)=1$이므로,
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq72.png">이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq73.png">이므로,
 
-$$\Rightarrow -\frac{1}{k}\int_{\theta = 0}^{\theta = 2\pi}(-1)d\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq74.png"><br> 식 (30)  </p>
 
 [//]: # (위는 식 30)
 
-$$=\frac{2\pi}{k}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq75.png"> </p>
 
-따라서, 이 값은 원래의 $I^2$과 같으므로, $I$의 값은 아래와 같다.
+따라서, 이 값은 원래의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq76.png">과 같으므로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq77.png">의 값은 아래와 같다.
 
-$$I = \int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2\right)dx=\sqrt{\frac{2\pi}{k}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq78.png"> </p>
 
-여기서 $I$의 값은 확률밀도함수의 넓이와 관련된 것이므로 항상 양수이기 때문에 $I$ 의 값은 양의 값만을 가지게 된다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq79.png">의 값은 확률밀도함수의 넓이와 관련된 것이므로 항상 양수이기 때문에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq80.png"> 의 값은 양의 값만을 가지게 된다.
 
-또, 식 (21)에서 $I$의 값은 $1/A_0$와도 같았으므로,
+또, 식 (21)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq81.png">의 값은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq82.png">와도 같았으므로,
 
-$$A_0 = \sqrt{\frac{k}{2\pi}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq83.png"> </p>
 
 이다.
 
 따라서, 식 (18)을 다시 쓰면 다음과 같다.
 
-$$식(18) =  A_0 \exp\left(\frac{1}{2}(-kx^2)\right) = \sqrt{\frac{k}{2\pi}} \exp\left(\frac{1}{2}(-kx^2)\right)\text{ where }k>0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq84.png"> <br> 식 (34) </p>
 
-여기서 $k$에 대한 답을 얻어야 $A_0=1/(\sigma \sqrt{2\pi})$임을 알 수 있으므로 아래의 exponential 내부의 식 유도 부분에서 계속해서 식을 전개해보도록 하자.
+[//]:# (식 34)
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq85.png">에 대한 답을 얻어야 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq86.png">임을 알 수 있으므로 아래의 exponential 내부의 식 유도 부분에서 계속해서 식을 전개해보도록 하자.
 
 # exponential 내부의 식 유도
 
 그림 1에 있는 정규 분포의 공식에서 exponential term 안에 있는 내부의 식을 유도하기 위해선 확률밀도함수의 moment 개념을 이용해야 한다.
 
-어려운 것은 아니고 다음과 같이 확률밀도 함수 $f(x)$가 주어져있을 때 평균과 분산은 다음과 같이 계산할 수 있다는 것이다.
+어려운 것은 아니고 다음과 같이 확률밀도 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq87.png">가 주어져있을 때 평균과 분산은 다음과 같이 계산할 수 있다는 것이다.
 
-$$\mu=\int_{-\infty}^{\infty}xf(x)dx$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq88.png"><br> 식 (35)  </p>
 
 [//]: # (위는 식 35)
 
-$$\sigma^2 = \int_{-\infty}^{\infty}x^2f(x)dx$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq89.png"> <br> 식 (36) </p>
 
 [//]: # (위는 식 36)
 
 
-우리는 식 (34)까지 구했던 $f(x)$의 식을 이용해서 평균과 분산 값을 적어보도록 하자.
+우리는 식 (34)까지 구했던 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq90.png">의 식을 이용해서 평균과 분산 값을 적어보도록 하자.
 
-$$\mu = \int_{-\infty}^{\infty}x\sqrt{\frac{k}{2\pi}}\exp\left(-\frac{1}{2}kx^2\right)dx$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq91.png"> <br> 식 (37) </p>
 
-식 (37)에서 $x$ term은 기함수이고 $\exp\left(-\frac{1}{2}kx^2\right)$ term은 우함수이다. 따라서, 기함수 곱하기 우함수는 기함수이므로, 위의 식 (37)의 결과값은 0이 된다.
+[//]:# (식 37)
+
+식 (37)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq92.png"> term은 기함수이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq93.png"> term은 우함수이다. 따라서, 기함수 곱하기 우함수는 기함수이므로, 위의 식 (37)의 결과값은 0이 된다.
 
 또, 분산 값을 적어보면,
 
-$$\sigma^2 = \int_{-\infty}^{\infty}x^2\sqrt{\frac{k}{2\pi}}\exp\left(-\frac{1}{2}kx^2\right)dx$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq94.png"><br> 식 (38)  </p>
 
-$$=\sqrt{\frac{k}{2\pi}}\int_{-\infty}^{\infty}x^2\exp\left(-\frac{1}{2}kx^2\right)dx$$
+[//]:# (식 38)
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq95.png"><br> 식 (39)  </p>
+
+[//]:# (식 39)
 
 여기서 식 (39)를 다음과 같이 생각해보자.
 
-$$\Rightarrow \sqrt{\frac{k}{2\pi}}\int_{-\infty}^{\infty}x\cdot x\exp\left(-\frac{1}{2}kx^2\right)dx$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq96.png"> <br> 식 (40) </p>
 
-여기서 부분적분을 이용해 식 (40)을 적분해조자.
+[//]:# (식 40)
 
-$x$를 $u$ 라고 하고 $x\exp\left(-\frac{1}{2}kx^2\right)$을 $dv$라고 하면,
+여기서 부분적분을 이용해 식 (40)을 적분해보자.
 
-$$\begin{cases}u = x \\ du = 1\end{cases}$$
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq97.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq98.png"> 라고 하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq99.png">을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq100.png">라고 하면,
 
-$$\begin{cases}
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq101.png"> </p>
 
-dv = x\exp\left(-\frac{1}{2}kx^2\right) \\
-
-v = -\frac{1}{k}\exp\left(-\frac{1}{2}kx^2\right)
-
-\end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq102.png"> </p>
 
 임을 알 수 있다.
 
 따라서, 식 (40)의 적분 값은 다음과 같다.
 
-$$식(40)\Rightarrow \sqrt{\frac{k}{2\pi}}\left\lbrace\left[x\cdot\left(-\frac{1}{k}\right)\exp\left(-\frac{1}{2}kx^2\right)\right]_{-\infty}^{\infty}+\frac{1}{k}\int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2\right)dx\right\rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq103.png"><br> 식 (43)  </p>
 
 [//]: # (위는 식 43)
 
-식 (43)에서 대괄호([])안에 있는 term에 대해 먼저 생각해보면 무한대 값에 대해서는 $x$는 무한대로 발산하고 exponential term은 0으로 수렴하게 되는데, 수렴 속도는 exponential이 0으로 수렴하는 속도가 더 빠르다. 이는 음의 무한대 값에 대해서도 마찬가지로 exponential term이 0으로 수렴하는 속도가 더 빠르다. 따라서 대괄호 안에 있는 term은 결국 0이 되게 된다.
+식 (43)에서 대괄호([])안에 있는 term에 대해 먼저 생각해보면 무한대 값에 대해서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq104.png">는 무한대로 발산하고 exponential term은 0으로 수렴하게 되는데, 수렴 속도는 exponential이 0으로 수렴하는 속도가 더 빠르다. 이는 음의 무한대 값에 대해서도 마찬가지로 exponential term이 0으로 수렴하는 속도가 더 빠르다. 따라서 대괄호 안에 있는 term은 결국 0이 되게 된다.
 
 따라서 식 (43)은
 
-$$식(43) \Rightarrow \sqrt{\frac{k}{2\pi}}\left\lbrace\frac{1}{k}\int_{-\infty}^{\infty}\exp\left(-\frac{1}{2}kx^2\right)dx\right\rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq105.png"><br> 식 (44)  </p>
 
 [//]: # (위는 식 44)
 
-여기서 식 (44) 중괄호($\lbrace\rbrace$)안에 있는 값은 식 (32)로부터 알 수 있는 값이다.
+여기서 식 (44) 중괄호(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq106.png">)안에 있는 값은 식 (32)로부터 알 수 있는 값이다.
 
-$$ \Rightarrow \sqrt{\frac{k}{2\pi}}\left(\frac{1}{k}\right)\sqrt{\frac{2\pi}{k}} = \frac{1}{k}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq107.png"> </p>
 
-그리고 이 값은 원래 $\sigma^2$ 였으므로,
+그리고 이 값은 원래 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq108.png"> 였으므로,
 
-$$\therefore k = \frac{1}{\sigma^2}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq109.png"> </p>
 
 이다.
 
-다시 식 (34)에 $k$값을 대입해주면,
+다시 식 (34)에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq110.png">값을 대입해주면,
 
-$$식(34) \Rightarrow f(x) = \sqrt{\frac{k}{2\pi}}\exp\left(-\frac{1}{2}kx^2\right) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{x^2}{2\sigma^2}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq111.png"> </p>
 
-이 되며, 이 수식은 정규 분포의 수식에서 평균값이 $0$인 경우를 의미하며 평균값이 $\mu$인 경우에는 $x$를 $x-\mu$로 평행 이동 시켜주면 되기 때문에 최종적인 정규 분포의 공식은 다음과 같다.
+이 되며, 이 수식은 정규 분포의 수식에서 평균값이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq112.png">인 경우를 의미하며 평균값이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq113.png">인 경우에는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq114.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq115.png">로 평행 이동 시켜주면 되기 때문에 최종적인 정규 분포의 공식은 다음과 같다.
 
-$$\Rightarrow  \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-14-normal_distribution_derivation/eq116.png"> </p>
 
 # reference
 
