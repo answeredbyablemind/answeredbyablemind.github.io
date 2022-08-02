@@ -69,14 +69,16 @@ tags: 선형대수
 
 # 고윳값, 고유벡터의 정의
 
-| DEFINITION 1. 고윳값, 고유벡터 |
-| --------- |
-| <center>임의의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq9.png"> 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq10.png"> 에 대하여, 0이 아닌 솔루션 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq11.png"> 가 존재한다면 숫자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq12.png"> 는 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq13.png"> 의 고윳값라고 할 수 있다.<br><p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq14.png"> </p><br>이 때, 솔루션 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq15.png"> 는 고윳값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq16.png"> 에 대응하는 고유벡터이다.</center>|
+임의의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq9.png"> 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq10.png"> 에 대하여, 0이 아닌 솔루션 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq11.png"> 가 존재한다면 숫자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq12.png"> 는 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq13.png"> 의 고윳값라고 할 수 있다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq14.png"> <br> 식 (2) </p>
+
+이 때, 솔루션 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq15.png"> 는 고윳값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq16.png"> 에 대응하는 고유벡터이다.</center>
 
 
 이 때, 식 (2)는 행렬의 성질에 의해서 다음과 같이 바꿀 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq17.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq17.png"> <br> 식 (3) </p>
 
 이 때, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq18.png"> 는 identity matrix이다.
 
