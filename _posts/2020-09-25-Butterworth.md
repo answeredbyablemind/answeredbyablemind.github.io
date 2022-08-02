@@ -86,7 +86,7 @@ all-pole 필터에도 zero가 존재한다. 단지 zero인 s는 모두 <img src 
 # 3. Filter specification
 
 <p align = "center"> 
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-25-Butterworth/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-25-Butterworth/pic1.png">
   <br>
   출처 : SPrelated.com / Pytho scipy.signal IIR filter Design
 </p>
@@ -97,7 +97,7 @@ all-pole 필터에도 zero가 존재한다. 단지 zero인 s는 모두 <img src 
 일반적으로 filter는 원하는 주파수 영역대를 살리고, 나오지 않아야하는 주파수 영역대는 죽여줘야 하는 사명을 갖고 태어나게 해야한다. 그것은 filter specification이라는 것을 통해서 요구할 수 있다. 가장 완벽한 필터는 transition의 기울기가 수직인, 통과시키고 싶은 부분의 주파수 요소만 통과시키는 필터이다. 하지만 이런 필터는 존재하지 않는다. 그 이유는 몇 가지로 생각해볼 수 있다. 
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-25-Butterworth/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-25-Butterworth/pic2.png">
   <br>
 </p>
 
@@ -108,7 +108,7 @@ ideal filter는 위와 같이 생겼다. frequency 영역에서는 큰 문제가
 # 4. Butterworth filter의 모습과 How to satisfy specifications
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-25-Butterworth/pic3.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-25-Butterworth/pic3.png">
   <br>
 </p>
 
@@ -151,7 +151,7 @@ ideal filter는 위와 같이 생겼다. frequency 영역에서는 큰 문제가
 그러므로 위의 그림과 같은 Butterworth Filter의 모양과 같은 plot을 구상해 낼 수 있다.이로써, Butterworth filter의 모양을 수학적으로 생각해보았다. 하지만, 이것을 안다고 해서 filter specification을 맞출 수 있는 것은 아니다. filter의 specification에 대해서 이제 더 생각해보자. 
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-25-Butterworth/pic4.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-25-Butterworth/pic4.png">
   <br>
 </p>
 

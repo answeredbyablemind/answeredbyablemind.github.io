@@ -25,7 +25,7 @@ tags: 신호처리
 ## 가. Normalized Lowpass Filter
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/pic1.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic1.png">
   <br>
   그림 1. Normalized Lowpass Filter의 형태
 </p>
@@ -143,7 +143,7 @@ and
 NLPF의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq54.png">의 값은 0또는 neglibigle한 값을 가지고 있기 때문에 Def.3 의 transformation을 통해서 얻을 수 있는 bandpass filter의 모양은 다음과 같다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/pic2.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic2.png">
   <br> 그림 2. Bandpass filter의 모양
 </p>
 
@@ -268,13 +268,13 @@ Bandstop Filter는 Bandpass Filter의 역수를 취한 값을 대입했다고 �
 그러므로, 다음과 같은 모양의 결과가 나온다는 것을 수식을 통해서 알 수 있다.
 
 <p align = "center">
-  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/pic3.png">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic3.png">
   <br>
 </p>
 
 BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다. 즉,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq100.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq100.png"> <br> 식 (37) </p>
 
 [//]:# (식 37)
 
@@ -285,7 +285,7 @@ BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다.
  우리는 지금까지 LPF외에 다른 종류의 필터를 설계 할 때에는 Normalized LPF를 통해서 설계가 가능하다는 사실을 공부했다. 그 방법은 Frequency Transformation이라는 방법이고 구체적인 내용은 다음과 같았다.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/pic4.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic4.png">
   <br>
 </p>
 
@@ -306,7 +306,7 @@ BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다.
 그렇다면, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq113.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq114.png">중에서 어떤 것을 작게 만들어야 할까? 아래의 그림을 보면서 생각해보자.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/pic5.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic5.png">
 </p>
 
 다시 한번 말하자면, 우리는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq115.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq116.png">인 경우에 처해있다. 
@@ -326,7 +326,7 @@ BPF에서와 마찬가지로 BSF에서도 기하평균 property가 적용된다.
 
 이 때 Filter의 Specification을 oversatisfying 하기 위해서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq124.png">의 크기를 키워주어야 한다. 마찬가지로 새로 만들어지는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq125.png">은 다음과 같을 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq126.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq126.png"> <br> 식 (40) </p>
 
 [//]:# (식 40)
 
@@ -352,13 +352,13 @@ NLPF의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github
 
 따라서 여기서
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq140.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq140.png"> <br> 식 (44)  </p>
 
 [//]:# (식 44)
 
 또는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq141.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-29-frequency_transformation/eq141.png"> <br> 식 (45)  </p>
 
 [//]:# (식 45)
 
