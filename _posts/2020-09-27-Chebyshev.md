@@ -33,7 +33,7 @@ Chebyshev 필터는 [Butterworth 필터](https://angeloyeo.github.io/2020/09/25/
 그렇다면 Chebyshev 필터의 대략적인 모습을 보도록 하자.
 
 <p align = "center">
-  <img width = "400" src ="https://wikidocs.net/images/page/4067/20160127_213347.png">
+  <img width = "400" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic1.png">
   <br> 그림 1. Chebyshev 필터의 대략적인 형태
   <br> <a href = "https://en.wikipedia.org/wiki/Chebyshev_filter"> 출처: 위키피디아 Chevyshev filter</a>
 </p>
@@ -72,10 +72,7 @@ $$|H_a(j\Omega)|^2 = 1/\left\lbrace 1+\left(\frac{\Omega}{\Omega_c}\right)\right
 
 $\epsilon$은 ripple의 크기를 정하는 요소이고, $C_N(x)$는 필터의 차수 N에 의해서 정해지는 ripple의 모양이며, 이 $C_N(x)$는 다음과 같이 정의된다. 
 
-$$C_N(x) = \begin{cases}
-\cos(N\cos^{-1}(x)) && \text{ for } |x| \leq 1 \\
-\cosh(N\cosh^{-1}(x)) && \text{ for } |x| \gt 1
-\end{cases}$$
+$$C_N(x) = \begin{cases}\cos(N\cos^{-1}(x)) && \text{ for } |x| \leq 1 \\\cosh(N\cosh^{-1}(x)) && \text{ for } |x| \gt 1\end{cases}$$
 
 이 식을 잘 살펴보면, 왜 $x$의 범위가 1을 중심으로 정의되는지 알 수 있다. 그것은 원래 $cos^{-1}(x)$의 함수가 $\|x\|\leq 1$에서 정의되기도 하고, $\Omega$가 $\Omega_p$보다 클 때와 작을 때의 $C_N(x)$의 값이 다르다는 것을 의미한다. 즉,
 
@@ -94,10 +91,7 @@ $$\cosh(x) = \frac{e^x+e^{-x}}{2} = \cos(jx)$$
 
 다시 한번, Chebyshev Polynomial의 정의는 다음과 같다.
 
-$$C_N(x) = \begin{cases}
-\cos(N\cos^{-1}(x)) && \text{ for } |x| \leq 1 \\
-\cosh(N\cosh^{-1}(x)) && \text{ for } |x| \gt 1
-\end{cases}$$
+$$C_N(x) = \begin{cases}\cos(N\cos^{-1}(x)) && \text{ for } |x| \leq 1 \\\cosh(N\cosh^{-1}(x)) && \text{ for } |x| \gt 1\end{cases}$$
 
 우리는 이 때, $\|x\|\leq 1$인 경우에서의 $C_N(x)$에 관심이 있다는 것을 먼저 밝히고 싶다. 이것이 중요한 이유는, $C_N(x)$의 성질에 의해서 Chebyshev 필터의 모양이 결정되기 때문이다.
 
@@ -201,17 +195,14 @@ $$C_4(x) = 8x^4-8x^2 + 1$$
 
 그것은,
 
-$$C_N(0) = \begin{cases}
-0 && N = \text{odd}\\
-\pm 1 && N = \text{even}
-\end{cases}$$
+$$C_N(0) = \begin{cases}0 && N = \text{odd}\\\pm 1 && N = \text{even}\end{cases}$$
 
 이라는 것이다. 이것은 나중에 $\Omega=0$의 Chebyshev 필터의 모양을 결정하는데 중요한 역할을 한다.
 
 또한 $C_N(x)$의 Polynomial을 모아서 보면 다음과 같다.
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4067/20160127_221051.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic2.png">
   <br> 그림 2. 여러가지 n에 대한 Chebyshev Polynomial
   <br> <a href = "https://en.wikipedia.org/wiki/Chebyshev_filter"> 출처: 위키피디아 Chevyshev filter</a>
 </p>
@@ -219,7 +210,7 @@ $$C_N(0) = \begin{cases}
 이 때, $\|x\|>1$인 $x$에 대해서는 해당 색깔의 선을 따라 연속적으로 그어주면 된다. 그것은 $C_N(x)$는 $\|x\|>1$에 대해서는 $C_N(x)=\cosh(\cosh^{-1}(x))$로 정의되기 때문이고, 이것은 다시 말하지만 monotonic한 모양을 가진다.
 
 <p align = "center">
-  <img width = "400" src = "https://wikidocs.net/images/page/4067/20160127_221301.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic3.png">
   <br> 그림 3. 여러가지 n에 대한 Chebyshev Polynomial을 $\|x\|>1$인 경우에 대해서 까지 연장해 그린 것
   <br> (출처 : EE648 Chebyshev filters / John Stensby / ece.uah.edu)
 </p>
@@ -247,7 +238,7 @@ $$\frac{1}{\sqrt{1+\epsilon^2}}\leq|H_a(j\Omega)|\leq 1 $$
 $N=1$일 때,
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4067/20160128_212223.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic4.png">
   <br> 그림 4. $N=1$인 경우의 Chebyshev 필터의 형태
 </p>
 
@@ -271,7 +262,7 @@ $$|H_a(0)|=\frac{1}{\sqrt{1+\epsilon^2}}$$
 이라는 점에 주의해 필터의 형태를 그려보면 다음과 같다.
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4067/20160128_212656.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic5.png">
   <br>
   그림 5. $N=2$인 경우의 Chebyshev 필터의 형태  
 </p>
@@ -279,7 +270,7 @@ $$|H_a(0)|=\frac{1}{\sqrt{1+\epsilon^2}}$$
 N=3, N=4에 대해서도 각각의 Chebyshev filter를 그려볼 수 있다.
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4067/20160128_212745.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic6.png">
   <br>
   그림 6. $N=3$, $N=4$인 경우의 Chebyshev 필터의 형태
 </p>
@@ -339,11 +330,15 @@ Chebyshev Filter의 경우도 Butterworth Filter와 마찬가지로 N의 크기�
 
 $N$ : odd
 
-<center><img src="http://bit.ly/1NCORu1"></center>
+<p align = "center"> 
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic_eq_N_odd.png">
+</p>
 
 $N$ : even
 
-<center><img src="http://bit.ly/23vExj3"></center>
+<p align = "center"> 
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic_eq_N_even.png">
+</p>
 
 위 식을 통해서 다시 한번 알 수 있듯이, N이 짝수일 때에는 시작점이 $1/\sqrt{1+\epsilon^2}$이기 때문에 그 값이 분자에 곱해져 있다는 것을 알 수 있다. 각 상수 $c_0,b_k,c_k$에 대해서 설명하자면, 
 
@@ -353,12 +348,7 @@ $$c_k = y^2_N+\cos^2\left(\frac{2k-1}{2N}\pi\right)$$
 
 $$b_k = 2y_N\sin\left(\frac{2k-1}{2N} \pi\right)$$
 
-$$y_N = \frac{1}{2}\left\lbrace
-
-  \left(\sqrt{1+\frac{1}{\epsilon^2}}+\frac{1}{\epsilon}\right)^{\frac{1}{N}}
-  -
-  \left(\sqrt{1+\frac{1}{\epsilon^2}}+\frac{1}{\epsilon}\right)^{-\frac{1}{N}}
-\right\rbrace$$
+$$y_N = \frac{1}{2}\left\lbrace  \left(\sqrt{1+\frac{1}{\epsilon^2}}+\frac{1}{\epsilon}\right)^{\frac{1}{N}} -  \left(\sqrt{1+\frac{1}{\epsilon^2}}+\frac{1}{\epsilon}\right)^{-\frac{1}{N}}\right\rbrace$$
 
 
 와 같다고 할 수 있다. 이제 마지막으로 N과 $\epsilon$을 정하는 방법에 대해서 생각해보아야 할 것이다.
@@ -370,7 +360,7 @@ $$y_N = \frac{1}{2}\left\lbrace
 일반적으로, specification의 관계를 표현하자면 다음과 같이 그릴 수 있다.
 
 <p align = "center"> 
-  <img src = "https://wikidocs.net/images/page/4067/20160128_222916.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-27-Chebyshev/pic7.png">
   <br> 그림 7. 필터 설계 시 주어지는 specifictaion
 </p>
 
@@ -400,16 +390,12 @@ $$\left(\frac{\Omega_s}{\Omega_p}\right)\gt 1$$
 
 $$C_N\left(\frac{\Omega_s}{\Omega_p}\right)=\cosh\left(N\cosh^{-1}\left(\frac{\Omega_s}{\Omega_p}\right)\right) = \sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}$$
 
-$$N_C\geq\frac
-{\cosh^{-1}\left(\sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}\right)}
-{\cosh^{-1}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
+$$N_C\geq\frac{\cosh^{-1}\left(\sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}\right)}{\cosh^{-1}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
 
 을 만족하는 $N_C$를 찾을 수 있다. (여기서 $N_C$의 $C$는 Chebyshev를 의미하고자 했다.) 
 
 참고로, Butterworth filter의 차수 $N_B$는 다음과 같았다.
 
-$$N_B\geq \frac
-{\log_{10}\sqrt{\frac{1/\delta^2_s-1}{1/\delta^2_p-1}}}
-{\log_{10}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
+$$N_B\geq \frac{\log_{10}\sqrt{\frac{1/\delta^2_s-1}{1/\delta^2_p-1}}}{\log_{10}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
 
 결국 Chebyshev 필터와 Butterworth 필터에서의 N을 구하는 방법은 매우 닮아있다고 할 수 있다.
