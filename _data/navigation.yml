@@ -361,4 +361,10 @@ docs-ko:
       - title:  라플라스 변환과 z-변환
         url:    2020/07/23/laplace_and_z.html        
       - title:  음의 주파수
-        url:    2019/07/22/Negative_Frequency.html
+        url:    2019/07/22/Negative_Frequency.html   
+      - title:  Butterworth Filter
+        url:    2020/09/25/Butterworth.html   
+      - title:  Chebyshev Filter
+        url:    2020/09/27/Chebyshev.html   
+      - title:  Frequency Transformation
+        url:    2020/09/29/frequency_transformation.html
