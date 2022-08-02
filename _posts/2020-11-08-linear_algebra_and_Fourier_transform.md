@@ -77,11 +77,11 @@ tags: 선형대수 신호처리
 
 즉, 녹음해 온 신호를 벡터로 표현하자면 다음과 같이 쓸 수도 있을 것이다.
 
-총 데이터의 길이가 $N$이라고 하면,
+총 데이터의 길이가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq1.png">이라고 하면,
 
-$$x[n] = \begin{bmatrix}x[0]\\x[1] \\ \vdots \\ x[N-1]\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq2.png"> </p>
 
-[벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html) 편에서 소개한 바와 같이 기본 연산(상수배와 벡터 간의 덧셈)을 음성 신호는 만족한다고 볼 수 있으므로 음성 신호 역시도 벡터의 일종으로 볼 수 있으며, 이 때 위의 $x[n]$ 벡터의 차원은 $N$ 차원임을 알 수 있다.
+[벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html) 편에서 소개한 바와 같이 기본 연산(상수배와 벡터 간의 덧셈)을 음성 신호는 만족한다고 볼 수 있으므로 음성 신호 역시도 벡터의 일종으로 볼 수 있으며, 이 때 위의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq3.png"> 벡터의 차원은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq4.png"> 차원임을 알 수 있다.
 
 # 주파수 성분 역시도 벡터
 
@@ -95,9 +95,9 @@ $$x[n] = \begin{bmatrix}x[0]\\x[1] \\ \vdots \\ x[N-1]\end{bmatrix}$$
 
 이런 방식으로 적절히 주파수 대역을 나눠준다면 주파수 성분 역시도 벡터로써 표현할 수 있다.
 
-만약, 전체 주파수 대역을 $N$개로 시간 신호의 길이와 같이 나눠준다고 하면 주파수 성분 벡터는 다음과 같이 표현할 수도 있다.
+만약, 전체 주파수 대역을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq5.png">개로 시간 신호의 길이와 같이 나눠준다고 하면 주파수 성분 벡터는 다음과 같이 표현할 수도 있다.
 
-$$X[k] = \begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1] \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq6.png"> </p>
 
 # 푸리에 변환: 시간 신호 벡터와 주파수 벡터 간의 선형변환
 
@@ -117,21 +117,25 @@ $$X[k] = \begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1] \end{bmatrix}$$
 
 푸리에 행렬은 다음과 같은 이산 푸리에 변환으로부터 얻어낼 수 있다.
 
-| DEFINITION: DFT and iDFT|
-| --------- |
-| 전체 신호의 길이가 N인 이산 신호 $x[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq7.png">DFT and iDFT의 정의<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq8.png">
 
-그렇다면 신호 벡터에 어떤 행렬(여기서 푸리에 행렬)을 통해 주파수 성분 벡터를 얻었다고 볼 수 있을 것이다. 이를 알기 위해 $k=0,1,\cdots, N-1$일 때의 $X[k]$ 값을 하나하나 계산해보자.
+전체 신호의 길이가 N인 이산 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq9.png">과 길이가 N인 이산 주파수 성분 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq10.png">에 대하여 
 
-$$X[0] = x[0]\exp\left(-j\frac{2\pi 0}{N}0\right) + x[1]\exp\left(-j\frac{2\pi 0}{N}1\right)+\cdots +x[N-1]\exp\left(-j\frac{2\pi 0}{N}(N-1)\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq11.png"> </p> 
 
-$$=x[0]\cdot 1 + x[1]\cdot 1 + \cdots + x[N-1] \cdot 1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq12.png"> </p> 
 
-$$X[1] = x[0]\exp(\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp\left(-j\frac{2\pi 1}{N}1\right)+\cdots +x[N-1]\exp(\left(-j\frac{2\pi 1}{N}(N-1)\right)$$
+그렇다면 신호 벡터에 어떤 행렬(여기서 푸리에 행렬)을 통해 주파수 성분 벡터를 얻었다고 볼 수 있을 것이다. 이를 알기 위해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq13.png">일 때의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq14.png"> 값을 하나하나 계산해보자.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq15.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq16.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq17.png"> </p>
 
 여기서 표기의 단순화를 위해 
 
-$$w = \exp\left(-j\frac{2\pi}{N}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq18.png"> <br> 식 (8) </p>
 
 [//]:# (식 8)
 
@@ -139,20 +143,15 @@ $$w = \exp\left(-j\frac{2\pi}{N}\right)$$
 
 그러면,
 
-$$X[1]\Rightarrow x[0]w^0 + x[1] w^1 + \cdots + x[N-1]w^{N-1}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq19.png"> </p>
 
-이런 방식으로 $i$번째 주파수 성분 $X[i]$는 다음과 같이 계산할 수 있음을 알 수 있다.
+이런 방식으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq20.png">번째 주파수 성분 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq21.png">는 다음과 같이 계산할 수 있음을 알 수 있다.
 
-$$X[i] = x[0]w^0 + x[1]w^{i\times1}+\cdots+x[j]w^{i\times j}+\cdots +x[N-1]w^{i\times(N-1)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq22.png"> </p>
 
 즉, 이런 과정을 거치게 되면 DFT를 다음과 같이 벡터와 행렬의 관계로 표현할 수 있다는 것을 알 수 있다.
 
-$$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} = 
-\begin{bmatrix} 
-  1 && 1 && 1 && \cdots  && 1 \\ 
-  1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
-  \vdots && \vdots && \vdots && \ddots  && \vdots \\
-  1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[N-1]\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq23.png"> </p>
 
 
 [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)편에서는 행렬이 일종의 선형변환이라고 말했고,
@@ -173,41 +172,41 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 
 [오일러 공식의 기하학적 의미](https://angeloyeo.github.io/2020/07/07/Euler_Formula.html)편에서는 아래와 같은 공식의 의미에 대해 다룬 적이 있다.
 
-$$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq24.png"> <br> 식 (12) </p>
 
 [//]:# (식 12)
 
-식 (12)의 의미를 파악하기 위해 우변의 값을보면, 이는 복소평면에서 원점으로부터 $\theta$ 라디안만큼 회전한 호(弧, arc)의 좌표를 의미한다는 것을 알 수 있다.
+식 (12)의 의미를 파악하기 위해 우변의 값을보면, 이는 복소평면에서 원점으로부터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq25.png"> 라디안만큼 회전한 호(弧, arc)의 좌표를 의미한다는 것을 알 수 있다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/pic1.png">
-  <br> 그림 4. 복소 평면 상에서 표현한 $x+iy$. 삼각함수로 표현하면 $x$축으로부터의 각도를 $\theta$ 라디안이라 했을 때 $\cos\theta + i \sin\theta$이다.
+  <br> 그림 4. 복소 평면 상에서 표현한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq26.png">. 삼각함수로 표현하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq27.png">축으로부터의 각도를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq28.png"> 라디안이라 했을 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq29.png">이다.
 </p>
 
-다시 말해 식 (8)에 있는 $w$는 다음과 같이 계산하는데,
+다시 말해 식 (8)에 있는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq30.png">는 다음과 같이 계산하는데,
 
-$$w = \exp\left(-j\frac{2\pi}{N}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq31.png"> <br> 식 (13) </p>
 
 [//]:# (식 13)
 
-이 말인 즉슨, 시계 방향으로 한 바퀴 도는 원 위의 점을 $N$ 등분 한 첫 번째 점의 위치라는 의미이다.
+이 말인 즉슨, 시계 방향으로 한 바퀴 도는 원 위의 점을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq32.png"> 등분 한 첫 번째 점의 위치라는 의미이다.
 
-이와 같은 $w$의 의미를 생각하면서 $N=8$인 경우의 푸리에 행렬을 예시로 그 의미를 확인해보자.
+이와 같은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq33.png">의 의미를 생각하면서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq34.png">인 경우의 푸리에 행렬을 예시로 그 의미를 확인해보자.
 
-$N=8$인 경우 푸리에 행렬에 들어가는 $w$의 값은 $w=\exp\left(-j\frac{2\pi}{8}\right)$이다. 이것을 복소평면에 표시하면 다음과 같다.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq35.png">인 경우 푸리에 행렬에 들어가는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq36.png">의 값은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq37.png">이다. 이것을 복소평면에 표시하면 다음과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/20201106_150356.png">
   <br>
-  그림 5. $\exp(-j 2\pi/8)$을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
+  그림 5. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq38.png">을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
 </p>
 
-그림 5과 같이 $w$의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 6와 같을 것이다.
+그림 5과 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq39.png">의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 6와 같을 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
   <br>
-  그림 6. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
+  그림 6. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq40.png">인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq41.png">가 가르키는 phase를 표시하였다.
 </p>
 
 cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개념이므로 회전시 phase의 값은 모두 cosine 혹은 sine 함수의 값으로 바꿔 생각해볼 수 있다.
@@ -248,63 +247,49 @@ cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개�
 
 우리는 간단한 방법으로 푸리에 행렬의 각 열들이 직교한다는 것을 확인할 수 있다.
 
-가장 쉬운 방법으로는 푸리에 행렬 $F$에 Hermitian 연산[^1]을 취한 뒤 곱해보는 것이다.
+가장 쉬운 방법으로는 푸리에 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq42.png">에 Hermitian 연산[^1]을 취한 뒤 곱해보는 것이다.
 
 [^1]: Hermitian 연산자 = Transpose + complex conjugate 이다.
 
 즉,
 
-$$F^HF = \begin{bmatrix} 
-  1 && 1 && 1 && \cdots  && 1 \\ 
-  1 && w^{*1} && w^{*2} && \cdots  && w^{*(N-1)} \\ 
-  \vdots && \vdots && \vdots && \ddots  && \vdots \\
-  1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}\times\notag$$
-  $$\begin{bmatrix} 
-  1 && 1 && 1 && \cdots  && 1 \\ 
-  1 && w^1 && w^2 && \cdots  && w^{N-1} \\ 
-  \vdots && \vdots && \vdots && \ddots  && \vdots \\
-  1 && w^{N-1} && w^{(N-1)\cdot 2}  && \cdots && w^{(N-1)\cdot(N-1)}\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq43.png"> <br> 식 (14) </p>
 
 [//]:# (식 14)
 
-$$=N\begin{bmatrix}1 && 0 && \cdots && 0 \\ 0 && 1 && \cdots && 0 \\ \vdots && \vdots && \ddots && \vdots \\ 0 && 0 && \cdots && 1\end{bmatrix} = N\cdot I$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq44.png"> <br> 식 (15) </p>
 
 [//]:# (식 15)
 
 여기서 superscript '*'은 complex conjugate이다.
 
-이를 확인하기 위해 $F^HF$의 계산 결과의 $m$ 번째 행, $n$ 번째 열을 생각해보자.
+이를 확인하기 위해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq45.png">의 계산 결과의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq46.png"> 번째 행, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq47.png"> 번째 열을 생각해보자.
 
-$$F^H_{m,:}F_{:,n} = \begin{bmatrix}1 & w^{*\cdot m \cdot 1} & \cdots & w^{*\cdot m \cdot (N-1)}\end{bmatrix}\cdot \begin{bmatrix}1\\w^{1\cdot n} \\ \vdots \\ w^{(N-1)\cdot n}\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq48.png"> </p>
 
-$$=1+w^{*\cdot m\cdot 1}w^{1\cdot n}+\cdots+w^{*\cdot m\cdot (N-1)}w^{(N-1)\cdot n}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq49.png"> </p>
 
-$$=\sum_{k=0}^{N-1}w^{*m\cdot k}w^{k\cdot n}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq50.png"> </p>
 
-$$=\sum_{k=0}^{N-1}\exp\left(j\frac{2\pi}{N}m\cdot k\right)\exp\left(-j\frac{2\pi}{N}n\cdot k\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq51.png"> </p>
 
-$$=\sum_{k=0}^{N-1}\exp\left(j\frac{2\pi}{N}(m-n)\cdot k\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq52.png"> </p>
 
-따라서 $m=n$인 경우 $F^H_{m,:}F_{:,n}=N$이고, $m\neq n$인 경우 $F^H_{m,:}F_{:,n}=0$이다.
+따라서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq53.png">인 경우 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq54.png">이고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq55.png">인 경우 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq56.png">이다.
 
-식 (15)의 결과와 같이 푸리에 행렬 $F$의 각 열들은 각 열 자신과 내적 시에는 $N$이라는 값을 갖고 이외의 열과 내적했을 때는 0이라는 결과를 얻어주게 되므로, 각각의 열들은 서로 직교한다는 것을 알 수 있다.
+식 (15)의 결과와 같이 푸리에 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq57.png">의 각 열들은 각 열 자신과 내적 시에는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq58.png">이라는 값을 갖고 이외의 열과 내적했을 때는 0이라는 결과를 얻어주게 되므로, 각각의 열들은 서로 직교한다는 것을 알 수 있다.
 
 ### 2. 푸리에 행렬의 역행렬과 역푸리에 변환
 
 또, 식 (14)과 식 (15)를 통해 푸리에 행렬의 역행렬은 
 
-$$F^{-1}=\frac{1}{N}F^H$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq59.png"> </p>
 
 라는 것을 알 수 있다.
 
 즉,
 
-$$\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[n-1]\end{bmatrix} = 
-\frac{1}{N}\begin{bmatrix} 
-  1 && 1 && 1 && \cdots  && 1 \\ 
-  1 && w^{*1} && w^{*2} && \cdots  && w^{*(N-1)} \\ 
-  \vdots && \vdots && \vdots && \ddots  && \vdots \\
-  1 && w^{*(N-1)} && w^{*(N-1)\cdot 2}  && \cdots && w^{*(N-1)\cdot(N-1)}\end{bmatrix}\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq60.png"> </p>
 
 이며, 이것은 inverse DFT의 식과 같다는 것 또한 쉽게 알 수 있을 것이다.
 
@@ -314,40 +299,37 @@ $$\begin{bmatrix}x[0]\\x[1]\\ \vdots \\ x[n-1]\end{bmatrix} =
 
 예를 들어 아래와 같은 행렬은,
 
-$$\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq61.png"> </p>
 
 연립방정식을 풀면 쉽게 알 수 있다.
 
-$$\begin{cases}
-x+2y = 3 \\
-3x+4y = 5
-\end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq62.png"> </p>
 
-$$\Rightarrow x=-1, \text{ }y=2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq63.png"> </p>
 
 하지만, 이번엔 이 식을 아래와 같이 생각해보자.
 
-$$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\4\end{bmatrix}=\begin{bmatrix}3\\5\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq64.png"> </p>
 
 위 식에 대한 해석은 아래와 같이 할 수도 있다고 [행렬 곱에 대한 새로운 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html) 편에서 언급한 바가 있다.
 
 <center>
 
-  "두 벡터 $\begin{bmatrix}1\\3\end{bmatrix}$과 $\begin{bmatrix}2\\4\end{bmatrix}$로부터 생성된  벡터공간 내에 벡터 $\begin{bmatrix}3\\5\end{bmatrix}$가 존재하는가? 
+  "두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq65.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq66.png">로부터 생성된  벡터공간 내에 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq67.png">가 존재하는가? 
 
 </center>
 
 <center>
 
-  만약 그렇다면,  $\begin{bmatrix}1\\3\end{bmatrix}$과 $\begin{bmatrix}2\\4\end{bmatrix}$을 어떻게 조합해야 $\begin{bmatrix}3\\5\end{bmatrix}$을 구할 수 있을까??"
+  만약 그렇다면,  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq68.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq69.png">을 어떻게 조합해야 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq70.png">을 구할 수 있을까??"
 
 </center>
 
 이 얘기를 푸리에 행렬에 그대로 적용해본다면 우리가 역 푸리에 변환을 취해준다는 것의 의미는 다음과 같다.
 
-"N개의 $F^{-1}$의 열벡터로 생성된 벡터 공간 내에 $N$ 차원 시계열 벡터가 존재하는가?"
+"N개의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq71.png">의 열벡터로 생성된 벡터 공간 내에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq72.png"> 차원 시계열 벡터가 존재하는가?"
 
-"그렇다면 $F^{-1}$의 열벡터를 어떻게 조합해야 시계열 벡터를 만들 수 있는가?"
+"그렇다면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-08-linear_algebra_and_Fourier_transform/eq73.png">의 열벡터를 어떻게 조합해야 시계열 벡터를 만들 수 있는가?"
 
 즉, 무슨 말인가?
 

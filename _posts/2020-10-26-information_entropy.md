@@ -34,9 +34,9 @@ tags: 통계학 머신러닝
 
 그러면, 일단 정보량을 수식적으로 정의하면 아마도 확률값에 반비례하는 값으로 정의하는 것이 좋을 것 같다.
 
-즉, 어떤 사건 랜덤 변수 $X$에 대해 정보량이란 개념은 다음과 같이 생각할 수도 있을 것이다.
+즉, 어떤 사건 랜덤 변수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq1.png">에 대해 정보량(수식에서 Info로 표현)이란 개념은 다음과 같이 생각할 수도 있을 것이다.
 
-$$정보량\propto \frac{1}{P(X))}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq2.png"> <br> 식 (1) </p>
 
 [//]:# (식 1)
 
@@ -44,19 +44,19 @@ $$정보량\propto \frac{1}{P(X))}$$
 
 조금 더 구체적으로, 통계학에서 정보량은 다음과 같이 정의한다.
 
-이산 랜덤변수 $X$에 대해, 
+이산 랜덤변수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq3.png">에 대해, 
 
-$$I(x) = -\log_b(P(X))$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq4.png"> <br> 식 (2) </p>
 
 [//]:# (식 2)
 
 이다.
 
-이 때, 로그의 밑 $b$는 응용 분야에 따라 다르게 쓸 수 있는데, 대게 $b$는 $2, e, 10$ 중 하나를 사용할 수 있다. (각각을 사용했을 때의 정보량의 단위는 bit, nit, dit이다).
+이 때, 로그의 밑 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq5.png">는 응용 분야에 따라 다르게 쓸 수 있는데, 대게 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq6.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq7.png"> 중 하나를 사용할 수 있다. (각각을 사용했을 때의 정보량의 단위는 bit, nit, dit이다).
 
 일단 정보량의 정의에 음수가 붙은 것은 다음과 같이 정보량의 정의에 로그가 사용되어서이다.
 
-$$\log_b\left(\frac{1}{P(X)}\right) = -\log_b\left(P(X)\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq8.png"> <br> 식 (3) </p>
 
 [//]:# (식 3)
 
@@ -78,13 +78,13 @@ $$\log_b\left(\frac{1}{P(X)}\right) = -\log_b\left(P(X)\right)$$
 
 정보 엔트로피(혹은 섀넌 엔트로피)는 평균 정보량이다.
 
-이산 랜덤변수 $X$의 샘플 공간이 $\lbrace x_1, x_2, \cdots, x_n\rbrace$이라고 할 때 정보 엔트로피는 아래와 같다.
+이산 랜덤변수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq9.png">의 샘플 공간이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq10.png">이라고 할 때 정보 엔트로피는 아래와 같다.
 
-$$H(X) = E\left[I(X)\right] = -\sum_{i=1}^{n}P(x_i)\log_b(P(x_i))$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq11.png"> <br> 식 (4) </p>
 
 [//]:# (식 4)
 
-여기서 $E\left[\cdot\right]$은 기댓값 연산자를 의미한다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq12.png">은 기댓값 연산자를 의미한다.
 
 식 (4)가 왜 정보량의 기댓값(즉, 평균 정보량)을 의미하는지 의아하다면 다음의 예시를 다시 생각해보자.
 
@@ -92,17 +92,17 @@ $$H(X) = E\left[I(X)\right] = -\sum_{i=1}^{n}P(x_i)\log_b(P(x_i))$$
 
 이 때의 기댓값은 다음과 같을 것이다.
 
-$$기댓값 = \frac{1}{6}\times 100 + \frac{1}{6}\times 200 + \cdots \frac{1}{6}\times 600$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq13.png"> </p>
 
-$$=\sum_{i=1}^6 P(x_i) M(x_i)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq14.png"> </p>
 
-여기서 $M(x_i)$는 $x_i$라는 사건 발생에 대해 받는 돈 (100원~600원)이라고 생각하자.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq15.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq16.png">라는 사건 발생에 대해 받는 돈 (100원~600원)이라고 생각하자.
 
-즉, 기댓값의 정의는 일어날 수 있는 사건에 대한 확률 $\times$ 이벤트 값을 모두 합친 것이라고 할 수 있다.
+즉, 기댓값의 정의는 일어날 수 있는 사건에 대한 확률 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq17.png"> 이벤트 값을 모두 합친 것이라고 할 수 있다.
 
-따라서, 정보 엔트로피는 모든 일어날 수 있는 사건에 대한 확률 $\times$ 정보량 값을 합친 것이므로,
+따라서, 정보 엔트로피는 모든 일어날 수 있는 사건에 대한 확률 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq18.png"> 정보량 값을 합친 것이므로,
 
-$$H(x) = \sum_{i=1}^{n}P(x_i)(-\log_b(P(x_i)))$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-26-information_entropy/eq19.png"> </p>
 
 를 계산하여 얻을 수 있는 값이다.
 
