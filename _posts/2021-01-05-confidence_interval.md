@@ -58,7 +58,7 @@ tags: 통계학
 
 우리는 이 때 왼쪽 모집단에서 임의의 표본(sample)을 선택할 수 있고 이 키 값들의 평균값을 계산할 수 있다.
 
-이 때 생각해볼 수 있는 것은 '우리가 임의로 선정한 표본의 평균(오른쪽 분포에서 빨간색)이 특별한 의미를 가지는 것인가'라는 것이다. 생각해보면 이 샘플들은 절대 특별한 의미를 가지는 표본 평균 값은 아니다. 표본의 선정은 랜덤했기 때문이다.
+이 때 생각해볼 수 있는 것은 \'우리가 임의로 선정한 표본의 평균(오른쪽 분포에서 빨간색)이 특별한 의미를 가지는 것인가\'라는 것이다. 생각해보면 이 샘플들은 절대 특별한 의미를 가지는 표본 평균 값은 아니다. 표본의 선정은 랜덤했기 때문이다.
 
 따라서, 표본 선정에 관한 무수한 경우의 수가 있을 것이며, 해당 다른 경우에 대한 평균값을 모두 모아보면 그림 1의 오른쪽에 있는 표본 평균의 분포와  모양을 띄게 될 것이다[^1].
 
@@ -82,11 +82,11 @@ tags: 통계학
 
 [표본과 표준오차의 의미](https://angeloyeo.github.io/2020/02/12/standard_error.html)에서 보았던 것 처럼 표본 평균의 표준 편차는 "표준 오차(Standard Error of Mean, SEM)"라고 부르며, 그 값은 
 
-$$SEM = \frac{\sigma}{\sqrt{n}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq1.png"> </p>
 
 이다.
 
-여기서 $\sigma$는 모집단의 표준편차이고 $n$은 표본의 크기(몇 명을 뽑아서 계산한 평균값인가)이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq2.png">는 모집단의 표준편차이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq3.png">은 표본의 크기(몇 명을 뽑아서 계산한 평균값인가)이다.
 
 즉, 다시 말해 우리는 이런 결론을 낼 수 있는 것이다.
 
@@ -129,12 +129,12 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 <p align = "center">
   <img src = "https://thumb.mt.co.kr/06/2019/11/2019111809473930485_1.jpg/dims/optimize/">
   <br>
-  그림 6. 선거가 있을 때 마다 보게 되는 문구. '신뢰 수준'
+  그림 6. 선거가 있을 때 마다 보게 되는 문구. \'신뢰 수준\'
   <br>
   <a href = "https://news.mt.co.kr/mtview.php?no=2019111809473930485"> 그림 출처: 머니투데이 </a>
 </p>
 
-우리는 앞선 글 꼭지에서 '95% 확률' 이라는 용어를 썼지만, 어떤 경우에는 확률이라는 말을 '95% 신뢰 수준'이라는 말로 바꿔 쓰기도 한다. 즉, 신뢰 수준이라는 말은 확률이라는 말과 궤를 같이 한다고 할 수 있다.
+우리는 앞선 글 꼭지에서 \'95% 확률\' 이라는 용어를 썼지만, 어떤 경우에는 확률이라는 말을 \'95% 신뢰 수준\'이라는 말로 바꿔 쓰기도 한다. 즉, 신뢰 수준이라는 말은 확률이라는 말과 궤를 같이 한다고 할 수 있다.
 
 예를 들어 그림 6에서처럼 신뢰 수준이 95%이고 표본 오차가 ±3%(즉, 2 x SEM = 3%)인 여론 조사에서 A 후보와 B 후보에 대한 지지율 조사를 했다고 해보자. 이 때, 100명의 사람에게 질문한 결과 A 후보와 B 후보에 대한 지지율이 각각 40%, 36%가 나왔다고 하자. 여기서 우리에게 주어진 정보인 신뢰 수준 95%, 표본오차 ±3%에 따르면 A 후보 지지율의 모비율은 37-43% 사이에 존재할 확률이 95%이고, B 후보 모비율은 33-39% 사이에 존재할 확률이 95%일 것이다. 
 
@@ -158,9 +158,9 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
   그림 7. 표준정규분포와 t-분포의 형태 비교
 </p>
 
-그림 7에서 볼 수 있듯이 표준정규분포와 t-분포의 형태를 보면 생긴건 별반 다를게 없다는 걸 알 수 있다. 다만 t-분포가 $t = 0$ 일 때의 peak 부분의 높이가 좀 낮은 대신 양 끝의 값(보통 tail이라고 부른다)이 조금 높아 보인다.
+그림 7에서 볼 수 있듯이 표준정규분포와 t-분포의 형태를 보면 생긴건 별반 다를게 없다는 걸 알 수 있다. 다만 t-분포가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq4.png"> 일 때의 peak 부분의 높이가 좀 낮은 대신 양 끝의 값(보통 tail이라고 부른다)이 조금 높아 보인다.
 
-두 번째로, 그림 7의 우측 상단의 범례를 보면 알 수 있지만 '자유도'라는 개념이 있다. 자유도는 표본수와 직접적인 관련이 있는 값으로, t-분포의 형태를 결정한다. 그림 8에서 볼 수 있듯이 자유도 값이 클 수록 t-분포의 형태는 정규분포의 형태에 가까워진다.
+두 번째로, 그림 7의 우측 상단의 범례를 보면 알 수 있지만 \'자유도\'라는 개념이 있다. 자유도는 표본수와 직접적인 관련이 있는 값으로, t-분포의 형태를 결정한다. 그림 8에서 볼 수 있듯이 자유도 값이 클 수록 t-분포의 형태는 정규분포의 형태에 가까워진다.
 
 <p align = "center">
   <img  width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic02.png">
@@ -180,7 +180,7 @@ $$SEM = \frac{\sigma}{\sqrt{n}}$$
 
 이 때, 이 넓이 0.3296이 의미하는 바는 자유도가 10인 경우에는 t-값이 0에서 1사이로 얻어질 확률이 0.3296이라는 의미이다.
 
-(만약 't-값을 얻는다'라는 말의 의미를 잘 이해하지 못하고 있다면 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)을 꼭 한번 보고 오는 것을 추천한다.)
+(만약 \'t-값을 얻는다\'라는 말의 의미를 잘 이해하지 못하고 있다면 [t-value와 스튜던트의 t-test 편](https://angeloyeo.github.io/2020/02/13/Students_t_test.html)을 꼭 한번 보고 오는 것을 추천한다.)
 
 보통 추정을 위한 통계학에서 사용하는 주요한 확률값(즉, 분포의 넓이)은 0.95와 0.99가 대표적이라고 할 수 있다. 따라서, t-분포에서 0을 중심으로 좌우로 어떤 t-value부터 어떤 t-value까지 함수를 적분해야 0.95나 0.99의 값을 얻을 수 있는지 알면 추정을 진행하는데 도움이 된다.
 
@@ -210,7 +210,7 @@ t-value table을 보면 가장 왼쪽에 df라고 되어 있고 1부터 1000까�
 
 지금까지 얘기한 것을 나열하면 다음과 같다. t-분포의 형태 특성과 t-분포의 특성 중 하나인 자유도에 대해 얘기했다. 또한, 확률밀도함수의 넓이를 계산하여 확률을 계산할 수 있다고도 얘기하였다.
 
-마지막으로 특정 넓이를 얻을 수 있는 t-value들에 대해서도 얘기했다. 이 post에서는 앞으로 "양 옆으로 tail을 잘라 0.95라는 넓이를 얻을 수 있는 t-value"를 $t_{0.95}$와 같이 쓰고자 한다. 또한, 이를 일반화하여 "양 옆으로 tail을 잘라내고 남는 넓이가 $A$인 t-value"를 $t_A$로 쓸 것이다.
+마지막으로 특정 넓이를 얻을 수 있는 t-value들에 대해서도 얘기했다. 이 post에서는 앞으로 "양 옆으로 tail을 잘라 0.95라는 넓이를 얻을 수 있는 t-value"를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq5.png">와 같이 쓰고자 한다. 또한, 이를 일반화하여 "양 옆으로 tail을 잘라내고 남는 넓이가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq6.png">인 t-value"를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq7.png">로 쓸 것이다.
 
 ## t-test에서 신뢰구간 설정
 
@@ -253,82 +253,82 @@ t-test를 수행할 때의 가설은 다음과 같았다.
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic14.png">
   <br>
-  그림 14. 표본 평균의 차이는 모평균 차이로부터 ±$t_A$ SEM 범위 안에 100A% 확률로 포함되어 있다.
+  그림 14. 표본 평균의 차이는 모평균 차이로부터 ±<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq8.png"> SEM 범위 안에 100A% 확률로 포함되어 있다.
 </p>
 
-앞서 t-분포 복습 파트에서 보았듯이 중심으로부터 $t_A$ 만큼 떨어져있을 확률은 $100A$라고 해석할 수 있고, 그림 12에서 볼 수 있듯이 t-value는 평균의 차이에 평균의 차이에 대한 표준오차를 나눠준 값으로 정의한다.
+앞서 t-분포 복습 파트에서 보았듯이 중심으로부터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq9.png"> 만큼 떨어져있을 확률은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq10.png">라고 해석할 수 있고, 그림 12에서 볼 수 있듯이 t-value는 평균의 차이에 평균의 차이에 대한 표준오차를 나눠준 값으로 정의한다.
 
-따라서, 우리의 표본평균의 차이는 모평균으로부터 $\pm t_A\times SEM$ 사이에 들어올 확률이 $100A$임을 알 수 있다.
+따라서, 우리의 표본평균의 차이는 모평균으로부터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq11.png"> 사이에 들어올 확률이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq12.png">임을 알 수 있다.
 
 그런데, 실제 모평균의 차이를 우리는 알지 못하므로, 표본 평균에 대해서 수행했던 방법을 그대로 적용하여 신뢰 구간을 표본 평균의 차이를 중심으로 옮겨주자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-01-05-confidence_interval/pic15.png">
   <br>
-  그림 15. 표본 평균의 차이부터 ±$t_A$SEM 안에 모평균이 포함되어 있을 확률은 100A%라고 말할 수 있다.
+  그림 15. 표본 평균의 차이부터 ±<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq13.png">SEM 안에 모평균이 포함되어 있을 확률은 100A%라고 말할 수 있다.
 </p>
 
 그러면 다음과 같은 결론을 얻을 수 있게 된다.
 
-<center>두 모평균의 차이는 표본 평균으로부터 $\pm t_A SEM$ 안에 100A%의 확률로 존재한다. </center>
+<center>두 모평균의 차이는 표본 평균으로부터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq14.png"> 안에 100A%의 확률로 존재한다. </center>
 
 예를 들어 생각해보도록 하자. 두 표본 집단을 비교한다고 하자. 가령 대한민국 성인 남자의 평균키와 대한민국 성인 여자의 평균키의 차이가 얼마나 차이가 날지 궁금했다고 생각해보자. 이 때, 우리는 랜덤하게 남자 6명, 여자 6명을 임의로 선택해 이 사람들의 알아냈다고 해보자. 
 
-$$\text{남자 표본 그룹(6명): }[170, 165, 168, 180, 175, 174]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq15.png"> </p>
 
-$$\text{여자 표본 그룹(6명): }[165, 162, 158, 170, 163, 154]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq16.png"> </p>
 
 이 데이터로부터 표본 평균값들을 각각 계산하면,
 
 남자 표본의 표본 평균은 다음과 같다.
 
-$$\bar{X}_1= 172$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq17.png"> </p>
 
 여자 표본의 표본 평균은 다음과 같다.
 
-$$\bar{X}_2= 162$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq18.png"> </p>
 
 남자 표본의 표준 편차는 다음과 같다.
 
-$$s_1 = 5.40$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq19.png"> </p>
 
 여자 표본의 표준 편차는 다음과 같다.
 
-$$s_2 = 5.55$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq20.png"> </p>
 
 
 두 표본의 표준 편차 값이 서로 같을 수는 없다. 하지만, t-test의 기본 가정은 두 표본이 같은 모집단에서 추출되었을 것이라는 가정이 바탕되어 있다. 따라서 두 표준 편차 값에 대한 하나의 대표값인 pooled standard deviation을 계산해야 한다. pooled standard deviation은 다음과 같이 계산 가능하다.
 
-$$s = \sqrt{\frac{1}{2} (s_1^2 + s_2^2)} = 5.48$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq21.png"> </p>
 
 이를 이용하면 표준 오차(SEM)는 다음과 같이 계산할 수 있다.
 
-$$s_{\bar{X}_1-\bar{X}_2} = \sqrt{\frac{s^2}{n_1}+\frac{s^2}{n_2}} = 3.16$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq22.png"> </p>
 
 
 한편 이 t-test의 자유도는 6+6-2 = 10이고, 자유도 10에 해당하는 양측으로의 꼬리부분을 제외한 넓이가 0.95인 t-value는 
 
-$$t_{0.95} = 2.228$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq23.png"> </p>
 
 이다.
 
 그러므로, 95% 신뢰구간의 길이는
 
-$$t_{0.95} \times SEM = 2.228 * 3.16 = 7.04$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq24.png"> </p>
 
 이라는 것을 알 수 있다.
 
 따라서, 남자 여자의 평균키 차이에 대한 95% 신뢰 구간은 
 
-$$(\bar{X}_1 - \bar{X}_2)\pm t_{0.95}\times SEM = 10\pm 7.04$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq25.png"> </p>
 
 이다. 다시 말해 남자 여자의 키의 모평균 차이는 
 
-$$10 -7.04 = 2.96$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq26.png"> </p>
 
 에서 
 
-$$10 + 7.04=17.04$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq27.png"> </p>
 
 사이에 존재할 확률이 95%이라는 뜻이다.
 
@@ -362,7 +362,7 @@ $$10 + 7.04=17.04$$
   <br> 그림 17. 여러가지 n수에 따른 두 그룹의 분포와 p-value를 표현한 것
 </p>
 
-그래서, 연구 결과에 대해 통계적으로 해석할 때에는 p-value 만을 이용해 '기각/수용' 여부만을 제공해주기 보다는 treatment effect size에 대해서도 함께 볼 수 있도록 하는 것이 더 바람직한 해석 방법이라고 할 수 있다.
+그래서, 연구 결과에 대해 통계적으로 해석할 때에는 p-value 만을 이용해 \'기각/수용\' 여부만을 제공해주기 보다는 treatment effect size에 대해서도 함께 볼 수 있도록 하는 것이 더 바람직한 해석 방법이라고 할 수 있다.
 
 이러한 내용에 대해서 조금 더 구체적으로 이해하기 위해 문제를 풀어보도록 하자.
 
@@ -382,35 +382,35 @@ $$10 + 7.04=17.04$$
 
 t-value를 계산하기 위해 우선 pooled variance를 계산하면
 
-$$s^2 = \frac{1}{2}(11^2+9^2) = 10^2\text{ mmHg}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq28.png"> </p>
 
 이므로,
 
-$$t=\frac{\bar{X}_{dr} - \bar{X}_{pla}}{s_{\bar{X}_{dr} - \bar{X}_{pla}}}=\frac{81-85}{\sqrt{(10^2/100)+(10^2/100)}}=-2.83$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq29.png"> </p>
 
 임을 알 수 있다.
 
-위 t-value는 p-value = 0.01 기준인 t-value, $t=-2.61$보다 작은 값이므로 p-value 0.01 이하라는 결과를 통해 통게적으로 유의하게 혈압을 내려준다는 것을 확인할 수 있다.
+위 t-value는 p-value = 0.01 기준인 t-value, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq30.png">보다 작은 값이므로 p-value 0.01 이하라는 결과를 통해 통게적으로 유의하게 혈압을 내려준다는 것을 확인할 수 있다.
 
 하지만, 이 결과가 통계적으로 유의할지언정 임상적으로도 유의한 결과라고 할 수 있을까?
 
-자유도 $198(=100+100-2)$에 해당하는 양측으로의 꼬리부분을 제외한 넓이가 0.95인 t-value는 
+자유도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq31.png">에 해당하는 양측으로의 꼬리부분을 제외한 넓이가 0.95인 t-value는 
 
-$$t_{0.95} = 1.972$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq32.png"> </p>
 
 이다.
 
 또, 표준오차값은 
 
-$$s_{\bar{X}_{dr} - \bar{X}_{pla}} = \sqrt{(10^2/100)+(10^2/100)} = 1.41$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq33.png"> </p>
 
 이다.
 
 따라서, 모평균의 차이에 대한 95% 신뢰구간은
 
-$$-4-1.972(1.41)<\mu_{dr}-\mu_{pla}<-4+1.972(1.41)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq34.png"> </p>
 
-$$-6.8\text{ mmHg}<\mu_{dr}-\mu_{pla}<-1.2\text{ mmHg}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-01-05-confidence_interval/eq35.png"> </p>
 
 이다.
 

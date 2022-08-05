@@ -42,13 +42,13 @@ tags: 선형대수
   <br> 그림 출처: <a href = "https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%B9%B4%EB%A5%B4%ED%8A%B8_%EC%A2%8C%ED%91%9C%EA%B3%84"> 위키피디아, 데카르트 좌표계 </a>
 </p>
 
-일반적인 데카르트 좌표계에서 이용되는 기저 벡터는 $(1,0)$과 $(0,1)$을 가르키는 벡터를 이용하고, 각각을
+일반적인 데카르트 좌표계에서 이용되는 기저 벡터는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq1.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq2.png">을 가르키는 벡터를 이용하고, 각각을
 
-$$\hat{i} = \begin{bmatrix}1 \\0 \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq3.png"> </p>
 
 과
 
-$$\hat{j} = \begin{bmatrix}0\\1\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq4.png"> </p>
 
 로 쓴다.
 
@@ -56,11 +56,11 @@ $$\hat{j} = \begin{bmatrix}0\\1\end{bmatrix}$$
 
 또한 데카르트 좌표계 상의 임의의 점, 가령 (2,3)이라는 점은 두 기저 벡터의 선형결합으로 표현할 수 있는데, 다시 말해
 
-$$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\begin{bmatrix}0\\1 \end{bmatrix} = 2\hat{i} + 3\hat{j}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq5.png"> </p>
 
 라고 쓸 수 있다는 점이다.
 
-여기서 우리는 용어를 하나 정의하고자 하는데, 앞으로는 데카르트의 좌표계의 기저벡터들($\hat{i}, \hat{j}$)을 표준 기저(standard basis)라고 부르도록 하자.
+여기서 우리는 용어를 하나 정의하고자 하는데, 앞으로는 데카르트의 좌표계의 기저벡터들(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq6.png">)을 표준 기저(standard basis)라고 부르도록 하자.
 
 ## 신규 기저를 이용한 좌표 표현
 
@@ -68,15 +68,15 @@ $$\begin{bmatrix}2\\3 \end{bmatrix} = 2\begin{bmatrix}1\\0 \end{bmatrix} + 3\beg
 
 아래와 같은 새로운 기저 벡터들의 집합을 생각해보자.
 
-$$\mathcal{B} = \left\lbrace \vec{b_1}, \vec{b_2} \right\rbrace = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq7.png"> </p>
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic1.png">
   <br>
-  그림 3. 임의의 새로운 기저 벡터 집합 $\mathcal{B}$의 두 기저 벡터
+  그림 3. 임의의 새로운 기저 벡터 집합 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq8.png">의 두 기저 벡터
 </p>
 
-기저 집합 $\mathcal{B}$를 이용하여 새로운 좌표계를 생각하고, 임의의 벡터를 새로운 기저를 이용해 표현해보자.
+기저 집합 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq9.png">를 이용하여 새로운 좌표계를 생각하고, 임의의 벡터를 새로운 기저를 이용해 표현해보자.
 
 가령, 표준 기저를 이용해 표현한 벡터 (2, 2)를 놓고 생각해보자.
 
@@ -94,75 +94,77 @@ $$\mathcal{B} = \left\lbrace \vec{b_1}, \vec{b_2} \right\rbrace = \left\lbrace\b
 
 가령, 표준 기저에서 표현되는 (2,2) 벡터는
 
-$$\begin{bmatrix}2\\ 2\end{bmatrix}_{\mathcal{E}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq10.png"> </p>
 
-라고 표현하고, 새로운 기저 $\mathcal{B}$를 기반으로 하여 표현되는 벡터 (1, 0)은 
+라고 표현하고, 새로운 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq11.png">를 기반으로 하여 표현되는 벡터 (1, 0)은 
 
-$$\begin{bmatrix}2\\ 0\end{bmatrix}_{\mathcal{B}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq12.png"> <br> 식 (6) </p>
+
+[//]:# (식 6)
 
 라고 쓰자.
 
 그렇다면, 그림 4에서 보았던 것 처럼 아래의 두 벡터 표현은 동일한 벡터에 대한 다른 표현임을 알 수 있다.
 
-$$\begin{bmatrix}2\\ 2\end{bmatrix}_{\mathcal{E}}, \begin{bmatrix}2\\ 0\end{bmatrix}_{\mathcal{B}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq13.png"> <br> 식 (7) </p>
 
 [//]:# (식 7)
 
 즉, 위 식은 다음과 같이 해석할 수 있다.
 
-$\Rightarrow \mathcal{B}$라는 기저를 가지고 만든 좌표계에서의 (2, 0)은 표준 좌표계에서는 (2, 2)로 쓸 수 있다.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq14.png">라는 기저를 가지고 만든 좌표계에서의 (2, 0)은 표준 좌표계에서는 (2, 2)로 쓸 수 있다.
 
-그런데, 식 (6)에서의 기저 $\mathcal{B}$를 이용해 표현한 (2,0)라는 좌표값은 어떻게 얻을 수 있었을까?
+그런데, 식 (6)에서의 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq15.png">를 이용해 표현한 (2,0)라는 좌표값은 어떻게 얻을 수 있었을까?
 
-원래의 표준 좌표계에서의 좌표 $(2,2)$를 $\mathcal{B}$의 기저들을 이용해 표현한다고 하고, 기저 $\mathcal{B}$를 이용해 표현한 좌표는 $(k_1, k_2)$라고 하자.
+원래의 표준 좌표계에서의 좌표 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq16.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq17.png">의 기저들을 이용해 표현한다고 하고, 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq18.png">를 이용해 표현한 좌표는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq19.png">라고 하자.
 
-즉 표준좌표계에서의 좌표 (2,2)와 새로운 기저를 이용해 표현한 좌표 $(k_1, k_2)$는 아래와 같은 관계식을 만족해야 한다.
+즉 표준좌표계에서의 좌표 (2,2)와 새로운 기저를 이용해 표현한 좌표 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq20.png">는 아래와 같은 관계식을 만족해야 한다.
 
-$$\begin{bmatrix}2\\2\end{bmatrix}=k_1\begin{bmatrix}| \\ b_1 \\ |\end{bmatrix}+k_2\begin{bmatrix}| \\ b_2 \\ |\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq21.png"> </p>
 
-위 식을 보면 바로 떠오를 수 있는 것은 [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 보았던 것 처럼 위 식의 우변은 행렬과 벡터의 곱의 해석 중 '열벡터의 선형 결합'을 이용해 아래와 같이 다시 쓸 수 있다는 것이다.
+위 식을 보면 바로 떠오를 수 있는 것은 [행렬 곱에 대한 또 다른 시각](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)편에서 보았던 것 처럼 위 식의 우변은 행렬과 벡터의 곱의 해석 중 \'열벡터의 선형 결합\'을 이용해 아래와 같이 다시 쓸 수 있다는 것이다.
 
-$$\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}| & | \\ b_1 & b_2 \\ | & |\end{bmatrix}\begin{bmatrix}k_1\\k_2\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq22.png"> </p>
 
-우리에게 주어진 $\mathcal{B}$의 기저는 아래와 같으므로,
+우리에게 주어진 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq23.png">의 기저는 아래와 같으므로,
 
-$$\mathcal{B} = \left\lbrace\begin{bmatrix}1 \\ 1\end{bmatrix}, \begin{bmatrix}-1 \\ 1\end{bmatrix}\right\rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq24.png"> </p>
 
-$$\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}1 & -1 \\1 & 1\end{bmatrix}\begin{bmatrix}k_1\\k_2\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq25.png"> </p>
 
-를 만족하는 $k_1$과 $k_2$를 구하면 (2,0)이라는 답을 얻을 수 있는 것이다.
+를 만족하는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq26.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq27.png">를 구하면 (2,0)이라는 답을 얻을 수 있는 것이다.
 
-$$\therefore \begin{bmatrix}k_1\\k_2\end{bmatrix}=\begin{bmatrix}1 & -1 \\ 1 & 1\end{bmatrix}^{-1}\begin{bmatrix}2\\2\end{bmatrix} = \begin{bmatrix}2\\0\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq28.png"> </p>
 
 ---
 
-이 결과를 일반화해보면, 표준좌표계의 임의의 벡터에 대해서 임의의 기저 $\mathcal{C}$로 구성된 좌표계의 좌표는 다음과 같이 얻을 수 있다.
+이 결과를 일반화해보면, 표준좌표계의 임의의 벡터에 대해서 임의의 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq29.png">로 구성된 좌표계의 좌표는 다음과 같이 얻을 수 있다.
 
-표준 좌표계에서의 임의의 벡터를 $x$라고 하자.
+표준 좌표계에서의 임의의 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq30.png">라고 하자.
 
-$$x=\begin{bmatrix}x_1 \\ x_2\end{bmatrix}_{\mathcal{E}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq31.png"> </p>
 
-그리고 기저 $\mathcal{C}$를 다음과 같이 생각하자.
+그리고 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq32.png">를 다음과 같이 생각하자.
 
-$$\mathcal{C}=\left\lbrace\begin{bmatrix}| \\ c_1 \\ |\end{bmatrix}, \begin{bmatrix} | \\ c_2 \\ | \end{bmatrix}\right\rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq33.png"> </p>
 
-그리고 벡터 $x$에 대해서 기저 $\mathcal{C}$로 구성된 좌표계에서의 좌표를 다음과 같이 생각하자.
+그리고 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq34.png">에 대해서 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq35.png">로 구성된 좌표계에서의 좌표를 다음과 같이 생각하자.
 
-$$y=\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq36.png"> </p>
 
 그렇다면 다음과 같은 관계를 생각할 수 있다.
 
-$$\begin{bmatrix}x_1\\x_2\end{bmatrix}_{\mathcal{E}} = \begin{bmatrix}| & | \\ c_1 & c_2 \\ | & |\end{bmatrix}\begin{bmatrix}y_1\\y_2\end{bmatrix}_{\mathcal{C}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq37.png"> </p>
 
 # 임의의 기저 간의 변환
 
-2차원 실수 공간 $\Bbb{R}^2$의 두 개의 기저 $\mathcal{B}=\lbrace v_1, v_2\rbrace$와 $\mathcal{C}=\lbrace w_1, w_2\rbrace$를 생각해보자.
+2차원 실수 공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq38.png">의 두 개의 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq39.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq40.png">를 생각해보자.
 
-$\Bbb{R}^2$의 모든 벡터들은 $v_1$과 $v_2$에 대한 일차결합으로 표현할 수 있으므로 다음과 같이 나타낼 수 있다.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq41.png">의 모든 벡터들은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq42.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq43.png">에 대한 일차결합으로 표현할 수 있으므로 다음과 같이 나타낼 수 있다.
 
-$$w_1 = a v_1 + b v_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq44.png"> </p>
 
-$$w_2 = c v_1 + d v_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq45.png"> </p>
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-12-07-change_of_basis/pic3.png">
@@ -170,32 +172,32 @@ $$w_2 = c v_1 + d v_2$$
   그림 5.
 </p>
 
-그림 5에서 벡터 $v=l_1 w_1 + l_2 w_2$를 $v_1$과 $v_2$로 나타내면,
+그림 5에서 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq46.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq47.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq48.png">로 나타내면,
 
-$$v = l_1 w_1 + l_2 w_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq49.png"> </p>
 
-$$=l_1(a v_1 + b v_2) + l_2 (cv_1 +dv_2)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq50.png"> </p>
 
-$$=(a l_1 + cl_2)v_1 + (bl_1 + d l_2)v_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq51.png"> </p>
 
-$$=k_1v_1 + k_2v_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq52.png"> </p>
 
 이므로, 좌표 벡터와 행렬을 이용하면
 
-$$[v]_{\mathcal{B}} = \begin{bmatrix}k_1 \\ k_2\end{bmatrix} = \begin{bmatrix}al_1 + cl_2 \\ bl_1 + dl_2\end{bmatrix} = \begin{bmatrix}a & c \\ b & d\end{bmatrix}\begin{bmatrix}l_1 \\ l_2\end{bmatrix}=\begin{bmatrix}a & c \\ b & d\end{bmatrix}[v]_{\mathcal{C}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq53.png"> </p>
 
 이라 할 수 있다.
 
-이 때 벡터 $v$의 $\mathcal{C}$ 표현 
+이 때 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq54.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq55.png"> 표현 
 
-$$[v]_{\mathcal{C}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq56.png"> </p>
 
-를 $\mathcal{B}$ 표현 
+를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq57.png"> 표현 
 
-$$[v]_{\mathcal{B}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq58.png"> </p>
 
 로 바꾸어주는 행렬 
 
-$$\begin{bmatrix}a & c \\ b & d\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-12-07-change_of_basis/eq59.png"> </p>
 
 을 기저변환행렬(transition matrix) 혹은 추이행렬이라고 한다.
