@@ -24,7 +24,7 @@ tags: 선형대수
 
 정사영의 개념이 성립하기 위해선 두 개의 벡터가 필요하다.
 
-아래의 그림에서는 벡터 $a$와 벡터 $b$ 사이의 관계에 대해 표현하고 있다.
+아래의 그림에서는 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq1.png">와 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq2.png"> 사이의 관계에 대해 표현하고 있다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic1.png">
@@ -32,35 +32,35 @@ tags: 선형대수
   그림 1. 두 벡터 중 하나의 벡터에 대해, 또 다른 벡터로 향하는 방향으로의 컴포넌트는 코사인 값을 이용해 표현할 수 있다.
 </p>
 
-가령, 그림 1에서 처럼 벡터 $\vec{b}$를 표현할 때 벡터 $\vec{a}$를 이용한다고 하면 벡터 $\vec{b}$의 $\vec{a}$ 방향의 컴포넌트는 두 벡터 사이의 사잇각을 이용해서 다음과 같이 표현할 수 있다.
+가령, 그림 1에서 처럼 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq3.png">를 표현할 때 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq4.png">를 이용한다고 하면 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq5.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq6.png"> 방향의 컴포넌트는 두 벡터 사이의 사잇각을 이용해서 다음과 같이 표현할 수 있다.
 
-$$\text{comp}_{\vec{a}}\vec{b}=|\vec{b}|\cos\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq7.png"> </p>
 
 한편, 두 벡터 간의 내적은 다음과 같은데,
 
-$$\vec{a}\cdot\vec{b} = |\vec{a}||\vec{b}|\cos\theta$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq8.png"> </p>
 
-여기서 $\|\vec{b}\|\cos\theta$의 값은 다음과도 같이 표현할 수 있다는 것을 확인할 수 있다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq9.png">의 값은 다음과도 같이 표현할 수 있다는 것을 확인할 수 있다.
 
-$$|\vec{b}|\cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}=\text{comp}_{\vec{a}}\vec{b}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq10.png"> <br> 식 (3) </p>
 
 [//]:# (식 3)
 
-한편 $\text{comp}_{\vec{a}}\vec{b}$는 스칼라 값이다. $\|\vec{b}\|$나 $\cos\theta$ 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
+한편 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq11.png">는 스칼라 값이다. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq12.png">나 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq13.png"> 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
 
-만약 우리가 $\vec{b}$의 $\vec{a}$ 방향 컴포넌트를 구하되, 스칼라가 아니라 벡터 값을 얻고 싶다면 어떻게 하는게 좋을까?
+만약 우리가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq14.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq15.png"> 방향 컴포넌트를 구하되, 스칼라가 아니라 벡터 값을 얻고 싶다면 어떻게 하는게 좋을까?
 
-바로 $\text{comp}_{\vec{a}}\vec{b}$ 뒤에 $\vec{a}$ 방향으로의 단위 벡터만을 곱해주면 된다.
+바로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq16.png"> 뒤에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq17.png"> 방향으로의 단위 벡터만을 곱해주면 된다.
 
-만약 $\vec{b}$의 $\vec{a}$ 방향으로의 정사영 벡터를 $\text{proj}_{\vec{a}}\vec{b}$라고 한다면, 그 값은 다음과 같다.
+만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq18.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq19.png"> 방향으로의 정사영 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq20.png">라고 한다면, 그 값은 다음과 같다.
 
-$$\text{proj}_{\vec{a}}\vec{b} = \text{comp}_{\vec{a}}\vec{b} \cdot \frac{\vec{a}}{|\vec{a}|} = |\vec{b}|\cos\theta\cdot \frac{\vec{a}}{|\vec{a}|}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq21.png"> </p>
 
 한편, 식 (3)에 의해서,
 
-$$\Rightarrow \text{proj}_{\vec{a}}\vec{b}=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}\cdot \frac{\vec{a}}{|\vec{a}|}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq22.png"> </p>
 
-$$=\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a}=\frac{\vec{a}\cdot\vec{b}}{\vec{a}\cdot\vec{a}}\vec{a}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq23.png"> </p>
 
 와 같다는 것을 알 수 있다.
 
@@ -96,19 +96,19 @@ Gram-Schmidt 과정이 수행해주는 일은 기본적으로 다음과 같다.
   그림 4. 왼쪽: 직교하지 않는 기저를 이용해 생성한 벡터 공간. 오른쪽: 직교하는 기저를 이용해 생성한 벡터 공간
 </p>
 
-만약 선형독립인 두 벡터 $\lbrace v_1, v_2 \rbrace$가 2차원 실수 공간 상의 기저라고 해보자. 이 때, 두 벡터는 서로 직교하지 않아도 된다. 
+만약 선형독립인 두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq24.png">가 2차원 실수 공간 상의 기저라고 해보자. 이 때, 두 벡터는 서로 직교하지 않아도 된다. 
 
-그렇다면, 2차원 실수 공간 안에 있는 임의의 벡터 $v\in \Bbb{R}^2$는 $v_1$과 $v_2$의 선형 결합으로 표현될 수 있다. 다시 말해,
+그렇다면, 2차원 실수 공간 안에 있는 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq25.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq26.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq27.png">의 선형 결합으로 표현될 수 있다. 다시 말해,
 
-$$v = x_1v_1 + x_2 v_2 \text{ where } x_1, x_2 \in \Bbb{R}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq28.png"> </p>
 
-와 같이 $v_1$과 $v_2$를 이용해 $v$를 표현할 수 있게 된다.
+와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq29.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq30.png">를 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq31.png">를 표현할 수 있게 된다.
 
-그런데, 만약 두 벡터 $\lbrace w_1, w_2\rbrace$가 2차원 실수 공간 상의 직교하는 기저라고 한다면, 2차원 실수 공간 상에 있는 임의의 벡터 $v \in \Bbb{R}^2$는 다음과 같이 쓸 수 있게 된다.
+그런데, 만약 두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq32.png">가 2차원 실수 공간 상의 직교하는 기저라고 한다면, 2차원 실수 공간 상에 있는 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq33.png">는 다음과 같이 쓸 수 있게 된다.
 
-$$v = (v\cdot w_1)w_1 + (v\cdot w_2)w_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq34.png"> </p>
 
-이로써 $v$를 $v_1$과 $v_2$의 선형결합으로 표현하기 위한 계수를 쉽게 얻을 수 있게 된다.
+이로써 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq35.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq36.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq37.png">의 선형결합으로 표현하기 위한 계수를 쉽게 얻을 수 있게 된다.
 
 ## Gram-Schmidt 과정의 프로세스
 
@@ -122,25 +122,25 @@ $$v = (v\cdot w_1)w_1 + (v\cdot w_2)w_2$$
 
 Gram-schmidt 직교화 과정을 수식으로 표현하면 아래와 같다.
 
-벡터 공간 $V$상에서 주어진 일차 독립인 벡터 $a_1, \cdots, a_k$를 이용하여 다음과 같이 정규직교기저를 구할 수 있다.
+벡터 공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq38.png">상에서 주어진 일차 독립인 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq39.png">를 이용하여 다음과 같이 정규직교기저를 구할 수 있다.
 
-$$u_1 = a_1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq40.png"> </p>
 
-$$u_2 = a_2 - \text{proj}_{u_1}(a_2)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq41.png"> </p>
 
-$$u_3 = a_3 - \text{proj}_{u_1}(a_3) - \text{proj}_{u_2}(a_3)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq42.png"> </p>
 
-$$\vdots \notag$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq43.png"> </p>
 
-$$u_k = a_k -\sum_{j=1}^{k-1}\text{proj}_{u_j}(a_k)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq44.png"> </p>
 
-이렇게 생성한 벡터의 집합 $\lbrace u_1, u_2, \cdots, u_k \rbrace$는 직교적인데, 여기서 각각의 벡터들의 크기(norm)로 나누어주어 정규직교화 시키자.
+이렇게 생성한 벡터의 집합 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq45.png">는 직교적인데, 여기서 각각의 벡터들의 크기(norm)로 나누어주어 정규직교화 시키자.
 
 즉, 
 
-$$q_i = \frac{u_i}{||u_i||}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq46.png"> </p>
 
-로 정의하면 벡터 공간 $V$의 정규 직교 기저 $\lbrace q_1, q_2, \cdots, q_k \rbrace$를 얻을 수 있다.
+로 정의하면 벡터 공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq47.png">의 정규 직교 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq48.png">를 얻을 수 있다.
 
 수식으로 쓰면 조금 어려워 보이지만, 수식의 본질적인 의미는 아래와 같다.
 
@@ -166,43 +166,21 @@ $$q_i = \frac{u_i}{||u_i||}$$
 
 QR 분해는 그람-슈미트 과정을 이용해 찾아낸 정규직교기저 벡터를 이용해 행렬을 분해하는 과정이다.
 
-그람-슈미트 과정을 통해 얻어낸 정규직교기저를 $q_1, \cdots, q_n$이라고 하고 이들을 모아둔 행렬을 $Q$라고 하면 다음이 성립한다.
+그람-슈미트 과정을 통해 얻어낸 정규직교기저를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq49.png">이라고 하고 이들을 모아둔 행렬을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq50.png">라고 하면 다음이 성립한다.
 
-$$A = QR$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq51.png"> </p>
 
-$$\begin{bmatrix}
-  | & | & \text{ } & | \\ 
-  a_1 & a_2 &\cdots & a_n \\ 
-  | & | & \text{ } & | \end{bmatrix} =
-  \begin{bmatrix}
-  | & | & \text{ } & | \\ 
-  q_1 & q_2 &\cdots & q_n \\ 
-  | & | & \text{ } & | \end{bmatrix}
-  \begin{bmatrix}
-  a_1\cdot q_1 & a_2\cdot q_1 & \cdots & a_n\cdot q_1 \\
-  a_1\cdot q_2 & a_2\cdot q_2 & \cdots & a_n\cdot q_2 \\
-  \vdots & \vdots & \ddots & \vdots \\
-  a_1\cdot q_n & a_2\cdot q_n & \cdots & a_n\cdot q_n \\
-  \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq52.png"> </p>
 
-여기서 $a_1\cdot q_2$를 생각해보면 $q_2$는 $a_1$ 혹은 $q_1$의 성분이 모두 제거되었기 대문에 값이 0이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq53.png">를 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq54.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq55.png"> 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq56.png">의 성분이 모두 제거되었기 대문에 값이 0이다.
 
-마찬가지 이유로 $a_i\cdot q_j$에 대해 $i\lt j$인 경우 $a_i\cdot q_j=0$이다. 
+마찬가지 이유로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq57.png">에 대해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq58.png">인 경우 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq59.png">이다. 
 
-왜냐면 $j$ 번째 정규직교기저 $q_j$에서는 $a_i \text{ where } i\lt j$의 성분들을 모두 다 빼버렸기 때문이다.
+왜냐면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq60.png"> 번째 정규직교기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq61.png">에서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq62.png">의 성분들을 모두 다 빼버렸기 때문이다.
 
 따라서 아래의 식이 성립한다.
 
-$$=\begin{bmatrix}
-  | & | & \text{ } & | \\ 
-  q_1 & q_2 &\cdots & q_n \\ 
-  | & | & \text{ } & | \end{bmatrix}
-  \begin{bmatrix}
-  a_1\cdot q_1 & a_2\cdot q_1 & \cdots & a_n\cdot q_1 \\
-  0 & a_2\cdot q_2 & \cdots & a_n\cdot q_2 \\
-  \vdots & \vdots & \ddots & \vdots \\
-  0 & 0 & \cdots & a_n\cdot q_n \\
-  \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq63.png"> </p>
 
 이것을 QR 분해라고 부른다.
 
@@ -210,69 +188,62 @@ $$=\begin{bmatrix}
 
 QR 분해에 대해서 글로만 설명하는 것을 보면 이해하기 어려울 수 있기 때문에 아래의 예시를 통해 그람-슈미트 정규화 과정과 QR 분해를 실습해보도록 하자.
 
-문제. 아래의 행렬 $A$를 QR 분해 하시오.
+문제. 아래의 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq64.png">를 QR 분해 하시오.
 
-$$A = \begin{bmatrix}1 & 1 & 0\\ 1 &  0 & 1 \\ 0 & 1 & 1 \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq65.png"> </p>
 
-행렬 $A$의 각 열 벡터를 $a_1$, $a_2$, $a_3$이라고 하면 다음과 같다.
+행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq66.png">의 각 열 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq67.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq68.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq69.png">이라고 하면 다음과 같다.
 
-$$a_1 = \begin{bmatrix}1\\1\\0\end{bmatrix}, a_2 = \begin{bmatrix}1\\0\\1\end{bmatrix}, a_3 = \begin{bmatrix}0\\1\\1\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq70.png"> </p>
 
-이 때, 각각의 열벡터들은 표기상의 편의를 위해 $a_1 = (1, 1, 0)$과 같이 쓰도록 하자.
+이 때, 각각의 열벡터들은 표기상의 편의를 위해 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq71.png"> </p>과 같이 쓰도록 하자.
 
 QR분해를 하기 위해 세 벡터들에 대해 Gram-Schmidt process를 적용해보자.
 
-여기서 정규화되지는 않고 직교화만 시킨 벡터들은 $u_1$, $u_2$ 등과 같이 쓰고, 정규직교화 된 벡터들은 $e_1$, $e_2$등과 같이 쓰도록 하자.
+여기서 정규화되지는 않고 직교화만 시킨 벡터들은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq72.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq73.png"> 등과 같이 쓰고, 정규직교화 된 벡터들은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq74.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq75.png">등과 같이 쓰도록 하자.
 
-우선 $a_1$에 대하여, 
+우선 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq76.png">에 대하여, 
 
-$$a_1 = (1, 1, 0)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq77.png"> </p>
 
 Gram-Schmidt과정에 의하면 첫 번째 벡터는 그 벡터를 그대로 사용하면 된다.
 
-$$u_1 = a_1=(1, 1, 0)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq78.png"> </p>
 
-이제 $u_2$를 계산해보자. $u_2$는 $a_2$벡터에서 $u_1$ 방향으로의 성분을 제외해준 벡터이다.
+이제 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq79.png">를 계산해보자. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq80.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq81.png">벡터에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq82.png"> 방향으로의 성분을 제외해준 벡터이다.
 
-$$u_2 = a_2 - \text{proj}_{u_1}a_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq83.png"> </p>
 
-$$=(1, 0, 1) - \left(\frac{u_1\cdot a_2}{u_1\cdot u_1}\right)u_1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq84.png"> </p>
 
-$$=(1, 0, 1) - \frac{1\cdot1 + 1\cdot 0 + 0\cdot 1}{1^2+1^2+0^2}(1, 1, 0)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq85.png"> </p>
 
-$$=\left(\frac{1}{2}, -\frac{1}{2}, 1\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq86.png"> </p>
 
-또, $u_3$을 계산해보자. $u_3$은 $a_3$ 벡터에서 $u_1$ 방향으로의 성분과 $u_2$ 방향으로의 성분을 제외해준 벡터이다.
+또, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq87.png">을 계산해보자. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq88.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq89.png"> 벡터에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq90.png"> 방향으로의 성분과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq91.png"> 방향으로의 성분을 제외해준 벡터이다.
 
-$$u_3 = a_3 - \text{proj}_{u_1}a_3 - \text{proj}_{u_2}a_3$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq92.png"> </p>
 
-$$=(0, 1, 1) - \left(\frac{u_1\cdot a_3}{u_1\cdot u_1}\right)u_1-\left(\frac{u_1\cdot a_3}{u_2\cdot u_2}\right)u_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq93.png"> </p>
 
-$$=(0, 1, 1) -\left(\frac{0+1+0}{1^2+1^2+0^2}\right)(1, 1, 0) - \left(\frac{(-1/2+1)}{1/4+1/4+1}\right)\left(\frac{1}{2}, -\frac{1}{2}, 1\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq94.png"> </p>
 
-$$(0, 1, 1) - \frac{1}{2}(1, 1, 0) -\frac{1}{3}\left(\frac{1}{2}, -\frac{1}{2}, 1\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq95.png"> </p>
 
-$$=\left(-\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq96.png"> </p>
 
-정리하면 $u_1$, $u_2$, $u_3$은 다음과 같다.
+정리하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq97.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq98.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq99.png">은 다음과 같다.
 
-$$u_1 = (1, 1, 0), u_2 = \left(\frac{1}{2}, -\frac{1}{2}, 1\right), u_3 = \left(-\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq100.png"> </p>
 
 위의 세 벡터를 정규화하면 다음과 같다.
 
-$$e_1 = \frac{u_1}{\|u_1\|}=\frac{1}{\sqrt{2}}(1, 1, 0)=\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}, 0\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq101.png"> </p>
 
-$$e_2 = \frac{u_2}{\|u_2\|}=\sqrt{\frac{2}{3}}\left(\frac{1}{2},-\frac{1}{2}, 1\right)=\left(\frac{1}{\sqrt{6}},-\frac{1}{\sqrt{6}},\frac{2}{\sqrt{6}}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq102.png"> </p>
 
-$$e_3 = \frac{u_3}{\|u_3\|}=\frac{1}{\sqrt{3\cdot(2/3)^2}}\left(-\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)=\left(-\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq103.png"> </p>
 
-따라서, $e_1$, $e_2$, $e_3$을 $A=QR$에서의 $q_1$, $q_2$, $q_3$에 대응시켜 생각하면 아래와 같이 QR 분해할 수 있다.
+따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq104.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq105.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq106.png">을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq107.png">에서의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq108.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq109.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq110.png">에 대응시켜 생각하면 아래와 같이 QR 분해할 수 있다.
 
-$$A = QR =\begin{bmatrix}
-  1/\sqrt{2} & 1/\sqrt{6}  & -1/\sqrt{3} \\
-  1/\sqrt{2} & -1/\sqrt{6} & 1/\sqrt{3} \\
-  0          & 2/\sqrt{6}  & 1/\sqrt{3}\end{bmatrix}
-\begin{bmatrix}
-2/\sqrt{2} & 1/\sqrt{2} & 1/\sqrt{2} \\
-0          & 3/\sqrt{6} & 1/\sqrt{6} \\
-0          & 0          & 2/\sqrt{3}\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq111.png"> </p>

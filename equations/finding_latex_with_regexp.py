@@ -28,14 +28,14 @@ def formula_as_file( formula, file):
     f.write(r.content)
     f.close()
     
-basefolder = 'D:/angeloyeo.github.io/_posts/'
+basefolder = 'C:/angeloyeo.github.io/_posts/'
 extension = '.md'
 
 filenames = glob.glob(basefolder+'*.md')
 for i in range(len(filenames)):
     filenames[i] = filenames[i][len(basefolder):-3]
     
-filename = filenames[100]
+filename = filenames[102]
 
 f = open(basefolder+filename+extension ,encoding = 'UTF-8')
 my_text = f.read()
@@ -49,7 +49,7 @@ mo_newline = regex_newline.findall(my_text)
 is_newline = find_newline(mo_all, mo_newline)
 
 #%%
-path2save = 'D:/angeloyeo.github.io/equations/'+filename
+path2save = 'C:/angeloyeo.github.io/equations/'+filename
 isExist = os.path.exists(path2save)
 
 if not isExist:
