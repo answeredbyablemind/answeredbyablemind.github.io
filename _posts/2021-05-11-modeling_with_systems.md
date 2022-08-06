@@ -12,18 +12,19 @@ tags: 미분방정식
 
 지금까지의 미분방정식에 대한 논의는 주로 1계 미분방정식에 관한 것이었다.
 
-그것도, 1계 1원 미분방정식으로 1원이라는 것은 미분계수가 계산되는 변수가 하나라는 뜻이다. 가령 $t$가 독립변수라고 했을 때, 종속변수는 $x$하나인 경우로 일반적인 식은 다음과 같았다.
+그것도, 1계 1원 미분방정식으로 1원이라는 것은 미분계수가 계산되는 변수가 하나라는 뜻이다. 가령 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq1.png">가 독립변수라고 했을 때, 종속변수는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq2.png">하나인 경우로 일반적인 식은 다음과 같았다.
 
-$$\frac{dx}{dt}=f(t, x) % 식 (1)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq3.png"><br> 식 (1)  </p>
+
+[//]:# (식 1)
 
 하지만, 미분방정식은 종속변수가 하나인 경우에만 한정하여 쓸 수 있는 것은 아니다. 미분방정식 두 개를 한꺼번에 이용하면 두 개 이상의 종속변수에 대한 변화를 한꺼번에 모델링할 수도 있다. 
 
 예를 들면, 다음과 같은 연립방정식의 형태를 이용하면 두 개의 종속변수에 대한 변화를 동시에 모델링 할 수 있다.
 
-$$\begin{cases}
-  \dfrac{dx}{dt} = f(x, y) \\\\
-  \dfrac{dy}{dt} = g(x, y)
-\end{cases} % 식 (2)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq4.png"> <br> 식 (2)</p>
+
+[//]:# (식 2)
 
 
 # 포식자-피식자 방정식 (Lotka-Volterra Equation)
@@ -44,25 +45,29 @@ $$\begin{cases}
 
 우선 토끼(즉, 피식자)의 개체수에 관한 식을 세워보자.
 
-토끼의 개체수를 $R$이라고 하자. 우선 토끼는 가만히 내버려두면 개체수가 기하급수적으로 성장할 것이다.
+토끼의 개체수를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq5.png">이라고 하자. 우선 토끼는 가만히 내버려두면 개체수가 기하급수적으로 성장할 것이다.
 
 [미분방정식을 이용한 현상 모델링](https://angeloyeo.github.io/2021/05/01/modeling_with_differential_equation.html)편에서 보았던 것 처럼 여기서는 인구수가 성장하는 모델을 적용할 수 있다.
 
 즉,
 
-$$\frac{dR}{dt}=a R % 식 (3)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq6.png"> <br> 식 (3)</p>
 
-여기서 $a>0$.
+[//]:# (식 3)
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq7.png">.
 
 식 (3)에서 추가할 내용은 피식자와 포식자간의 상호작용인데, 토끼의 일부 개체들은 여우 개체수와 상호작용하면서 개체수가 감소한다.
 
 다시 말해, 여우와 만나면 잡아 먹힐 수 있게 된다. 따라서, 식 (3)을 살짝 수정하여 다음과 같이 토끼의 개체수에 대한 방정식을 세울 수 있다.
 
-여우의 개체수를 $F$라고 하면,
+여우의 개체수를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq8.png">라고 하면,
 
-$$식(3) \Rightarrow \frac{dR}{dt} = aR -bRF % 식 (4)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq9.png"> <br> 식 (4)</p>
 
-이다. 여기서 $a, b>0$. 또, 여기서 $RF$는 토끼의 개체수와 여우의 개체수의 곱이며, 상호작용을 나타낸다.
+[//]:# (식 4)
+
+이다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq10.png">. 또, 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq11.png">는 토끼의 개체수와 여우의 개체수의 곱이며, 상호작용을 나타낸다.
 
 이번에는 여우 개체수의 시간 변화에 대한 방정식을 세워보자.
 
@@ -70,22 +75,25 @@ $$식(3) \Rightarrow \frac{dR}{dt} = aR -bRF % 식 (4)$$
 
 즉,
 
-$$\frac{dF}{dt}= -cF % 식 (5)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq12.png"> <br> 식 (5)</p>
 
-여기서 $c>0$.
+[//]:# (식 5)
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq13.png">.
 
 그리고, 식 (5)에서 여우와 토끼가 만들어내는 상호작용에 대한 factor도 집어넣으면 수식은 다음과 같이 수정된다.
 
-$$식 (5)\Rightarrow \frac{dF}{dt}=-cF + dFR % 식 (6)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq14.png"> <br> 식 (6)</p>
 
-여기서 $c, d >0$이고, $FR$은 여우의개체수와 토끼 개체수의 곱이다.
+[//]:# (식 6)
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq15.png">이고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq16.png">은 여우의개체수와 토끼 개체수의 곱이다.
 
 식 (4)와 식 (6)을 한꺼번에 이용하면 토끼와 여우의 개체수가 보여주는 밸런스를 확인할 수 있다.
 
-$$\begin{cases}
-  \dfrac{dR}{dt} = aR -bRF \\\\
-  \dfrac{dF}{dt} = -cF + dFR
-\end{cases} % 식 (7)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq17.png"> <br> 식 (7) </p>
+
+[//]:# (식 7)
 
 위의 식을 정확히 풀어 닫힌 형식으로 해(solution)을 얻어내는 방법은 아직도 알려져 있지 않다 [^1] [^2].
 
@@ -95,7 +103,7 @@ $$\begin{cases}
 
 하지만, 우리에게 당장 그것보다 더 중요한 것은 이 solution의 형태가 어떤 식으로 작동하며, 식 (7)의 모델링이 현상을 잘 반영하는지 체크하는 일이다.
 
-식 (7)에서 $a=2, b= 1, c = 5, d = 1$라고 이라고 놓고 피식자와 포식자 각각의 solution curve를 그려보면 다음과 같다. 여기서 초기값은 피식자와 포식자 모두 1로 두었다.
+식 (7)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq18.png">라고 이라고 놓고 피식자와 포식자 각각의 solution curve를 그려보면 다음과 같다. 여기서 초기값은 피식자와 포식자 모두 1로 두었다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic1.png">
@@ -125,14 +133,11 @@ time = 2 즈음에 보면 포식자의 수가 너무 늘어날 때 쯤이 되면
 
 logistic growth의 식을 이용해 식 (7)에서 토끼의 개체수 성장에 관한 식을 수정해보자.
 
-$$식(7)\Rightarrow \begin{cases}
-  \dfrac{dR}{dt} = aR(1-\dfrac{R}{N}) -bRF \\\\
-  \dfrac{dF}{dt} = -cF + dFR
-\end{cases} % 식 (8)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq19.png"> </p>
 
-여기서 $N$은 한계 수용량이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq20.png">은 한계 수용량이다.
 
-앞선 분석에서와 마찬가지로 $a=2, b= 1, c = 5, d = 1$로 하고, $N=10$으로 했을 때의 solution curve를 그려보면 다음과 같다.
+앞선 분석에서와 마찬가지로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq21.png">로 하고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq22.png">으로 했을 때의 solution curve를 그려보면 다음과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic2.png">
@@ -152,34 +157,29 @@ $$식(7)\Rightarrow \begin{cases}
 
 damped harmonic motion의 식은 다음과 같았다.
 
-$$m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq23.png"> </p>
 
 이 식은 2계 미분방정식이지만 다음과 같이 처리하면 2원 1계 연립미분방정식으로 고쳐쓸 수 있다.
 
-새로운 변수 $v$를 다음과 같이 설정하자.
+새로운 변수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq24.png">를 다음과 같이 설정하자.
 
-$$v = \frac{dx}{dt}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq25.png"> </p>
 
-그러면 $v$의 미분은
+그러면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq26.png">의 미분은
 
-$$\frac{dv}{dt}=\frac{d^2x}{dt^2}=-\frac{b}{m}v-kx$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq27.png"> </p>
 
 이다.
 
 한편, 우리가 보고자 하는 것은 식 (7)과 유사한 것인데, 다시 말하면 좌변에는 두 변수에 대한 미분 계수가 들어가야 하고, 우변에는 두 변수에 대한 수식이 들어가는 것이다.
 
-즉, 좌변을 $x'$과 $v'$이라고 놓으면,
+즉, 좌변을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq28.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq29.png">이라고 놓으면,
 
-$$
-\begin{cases}
-  \dfrac{dx}{dt} = v \\ \\
-  \dfrac{dv}{dt} = -\dfrac{b}{m}v-kx
-\end{cases}
-$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq30.png"> </p>
 
 와 같이 모델링 할 수 있다.
 
-여기서 $b/m$을 0.4, $k$를 1.04라 두고, 초기값을 $x=0$, $x' = 2$로 두었을 때 solution curve와 phase plane은 아래의 그림과 같다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq31.png">을 0.4, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq32.png">를 1.04라 두고, 초기값을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq33.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-11-modeling_with_systems/eq34.png">로 두었을 때 solution curve와 phase plane은 아래의 그림과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-11-modeling_with_systems/pic3.png">
