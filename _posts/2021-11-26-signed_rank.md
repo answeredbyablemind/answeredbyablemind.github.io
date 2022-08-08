@@ -69,7 +69,7 @@ tags: 통계학
   그림 2. 6개의 순위와 2개의 부호를 이용해 얻을 수 있는 가능한 모든 조합에 대해 W의 값을 계산한 것
 </p>
 
-총 $2^6=64$개의 조합이 나오며 이 때 얻은 $W$의 값을 히스토그램으로 그리면 다음과 같다.
+총 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq1.png">개의 조합이 나오며 이 때 얻은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq2.png">의 값을 히스토그램으로 그리면 다음과 같다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-11-26-signed_rank/pic3.png">
@@ -95,25 +95,25 @@ tags: 통계학
 
 부호 순위 검정을 수행할 때 n 수가 꽤 커진다면 어떨까?
 
-가능한 조합의 수는 $2^n$ 개이므로 n = 10 이상이라면 기하급수적으로 생각해볼 수 있는 조합의 수가 꽤 커지게 된다.
+가능한 조합의 수는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq3.png"> 개이므로 n = 10 이상이라면 기하급수적으로 생각해볼 수 있는 조합의 수가 꽤 커지게 된다.
 
 따라서, 부호합 검정에서 사용한 접근법과 마찬가지의 접근법으로 정규 근사를 통해 부호 순위 검정의 결과를 간접적으로 얻어낼 수 있다.
 
-n수가 커졌을 때 $W$는 다음과 같은 모수를 가지는 정규 분포에 근사한다고 알려져 있다.
+n수가 커졌을 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq4.png">는 다음과 같은 모수를 가지는 정규 분포에 근사한다고 알려져 있다.
 
-$$\mu_W = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq5.png"> </p>
 
-$$\sigma_W = \sqrt{\frac{n(n+1)(2n+1)}{6}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq6.png"> </p>
 
-여기서 $n$은 실험 피험자의 숫자이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq7.png">은 실험 피험자의 숫자이다.
 
-그러므로 우리는 아래와 같은 변수 $Z$를 생각해 볼 수 있다. 이 변수 $Z$는 정규분포를 따를 것이다.
+그러므로 우리는 아래와 같은 변수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq8.png">를 생각해 볼 수 있다. 이 변수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq9.png">는 정규분포를 따를 것이다.
 
-$$Z_W = \frac{W-\mu_W}{\sigma_W}=\frac{W}{\sqrt{[n(n+1)(2n+1)]/6}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq10.png"> </p>
 
-부호합 검정에서의 연속 수정(continuity correction)과 마찬가지 방법으로 $Z_W$는 다음과 같이 수정될 수 있다.
+부호합 검정에서의 연속 수정(continuity correction)과 마찬가지 방법으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq11.png">는 다음과 같이 수정될 수 있다.
 
-$$Z_W = \frac{|W|-1/2}{\sqrt{[n(n+1)(2n+1)]/6}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-11-26-signed_rank/eq12.png"> </p>
 
 # 참고문헌
 

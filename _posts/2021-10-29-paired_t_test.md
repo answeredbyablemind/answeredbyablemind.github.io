@@ -55,13 +55,11 @@ tags: 통계학
 
 [^1]: t-value의 계산 방법은 [t-value의 의미와 스튜던트의 t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html) 편을 참고
 
-$$t=\frac
-{\bar{X}_1 - \bar{X}_2}
-{\sqrt{s_1^2/{n_1^2} + s_2^2/{n_2^2}}}=-0.9467$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq1.png"> </p>
 
-이다. 여기서 $n_1, n_2$는 모두 10이다.
+이다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq2.png">는 모두 10이다.
 
-자유도(degree of freedom)는 $n_1+n_2-2=18$이다. 양측검정 t-test를 한다고 했을 때 유의한 t-value의 기준은 $t_{0.05}=-2.101$이다. 따라서 우리에게 주어진 $t$ 값인 $-0.9467$은 $-2.101$에 한참 못미치는 수치라고 할 수 있다. 즉, 이런 방식으로 통계 분석이 진행된다면 이 약은 이뇨제로써 작용하지 못한다고 결론지을 수 밖에 없다.
+자유도(degree of freedom)는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq3.png">이다. 양측검정 t-test를 한다고 했을 때 유의한 t-value의 기준은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq4.png">이다. 따라서 우리에게 주어진 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq5.png"> 값인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq6.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq7.png">에 한참 못미치는 수치라고 할 수 있다. 즉, 이런 방식으로 통계 분석이 진행된다면 이 약은 이뇨제로써 작용하지 못한다고 결론지을 수 밖에 없다.
 
 ## 대응 표본 t-검정으로 해석
 
@@ -71,43 +69,43 @@ $$t=\frac
 
 [t-value의 의미와 스튜던트의 t-test](https://angeloyeo.github.io/2020/02/13/Students_t_test.html) 편에서 t-value의 근본적 의미는 "차이/불확실도"라고 언급한 바 있었다. 간략하게만 복습하자면 표본 평균은 항상 오차를 수반하고 있으므로 발생하는 오차를 염두하면서 평균값 차이에 관한 지표를 만들어야 한다고 설명했다. 따라서 이번에도 마찬가지의 논리로 다음과 같이 t-value를 생각할 수 있다.
 
-$$\text{(paired test) }t = \frac{\text{차이값의 평균}}{\text{차이 평균의 표준 오차}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq8.png"> </p>
 
-차이(difference)라는 의미에서 차이값의 평균을 $\bar{d}$라고 이름 붙이면 다음과 같이 t-value를 표현할 수 있다.
+차이(difference)라는 의미에서 차이값의 평균을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq9.png">라고 이름 붙이면 다음과 같이 t-value를 표현할 수 있다.
 
-$$t=\frac{\bar{d}}{s_{\bar{d}}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq10.png"> </p>
 
-여기서 $\bar{d}$에 대한 표준오차로써 $s_{\bar{d}}=s_d/\sqrt{n}$이다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq11.png">에 대한 표준오차로써 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq12.png">이다.
 
 생각해보면 independent t-test나 paired sample t-test나 논리는 차이를 불확실성으로 나눠준다는 점에서 같다.
 
 실제로 paired t-test를 염두하여 문제를 풀어보자.
 
-플라시보와 투약 시의 일일 소변량은 다음과 같다.
+플라시보(placebo)와 투약(admin) 시의 일일 소변량은 다음과 같다.
 
-$$\text{플라시보}= [788, 859, 928, 957, 994, 1034, 1049, 1078, 1110, 1147]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq13.png"> </p>
 
-$$\text{투약 시} = [849, 879, 910, 1019, 1145, 1003, 1114, 1162, 1201, 1184]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq14.png"> </p>
 
-따라서 플라시보 - 투약 의 차이값을 구하면 다음과 같다.
+따라서 플라시보(placebo) - 투약(admin) 의 차이값을 구하면 다음과 같다.
 
-$$d = \text{플라시보}-\text{투약}=[-61, -20, 18, -62, -151, 31, -65, -84, -91, -37]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq15.png"> </p>
 
-그러므로 $\bar{d}$는 위 $d$의 평균이므로 다음과 같고,
+그러므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq16.png">는 위 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq17.png">의 평균이므로 다음과 같고,
 
-$$\bar{d} = -52.2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq18.png"> </p>
 
-$s_{\bar{d}}$는 $d$의 표준 편차를 $d$의 개수의 제곱근으로 나눠준 것이므로
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq19.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq20.png">의 표준 편차를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq21.png">의 개수의 제곱근으로 나눠준 것이므로
 
-$$s_{\bar{d}} = \frac{s_d}{\sqrt{n}}=\frac{57.4723}{\sqrt{10}}=16.9094$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq22.png"> </p>
 
 따라서, t-value는
 
-$$\text{(paired test) }t=\frac{-52.2}{16.9094}=-3.0870$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq23.png"> </p>
 
 임을 알 수 있다.
 
-이 값은 유의한 차이라고 볼 수 있는 t-value의 기준인 $t_{0.05}=-2.2622$(자유도: 9, 양측검정)에 비해서 더 작은 값이므로 플라시보와 투약 조건 간에 유의한 소변량의 차이를 보인 것이라고 판단내릴 수 있다.
+이 값은 유의한 차이라고 볼 수 있는 t-value의 기준인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-29-paired_t_test/eq24.png">(자유도: 9, 양측검정)에 비해서 더 작은 값이므로 플라시보와 투약 조건 간에 유의한 소변량의 차이를 보인 것이라고 판단내릴 수 있다.
 
 # 참고문헌
 

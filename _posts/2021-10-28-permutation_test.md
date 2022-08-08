@@ -152,7 +152,7 @@ p-value는 셔플링 결과로 나온 데이터 중 10.30보다 큰 값의 개�
 
 10.30보다 큰 숫자는 11, 12, 13이고 전체 셔플링 횟수는 13이므로,
 
-$$3/13=0.2308$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-10-28-permutation_test/eq1.png"> </p>
 
 이라는 값을 p-value로 상정했다.
 
