@@ -66,7 +66,7 @@ tags: 미분방정식
 
 [선형 연산자와 함수 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html) 편에서는 함수를 벡터로 취급할 수 있음을 설명하였다.
 
-그러니까, 만약 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq18.png"> </p>라는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq19.png"> 행렬이 존재할 수 있다면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq20.png"> 행렬은 열벡터를 쌓아 만든 개념으로 볼 수 있는 것이므로 함수해석학에서 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq21.png">에 대응하는 개념은 함수를 연속적으로 쌓아 만든 것으로 볼 수 있다.
+그러니까, 만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq18.png"> 라는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq19.png"> 행렬이 존재할 수 있다면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq20.png"> 행렬은 열벡터를 쌓아 만든 개념으로 볼 수 있는 것이므로 함수해석학에서 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq21.png">에 대응하는 개념은 함수를 연속적으로 쌓아 만든 것으로 볼 수 있다.
 
 다시 말해 원래의 독립변수가 아닌 또 다른 독립변수에 대응되는 함수들을 쭉 나열해둔 것이어야 한다.
 
@@ -92,7 +92,7 @@ tags: 미분방정식
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-09-Greens_function/pic2.png">
   <br>
-  그림 3. 어떤 선형 연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq47.png">에 대해 역행렬에 대응되는 함수 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq48.png"> </p>를 얻으려면 연산자가 각 순번 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq49.png">에 대응하는 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq50.png">에 적용되었을 때 단위 기저벡터에 대응하는 함수를 출력해줄 수 있어야 한다.
+  그림 3. 어떤 선형 연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq47.png">에 대해 역행렬에 대응되는 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq48.png"> 를 얻으려면 연산자가 각 순번 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq49.png">에 대응하는 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq50.png">에 적용되었을 때 단위 기저벡터에 대응하는 함수를 출력해줄 수 있어야 한다.
 </p>
 
 그렇다면 우리는 단위 기저 벡터에 대응되는 함수의 개념을 생각해보아야 한다. 이 개념은 디랙 델타 함수라는 개념에서부터 찾을 수 있다.
@@ -223,7 +223,7 @@ tags: 미분방정식
 
 ## 그린 함수의 정의
 
-앞서 고민하던 기저벡터의 개념을 디랙 델타함수를 통해 확장시킬 수 있다는 것을 알았으니 이제는 역행렬에 대응되는 함수 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq114.png"> </p>를 제대로 정의할 수 있게 되었다. 이 역행렬에 해당되는 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq115.png"> </p>는 그린 함수(Green function)라는 이름이 붙어있는데 조금 자세하게 보면 그린 함수의 정의는 다음과 같다.
+앞서 고민하던 기저벡터의 개념을 디랙 델타함수를 통해 확장시킬 수 있다는 것을 알았으니 이제는 역행렬에 대응되는 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq114.png"> 를 제대로 정의할 수 있게 되었다. 이 역행렬에 해당되는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq115.png"> 는 그린 함수(Green function)라는 이름이 붙어있는데 조금 자세하게 보면 그린 함수의 정의는 다음과 같다.
 
 구간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq116.png"> 및 적절한 경계 조건에서 정의된 선형연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq117.png">과 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq118.png">에 대해서 다음이 성립한다고 하자.
 
@@ -275,7 +275,13 @@ tags: 미분방정식
 
 다시 말해, 그린 함수가 해를 구해내는 방식은 선형대수학에서 역행렬을 이용하는 방식과 유사하다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq139.png"> </p>라는 문제에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq140.png">로 표현되듯 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq141.png"> </p>라는 함수해석학의 문제에 대해서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq142.png">와 유사하게 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq143.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq144.png">을 곱한 것의 적분으로 표현되는 것이다 (미분의 역연산이 적분이기 때문).
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq139.png"> </p>
+
+라는 문제에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq140.png">로 표현되듯 
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq141.png"> </p>
+
+라는 함수해석학의 문제에 대해서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq142.png">와 유사하게 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq143.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq144.png">을 곱한 것의 적분으로 표현되는 것이다 (미분의 역연산이 적분이기 때문).
 
 ## 예시 문제 1.
 
@@ -301,7 +307,7 @@ tags: 미분방정식
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq152.png"> </p>
 
-즉, <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq153.png"> </p>는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq154.png"> 및 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq155.png">인 구간에서는 미분연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq156.png">의 homogeneous solution을 통해 표현할 수 있게 되는 것이다. 한번 미분해서 0이 되는 경우는 상수함수에 해당한다. 즉,
+즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq153.png"> 는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq154.png"> 및 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq155.png">인 구간에서는 미분연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq156.png">의 homogeneous solution을 통해 표현할 수 있게 되는 것이다. 한번 미분해서 0이 되는 경우는 상수함수에 해당한다. 즉,
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq157.png"> <br> 식 (35) </p>
 
@@ -315,7 +321,7 @@ tags: 미분방정식
 
 (여기서 미분연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq159.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq160.png">로 바뀐 것은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq161.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq162.png"> 두 변수에 대한 함수이기 때문이다.)
 
-다시 말해 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq163.png"> </p>는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq164.png">라는 점에서는 불연속적인 값을 갖는 함수일 것이라는 것이다. 거기에, 충분히 작은 양의 실수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq165.png">에 대해서 
+다시 말해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq163.png"> 는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq164.png">라는 점에서는 불연속적인 값을 갖는 함수일 것이라는 것이다. 거기에, 충분히 작은 양의 실수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq165.png">에 대해서 
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq166.png"> </p>
 
@@ -403,7 +409,7 @@ tags: 미분방정식
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq195.png"> </p>
 
-따라서, <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq196.png"> </p>는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq197.png"> 및 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq198.png">인 구간에서 연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq199.png">의 homogeneous equation을 이용해 표현할 수 있는 것이다.
+따라서,<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq196.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq197.png"> 및 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq198.png">인 구간에서 연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq199.png">의 homogeneous equation을 이용해 표현할 수 있는 것이다.
 
 두 번 미분해서 0이 되려면,
 
@@ -431,9 +437,9 @@ tags: 미분방정식
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq207.png"> </p>
 
-이다. 다시 말해 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq208.png"> </p>는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq209.png"> 근처에서 연속이다.
+이다. 다시 말해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq208.png"> 는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq209.png"> 근처에서 연속이다.
 
-그 이유는 귀류법을 이용해 설명할 수 있는데, 만약 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq210.png"> </p>가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq211.png"> 근처에서 불연속이었다면 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq212.png"> </p>는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq213.png"> 근처에서 unit step function을 통해 모델링 할 수 있는것이 된다.  그런데, unit step function의 1차 미분이 delta function이고 2차 미분은 unit doublet이라고 함수이다. 그런데, 이미 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq214.png"> </p>의 2계 미분이 디랙 델타 함수라는 것을 토대로 생각해보면 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq215.png"> </p>는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq216.png"> 근처에서 연속이어야 한다는 것을 알 수 있다.
+그 이유는 귀류법을 이용해 설명할 수 있는데, 만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq210.png"> 가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq211.png"> 근처에서 불연속이었다면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq212.png"> 는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq213.png"> 근처에서 unit step function을 통해 모델링 할 수 있는것이 된다.  그런데, unit step function의 1차 미분이 delta function이고 2차 미분은 unit doublet이라고 함수이다. 그런데, 이미<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq214.png"> 의 2계 미분이 디랙 델타 함수라는 것을 토대로 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq215.png"> 는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-09-Greens_function/eq216.png"> 근처에서 연속이어야 한다는 것을 알 수 있다.
 
 따라서 위 조건들을 대입해보면,
 

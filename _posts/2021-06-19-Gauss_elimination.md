@@ -19,13 +19,13 @@ tags: 선형대수학
 
 # Introduction
 
-[기본 행렬](https://angeloyeo.github.io/2021/06/15/elementary_square_matrices.html) 편과 [LU 분해](https://angeloyeo.github.io/2021/06/16/LU_decomposition.html) 편을 통해서 우리는 행렬 형태를 이용해 연립 방정식을 풀 수 있다는 것을 확인했다. 이때 핵심적인 역할을 하는 것이 기초적인 행 연산(elementary row operations)에 대응하는 기본 행렬들 (주로 $E$라고 씀) 이었다.
+[기본 행렬](https://angeloyeo.github.io/2021/06/15/elementary_square_matrices.html) 편과 [LU 분해](https://angeloyeo.github.io/2021/06/16/LU_decomposition.html) 편을 통해서 우리는 행렬 형태를 이용해 연립 방정식을 풀 수 있다는 것을 확인했다. 이때 핵심적인 역할을 하는 것이 기초적인 행 연산(elementary row operations)에 대응하는 기본 행렬들 (주로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq1.png">라고 씀) 이었다.
 
-즉, 우리의 목표는 아래와 같이 기본 행 연산들을 수행함으로써 $Ax=b$를 $Ux=c$와 같이 변경해주는 것이다.
+즉, 우리의 목표는 아래와 같이 기본 행 연산들을 수행함으로써 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq2.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq3.png">와 같이 변경해주는 것이다.
 
-여기서 $U$는 상삼각행렬(upper triangular matrix)이다. 
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq4.png">는 상삼각행렬(upper triangular matrix)이다. 
 
-만약 $Ax=b$를 $Ux=c$와 같은 형태로 바꿔줄 수 있다면 우리는 back-substitution을 이용해 미지수 $x_1, x_2, x_3$을 수월하게 구해낼 수 있게 된다는 것을 공부하였다.
+만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq5.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq6.png">와 같은 형태로 바꿔줄 수 있다면 우리는 back-substitution을 이용해 미지수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq7.png">을 수월하게 구해낼 수 있게 된다는 것을 공부하였다.
 
 <p align = "center">
     <img width = "800" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic1.png">
@@ -33,9 +33,9 @@ tags: 선형대수학
     그림 1. 기본 행 연산을 통해 상삼각행렬을 얻는 과정
 </p>
 
-[LU 분해](https://angeloyeo.github.io/2021/06/16/LU_decomposition.html) 에서는 위와 같은 방법을 적용할 때 행렬 $A$가 $n\times n$ 형태의 정방 행렬(square matrix)였다.
+[LU 분해](https://angeloyeo.github.io/2021/06/16/LU_decomposition.html) 에서는 위와 같은 방법을 적용할 때 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq8.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq9.png"> 형태의 정방 행렬(square matrix)였다.
 
-그런데, 꼭 행렬 $A$가 정방 행렬이어야지만 위와 같은 방식의 row operation을 해줄 수 있는 것은 아니다.
+그런데, 꼭 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq10.png">가 정방 행렬이어야지만 위와 같은 방식의 row operation을 해줄 수 있는 것은 아니다.
 
 다시 말해, 식의 개수보다 변수의 개수가 많은 경우도 있을 수 있고, 변수의 개수보다 식의 개수가 많은 경우에 대해서도 위와 같은 상삼각행렬 비슷한 것을 남길 수 있지 않을까?
 
@@ -71,7 +71,7 @@ tags: 선형대수학
     그림 3. row-echelon matrix는 계단 형태의 행렬이며 각 계단의 끄트머리에 발을 딛고 올라갈 부분을 pivot이라고 부른다.
 </p>
 
-다시 말해 row-echelon matrix는 직사각행렬 $A$에 대해 row operation을 수행한 결과로 얻어지는 행렬로 상삼각행렬과 유사한 형태와 기능을 갖는 행렬이다. 그리고 위에서 언급한 세 가지 특성을 가져야 한다. 따라서, row operation을 수행해주면서 해당 형태를 갖게끔 행교환을 계속 수행해줌으로써 얻을 수 있게 된다.
+다시 말해 row-echelon matrix는 직사각행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq11.png">에 대해 row operation을 수행한 결과로 얻어지는 행렬로 상삼각행렬과 유사한 형태와 기능을 갖는 행렬이다. 그리고 위에서 언급한 세 가지 특성을 가져야 한다. 따라서, row operation을 수행해주면서 해당 형태를 갖게끔 행교환을 계속 수행해줌으로써 얻을 수 있게 된다.
 
 그리고 만약 여기서 scaling을 통해 pivot들을 모두 1로 만들고, pivot 위의 숫자들도 모두 0으로 만들어줄 수도 있을 것이다. 가령, 그림 3의 형태의 row-echelon form에 대해 다음과 같이 변형시킬 수 있다.
 
@@ -117,70 +117,35 @@ REF는 Row-Echelon Form, RREF는 Reduced Row-Echelon Form을 각각 의미한다
 
 아래의 행렬은 REF이라고 할 수 있다.
 
-$$\begin{bmatrix}
-   1 & - & - & - \\
-   0 & 1 & - & - \\
-   0 & 0 & 0 & 0 \\
-   0 & 0 & 0 & 0
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq12.png"> </p>
 
 여기서 '-'는 0이 아닌 숫자를 의미한다.
 
 아래의 행렬은 또 REF이라고 할 수 있다. 꼭 첫번째 행의 첫번째 값이 non-zero term이 되어야 한다는 요구 조건은 없다.
 
-$$\begin{bmatrix}
-   0 & 3 & - & - & - & - & -\\
-   0 & 0 & 2 & - & - & - & -\\
-   0 & 0 & 0 & 0 & 0 & 5 & -\\
-   0 & 0 & 0 & 0 & 0 & 0 & -
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq13.png"> </p>
 
 그런데, 아래의 행렬은 REF이 아니다. 0으로만 구성된 행은 가장 아래에 위치해야 한다는 법칙을 어긴 것이기 때문이다.
 
-$$\begin{bmatrix}
-   1 & - & - & - \\
-   0 & 2 & - & - \\
-   0 & 0 & 0 & 0 \\
-   0 & 0 & 0 & 1
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq14.png"> </p>
 
 또, 아래와 같은 꼴의 행렬도 REF이 아니다. 세 가지 특성 중 두 번째를 어겼기 때문이다. 다시 말해 두번째 행의 0이 아닌 선행 계수가 첫 번째 행의 0이 아닌 선행 계수보다 왼쪽에 위치하기 때문이다.
 
-$$\begin{bmatrix}
-   0 & 1 & - & - \\
-   1 & - & - & - \\
-   0 & 0 & 0 & 0 \\
-   0 & 0 & 0 & 0
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq15.png"> </p>
 
 또 아래와 같은 행렬도 REF이 아니다. 두 번째 pivot인 4가 포함되어 있는 2열을 보면 pivot인 4 아래의 모든 항이 0으로 표시되어 있지 않기 때문이다.
 
-$$\begin{bmatrix}
-   3 & - & - & - \\
-   0 & 4 & - & - \\
-   0 & 2 & 0 & 0 \\
-   0 & 0 & 0 & 0
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq16.png"> </p>
 
 아래의 행렬은 RREF이라고 할 수 있다.
 
-$$\begin{bmatrix}
-   1 & 0 & 3 & 2 \\
-   0 & 1 & 4 & 5 \\
-   0 & 0 & 0 & 0 \\
-   0 & 0 & 0 & 0
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq17.png"> </p>
 
 그러나 아래의 행렬은 RREF이 아니다. pivot의 정의 상 2행 2열의 4는 2행의 pivot인데, RREF라면 pivot이 모두 1이 되어야 하기 때문이다.
 
 만약 여기서 2행에 1/4를 모두 곱해주면 RREF이 된다.
 
-$$\begin{bmatrix}
-   1 & 0 & 0 & 2 \\
-   0 & 4 & 1 & 5 \\
-   0 & 0 & 0 & 0 \\
-   0 & 0 & 0 & 0
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq18.png"> </p>
 
 
 
@@ -188,59 +153,43 @@ $$\begin{bmatrix}
 
 ### 손으로 REf, RREF 구하기
 
-아래의 행렬 $A$에 대해 elementary row operation을 수행해 row-echelon matrix를 얻어보자.
+아래의 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq19.png">에 대해 elementary row operation을 수행해 row-echelon matrix를 얻어보자.
 
-$$\begin{bmatrix}
-    1 & 1 & 2 & 3 & 4 \\
-    2 & 6 & 4 & 6 & 2 \\
-    3 & 3 & 8 & 12 & 17
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq20.png"> </p>
 
 다음과 같은 row operation들을 수행하자.
 
-$$r_2 \rightarrow r_2- 2r_1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq21.png"> </p>
 
-$$r_3 \rightarrow r_3- 3r_1$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq22.png"> </p>
 
 그러면 다음과 같은 행렬을 얻을 수 있게 된다.
 
-$$\begin{bmatrix}
-    1 & 1 & 2 & 3 & 4 \\
-    0 & 4 & 0 & 0 & -6 \\
-    0 & 0 & 2 & 3 & 5
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq23.png"> </p>
 
-여기까지만 구하면 이것이 행렬 $A$의 row-echelon form이다.
+여기까지만 구하면 이것이 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq24.png">의 row-echelon form이다.
 
 여기서 2행에 1/4를 곱해주고 3행에 1/2를 곱해주자.
 
 즉, 
 
-$$r_2 \rightarrow \frac{1}{4}r_2 $$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq25.png"> </p>
 
-$$r_3 \rightarrow \frac{1}{2}r_3$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq26.png"> </p>
 
 연산을 취해주면 다음과 같이 행렬이 수정된다.
 
-$$\begin{bmatrix}
-    1 & 1 & 2 & 3 & 4 \\
-    0 & 1 & 0 & 0 & -3/2 \\
-    0 & 0 & 1 & 3/2 & 5/2
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq27.png"> </p>
 
 여기서 pivot 위의 값들도 모두 0으로 만들어주기 위해 아래와 같은 두 개의 행연산을 취해주자.
 
-$$r_1 \rightarrow r_1 - r_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq28.png"> </p>
 
-$$r_1 \rightarrow r_1 - 2r_3$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq29.png"> </p>
 
 그러면 최종적으로 다음과 같은 행렬을 얻을 수 있게 된다.
 
-$$\begin{bmatrix}
-    1 & 0 & 0 & 0 & 1/2 \\
-    0 & 1 & 0 & 0 & -3/2 \\
-    0 & 0 & 1 & 3/2 & 5/2
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq30.png"> </p>
 
 이것이 행렬 A의 reduced-row echelon form이다.
 
@@ -250,29 +199,17 @@ MATLAB이나 여타 선형대수학을 위한 계산 도구를 통해 주어진 
 
 그런데, REF는 유일하게 결정되지는 않는다. 가령, 어떤 행렬의 REF을 구할 때 pivot 값을 약분해주지 않더라도 여전히 REF로 볼 수 있다.
 
-가령 아래와 같은 행렬 $A$에 대해,
+가령 아래와 같은 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq31.png">에 대해,
 
-$$A = \begin{bmatrix}
-    1 & 1 & 2 & 3 & 4 \\
-    2 & 6 & 4 & 6 & 2 \\
-    3 & 3 & 8 & 12 & 17
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq32.png"> </p>
 
 REF 중 하나는 다음과 같은 것일 수 있다.
 
-$$REF(A)_1 = \begin{bmatrix}
-    1 & 1 & 2 & 3 & 4 \\
-    0 & 4 & 0 & 0 & -6 \\
-    0 & 0 & 2 & 3 & 5
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq33.png"> </p>
 
 그런데, 가령 2번 행에 1/2를 곱해주더라도 여전히 REF의 꼴임을 알 수 있다.
 
-$$REF(A)_2 = \begin{bmatrix}
-    1 & 1 & 2 & 3 & 4 \\
-    0 & 2 & 0 & 0 & -3 \\
-    0 & 0 & 2 & 3 & 5
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq34.png"> </p>
 
 그래서 REF는 유일하게 결정되지는 않지만 MATLAB에서는 LU분해에 사용되는 lu 함수를 이용해 REF 유사한 것을 얻을 수 있게 된다.
 
@@ -313,58 +250,39 @@ MATLAB에서는 rref()라는 함수를 이용해 RREF를 구할 수 있다.
 
 ## RREF: 역행렬의 계산
 
-$Ax=b$에서 $b$ 벡터가 여러 종류일 때, 한꺼번에 해 $x$들을 구할 수 있다.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq35.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq36.png"> 벡터가 여러 종류일 때, 한꺼번에 해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq37.png">들을 구할 수 있다.
 
 가령, 아래와 같이 세 가지 경우의 솔루션을 얻고자 한다고 하자.
 
-$$\begin{cases}3x-z = 1 \\ x+2y+3z = 1 \\ 2x-y+z=1\end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq38.png"> </p>
 
-$$\begin{cases}3x-z = 2 \\ x+2y+3z = 2 \\ 2x-y+z=2\end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq39.png"> </p>
 
-$$\begin{cases}3x-z = 3 \\ x+2y+3z = 3 \\ 2x-y+z=3\end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq40.png"> </p>
 
 그러면 각각의 경우에 대해서 세 번의 계산을 할 것이 아니라 다음과 같이 augmented matrix를 구성하고 가우스-조던 소거를 수행하면 한번에 세 가지 방정식을 다 풀어낼 수 있게 된다.
 
-$$\left[\begin{array}{ccc|ccc} 
-    3 & 0 & -1 & 1 & 2 & 3 \\
-    1 & 2 & 3 &  1 & 2 & 3 \\
-    2 & -1 & 1 & 1 & 2 & 3
-\end{array}\right]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq41.png"> </p>
 
 이것은 다시 말해 다음과 같은 행렬 문제를 푸는 것과 다르지 않다.
 
-$$AB=
-    \begin{bmatrix}3 & 0 & -1 \\ 1 & 2 & 3 \\ 2 & -1 & 1\end{bmatrix}
-    \begin{bmatrix}x_{11} & x_{12} & x_{13} \\ x_{21} & x_{22} & x_{23} \\ x_{31} & x_{32} & x_{33}\end{bmatrix}
-    =\begin{bmatrix}1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq42.png"> </p>
 
 그럼 만약 이렇게 augmented matrix를 쓸 수 있다는 점을 응용해 augmented matrix를 다음과 같이 설정하면 어떨까?
 
-$$\left[\begin{array}{ccc|ccc} 
-    3 & 0  & -1 & 1 & 0 & 0 \\
-    1 & 2  & 3  & 0 & 1 & 0 \\
-    2 & -1 & 1  & 0 & 0 & 1
-\end{array}\right]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq43.png"> </p>
 
-즉, $B$라는 행렬은 $A$라는 행렬 뒤에 곱해져서 결과로써 단위 행렬을 출력해주어야 한다.
+즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq44.png">라는 행렬은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq45.png">라는 행렬 뒤에 곱해져서 결과로써 단위 행렬을 출력해주어야 한다.
 
-다시 말해 $B$ 행렬은 $A$ 행렬의 역행렬이다.
+다시 말해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq46.png"> 행렬은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq47.png"> 행렬의 역행렬이다.
 
 즉, 위의 augmented matrix에 대해 가우스-조던 행렬 소거를 적용해 reduced-row echelon matrix로 만들어주면 다음과 같다.
 
-$$\left[\begin{array}{ccc|ccc} 
-    1 & 0  & 0  & 1/4 & 1/20 & 1/10 \\
-    0 & 1  & 0  & 1/4 & 1/4 & -1/2 \\
-    0 & 0  & 1  & -1/4 & 3/20 & 3/10
-\end{array}\right]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq48.png"> </p>
 
-그러므로 $A$의 역행렬을 다음과 같이 계산할 수 있는 것이다.
+그러므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq49.png">의 역행렬을 다음과 같이 계산할 수 있는 것이다.
 
-$$A^{-1}=\begin{bmatrix}
-    1/4 & 1/20 & 1/10 \\
-    1/4 & 1/4 & -1/2 \\
-    -1/4 & 3/20 & 3/10
-\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq50.png"> </p>
 
 ## 행동치 관계를 통한 솔루션 계산
 
@@ -376,51 +294,51 @@ row operation이다. row operation은 행렬의 한 행을 상수배해주는 �
 
 연립방정식의 해를 구할 때 상수배, 방정식 끼리 더 해주기, 순서 바꿔주기를 해주어도 해에는 변함이 없는 것 처럼 row-operation을 수행해주어도 해는 여전히 동일하게 유지된다.
 
-그러니까 원래 행렬을 $A$, 그 행렬의 REF를 $U$, RREF를 $R$이라고 하면 $Ax=b$, $Ux=c$, $Rx=d$의 해는 모두 동일하다.
+그러니까 원래 행렬을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq51.png">, 그 행렬의 REF를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq52.png">, RREF를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq53.png">이라고 하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq54.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq55.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq56.png">의 해는 모두 동일하다.
 
-(이 때, $c$와 $d$는 $A$를 $U$ 혹은 $R$로 바꿔주면서 우항의 벡터 $b$가 변형된 것이다.)
+(이 때, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq57.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq58.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq59.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq60.png"> 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq61.png">로 바꿔주면서 우항의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq62.png">가 변형된 것이다.)
 
-조금 어려운 말로 하면 $A$와 $U$와 $R$은 모두 행동치(row-equivalent)이다.
+조금 어려운 말로 하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq63.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq64.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq65.png">은 모두 행동치(row-equivalent)이다.
 
 다른 말로 하면 row operation을 수행해주더라도 row space의 변화는 없다고 할 수 있다. 하지만 column space에는 변화가 생긴다.
 
 예를 들어 아래와 같은 연립방정식을 푼다고 생각해보자.
 
-$$\begin{cases}3x+3y+z=3 \\ 4x+5y+2z=1 \\ 2x+5y+z = 3 \end{cases}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq66.png"> </p>
 
 그것은 아래와 같은 행렬식을 푸는 것과 같다고 할 수 있다.
 
-$$\begin{bmatrix}3 & 3 & 1 \\ 4 & 5 & 2  \\ 2 & 5 & 1 \end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}3\\1\\3\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq67.png"> </p>
 
-그런데, REF를 구해서 $Ux=c$의 꼴로 만들어준 다음 해를 구해도 마찬가지 위 방정식의 해와 동일한 해를 구할 수 있다.
+그런데, REF를 구해서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq68.png">의 꼴로 만들어준 다음 해를 구해도 마찬가지 위 방정식의 해와 동일한 해를 구할 수 있다.
 
-$$\begin{bmatrix}4 & 5 & 2 \\ 0 & 5/2 & 0  \\ 0 & 0 & -1/2 \end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}1\\5/2\\3\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq69.png"> </p>
 
-그리고 RREF를 구해서 $Rx=d$의 꼴로 만들어준 다음 해를 구해도 마찬가지 해를 구할 수 있다.
+그리고 RREF를 구해서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq70.png">의 꼴로 만들어준 다음 해를 구해도 마찬가지 해를 구할 수 있다.
 
-$$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0  \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\1\\6\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq71.png"> </p>
 
-해를 구하기에 가장 쉬워보이는 방정식은 $Rx=d$이고 $x,y,z$는 
+해를 구하기에 가장 쉬워보이는 방정식은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq72.png">이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq73.png">는 
 
-$$x=2, y= 1, z= -6$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq74.png"> </p>
 
 임을 쉽게 알 수 있다.
 
 ## 행 벡터의 선형 독립 / 종속 판별
 
-임의의 벡터 $v_1$, $v_2$에 대해 두 벡터가 선형 독립인지 판별하기 위해선 다음과 같은 과정을 수행해볼 수 있다.
+임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq75.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq76.png">에 대해 두 벡터가 선형 독립인지 판별하기 위해선 다음과 같은 과정을 수행해볼 수 있다.
 
-$$c_1 v_1 + c_2 v_2 = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq77.png"> </p>
 
-과 같은 식을 생각했을 때, 0이 아닌 $c_1$, $c_2$를 가지고 위 식이 성립할 수 있다면 두 벡터 $v_1$과 $v_2$는 선형독립이 아니다. 다른 말로는 선형 종속이라고 한다.
+과 같은 식을 생각했을 때, 0이 아닌 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq78.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq79.png">를 가지고 위 식이 성립할 수 있다면 두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq80.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq81.png">는 선형독립이 아니다. 다른 말로는 선형 종속이라고 한다.
 
 다시 말해, 위 식을 다시 정리하면,
 
-$$v_1 = -\frac{c_2}{c_1}v_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq82.png"> </p>
 
-가 될텐데, 위 식을 만족할만한 0이 아닌 $c_1$, $c_2$가 존재한다는 뜻이 되므로 $v_1$과 $v_2$는 상수배라는 의미이다.
+가 될텐데, 위 식을 만족할만한 0이 아닌 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq83.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq84.png">가 존재한다는 뜻이 되므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq85.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq86.png">는 상수배라는 의미이다.
 
-반대로 $c_1 v_1 + c_2 v_2 = 0$을 만족할 수 있는 $c_1$, $c_2$ 오직 0만 가능하다면 $v_1$과 $v_2$는 선형 독립이라고 한다.
+반대로 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq87.png"> </p>을 만족할 수 있는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq88.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq89.png"> 오직 0만 가능하다면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq90.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq91.png">는 선형 독립이라고 한다.
 
 어떤 행렬의 Row-Echelon Form 혹은 Reduced Row-Echelon Form을 구하는 것은 row operation을 통해 수행하는 것이다.
 
@@ -428,13 +346,13 @@ $$v_1 = -\frac{c_2}{c_1}v_2$$
 
 다시 말해, 그 행은 다른 행들과 선형 종속이라는 의미이다.
 
-가령 아래와 같은 행렬 $A$를 생각해보자.
+가령 아래와 같은 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq92.png">를 생각해보자.
 
-$$A=\begin{bmatrix}5 & 3 & 3 \\ 5 & 1 & 3 \\ 5 & 2 & 3 \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq93.png"> </p>
 
 이 식을 잘 보면 세 번째 행은 다음과 같이 row operation 해주면 all-zero로 소거할 수 있다.
 
-$$r_3 \rightarrow r_3 -\frac{1}{2}r_1-\frac{1}{2}r_2 = 0$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq94.png"> </p>
 
 <p align = "center">
     <img width = "400" src ="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-19-Gauss_elimination/pic9.png">
@@ -442,9 +360,9 @@ $$r_3 \rightarrow r_3 -\frac{1}{2}r_1-\frac{1}{2}r_2 = 0$$
     그림 9. 다른 행에 선형 종속인 행은 row operation을 통해 소거할 수 있다.
 </p>
 
-다시 말해 $r_3$은 $r_1$과 $r_2$의 선형결합으로 표현해줄 수 있다.
+다시 말해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq95.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq96.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq97.png">의 선형결합으로 표현해줄 수 있다.
 
-$$r_3 = 0.5 r_1 + 0.5 r_2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-19-Gauss_elimination/eq98.png"> </p>
 
 ## 행렬의 rank 계산
 

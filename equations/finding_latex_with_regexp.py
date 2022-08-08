@@ -28,14 +28,14 @@ def formula_as_file( formula, file):
     f.write(r.content)
     f.close()
     
-basefolder = 'C:/angeloyeo.github.io/_posts/'
+basefolder = 'D:/angeloyeo.github.io/_posts/'
 extension = '.md'
 
 filenames = glob.glob(basefolder+'*.md')
 for i in range(len(filenames)):
     filenames[i] = filenames[i][len(basefolder):-3]
     
-filename = filenames[135]
+filename = filenames[140]
 
 f = open(basefolder+filename+extension ,encoding = 'UTF-8')
 my_text = f.read()
@@ -49,7 +49,7 @@ mo_newline = regex_newline.findall(my_text)
 is_newline = find_newline(mo_all, mo_newline)
 
 #%%
-path2save = 'C:/angeloyeo.github.io/equations/'+filename
+path2save = 'D:/angeloyeo.github.io/equations/'+filename
 isExist = os.path.exists(path2save)
 
 if not isExist:
@@ -57,6 +57,8 @@ if not isExist:
     
 for i, eq in enumerate(mo_all):
     formula_as_file(eq, path2save+'/eq'+str(i+1)+'.png')
+    
+# formula_as_file(mo_all[59], path2save+'/eq'+str(59+1)+'.png')
     
 #%%
 # 모든 equation이 invalid가 없는지 점검한 후에 md 파일의 내용물을 수정할 것.

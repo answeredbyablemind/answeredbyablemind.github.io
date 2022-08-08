@@ -73,7 +73,7 @@ tags: 선형대수
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq14.png"> <br> 식 (2) </p>
 
-이 때, 솔루션 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq15.png"> 는 고윳값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq16.png"> 에 대응하는 고유벡터이다.</center>
+이 때, 솔루션 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq15.png"> 는 고윳값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq16.png"> 에 대응하는 고유벡터이다.
 
 
 이 때, 식 (2)는 행렬의 성질에 의해서 다음과 같이 바꿀 수 있다.
