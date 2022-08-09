@@ -55,13 +55,13 @@ tags: 신호처리
 
 아래는 이산 신호의 상수배와 신호끼리의 합을 표현한 것이다. 
 
-$$(c\cdot x)[n] = c\cdot x[n] % 식 (1)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq1.png"> </p>
 
-$$(x+z)[n] = x[n]+z[n] % 식 (2)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq2.png"> </p>
 
-다시 말해 어떤 신호 $x[n]$에 임의의 상수 $c$를 곱하더라도 여전히 $cx[n]$는 신호이고,
+다시 말해 어떤 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq3.png">에 임의의 상수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq4.png">를 곱하더라도 여전히 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq5.png">는 신호이고,
 
-어떤 신호 $x[n]$과 $z[n]$를 더하더라도 $x[n]+z[n]$ 역시 신호다.
+어떤 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq6.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq7.png">를 더하더라도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq8.png"> 역시 신호다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic1.png">
@@ -107,12 +107,12 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 
 여기서 우리가 좌표가 (3,4)인 벡터를 생각한다라고 하는 말은 어떤 2차원 벡터 공간 상의 기저 벡터 두 개를 몇 개씩 결합할것인가에 관한 표현을 간략화 한 것이다.
 
-아래 그림은 좌표가 (3,4) 인 벡터와 2차원 벡터 공간 상의 기저벡터 두 개 $\hat{i}$와 $\hat{j}$를 표시한 것이다.
+아래 그림은 좌표가 (3,4) 인 벡터와 2차원 벡터 공간 상의 기저벡터 두 개 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq9.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq10.png">를 표시한 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic3.png">
   <br>
-  그림 5. 좌표가 (3,4)인 벡터와 표준기저벡터 $\hat{i}$와 $\hat{j}$
+  그림 5. 좌표가 (3,4)인 벡터와 표준기저벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq11.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq12.png">
 </p>
 
 그리고 또 다른 아래의 그림에서는 (3,4) 좌표의 벡터가 기저벡터 3개, 4개를 각각 더해 구성할 수 있는 것임을 알 수 있다.
@@ -125,7 +125,7 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 
 그러면 이 표준기저벡터들을 항상 사용해야하는것일까? 사실은 2차원 벡터 중 아무거나 두개를 골라서 기저벡터로 삼을 수 있다.
 
-아래 그림은 좌표계를 반시계방향으로 10' 회전시켜 만든 새로운 좌표계이다. 그리고 이 때의 기저벡터는 $\hat{i}_{new}$와 $\hat{j}_{new}$로 표시했다.
+아래 그림은 좌표계를 반시계방향으로 10' 회전시켜 만든 새로운 좌표계이다. 그리고 이 때의 기저벡터는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq13.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq14.png">로 표시했다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic5.png">
@@ -145,60 +145,62 @@ $$(x+z)[n] = x[n]+z[n] % 식 (2)$$
 
 이처럼 벡터는 벡터 공간상의 한 점과 같다. 다만, 이 벡터를 표현할 수 있는 방법은 기저에 따라 바뀐다. 
 
-수식으로 쓰자면 임의의 벡터 $\vec{v}$는 기저벡터들의 선형결합으로 아래와 같이 쓸 수 있다.
+수식으로 쓰자면 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq15.png">는 기저벡터들의 선형결합으로 아래와 같이 쓸 수 있다.
 
-$$\vec{v}=c_1 \hat{i} + c_2 \hat{j} = d_1 \hat{i}_{new} + d_2\hat{j}_{new}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq16.png"> </p>
 
 어떤 기저는 다른 기저에 비해서 동일한 벡터를 표현하는데에도 표현이 단순해지고 간결해진다. 
 
-앞선 예시에서는 $c_1$과 $c_2$는 각각 3, 4로 단순했지만 $d_1$과 $d_2$는 3.6, 3.4로 조금 더 복잡해졌다.
+앞선 예시에서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq17.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq18.png">는 각각 3, 4로 단순했지만 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq19.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq20.png">는 3.6, 3.4로 조금 더 복잡해졌다.
 
 이처럼 동일한 벡터 하나를 표현하는데 좋은 기저를 정하는 것은 매우 중요하다.
 
 신호도 마찬가지로 임의의 신호를 기저 신호의 선형결합으로 표현할 수 있다.
 
-임의의 신호 $x[k], k = 1, 2,\cdots n$이 포함되어 있는 신호 공간에 대한 기저 신호를 $\lbrace \phi_i[k] \| i = 1,2,\cdots, n\rbrace$라고 잡는다면 임의의 신호 $x[n]$은 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
+임의의 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq21.png">이 포함되어 있는 신호 공간에 대한 기저 신호를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq22.png">라고 잡는다면 임의의 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq23.png">은 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
 
-$$x[k]=\sum_{i=1}^{n}p_i \phi_i[k]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq24.png"> </p>
 
-이는 연속 신호에 대해서도 마찬가지로 임의의 신호 $x(t)$가 포함되어 있는 신호 공간의 기저 신호를 $\lbrace \psi _i(t)\rbrace$라고 두면 이 신호는 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
+이는 연속 신호에 대해서도 마찬가지로 임의의 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq25.png">가 포함되어 있는 신호 공간의 기저 신호를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq26.png">라고 두면 이 신호는 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
 
-$$x(t) = \sum_i q_i \psi_i(t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq27.png"> </p>
 
 
-한편, 하나의 벡터를 표현하기 위해 기저 벡터가 몇 개 들어갈지를 계산하는 방법은 '벡터의 내적'으로 알아볼 수 있다. 즉, 위 식들에서 $p_i$와 $q_i$를 계산하는 방법은 벡터의 내적처럼 신호의 내적을 정의해줌으로써 가능하다는 의미가 된다.
+한편, 하나의 벡터를 표현하기 위해 기저 벡터가 몇 개 들어갈지를 계산하는 방법은 '벡터의 내적'으로 알아볼 수 있다. 즉, 위 식들에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq28.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq29.png">를 계산하는 방법은 벡터의 내적처럼 신호의 내적을 정의해줌으로써 가능하다는 의미가 된다.
 
 ## 벡터 간의 내적 → 신호의 내적
 
 선형대수학에서 벡터의 내적은 다음과 같이 정의되었다.
 
-임의의 아래와 같은 $n$차원 실수 벡터 $\vec{a}$와 $\vec{b}$에 대하여,
+임의의 아래와 같은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq30.png">차원 실수 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq31.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq32.png">에 대하여,
 
-$$\vec{a} = \begin{bmatrix}a_1\\ a_2 \\ \vdots \\ a_n\end{bmatrix} % 식 (6)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq33.png"> </p>
 
-$$\vec{b} = \begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_n\end{bmatrix} % 식 (7)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq34.png"> </p>
 
-$$\text{dot}(\vec{a}, \vec{b})=a_1b_1 + a_2b_2 +\cdots + a_nb_n % 식 (8)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq35.png"> </p>
 
-만약 $\vec{a}$와 $\vec{b}$가 복소 벡터였다고 하면 내적은 다음과 같이 정의된다.
+만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq36.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq37.png">가 복소 벡터였다고 하면 내적은 다음과 같이 정의된다.
 
-$$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % 식 (9)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq38.png"> <br> 식 (9) </p>
 
-여기서 $*$은 복소 켤레(complex conjugate) 연산이다.
+[//]:# (식 9)
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq39.png">은 복소 켤레(complex conjugate) 연산이다.
 
 왜 복소 벡터는 복소 켤레 연산이 들어가는지 생각해본다면 내적을 통해 복소 벡터에서 길이를 정의하기 위해서이다.
 
-어떤 실수 벡터 $\vec{a}$의 크기(보통 L2-norm)는 다음과 같이 정의된다.
+어떤 실수 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq40.png">의 크기(보통 L2-norm)는 다음과 같이 정의된다.
 
-$$\text{norm}_2(\vec{a}) = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} % 식 (10)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq41.png"> </p>
 
 즉,
 
-$$\text{norm}_2(\vec{a}) = \sqrt{\text{dot}(\vec{a}, \vec{a})}=\sqrt{a_1a_1+a_2a_2+\cdots+a_na_n} % 식 (11)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq42.png"> </p>
 
-이 개념을 복소벡터에까지 확장시키면, 복소 벡터 $\vec{a}$에 대해서
+이 개념을 복소벡터에까지 확장시키면, 복소 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq43.png">에 대해서
 
-$$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2+\cdots +a_n^*a_n}=\sqrt{\text{dot}(\vec{a},\vec{a})} % 식 (12)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq44.png"> </p>
 
 이어야 하므로 복소벡터의 내적연산은 식 (9)과 같이 정의되어야 하는 것이다.
 
@@ -206,17 +208,17 @@ $$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a
 
 신호들은 실수 신호 범위에서 그치지않고 신호값이 복소수가 될 수 도 있기 때문에 다음과 같이 복소 벡터의 내적의 정의를 확장해 다음과 같이 정의한다.
 
-이산 신호의 경우 다음과 같이 정의된다. 임의의 복소 이산 신호 $x[k]$와 $z[k]$ $, k = 1, 2, \cdots, n$ 에 대하여
+이산 신호의 경우 다음과 같이 정의된다. 임의의 복소 이산 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq45.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq46.png"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq47.png"> 에 대하여
 
-$$\langle x[k], z[k] \rangle \equiv \sum_{k=1}^n x[k]z^*[k]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq48.png"> </p>
 
-이다. 여기서 $z^*[k]$는 $z[k]$의 complex conjugate이다.
+이다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq49.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq50.png">의 complex conjugate이다.
 
-또, 구간 $(a, b)$에서 정의된 임의의 복소 연속 신호 $x(t)$, $z(t)$에 대해 두 신호의 inner product $\langle f, g\rangle$은 
+또, 구간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq51.png">에서 정의된 임의의 복소 연속 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq52.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq53.png">에 대해 두 신호의 inner product <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq54.png">은 
 
-$$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq55.png"> </p>
 
-이다. 여기서 $z^*(t)$는 $z(t)$의 complex conjugate이다.
+이다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq56.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq57.png">의 complex conjugate이다.
 
 ## 고유함수
 
@@ -249,10 +251,10 @@ $$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
   <br>
-  그림 10. 입력 벡터 ($x$)와 출력 벡터($Ax$)가 방향은 동일하고 크기만 차이나는 경우
+  그림 10. 입력 벡터 (<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq58.png">)와 출력 벡터(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq59.png">)가 방향은 동일하고 크기만 차이나는 경우
 </p>
 
-이런 경우에 이 벡터 $x$의 방향으로 향하는 단위 벡터를 행렬 $A$에 대한 고유벡터라고 하고, 크기의 변화량을 고윳값이라고 부른다.
+이런 경우에 이 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq60.png">의 방향으로 향하는 단위 벡터를 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq61.png">에 대한 고유벡터라고 하고, 크기의 변화량을 고윳값이라고 부른다.
 
 그런데, 우리가 공부하는 신호 시스템에서는 어떨까? 신호가 벡터라고 한다면 시스템은 행렬에 대응하는 것이다.
 
@@ -274,47 +276,47 @@ $$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
   그림 12. LTI system에서는 복소 정현파가 고유함수가 된다.
 </p>
 
-조금 더 자세하게 보면, 입력이 $x(t)=e^{j\omega t}$ 이고 시스템의 impulse response가 $h(t)$라고 하면 출력은
+조금 더 자세하게 보면, 입력이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq62.png"> 이고 시스템의 impulse response가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq63.png">라고 하면 출력은
 
-$$y(t) = \int_{-\infty}^{\infty}e^{j\omega (t-\tau)}h(\tau)d\tau$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq64.png"> </p>
 
-$$=e^{j\omega t}\int_{-\infty}^{\infty}h(\tau)e^{-j\omega\tau}d\tau$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq65.png"> </p>
 
-와 같다. 여기서 $H(\omega)$를 아래와 같이 정의하였는데, 이것은 $h(t)$의 [푸리에 변환](https://angeloyeo.github.io/2019/07/07/CTFT.html)이라고 부르는 것이다.
+와 같다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq66.png">를 아래와 같이 정의하였는데, 이것은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq67.png">의 [푸리에 변환](https://angeloyeo.github.io/2019/07/07/CTFT.html)이라고 부르는 것이다.
 
-$$H(\omega) = \int_{-\infty}^{\infty}h(\tau)e^{-j\omega\tau}d\tau$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq68.png"> </p>
 
 중요한 것은 원래의 식을 다시 써보면,
 
-$$y(t)=H(\omega)e^{j\omega t}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq69.png"> </p>
 
-가 되는데, 출력 함수를 보면 원래의 입력 함수 $e^{j\omega t}$가 그대로 들어있고 그것에 $H(\omega)$이 곱해져서 출력되는 것을 알 수 있다.
+가 되는데, 출력 함수를 보면 원래의 입력 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq70.png">가 그대로 들어있고 그것에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq71.png">이 곱해져서 출력되는 것을 알 수 있다.
 
-생각해보면 너무 자연스럽게 $e^{j\omega t}$가 나오다보니 이게 뭐가 그렇게 특별한가 싶을지도 모르지만, 이번엔 코사인 함수를 입력으로 넣어보자.
+생각해보면 너무 자연스럽게 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq72.png">가 나오다보니 이게 뭐가 그렇게 특별한가 싶을지도 모르지만, 이번엔 코사인 함수를 입력으로 넣어보자.
 
 코사인 함수는 [오일러 공식](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)에 의해 다음과 같이 수정해서 쓸 수도 있다.
 
-$$x(t) = \cos(\omega t)=\frac{1}{2}(e^{j\omega t}+e^{-j\omega t})$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq73.png"> </p>
 
-시스템을 $\mathfrak L$이라고 하면, 우리의 시스템은 선형 시스템이기 때문에 다음이 성립한다.
+시스템을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq74.png">이라고 하면, 우리의 시스템은 선형 시스템이기 때문에 다음이 성립한다.
 
-$$y(t) = (\mathfrak{L}x)(t)=\frac{1}{2}\left(\mathfrak{L}(e^{j\omega t} + \mathfrak{L}(e^{-j\omega t})\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq75.png"> </p>
 
-여기서 [복소수 표현](https://angeloyeo.github.io/2019/06/18/phasor.html)을 이용해 $H(\omega)$를 표현하면,
+여기서 [복소수 표현](https://angeloyeo.github.io/2019/06/18/phasor.html)을 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq76.png">를 표현하면,
 
-$$H(\omega) = |H(\omega)|e^{j \angle H(\omega)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq77.png"> </p>
 
-$$H(-\omega) = H^*(\omega) = |H(\omega)|e^{-j\angle H(\omega)}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq78.png"> </p>
 
-이므로, $y(t)$를 다시 쓰면 다음과 같을 것이다.
+이므로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq79.png">를 다시 쓰면 다음과 같을 것이다.
 
-$$y(t) = \frac{1}{2}|H(\omega)|\left(e^{j(\omega t +\angle H(\omega))} + e^{-j(\omega t +\angle H(\omega))}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq80.png"> </p>
 
-$$=|H(\omega)|\cos(\omega t + \angle H(\omega))$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq81.png"> </p>
 
 와 같다.
 
-따라서, 코사인 함수를 입력으로 넣어주면 시스템에 의해 크기가 $\|H(\omega)\|$만큼 커질 뿐만 아니라 위상도 $\angle H(\omega)$만큼 shift되어 표현해주어야 한다.
+따라서, 코사인 함수를 입력으로 넣어주면 시스템에 의해 크기가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq82.png">만큼 커질 뿐만 아니라 위상도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-12-signal_space/eq83.png">만큼 shift되어 표현해주어야 한다.
 
 그러므로 코사인 함수를 입력으로 넣어줬을 때는 출력에 원래의 입력이 그대로 출력되지 않으므로 코사인 함수는 선형 시스템에 대한 고유함수가 아니다.
 

@@ -38,7 +38,7 @@ tags: 신호처리
 
 원은 2차원 평면 상에 위치한다. 그런데, 그래프 상에 시간에 따른 회전을 기술(記述)하려다보니 2차원 평면의 두 개 차원 중 하나의 차원은 포기할 수 밖에 없었을 것이다.
 
-가장 쉬운 방법은 회전하는 원의 $x$축 혹은 $y$축 위의 변화만을 시간에 따라 기술하는 것이다.
+가장 쉬운 방법은 회전하는 원의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq1.png">축 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq2.png">축 위의 변화만을 시간에 따라 기술하는 것이다.
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay muted>
@@ -48,7 +48,7 @@ tags: 신호처리
   그림 2. 4초 주기로 원 위의 점의 x 축 y 축 위의 변화만을 관찰하는 과정
 </p>
 
-위 그림에서 볼 수 있는 시간에 따른 $x$ 축 혹은 $y$ 축 위의 움직임을 아래와 같이 표현하는 것이 아이디어라고 할 수 있다. 시간 축을 새로 설정하자는 것이다.
+위 그림에서 볼 수 있는 시간에 따른 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq3.png"> 축 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq4.png"> 축 위의 움직임을 아래와 같이 표현하는 것이 아이디어라고 할 수 있다. 시간 축을 새로 설정하자는 것이다.
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay controls muted>
@@ -58,7 +58,7 @@ tags: 신호처리
   그림 3. 원 위의 회전에 맞춰 x 축 y 축의 시간 변화를 각각 그래프로 표현하면 정현파를 얻을 수 있다.
 </p>
 
-이렇게 해서 얻게 되는 파형은 두 개이고 $x$ 축의 시간 변화 그래프는 코사인 파라고 부르고 $y$ 축의 시간 변화 그래프는 사인파라고 부른다.
+이렇게 해서 얻게 되는 파형은 두 개이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq5.png"> 축의 시간 변화 그래프는 코사인 파라고 부르고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq6.png"> 축의 시간 변화 그래프는 사인파라고 부른다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic4.png">
@@ -80,9 +80,11 @@ tags: 신호처리
 
 코사인파를 기준으로 쓰면 다음과 같이 진폭, 주파수, 위상 변이가 표현된다.
 
-$$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq7.png"> <br> 식 (1) </p>
 
-여기서 $A$는 진폭, $f_0$는 주파수, $\phi$는 위상 변위를 뜻하며 $\omega_0$는 라디안 주파수를 의미한다.
+[//]:# (식 1)
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq8.png">는 진폭, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq9.png">는 주파수, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq10.png">는 위상 변위를 뜻하며 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq11.png">는 라디안 주파수를 의미한다.
 
 이것에 대해서 조금 더 자세히 알아보도록 하자.
 
@@ -98,7 +100,7 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
   그림 5. 서로 다른 크기의 반지름을 갖는 원의 회전
 </p>
 
-기본적으로 코사인 함수 $cos(\theta)$는 +1과 -1 사이에서 진동하므로 $A\cos(\theta)$는 $-A$에서 $+A$ 사이에서 진동한다.
+기본적으로 코사인 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq12.png">는 +1과 -1 사이에서 진동하므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq13.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq14.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq15.png"> 사이에서 진동한다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-04-sinusoids/pic6.png">
@@ -139,17 +141,17 @@ $$x(t)=A\cos(2\pi f_0 t+\phi) = A\cos(\omega_0 t + \phi)$$
   그림 9. 0.25 Hz와 2Hz의 서로 다른 주파수를 갖는 사인파의 형태 비교
 </p>
 
-정현파의 주파수와 관련해 어렵게 여기는 개념중 하나는 라디안 주파수이다. 라디안 주파수는 보통 $\omega$(오메가 라고 읽는다.)를 기호로 사용한다.
+정현파의 주파수와 관련해 어렵게 여기는 개념중 하나는 라디안 주파수이다. 라디안 주파수는 보통 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq16.png">(오메가 라고 읽는다.)를 기호로 사용한다.
 
-[라디안 각도 체계](https://angeloyeo.github.io/2019/06/04/2-1-angle_rad.html)은 원을 한번 회전할 때 반지름과 회전한 길이의 비율이 항상 $2\pi$임을 고려해 만든 각도 체계이다.
+[라디안 각도 체계](https://angeloyeo.github.io/2019/06/04/2-1-angle_rad.html)은 원을 한번 회전할 때 반지름과 회전한 길이의 비율이 항상 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq17.png">임을 고려해 만든 각도 체계이다.
 
 1Hz가 1초에 한번 회전하는 것을 의미한다고 하면 라디안 주파수는 1초에 몇 라디안을 회전하는지를 쉽게 파악하려고 만든 개념이다.
 
-가령 $2\pi$ rad/s의 라디안 주파수는 1초에 1번 도는 회전을 의미한다. 다만, 라디안 각도 체계를 이용해 얼마나 회전했는지에 대해 표현한 것이다.
+가령 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq18.png"> rad/s의 라디안 주파수는 1초에 1번 도는 회전을 의미한다. 다만, 라디안 각도 체계를 이용해 얼마나 회전했는지에 대해 표현한 것이다.
 
-그래서 Hz를 이용해 표기하는 주파수를 $f$라고 쓰고 라디안 주파수를 $\omega$라고 쓰면,
+그래서 Hz를 이용해 표기하는 주파수를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq19.png">라고 쓰고 라디안 주파수를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq20.png">라고 쓰면,
 
-$$\omega = 2\pi f$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq21.png"> </p>
 
 와 같은 관계를 갖는다.
 
@@ -171,7 +173,7 @@ phase shift가 되면 아래 그림과 같이 정현파가 좌/우로 옮겨지�
 
 다시 말해, 위상은 '원의 어디서부터 출발할 것인가?'를 말해주는 것이다.
 
-즉, 식 (1)에서 $\phi$ 는 회전을 시작하는 위치에 불과하다.
+즉, 식 (1)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq22.png"> 는 회전을 시작하는 위치에 불과하다.
 
 <p align = "center">
   <video width = "800" height = "auto" loop autoplay controls muted>
@@ -185,10 +187,10 @@ phase shift가 되면 아래 그림과 같이 정현파가 좌/우로 옮겨지�
 
 다만 조금 헷갈리기 쉬운 부분은 phase shift에 의한 time delay인데, 쉽게 생각하려면 식 (1)을 다음과 같이 변형하면 된다.
 
-$$\text{식 (1)} \Rightarrow A\cos\left(2\pi f\left(t+\frac{\phi}{2\pi f}\right)\right)=A\cos\left(2\pi f\left(t-t_d\right)\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq23.png"> </p>
 
-즉, $\phi$ 라디안 만큼 phase shift가 있었다고 하면, 이에 의해 발생하는 time delay $t_d$는
+즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq24.png"> 라디안 만큼 phase shift가 있었다고 하면, 이에 의해 발생하는 time delay <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq25.png">는
 
-$$t_d = -\frac{\phi}{2\pi f}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-04-sinusoids/eq26.png"> </p>
 
 초라고 할 수 있다.

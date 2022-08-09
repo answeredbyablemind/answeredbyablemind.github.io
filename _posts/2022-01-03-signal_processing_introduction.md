@@ -35,10 +35,10 @@ tags: 신호처리
 
 시간 상 변화하는 패턴을 보이는 신호를 우리는 시계열 혹은 시간 신호라고도 부른다. 어떻게 보면 여기서 '패턴'이라는 것은 '함수'와 비슷한 의미를 갖는다.
 
-그리고 수학적으로는 함수를 이용해 신호를 표현할 수 있다. 신호가 시간에 대한 함수라는 관점에서 $s(t)$와 같이 신호를 표기할 수 있을 것이다.
+그리고 수학적으로는 함수를 이용해 신호를 표현할 수 있다. 신호가 시간에 대한 함수라는 관점에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq1.png">와 같이 신호를 표기할 수 있을 것이다.
 
 
-예를 들어, 마이크로 수음한 음성 신호 $v(t)$는 $x$축이 시간이고 $y$축이 마이크 전압인 시간에 대한 함수를 생각해볼 수 있다.
+예를 들어, 마이크로 수음한 음성 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq2.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq3.png">축이 시간이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq4.png">축이 마이크 전압인 시간에 대한 함수를 생각해볼 수 있다.
 
 
 <p align = "center">
@@ -53,9 +53,9 @@ tags: 신호처리
 
 한편, 시간 신호는 크게 연속 시간 신호와 이산(discrete) 신호의 두 종류로 나눌 수 있다[^1].
 
-[^1]: 여기서, 엄밀하게 말하자면, 이산 시간 신호와 이산 신호는 다른 것이다. 이산 시간 신호의 $x$축은 시간이지만 이산 신호의 $x$축은 정수(integer)이다. 또, 뒤에 더 배우겠지만 이산 신호는 디지털 신호와도 다른 개념이다. 이산 신호는 무한한 정밀도를 가지지만 디지털 신호는 유한한 정밀도를 가지기 때문이다.
+[^1]: 여기서, 엄밀하게 말하자면, 이산 시간 신호와 이산 신호는 다른 것이다. 이산 시간 신호의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq5.png">축은 시간이지만 이산 신호의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq6.png">축은 정수(integer)이다. 또, 뒤에 더 배우겠지만 이산 신호는 디지털 신호와도 다른 개념이다. 이산 신호는 무한한 정밀도를 가지지만 디지털 신호는 유한한 정밀도를 가지기 때문이다.
 
-흔히 말하는 아날로그 신호가 바로 연속 시간 신호이다. 그리고, 수학적으로는 실함수(real function)로 연속 시간 신호를 표현할 수 있다. $x$축이 실수 수직선이라는 뜻이다.
+흔히 말하는 아날로그 신호가 바로 연속 시간 신호이다. 그리고, 수학적으로는 실함수(real function)로 연속 시간 신호를 표현할 수 있다. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq7.png">축이 실수 수직선이라는 뜻이다.
 
 예시로 들었던 마이크의 음성 신호는 연속 시간 신호일 수 있다.
 
@@ -67,11 +67,11 @@ tags: 신호처리
   그림 2. 연속 신호를 이산 신호로 샘플링한 예시
 </p>
 
-이산 신호의 $x$축은 시간 $t$ 대신에 $n$이라고 적으며, $n$은 정수(integer)에서 따온 말이며 $\lbrace \cdots, -1, 0, 1, 2, \cdots \rbrace$와 같은 값이다. 
+이산 신호의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq8.png">축은 시간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq9.png"> 대신에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq10.png">이라고 적으며, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq11.png">은 정수(integer)에서 따온 말이며 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq12.png">와 같은 값이다. 
 
 이산 신호를 함수로 표기할 때는 소괄호 () 대신 대괄호 []를 사용한다.
 
-즉, 연속 시간 신호는 $s(t)$와 같이 쓰고, 이산 신호는 $s[n]$과 같이 쓸 수 있다.
+즉, 연속 시간 신호는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq13.png">와 같이 쓰고, 이산 신호는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq14.png">과 같이 쓸 수 있다.
 
 연속 시간 신호로 모든 신호를 다 표현할 수 있을 것 같지만, 이산 신호를 굳이 배워야 하는 이유는 디지털 기기에서는 '연속'과 '무한'이라는 개념을 표현할 수 없기 때문이다. 디지털 기기에서는 연속적인 시간에 대해 표현할 수 없으므로 이산적으로 나열한 수열을 가지고 모든 신호가 표현되고 분석된다.
 
@@ -79,9 +79,9 @@ tags: 신호처리
 
 또 한편, 시간이 아닌 공간 상 변화하는 패턴을 보이는 신호도 있다. 이런 신호를 우리는 사진 혹은 그림 (영어로는 이미지)이라고 많이 부른다.
 
-이런 신호들은 두 개의 독립 변수를 가지고 구성된 함수로 볼 수 있어서 가령 $p(x,y)$로 표현할 수 있다.
+이런 신호들은 두 개의 독립 변수를 가지고 구성된 함수로 볼 수 있어서 가령 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq15.png">로 표현할 수 있다.
 
-여기서 $p(x_0, y_0)$는 $(x_0, y_0)$라는 위치에서의 밝기를 의미한다. 
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq16.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq17.png">라는 위치에서의 밝기를 의미한다. 
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic3.png">
@@ -104,31 +104,31 @@ tags: 신호처리
 
 쉽게 말하면 입력 신호와 출력 신호 간의 변환을 담당하는 개념이라고 볼 수 있다.
 
-보통 신호 처리 과목에서 입력 신호는 $x(t)$로, 출력 신호는 $y(t)$로 많이 쓴다.
+보통 신호 처리 과목에서 입력 신호는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq18.png">로, 출력 신호는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq19.png">로 많이 쓴다.
 
-변환이라는 관점에서 시스템을 $T$로 표현하면 입$\cdot$출력의 관계는 다음과 같다.
+변환이라는 관점에서 시스템을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq20.png">로 표현하면 입<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq21.png">출력의 관계는 다음과 같다.
 
-$$y(t)=T\lbrace x(t) \rbrace$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq22.png"> </p>
 
 예를 들어 입력을 두 배 크게 만들어서 출력시켜주는 시스템의 입출력 관계는 다음과 같다.
 
-$$y(t) = 2 x(t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq23.png"> </p>
 
 혹은 입력 신호를 미분해서 출력해주는 시스템의 입출력 관계는 다음과 같다.
 
-$$y(t) = \frac{d}{dt}x(t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq24.png"> </p>
 
 시스템은 입력, 출력의 종류에 따라 시스템의 종류를 구별한다. 
 
-* 입$\cdot$출력이 모두 연속 시간 신호인 경우 연속 시간 시스템이라고 부른다.
+* 입<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq25.png">출력이 모두 연속 시간 신호인 경우 연속 시간 시스템이라고 부른다.
 
-* 입$\cdot$출력이 모두 이산 신호인 경우는 이산 시스템이라고 부른다.
+* 입<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq26.png">출력이 모두 이산 신호인 경우는 이산 시스템이라고 부른다.
 
 * 어떤 경우는 연속 시간 신호를 입력으로 받고 이산 신호를 출력으로 받는 시스템도 있을 수 있다. Analog-Digital Converter 시스템은 이런 시스템으로 구별할 수 있다.
 
 * 또, 이산 신호를 입력으로 받고 연속 시간 신호를 출력으로 받는 시스템도 있을 수 있다. Digital-Analog Converter 시스템을 이런 경우로 분류할 수 있겠다.
 
-한편, 신호를 $x, y$ 축의의 그래프로 표현했다면 시스템의 시각적 표현은 블록다이어그램을 이용해서 표현한다.
+한편, 신호를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq27.png"> 축의의 그래프로 표현했다면 시스템의 시각적 표현은 블록다이어그램을 이용해서 표현한다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-03-signal_processing_introduction/pic4.png">
@@ -146,11 +146,11 @@ $$y(t) = \frac{d}{dt}x(t)$$
 
 신호를 숫자의 나열로 본다는 것이 벡터의 정의에서 어긋나지 않기 때문에 디지털 기기에서는 신호를 열벡터(column vector)로 표기한다.
 
-다시 말해, $k=0, 1, \cdots, n-1$까지 정의된 이산 신호 $x[k]$를 생각해본다면 보통 이런 신호는 아래와 같은 열벡터로 표현할 수 있다[^2].
+다시 말해, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq28.png">까지 정의된 이산 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq29.png">를 생각해본다면 보통 이런 신호는 아래와 같은 열벡터로 표현할 수 있다[^2].
 
 [^2]: 왜 행벡터는 안 되고 열벡터인가에 대해서는 [행벡터의 의미와 벡터의 내적](https://angeloyeo.github.io/2020/09/09/row_vector_and_inner_product.html) 편에서 행벡터와 열벡터의 역할이 어떻게 다른지를 공부해보면 납득할 수 있다.
 
-$$x[k]=\begin{bmatrix}x[0] \\ x[1] \\ \vdots \\ x[n-1] \end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq30.png"> </p>
 
 그리고 행렬의 기능이 입력 벡터와 출력 벡터 간의 선형 변환이라는 관점에서 시스템을 행렬로 표현할 수도 있다.
 
@@ -160,27 +160,19 @@ $$x[k]=\begin{bmatrix}x[0] \\ x[1] \\ \vdots \\ x[n-1] \end{bmatrix}$$
 
 가령, 아래와 같은 시스템은 선형 시스템인데,
 
-$$y[n]=x[n]-x[n-1]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq31.png"> </p>
 
-신호의 길이를 $0~(n-1)$까지로 제한하고 수식을 풀어써보면 다음과 같다.
+신호의 길이를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq32.png">까지로 제한하고 수식을 풀어써보면 다음과 같다.
 
-$$\begin{matrix}y[0] = x[0] \\ y[1]=x[1]-x[0] \\ y[2] = x[2] - x[1] \\ \vdots \\ y[n-1] =x[n-1]-x[n-2]\end{matrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq33.png"> </p>
 
 그래서 이것을 행렬로 표현하자면 다음과 같을 것이다. 
 
-$$\begin{bmatrix}y[0] \\ y[1] \\ \vdots \\ y[n-1]\end{bmatrix}=
-  \begin{bmatrix}
-     +1 & 0 & 0 & \cdots & 0 & 0 \\
-    -1 & +1 & 0 & \cdots & 0 & 0 \\
-     0 & -1 & +1 & \cdots & 0 & 0 \\
-     \vdots & \vdots & \vdots & \cdots & \ddots & \vdots \\
-     0 & 0 & 0 & \cdots & -1 & +1
-  \end{bmatrix}
-  \begin{bmatrix}x[0]\\x[1]\\\vdots \\x[n-1]\end{bmatrix}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq34.png"> </p>
 
 반면, 아래와 같은 시스템은 선형 시스템이 아니므로 행렬로 표현할 수 없다.
 
-$$y[n]=(x[n])^2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-03-signal_processing_introduction/eq35.png"> </p>
 
 만약 이산 시스템을 행렬로 표현할 수 있다면 선형대수학에서 사용하는 여러 스킬들을 적용할 수 있게 되어 여러 관점에서 시스템을 분석할 수 있게 된다.
 
