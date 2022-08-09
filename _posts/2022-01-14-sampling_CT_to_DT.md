@@ -62,21 +62,21 @@ tags: 신호처리
 
 ## 다른 주파수의 연속 정현파에서 나온 동일한 이산 정현파
 
-임의의 정현파 $x(t)$를 생각해보자.
+임의의 정현파 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq1.png">를 생각해보자.
 
-$$x(t) = A\cos(\omega_0 t)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq2.png"> </p>
 
-이 신호를 주기 $T_s$로 샘플링해주면 다음과 같은 이산 신호를 얻게 되는 것이다.
+이 신호를 주기 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq3.png">로 샘플링해주면 다음과 같은 이산 신호를 얻게 되는 것이다.
 
-$$x[n]=x(nT_s) = A\cos(\omega_0 nT_s) = A \cos(\Omega_0 n)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq4.png"> </p>
 
-여기서 $\Omega_0=\omega_0 T_s \text{[rad]}$는 이산 정현파 신호의 각주파수이다. 이는 연속 정현파 신호의 각주파수 $\omega_0 \text{[rad/sec]}$와 차이를 보인다.
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq5.png">는 이산 정현파 신호의 각주파수이다. 이는 연속 정현파 신호의 각주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq6.png">와 차이를 보인다.
 
-(참고로 각주파수는 주파수에 $2\pi$를 곱하여 계산하는 주파수를 말한다. 가령 1초 주기로 회전하는 원으로부터 얻은 정현파의 각주파수는 $2\pi$이다.)
+(참고로 각주파수는 주파수에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq7.png">를 곱하여 계산하는 주파수를 말한다. 가령 1초 주기로 회전하는 원으로부터 얻은 정현파의 각주파수는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq8.png">이다.)
 
-$\Omega_0$는 단위가 라디안이고 $\omega_0$는 단위가 라디안/초 라는 점에 주목해보자. 즉, $\Omega_0$에서는 시간 정보가 사라지게 된다.
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq9.png">는 단위가 라디안이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq10.png">는 단위가 라디안/초 라는 점에 주목해보자. 즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq11.png">에서는 시간 정보가 사라지게 된다.
 
-그러다보니 $\omega_0$이 크고 $T_s$가 작은 경우나 $\omega_0$이 작고 $T_s$가 큰 경우로 적당히 조합되면 연속 신호의 주파수는 다르더라도 이산 신호는 동일하게 얻어질 수 있다.
+그러다보니 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq12.png">이 크고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq13.png">가 작은 경우나 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq14.png">이 작고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq15.png">가 큰 경우로 적당히 조합되면 연속 신호의 주파수는 다르더라도 이산 신호는 동일하게 얻어질 수 있다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_dif_freq_dif_time_sampling.png">
@@ -84,17 +84,17 @@ $\Omega_0$는 단위가 라디안이고 $\omega_0$는 단위가 라디안/초 �
   그림 2. 서로 다른 주파수와 샘플링 주기를 갖는 경우에도 동일한 이산 신호를 얻게될 수 있다.
 </p>
 
-즉, 주파수가 $f_0+ k f_s$ (여기서 $k$는 정수)인 정현파를 샘플링 주파수 $f_s$로 샘플링하면 주파수 $f_0$인 정현파를 샘플링한 것과 같은 결과를 얻게 된다.
+즉, 주파수가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq16.png"> (여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq17.png">는 정수)인 정현파를 샘플링 주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq18.png">로 샘플링하면 주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq19.png">인 정현파를 샘플링한 것과 같은 결과를 얻게 된다.
 
-$$\cos(2\pi(f_0+kf_s)nTs)=\cos(2\pi f_0nTs+2\pi knf_s T_s)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq20.png"> </p>
 
-$$=\cos(2\pi f_0 nTs + 2\pi k n) = \cos(2\pi f_0 nT_s)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq21.png"> </p>
 
 ## 이산 정현파를 연속 정현파로 복원할 때의 문제: 에일리어싱
 
 위의 문제를 거꾸로 생각해보면, 임의의 이산 정현파를 연속 신호로 복원한다고 해서 무조건 원래의 신호로 그대로 복원하지 못할 수 있다는 말이 된다.
 
-다른 주파수의 정현파를 샘플링 했음에도 동일한 $f_0$의 주파수를 갖는 이산 신호를 얻게 되기 때문에, $f_0 + k f_s$를 샘플링 주파수 $f_s$에 대한 주파수 $f_0$의 에일리어스(alias)라고 부르고,
+다른 주파수의 정현파를 샘플링 했음에도 동일한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq22.png">의 주파수를 갖는 이산 신호를 얻게 되기 때문에, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq23.png">를 샘플링 주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq24.png">에 대한 주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq25.png">의 에일리어스(alias)라고 부르고,
 
 이처럼 샘플링 과정에서 원래 신호가 무엇인지 구별하지 못하게 되버리는 현상을 에일리어싱(aliasing)이라고 부른다[^1].
 
@@ -128,11 +128,11 @@ $$=\cos(2\pi f_0 nTs + 2\pi k n) = \cos(2\pi f_0 nT_s)$$
 
 보통은 [음의 주파수](https://angeloyeo.github.io/2019/07/22/Negative_Frequency.html)까지도 포함해서 주파수를 표현하므로 이산 신호의 주파수 구간은
 
-$$-0.5\lt F \lt 0.5$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq26.png"> </p>
 
 혹은
 
-$$-\pi \lt \Omega \lt \pi$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq27.png"> </p>
 
 와 같다.
 
@@ -142,25 +142,25 @@ $$-\pi \lt \Omega \lt \pi$$
 
 이산 정현파는 연속 정현파와 약간의 차이점이 있다. 이산 정현파는 항상 주기신호가 아니다. 다시 말하면 샘플링 주기에 따라 이산 정현파는 주기 신호일 수도 있고 아닐 수도 있다.
 
-임의의 이산 정현파 $x[n]$을 다음과 같이 상정해보자.
+임의의 이산 정현파 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq28.png">을 다음과 같이 상정해보자.
 
-$$x[n]=A\cos(\Omega_0 n)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq29.png"> </p>
 
-만약 $x[n]$이 $N$을 주기로 하는 주기 신호라면 다음이 성립해야 한다. (여기서 $N$은 정수)
+만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq30.png">이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq31.png">을 주기로 하는 주기 신호라면 다음이 성립해야 한다. (여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq32.png">은 정수)
 
-$$x[n]=x[N+n]$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq33.png"> </p>
 
-$$\Rightarrow A\cos(\Omega_0 n) = A\cos(\Omega_0 (n+N))$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq34.png"> </p>
 
-따라서 디지털 각주파수 $\Omega_0$는
+따라서 디지털 각주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq35.png">는
 
-$$\Omega_0 N = 2\pi k \Rightarrow \Omega_0 = \frac{2\pi k}{N}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq36.png"> </p>
 
-를 만족하거나, (여기서 $k$는 정수)
+를 만족하거나, (여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq37.png">는 정수)
 
-혹은 디지털 주파수 $F_0 = \Omega_0/2\pi$가
+혹은 디지털 주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq38.png">가
 
-$$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq39.png"> </p>
 
 을 만족하는 유리수여야 한다.
 
@@ -170,16 +170,16 @@ $$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
   그림 5. 디지털 주파수가 유리수일 때만 이산 신호가 주기신호가 된다.
 </p>
 
-이 꼭지의 내용을 요약해서 정리하면 이산 정현파 신호는 $-\pi$에서 $\pi$ 내에 모든 주파수 성분을 다 표시할 수 있는데 $2\pi$ 만큼의 주기성을 동시에 갖는다.
+이 꼭지의 내용을 요약해서 정리하면 이산 정현파 신호는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq40.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq41.png"> 내에 모든 주파수 성분을 다 표시할 수 있는데 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq42.png"> 만큼의 주기성을 동시에 갖는다.
 
-따라서, 이산 신호는 디지털 각주파수 $-\pi$에서 $\pi$ 사이의 주파수 스펙트럼이 $2\pi$의 주기를 갖고 복사되어 있는 주기성을 띈다.
+따라서, 이산 신호는 디지털 각주파수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq43.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq44.png"> 사이의 주파수 스펙트럼이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq45.png">의 주기를 갖고 복사되어 있는 주기성을 띈다.
 
 아래 그림은 주기 신호의 스펙트럼과 그것을 시간 샘플링하여 이산화 했을 때의 결과물을 비교한 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_frequency_spectrum_of_periodic_discrete_signal.png">
   <br>
-  그림 6. 이산 주기 신호의 주파수 스펙트럼은 원래 연속 주기 신호의 복사물이 $2\pi$ 간격으로 표시되게 된다.
+  그림 6. 이산 주기 신호의 주파수 스펙트럼은 원래 연속 주기 신호의 복사물이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq46.png"> 간격으로 표시되게 된다.
 </p>
 
 또, 아래 그림은 비주기 신호의 스펙트럼과 그것을 시간 샘플링하여 이산화 했을 때의 결과물을 비교한 것이다.
@@ -187,7 +187,7 @@ $$\frac{\Omega_0}{2\pi}=F_0=\frac{k}{N}$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-14-sampling_CT_to_DT/pic_frequency_spectrum_of_nonperiodic_discrete_signal.png">
   <br>
-  그림 7. 이산 비주기 신호의 주파수 스펙트럼은 원래 연속 신호의 복사물이 $2\pi$ 간격으로 표시되게 된다.
+  그림 7. 이산 비주기 신호의 주파수 스펙트럼은 원래 연속 신호의 복사물이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2022-01-14-sampling_CT_to_DT/eq47.png"> 간격으로 표시되게 된다.
 </p>
 
 # 참고 문헌
