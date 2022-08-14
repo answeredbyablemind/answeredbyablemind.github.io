@@ -71,7 +71,7 @@ Symmetric 행렬의 경우[^1] LU 분해를 다음과 같은 방식으로도 생
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq38.png"> </p>
 
-이다. 우리는 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq39.png"> </p>과 같은 성질을 만족하는 행렬을 semi positive definite 행렬이라고 부른다. 다시 말해, <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq40.png"> </p>을 만족하는 행렬은 semi-positive definite 행렬이어야 한다.
+이다. 우리는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq39.png">과 같은 성질을 만족하는 행렬을 semi positive definite 행렬이라고 부른다. 다시 말해,  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq40.png"> 을 만족하는 행렬은 semi-positive definite 행렬이어야 한다.
 
 정리하면,
 
@@ -79,7 +79,7 @@ Symmetric 행렬의 경우[^1] LU 분해를 다음과 같은 방식으로도 생
 * 대칭행렬이면서
 * semi-positive definite
 
-일 때 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq41.png"> </p>과 같이 분해 가능하며 이 분해 방법을 **Cholesky factorization (숄레스키 분해)**라고 부른다.
+일 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-17-Cholesky_decomposition/eq41.png"> 과 같이 분해 가능하며 이 분해 방법을 **Cholesky factorization (숄레스키 분해)**라고 부른다.
 
 # Cholesky factorization 계산
 
