@@ -45,9 +45,9 @@ tags: 선형대수
 
 대수적으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-06-determinant/eq8.png">는 라는 것을 보일 수는 있지만, 선형 대수학을 너머 행렬을 사용하는 수많은 수학 분야에서 행렬식은 등장한다. 특히 기하학에서 행렬식은 그 역할을 톡톡히 하는데 과연 행렬의 행렬식은 기하학적으로는 어떤 의미를 가지고 있는 것일까?
 
-# <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-06-determinant/eq9.png"> 행렬의 행렬식은 선형변환 후의 두 기저벡터가 이루고 있는 평행사변형의 넓이
+# 2x2 행렬의 행렬식은 선형변환 후의 두 기저벡터가 이루고 있는 평행사변형의 넓이
 
-[행렬과 선형변환]편에서 행렬을 이해하는 방법 중 하나로 행렬은 일종의 선형 변환이며 임의의 행렬 
+[행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)편에서 행렬을 이해하는 방법 중 하나로 행렬은 일종의 선형 변환이며 임의의 행렬 
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-06-determinant/eq10.png"> </p>
 

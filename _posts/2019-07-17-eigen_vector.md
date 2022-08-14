@@ -103,7 +103,7 @@ tags: 선형대수
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq30.png"> </p>
 
-그러므로, 행렬의 성질에 의해 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq31.png"> </p>이다. 또한, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq32.png">가 nontrivial solution을 갖기 위해서는 다음이 만족해야 한다. 
+그러므로, 행렬의 성질에 의해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq31.png">이다. 또한, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq32.png">가 nontrivial solution을 갖기 위해서는 다음이 만족해야 한다. 
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-07-17-eigen_vector/eq33.png"> </p>
 
