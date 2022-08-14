@@ -361,7 +361,9 @@ ROC를 볼 때 가장 기초적이고도 중요한 내용으로써는 ROC가 허
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-12-Laplace_transform/eq138.png"> </p>
 
-
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4ONICadjLBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 # 참고문헌
 
