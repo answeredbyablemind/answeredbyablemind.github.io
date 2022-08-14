@@ -22,7 +22,7 @@ tags: 미적분학
 
 로피탈의 정리를 우리가 대충 알고 있기로는 아래의 식 (1)과 같은데,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-08-LHopital_rule/eq1.png"> </p>
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-08-LHopital_rule/eq1.png"> <br> 식 (1) </p>
 
 이런 대략적인 내용만 알고있어도 아래와 같은 극한을 쉽게 구할 수 있다.
 
@@ -30,9 +30,7 @@ tags: 미적분학
 
 사실 로피탈의 정리는 식 (1)에서 크게 벗어나지 않는데, 몇 가지 조건을 추가해서 정의되며 로피탈의 정리를 이용해 극한을 계산할 때에는 이러한 조건들을 꼼꼼히 고려해야한다.
 
-~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
-
-로피탈의 정리
+로피탈의 정리는 아래와 같다.
 
 실수함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-08-LHopital_rule/eq3.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-08-LHopital_rule/eq4.png">에 대하여[^1], <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-08-LHopital_rule/eq5.png">는 다음 중 하나의 극한값을 갖는다고 하자. 
 
@@ -55,8 +53,6 @@ tags: 미적분학
 이다.
 
 [^1]: 단, 두 함수는 모두 alpha를 포함한 열린구간에서 연속이고 미분 가능하여야 한다. 그러나, 한 점 alpha에서만 미분가능하지 않거나 불연속이어도 괜찮다.
-
-~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
 위 정리에서 주목해야할 점 중 하나는, 보통 많이들 알고 있기로는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-09-08-LHopital_rule/eq14.png">의 극한을 풀기 위해 분자, 분모를 미분해서 극한값을 구하는 방식으로 로피탈의 정리를 이용한다고 생각하지만, 
 
