@@ -103,7 +103,7 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq12.png"> </p>
 
-그러므로, 어떻게든 아래와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq13.png">와 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq14.png"> </p> 간의 관계를 설명할 수 있는 적절한 식을 도출할 수 있다면,
+그러므로, 어떻게든 아래와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq13.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq14.png"> 간의 관계를 설명할 수 있는 적절한 식을 도출할 수 있다면,
 
 출력을 relevance score로 분해하여 생각할 수 있게 되는 것이다.
 
@@ -274,7 +274,7 @@ LRP에서는 Taylor Series를 도입한다.
 
 그런 다음 출력단의 뉴런이 가지는 relevance score <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq84.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq85.png">와 같게 둔 다음 그 전 layer들로 propagation을 시킨다고 하자.
 
-즉, <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq86.png"> </p>에서 처럼 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq87.png">로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
+즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq86.png"> 에서 처럼 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq87.png">로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
 
 <center>
   
