@@ -125,7 +125,7 @@ tags: 통계학
 
 약 13.5%임을 알 수 있다.
 
-2) 보험 청구가 3번 이하일 확률은
+2) 보험 청구가 2번 이하일 확률은
 
 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-04-26-Poisson_distribution/eq30.png"> </p>
 
