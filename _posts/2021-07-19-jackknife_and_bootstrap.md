@@ -25,21 +25,21 @@ tags: 통계학
 
 추정량이란 표본들을 이용해 계산하는 함수라고 할 수 있다.
 
-(도대체 어떤 놈이 번역했는지, 번역이 '량'으로 되어서 어떤 quantity를 의미하는 것만 같다. 이것 또한 잘못된 번역이 아닌가 싶다. 추정방법, 추정자 내지는 추정함수라고 번역하는 것이 더 옳아 보인다.)
+(도대체 어떤 놈이 번역했는지, 번역이 \'량\'으로 되어서 어떤 quantity를 의미하는 것만 같다. 이것 또한 잘못된 번역이 아닌가 싶다. 추정방법, 추정자 내지는 추정함수라고 번역하는 것이 더 옳아 보인다.)
 
 가령 평균을 구하는 함수, 분산을 구하는 함수는 모두 추정량이다.
 
-평균값은 다음과 같이 계산된다. $n$개의 샘플 $x_1, x_2, \cdots, x_n$에 대해,
+평균값은 다음과 같이 계산된다. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq1.png">개의 샘플 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq2.png">에 대해,
 
-$$m(X)=\frac{1}{n}\sum_{i=1}^{n}x_i$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq3.png"> </p>
 
-와 같다. $m(\cdot)$은 일종의 함수로써 $x_1, x_2, \cdots, x_n$을 입력으로 받아 정해진 계산을 수행한다.
+와 같다. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq4.png">은 일종의 함수로써 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq5.png">을 입력으로 받아 정해진 계산을 수행한다.
 
 이와 같은 맥락에서 임의의 추정량(estimator)을 정의할 수 있다.
 
-내가 임의로 정한 추정량을 $\phi_n$이라고 해보자. 어차피 함수를 정의하는 것과 같은 맥락이기 때문에 어렵지 않게 아무거나 하나 정의해보자.
+내가 임의로 정한 추정량을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq6.png">이라고 해보자. 어차피 함수를 정의하는 것과 같은 맥락이기 때문에 어렵지 않게 아무거나 하나 정의해보자.
 
-$$\phi_n(X)=\frac{3}{2}\sum_{i=1}^{n}\log(x_i)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq7.png"> </p>
 
 또, 추정량은 출력값이 꼭 하나일 필요는 없다. 출력값이 두 개인 추정량도 존재한다. 이런 경우를 interval estimator라고 하고 신뢰구간 추정량이 대표적이다.
 
@@ -71,9 +71,9 @@ $$\phi_n(X)=\frac{3}{2}\sum_{i=1}^{n}\log(x_i)$$
     그림 2. 세 번 표본을 추출해보고 그 때 마다 얻게되는 표본 분포를 그린 것
 </p>
 
-우리가 궁금한 것은 임의의 추정량 $\phi_n$에 대해 추정량의 오차(즉, 추정값의 표준 편차)가 어떻게 계산 되는지에 관한 것이다.
+우리가 궁금한 것은 임의의 추정량 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq8.png">에 대해 추정량의 오차(즉, 추정값의 표준 편차)가 어떻게 계산 되는지에 관한 것이다.
 
-다시 말해 $std(\phi_n)$이 어떻게 계산 되는지가 바로 이 추정량의 표준오차이다.
+다시 말해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq9.png">이 어떻게 계산 되는지가 바로 이 추정량의 표준오차이다.
 
 표본 평균의 표준 오차는 계산 방법이 이론적으로 잘 정립되어 있다.
 
@@ -89,7 +89,7 @@ $$\phi_n(X)=\frac{3}{2}\sum_{i=1}^{n}\log(x_i)$$
 
 잭나이프 방법은 Quenoulle와 Tukey에 의해 1949-1956년에 걸쳐 개발된 테크닉이라고 할 수 있다.
 
-잭나이프 방법이 '잭나이프'라는 이름을 갖게 된 것은 실제 잭나이프의 생김새처럼 데이터를 다루기 때문이다.
+잭나이프 방법이 \'잭나이프\'라는 이름을 갖게 된 것은 실제 잭나이프의 생김새처럼 데이터를 다루기 때문이다.
 
 <p align = "center">
     <img width = "400" src = "https://thumbs.dreamstime.com/z/jackknife-vector-icon-jackknife-vector-outline-icon-illustration-white-background-135168267.jpg">
@@ -121,77 +121,77 @@ $$\phi_n(X)=\frac{3}{2}\sum_{i=1}^{n}\log(x_i)$$
 
 우선 용어를 살짝 정의하자. 
 
-임의의 추정량(estimator) $\phi$에 대하여 $\phi_n(X)=\phi_n(X_1, \cdots, X_n)$은 표본 $X=\lbrace X_1, X_2, \cdots, X_n \rbrace$에 대해 정의되는 추정값이다.
+임의의 추정량(estimator) <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq10.png">에 대하여 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq11.png">은 표본 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq12.png">에 대해 정의되는 추정값이다.
 
-여기서 subscript $n$은 $n$개의 표본에 대해 추정하는 것임을 강조하는 의미로 쓴 것이다.
+여기서 subscript <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq13.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq14.png">개의 표본에 대해 추정하는 것임을 강조하는 의미로 쓴 것이다.
 
-그리고 $n$개의 표본 $X$에서 $i$번째 표본을 제외한 집합을 $X_{[i]}$와 같이 쓰도록 하자.
+그리고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq15.png">개의 표본 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq16.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq17.png">번째 표본을 제외한 집합을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq18.png">와 같이 쓰도록 하자.
 
-이제, 잭나이프 방법을 적용할 estimator $\phi$에 대해 다음과 같은 값을 생각해보자.
+이제, 잭나이프 방법을 적용할 estimator <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq19.png">에 대해 다음과 같은 값을 생각해보자.
 
-$$ps_i(X)=n\phi_n(X)-(n-1)\phi_{n-1}(X_{[i]})$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq20.png"> </p>
 
-위 값의 $ps$는 pseudo-value의 앞 두 글자만을 따온 것인데, pseudo-value의 의미는 모든 데이터를 다 이용해서 얻은 추정값에서 $i$번째 데이터만 제외해서 얻은 추정값을 빼준 것이다.
+위 값의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq21.png">는 pseudo-value의 앞 두 글자만을 따온 것인데, pseudo-value의 의미는 모든 데이터를 다 이용해서 얻은 추정값에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq22.png">번째 데이터만 제외해서 얻은 추정값을 빼준 것이다.
 
-다시 말하면 pseudo-value는 전체 데이터를 모두 이용해 얻은 추정값에서 $i$ 번째 데이터가 미치는 영향력이 얼마 만큼인지를 보여주는 값이라고 할 수 있다.
+다시 말하면 pseudo-value는 전체 데이터를 모두 이용해 얻은 추정값에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq23.png"> 번째 데이터가 미치는 영향력이 얼마 만큼인지를 보여주는 값이라고 할 수 있다.
 
-그러면 $ps_i(X)$의 평균값은
+그러면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq24.png">의 평균값은
 
-$$ps(X)=\frac{1}{n}\sum_{i=1}^{n}ps_i(X)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq25.png"> </p>
 
 이고 분산은
 
-$$V_{ps}(X)=\frac{1}{n-1}\sum_{i=1}^{n}(ps_i(X)-ps(X))^2$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq26.png"> </p>
 
-이라는 것을 알 수 있는데, $ps_i(X)$를 독립적인 표본(샘플)들로 본다고 하면 표본평균 $ps(X)$의 95% 신뢰구간은 표본평균 $\pm$ 1.96SEM이라는 관계에서[^2]
+이라는 것을 알 수 있는데, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq27.png">를 독립적인 표본(샘플)들로 본다고 하면 표본평균 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq28.png">의 95% 신뢰구간은 표본평균 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq29.png"> 1.96SEM이라는 관계에서[^2]
 
-$$\left(ps(X)-1.96\sqrt{\frac{1}{n}V_{ps}(X)}, ps(X)+1.96\sqrt{\frac{1}{n}V_{ps}(X)}\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq30.png"> </p>
 
-와 같이 계산할 수 있으며 아래와 같이 z-value를 정의하면 p-value도 정할 수 있게 된다. 여기서 귀무가설은 $H_0: \theta =\theta_0$이라고 하자. 그러면,
+와 같이 계산할 수 있으며 아래와 같이 z-value를 정의하면 p-value도 정할 수 있게 된다. 여기서 귀무가설은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq31.png">이라고 하자. 그러면,
 
-$$Z=\frac{\sqrt{n}(ps(X)-\theta_0)}{\sqrt{V_{ps}(X)}}=\frac{ps(X)-\theta_0}{\sqrt{(1/n)V_{ps}(X)}}$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq32.png"> </p>
 
 ## 잭나이프 사용 예시
 
 아래와 같이 16개의 데이터가 주어졌다고 생각해보자.
 
-$$17.23,\ 13.93,\ 15.78,\ 14.91,\ 18.21,\ 14.28,\ 18.83,\ 13.45 \\18.71,\ 18.81,\ 11.29,\ 13.39,\ 11.57,\ 10.94,\ 15.52,\ 15.25$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq33.png"> </p>
 
 여기서 우리는 아래와 같은 estimator를 상정해보자.
 
-$$\phi_n(X_1, \cdots,X_n)=\log(s^2)=\log\left(\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2\right)$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq34.png"> </p>
 
-일단 모든 16개의 데이터를 이용해 $\phi_n(X)$를 먼저 계산해보면
+일단 모든 16개의 데이터를 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq35.png">를 먼저 계산해보면
 
-$$\phi_n(X)=  1.9701$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq36.png"> </p>
 
 이라는 것을 알 수 있다 (여기서 log는 자연로그이다).
 
-여기서 각 데이터에 대해 각 데이터를 제외하고 계산한 $\phi_{n-1}(X_{[i]})$를 계산해보면 다음과 같다.
+여기서 각 데이터에 대해 각 데이터를 제외하고 계산한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq37.png">를 계산해보면 다음과 같다.
 
-$$1.994,\ 2.025,\ 2.035,\ 2.039,\ 1.940,\ 2.032,\ 1.893,\ 2.011 \\1.903,\ 1.895,\ 1.881,\ 2.009,\ 1.905,\ 1.848,\ 2.038,\ 2.039$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq38.png"> </p>
 
-이제 $ps_i(X)=n\phi_n(X)-(n-1)\phi_{n-1}(X_{[i]})$를 계산해보면 아래와 같다.
+이제 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq39.png"> </p>를 계산해보면 아래와 같다.
 
-$$1.605,\ 1.151,\ 0.998,\ 0.942,\ 2.416,\ 1.043,\ 3.122,\ 1.362\\2.972,\ 3.097,\ 3.308,\ 1.393,\ 2.951,\ 3.806,\ 0.958,\ 0.937$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq40.png"> </p>
 
-$ps_i(X)$의 평균과 분산을 계산하면,
+<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq41.png">의 평균과 분산을 계산하면,
 
-$$ps(X)=2.00389$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq42.png"> </p>
 
-$$V_{ps}(X)=1.0909$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq43.png"> </p>
 
-이므로 95% 신뢰구간은 $(1.4920, 2.5156)$이 된다. 실제로 이 16개 데이터들은 분산이 5.0인 분포로부터 추출한 것이고 $\log(5.0)=1.609$이므로 신뢰구간 안에 true parameter가 들어있는 케이스가 된다고 할 수 있다.
+이므로 95% 신뢰구간은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq44.png">이 된다. 실제로 이 16개 데이터들은 분산이 5.0인 분포로부터 추출한 것이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq45.png">이므로 신뢰구간 안에 true parameter가 들어있는 케이스가 된다고 할 수 있다.
 
 # 부트스트랩 방법
 
 부트스트랩(bootstrap) 방법은 잭나이프 방법을 약간 변형한 것으로 1979년에 Bradley Efron이라는 사람이 고안해낸 방법이다.
 
-부트스트랩이라는 말은 '자기 스스로 하는', '독력(獨力)의'라는 뜻을 가진 단어이다. 
+부트스트랩이라는 말은 \'자기 스스로 하는\', \'독력(獨力)의\'라는 뜻을 가진 단어이다. 
 
 다시 말해 주변의 도움 없이 스스로 해낸다는 의미인데, 컴퓨터의 부팅이 bootstrapping을 줄인 말이라는 것은 잘 알려져있는 사실이기도 하다.
 
-영단어 bootstrap의 어원은 부츠 신발의 등쪽에 달려있는 끈을 얘기하는데, $<$허풍선이 남작의 모험$>$에 나오는 일화에서 남작이 늪에 빠졌을 때 부츠 등의 끈을 잡고 스스로 빠져나왔다는 어처구니 없는 이야기에서 유래됐다는 설이 있다.
+영단어 bootstrap의 어원은 부츠 신발의 등쪽에 달려있는 끈을 얘기하는데, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq46.png">허풍선이 남작의 모험<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq47.png">에 나오는 일화에서 남작이 늪에 빠졌을 때 부츠 등의 끈을 잡고 스스로 빠져나왔다는 어처구니 없는 이야기에서 유래됐다는 설이 있다.
 
 (그런데 대부분의 판본에서는 머리카락을 잡고 늪에서 나왔다는 판본이 더 많다고 한다.)
 
@@ -267,7 +267,7 @@ resample된 샘플의 수는 더 많아지므로 resample된 sample의 histogram
 
 여기서 5000개 estimator 값들을 줄세워 상위 2.5% 값과 상위 97.5%의 값을 찾고 표시해보자. 그리고 식 (8)에 있는 데이터셋은 분산이 5인 데이터로부터 얻어졌으므로 true estimator value는 
 
-$$\log(5)=1.6094$$
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-07-19-jackknife_and_bootstrap/eq48.png"> </p>
 
 임을 알 수 있으므로 true estimator value도 표시해보자. 그렇게 해주면 아래 그림과 같다.
 
