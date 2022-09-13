@@ -81,7 +81,7 @@ $$=1-p_i + p_i e^{-t}=1+p_i(e^{-t}-1)\notag$$
 
 $$ = 1+E[X_i](e^{-t}-1)$$
 
-임을 알 수 있다. 또한 위 식의 마지막 결과물은 $e^{E[X_i](e^{-t}-1)}$의 테일러 급수 두 항과 일치한다는 점을 고려하면 다음이 성립함을 알 수 있다.
+임을 알 수 있다. 또한 위 식의 마지막 결과물은 $\exp(E[X_i]\cdot(e^{-t}-1))$의 테일러 급수 두 항과 일치한다는 점을 고려하면 다음이 성립함을 알 수 있다.
 
 $$E[e^{-tX_i}]=1+E[X_i](e^{-t}-1) \lt e^{E[X_i](e^{-t}-1)}$$
 
@@ -93,4 +93,69 @@ $$\prod_{i=1}^{N}E[e^{-tX_i}]\lt\prod_{i=1}^{N}e^{E[X_i](e^{-t}-1)}$$
 
 이 성립하게 됨을 알 수 있는데, 위 식의 우변을 또 다시 쓰면,
 
-$$$$
+$$\prod_{i=1}^{N}\exp(E[X_i](e^{-t}-1))=\exp\left(\sum_{i=1}^{N}E[X_i]\cdot (e^{-t}-1)\right)=\exp\left(E[X](e^{-t}-1)\right)$$
+
+[//]:# (식 13)
+
+이다. 따라서 식 (13)의 결과를 식 (6)에 대입하면 아래와 같은 식을 얻을 수 있다.
+
+$$P(X<(1-\delta)E[X]) \leq \frac{\exp\left(E[X](e^{-t}-1)\right)}{\exp\left(\right)}$$
+
+위 식은 어떤 $t>0$에 대해서라도 성립하는 식이다. 이제는 식 (14)가 최대한 tight한 boundary에 대해 성립할 수 있도록 식 (14)의 최소값을 내주는 $t=t^*$ 값을 찾자. 이 과정은 식 (14)를 미분하고 미분한 값이 $0$이 되는 $t^*$를 찾음으로써 해결할 수 있다. 이 과정은 생략하며 $t^*$는 다음과 같다는 것을 알 수 있다.
+
+$$t^* = \ln\left(\frac{1}{1-\delta}\right)$$
+
+[//]:# (식 15)
+
+식 (15)를 식 (14)에 대입하면 식 (3)을 얻을 수 있게 된다. 식 (15)를 식 (14)에 대입하면,
+
+$$\Rightarrow P(X<(1-\delta) E[X])\leq 
+  \frac{\exp\left(E[X]\left(e^{-\ln\left(1/(1-\delta)\right)}-1\right)\right)}{\exp\left(-\ln(1/(1-\delta))(1-\delta)E[X]\right)}$$
+
+여기서 우변만 보면 다음과 같다.
+
+$$\text{(우변)}\Rightarrow \frac{E[X](1-\delta -1)}{\exp(-(1-\delta)E[X]\ln\left(1/(1-\delta)\right))}$$
+
+$$=\frac{\exp(E[X](-\delta))}{\exp(\ln(1-\delta)^{(1-\delta E[X])})}=\frac{\exp(-\delta E[X])}{(1-\delta)^{(1-\delta)E[X]}}$$
+
+$$=\left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}$$
+
+한편, 
+
+$$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}\cdots = -\sum_{i=1}^{N}\frac{x^n}{n}$$
+
+이므로,
+
+$$(1-\delta)\ln(1-\delta)= - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots \notag$$
+
+$$-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots$$
+
+$$=-\delta+\delta^2/2+\cdots$$
+
+과 같다. 따라서 
+
+$$(1-\delta)\ln(1-\delta) \gt -\delta +\frac{\delta^2}{2}$$
+
+가 성립하며 로그의 성질에 따라
+
+$$(1-\delta)^{(1-\delta)}\gt\exp\left(-\delta + \frac{\delta^2}{2}\right)$$
+
+가 성립함을 알 수 있다.
+
+따라서, 식 (23)을 식(18)에 대입하면,
+
+$$\left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(\frac{e^{-\delta}}{e^{(-\delta+\delta^2/2)}}\right)^{E[X]}$$
+
+$$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(e^{-\delta^2/2}\right)^{E[X]}$$
+
+이다. 따라서, 이 결과를 식 (16)과 식 (19)에 대입하면,
+
+$$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
+
+[//]:# 식 (26)
+
+이다.
+
+(증명 끝)
+
+## Upper-Tail Chernoff Bound
