@@ -87,7 +87,7 @@ tags: 통계학
 
 그런데, 표본이 매번 추출할 때 마다 그 값이 변하는데, 표본 통계량도 그때 그때 변하지 않을까?
 
-맞는 말이다. 표본 통계량은 모수의 \'추정치\'로 볼 수 있고 추정된 값은 항상 오차를 수반한다.
+맞는 말이다. 표본 통계량은 모수의 '추정치'로 볼 수 있고 추정된 값은 항상 오차를 수반한다.
 
 ## 추정은 오차를 수반한다: 표준 오차(☆)
 
@@ -95,7 +95,7 @@ tags: 통계학
 
 (글을 잘 읽어봐야 한다. 말이 꼬인다.)
 
-[^2]: 여기서, 즉 통계학에서, \'표준\'이란 말은 \'정규화 했다\'라는 의미이거나 \'평균 냈음\'이란 의미로 볼 수 있을 것 같다.
+[^2]: 여기서, 즉 통계학에서, '표준'이란 말은 '정규화 했다'라는 의미이거나 '평균 냈음'이란 의미로 볼 수 있을 것 같다.
 
 앞서 말했듯 표본이 매번 추출될 때 마다 값이 바뀌는 특성때문에 표본 통계량은 매번 그 값에 변동(혹은 오차)이 있다.
 
@@ -113,43 +113,39 @@ tags: 통계학
 
 그림 4에서 보았던 표본 평균의 표준 편차, 즉 평균의 표준 오차(Standard Error of Mean, SEM)를 구해보자.
 
-한번에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq1.png">개의 표본을 추출하는 실험을 한다고 했을 때, 표본 평균은 다음과 같이 계산할 수 있다.
+한번에 $n$개의 표본을 추출하는 실험을 한다고 했을 때, 표본 평균은 다음과 같이 계산할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq2.png"> </p>
+$$\bar{X} = \frac{1}{n}\sum_{i=1}^nX_i$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq3.png">는 한번 추출한 표본 집단에서 표본값들을 의미한다.
+여기서 $X_i$는 한번 추출한 표본 집단에서 표본값들을 의미한다.
 
-우리가 구하려고 하는 것은 이 표본 평균(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq4.png">)의 표준편차이므로 우선 표본 평균의 분산값을 계산해보면 다음과 같다.
+우리가 구하려고 하는 것은 이 표본 평균($\bar{X}$)의 표준편차이므로 우선 표본 평균의 분산값을 계산해보면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq5.png"> </p>
+$$Var[\bar{X}] = Var\left[\frac{1}{n}\sum_{i=1}^nX_i\right]
 
-[//]:# (식 2)
+= Var\left[\frac{1}{n}\left(X_1+X_2+\cdots+X_n\right)\right]$$
 
-아래의 식 (3), (4)와 같은 분산 연산자의 두 가지 성질에 의하여,
+아래의 (3), (4)와 같은 분산 연산자의 두 가지 성질에 의하여,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq6.png"> </p>
+$$Var[aX+b] = a^2Var[X]$$
 
-[//]:# (식 3)
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq7.png"> </p>
-
-[//]:# (식 4)
+$$Var[X_1+X_2] = Var[X_1] + Var[X_2]$$
 
 식 (2)는 다음과 같이 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq8.png"> </p>
+$$식(2) = \frac{1}{n^2}Var\left[X_1+X_2+\cdots+X_n\right]$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq9.png"> </p>
+$$ =\frac{1}{n^2} \times n\times Var[X] = \frac{1}{n}Var[X]$$
 
-즉, 모분산을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq10.png">라고 하면, 표본 평균의 표준 편차는 
+즉, 모분산을 $\sigma^2$라고 하면, 표본 평균의 표준 편차는 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq11.png"> </p>
+$$\sqrt{Var[\bar{X}]} = \frac{1}{\sqrt{n}}std[X] = \frac{1}{\sqrt{n}}\sigma$$
 
-모분산의 추정치를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq12.png">라고 했을 때, 표본 평균의 표준편차는 추정치를 이용해
+모분산의 추정치를 $s^2$라고 했을 때, 표본 평균의 표준편차는 추정치를 이용해
 
 다음과 같이 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-12-standard_error/eq13.png"> </p>
+$$SEM = \sqrt{Var[\bar{X}]} = \frac{s}{\sqrt{n}}$$
 
 그림 4의 마지막 장면은 아래의 그림 5와 같은데 오른쪽의 표본 평균의 분포의 너비가 왼쪽의 원래의 분포에 비해 너비가 작은 것을 알 수 있다.
 

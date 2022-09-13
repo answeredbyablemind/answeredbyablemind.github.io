@@ -22,9 +22,9 @@ tags: 미분방정식
 
 즉, 식으로 쓰자면 다음과 같은 조건이 주어진 경우에 문제를 풀 수 있는 것이다. 풀고자하는 미분방정식이 2계 미분방정식이라고 하면 초기 조건은 다음과 같은 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq1.png"> </p>
+$$x(t_0) = x_0, \quad x'(t_0)=x_0' % 식 (1)$$
 
-즉, 독립변수가 시간이라고 생각하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq2.png">가 위치에 관한 함수라고 하면 초기 위치와 초기 속도에 대한 값만을 가지고 이후의 궤적이 어떻게 될지를 생각해보는 문제라고 할 수 있다.
+즉, 독립변수가 시간이라고 생각하고 $x(t)$가 위치에 관한 함수라고 하면 초기 위치와 초기 속도에 대한 값만을 가지고 이후의 궤적이 어떻게 될지를 생각해보는 문제라고 할 수 있다.
 
 하지만, 어떤 경우에는 시작 시점과 종료 시점의 함수값 혹은 미분계수의 값이 주어지는 문제도 있을 수 있다.
 
@@ -32,15 +32,15 @@ tags: 미분방정식
 
 이런 문제를 경계값 문제라고 하며 경계값 문제에 해당하는 조건은 다음과 같은 네 가지 경우 중 하나이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq3.png"> </p>
+$$x(t_0) = x_0, \quad x(t_1) = x_1 % 식 (2)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq4.png"> </p>
+$$x'(t_0) = x'_0, \quad x'(t_1) = x'_1 % 식 (3)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq5.png"> </p>
+$$x'(t_0) = x'_0, \quad x(t_1) = x_1 % 식 (4)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq6.png"> </p>
+$$x(t_0) = x_0, \quad x'(t_1) = x'_1 % 식 (5)$$
 
-즉, 시작 시점(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq7.png">)과 종료 시점(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq8.png">)에서의 함수값 혹은 미분계수의 값이 조건으로 주어진 것이며 이 조건을 우리는 경계 조건(boundary condition)이라고 한다.
+즉, 시작 시점($t_0$)과 종료 시점($t_1$)에서의 함수값 혹은 미분계수의 값이 조건으로 주어진 것이며 이 조건을 우리는 경계 조건(boundary condition)이라고 한다.
 
 경계값 문제는 초기값 문제보다 더 풀기가 어렵고, 이에 관한 내용은 매우 방대하다.
 
@@ -52,23 +52,17 @@ tags: 미분방정식
 
 아래와 같은 2계 선형미분방정식을 생각해보자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq9.png"> </p>
+$$\frac{d^2x}{dt^2}-4\frac{dx}{dt}+3x(t) = 0 % 식 (6)$$
 
 이 미분방정식은 [2계 선형미분방정식의 해법](https://angeloyeo.github.io/2021/05/27/second_order_ODE.html) 편에서 보았던 것 처럼 아래와 같은 연립 미분방정식으로 바꿔 풀수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq10.png"> <br> 식 (7) </p>
+$$\Rightarrow \begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}0 & 1 \\ -3 & 4\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} % 식 (7)$$
 
-[//]:# (식 7)
+만약 여기서 아래와 같은 두 가지 경우를 생각해보자. 하나는 초기 조건이 주어진 경우이고 또 다른 하나는 경계 조건이 주어진 경우이다.
 
-만약 여기서 아래와 같은 두 가지 경우를 생각해보자. 하나는 초기 조건(Initial Condition)이 주어진 경우이고 또 다른 하나는 경계 조건(Boundary Condition)이 주어진 경우이다.
+$$\text{1) 초기 조건: }x(0) = 2,\quad x'(0) = 2 % 식 (8)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq11.png"> <br> 식 (8) </p>
-
-[//]:# (식 8)
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq12.png"> <br> 식 (9) </p>
-
-[//]:# (식 9)
+$$\text{2) 경계 조건: }x(1) = 2,\quad x(3) = 7 % 식 (9)$$
 
 그림으로 그리자면 식 (7)을 가지고 표현할 수 있는 방향장에 대해 식 (8)과 식 (9)는 아래의 그림 1과 같은 세팅을 하게 되는 것이다.
 
@@ -94,27 +88,27 @@ tags: 미분방정식
 
 아래와 같이 얻어진 일반해에 대해서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq13.png"> </p>
+$$\begin{bmatrix}x(t) \\ y(t) \end{bmatrix} = c_1 \begin{bmatrix}1 \\3 \end{bmatrix}e^{3t}+c_2\begin{bmatrix}1 \\ 1\end{bmatrix}e^t$$
 
 경계값 조건을 대입하면 아래와 같은 식을 얻을 수 있다. 
 
-경계값 조건은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq14.png">에 해당되는 값들만 주어진 것이므로 위 식에서 1행에 해당되는 값에 대해서만 조건을 적용하면,
+경계값 조건은 $x(t)$에 해당되는 값들만 주어진 것이므로 위 식에서 1행에 해당되는 값에 대해서만 조건을 적용하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq15.png"> </p>
+$$\text{at }t=1\text{, }x(1)=c_1e^3 + c_2 e=2$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq16.png"> </p>
+$$\text{at }t=3\text{, }x(3)=c_1e^{3\cdot 3} + c_2 e^3=7$$
 
 이 두 식은 아래와 같은 연립방정식을 푸는 것과도 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq17.png"> </p>
+$$\begin{bmatrix}e^3 & e\\ e^9 & e^3\end{bmatrix}\begin{bmatrix}c_1 \\ c_2\end{bmatrix} = \begin{bmatrix}2 \\7\end{bmatrix}$$
 
-따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq18.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq19.png">는 아래와 같이 결정되고,
+따라서, $c_1$과 $c_2$는 아래와 같이 결정되고,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq20.png"> </p>
+$$\Rightarrow c_1 = -0.0010\text{, } c_2 = 0.7430$$
 
-해석적으로 구한 solution curve의 식은 다음과 같다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq21.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq22.png">와 같은 방법으로 결정되었다.
+해석적으로 구한 solution curve의 식은 다음과 같다. 여기서 $y(t)$는 $y(t) = x'(t)$와 같은 방법으로 결정되었다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-28-Boundary_Value_Problem/eq23.png"> </p>
+$$\begin{cases}x(t) = -0.001e^{3t}+0.7430e^{t} \\ y(t) = -0.003e^{3t}+0.7430e^{t}\end{cases}$$
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-28-Boundary_Value_Proglem/pic3.png">

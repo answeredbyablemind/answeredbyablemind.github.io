@@ -20,7 +20,7 @@ tags: 선형대수 머신러닝
 
 # 선형대수학의 관점에서 본 회귀분석
 
-※ 최적화 문제 관련 내용으로 궁금한 사람은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq1.png">선형대수학의 관점에서 본 회귀분석 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq2.png"> 파트를 건너뛰어도 무관함.
+※ 최적화 문제 관련 내용으로 궁금한 사람은 $\lt$선형대수학의 관점에서 본 회귀분석 $\gt$ 파트를 건너뛰어도 무관함.
 
 ## prerequisites
 
@@ -38,13 +38,18 @@ tags: 선형대수 머신러닝
 
 보통의 연립 방정식의 꼴은 아래와 같이 쓸 수 있겠다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq3.png"> </p>
+$$
+  \begin{cases}
+    ax + by = p \\
+    cx + dy = q
+  \end{cases}
+$$
 
 우리는 이번에 미지수의 개수보다 데이터가 훨씬 많은 경우에 대해 적절한 solution을 찾는 과정을 통해 linear regression에 대해 생각해보고자 한다.
 
 가령, 다음과 같이 세 개의 데이터 포인트가 주어져 있다고 하자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq4.png"> </p>
+$$(-1, 0),\text{ }(0, 1),\text{ }(0, 3)$$
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic1.png">
@@ -52,17 +57,17 @@ tags: 선형대수 머신러닝
   그림 1. 주어진 세 개의 데이터 포인트
 </p>
 
-만약 이 세 점에 대해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq5.png">와 같은 모델을 통해 이 세 개의 데이터 포인트를 얻었다고 가정하면 아래와 같이 세 개의 방정식으로 구성된 연립방정식을 세울 수 있다.
+만약 이 세 점에 대해 $f(x) = mx+b$와 같은 모델을 통해 이 세 개의 데이터 포인트를 얻었다고 가정하면 아래와 같이 세 개의 방정식으로 구성된 연립방정식을 세울 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq6.png"> </p>
+$$f(-1) = -m + b = 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq7.png"> </p>
+$$f(0) = 0 + b = 1$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq8.png"> </p>
+$$f(0) = 0 + b = 3$$
 
 이것을 행렬과 벡터를 이용해 표시하면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq9.png"> </p>
+$$(Ax = b) \Rightarrow\begin{bmatrix}-1 && 1 \\ 0 && 1 \\ 0 && 1\end{bmatrix}\begin{bmatrix}m \\ b\end{bmatrix} = \begin{bmatrix}0\\1 \\ 3 \end{bmatrix}$$
 
 이 행렬을 푸는 문제를 기하학적인 관점에서 생각해보면 그림 1과 같이 세 개의 데이터 포인트가 주어졌을 때 이 데이터 포인트들을 모두 통과하는 직선을 구하는 문제와 같다. 
 
@@ -74,27 +79,27 @@ tags: 선형대수 머신러닝
 
 선형대수학의 관점에서 연립방정식을 푼다는 것은 아래와 같은 행렬을 푸는 것과도 같이 생각할 수 있는데,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq10.png"> </p>
+$$A\vec{x} = \vec{b}$$
 
-여기서 벡터와 행렬을 모두 열벡터로 표현하고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq11.png">의 두 요소를 나눠 쓰면 아래와 같다.
+여기서 벡터와 행렬을 모두 열벡터로 표현하고, $\vec{x}$의 두 요소를 나눠 쓰면 아래와 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq12.png"> </p>
+$$\Rightarrow \begin{bmatrix} | & | \\ \vec{a}_1 & \vec{a}_2 \\ | & | \end{bmatrix}\begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}\text{ } | \text{ } \\ \text{ } \vec{b} \text{ }\\\text{ } | \text{ }\end{bmatrix}$$
 
 그러면, 위 식은 아래와 같이 생각할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq13.png"> </p>
+$$\Rightarrow x_1\begin{bmatrix} | \\ \vec{a}_1 \\ | \end{bmatrix} + x_2\begin{bmatrix} | \\ \vec{a}_2 \\ | \end{bmatrix} = \begin{bmatrix}\text{ } | \text{ } \\ \text{ } \vec{b} \text{ }\\\text{ } | \text{ }\end{bmatrix}$$
 
-즉, 열벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq14.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq15.png">를 어떻게 조합하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq16.png">를 얻어낼 것인가?라는 물음에 적절한 조합 비율인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq17.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq18.png">를 답변해주는 것과 같은 이야기인 것이다.
+즉, 열벡터 $\vec{a}_1$와 $\vec{a}_2$를 어떻게 조합하면 $\vec{b}$를 얻어낼 것인가?라는 물음에 적절한 조합 비율인 $x_1$과 $x_2$를 답변해주는 것과 같은 이야기인 것이다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic2.png">
   <br>
-  그림 2. A의 열(column)을 이루는 열벡터(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq19.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq20.png">)의 생성공간(span)인 A의 열공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq21.png">에 포함되어 있는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq22.png">를 구하려면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq23.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq24.png">를 얼마만큼 조합해주어야 할까?
+  그림 2. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 생성공간(span)인 A의 열공간 $col(A)$에 포함되어 있는 $\vec{b}$를 구하려면 $\vec{a}_1$와 $\vec{a}_2$를 얼마만큼 조합해주어야 할까?
 </p>
 
-하지만 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq25.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq26.png">를 조합해서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq27.png">를 얻을 수 있으려면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq28.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq29.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq30.png">를 조합해 얻을 수 있는 모든 경우의 수 중 하나여야 한다.
+하지만 $\vec{a}_1$과 $\vec{a}_2$를 조합해서 $\vec{b}$를 얻을 수 있으려면 $\vec{b}$는 $\vec{a}_1$과 $\vec{a}_2$를 조합해 얻을 수 있는 모든 경우의 수 중 하나여야 한다.
 
-다시 말해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq31.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq32.png">의 생성공간(span) 안에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq33.png">가 포함되어 있어야 한다. 이것이 해를 찾을 수 있는 조건이다.
+다시 말해 $\vec{a}_1$과 $\vec{a}_2$의 생성공간(span) 안에 $\vec{b}$가 포함되어 있어야 한다. 이것이 해를 찾을 수 있는 조건이다.
 
 ## 최적의 해를 찾기
 
@@ -108,16 +113,16 @@ tags: 선형대수 머신러닝
   그림 3. 그나마 세 점의 트렌드를 잘 설명해 줄 수 있을 것 같은 직선을 그어보자
 </p>
 
-여기서, 우리가 점 세 개의 트렌드를 잘 표현해주는 직선을 과정은 선형대수학적으로는 해(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq34.png">)가 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq35.png">의 열공간(column space)안에 존재하지 않는 경우 열 공간안에 있는 정답에 가장 가까운 해를 찾는 과정과 일치시켜 생각할 수 있다.
+여기서, 우리가 점 세 개의 트렌드를 잘 표현해주는 직선을 과정은 선형대수학적으로는 해($\vec{b}$)가 행렬 $A$의 열공간(column space)안에 존재하지 않는 경우 열 공간안에 있는 정답에 가장 가까운 해를 찾는 과정과 일치시켜 생각할 수 있다.
 
-실제로 그림 1 혹은 그림 3의 문제에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq36.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq37.png">와 이 두 벡터로부터 생성되는 열공간, 그리고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq38.png">를 직접 그려보면 다음과 같다.
+실제로 그림 1 혹은 그림 3의 문제에서 $\vec{a}_1$, $\vec{a}_2$와 이 두 벡터로부터 생성되는 열공간, 그리고 $\vec{b}$를 직접 그려보면 다음과 같다.
 
 <p align = "center">
   <video width = "400" height = "auto" loop autoplay controls muted>
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic4.mp4">
   </video>
   <br>
-  그림 4. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq39.png"> (파란색)와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq40.png"> (주황색) 두 벡터의 생성공간(span)으로 표현되는 열공간과 이 column space에 포함되지 않는 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq41.png"> (보라색)
+  그림 4. $[-1, 0, 0]^T$ (파란색)와 $[1, 1, 1]^T$ (주황색) 두 벡터의 생성공간(span)으로 표현되는 열공간과 이 column space에 포함되지 않는 벡터 $[0, 1, 3]^T$ (보라색)
 </p>
 
 그림 4에 있는 내용을 조금 더 추상적으로 그리면 아래의 그림 5와 같다.
@@ -125,37 +130,37 @@ tags: 선형대수 머신러닝
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic5.png">
   <br>
-  그림 5. A의 열(column)을 이루는 열벡터(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq42.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq43.png">)의 span인 A의 열공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq44.png">와 열공간에 포함되지 않는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq45.png">
+  그림 5. A의 열(column)을 이루는 열벡터($\vec{a}_1$, $\vec{a}_2$)의 span인 A의 열공간 $col(A)$와 열공간에 포함되지 않는 $\vec{b}$
 </p>
 
-그림 5에서 볼 수 있듯이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq46.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq47.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq48.png">의 열공간 안에 포함되어 있지 않다. 그리고 그림 5에서 확인할 수 있듯이 여기서 우리가 찾을 수 있는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq49.png">와 가장 가까우면서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq50.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq51.png">의 선형결합을 통해 얻을 수 있는 최적의 벡터는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq52.png">가 열공간(col(A))에 정사영된 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq53.png">이며 우리는 이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq54.png">를 계산해줌으로써 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq55.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq56.png">를 얼마만큼 선형조합 해주어야 할지(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq57.png">)를 알 수 있게 된다.
+그림 5에서 볼 수 있듯이 $\vec{b}$는 $\vec{a}_1$과 $\vec{a}_2$의 열공간 안에 포함되어 있지 않다. 그리고 그림 5에서 확인할 수 있듯이 여기서 우리가 찾을 수 있는 $\vec{b}$와 가장 가까우면서 $\vec{a}_1$과 $\vec{a}_2$의 선형결합을 통해 얻을 수 있는 최적의 벡터는 $\vec{b}$가 열공간(col(A))에 정사영된 $\vec{p}$이며 우리는 이 $\vec{p}$를 계산해줌으로써 벡터 $\vec{a}_1$과 $\vec{a}_2$를 얼마만큼 선형조합 해주어야 할지($\hat{x}$)를 알 수 있게 된다.
 
-그렇다면 원래의 해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq58.png">와 정사영 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq59.png">의 차이 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq60.png">라고 하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq61.png">는 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq62.png">의 어떤 벡터와도 직교하므로 다음이 성립한다.
+그렇다면 원래의 해 $\vec{b}$와 정사영 벡터 $\vec{p}$의 차이 벡터를 $\vec{e}$라고 하면 $\vec{e}$는 행렬 $A$의 어떤 벡터와도 직교하므로 다음이 성립한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq63.png"> </p>
+$$A\cdot\vec{e} = \begin{bmatrix} | & | \\ \vec{a}_1 & \vec{a}_2 \\ | & | \end{bmatrix}\cdot\vec{e} = 0$$
 
-여기서 '<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq64.png">'은 내적 연산이다.
+여기서 '$\cdot$'은 내적 연산이다.
 
 즉, 내적을 계산해주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq65.png"> </p>
+$$A^Te = A^T(\vec{b}-A\hat{x}) = 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq66.png"> </p>
+$$\Rightarrow A^T\vec{b}-A^TA\hat{x} = 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq67.png"> </p>
+$$\Rightarrow A^TA\hat{x} = A^T\vec{b}$$
 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq68.png"> </p>
+$$\therefore \hat{x}=(A^TA)^{-1}A^T\vec{b}$$
 
 이라는 것을 알 수 있다.
 
 ### 기본 부분공간들을 이용한 설명
 
-그림 5의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq69.png">는 column space 상에 있는 모든 벡터들과 직교한다.
+그림 5의 $\vec{e}$는 column space 상에 있는 모든 벡터들과 직교한다.
 
-이것을 [4개 주요 부분 공간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)편에서 본 내용을 토대로 생각하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq70.png">는 left nullspace에 있는 벡터임을 알 수 있다.
+이것을 [4개 주요 부분 공간의 관계](https://angeloyeo.github.io/2020/11/17/four_fundamental_subspaces.html)편에서 본 내용을 토대로 생각하면 $\vec{e}$는 left nullspace에 있는 벡터임을 알 수 있다.
 
-다시 말해 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq71.png">는 column space 상에서 만들 수 있는 기저벡터들과 left null space 상에서 만들 수 있는 기저벡터들을 합친 기저벡터들로만 구성할 수 있는 공간에 위치하고 있으며 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq72.png">는 그 중 가장 가까운 column space 상에 있는 벡터, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq73.png">는 left null space 상에 있는 벡터를 의미하게 된다.
+다시 말해 벡터 $\vec{b}$는 column space 상에서 만들 수 있는 기저벡터들과 left null space 상에서 만들 수 있는 기저벡터들을 합친 기저벡터들로만 구성할 수 있는 공간에 위치하고 있으며 $\vec{p}$는 그 중 가장 가까운 column space 상에 있는 벡터, $\vec{e}$는 left null space 상에 있는 벡터를 의미하게 된다.
 
 그림으로 표시하면 아래와 같다.
 
@@ -167,12 +172,12 @@ tags: 선형대수 머신러닝
   그림 출처: Introduction to Linear Algebra, Gilbert Strang
   </p>
 
-여기서 null space가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq74.png">인 것은 만약 null space가 영공간이 아니라면 함수의 형태는 완전 세로 방향으로 가는 모양일 것이기 때문인데, 이 때는 함수가 정의될 수 없기 때문에(즉, 기울기가 무한히 커지는 상태) 선형회귀 모델을 이용해 풀어서 어떤 함수를 얻고자 한다면 null space가 영공간이 아닌 경우는 제외하는 것이기 때문이다. 
+여기서 null space가 ${0}$인 것은 만약 null space가 영공간이 아니라면 함수의 형태는 완전 세로 방향으로 가는 모양일 것이기 때문인데, 이 때는 함수가 정의될 수 없기 때문에(즉, 기울기가 무한히 커지는 상태) 선형회귀 모델을 이용해 풀어서 어떤 함수를 얻고자 한다면 null space가 영공간이 아닌 경우는 제외하는 것이기 때문이다. 
 
 
 ### 실제 계산
 
-MATLAB으로 아래와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq75.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq76.png">를 설정하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq77.png">를 구할 수 있다.
+MATLAB으로 아래와 같이 $A$, $b$를 설정하고 $\hat{x}$를 구할 수 있다.
 
 ```{matlab}
 A = [-1, 1; 0, 1; 0, 1];
@@ -205,7 +210,7 @@ x_hat =
 
 # 최적화 문제 관점에서 본 회귀분석
 
-※ 선형대수학 관련 내용으로 궁금한 사람은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq78.png">최적화 문제 관점에서 본 회귀분석<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq79.png"> 파트를 건너뛰어도 무관함.
+※ 선형대수학 관련 내용으로 궁금한 사람은 $\lt$최적화 문제 관점에서 본 회귀분석$\gt$ 파트를 건너뛰어도 무관함.
 
 ## prerequisites
 
@@ -234,9 +239,9 @@ x_hat =
 
 즉, 우리의 모델은 아래와 같이 두 개의 파라미터를 가지는 1차 함수라고 할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq80.png"> </p>
+$$y = f(x) = ax+b$$
 
-하지만 이 모델의 파라미터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq81.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq82.png">는 어떻게 정해야 할까? 다시 말해 어떤 직선이 우리의 데이터를 가장 잘 설명해주는 걸까?
+하지만 이 모델의 파라미터 $a$, $b$는 어떻게 정해야 할까? 다시 말해 어떤 직선이 우리의 데이터를 가장 잘 설명해주는 걸까?
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic8.png">
@@ -250,11 +255,11 @@ x_hat =
 
 여기서 '가장 잘 설명한다'는 말을 다른 말로 정의하자면 모델과 데이터 간의 격차가 가장 적어야 한다고 말할 수도 있을 것 같다.
 
-다시 말해 전체 데이터에 대해 평균적으로 오차(error)가 가장 작은 모델이 더 좋은 모델이라고 말할 수 있다. 우리는 어떤 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq83.png"> 번째 데이터 포인트에 대한 오차(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq84.png">)를 다음과 같이 정의해볼 수 있을 것이다.
+다시 말해 전체 데이터에 대해 평균적으로 오차(error)가 가장 작은 모델이 더 좋은 모델이라고 말할 수 있다. 우리는 어떤 $i$ 번째 데이터 포인트에 대한 오차($e$)를 다음과 같이 정의해볼 수 있을 것이다.
 
-우리의 직선 모델로부터 계산된 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq85.png">축의 feature 값을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq86.png">라고 하고, 데이터에서 주어진 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq87.png">축의 feature 값을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq88.png">라고 하면,
+우리의 직선 모델로부터 계산된 $y$축의 feature 값을 $\hat{y}_i$라고 하고, 데이터에서 주어진 $y$축의 feature 값을 $y_i$라고 하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq89.png"> </p>
+$$e_i = \hat{y_i} - y_i$$
 
 라고 생각할 수 있다.
 
@@ -266,36 +271,36 @@ x_hat =
 
 여기서 오차의 부호에 대한 고민 자체를 애초에 하지 않으려면 오차를 다음과 같이 정의하는 것도 좋을 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq90.png"> </p>
+$$e_i = (\hat{y_i} - y_i)^2$$
 
 후에 더 설명하겠지만, 오차는 미분해서 쓸 것이기 때문에 미분 과정의 수식을 조금 더 깔끔하게 해주기 위해 다음과 같이 정의하는 것도 좋은 아이디어다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq91.png"> </p>
+$$e_i = \frac{1}{2}(\hat{y_i} - y_i)^2$$
 
-이제 데이터의 총 수가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq92.png">이라고 하면, 모든 데이터에 대한 평균적인 오차는 다음과 같이 계산할 수 있다.
+이제 데이터의 총 수가 $N$이라고 하면, 모든 데이터에 대한 평균적인 오차는 다음과 같이 계산할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq93.png"> </p>
+$$E = \frac{1}{N}\sum_{i=1}^Ne_i = \frac{1}{N}\sum_{i=1}^N\frac{1}{2}(\hat{y_i} - y_i)^2 = \frac{1}{2N}\sum_{i=1}^{N}(\hat{y_i} - y_i)^2$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq94.png"> </p>
+$$=\frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
-여기서 우리의 모델은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq95.png">이므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq96.png">로 계산하였다.
+여기서 우리의 모델은 $f(x) = ax+b$이므로 $\hat{y}_i = ax_i + b$로 계산하였다.
 
 ## 비용 함수의 시각화
 
-앞서 계산한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq97.png">는 소위 말하는 '비용 함수(cost function)'라고 부르기도 하는데, 이 비용함수 값이 작을 수록 데이터에 대한 설명 능력이 좋다고 볼 수 있다.
+앞서 계산한 $E$는 소위 말하는 '비용 함수(cost function)'라고 부르기도 하는데, 이 비용함수 값이 작을 수록 데이터에 대한 설명 능력이 좋다고 볼 수 있다.
 
-우리의 데이터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq98.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq99.png">는 주어진 것이기 때문에 비용함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq100.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq101.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq102.png">에 대한 함수로 봐도 좋을 것이다.
+우리의 데이터 $x_i$와 $y_i$는 주어진 것이기 때문에 비용함수 $E$를 $a$와 $b$에 대한 함수로 봐도 좋을 것이다.
 
 즉,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq103.png"> </p>
+$$E=f(a, b) = \frac{1}{2N}\sum_{i=1}^{N}\left(ax_i+b-y_i\right)^2$$
 
 이라고 쓸 수 있다.
 
 
-그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq104.png">를 최소화해주는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq105.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq106.png">를 찾는 문제로 바꿔 생각할 수 있다. 즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq107.png">의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
+그렇다면, 우리가 데이터를 잘 설명하는 회귀모델을 찾는다는 것은 $E$를 최소화해주는 $a$와 $b$를 찾는 문제로 바꿔 생각할 수 있다. 즉, $E$의 최소값을 찾는 문제로 환원해 생각할 수 있는 것이다.
 
-이것을 시각화해보자면 아래의 그림 11에서와 같이 slope(즉, 위에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq108.png">에 해당)와 intercept(즉, 위에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq109.png">에 해당)가 정의역인 공간에서 cost function <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq110.png">가 스칼라 함수로 존재한다고 할 수 있다.
+이것을 시각화해보자면 아래의 그림 11에서와 같이 slope(즉, 위에서 $a$에 해당)와 intercept(즉, 위에서 $b$에 해당)가 정의역인 공간에서 cost function $E$가 스칼라 함수로 존재한다고 할 수 있다.
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
@@ -321,30 +326,30 @@ x_hat =
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic11.png">
   <br>
-  그림 12. 정의역이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq111.png"> 와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq112.png"> (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서의 gradient 방향은 함수값이 커지는 방향이다.
+  그림 12. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서의 gradient 방향은 함수값이 커지는 방향이다.
 </p>
 
-따라서 gradient의 방향은 함수가 '커지는' 방향이므로 우리는 이 반대 방향으로 한 스텝, 한 스텝 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq113.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq114.png">의 위치를 업데이트 해간다면 결국은 비용함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq115.png">의 최소값(별표) 위치까지 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq116.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq117.png">를 옮겨갈 수 있을 것이다.
+따라서 gradient의 방향은 함수가 '커지는' 방향이므로 우리는 이 반대 방향으로 한 스텝, 한 스텝 $a$와 $b$의 위치를 업데이트 해간다면 결국은 비용함수 $E=f(a,b)$의 최소값(별표) 위치까지 $a$, $b$를 옮겨갈 수 있을 것이다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-24-linear_regression/pic12.png">
   <br>
-  그림 13. 정의역이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq118.png"> 와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq119.png"> (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서 gradient의 반대방향으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq120.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq121.png">의 위치를 업데이트 해간다면 결국 비용함수가 최소가 되는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq122.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq123.png">를 찾아갈 수 있을 것이다.
+  그림 13. 정의역이 $a$ 와 $b$ (여기선 slope, intercept)이고 높이가 비용함수의 값인 함수 공간에서 임의의 포인트에서 gradient의 반대방향으로 $a$와 $b$의 위치를 업데이트 해간다면 결국 비용함수가 최소가 되는 $a$와 $b$를 찾아갈 수 있을 것이다.
 </p>
 
-즉, 우리가 구하고자 하는 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq124.png">에서 파라미터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq125.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq126.png">를 임의의 값으로 설정한 뒤 업데이트 해줄 수 있다.
+즉, 우리가 구하고자 하는 함수 $f(a,b)$에서 파라미터 $a$, $b$를 임의의 값으로 설정한 뒤 업데이트 해줄 수 있다.
 
-즉, 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq127.png">에 대해 다음과 같이 업데이트 해줄 수 있다.
+즉, 벡터 $[a, b]^T$에 대해 다음과 같이 업데이트 해줄 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq128.png"> </p>
+$$\begin{bmatrix}a\\b\end{bmatrix}:=\begin{bmatrix}a\\b\end{bmatrix}-\alpha\nabla f(a, b)$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq129.png">는 learning rate 혹은 step size라고 부르는 것으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq130.png"> 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq131.png"> 등의 작은 숫자이다.
+여기서 $\alpha$는 learning rate 혹은 step size라고 부르는 것으로 $0.1$ 혹은 $0.001$ 등의 작은 숫자이다.
 
 이를 풀어 쓰면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq132.png"> </p>
+$$a := a - \alpha \frac{\partial f}{\partial a}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-24-linear_regression/eq133.png"> </p>
+$$b := b - \alpha \frac{\partial f}{\partial b}$$
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>

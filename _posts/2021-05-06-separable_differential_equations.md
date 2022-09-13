@@ -14,60 +14,55 @@ tags: 미분방정식
 
 가장 간단한 형태의 미분방정식 중 하나는 다음과 같은 변수분리형 1계 미분방정식이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq1.png"> <br> 식 (1) </p>
+$$\frac{dy}{dx}=M(x)N(y)$$
 
-[//]:# (식 1)
-
-식 (1)을 보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq2.png">에 대한 식 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq3.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq4.png">에 대한 식 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq5.png">가 깔끔하게 분리되어 있는 것을 볼 수 있다.
+식 (1)을 보면 $x$에 대한 식 $M(x)$와 $y$에 대한 식 $N(y)$가 깔끔하게 분리되어 있는 것을 볼 수 있다.
 
 ## 간단한 예시
 
-식 (1)은 조금 복잡할 수도 있는데, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq6.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq7.png">를 조금 바꿔서 구체적인 예시를 들어보면 다음과 같은 것이 변수분리형 1계 미분방정식이다.
+식 (1)은 조금 복잡할 수도 있는데, $M(x)$와 $N(y)$를 조금 바꿔서 구체적인 예시를 들어보면 다음과 같은 것이 변수분리형 1계 미분방정식이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq8.png"> <br> 식 (2) </p>
+$$\frac{dy}{dx}=y % 식 (2)$$
 
-[//]:# (식 2)
-
-
-식 (2)는 자세히 보면, 어떤 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq9.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq10.png">에 대해 미분을 했을 때 여전히 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq11.png">가 나올 수 있게 되는 함수를 묻는 방정식이다.
+식 (2)는 자세히 보면, 어떤 함수 $y$를 $x$에 대해 미분을 했을 때 여전히 $y$가 나올 수 있게 되는 함수를 묻는 방정식이다.
 
 잘 생각해보면 이런 방정식의 solution은 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq12.png"> </p> 
+$$y=Ce^x% 식 (3)$$ 
 
-임을 알 수 있다. (여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq13.png">는 적분상수이다.)
+임을 알 수 있다. (여기서 $C$는 적분상수이다.)
 
 어떻게 이런 결과를 얻을 수 있을까?
 
-방법은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq14.png">에 관한 식과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq15.png">에 관한 식들을 좌변과 우변에 각각 몰아넣고, 적분함으로써 가능하다.
+방법은 $x$에 관한 식과 $y$에 관한 식들을 좌변과 우변에 각각 몰아넣고, 적분함으로써 가능하다.
 
 좀 더 구체적으로 식 (2)를 풀어보면 다음과 같이 풀 수 있다.
 
-식 (2)의 양변을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq16.png">로 나눠주면,
+식 (2)의 양변을 $y$로 나눠주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq17.png"> </p>
+$$식(2)\Rightarrow \frac{1}{y}\frac{dy}{dx}=1$$
 
-이고, 여기서 양변을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq18.png">로 곱하면 좌변에는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq19.png">에 관한 식, 우변에는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq20.png">에 관한 식으로 몰아넣은 것과 같다.
+이고, 여기서 양변을 $dx$로 곱하면 좌변에는 $y$에 관한 식, 우변에는 $x$에 관한 식으로 몰아넣은 것과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq21.png"> </p>
+$$\Rightarrow \frac{1}{y}dy=dx$$
 
 따라서,
 
 여기서 양변을 적분하면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq22.png"> </p>
+$$\Rightarrow\int\frac{1}{y}dy=\int 1 dx$$
 
 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq23.png"> </p>
+$$\Rightarrow \ln |y| = x + C$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq24.png">는 적분상수이다.
+여기서 $C$는 적분상수이다.
 
 식을 조금만 수정하면
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq25.png"> </p>
+$$y = \exp(x+C)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq26.png"> </p>
+$$y = C\exp(x)$$
 
 와 같은 결과를 얻을 수 있음을 알 수 있다.
 
@@ -77,27 +72,27 @@ tags: 미분방정식
 
 일반적으로 식 (1)과 같은 변수분리형 1계 미분방정식의 solution은 아래와 같이 계산할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq27.png"> </p>
+$$식(1) \Rightarrow M(x)dx = \frac{1}{N(y)}dy$$
 
-식을 약간 수정해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq28.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq29.png">라 두고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq30.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq31.png">라 두면,
+식을 약간 수정해 $M(x)$를 $f(x)$라 두고 $1/N(y)$를 $-g(y)$라 두면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq32.png"> </p>
+$$f(x)dx+g(y)dy=0$$
 
 과 같이 쓸 수 있다. 여기서 양변에 적분 상수를 취해주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq33.png"> </p>
+$$\int f(x)dx + \int g(y) dy=C$$
 
-이고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq34.png">의 부정적분이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq35.png">라고 하고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq36.png">의 부정적분이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq37.png">라고 하면,
+이고, $f(x)$의 부정적분이 $F(x)$라고 하고, $g(y)$의 부정적분이 $G(y)$라고 하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq38.png"> </p>
+$$\Rightarrow F(x) + G(y) = C$$
 
 라고 할 수 있다.
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq39.png">는 적분 상수이다.
+여기서 $C$는 적분 상수이다.
 
-여기서 초기값이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq40.png">로 주어진다면 적분상수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq41.png">는 다음과 같이 계산할 수 있게 된다.
+여기서 초기값이 $y(x_0)=y_0$로 주어진다면 적분상수 $C$는 다음과 같이 계산할 수 있게 된다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq42.png"> </p>
+$$F(x_0)+G(y_0) = C$$
 
 # 변수분리법을 이용해 풀 수 있는 미분방정식 모델
 
@@ -109,39 +104,39 @@ tags: 미분방정식
 
 생각해보면 자연스러운 것이, 뜨거운 물체는 주변 온도와의 온도 차가 클 수록 더 빨리 식는다. (뜨거운 냄비에 미지근한 물을 끼얹는 것보다 차가운 물을 끼얹는게 더 빨리 냄비를 식히는 방법이다.)
 
-수식으로 정리하면, 내가 관심을 갖고 있는 물체의 온도가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq43.png">라고 하고 주변 온도가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq44.png">이라고 하면 다음과 같은 관계를 갖는다는 말이다.
+수식으로 정리하면, 내가 관심을 갖고 있는 물체의 온도가 $T$라고 하고 주변 온도가 $T_m$이라고 하면 다음과 같은 관계를 갖는다는 말이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq45.png"> </p>
+$$\frac{dT}{dt}=k(T-T_m)$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq46.png">는 음수이다. 그래야 시간에 따라 관심 물체의 온도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq47.png">가 서서히 떨어지게 된다.
+여기서 $k$는 음수이다. 그래야 시간에 따라 관심 물체의 온도 $T$가 서서히 떨어지게 된다.
 
 가령 주변 온도가 20도 이고 관심 물체의 온도가 처음에 100도 였고 1초 뒤에 98도 였다고 하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq48.png"> </p>
+$$\frac{dT}{dt}=k(T-20)$$
 
-이고, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq49.png">에 관한 식을 모두 좌변에, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq50.png">에 관한 식을 모두 우변에 넘겨주면,
+이고, $T$에 관한 식을 모두 좌변에, $t$에 관한 식을 모두 우변에 넘겨주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq51.png"> </p>
+$$\frac{1}{(T-20)}dT = kdt$$
 
 이다.
 
 양변을 적분해주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq52.png"> </p>
+$$\ln(T-20)=kt+C$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq53.png"> </p>
+$$\Rightarrow T-20 = Ce^{kt}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq54.png"> </p>
+$$\therefore T = 20 + Ce^{kt}$$
 
 이다.
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq55.png">이었고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq56.png">이라고 하므로,
+여기서 $T(0)=100$이었고 $T(1)=98$이라고 하므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq57.png"> </p>
+$$T(0) = 20+C = 100$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq58.png"> </p>
+$$T(1) = 20 + Ce^k=98$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq59.png"> </p>
+$$\therefore C = 80, k = -0.0253$$
 
 임을 알 수 있다.
 
@@ -177,39 +172,39 @@ tags: 미분방정식
 
 여기서 우리는 물탱크에 소금이 균일하게 섞일 수 있도록 계속해서 물탱크의 물을 저어준다고 가정할 것이다.
 
-이 문제는 미분방정식을 이용해 풀 수 있는데, 물탱크 안의 소금 양을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq60.png">라고 해보자.
+이 문제는 미분방정식을 이용해 풀 수 있는데, 물탱크 안의 소금 양을 $x(t)$라고 해보자.
 
-그러면, 물탱크 안의 소금의 시간에 따른 변화율은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq61.png"> 일 것이다.
+그러면, 물탱크 안의 소금의 시간에 따른 변화율은 $dx/dt$ 일 것이다.
 
 또, 소금의 시간 당 변화율은 들어오는 소금의 비율과 나가는 소금의 비율의 차이이므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq62.png"> </p>
+$$\frac{dx}{dt}=\text{rate in }-\text{ rate out}$$
 
 이라고 쓸 수 있다.
 
 들어오는 소금은 1분에 10L가 들어오는데 소금의 양은 0.5kg/L였으므로 1분 당 총 5kg의 소금이 들어온다.
 
-나가는 물의 양은 매 분마다 10L인데, 수위는 그대로 유지해주고 있어 1000L를 유지하므로 현재 소금양의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq63.png">만큼 나가는 것으로 볼 수 있다. 따라서,
+나가는 물의 양은 매 분마다 10L인데, 수위는 그대로 유지해주고 있어 1000L를 유지하므로 현재 소금양의 $1/100$만큼 나가는 것으로 볼 수 있다. 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq64.png"> </p>
+$$\frac{dx}{dt}=5-\frac{x}{100}$$
 
-과 같이 식을 세워줄 수 있는 것이다. 물론 처음에는 물에 소금이 들어있지 않았으므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq65.png">이다.
+과 같이 식을 세워줄 수 있는 것이다. 물론 처음에는 물에 소금이 들어있지 않았으므로 $x(0)=0$이다.
 
 이 식은 변수분리법으로 풀어줄 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq66.png"> </p>
+$$\frac{dx}{500-x}=\frac{dt}{100}$$
 
 양변을 적분해주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq67.png"> </p>
+$$\Rightarrow -\ln|500-x| = \frac{t}{100}+C$$
 
 즉,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq68.png"> </p>
+$$500-x = Ce^{-0.01t}$$
 
 여기서 초기조건을 이용하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-06-separable_differential_equations/eq69.png"> </p>
+$$\Rightarrow x(t) = 500-500 e^{-0.01t}$$
 
 이다.
 

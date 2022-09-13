@@ -22,26 +22,24 @@ tags: 미분방정식
 
 가령 아래와 같은 미분방정식을 생각해보자. (이 식은 [비제차 미분방정식의 의미](https://angeloyeo.github.io/2021/05/25/nonhomogeneous_equation.html) 편의 식 (9)와 같다.)
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq1.png"> <br> 식 (1) </p>
+$$x''-4x'+3x=t$$
 
-[//]:# (식 1)
+우리는 비제차 미분방정식에 대해 성립하는 solution $x_p(t)$가 다음과 같이 대입했을 때 성립한다는 것을 알고 있다.
 
-우리는 비제차 미분방정식에 대해 성립하는 solution <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq2.png">가 다음과 같이 대입했을 때 성립한다는 것을 알고 있다.
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq3.png"> </p>
+$$x_p''-4x_p'+3x_p=t$$
 
 미정계수법의 아이디어는 particular solution을 미분하고 선형 결합한 결과는 particular solution의 형태와 유사할 것이라는 것이다. 다시 말해, 다항함수를 미분하면 다항함수가 나오고, 지수함수를 미분하면 그대로 지수함수가 나오는 등의 현상을 이용한 아이디어이다.
 
 즉, 식 (1)과 같은 미분방정식의 particular solution은 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq4.png"> </p>
+$$x_p(t)=At+B$$
 
 의 형태를 띌 것이라고 가정하는 것은 타당한 가정이라고 할 수 있다.
 
 
 # 미정계수 테이블
 
-식 (1)의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq5.png">와 같은 비제차 항은 여러가지 형태가 나올 수 있는데 보통 다항식, 삼각함수, 지수함수의 꼴로 나온다면 아래와 같이 미정계수를 정해 particular solution을 가정하여 풀이를 시도해볼 수 있다.
+식 (1)의 $t$와 같은 비제차 항은 여러가지 형태가 나올 수 있는데 보통 다항식, 삼각함수, 지수함수의 꼴로 나온다면 아래와 같이 미정계수를 정해 particular solution을 가정하여 풀이를 시도해볼 수 있다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-06-04-undetermined_coefficients/pic1.png">
@@ -51,7 +49,7 @@ tags: 미분방정식
   그림 출처: Advance Engineering Mathematics, Dennis G. Zill, 6th ed., Jones & Bartlett Learning
 </p>
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq6.png">의 형태가 그렇게 다양하지 않다는 점이 보일 수도 있다.
+여기서 $x_p$의 형태가 그렇게 다양하지 않다는 점이 보일 수도 있다.
 
 다시 말해, 미정계수 방법을 이용할 때에는 비제차 항이 다항함수, 사인함수, 코사인 함수, 지수함수 혹은 이들의 선형결합일 경우에만 적용할 수 있다. 이 외의 비제차 항에 대해서는 매개변수 변환법을 이용해야 한다.
 
@@ -63,7 +61,7 @@ tags: 미분방정식
 
 가령 식 (1)의 경우 particular solution의 꼴을 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq7.png"> </p>
+$$At+B$$
 
 와 같이 두고 문제를 풀어볼 수 있다.
 
@@ -73,55 +71,55 @@ tags: 미분방정식
 
 식 (1)의 제차미분방정식 형태는 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq8.png"> </p>
+$$x''-4x'+3x = 0$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq9.png">라고 가정하여 대입하면,
+여기서 $x=e^{\lambda t}$라고 가정하여 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq10.png"> </p>
+$$\lambda^2e^{\lambda t}-4\lambda e^{\lambda t}+3e^{\lambda t} = 0$$
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq11.png">로 식을 묶어주면,
+$e^{\lambda t}$로 식을 묶어주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq12.png"> </p>
+$$e^{\lambda t}(\lambda^2-4\lambda+3) = 0$$
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq13.png">는 항상 양수이므로,
+$e^{\lambda t}$는 항상 양수이므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq14.png"> </p>
+$$\lambda^2-4\lambda+3 = 0$$
 
-이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq15.png">는
+이고 $\lambda$는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq16.png"> </p>
+$$\lambda = 1 \quad \text{ or } \quad 3$$
 
 이다.
 
 따라서, homogeneous solution은
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq17.png"> </p>
+$$x_h = c_1e^t+c_2e^{3t}$$
 
 이다.
 
 그러면 homogeneous solution에 particular solution을 합친 것을 일반해라고 볼 수 있으므로 우리의 일반해는 아래와 같은 형태가 될 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq18.png"> </p>
+$$x(t) = c_1e^t + c_2e^{3t}+At+B$$
 
 한편, particular solution은 원래의 식 (1)의 미분방정식에 대입해도 성립해야 하므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq19.png"> </p>
+$$x_p' = A$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq20.png"> </p>
+$$x_p'' = 0$$
 
 라는 관계를 이용해 원래 식 (1)에 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq21.png"> </p>
+$$식 (1)\Rightarrow -4A+3(At+B)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq22.png"> </p>
+$$\Rightarrow 3At-4A+3B=t$$
 
-따라서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq23.png"> 이고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq24.png"> 이므로,
+따라서 $3A = 1$ 이고 $-4A+3B = 0$ 이므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq25.png"> </p>
+$$A=1/3, \quad B = 4/9$$
 
 와 같다. 따라서, 식 (1)의 일반해는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq26.png"> </p>
+$$x(t) = c_1e^t + c_2e^{3t}+\frac{1}{3}t+\frac{4}{9}$$
 
 이다.
 
@@ -129,35 +127,35 @@ tags: 미분방정식
 
 아래의 미분방정식의 particular solution을 찾으시오.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq27.png"> </p>
+$$x''-x'+x = 2\sin(3t)$$
 
-이 문제를 보면 particular solution의 꼴을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq28.png">라고 설정할 수 있지만 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq29.png">를 여러번 미분하다보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq30.png"> 뿐만 아니라 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq31.png">의 꼴도 함께 얻어지게 된다는 것을 생각해볼 수 있다.
+이 문제를 보면 particular solution의 꼴을 $A\sin(3t)$라고 설정할 수 있지만 $\sin(3t)$를 여러번 미분하다보면 $\sin(3t)$ 뿐만 아니라 $\cos(3t)$의 꼴도 함께 얻어지게 된다는 것을 생각해볼 수 있다.
 
 따라서, 우리는 particular solution의 형태를 다음과 같이 생각할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq32.png"> </p>
+$$x_p=A\cos(3t)+B\sin(3t)$$
 
-이제 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq33.png">를 미분하고 원래 주어진 미분방정식에 대입하면 다음과 같은 결과를 얻을 수 있다.
+이제 $x_p$를 미분하고 원래 주어진 미분방정식에 대입하면 다음과 같은 결과를 얻을 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq34.png"> </p>
+$$x_p'' -x_p'+x_p = (-8A-3B)\cos(3t)+(3A-8B)\sin(3t)=2\sin(3t)$$
 
 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq35.png"> </p>
+$$-8A-3B=0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq36.png"> </p>
+$$3A-8B = 2$$
 
 이다.
 
 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq37.png"> </p>
+$$A=\frac{6}{73},B =-\frac{16}{73}$$
 
 이다.
 
 따라서, particular solution은
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq38.png"> </p>
+$$x_p(t)=\frac{6}{73}\cos(3t)-\frac{16}{73}\sin(3t)$$
 
 이다.
 
@@ -165,39 +163,39 @@ tags: 미분방정식
 
 아래의 미분방정식의 particular solution을 찾으시오.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq39.png"> </p>
+$$x''-5x'+4x=8e^{t}$$
 
-이번 문제는 약간 독특한데, 만약 우변에 있는 형태 그대로 particular solution을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq40.png">라고 상정해보면 문제가 풀리지 않는다는 것을 쉽게 알 수 있다.
+이번 문제는 약간 독특한데, 만약 우변에 있는 형태 그대로 particular solution을 $Ae^{t}$라고 상정해보면 문제가 풀리지 않는다는 것을 쉽게 알 수 있다.
 
 실제로 대입해보면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq41.png"> </p>
+$$Ae^{t}-5Ae^t+4Ae^t=8e^{t}$$
 
-이므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq42.png">와 같은 이상한 결과를 얻게 되어서 기존의 미정계수법으로는 문제를 풀 수 없음을 알 수 있다.
+이므로 $0=e^{8t}$와 같은 이상한 결과를 얻게 되어서 기존의 미정계수법으로는 문제를 풀 수 없음을 알 수 있다.
 
-이렇게 문제가 풀리지 않는 이유는 주어진 미분방정식의 제차 꼴의 미분방정식의 기저해 중 하나가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq43.png">이기 때문이다.
+이렇게 문제가 풀리지 않는 이유는 주어진 미분방정식의 제차 꼴의 미분방정식의 기저해 중 하나가 $e^t$이기 때문이다.
 
-우리는 reduction of order 편에서 봤던 내용과 유사하게 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq44.png">와 선형독립인 새로운 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq45.png">를 particular solution의 기저해로 잡고 문제를 풀어보자.
+우리는 reduction of order 편에서 봤던 내용과 유사하게 $e^t$와 선형독립인 새로운 기저 $te^t$를 particular solution의 기저해로 잡고 문제를 풀어보자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq46.png"> </p>
+$$x_p=Ate^t$$
 
 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq47.png"> </p>
+$$x_p'=Ae^t+Ate^t$$
 
 이고
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq48.png"> </p>
+$$x_p''=Ae^t+Ae^t+Ate^t=2Ae^t+Ate^t$$
 
 임을 알 수 있으며, 원래의 미분방정식에 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq49.png"> </p>
+$$x_p''-5x_p'+4x_p=-3Ae^t=8e^t$$
 
 와 같다는 것을 알 수 있다.
 
 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-04-undetermined_coefficients/eq50.png"> </p>
+$$x_p=-\frac{8}{3}te^t$$
 
 임을 알 수 있다.
 

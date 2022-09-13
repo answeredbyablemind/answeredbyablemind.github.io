@@ -41,11 +41,11 @@ gradient descent는 함수의 최소값을 찾는 문제에서 활용된다.
 
 # gradient descent의 수식 유도
 
-gradient descent는 함수의 기울기(즉, gradient)를 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq1.png">의 값을 어디로 옮겼을 때 함수가 최소값을 찾는지 알아보는 방법이라고 할 수 있다.
+gradient descent는 함수의 기울기(즉, gradient)를 이용해 $x$의 값을 어디로 옮겼을 때 함수가 최소값을 찾는지 알아보는 방법이라고 할 수 있다.
 
-기울기가 양수라는 것은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq2.png"> 값이 커질 수록 함수 값이 커진다는 것을 의미하고, 반대로 기울기가 음수라면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq3.png">값이 커질 수록 함수의 값이 작아진다는 것을 의미한다고 볼 수 있다.
+기울기가 양수라는 것은 $x$ 값이 커질 수록 함수 값이 커진다는 것을 의미하고, 반대로 기울기가 음수라면 $x$값이 커질 수록 함수의 값이 작아진다는 것을 의미한다고 볼 수 있다.
 
-또, 기울기의 값이 크다는 것은 가파르다는 것을 의미하기도 하지만, 또 한편으로는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq4.png">의 위치가 최소값/최댓값에 해당되는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq5.png"> 좌표로부터 멀리 떨어져있는 것을 의미하기도 한다.
+또, 기울기의 값이 크다는 것은 가파르다는 것을 의미하기도 하지만, 또 한편으로는 $x$의 위치가 최소값/최댓값에 해당되는 $x$ 좌표로부터 멀리 떨어져있는 것을 의미하기도 한다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-08-16-gradient_descent/pic1.png">
@@ -55,53 +55,51 @@ gradient descent는 함수의 기울기(즉, gradient)를 이용해 <img src = "
 
 ## gradient의 방향 성분을 이용하자.
 
-이를 이용해 특정 포인트 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq6.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq7.png">가 커질 수록 함수값이 커지는 중이라면 (즉, 기울기의 부호는 양수) 음의 방향으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq8.png">를 옮겨야 할 것이고,
+이를 이용해 특정 포인트 $x$에서 $x$가 커질 수록 함수값이 커지는 중이라면 (즉, 기울기의 부호는 양수) 음의 방향으로 $x$를 옮겨야 할 것이고,
 
-반대로 특정 포인트 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq9.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq10.png">가 커질 수록 함수값이 작아지는 중이라면 (즉, 기울기의 부호는 음수) 양의 방향으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq11.png">를 옮기면 된다.
+반대로 특정 포인트 $x$에서 $x$가 커질 수록 함수값이 작아지는 중이라면 (즉, 기울기의 부호는 음수) 양의 방향으로 $x$를 옮기면 된다.
 
-이 논리를 수식으로 쓰면 다음과 같다. (distance: 이동 거리, sign of slope: 기울기의 부호)
+이 논리를 수식으로 쓰면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq12.png"> <br> 식 (1) </p>
+$$x_{i+1} = x_i - \text{이동 거리}\times\text{기울기의 부호}$$
 
-[//]:# (식 1)
-
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq13.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq14.png">은 각각 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq15.png">번째 계산된 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq16.png">의 좌표와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq17.png">번째 계산된 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq18.png">의 좌표를 의미한다.
+여기서 $x_{i}$와 $x_{i+1}$은 각각 $i$번째 계산된 $x$의 좌표와 $i+1$번째 계산된 $x$의 좌표를 의미한다.
 
 그러면 여기서 이동거리는 어떻게 생각해야 할까? 그것은 gradient의 크기를 이용하면 된다.
 
 ## gradient의 크기도 이용해보자.
 
-식 (1)의 문제점을 생각해보면 "이동 거리(distance)"라는 factor를 어떻게 구할지 생각해보아야 한다는 점이다.
+식 (1)의 문제점을 생각해보면 "이동 거리"라는 factor를 어떻게 구할지 생각해보아야 한다는 점이다.
 
 이 문제에 대해 다시 잘 생각해보면 미분 계수(즉, 기울기 혹은 gradient)값은 극소값에 가까울 수록 그 값이 작아진다.
 
 사실 극대값에 가까울 때에도 미분 계수는 작아지기 마련인데, gradient descent 과정에서 극대값에 머물러 있는 경우는 극히 드물기 때문에 이 문제에 대해서는 고려하지 않고자 한다.
 
-따라서, 이동거리에 사용할 값을 gradient의 크기와 비례하는 factor를 이용하면 현재 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq19.png">의 값이 극소값에서 멀 때는 많이 이동하고, 극소값에 가까워졌을 때는 조금씩 이동할 수 있게 된다.
+따라서, 이동거리에 사용할 값을 gradient의 크기와 비례하는 factor를 이용하면 현재 $x$의 값이 극소값에서 멀 때는 많이 이동하고, 극소값에 가까워졌을 때는 조금씩 이동할 수 있게 된다.
 
 즉, 이동거리 는 gradient 값을 직접 이용하되, 이동 거리를 적절히 사용자가 조절 할 수 있게 수식을 조정해 줌으로써 상황에 맞게 이동거리를 맞춰나갈 수 있게 하면 될 것이다.
 
-이 때, 이동 거리의 조정 값을 보통 step size라고 부르고 기호는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq20.png">로 쓰도록 하겠다.
+이 때, 이동 거리의 조정 값을 보통 step size라고 부르고 기호는 $\alpha$로 쓰도록 하겠다.
 
 따라서 최종 수식은 다음과 같이 계산할 수 있다.
 
 ## 최종 수식
 
-최적화하고자 하는 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq21.png">에 대해 다음과 같이 쓸 수 있다.
+최적화하고자 하는 함수 $f(x)$에 대해 다음과 같이 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq22.png"> </p>
+$$x_{i+1} = x_i - \alpha \frac{df}{dx}(x_i)$$
 
 <p align = "center">
   <img src = "https://hackernoon.com/hn-images/1*ZmzSnV6xluGa42wtU7KYVA.gif">
   <br>
-  그림 2. 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq23.png">에 대한 gradient descent의 시각화
+  그림 2. 함수 $f(x)$에 대한 gradient descent의 시각화
   <br>
   <a href="https://hackernoon.com/life-is-gradient-descent-880c60ac1be8"> 그림 출처 </a>
 </p>
 
 이를 다변수함수에 대해 확장하면 다음과 같이 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq24.png"> </p>
+$$x_{i+1} = x_i - \alpha \nabla f(x_i)$$
 
 아래는 변수가 두 개인 경우에 대한 gradient descent의 예시 장면으로, 선형 회귀 모델을 찾는 과정이다.
 
@@ -120,7 +118,7 @@ gradient descent는 함수의 기울기(즉, gradient)를 이용해 <img src = "
 
 step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 수렴할 수 있다는 장점이 있다. 하지만, step size를 너무 크게 설정해버리면 최소값을 계산하도록 수렴하지 못하고 함수 값이 계속 커지는 방향으로 최적화가 진행될 수 있다.
 
-또, 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-08-16-gradient_descent/eq25.png">를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
+또, 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 $x$를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
 
 아래의 그림을 통해 적절한 step size를 선택하지 못하는 경우 수렴하지 않거나 발산하는 경우를 확인해볼 수 있다.
 

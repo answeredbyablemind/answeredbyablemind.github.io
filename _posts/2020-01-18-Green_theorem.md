@@ -13,9 +13,9 @@ tags: 미적분학
 
 * 미적분학의 기본정리
 
-함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq1.png">가 닫힌구간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq2.png">에서 연속이며, 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq3.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq4.png">의 임의의 부정적분이면 다음이 성립한다.
+함수 $f$가 닫힌구간 $[a, b]$에서 연속이며, 함수 $F$가 $f$의 임의의 부정적분이면 다음이 성립한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq5.png"> </p>
+$$\int_{a}^{b}f(t)dt = F(b) - F(a)$$
 
 * [중적분의 의미](https://angeloyeo.github.io/2020/07/30/multiple_integral.html)
 * [벡터장의 선적분](https://angeloyeo.github.io/2020/08/17/line_integral.html)
@@ -25,9 +25,9 @@ tags: 미적분학
 
 평면에서의 그린 정리는 다음과 같다.
 
-벡터장이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq6.png">로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, 
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq7.png"> </p> 
+| THEOREM 1. 그린 정리 |
+| --------- |
+| 벡터장이 $F(x,y) = P(x,y)\hat{i} + Q(x,y)\hat{j}$로 주어져있고, 선적분의 방향은 면적 A의 boundary에 대해 반 시계 방향이라고 할 때, <br><center>$$\iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\partial A}\left(Pdx + Qdy\right)$$ </center>|
 
 위 식에서 볼 수 있듯이 좌변에는 중적분, 우변에는 선적분의 결과가 있으며 두 결과 값이 같다는 것을 보여주고 있다.
 
@@ -49,83 +49,78 @@ tags: 미적분학
 
 위 그림에서 타원이 두 개가 보이는데 둘 다 같은 닫힌 곡선을 의미하는데 경로만 다르게 설정된 것이다. 
 
-그림 1의 왼쪽에서 보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq8.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq9.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq10.png">까지 바뀌고 아랫쪽 곡선을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq11.png">, 윗쪽 곡선을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq12.png">라고 명명하였다. 
+그림 1의 왼쪽에서 보면 $x$가 $a$에서 $b$까지 바뀌고 아랫쪽 곡선을 $y_l$, 윗쪽 곡선을 $y_u$라고 명명하였다. 
 
-또, 그림 1의 오른쪽에 있는 닫힌 곡선에서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq13.png">가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq14.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq15.png">까지 바뀌고, 왼쪽에 있는 곡선을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq16.png">, 오른쪽에 있는 곡선을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq17.png">로 명명하였다.
+또, 그림 1의 오른쪽에 있는 닫힌 곡선에서는 $y$가 $c$에서 $d$까지 바뀌고, 왼쪽에 있는 곡선을 $y_l$, 오른쪽에 있는 곡선을 $y_r$로 명명하였다.
 
 우리는 이 때 아래와 같은 벡터장이 주어져있다고 생각해보자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq18.png"> </p>
+$$\vec{F}(x,y)=P(x,y)\hat{i}+Q(x,y)\hat{j}$$
 
 우리는 이제 아래와 같이 선적분을 계산할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq19.png"> </p>
+$$\oint_C\vec{F}(x,y)d\vec{r} = 
+\oint_C\left(P(x,y)\hat{i}+Q(x,y)\hat{j}\right)(dx\hat{i}+dy\hat{j})$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq20.png"> <br> 식 (5) </p>
+$$=\oint_C P(x,y)dx + Q(x,y)dy$$
 
-한번에 적분식을 계산하기에는 식 (5)가 복잡하기 때문에, 식 (5)의 적분을 계산할 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq21.png"> 성분에 대한 결과와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq22.png"> 성분에 대한 결과를 각각 계산해서 더해주는 방식으로 계산을 진행하자. 
+한번에 적분식을 계산하기에는 식 (5)가 복잡하기 때문에, 식 (5)의 적분을 계산할 때 $x$ 성분에 대한 결과와 $y$ 성분에 대한 결과를 각각 계산해서 더해주는 방식으로 계산을 진행하자. 
 
-## <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq23.png"> 성분에 대한 적분
+## $x$ 성분에 대한 적분
 
-그림 1의 왼쪽 타원을 보면 닫힌곡선 C에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq24.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq25.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq26.png">까지 바뀌며, 그 때 따라가는 곡선은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq27.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq28.png">로 나눠서 생각해볼 수 있다.
+그림 1의 왼쪽 타원을 보면 닫힌곡선 C에서 $x$는 $a$에서 $b$까지 바뀌며, 그 때 따라가는 곡선은 $y_l$과 $y_u$로 나눠서 생각해볼 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq29.png"> </p>
+$$\oint_C P(x,y)dx$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq30.png"> <br> 식 (7) </p>
+$$=\int_{a}^{b}P(x,y_l)dx + \int_{b}^{a}P(x,y_u)dx$$
 
-[//]:# (식 7)
+여기서 식(7)의 두 번째 적분식의 $a$, $b$의 순서를 바꿔주고 부호를 반대로 바꿔주자.
 
-여기서 식(7)의 두 번째 적분식의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq31.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq32.png">의 순서를 바꿔주고 부호를 반대로 바꿔주자.
+$$=\int_{a}^{b}P(x,y_l)dx - \int_{a}^{b}P(x,y_u)dx$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq33.png"> </p>
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq34.png"> </p>
+$$=\int_{a}^{b}P(x,y_l) - P(x,y_u)dx $$
 
 여기서 미적분학의 기본정리를 사용하면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq35.png"> <br> 식 (10) </p>
+$$=\int_{a}^{b}\int_{y_u}^{y_l}\frac{\partial P}{\partial y}dy\text{ }dx$$
 
-[//]:# (식 10)
+여기서 미적분학의 기본정리를 이용했다는 것은 임의의 닫힌구간 $[a,b]$에서 연속이고 미분가능한 함수 $f$에 대해
 
-여기서 미적분학의 기본정리를 이용했다는 것은 임의의 닫힌구간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq36.png">에서 연속이고 미분가능한 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq37.png">에 대해
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq38.png"> </p>
+$$\int_{a}^{b}\frac{df}{dx}dx=f(b)-f(a)$$
 
 와 같이 생각할 수 있기 때문이다.
 
-식 (10)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq39.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq40.png">의 위치를 바꿔주고 (-) 부호를 붙여주자.
+식 (10)에서 $y_l$과 $y_u$의 위치를 바꿔주고 (-) 부호를 붙여주자.
 
-굳이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq41.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq42.png">의 위치를 바꿔주는 것은 그림 1에서 확인할 수 있듯이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq43.png">축의 증가 방향은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq44.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq45.png">로 가는 방향이기 때문이다.
+굳이 $y_l$과 $y_u$의 위치를 바꿔주는 것은 그림 1에서 확인할 수 있듯이 $y$축의 증가 방향은 $y_l$에서 $y_u$로 가는 방향이기 때문이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq46.png"> </p>
+$$식(10) \Rightarrow -\int_{a}^{b}\int_{y_l}^{y_u}\frac{\partial P}{\partial y}dydx$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq47.png"> </p>
+$$=-\iint_A\frac{\partial P}{\partial y}dxdy$$
 
-([푸비니의 정리](https://ko.wikipedia.org/wiki/%ED%91%B8%EB%B9%84%EB%8B%88%EC%9D%98_%EC%A0%95%EB%A6%AC)로 중적분 시 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq48.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq49.png">의 순서가 바뀌어도 상관이 없다.)
+([푸비니의 정리](https://ko.wikipedia.org/wiki/%ED%91%B8%EB%B9%84%EB%8B%88%EC%9D%98_%EC%A0%95%EB%A6%AC)로 중적분 시 $dx$와 $dy$의 순서가 바뀌어도 상관이 없다.)
 
-## <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq50.png"> 성분에 대한 적분
+## $y$ 성분에 대한 적분
 
-이번엔 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq51.png">성분에 대한 적분을 해보도록 하자.
+이번엔 $y$성분에 대한 적분을 해보도록 하자.
 
-그림 1의 오른쪽 타원을 보면 닫힌곡선 C에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq52.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq53.png">에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq54.png">까지 바뀌며, 그 때 따라가는 곡선은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq55.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq56.png">로 나눠서 생각해볼 수 있다.
+그림 1의 오른쪽 타원을 보면 닫힌곡선 C에서 $y$는 $c$에서 $d$까지 바뀌며, 그 때 따라가는 곡선은 $x_l$과 $x_r$로 나눠서 생각해볼 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq57.png"> </p>
+$$\oint_CQ(x,y)dy$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq58.png"> <br> 식 (15) </p>
+$$=\int_{d}^{c}Q(x_l, y)dy + \int_c^dQ(x_r,y)dy$$
 
-[//]:# (식 15)
+마찬가지 방법으로 식 (15)의 왼쪽 적분식의 $c$와 $d$의 순서를 바꾸고 부호를 바꿔주자.
 
-마찬가지 방법으로 식 (15)의 왼쪽 적분식의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq59.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq60.png">의 순서를 바꾸고 부호를 바꿔주자.
+$$=-\int_{c}^{d}Q(x_l, y)dy + \int_c^dQ(x_r,y)dy$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq61.png"> </p>
+$$=\int_c^d Q(x_r,y)-Q(x_l,y)dy$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq62.png"> </p>
+$x$ 성분에 대한 적분을 해줄때와 마찬가지로 미적분학의 기본정리를 이용하면,
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq63.png"> 성분에 대한 적분을 해줄때와 마찬가지로 미적분학의 기본정리를 이용하면,
+$$=\int_c^d \int_{x_l} ^{x_r} \frac{\partial Q}{\partial x}dx dy$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq64.png"> </p>
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq65.png"> </p>
+$$=\iint_A\frac{\partial Q}{\partial x}dxdy$$
 
 
 ## x, y 성분에 대해 계산한 결과들을 합해주자.
@@ -134,9 +129,9 @@ tags: 미적분학
 
 즉,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq66.png"> </p>
+$$식(5) = -\iint_A\frac{\partial P}{\partial y}dxdy + \iint_A\frac{\partial Q}{\partial x}dxdy$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq67.png"> </p>
+$$= \iint_A\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}dxdy$$
 
 이다.
 
@@ -160,19 +155,20 @@ tags: 미적분학
 
 <p align="center">
   <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-18-Green_theorem/pic1.png"> <br>
-  그림 2 xy 평면 위에 임의의 벡터장 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq68.png">와 폐곡선 C가 있다.
+  그림 2 xy 평면 위에 임의의 벡터장 $f$와 폐곡선 C가 있다.
 </p>
 
-벡터장 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq69.png">를
+벡터장 $\vec{f}$를
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq70.png"> </p>
+$$\vec{f}(x,y) = P(x,y)\hat{i}+Q(x,y)\hat{j}$$
 
 
 라고 하면, 그린 정리에 의해 다음이 성립한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq71.png"> <br> 식 (23) </p>
+$$\oint_C\vec{f}\cdot d\vec{r} 
 
-[//]:# (식 23)
+= \iint_R\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)dA$$
+
 
 식 (23)의 좌변은 curve C를 따라 벡터장 에 대해 선적분 한 것이다. 
 
@@ -187,15 +183,15 @@ tags: 미적분학
 </p>
 
 
-그럼 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq72.png">영역의 폐곡선을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq73.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq74.png">영역의 폐곡선을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq75.png">라고 해보자. 그러면 다음이 성립한다.
+그럼 $R_1$영역의 폐곡선을 $C_1$, $R_2$영역의 폐곡선을 $C_2$라고 해보자. 그러면 다음이 성립한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq76.png"> </p>
+$$\oint_{C_1}\vec{f}\cdot d\vec{r} + \oint_{C_2}\vec{f}\cdot d\vec{r} = \oint_{C}\vec{f}\cdot d\vec{r}$$
 
-왜 그런가? <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq77.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq78.png">사이의 boundary 에서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq79.png">에서 구하게 되는 선적분과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq80.png">에서 구하게 되는 선적분의 값이 상쇄되기 때문이다. 
+왜 그런가? $R_1$과 $R_2$사이의 boundary 에서는 $C_1$에서 구하게 되는 선적분과 $C_2$에서 구하게 되는 선적분의 값이 상쇄되기 때문이다. 
 
 그것은 선적분은 기본적으로 벡터장이 얼마나 CCW 방향으로 닮았는지 확인하는 것이기 때문이다.
 
-이제 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq81.png">을 아래와 같이 사등분 해보자.
+이제 $R$을 아래와 같이 사등분 해보자.
 
 <p align="center">
   <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-18-Green_theorem/pic3.png"> <br>
@@ -206,34 +202,38 @@ tags: 미적분학
 앞에서와 같은 논리로 다음이 성립한다.
 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq82.png"> </p>
+$$\oint_{C_1}\vec{f}\cdot d\vec{r} 
+
++ \oint_{C_2}\vec{f}\cdot d\vec{r} 
+
++ \oint_{C_3}\vec{f}\cdot d\vec{r} 
+
++ \oint_{C_4}\vec{f}\cdot d\vec{r} = \oint_{C}\vec{f}\cdot d\vec{r}$$
 
 --
 
 그렇다면 영역 R을 N등분하면 어떻게 될까? 다음의 식을 성립시킬 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq83.png"> <br> 식 (26) </p>
+$$\sum_{k=1}^{N}\oint_{C_k}\vec{f}\cdot d\vec{r} = \oint_{C}\vec{f}\cdot d\vec{r}$$
 
-[//]:# (식 26)
-
-이제 식 (26)에 대해 고민해보기 위해 영역 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq84.png">을 N 개로 쪼갰을 때, 임의의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq85.png"> 번째 영역에 대해 잠시 고려해보자.
+이제 식 (26)에 대해 고민해보기 위해 영역 $R$을 N 개로 쪼갰을 때, 임의의 $k$ 번째 영역에 대해 잠시 고려해보자.
 
 <p align="center">
   <img width="500" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-01-18-Green_theorem/pic4.png"> <br>
-  그림 5 영역 R을 N개로 나누었다고 했을 때 k 번째 영역 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq86.png">.
+  그림 5 영역 R을 N개로 나누었다고 했을 때 k 번째 영역 $R_k$.
 </p>
 
 
 Curl 편에서 확인했듯이 curl은 단위 영역이 받는 회전력이다. 
 
-그렇다면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq87.png">일 때 이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq88.png">영역은 미소 영역으로 생각할 수 있을 것이다. 
+그렇다면 $N\rightarrow \infty$일 때 이 $R_k$영역은 미소 영역으로 생각할 수 있을 것이다. 
 
-그러면 넓이가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq89.png">인 영역 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq90.png">의 회전량은 얼마인가?
+그러면 넓이가 $\|R_k\|$인 영역 $R_k$의 회전량은 얼마인가?
 
 
 그것은 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq91.png"> </p>
+$$\text{2d-curl}\left\{F(x_k,y_k)\right\}|R_k|$$
 
 
 가 된다.
@@ -241,7 +241,7 @@ Curl 편에서 확인했듯이 curl은 단위 영역이 받는 회전력이다.
 
 즉, 이것은 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq92.png"> </p>
+$$\oint_{C_k}\vec{f}\cdot d\vec{r}$$
 
 
 과 같은 의미를 갖는다. 왜냐하면 회전에 관여하는 벡터만 고려하여 선적분 해주는 것이 curl을 생각하는 방법이었기 때문이다.
@@ -250,14 +250,16 @@ Curl 편에서 확인했듯이 curl은 단위 영역이 받는 회전력이다.
 
 따라서 식 (26)은 다음과 같이 고려해줄 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq93.png"> </p>
+$$\Rightarrow \oint_C\vec{f}\cdot d\vec{r}=\sum_{k=1}^{N}\oint_{C_k}\vec{f}\cdot d\vec{r}\approx \sum_{k=1}^{N}\text{2d-curl}\left\{F(x_k, y_k)\right\}|R_k|$$
 
-이 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq94.png">을 무한하게 크게 만들면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq95.png">가 되고,
+이 때 $N$을 무한하게 크게 만들면 $\|R_k\|\rightarrow dA$가 되고,
 
 
 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-01-18-Green_theorem/eq96.png"> </p>
+$$\oint_C\vec{f}\cdot d\vec{r} = \iint_R\text{2d-curl}\left\{\vec{f}\right\}dA 
+
+= \iint_R\left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right)dA$$
 
 가 된다.
 

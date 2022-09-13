@@ -10,9 +10,9 @@ tags: 미적분학
 
 # 1. 라플라시안의 정의 (definition)
 
-유클리드 공간에서 두 번 미분할 수 있는 스칼라 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq1.png">에 대하여 라플라시안(laplacian)은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq2.png">에 대한 그레디언트의 발산으로 정의되며 수식으로 표현하면 다음과 같다. 
+유클리드 공간에서 두 번 미분할 수 있는 스칼라 함수 $f$에 대하여 라플라시안(laplacian)은 $f$에 대한 그레디언트의 발산으로 정의되며 수식으로 표현하면 다음과 같다. 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq3.png"> </p>
+$$\Delta f = \nabla ^2 f = \nabla \cdot \nabla f$$
 
 수식 상으로는 그렇다고 하긴 하는데... 라플라시안의 직관적인 이해를 해보도록 하자.
 
@@ -21,7 +21,7 @@ tags: 미적분학
 
 라플라시안은 쉽게 말하면 스칼라 함수 에 대해서
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq4.png"> </p>
+$$div(grad(f))$$
 
 와 같이 gradient 연산을 먼저 취해준 뒤, 그것으로 출력되는 벡터장에 대해 divergence를 구한 것이다.
 
@@ -58,7 +58,7 @@ gradient는 경사도를 얘기하는데 가파르게 올라가는 방향으로 
 
 즉, 어떤 스칼라 함수의 gradient를 취한 것에 divergence를 취해주면 이 스칼라 함수의 높이 값이 얼마나 낮은 지를 수치로 보여주는 것과 같다.
 
-2차원 평면에 그린 grad(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq5.png">)를 통해 정말 그 말이 맞을지 확인해보자.
+2차원 평면에 그린 grad($f$)를 통해 정말 그 말이 맞을지 확인해보자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-28_laplacian/noname03.png">
@@ -79,6 +79,6 @@ gradient는 경사도를 얘기하는데 가파르게 올라가는 방향으로 
 
 그림 5와 6을 보면 정말로 divergence의 음의 값이 peak 함수의 높이와 정말 비슷하다는 것을 알 수 있다.
 
-실제로는 laplacian은 2차 편미분의 값을 말해준다. 즉, laplacian은 스칼라 함수가 해당 포인트에서 아래로 볼록한지 (<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq6.png">) 또는 위로 볼록한지(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-28-laplacian/eq7.png">)를 말해주는 것이다. 
+실제로는 laplacian은 2차 편미분의 값을 말해준다. 즉, laplacian은 스칼라 함수가 해당 포인트에서 아래로 볼록한지 ($\nabla^2f>0$) 또는 위로 볼록한지($\nabla^2f<0$)를 말해주는 것이다. 
 
 이것은 고등학교 때 배운 2차 미분 계수의 의미와 동일한 것이다.

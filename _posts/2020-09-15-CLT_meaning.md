@@ -12,7 +12,7 @@ tags: 통계학
 
 > 자연 현상이나 사회 현상 중에는 확률밀도함수의 그래프가 오른쪽 그림과 같이 어떤 값을 중심으로 대칭적으로 분포하며 중심에서 멀어질수록 도수가 작아지는 종 모양의 곡선에 가깝게 나타나는 경우가 많이 있다.
 > 
-> 고등학교 수학 교과서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-15-CLT_meaning/eq1.png">확률과 통계<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-15-CLT_meaning/eq2.png">, 지학사, 2009
+> 고등학교 수학 교과서 $\lt$확률과 통계$\gt$, 지학사, 2009
 
 여기서 말하는 '오른쪽 그림'은 일반적인 정규분포의 형태를 그려놓은 그래프이다.
 
@@ -20,7 +20,7 @@ tags: 통계학
 
 거기다가 아래와 같이 정규분포의 식은 복잡하기까지 하기 때문에 처음 배우는 입장에서는 거부감이 들 수 밖에 없다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-15-CLT_meaning/eq3.png"> </p>
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$
 
 # 중심극한정리의 핵심 키워드는 "평균"
 

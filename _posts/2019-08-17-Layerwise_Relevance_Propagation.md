@@ -30,24 +30,23 @@ tags: 머신러닝 딥러닝
 
 LRP는 분해를 통한 설명(explanation by decomposition)을 통해 뉴럴네트워크의 결과물을 이해할 수 있게 도와주는 방법이다.
 
-좀더 상세하게는, 훈련된 뉴럴넷 모델에서 임의의 샘플 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq1.png">에 대하여 이 뉴럴넷 모델은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq2.png">라는 출력을 얻는다고 하면,
+좀더 상세하게는, 훈련된 뉴럴넷 모델에서 임의의 샘플 $x = (x_1, x_2, \cdots, x_i, \cdots, x_d)$에 대하여 이 뉴럴넷 모델은 $f(x)$라는 출력을 얻는다고 하면,
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq3.png"> 차원 입력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq4.png">의 각 차원의 relevance score를 계산하는 것이 목적이다.
+$d$ 차원 입력 $x$의 각 차원의 relevance score를 계산하는 것이 목적이다.
 
 
 이 때, 각 차원 i에 대한 relevance score는 다음과 같은 특징을 갖는다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq5.png"> </p>
+$$f(x) = \sum_{i=1}^{d}R_i$$
 
 
-이해를 돕기 위해 입력 샘플 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq6.png">가 그림이라고 생각하자. 아래 그림 1의 예시처럼 잘 훈련된 뉴럴네트워크에 수탉 사진을 입력으로 넣고 출력으로 '수탉'을 얻는다고 하면,
+이해를 돕기 위해 입력 샘플 $x$가 그림이라고 생각하자. 아래 그림 1의 예시처럼 잘 훈련된 뉴럴네트워크에 수탉 사진을 입력으로 넣고 출력으로 '수탉'을 얻는다고 하면,
 
-이 수탉이라는 출력 f(x)[^1]를 얻기 위해 입력 샘플의 각 pixel들이 기여하는 바(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq7.png">)를 계산하는 방법인 것이다.
+이 수탉이라는 출력 f(x)[^1]를 얻기 위해 입력 샘플의 각 pixel들이 기여하는 바($R_i$)를 계산하는 방법인 것이다.
 
 아래 그림 1에서 볼 수 있듯이 heatmap이라고 적힌 그림에 각 pixel들의 기여도(relevance score)를 색깔로 표시해두었으며, 수탉의 부리나 머리등을 보고 해당 입력의 클래스가 '수탉'임을 출력했다는 것을 알 수 있다.
 
 [^1]: 여기서 이 분류기가 수탉이냐 아니냐를 판단하는 binary classifier라면 출력 f(x)는 sigmoid 함수의 출력으로, 다중 클래스 분류기라면 softmax의 출력을 쓸 수 있다.
-
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic1.png">
 <br>
@@ -74,7 +73,7 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 출처: Explaining Decisions of Neural Networks by LRP. Alexander Binder @ Deep Learning: Theory, Algorithms, and Applications. Berlin, June 2017 
 </p>
 
-재분배시 기여도가 보존된다는 말을 추가 설명 하자면, 예를 들어 그림 1에서와 같이 특정 사진 입력에 대해 '수탉'이라는 분류를 했고 그 출력값(여기서는 확률이라고 할 수 있겠다) <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq8.png">가 0.9였다고 하자. 그러면 각 layer의 뉴런들은 0.9라는 출력에 대한 기여도를 모두 조금씩은 갖고 있으며, relevance score를 분배한 후 각 layer에서의 relevance score의 합은 0.9가 되어야 한다는 뜻이다.
+재분배시 기여도가 보존된다는 말을 추가 설명 하자면, 예를 들어 그림 1에서와 같이 특정 사진 입력에 대해 '수탉'이라는 분류를 했고 그 출력값(여기서는 확률이라고 할 수 있겠다) $f(x)$가 0.9였다고 하자. 그러면 각 layer의 뉴런들은 0.9라는 출력에 대한 기여도를 모두 조금씩은 갖고 있으며, relevance score를 분배한 후 각 layer에서의 relevance score의 합은 0.9가 되어야 한다는 뜻이다.
 
 # Explanation for neural network?
 
@@ -84,7 +83,7 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 그림 3. 딥뉴럴네트워크의 예측값(prediction)을 잘 분해하기 위해 네트워크 상의 하나 하나의 뉴런 별로 출력값을 분해해볼 수 있다.
 </p>
 
-이제 우리가 실질적으로 맞닥뜨리게 되는 문제는 이것이다: **딥 뉴럴 네트워크의 예측값 혹은 출력값(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq9.png">)을 수학적으로 어떻게 분해하고, 어떻게 '기여도'를 정의할 것인가?**
+이제 우리가 실질적으로 맞닥뜨리게 되는 문제는 이것이다: **딥 뉴럴 네트워크의 예측값 혹은 출력값($f(x)$)을 수학적으로 어떻게 분해하고, 어떻게 '기여도'를 정의할 것인가?**
 
 이 문제에 대한 해결법은 위에서 설명한 "기본적인 가정 및 작동 방식"에 따라 각 뉴런별로 생각하게 되고, 특히 각 뉴런의 출력과 입력의 관계를 이용해 기여도를 수학적으로 정의하고자 한다.
 
@@ -99,11 +98,11 @@ LRP의 기본적인 가정 및 작동 방식은 다음과 같다.
 
 수학적으로 relevance score라는 것은 **입력의 변화에 따른 출력의 변화 정도**로 볼 수 있다.
 
-다시 말해, 그림 4에서 output <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq10.png">에 대한 각각의 입력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq11.png">의 기여도는 다음과 같이 표현될 수 있다.
+다시 말해, 그림 4에서 output $f(x)$에 대한 각각의 입력 $x_1, x_2$의 기여도는 다음과 같이 표현될 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq12.png"> </p>
+$$\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}$$
 
-그러므로, 어떻게든 아래와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq13.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq14.png"> 간의 관계를 설명할 수 있는 적절한 식을 도출할 수 있다면,
+그러므로, 어떻게든 아래와 같이 $f(x)$와 $\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}$ 간의 관계를 설명할 수 있는 적절한 식을 도출할 수 있다면,
 
 출력을 relevance score로 분해하여 생각할 수 있게 되는 것이다.
 
@@ -111,18 +110,17 @@ LRP에서는 Taylor Series를 도입한다.
 
 ## Taylor Series
 
-임의의 매끄러운 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq15.png"> 및 실수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq16.png">에 대해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq17.png">의 Taylor Series는 다음과 같다.
+임의의 매끄러운 함수 $f(x)$ 및 실수 $a$에 대해 $f(x)$의 Taylor Series는 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq18.png"> </p>
+$$f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq19.png"> </p>
+$$=f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots$$
 
-여기서 error term "<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq20.png">"을 이용해 first-order Taylor series를 쓰면 다음과 같다.
+여기서 error term "$\epsilon$"을 이용해 first-order Taylor series를 쓰면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq21.png"> </p>
+$$f(x) = f(a) + \frac{d}{dx}f(x)\big|_{x=a}(x-a) + \epsilon$$
 
 다변수 함수의 경우에는 Taylor 급수는 다음과 같다.
-
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-17_LRP/pic5.png">
@@ -132,70 +130,68 @@ LRP에서는 Taylor Series를 도입한다.
 
 즉, d 차원 input에 대해서는 다음과 같이 first-order Taylor series를 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq22.png"> <br> 식 (6) </p>
+$$f(\pmb{x}) = f(\pmb{a}) + \sum_{p = 1}^{d}\frac{\partial \pmb{f}}{\partial x_p}\big|_{\pmb{x}=\pmb{a}}(\pmb{x} - \pmb{a}) + \epsilon$$
 
-[//]:# (식 6)
-
-위 식에서 우변의 두 번째 term이 의미하는 것이 바로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq23.png">가 변했을 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq24.png">는 얼마나 변했는가이다.
+위 식에서 우변의 두 번째 term이 의미하는 것이 바로 $x_p$가 변했을 때 $f(x)$는 얼마나 변했는가이다.
 
 ## 테일러 급수 수식의 '적절한' 변형
 
-식 (6)은 우리에게 꼭 필요한 기능인 "출력을 relevance score로 분해해주는 기능"을 할 수 있게 도와주지만, 불필요한 term이 두 가지 있다. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq25.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq26.png">이 그것이다. 
+식 (6)은 우리에게 꼭 필요한 기능인 "출력을 relevance score로 분해해주는 기능"을 할 수 있게 도와주지만, 불필요한 term이 두 가지 있다. $f(a)$와 $\epsilon$이 그것이다. 
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq27.png">는 Taylor series의 특성을 통해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq28.png">인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq29.png">를 수학적으로 찾고, 그 지점으로부터 함수를 근사화 함으로써 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq30.png">으로 만들어버릴 수 있다. 또, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq31.png">은 ReLU 활성화 함수의 특성을 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq32.png">으로 만들어버릴 수 있다.
+$f(a)$는 Taylor series의 특성을 통해 $f(a) = 0$인 $a$를 수학적으로 찾고, 그 지점으로부터 함수를 근사화 함으로써 $0$으로 만들어버릴 수 있다. 또, $\epsilon$은 ReLU 활성화 함수의 특성을 이용해 $0$으로 만들어버릴 수 있다.
 
-만약 그렇게 할 수 있다면 다음과 같이 출력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq33.png">는 relevance score만으로 분해가능하다.
+만약 그렇게 할 수 있다면 다음과 같이 출력 $f(x)$는 relevance score만으로 분해가능하다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq34.png"> </p>
+$$f(x) = f(a) + \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i = a_i}(x_i-a_i) + \epsilon$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq35.png"> </p>
+$$ = \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i = a_i}(x_i-a_i)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq36.png"> </p>
+$$ = \sum_{i=1}^{d}R_i$$
 
 ## ReLU의 특성을 통해 epsilon = 0임을 확인해보자.
 
 그림 4와 같은 입력 2개와 출력 하나를 갖고, 활성화 함수가 ReLU인 뉴런의 작동은 수학적으로 다음과 같이 기술 할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq37.png"> </p>
+$$f(x) = \max\left(0, \sum_{i=1}^{2}w_i x_i + b\right)$$
 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq38.png"> <br> 식 (11) </p>
+$$= \begin{cases}
+0  & \text{case i) when $\sum_{i=1}^{2}w_ix_i + b \leq 0$} \\
+\sum_{i=1}^{2}w_ix_i + b & \text{case ii) when $\sum_{i=1}^{2}w_ix_i + b > 0$}
+\end{cases}$$
 
-[//]:# (식 11)
 
 식 (11)에서 볼 수 있듯이 case i)인 경우에는 우리가 더 이상 신경쓸 이유가 없고, case ii)에 대해서 수식 전개를 계속해나가도록 하자.
 
-한편, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq39.png">는 Taylor 급수로도 나타낼 수 있다. 따라서,
+한편, 식 (10)의 $f(x)$는 식 (7)에서와 같이 $f(x)$는 Taylor 급수로도 나타낼 수 있다. 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq40.png"> <br> 식 (12) </p>
+$$f(x) = \sum_{i=1}^{2}w_ix_i + b = f(a) + \sum_{i=1}^{d}\frac{\partial f}{\partial x_i}\big|_{x_i=a_i}(x_i-a_i) + \epsilon$$
 
-[//]:# (식 12)
+여기서 식 (12)를 잘 보면, $f(x)$는 다음과 같이 쓸 수 있다.
 
-여기서 식 (12)를 잘 보면, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq41.png">는 다음과 같이 쓸 수 있다.
+$$f(x) = w_1x_1+w_2x_2+b$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq42.png"> </p>
+따라서, $\frac{\partial f}{\partial x_i}$는 다음과 같다.
 
-따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq43.png">는 다음과 같다.
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq44.png"> </p>
+$$\frac{\partial f(x)}{\partial x_1}= w_1, \frac{\partial f(x)}{\partial x_2} = w_2$$
 
 또, 다음과 같이 2차 이상의 편미분 계수는 모두 0이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq45.png"> </p>
+$$\frac{\partial ^2 f(x)}{\partial x_1 ^2} = 0, \space \frac{\partial^2 f(x)}{\partial x_1 \partial x_2} = 0, \space \cdots $$
 
-따라서, 식 (12)에서 Taylor Series로 씌여진 식에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq46.png">임을 알 수 있다.
+따라서, 식 (12)에서 Taylor Series로 씌여진 식에서 $\epsilon=0$임을 알 수 있다.
 
 그러므로, 식 (12)를 다시 쓰면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq47.png"> </p>
+$$f(x) = \sum_{i=1}^{2}w_ix_i+b = f(a) + \sum_{i=1}^{2}w_i(x_i-a_i)$$
 
 ## 적절한 a를 찾는 방법
 
-테일러 급수를 이용해 함수를 근사화(approximate) 할 때 근사화를 시작할 점 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq48.png">는 어느 위치여도 관계 없이 무한한 항을 다 더해줄 수 만 있다면 정확하게 그 함수를 근사화할 수 있다.
+테일러 급수를 이용해 함수를 근사화(approximate) 할 때 근사화를 시작할 점 $x=a$는 어느 위치여도 관계 없이 무한한 항을 다 더해줄 수 만 있다면 정확하게 그 함수를 근사화할 수 있다.
 
-다만 LRP에서는 식 (8)에서 보았듯이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq49.png">이라는 제약조건이 존재하므로, 이 조건을 만족시키는 a를 찾으면 되고 여전히 무수히 많은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq50.png">가 해당 제약조건을 만족할 수 있다.
+다만 LRP에서는 식 (8)에서 보았듯이 $f(a)=0$이라는 제약조건이 존재하므로, 이 조건을 만족시키는 a를 찾으면 되고 여전히 무수히 많은 $a$가 해당 제약조건을 만족할 수 있다.
 
-이번에 소개할 방법은 참고문헌 (Explaining NonLinear Classification ~)에서 소개하는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq51.png">-rule이다.
+이번에 소개할 방법은 참고문헌 (Explaining NonLinear Classification ~)에서 소개하는 $w^2$-rule이다.
 
 
 <p align = "center">
@@ -204,57 +200,51 @@ LRP에서는 Taylor Series를 도입한다.
 그림 6. 하나의 뉴런에서, 두 개의 입력값과 ReLU 통과 후의 출력값(색깔)을 도시한 그림
 </p>
 
-그림 6은 그림 4에서 표현한 뉴런과 같이 두 개의 입력값과 하나의 출력값을 가지는 뉴런의 입출력 관계를 나타내고 있다. 입력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq52.png">는 우리가 입력한 것이니 알고 있는 값이고, 그 출력값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq53.png">는 뉴럴네트워크 모델에 의해 결정된 값이다. 출력 값은 색깔로 표시되었으며, 흰색에 가까울 수록 0에 가깝고 빨간색에 가까울 수록 그 값이 크다. 실선으로 표시되어 있는 지점은 모든 값이 0인 지점이고, 점선으로 표시되어 있는 지점은 동일한 값을 갖는 등고선이다.
+그림 6은 그림 4에서 표현한 뉴런과 같이 두 개의 입력값과 하나의 출력값을 가지는 뉴런의 입출력 관계를 나타내고 있다. 입력 $x_1, x_2$는 우리가 입력한 것이니 알고 있는 값이고, 그 출력값 $f(x_1, x_2) = ReLU(x_1, x_2)$는 뉴럴네트워크 모델에 의해 결정된 값이다. 출력 값은 색깔로 표시되었으며, 흰색에 가까울 수록 0에 가깝고 빨간색에 가까울 수록 그 값이 크다. 실선으로 표시되어 있는 지점은 모든 값이 0인 지점이고, 점선으로 표시되어 있는 지점은 동일한 값을 갖는 등고선이다.
 
-그림 6에서 볼 수 있는 것 처럼 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq54.png">-rule이 말하는 적절한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq55.png">는 출력값이 0 (즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq56.png">)이면서 입력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq57.png">에 가장 가까운 지점이다.
+그림 6에서 볼 수 있는 것 처럼 $w^2$-rule이 말하는 적절한 $a$는 출력값이 0 (즉, $f(a) = 0$)이면서 입력 $x = (x_1, x_2)$에 가장 가까운 지점이다.
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq58.png">-rule을 따를 때, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq59.png">를 계산하기 위해 다음과 같은 과정을 거칠 수 있다.
+$w^2$-rule을 따를 때, $a$를 계산하기 위해 다음과 같은 과정을 거칠 수 있다.
 
-일단 그림 6에서 화살표의 의미를 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq60.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq61.png">는 다음과 같은 관계를 갖는다.
+일단 그림 6에서 화살표의 의미를 생각해보면 $\vec{a}$와 $\vec{x}$는 다음과 같은 관계를 갖는다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq62.png"> </p>
+$$\vec{a} -  \vec{x} = t\vec{w}$$
 
-즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq63.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq64.png">를 빼준 벡터가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq65.png">의 실수배가 되어야 한다는 점이다.
+즉, $\vec{a}$와 $\vec{x}$를 빼준 벡터가 $\vec{w}$의 실수배가 되어야 한다는 점이다.
 
 이 식을 약간 변경하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq66.png"> <br> 식 (18) </p>
-
-[//]:# (식 18)
+$$\vec{a} = \vec{x} + t\vec{w}$$
 
 가 된다.
 
-또, 우리의 제약 조건(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq67.png">)에 따라,
+또, 우리의 제약 조건($f(a) = 0$)에 따라,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq68.png"> <br> 식 (19) </p>
-
-[//]:# (식 19)
+$$f(\vec{a}) = \sum_{i=1}w_ia_i+b = 0$$
 
 이다. 
 
 식 (19)에 식 (18)을 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq69.png"> </p>
+$$f(\vec{a}) = \sum_{i=1} w_i(x_i+tw_i) + b = 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq70.png"> </p>
+$$= \sum_{i=1}w_ix_i + t\sum_{i}w_i^2 + b = 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq71.png"> <br> 식 (22) </p>
-
-[//]:# (식 22)
+$$\therefore t = - \frac{\sum_i w_ix_i + b}{\sum_i w_i^2}$$
 
 식 (22)를 식 (18)에 다시 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq72.png"> <br> 식 (23) </p>
+$$a_i = x_i - \left(
+  \frac{\sum_iw_ix_i + b}{\sum_iw_i^2}
+  \right)w_i$$
 
-[//]:# (식 23)
+식 (23)을 이용하면 $f(x)$를 다음과 같이 쓸 수 있다.
 
-식 (23)을 이용하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq73.png">를 다음과 같이 쓸 수 있다.
+$$f(x) = 0 + \sum_i w_i\left(\frac{\sum_iw_ix_i + b}{\sum_i w_i^2}\right)w_i + 0 $$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq74.png"> </p>
+$$=\sum_i\left(\frac{\sum_iw_ix_i + b}{\sum_i w_i^2}\right)w_i^2 = \sum_iR_i$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq75.png"> </p>
-
-참고로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq76.png">-rule 외에도 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq77.png">-rule, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq78.png">-rule 등 여러가지 Rule이 있으니, 이것은 참고문헌 (Explaining NonLinear ~)를 참고하도록 하자.
+참고로, $w^2$-rule 외에도 $z$-rule, $z^+$-rule 등 여러가지 Rule이 있으니, 이것은 참고문헌 (Explaining NonLinear ~)를 참고하도록 하자.
 
 ## Relevance Propagation Rule 정리
 
@@ -264,17 +254,17 @@ LRP에서는 Taylor Series를 도입한다.
 그림 7. Forward Pass, Relevance Propagation을 한 그림에 모두 표시한 것.
 </p>
 
-지금까지 정리한 내용에 따르면 적절한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq79.png">를 찾음으로써, 하나의 뉴런의 출력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq80.png">는 다음과 같이 분해될 수 있다는 것을 알 수 있었다.
+지금까지 정리한 내용에 따르면 적절한 $a$를 찾음으로써, 하나의 뉴런의 출력 $f(x)$는 다음과 같이 분해될 수 있다는 것을 알 수 있었다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq81.png"> </p>
+$$f(x) = \sum_i R_i$$
 
  지금까지 하나의 뉴런에 대해 알아온 내용을 그림 7에서처럼 전체 뉴럴 네트워크에 적용시키고자 한다면 다음과 같은 과정을 통해 진행할 수 있다.
 
-그림 7의 상단에서 처럼 특정 입력 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq82.png">에 대한 뉴럴네트워크의 최종 출력이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq83.png">라고 하자 (forward pass).
+그림 7의 상단에서 처럼 특정 입력 ${x_p}$에 대한 뉴럴네트워크의 최종 출력이 $x_f$라고 하자 (forward pass).
 
-그런 다음 출력단의 뉴런이 가지는 relevance score <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq84.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq85.png">와 같게 둔 다음 그 전 layer들로 propagation을 시킨다고 하자.
+그런 다음 출력단의 뉴런이 가지는 relevance score $R_f$를 $x_f$와 같게 둔 다음 그 전 layer들로 propagation을 시킨다고 하자.
 
-즉, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq86.png"> 에서 처럼 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-17-Layerwise_Relevance_Propagation/eq87.png">로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
+즉, $f(x) = \sum_i R_i$에서 처럼 $R_f = \sum_i R_i$로 생각해서 그 전 layer로 계속해서 뒤로 propagation 시켜나가면, 뉴럴네트워크 상의 모든 뉴런들의 relevance score를 계산할 수 있게 된다.
 
 <center>
   

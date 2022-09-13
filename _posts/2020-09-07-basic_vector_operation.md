@@ -56,9 +56,9 @@ tags: 선형대수
 
 벡터 공간에 대해서는 차후에 좀 더 다루겠지만, 벡터 공간은 다음과 같은 세 가지 요소가 정의되고 성립되어야 한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq1.png"> </p>
+$$(V, +, \cdot)$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq2.png">는 벡터, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq3.png">는 덧셈 규칙, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq4.png">은 곱셈 규칙을 의미한다[^1].
+여기서 $V$는 벡터, $+$는 덧셈 규칙, $\cdot$은 곱셈 규칙을 의미한다[^1].
 
 지금으로썬 너무나 모호하게 들리는 추상적인 정의이지만, 이러한 추상성이 벡터의 개념을 더 넓은 범위로 확장하고 이를 이용해 선형대수학의 세계에서 일어나는 많은 일들을 설명할 수 있게 된다.
 
@@ -70,9 +70,9 @@ tags: 선형대수
 
 ## 벡터의 상수배(scalar multipliation)
 
-임의의 집합 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq5.png">에 대해 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq6.png">와 스칼라 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq7.png">에 대하여 다음이 성립하여야 한다.
+임의의 집합 $V(\neq \phi)$에 대해 임의의 벡터 $x\in V$와 스칼라 $k\in {\Bbb R}$에 대하여 다음이 성립하여야 한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq8.png"> </p>
+$$x\in V, k\in {\Bbb R} \Rightarrow kx\in V$$
 
 그림으로 설명하자면, 주어진 화살표에 대해서 화살표의 크기가 늘어나거나 줄어드는 것을 의미할 수 있다.
 
@@ -87,16 +87,16 @@ tags: 선형대수
 
 ## 벡터 간의 합
 
-임의의 집합 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq9.png">에 대해 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq10.png">에 대하여 다음이 성립하여야 한다.
+임의의 집합 $V(\neq \phi)$에 대해 임의의 벡터 $x, y\in V$에 대하여 다음이 성립하여야 한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq11.png"> </p>
+$$x, y\in V, \Rightarrow x+y\in V$$
 
 그림으로 설명하자면 주어진 두 화살표에 대해 화살표의 크기와 방향을 합해주어 평행사변형 꼴을 이룰 수 있도록 합해진 벡터가 출력되면 된다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic3.png">
   <br>
-  그림 3. 두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq12.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq13.png">의 합인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq14.png">
+  그림 3. 두 벡터 $\vec{a}$와 $\vec{b}$의 합인 $\vec{a}+\vec{b}$
 </p>
 
 약간의 부연설명을 하자면, 물리학에서 말하는 벡터와 수학에서 말하는 벡터는 약간 차이가 있는데, 수학에서는 모든 벡터들의 시점이 원점이어야 한다.
@@ -119,15 +119,15 @@ tags: 선형대수
 
 국어 성적에 대한 정보를 벡터로 표현하면 다음과 같을 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq15.png"> </p>
+$$k = \begin{bmatrix}100\\70\\30\\45\\80\end{bmatrix}$$
 
 또 만약 영어 점수에 대한 정보를 벡터로 표현하면 다음과 같을 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq16.png"> </p>
+$$e = \begin{bmatrix}83\\50\\25\\30\\60\end{bmatrix}$$
 
 이 때, 두 점수의 평균 점수를 매기는 방법은 아래와 같을 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq17.png"> </p>
+$$avg = \frac{1}{2}k + \frac{1}{2}e = \frac{1}{2}\begin{bmatrix}100\\70\\30\\45\\80\end{bmatrix}+\frac{1}{2}\begin{bmatrix}83\\50\\25\\30\\60\end{bmatrix}$$
 
 지금은 단순한 평균에 대한 예시를 작성하였지만 추후에 배울 여러가지 데이터 처리 기법들([PCA](https://angeloyeo.github.io/2019/07/27/PCA.html), [SVD](https://angeloyeo.github.io/2019/08/01/SVD.html), [선형 회귀](https://angeloyeo.github.io/2020/08/24/linear_regression.html), [독립성분분석](https://angeloyeo.github.io/2020/07/14/ICA.html) ...)등의 수많은 기법들이 위와 같이 데이터를 벡터로 생각하여 데이터가 처리된다는 점을 강조하고 싶다.
 
@@ -137,13 +137,13 @@ tags: 선형대수
 
 상수배와 벡터간의 합을 한번에 활용하면 다음 예시에서와 같이 두 개의 임의의 벡터에 대한 선형결합을 표현할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq18.png"> </p>
+$$\Rightarrow c_1\begin{bmatrix}1\\0 \end{bmatrix}+c_2\begin{bmatrix}0\\1 \end{bmatrix}$$
 
 선형 결합이라는게 단어가 어려워서 그렇지 사실은 상수배와 벡터간의 합을 한번에 조합해 표현한 것이다.
 
 그러면 이 단순한 상수배와 벡터간의 합인 선형 결합이 뭐가 그렇게 중요한걸까?
 
-위의 예시에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq19.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq20.png">은 각각이 모든 실수에 대응될 수 있는데, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq21.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq22.png">가 바뀌면서 얻게되는 선형결합의 결과는 2차원 실수 벡터 공간 상에 있는 모든 벡터들에 대응되게 된다.
+위의 예시에서 $c_1$, $c_2$은 각각이 모든 실수에 대응될 수 있는데, $c_1$, $c_2$가 바뀌면서 얻게되는 선형결합의 결과는 2차원 실수 벡터 공간 상에 있는 모든 벡터들에 대응되게 된다.
 
 
 <p align = "center">
@@ -151,7 +151,7 @@ tags: 선형대수
     <source src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-07-basic_vector_operation/pic4.mp4">
   </video>
   <br>
-  그림 4. 다양한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq23.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq24.png">에 대해 대응하는 2차원 실수 공간 상의 벡터
+  그림 4. 다양한 $c_1$과 $c_2$에 대해 대응하는 2차원 실수 공간 상의 벡터
 </p>
 
 이러한 벡터 간의 선형 결합이 어떤 벡터공간 전체에 대응된다는 개념을 공간 생성(span)이라고 하며, 이는 행렬 곱과 연립방정식의 해를 얻는 과정에 대한 새로운 관점을 제시해줄 아주 중요한 단서가 된다.
@@ -160,4 +160,4 @@ tags: 선형대수
    <iframe width="560" height="315" src="https://www.youtube.com/embed/R-XHrNq9Ff4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-[^1]: 어떤 책에서는 스칼라의 개념까지 포함해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq25.png">으로 쓰기도 한다. 여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-09-07-basic_vector_operation/eq26.png">는 스칼라.
+[^1]: 어떤 책에서는 스칼라의 개념까지 포함해 $(V, S, +, \cdot)$으로 쓰기도 한다. 여기서 $S$는 스칼라.

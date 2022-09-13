@@ -26,11 +26,11 @@ tags: 통계학
 
 스튜던트의 t-test에 대해 이해하기 전에 검정 통계량이라는 개념에 대해서 한번은 짚고 넘어가는 것이 좋을 것 같다.
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq1.png">표본과 표준 오차의 의미<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq2.png">편에서는 모집단, 모수, 표본, 표본 통계량에 대해서 알아보았고 마지막으로 표본 통계량은 추정치이므로 추정 오차가 발생하며 그것을 표준 오차(Standard Error)라고 부른다는 것을 공부해보았다.
+$\lt$표본과 표준 오차의 의미$\gt$편에서는 모집단, 모수, 표본, 표본 통계량에 대해서 알아보았고 마지막으로 표본 통계량은 추정치이므로 추정 오차가 발생하며 그것을 표준 오차(Standard Error)라고 부른다는 것을 공부해보았다.
 
 그렇다면 검정 통계량이란 무엇일까? 
 
-검정 통계량은 우리가 흔히 "통계적으로 비교 분석한다"라고 하면 사용하는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq3.png"> 등의 개념을 통칭하는 것인데,
+검정 통계량은 우리가 흔히 "통계적으로 비교 분석한다"라고 하면 사용하는 $t, F, z, \chi^2$ 등의 개념을 통칭하는 것인데,
 
 어렵게 생각할 것 없이 검정 통계량은 "통계적 가설의 진위 여부를 검정하기 위해" 표본으로 부터 계산하는 통계량이다.
 
@@ -56,13 +56,13 @@ tags: 통계학
 
 여기서 말하는 불확실도는 두 표본그룹의 평균간 차이의 불확실도를 의미한다.
 
-t-value의 의미는 위에서 확인한 \'통계적 지표\'와 같은 의미를 가진다. 즉, t-value가 말하는 것은 "이 정도 차이나고~! 그러면서 오류는 이정도야~!"라고 할 수 있다.
+t-value의 의미는 위에서 확인한 '통계적 지표'와 같은 의미를 가진다. 즉, t-value가 말하는 것은 "이 정도 차이나고~! 그러면서 오류는 이정도야~!"라고 할 수 있다.
 
 ## 수학적으로 t-value를 정의해보자.
 
-두 표본 그룹간의 차이는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq4.png">로 쓰면 좋겠고, 위에서 말한 불확실도는 두 표본 그룹간의 평균 차이에 관한 것이며 수학적으로는 표준오차로 생각할 수 있으므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq5.png">로 쓸 수 있다.
+두 표본 그룹간의 차이는 $\bar{X_1} - \bar{X_2}$로 쓰면 좋겠고, 위에서 말한 불확실도는 두 표본 그룹간의 평균 차이에 관한 것이며 수학적으로는 표준오차로 생각할 수 있으므로 $s_{\bar{X_1} - \bar{X_2}}$로 쓸 수 있다.
 
-이 \'차이의 지표\'에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq6.png">라는 이름을 붙이면 그림 1과 같은 식으로 쓸 수 있다.
+이 '차이의 지표'에 $t$라는 이름을 붙이면 그림 1과 같은 식으로 쓸 수 있다.
 
 <p align = "center">
     <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-02-13-Students_t_test/pic1.png">
@@ -72,27 +72,21 @@ t-value의 의미는 위에서 확인한 \'통계적 지표\'와 같은 의미�
 
 조금 더 식을 구체화시켜보면 다음과 같이 써나갈 수 있을 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq7.png"> <br> 식 (1) </p>
+$$t = \frac{\bar{X_1} - \bar{X_2}}{s_{\bar{X_1} - \bar{X_2}}}$$
 
-[//]:# (식 1)
+여기서 $s_{\bar{X_1} - \bar{X_2}}$에 대해서 조금 더 풀어서 생각해보자.
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq8.png">에 대해서 조금 더 풀어서 생각해보자.
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq9.png"> </p>
+$$ s_{\bar{X_1} - \bar{X_2}} = \sqrt{Var\left[{\bar{X_1} - \bar{X_2}}\right]}$$
 
 이고,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq10.png"> </p>
+$$Var\left[{\bar{X_1} - \bar{X_2}}\right] $$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq11.png"> <br> 식 (4) </p>
+$$ = Var[\bar{X_1}] + Var[\bar{X_2}]$$
 
-[//]:# (식 4)
+$$ = \frac{Var[X_1]}{n_1} + \frac{Var[X_2]}{n_2}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq12.png"> <br> 식 (5) </p>
-
-[//]:# (식 5)
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq13.png"> </p>
+$$= \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}$$
 
 이다.
 
@@ -100,49 +94,38 @@ t-value의 의미는 위에서 확인한 \'통계적 지표\'와 같은 의미�
 
 식 (4)에서
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq14.png"> <br> 식 (7) </p>
-
-[//]:# (식 7)
+$$\bar{X}_1 = \frac{1}{n_1}\sum_{i=1}^{n_1}X_i$$
 
 이므로
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq15.png"> <br> 식 (8) </p>
+$$Var[\bar{X}_1] = Var\left[\frac{1}{n_1}\sum_{i=1}^{n_1}X_i\right]$$
 
-[//]:# (식 8)
+여기서 $Var[aX]=a^2Var[X]$ 이므로,
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq16.png"> 이므로,
+$$= \frac{1}{n_1^2}Var\left[\sum_{i=1}^{n_1}X_i\right]$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq17.png"> <br> 식 (9) </p>
+$$=\frac{1}{n_1^2}Var\left[X_1+X_2+\cdots+X_{n_1}\right]$$
 
-[//]:# (식 9)
+여기서 $Var[X\pm Y] = Var[X] + Var[Y]$ 이므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq18.png"> <br> 식 (10) </p>
+$$=\frac{1}{n_1^2}\left(Var[X_1]+Var[X_2]+\cdots+Var[X_{n_1}]\right)$$
 
-[//]:# (식 10)
+여기서 $Var[X_1] = Var[X_2] = \cdots = Var[X_n] = s_1^2$ 이므로,
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq19.png"> 이므로,
+$$=\frac{1}{n_1^2}\times n_1\times s_1^2 = \frac{s_1^2}{n_1}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq20.png"> <br> 식 (11) </p>
 
-[//]:# (식 11)
+따라서, 식 (7)~(12)과 같은 방식을 $\bar{X_2}$에도 적용하면,
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq21.png"> 이므로,
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq22.png"> <br> 식 (12) </p>
-
-[//]:# (식 12)
-
-따라서, 식 (7)~(12)과 같은 방식을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq23.png">에도 적용하면,
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq24.png"> </p>
+$$ s_{\bar{X_1} - \bar{X_2}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
 
 로 쓸 수 있다.
 
 따라서 식(1)은 다시 쓰면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq25.png"> <br> 식 (14) </p>
-
-[//]:# (식 14)
+$$식(1) = \frac
+{\bar{X_1} - \bar{X_2}}
+{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
 
 ## t-value의 여러가지 variation
 
@@ -152,27 +135,31 @@ pooled standard deviation (혹은 pooled variance)라는 것은 두 집단의 �
 
 두 집단의 표준편차(혹은 분산)이 같은 경우에 대해서 (즉, pooled standard deviation을 사용한다고 했을 때), 두 가지의 케이스를 생각해볼 수 있다.
 
-첫번째로 두 표본 집단의 n 수가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq26.png">으로 동일하고 두 표본 집단의 분산이 같다고 가정할 수 있는 경우에는 다음과 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq27.png">을 쓸 수 있다.
+첫번째로 두 표본 집단의 n 수가 $n_1=n_2=n$으로 동일하고 두 표본 집단의 분산이 같다고 가정할 수 있는 경우에는 다음과 같이 $s_{\bar{X_1} - \bar{X_2}}$을 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq28.png"> <br> 식 (15) </p>
+$$식(1) \Rightarrow \frac{\bar{X_1} - \bar{X_2}}
+{\sqrt{\frac{s_p^2}{n}+\frac{s_p^2}{n}}}
+=\frac
+{\bar{X_1} - \bar{X_2}}
+{s_p\sqrt{\frac{2}{n}}}\quad\text{where}\quad s_p=\sqrt{\frac{s_1^2+s_2^2}{2}}$$
 
-[//]:# (식 15)
-
-즉, 식(15)는 식(14)에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq29.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq30.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq31.png">로 대체한 것으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq32.png">는 pooled standard deviation을 나타내고 있다.
+즉, 식(15)은 식(14)에서 $s_1$과 $s_2$를 $s_p$로 대체한 것으로 $s_p$는 pooled standard deviation을 나타내고 있다.
 
 두 번째로 두 표본 집단의 n수는 다르지만 두 표본 집단의 분산은 같다고 가정할 수 있는 경우에는 t-value를 다음과 같이 쓸 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq33.png"> <br> 식 (16) </p>
-
-[//]:# (식 16)
+$$식(1) \Rightarrow \frac{\bar{X_1} - \bar{X_2}}
+{\sqrt{\frac{s_p^2}{n_1}+\frac{s_p^2}{n_2}}}
+= \frac
+{\bar{X_1} - \bar{X_2}}
+{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\quad\text{where}\quad s_p=\sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}}$$
 
 식 (15), (16)의 수식은 복잡해 보이지만 사실은 표준 편차값을 pooled 처리 할 것이냐 아니냐에 따라 달린 문제이므로, 실제 연구나 분석에서 적용할 때에는 그 상황에 맞게 적절한 수식을 이용하면 될 것이다.
 
 ## 그냥 표준편차로만 나누면 안되나?
 
-식 (14)~(16)를 보면 그림 1에서 표현한 것에 비해서 식이 꽤 복잡해 보이고, 특히나 정규분포의 식 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq34.png">에 비해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq35.png">이라는 값이 복잡하게 들어가있어서 식 (14)~(16)만을 봤을 때에는 t-value에 대해 이해하기 어렵다.
+식 (14)~(16)를 보면 그림 1에서 표현한 것에 비해서 식이 꽤 복잡해 보이고, 특히나 정규분포의 식 $z=\frac{\bar{X}-\mu}{\sigma }$에 비해 $n$이라는 값이 복잡하게 들어가있어서 식 (14)~(16)만을 봤을 때에는 t-value에 대해 이해하기 어렵다.
 
-왜 t-value에는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq36.png">이 포함되어야 할까?
+왜 t-value에는 $n$이 포함되어야 할까?
 
 그 이유는 아래의 그림2를 보면 잘 이해할 수 있다.
 
@@ -211,7 +198,7 @@ pooled standard deviation (혹은 pooled variance)라는 것은 두 집단의 �
 
 사실 그림 3에서와 같은 샘플 추출 과정은 100번이 아니라 거의 무한하다 싶을 정도로 많은 경우의 수가 있을 수 있는데, 모집단의 수가 150이고 n=6인 표본 집단 두 개를 뽑는다고 했을 때 가능한 경우의 수는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-02-13-Students_t_test/eq37.png"> </p>
+$$_{150}C_{12} = 172,420,656,389,440,550\notag$$
 
 가지나 된다.
 

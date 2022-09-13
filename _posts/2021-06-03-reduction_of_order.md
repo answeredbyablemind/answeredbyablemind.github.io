@@ -21,23 +21,21 @@ tags: 미분방정식
 
 우리가 다루는 2계 선형 제차 미분방정식이 아래와 같은 꼴이라고 하자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq1.png"> <br> 식 (1) </p>
-
-[//]:# (식 1)
+$$ax''+bx'+cx = 0$$
 
 여기서 우리는 보조방정식을 얻고, 보조방정식의 근을 통해 고윳값을 확인한다고 공부하였다.
 
-그리고 특히, 보조방정식의 근이 중근인 경우는 중복되는 고윳값을 갖게 되는 경우인데, 가령 중복되는 고윳값을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq2.png">라고 하면 그 경우 아래와 같이 일반해를 선정할 수 있다고 언급한 바 있다.
+그리고 특히, 보조방정식의 근이 중근인 경우는 중복되는 고윳값을 갖게 되는 경우인데, 가령 중복되는 고윳값을 $\lambda$라고 하면 그 경우 아래와 같이 일반해를 선정할 수 있다고 언급한 바 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq3.png"> </p>
+$$x(t)=c_1e^{\lambda t}+c_2 te^{\lambda t}$$
 
-다시 말해, 이 솔루션 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq4.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq5.png"> 라는 해 하나만 주어졌을 때 또 다른 해는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq6.png">라고 놓으라고 말해주는 것과 같다.
+다시 말해, 이 솔루션 $x(t)$는 $e^{\lambda t}$ 라는 해 하나만 주어졌을 때 또 다른 해는 $te^{\lambda t}$라고 놓으라고 말해주는 것과 같다.
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq7.png"> 나 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq8.png">를 기저함수라고도 부르는데 이 내용에 대해서는 추후에 더 깊게 다루도록 하자. 앞으로는 기저함수라는 표현을 종종 쓰도록 하겠다.
+여기서 $e^{\lambda t}$ 나 $te^{\lambda t}$를 기저함수라고도 부르는데 이 내용에 대해서는 추후에 더 깊게 다루도록 하자. 앞으로는 기저함수라는 표현을 종종 쓰도록 하겠다.
 
 다시 말해, 기저 함수라는 용어를 사용한다면, 2계 미분방정식의 해는 두 개의 기저함수의 선형 결합으로 이루어지는데, 우리는 하나의 기저함수만 부여받은 경우를 생각하게 된 것이라고 말할 수 있다.
 
-그렇다면, 왜 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq9.png">라는 기저함수가 주어졌을 때 새로운 기저함수는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq10.png">라고 설정하면 문제가 풀리게 되는 걸까?
+그렇다면, 왜 $e^{\lambda t}$라는 기저함수가 주어졌을 때 새로운 기저함수는 $te^{\lambda t}$라고 설정하면 문제가 풀리게 되는 걸까?
 
 # 문제를 푸는 방법
 
@@ -47,21 +45,21 @@ tags: 미분방정식
 
 (유도 과정의 수식 전개가 복잡해 보이기 때문에 이런 구성을 선택했다.)
 
-가령 식 (1)과 같은 방정식에 대해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq11.png">라는 해 하나가 주어졌을 때,
+가령 식 (19)과 같은 방정식에 대해 $x_1(t)$라는 해 하나가 주어졌을 때,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq12.png"> </p>
+$$x_2(t) = ux_1(t)$$
 
 라고 가정하자.
 
 그리고,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq13.png"> </p>
+$$u = \int U dt$$
 
 이고,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq14.png"> </p>
+$$U = \frac{1}{x_1^2}\exp\left(-\int p(t) dt\right)$$
 
-인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq15.png">를 찾는 것을 목적으로 하여 문제를 풀어보도록 하자.
+인 $U$를 찾는 것을 목적으로 하여 문제를 풀어보도록 하자.
 
 적분상수들은 일반해를 계산할 때 기저해 두 개를 선형결합 하는 과정에서 의미가 없어지기 때문에 신경쓰지 않아도 괜찮다.
 
@@ -69,7 +67,7 @@ tags: 미분방정식
 
 아래의 초기값 문제를 해결하시오.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq16.png"> </p>
+$$x''-4x'+4x = 0 \quad x(0) = 12 \quad x'(0) = -3$$
 
 ---
 
@@ -79,53 +77,53 @@ tags: 미분방정식
 
 보조 방정식을 풀면 기저해 중 하나는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq17.png"> </p>
+$$x_1(t)=e^{2t}$$
 
 라는 것을 알 수 있다.
 
-따라서, 또 다른 기저해인 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq18.png">는 다음과 같다고 설정하자.
+따라서, 또 다른 기저해인 $x_2(t)$는 다음과 같다고 설정하자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq19.png"> </p>
+$$x_2(t) = ux_1(t)$$
 
-그리고 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq20.png"> </p>와 같이 설정하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq21.png">는
+그리고 $u=\int U dt$와 같이 설정하고 $U$는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq22.png"> </p>
+$$U = \frac{1}{(e^{2t})^2}\exp\left(-\int -4 dt\right)$$
 
 와 같다.
 
-따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq23.png">를 조금 더 계산하면,
+따라서, $U$를 조금 더 계산하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq24.png"> </p>
+$$U = \frac{1}{e^{4t}}\exp(4t)=1$$
 
 임을 알 수 있다.
 
 그리고,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq25.png"> </p>
+$$u=\int U dt$$
 
 이므로,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq26.png"> </p>
+$$u(t) = t$$
 
 임을 알 수 있다.
 
-따라서, 또 다른 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq27.png">임을 알 수 있게 된다.
+따라서, 또 다른 기저 $x_2(t)= ux_1(t) = te^{2t}$임을 알 수 있게 된다.
 
 따라서 일반해는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq28.png"> </p>
+$$x(t) = c_1e^{2t}+c_2te^{2t}$$
 
 이고, 초기값을 이용하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq29.png"> </p>
+$$x(0) = c_1 = 12$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq30.png"> </p>
+$$x'(t) = 2c_1e^{2t}+c_2e^{2t}+2c_2te^{2t}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq31.png"> </p>
+$$x'(0) = 2c_1+c_2= -3$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq32.png"> </p>
+$$c_2 = -3-24 =-27$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq33.png"> </p>
+$$\therefore x(t) = 12e^{2t}-27te^{2t}$$
 
 와 같이 문제를 풀 수 있게 된다.
 
@@ -139,71 +137,67 @@ Reduction of order 공식을 유도하는 방법은 식이 깔끔하게 이해�
 
 아래와 같은 조금 더 일반적인 형태의 2계 제차 선형 미분방정식을 푼다고 생각해보자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq34.png"> <br> 식 (19) </p>
+$$x''+p(t)x'+q(t)x = 0 % 식 (19)$$
 
-[//]:# (식 19)
+그리고 여기서 기저 함수 $x_1(t)$는 주어져있다고 하자.
 
-그리고 여기서 기저 함수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq35.png">는 주어져있다고 하자.
-
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq36.png">라는 꼴을 띈다고 가정하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq37.png">를 구할 수 있을지 알아보자.
+$x_2(t) = u(t)x_1(t)$라는 꼴을 띈다고 가정하고 $u$를 구할 수 있을지 알아보자.
 
 여기서 왜 그런 가정을 하냐?라고 묻는다면 특별히 그래야만 하는 이유는 없다. 
 
 미분방정식에서는 해가 유일하게 존재함이 보장된다면 어떤 방식의 아이디어로 방정식을 풀더라도 해만 나오면 그 방법이 정답이다. 다시 말해 해를 구하기 위한 아이디어의 싸움일 뿐이다.
 
-다만, <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq38.png"> </p>라고 두면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq39.png">와는 독립적인 기저 함수를 얻을 수 있기 때문에 이렇게 결정하는 것은 타당한 접근이라고 볼 수는 있다.
+다만, $x_2(t)=ux_1(t)$라고 두면 $x_1(t)$와는 독립적인 기저 함수를 얻을 수 있기 때문에 이렇게 결정하는 것은 타당한 접근이라고 볼 수는 있다.
 
 (독립적인 기저 여부를 판단하기 위해선 [Wronskian](https://angeloyeo.github.io/2019/10/10/Wronskian.html)을 적용할 수 있다.)
 
 ---
 
-여기서 주목해야 할 부분 중 하나는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq40.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq41.png">는 모두 2계 제차 미분방정식의 솔루션의 일부분이므로 아래의 두 식이 모두 만족된다는 것이다.
+여기서 주목해야 할 부분 중 하나는 $x_1(t)$와 $x_2(t)$는 모두 2계 제차 미분방정식의 솔루션의 일부분이므로 아래의 두 식이 모두 만족된다는 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq42.png"> </p>
+$$x_1''+p(t)x_1'+q(t)x_1= 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq43.png"> </p>
+$$x_2''+p(t)x_2'+q(t)x_2= 0$$
 
-따라서 우리는 방금 언급 된 식 중 두 번째 식을 사용하기 위해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq44.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq45.png">을 구해보자. 
+따라서 우리는 방금 언급 된 식 중 두 번째 식을 사용하기 위해 $x_2'$과 $x_2''$을 구해보자. 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq46.png"> </p>
+$$x_2' = u'x_1 + ux'_1$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq47.png"> </p>
+$$x_2'' = u''x_1+u'x_1'+u'x_1' +ux_1''$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq48.png"> </p>
+$$=u''x_1+2u'x_1'+ux_1''$$
 
-따라서 원래의 식에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq49.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq50.png">를 대입하면,
+따라서 원래의 식에 $x_2'$와 $x_2{''}$를 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq51.png"> </p>
+$$x_2''+p(t)x_2'+q(t)x_2=0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq52.png"> </p>
+$$\Rightarrow u''x_1+2u'x_1'+ux_1''+p(t)(u'x_1+ux_1')+q(t)ux_1=0$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq53.png">와 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq54.png">, u에 대하여 식을 묶어 보자.
+여기서 $u{''}$와 $u$, u에 대하여 식을 묶어 보자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq55.png"> </p>
+$$\Rightarrow u''(x_1) + u'(2x_1'+p(t)x_1)+u(x_1''+p(t)x_1'+q(t)x_1)=0$$
 
-앞서 언급한 바와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq56.png">이므로
+앞서 언급한 바와 같이 $(x_1{''}+p(t)x_1'+q(t)x_1)=0$이므로
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq57.png"> </p>
+$$\Rightarrow u''x_1 + u'(2x_1'+p(t)x_1) = 0$$
 
 이다.
 
 이 식을 다시 쓰면
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq58.png"> </p>
+$$x_1u''+(2x_1'+p(t)x_1)u'=0$$
 
-이 되고, 양변을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq59.png">로 나눠주면,
+이 되고, 양변을 $x_1$로 나눠주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq60.png"> </p>
+$$\Rightarrow u'' + \left(2\frac{x_1'}{x_1}+p(t)\right)u'=0$$
 
 과 같다.
 
-여기서 우리는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq61.png">을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq62.png">로 바꿔써보자.
+여기서 우리는 $u'$을 $U$로 바꿔써보자.
 
 그러면 식은 
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq63.png"> <br> 식 (31) </p>
-
-[//]:# (식 31)
+$$\Rightarrow U' + \left(2\frac{x_1'}{x_1}+p(t)\right)U=0 % 식 (31)$$
 
 가 된다.
 
@@ -211,29 +205,29 @@ Reduction of order 공식을 유도하는 방법은 식이 깔끔하게 이해�
 
 식 (31)을 잘 보면 [변수분리법](https://angeloyeo.github.io/2021/05/06/separable_differential_equations.html)을 이용해 풀 수 있는 간단한 형태임을 알 수 있다.
 
-따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq64.png">에 대한 식을 모두 좌변으로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq65.png">에 대한 식을 모두 우변으로 옮기면 다음과 같다.
+따라서, $U$에 대한 식을 모두 좌변으로, $t$에 대한 식을 모두 우변으로 옮기면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq66.png"> </p>
+$$\Rightarrow \frac{1}{U}dU=-\left(2\frac{x_1'}{x_1}+p(t)\right)dt$$
 
 여기서 양변을 적분해주면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq67.png"> </p>
+$$\Rightarrow \ln(U)=-2\ln(x_1)-\int p(t)dt$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq68.png"> </p>
+$$\therefore U=\exp\left(-2\ln(x_1)-\int p(t) dt\right)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq69.png"> </p>
+$$=\exp(-2\ln(x_1))\exp\left(-\int p(t) dt\right)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq70.png"> </p>
+$$=\frac{1}{x_1^2}\exp\left(-\int p(t) dt\right)$$
 
-과 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq71.png">를 구할 수 있음을 알 수 있다.
+과 같이 $U$를 구할 수 있음을 알 수 있다.
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq72.png">이므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq73.png">는 다음과 같이 계산할 수 있는 것이다.
+여기서 $U=u'$이므로 $u$는 다음과 같이 계산할 수 있는 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq74.png"> </p>
+$$u=\int U dt$$
 
-그리고 새로운 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq75.png">는
+그리고 새로운 기저 $x_2(t)$는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-06-03-reduction_of_order/eq76.png"> </p>
+$$x_2(t)=ux_1(t)$$
 
 이다.
 

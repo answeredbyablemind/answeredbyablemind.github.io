@@ -27,9 +27,7 @@ tags: 미분방정식
 
 [위상 평면 (phase plane)](https://angeloyeo.github.io/2021/05/12/phase_plane.html) 편에서 선형 연립 미분방정식은 아래와 같이 행렬을 이용해 표현할 수 있음을 확인하였다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq1.png"><br> 식 (1)  </p>
-
-[//]:# (식 1)
+$$\begin{bmatrix}dx/dt \\ dy/dt\end{bmatrix} = \begin{bmatrix}a & b \\ c & d \end{bmatrix}\begin{bmatrix}x \\ y \end{bmatrix} % 식 (1)$$
 
 그리고 위 식의 행렬로부터 고윳값과 고유벡터를 계산해보고 고윳값, 고유벡터의 값에 따른 phase plane의 형태 변화에 대해 알아보았다.
 
@@ -79,51 +77,43 @@ tags: 미분방정식
 
 고윳값, 고유벡터의 정의로부터 특성방정식을 다시 얻어내보자면 다음과 같다.
 
-임의의 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq2.png">와 고윳값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq3.png">, 고유벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq4.png">에 대해서 다음을 만족해야 한다.
+임의의 행렬 $A$와 고윳값 $\lambda$, 고유벡터 $v$에 대해서 다음을 만족해야 한다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq5.png"> </p>
+$$A\vec{v} = \lambda \vec{v} % 식 (2)$$
 
 위 식에서 우변은 다음과 같이 고쳐 쓸 수도 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq6.png"> </p>
+$$\lambda \vec{v} = \lambda \vec{v} I % 식 (3)$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq7.png">는 단위 행렬(identity matrix)이다.
+여기서 $I$는 단위 행렬(identity matrix)이다.
 
 즉, 고윳값, 고유벡터에 대한 식은 다음과 같이 이항해서 쓸 수도 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq8.png"> </p>
+$$A\vec{v} - \lambda \vec{v} I = 0 % 식 (4)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq9.png"> <br> 식 (5) </p>
+$$\Rightarrow (A-\lambda I)\vec{v} = 0 % 식 (5)$$
 
-[//]:# (식 5)
+만약 $A$ 행렬이 아래와 같은 $2\times 2$행렬이라면,
 
-만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq10.png"> 행렬이 아래와 같은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq11.png">행렬이라면,
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq12.png"> <br> 식 (6) </p>
-
-[//]:# (식 6)
+$$A = \begin{bmatrix}a & b \\c & d\end{bmatrix} % 식 (6)$$
 
 식 (5)는 다음과 같이 바뀔 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq13.png"> <br> 식 (7) </p>
+$$\text{식 (5)}\Rightarrow \begin{bmatrix}a-\lambda & b \\ c & d-\lambda\end{bmatrix}\vec{v} = 0 % 식 (7)$$
 
-[//]:# (식 7)
-
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq14.png">는 영벡터(zero vector)라면 고유벡터를 찾을 이유가 없는 trivial solution을 얻게 되는 것이므로,
+여기서 $\vec{v}$는 영벡터(zero vector)라면 고유벡터를 찾을 이유가 없는 trivial solution을 얻게 되는 것이므로,
 
 trivial solution이 아닌 의미있는 solution을 얻기위해선 식 (7)의 좌변에 있는 행렬이 역행렬을 가지지 않아야 한다.
 
-따라서 아래의 조건을 만족할 때 고유벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq15.png">가 trivial solution이 아니게 된다고 할 수 있다.
+따라서 아래의 조건을 만족할 때 고유벡터 $\vec{v}$가 trivial solution이 아니게 된다고 할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq16.png"> </p>
+$$det\left(\begin{bmatrix}a-\lambda & b \\ c & d-\lambda\end{bmatrix}\right) = 0 % 식 (8)$$
 
 행렬식의 정의에 따라 이 식을 조금 더 풀어보면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq17.png"> </p>
+$$\Rightarrow (a-\lambda)(d-\lambda)-bc = 0  % 식 (9)$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq18.png"> <br> 식 (10) </p>
-
-[//]:# (식 10)
+$$\Rightarrow \lambda ^2 - (a+d)\lambda + ad-bc = 0 % 식 (10)$$
 
 와 같다. 이 방정식을 특성방정식이라고 부른다.
 
@@ -131,25 +121,23 @@ trivial solution이 아닌 의미있는 solution을 얻기위해선 식 (7)의 �
 
 ## Trace & Determinant
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq19.png">는 원래의 식 (6) 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq20.png">의 대각합(trace)를 의미하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq21.png">는 식 (6) 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq22.png">의 행렬식(determinant)를 의미한다.
+$a+d$는 원래의 식 (6) 행렬 $A$의 대각합(trace)를 의미하고 $ad-bc$는 식 (6) 행렬 $A$의 행렬식(determinant)를 의미한다.
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq23.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq24.png">라고 치환하고 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq25.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq26.png">라고 치환한 뒤 식 (10)에 근의 공식을 적용하면 아래와 같이 특성방정식의 해(solution)인 고윳값을 계산할 수 있다.
+$a+d$를 $T$라고 치환하고 $ad-bc$를 $D$라고 치환한 뒤 식 (10)에 근의 공식을 적용하면 아래와 같이 특성방정식의 해(solution)인 고윳값을 계산할 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq27.png"> <br> 식 (11) </p>
-
-[//]:# (식 11)
+$$\lambda_{1, 2} = \frac{T\pm\sqrt{T^2-4D}}{2} % 식 (11)$$
 
 앞서 phase plane에 대해 복습할 때 고윳값을 어떻게 구별했던가?
 
 두 고윳값이 모두 실수인 경우, 복소수인경우, 중근인 경우로 크게 구별했다.
 
-따라서, 우리는 식 (11)의 제곱근 안에 있는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq28.png">의 부호를 확인함으로써 두 고윳값이 실수인지, 복소수인지, 중근을 갖는지 확인할 수 있게 된다.
+따라서, 우리는 식 (11)의 제곱근 안에 있는 $T^2-4D$의 부호를 확인함으로써 두 고윳값이 실수인지, 복소수인지, 중근을 갖는지 확인할 수 있게 된다.
 
 다시 말해,
 
-* <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq29.png"> 이면 두 고윳값은 모두 실수이다.
-* <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq30.png"> 이면 두 고윳값은 모두 복소수이다.
-* <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq31.png"> 이면 중근 고윳값을 갖는다.
+* $T^2-4D > 0$ 이면 두 고윳값은 모두 실수이다.
+* $T^2-4D < 0$ 이면 두 고윳값은 모두 복소수이다.
+* $T^2-4D = 0$ 이면 중근 고윳값을 갖는다.
 
 와 같이 정리할 수 있다.
 
@@ -157,21 +145,21 @@ trivial solution이 아닌 의미있는 solution을 얻기위해선 식 (7)의 �
 
 우리는 여기서 한발 더 나아가 trace와 determinant 값을 변수로 하는 평면을 생각해낼 수도 있다.
 
-가령, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq32.png">축이 trace 값, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq33.png">축이 determinant 값을 나타내는 평면을 생각한다고 하면
+가령, $x$축이 trace 값, $y$축이 determinant 값을 나타내는 평면을 생각한다고 하면
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq34.png">이라는 곡선을 기준으로 고윳값의 실수, 복소수, 중근 여부를 판별할 수 있게 된다.
+$D=\frac{1}{4}T^2$이라는 곡선을 기준으로 고윳값의 실수, 복소수, 중근 여부를 판별할 수 있게 된다.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-17-trace_determinant_plane/pic5.png">
   <br>
-  그림 5. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq35.png">이라는 조건에 해당하는 곡선
+  그림 5. $D = 1/4 T^2$이라는 조건에 해당하는 곡선
 </p>
 
 다시 말해 식 (1)과 같이 연립 미분방정식이 주어져있고, 행렬의 대각합(T)과 행렬식(D)의 값을 계산한 뒤, Trace-Determinant 평면 위에 (T,D) 값을 확인한 뒤, 그 점의 위치를 그림 5에서 보여주고 있는 곡선의 위치와 비교해보는 것이다.
 
 만약 (T,D)가 곡선보다 위에 있다면 두 고윳값이 모두 복소수가 된다.
 
-(잘 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq36.png"> 라는 조건은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2021-05-17-trace_determinant_plane/eq37.png">과 같은 것이다.)
+(잘 생각해보면 $T^2-4D < 0$ 라는 조건은 $D>\frac{1}{4}T^2$과 같은 것이다.)
 
 또, (T,D)가 곡선보다 아래에 있으면 두 고윳값은 모두 실수가 된다.
 

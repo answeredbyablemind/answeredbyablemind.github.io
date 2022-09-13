@@ -32,70 +32,71 @@ tags: 신호처리
 
 impulse response에 대한 이해가 충분하다고 생각된다면 이 파트는 건너뛰어도 무관하다.
 
-임의의 이산신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq1.png">가 다음과 같은 형태의 신호라고 생각해보자.
+임의의 이산신호 $x[n]$가 다음과 같은 형태의 신호라고 생각해보자.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic_discrete_time_signal.png">
   <br>
-  그림 2. 임의의 이산신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq2.png">
+  그림 2. 임의의 이산신호 $x[n]$
 </p>
 
 참고로 빨간색의 파선은 시간샘플링이 수행되기 전의 원래 함수라고 생각하면 될 것이다.
 
-이 이산신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq3.png">은 모든 정수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq4.png">에 대한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq5.png">값을 나열한 것이라고도 볼 수 있다. 그런데, 이 값들은 시간 순서대로 나와야 하므로, 아래 그림과 같이 각각의 함수 값(<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq6.png">)들을 가지는 impulse 들이 선형적으로 합해진 것으로도 볼 수 있을 것이다.
+이 이산신호 $x[n]$은 모든 정수 $n$에 대한 $x[n]$값을 나열한 것이라고도 볼 수 있다. 그런데, 이 값들은 시간 순서대로 나와야 하므로, 아래 그림과 같이 각각의 함수 값($x[n]$)들을 가지는 impulse 들이 선형적으로 합해진 것으로도 볼 수 있을 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-10-21-Savitzky_Golay/pic.png">
   <br>
-  그림 3. 임의의 이산신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq7.png">
+  그림 3. 임의의 이산신호 $x[n]$
 </p>
 
 그림 3을 수식으로 표현하면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq8.png"> <br> 식 (1) </p>
+$$x[n] = \cdots + x[-2]\delta[n+2]+ x[-1]\delta[n+1] + x[0]\delta[n+0] + x[1]\delta[n-1] + + x[2]\delta[n-2]+\cdots$$
 
-[//]:# (식 1)
+$$=\sum_{k=-\infty}^\infty x[k]\delta[n-k]$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq9.png"> </p>
+여기서 $\delta[n]$은 아래와 같이 정의되는 함수이다.
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq10.png">은 아래와 같이 정의되는 함수이다.
-
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq11.png"> <br> 식 (3) </p>
+$$\delta[n] = 
+  \begin{cases}
+     1 && \text{ if}\quad n = 0
+  \\ 0 && \text{otherwise }
+  \end{cases} $$
 
 [//]:# (식 3)
 
-여기서 우리가 어떤 선형 시스템을 생각한다고 하자. 이 시스템의 입력이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq12.png">, 출력이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq13.png">이라고 해보자. 출력과 입력의 관계를 연결시켜주는 선형시스템을 선형연산자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq14.png">로 대체해 생각한다면 입출력 관계는 다음과 같이 생각할 수 있다. (여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq15.png">의 아랫첨자 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq16.png">은 이 연산자가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq17.png">에 대한 연산자라는 의미이다.)
+여기서 우리가 어떤 선형 시스템을 생각한다고 하자. 이 시스템의 입력이 $x[n]$, 출력이 $y[n]$이라고 해보자. 출력과 입력의 관계를 연결시켜주는 선형시스템을 선형연산자 $O_n(\cdot)$로 대체해 생각한다면 입출력 관계는 다음과 같이 생각할 수 있다. (여기서 $O_n$의 아랫첨자 $n$은 이 연산자가 $n$에 대한 연산자라는 의미이다.)
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq18.png"> <br> 식 (4) </p>
-
-[//]:# (식 4)
-
+$$y[n] = O_n(x[n])$$
 
 식 (4)에 식 (1)을 대입하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq19.png"> </p>
+$$\Rightarrow O_n\left(\sum_{k=-\infty}^\infty x[k]\delta[n-k]\right)$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq20.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq21.png">에 대한 선형연산자이므로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq22.png">는 상수로 취급할 수 있다. 따라서,
+여기서 $O_n{\cdot}$은 $n$에 대한 선형연산자이므로 $x[k]$는 상수로 취급할 수 있다. 따라서,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq23.png"> </p>
+$$\Rightarrow \sum_{k=-\infty}^{\infty}x[k]O_n\left(\delta[n-k]\right)$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq24.png">을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq25.png">이라고 정의하자.
+여기서 $O_n(\delta[n])$을 $h[n]$이라고 정의하자.
 
-이 때 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq26.png">을 impulse response라고 부른다.
+이 때 $h[n]$을 impulse response라고 부른다.
 
 그러면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq27.png"> <br> 식 (7) </p>
+$$\Rightarrow \sum_{k=-\infty}^{\infty}x[k]h[n-k]$$
 
 [//]:# (식 7)
 
-만약 impulse response <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq28.png">의 길이가 다음과 같이 유한하다고 생각해보자.
+만약 impulse response $h[n]$의 길이가 다음과 같이 유한하다고 생각해보자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq29.png"> </p>
+$$h[n] = \begin{cases}
+  h[n] && \text{ if } -M\leq n \leq M \\ 0 && \text{otherwise}
+\end{cases}$$
 
-그러면 다음과 같이 식 (7)의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq30.png">을 쓸 수 있게 된다.
+그러면 다음과 같이 식 (7)의 $y[n]$을 쓸 수 있게 된다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq31.png"> <br> 식 (9) </p>
+$$y[n] = \sum_{k=-M}^{M}x[k]h[n-k]$$
 
 [//]:# (식 9)
 
@@ -116,7 +117,11 @@ impulse response에 대한 이해가 충분하다고 생각된다면 이 파트�
 
 moving average를 취한다는 것은 아래와 같은 impulse response를 신호와 convolution 시켜준다는 것을 의미한다고도 생각할 수 있다. 가령 M차 moving average라면 impulse response는 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq32.png"> </p>
+$$h[n] = \begin{cases}
+1/M && \text{ for } n = 0, 1, \cdots, M-1 \\
+0 && \text{otherwise}
+
+\end{cases}$$
 
 여기서 moving average의 단점에 대해 금방 캐치할 수 있는 것은 moving average는 평균값을 이용한다는 점인데, 평균값은 outlier에 굉장히 취약하게 반응한다는 것이 잘 알려져 있다. 이런 이유로 어떤 application에서는 평균값 대신에 중위값(median)을 사용하는 경우도 왕왕 있다.
 
@@ -142,118 +147,134 @@ Savitzky-Golay filter(S-G filter)는 이러한 회귀모델을 이용한 smoothi
 
 # 유도 과정
 
-지금부터 다루는 신호들은 모두 디지털 신호라고 가정하고, 시간 샘플을 앞으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq33.png">이라고 표현하도록 하자.
+지금부터 다루는 신호들은 모두 디지털 신호라고 가정하고, 시간 샘플을 앞으로 $n$이라고 표현하도록 하자.
 
-우리가 원하는 것은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq34.png">의 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq35.png">을 적절한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq36.png">차 회귀모델 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq37.png">으로 대체하는 것이다.
+우리가 원하는 것은 $-M\leq n \leq M$의 신호 $x[n]$을 적절한 $N$차 회귀모델 $p(n)=\sum_{k=0}^{N}a_kn^k$으로 대체하는 것이다.
 
-즉, 회귀모델을 이용해 smoothing 하게되어 나오게 되는 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq38.png">은 다음과 같다.
+즉, 회귀모델을 이용해 smoothing 하게되어 나오게 되는 신호 $p(n)$은 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq39.png"> </p>
+$$p(n) = a_0 + a_1 n+ a_2 n^2 + \cdots a_Nn^N$$
 
-이게 무슨 말인가 하면, 시간 샘플 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq40.png">을 중심으로 왼쪽으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq41.png">개, 오른쪽으로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq42.png">개의 신호를 획득하고, 이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq43.png">의 길이의 신호를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq44.png">차 회귀모델로 대체하겠다는 것이다.
+이게 무슨 말인가 하면, 시간 샘플 $0$을 중심으로 왼쪽으로 $-M$개, 오른쪽으로 $+M$개의 신호를 획득하고, 이 $2M+1$의 길이의 신호를 $N$차 회귀모델로 대체하겠다는 것이다.
 
 [//]:# (신호를 다항 회귀모델로 대체하는 그림 그릴 것)
 
-굳이 시간 샘플이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq45.png">인 값을 중심으로 하는 신호에 대해 분석하고자 하는 것은 우리가 결국 하고 싶은 것은 회귀모델을 가지고 smoothing 해주려고 할 때 필요한 impulse response 이기 때문이다. impulse response를 이용해서 원래의 신호에 convolution을 해주면 결국 smoothing을 수행할 수 있다.
+굳이 시간 샘플이 $0$인 값을 중심으로 하는 신호에 대해 분석하고자 하는 것은 우리가 결국 하고 싶은 것은 회귀모델을 가지고 smoothing 해주려고 할 때 필요한 impulse response 이기 때문이다. impulse response를 이용해서 원래의 신호에 convolution을 해주면 결국 smoothing을 수행할 수 있다.
 
-이제 이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq46.png"> 길이의 신호를 모델링 해 줄 가장 적절한 회귀모델 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq47.png">은 아래와 같이 원래의 신호와의 에러를 가장 작게 해줄 수 있는 계수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq48.png">들로 구성될 것이다.
+이제 이 $2M+1$ 길이의 신호를 모델링 해 줄 가장 적절한 회귀모델 $p(n)$은 아래와 같이 원래의 신호와의 에러를 가장 작게 해줄 수 있는 계수 $a_k \text{ where }k =0 ,1 ,\cdots, N$들로 구성될 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq49.png"> </p>
+$$\epsilon_N = \sum_{n=-M}^{M}\left(p(n)-x[n]\right)^2$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq50.png"> </p>
+$$=\sum_{n=-M}^{M}\left(\sum_{k=0}^Na_kn^k - x[n]\right)^2$$
 
-편미분을 통해 에러를 최소화 할 수 있는 계수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq51.png">을 찾을 수 있다.
+편미분을 통해 에러를 최소화 할 수 있는 계수 $a_i\text{ for }i=0,1,\cdots,N$을 찾을 수 있다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq52.png"> </p>
+$$\frac{\partial\epsilon_N}{\partial a_i}=\sum_{n=-M}^{M}2\left(\sum_{k=0}^{N}a_kn^k-x[n]\right)n^i = 0\notag$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq53.png"> </p>
+$$\text{ for }i=0,1,\cdots,N$$
 
 위 식을 조금 더 정리하면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq54.png"> </p>
+$$\sum_{n=-M}^{M}n^i\sum_{k=0}^{N}a_kn^k-\sum_{n=-M}^{M}n^ix[n] = 0$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq55.png"> <br> 식 (15) </p>
+$$\Rightarrow \sum_{n=-M}^{N}\sum_{k=0}^{N}n^{i+k}a_k=\sum_{n=-M}^{M}n^ix[n]$$
 
 [//]:# (식 15)
 
-이제 식 (15)를 행렬을 이용해 표현하기 위해 아래와 같은 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq56.png">를 정의하자.
+이제 식 (15)를 행렬을 이용해 표현하기 위해 아래와 같은 행렬 $A$를 정의하자.
 
-<img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq57.png">의 dimension을 갖는 어떤 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq58.png">를 다음과 같이 정의하도록 하자.
+$(2M+1)\times(N+1)$의 dimension을 갖는 어떤 행렬 $A$를 다음과 같이 정의하도록 하자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq59.png"> </p>
+$$A = \lbrace a_{n, i} \rbrace = \lbrace n^i \rbrace\notag$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq60.png"> </p>
+$$\text{where }-M\leq n \leq M \text{ and } i=0,1,\cdots,N$$
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq61.png">의 표시는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq62.png">번째 행 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq63.png">번째 열의 원소가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq64.png">와 같이 정의한다는 것을 의미한다.
+여기서 $\lbrace a_{n,i}\rbrace$의 표시는 $n$번째 행 $i$번째 열의 원소가 $n^i$와 같이 정의한다는 것을 의미한다.
 
-참고로, 원소별로 쓰면 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq65.png">는 다음과 같다[^1].
+참고로, 원소별로 쓰면 행렬 $A$는 다음과 같다[^1].
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq66.png"> </p>
+$$A = \begin{bmatrix}
+  (-M)^0 && (-M)^1 && \cdots && (-M)^N \\\\
+  (-M+1)^0 && (-M+1)^1 && \cdots && (-M+1)^N \\\\
+  \vdots && \vdots && \vdots && \vdots \\\\
+  0^0 && 0^1 && \cdots && 0^N \\\\
+  1^0 && 1^1 && \cdots && 1^N \\\\
+  \vdots && \vdots && \ddots && \vdots \\\\
+  M^0 && M^1 && \cdots && M^N
+\end{bmatrix}$$
 
 [^1]: 잘 보면 행렬 A는 전형적인 [반데르몽드 행렬](https://en.wikipedia.org/wiki/Vandermonde_matrix)이다.
 
 또, 식 (15)를 행렬을 이용해 표현하기 위해 필요한 벡터들을 추가로 몇개 쓰자면,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq67.png"> </p>
+$$\vec a = [a_0, a_1, a_N]^T$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq68.png"> </p>
+$$\vec x = [x[-M], \cdots, x[-1], x[0], x[1], \cdots, x[M]]^T$$
 
 이다.
 
-이제 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq69.png">를 이용해 식 (x)를 행렬로 쓰면 다음과 같다.
+이제 $A, \vec{a}, \vec{x}$를 이용해 식 (x)를 행렬로 쓰면 다음과 같다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq70.png">  <br> 식 (20)</p>
+$$식(15)\Rightarrow A^TA\vec{a} = A^T \vec{x}$$
 
 [//]:# (식 20)
 
-이 과정을 잘 이해하기 위해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq71.png">를 계산해보면, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq72.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq73.png">번째 행, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq74.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq75.png">번째 열은 각각
+이 과정을 잘 이해하기 위해 $A^TA$를 계산해보면, $A^T$의 $i$번째 행, $A$의 $k$번째 열은 각각
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq76.png"> </p>
+$$A^T_{(i,:)}=[(-M)^i, (-M+1)^i, \cdots, M^i]$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq77.png"> </p>
+$$A_{(:, k)} = [(-M)^k, (-M+1)^k, \cdots, M^k]^T$$
 
-이므로, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq78.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq79.png">번째 행, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq80.png">번째 열의 원소는
+이므로, $A^TA$의 $i$번째 행, $k$번째 열의 원소는
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq81.png"> </p>
+$$A^TA = \lbrace a_{i,k}\rbrace = \left\lbrace \sum_{n=-M}^{M}(n)^{i+k}\right\rbrace$$
 
-임을 알 수 있고, 또 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq82.png">의 경우,
+임을 알 수 있고, 또 $A^T\vec{x}$의 경우,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq83.png"> </p>
+$$A^T\vec{x}=
+\begin{bmatrix}
+  (-M)^0 && (-M+1)^0 && \cdots && 0^0 && 1^0 && \cdots && M^0 \\\\
+  (-M)^1 && (-M+1)^1 && \cdots && 0^1 && 1^1 && \cdots && M^1 \\\\
+  \vdots && \vdots && \vdots && \vdots && \vdots && \vdots && \vdots \\\\
+  (-M)^N && (-M+1)^N && \cdots && 0^N && 1^N && \cdots && M^N
+  \end{bmatrix}
+  
+\begin{bmatrix}
+x[-M]\\ \vdots \\ x[-1] \\ x[0] \\ x[1] \\ \vdots \\ x[M]
+\end{bmatrix}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq84.png"> </p>
+$$=\begin{bmatrix}\sum_{n=-M}^{M}n^0x[n] \\\\\sum_{n=-M}^{M}n^1x[n] \\\\ \vdots \\\\\sum_{n=-M}^{M}n^Nx[n]\end{bmatrix}$$
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq85.png"> </p>
+$$=\sum_{n=-M}^{M}\begin{bmatrix}n^0 \\n^1 \\ \vdots \\ n^N \end{bmatrix}x[n]$$
 
 임을 알 수 있다.
 
 
-그러면 식 (20)을 통해 계수 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq86.png">를 계산할 수 있다[^2].
+그러면 식 (20)을 통해 계수 벡터 $\vec{a}$를 계산할 수 있다[^2].
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq87.png"> </p>
+$$\vec{a} = (A^TA)^{-1}A^Tx$$
 
 그리하여 얻은 결과를 다음과 같이 정리하자.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq88.png"> </p>
+$$(A^TA)^{-1}A^Tx = Hx$$
 
 [^2]: 잘 보면 이 결과는 normal equation의 해와 같다.
 
-따라서, 첫 번째 계수 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq89.png">는 다음과 같이 계산할 수 있을 것이다.
+따라서, 첫 번째 계수 $a_0$는 다음과 같이 계산할 수 있을 것이다.
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq90.png"> <br> 식 (29) </p>
+$$a_0 = H_{(1,:)}\cdot \vec{x}=\sum_{m=-M}^{M}h_{1, m}x[m]$$
 
 [//]:# (식 29)
 
-여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq91.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq92.png">의 첫 번째 행을 의미한다.
+여기서 $H_{(1,:)}$는 $H$의 첫 번째 행을 의미한다.
 
-이제, 식 (29)에 대해 다시 한번 생각해보면 식 (29)는 결국 유한한 길이의 신호 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq93.png">에 대한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq94.png">일 때의 출력값 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq95.png">과 같다는 것을 알 수 있다.
+이제, 식 (29)에 대해 다시 한번 생각해보면 식 (29)는 결국 유한한 길이의 신호 $x[n] \text{ for } -M\leq n \leq M$에 대한 $n = 0$일 때의 출력값 $y[n]$과 같다는 것을 알 수 있다.
 
 즉,
 
-<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq96.png"> <br> 식 (30) </p>
+$$식 (29)\Rightarrow y_0 = a_0 = \sum_{m=-M}^{M}h[0-m]x[m]$$
 
-[//]:# (식 30)
-
-이다. 식 (30)과 Finite Impulse Response를 갖는 시스템의 입출력에 관한 식인 식(9)를 비교해보면 결국 우리가 구한 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-10-21-Savitzky_Golay/eq97.png">의 첫번째 행이 결국 Savitzky-Golay 필터의 impulse response라는 것을 알 수 있다.
+이다. 식 (30)과 Finite Impulse Response를 갖는 시스템의 입출력에 관한 식인 식(9)를 비교해보면 결국 우리가 구한 $H$의 첫번째 행이 결국 Savitzky-Golay 필터의 impulse response라는 것을 알 수 있다.
 
 # MATLAB 코드
 

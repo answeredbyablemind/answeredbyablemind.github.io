@@ -1,0 +1,249 @@
+---
+title: QR 분해
+sidebar:
+  nav: docs-ko
+aside:
+  toc: true
+key: 20201123
+tags: 선형대수
+---
+
+※ 시각화와 이해의 편의를 도모하기 위해 벡터와 행렬이 정의되는 체(field)는 실수(real number)로 한정함.
+
+# Prerequisites
+
+본 post를 잘 이해하기 위해서는 아래의 내용에 대해 알고 오시는 것을 추천드립니다.
+
+* 벡터의 정사영
+
+# 배경 지식
+
+## 벡터의 정사영
+
+우리는 중고등학교 수학에서 벡터의 정사영에 대해 배운 적이 있다.
+
+정사영의 개념이 성립하기 위해선 두 개의 벡터가 필요하다.
+
+아래의 그림에서는 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq1.png">와 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq2.png"> 사이의 관계에 대해 표현하고 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic1.png">
+  <br>
+  그림 1. 두 벡터 중 하나의 벡터에 대해, 또 다른 벡터로 향하는 방향으로의 컴포넌트는 코사인 값을 이용해 표현할 수 있다.
+</p>
+
+가령, 그림 1에서 처럼 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq3.png">를 표현할 때 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq4.png">를 이용한다고 하면 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq5.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq6.png"> 방향의 컴포넌트는 두 벡터 사이의 사잇각을 이용해서 다음과 같이 표현할 수 있다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq7.png"> </p>
+
+한편, 두 벡터 간의 내적은 다음과 같은데,
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq8.png"> </p>
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq9.png">의 값은 다음과도 같이 표현할 수 있다는 것을 확인할 수 있다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq10.png"> <br> 식 (3) </p>
+
+[//]:# (식 3)
+
+한편 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq11.png">는 스칼라 값이다. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq12.png">나 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq13.png"> 모두 스칼라 값인것을 보아도 그렇다는 사실을 알 수 있다.
+
+만약 우리가 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq14.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq15.png"> 방향 컴포넌트를 구하되, 스칼라가 아니라 벡터 값을 얻고 싶다면 어떻게 하는게 좋을까?
+
+바로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq16.png"> 뒤에 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq17.png"> 방향으로의 단위 벡터만을 곱해주면 된다.
+
+만약 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq18.png">의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq19.png"> 방향으로의 정사영 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq20.png">라고 한다면, 그 값은 다음과 같다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq21.png"> </p>
+
+한편, 식 (3)에 의해서,
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq22.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq23.png"> </p>
+
+와 같다는 것을 알 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic2.png">
+  <br>
+  그림 2. 두 벡터 중 하나의 벡터에 대해, 또 다른 벡터로 향하는 방향으로의 컴포넌트는 코사인 값을 이용해 표현할 수 있다.
+</p>
+
+# Gram-Schmidt 과정
+
+[//]:# (그람-슈미트 과정에 대해 소개할 때 미리 주어진 벡터셋 a1~a_n에 대해 다시 차근히 소개할 것)
+
+## Gram-Schmidt 과정의 목표 의식
+
+Gram-Schmidt 과정이 수행해주는 일은 기본적으로 다음과 같다.
+
+"linearly independent한 벡터들이 주어졌을 때 이들을 적절히 변형하여 orthogonal basis로 만들어주자"
+
+그림을 곁들여 설명하면 이런 내용이라고 할 수 있다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic3.png">
+  <br>
+  그림 3. Gram-Schmidt 과정은 왼쪽 그림과 같이 주어진 두 개의 벡터를 오른쪽 그림과 같이 직교하는 두 벡터로 변형시키는 과정이다.
+</p>
+
+직교하는 벡터셋을 얻게 되면 여러가지로 편리한 점이 많지만 특히 중요한 것은 직교하지 않는 기저에 비해 직교하는 기저를 얻게 되면 얻는 이점이 있기 때문이다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic4.png">
+  <br>
+  그림 4. 왼쪽: 직교하지 않는 기저를 이용해 생성한 벡터 공간. 오른쪽: 직교하는 기저를 이용해 생성한 벡터 공간
+</p>
+
+만약 선형독립인 두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq24.png">가 2차원 실수 공간 상의 기저라고 해보자. 이 때, 두 벡터는 서로 직교하지 않아도 된다. 
+
+그렇다면, 2차원 실수 공간 안에 있는 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq25.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq26.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq27.png">의 선형 결합으로 표현될 수 있다. 다시 말해,
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq28.png"> </p>
+
+와 같이 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq29.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq30.png">를 이용해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq31.png">를 표현할 수 있게 된다.
+
+그런데, 만약 두 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq32.png">가 2차원 실수 공간 상의 직교하는 기저라고 한다면, 2차원 실수 공간 상에 있는 임의의 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq33.png">는 다음과 같이 쓸 수 있게 된다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq34.png"> </p>
+
+이로써 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq35.png">를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq36.png">과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq37.png">의 선형결합으로 표현하기 위한 계수를 쉽게 얻을 수 있게 된다.
+
+## Gram-Schmidt 과정의 프로세스
+
+<p align = "center">
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif">
+  <br>
+  그림 4. Gram-Schmidt 직교화 과정을 표현한 animation
+  <br>
+  <a href = "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%8C-%EC%8A%88%EB%AF%B8%ED%8A%B8_%EA%B3%BC%EC%A0%95"> 출처: 위키피디아, 그람-슈미트 과정</a>
+</p>
+
+Gram-schmidt 직교화 과정을 수식으로 표현하면 아래와 같다.
+
+벡터 공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq38.png">상에서 주어진 일차 독립인 벡터 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq39.png">를 이용하여 다음과 같이 정규직교기저를 구할 수 있다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq40.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq41.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq42.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq43.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq44.png"> </p>
+
+이렇게 생성한 벡터의 집합 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq45.png">는 직교적인데, 여기서 각각의 벡터들의 크기(norm)로 나누어주어 정규직교화 시키자.
+
+즉, 
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq46.png"> </p>
+
+로 정의하면 벡터 공간 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq47.png">의 정규 직교 기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq48.png">를 얻을 수 있다.
+
+수식으로 쓰면 조금 어려워 보이지만, 수식의 본질적인 의미는 아래와 같다.
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic5.png">
+  <br>
+  그림 5. 그람 슈미트 과정의 수식이 말해주는 것
+</p>
+
+서로 직교하는 벡터를 구성해내기 위해서는 각각이 차지하고 있는 성분만큼을 빼주어야 한다는 말이다.
+
+다시 한번 그림으로 보면 아래의 그림 6과 같다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-11-23-gram_schmidt/pic6.png">
+  <br>
+  그림 6. 그람 슈미트 과정의 기본 원리
+</p>
+
+그람-슈미트 과정은 이런 방식으로 iterative하게 주어진 벡터 집합에 대한 새로운 정규직교기저 벡터를 찾아낼 수 있게 해준다.
+
+# QR 분해
+
+QR 분해는 그람-슈미트 과정을 이용해 찾아낸 정규직교기저 벡터를 이용해 행렬을 분해하는 과정이다.
+
+그람-슈미트 과정을 통해 얻어낸 정규직교기저를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq49.png">이라고 하고 이들을 모아둔 행렬을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq50.png">라고 하면 다음이 성립한다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq51.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq52.png"> </p>
+
+여기서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq53.png">를 생각해보면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq54.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq55.png"> 혹은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq56.png">의 성분이 모두 제거되었기 대문에 값이 0이다.
+
+마찬가지 이유로 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq57.png">에 대해 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq58.png">인 경우 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq59.png">이다. 
+
+왜냐면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq60.png"> 번째 정규직교기저 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq61.png">에서는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq62.png">의 성분들을 모두 다 빼버렸기 때문이다.
+
+따라서 아래의 식이 성립한다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq63.png"> </p>
+
+이것을 QR 분해라고 부른다.
+
+# 예제 문제
+
+QR 분해에 대해서 글로만 설명하는 것을 보면 이해하기 어려울 수 있기 때문에 아래의 예시를 통해 그람-슈미트 정규화 과정과 QR 분해를 실습해보도록 하자.
+
+문제. 아래의 행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq64.png">를 QR 분해 하시오.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq65.png"> </p>
+
+행렬 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq66.png">의 각 열 벡터를 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq67.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq68.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq69.png">이라고 하면 다음과 같다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq70.png"> </p>
+
+이 때, 각각의 열벡터들은 표기상의 편의를 위해 <p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq71.png"> </p>과 같이 쓰도록 하자.
+
+QR분해를 하기 위해 세 벡터들에 대해 Gram-Schmidt process를 적용해보자.
+
+여기서 정규화되지는 않고 직교화만 시킨 벡터들은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq72.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq73.png"> 등과 같이 쓰고, 정규직교화 된 벡터들은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq74.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq75.png">등과 같이 쓰도록 하자.
+
+우선 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq76.png">에 대하여, 
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq77.png"> </p>
+
+Gram-Schmidt과정에 의하면 첫 번째 벡터는 그 벡터를 그대로 사용하면 된다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq78.png"> </p>
+
+이제 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq79.png">를 계산해보자. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq80.png">는 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq81.png">벡터에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq82.png"> 방향으로의 성분을 제외해준 벡터이다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq83.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq84.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq85.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq86.png"> </p>
+
+또, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq87.png">을 계산해보자. <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq88.png">은 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq89.png"> 벡터에서 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq90.png"> 방향으로의 성분과 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq91.png"> 방향으로의 성분을 제외해준 벡터이다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq92.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq93.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq94.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq95.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq96.png"> </p>
+
+정리하면 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq97.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq98.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq99.png">은 다음과 같다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq100.png"> </p>
+
+위의 세 벡터를 정규화하면 다음과 같다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq101.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq102.png"> </p>
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq103.png"> </p>
+
+따라서, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq104.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq105.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq106.png">을 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq107.png">에서의 <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq108.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq109.png">, <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq110.png">에 대응시켜 생각하면 아래와 같이 QR 분해할 수 있다.
+
+<p align = "center"> <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2020-11-23-gram_schmidt/eq111.png"> </p>
