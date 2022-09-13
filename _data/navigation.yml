@@ -236,6 +236,10 @@ docs-ko:
         url:    2020/01/10/CLT_proof.html
       - title:  카이제곱 분포와 검정
         url:    2021/12/13/chi_square.html  
+      - title:  마르코프 부등식과 체비셰프 부등식
+        url:    2022/09/12/Markov_Chebyshev_Inequality.html
+      - title:  체르노프 유계
+        url:    2022/09/13/Chernoff_Bound.html  
 
   - title:    통계적 추론
     children:
@@ -264,7 +268,6 @@ docs-ko:
       - title:  카이제곱 분포와 검정
         url:    2021/12/13/chi_square.html  
 
-  - title:    비모수 통계학
     children:
       - title:  윌콕슨 순위합 검정
         url:    2021/11/17/ranksum.html
