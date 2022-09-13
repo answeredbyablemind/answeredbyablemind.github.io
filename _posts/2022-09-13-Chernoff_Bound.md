@@ -152,7 +152,7 @@ $$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt
 
 $$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
 
-[//]:# 식 (26)
+[//]:# (식 26)
 
 이다.
 
