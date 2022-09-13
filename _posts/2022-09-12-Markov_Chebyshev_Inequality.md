@@ -1,5 +1,5 @@
 ---
-title: 마르코프 부등식과 체비쇼프 부등식
+title: 마르코프 부등식과 체비셰프 부등식
 sidebar:
   nav: docs-ko
 aside:

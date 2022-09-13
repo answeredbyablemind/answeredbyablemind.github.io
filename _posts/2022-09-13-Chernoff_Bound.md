@@ -8,10 +8,15 @@ key: 20220913
 tags: 통계학
 ---
 
+# prerequisites
+
+본 포스트를 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
+
+* [마르코프 부등식과 체비셰프 부등식](https://angeloyeo.github.io/2022/09/12/Markov_Chebyshev_Inequality.html)
 
 ## Lower-Tail Chernoff Bound
 
-$X$가 $N$ 개의 독립적인 랜덤변수의 합이라고 하자. 이 때 이 랜덤 변수들은 베르누이 분포를 따르며 $p_i$의 확률로 1의 값을 갖는다.
+$X$가 $N$ 개의 독립적인 랜덤변수의 합이라고 하자. 또, 이때 이 랜덤 변수들은 베르누이 분포를 따르며 $p_i$의 확률로 1의 값을 갖는다고 하자.
 
 $$X = \sum_{i=1}^{N}X_i$$
 
@@ -101,7 +106,7 @@ $$\prod_{i=1}^{N}\exp(E[X_i](e^{-t}-1))=\exp\left(\sum_{i=1}^{N}E[X_i]\cdot (e^{
 
 $$P(X<(1-\delta)E[X]) \leq \frac{\exp\left(E[X](e^{-t}-1)\right)}{\exp\left(\right)}$$
 
-위 식은 어떤 $t>0$에 대해서라도 성립하는 식이다. 이제는 식 (14)가 최대한 tight한 boundary에 대해 성립할 수 있도록 식 (14)의 최소값을 내주는 $t=t^*$ 값을 찾자. 이 과정은 식 (14)를 미분하고 미분한 값이 $0$이 되는 $t^*$를 찾음으로써 해결할 수 있다. 이 과정은 생략하며 $t^*$는 다음과 같다는 것을 알 수 있다.
+위 식은 어떤 $t>0$에 대해서라도 성립하는 식이다. 이제는 식 (14)가 최대한 tight한 boundary에 대해 성립할 수 있도록 식 (14)의 최소값을 내주는 $t=t^\ast$ 값을 찾자. 이 과정은 식 (14)를 미분하고 미분한 값이 $0$이 되는 $t^\ast$를 찾음으로써 해결할 수 있다. 이 과정은 생략하며 $t^*$는 다음과 같다는 것을 알 수 있다.
 
 $$t^* = \ln\left(\frac{1}{1-\delta}\right)$$
 
@@ -128,7 +133,7 @@ $$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}\cdots = -\sum_{i=1}^{N}\frac{x^n}{n}$$
 
 $$(1-\delta)\ln(1-\delta)= - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots \notag$$
 
-$$-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots$$
+$$-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\notag$$
 
 $$=-\delta+\delta^2/2+\cdots$$
 
@@ -150,7 +155,7 @@ $$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt
 
 이다. 따라서, 이 결과를 식 (16)과 식 (19)에 대입하면,
 
-$$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
+$$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)\tag{26}$$
 
 [//]:# (식 26)
 
