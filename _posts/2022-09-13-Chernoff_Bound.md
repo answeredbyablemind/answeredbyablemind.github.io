@@ -173,7 +173,7 @@ $$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}\cdots = -\sum_{i=1}^{N}\frac{x^n}{n}$$
 
 $$(1-\delta)\ln(1-\delta)= - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots \notag$$
 
-$$-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\notag$$
+$$=-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\notag$$
 
 $$=-\delta+\delta^2/2+\cdots$$
 
@@ -208,6 +208,78 @@ $$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
 (증명 끝)
 
 ## Upper-Tail Chernoff Bound
+
+Upper-Tail 부분에 대한 증명은 Lower-tail에 대한 증명과 거의 유사한 방식으로 진행된다. 따라서 Upper-tail에 대한 증명은 더 빠르게 진행되며 부족한 부분은 Lower-tail 파트 증명에 상세하게 써두었으니 참고하기 바란다. 식 (1)과 같은 랜덤변수 $X$에 대해 임의의 $\delta\in(0, 2e-1)$을 선정하면 다음이 성립한다.
+
+$$P(X\gt(1+\delta)E[X]) \lt e^{-E[X]\cdot \delta^2/4}$$
+
+[//]:# (식 31)
+
+(증명)
+
+Lower-tail에 대한 증명에서와 마찬가지로 아래를 증명하는 것이 첫 스텝이다.
+
+$$P(X\gt(1+\delta)E[X]) \lt \left(\frac{e^\delta}{(1+\delta)^{(1+\delta)}}\right)^{E[X]}$$
+
+[//]:# (식 32)
+
+이 때 $t>0$인 매개변수를 도입하고 $X$에 대한 식은 $e^tX$에 대한 식으로 바꾸자. 식 (32)의 좌변 정보를 이용하여 마르코프 부등식을 적용하면 아래와 같은 식을 얻을 수 있다.
+
+$$P(X\gt(1+\delta)E[X]) \leq \frac{E[e^{tX}]}{e^{t(1+\delta)E[X]}}$$
+
+[//]:# (식 33)
+
+식 (1)의 $X$의 정의에 따라 식 (33) 우변의 분자만 따로 떼서 생각하면 다음과 같이 쓸 수도 있다는 것을 알 수 있다.
+
+$$E[e^{tX}]=E[e^{t\sum_i X_i}]=E\left[\prod_{i=1}^{N}e^{tX_i}\right]=\prod_{i=1}^{N}E[e^{tX_i}]$$
+
+[//]:# (식 34)
+
+이다.
+
+한편, $X_i$는 베르누이 시행이므로, 식 (9)가 성립하고, $e^{tX_i}$의 기댓값은 다음과 같다.
+
+$$E[e^{tX_i}]=(1-p_i)e^{t\cdot 0}+p_i e^{t\cdot 1}=1-p_i+p_ie^t\notag$$
+
+$$=1+p_i(e^t-1)=1+E[X_i](e^t-1)$$
+
+[//]:# (식 35)
+
+또, 식 (35)의 마지막 식은 $\exp(1+E[X_i]\cdot(e^t-1))$의 테일러 급수 첫 두항과 일치한다. 즉,
+
+$$\exp(x) = 1+\frac{x}{1!}+\frac{x^2}{2}+\cdots$$
+
+[//]:# (식 36)
+
+이므로 $\exp(E[X_i]\cdot(e^t-1))$은 
+
+$$\exp(E[X_i]\cdot(e^t-1))=1+E[X_i](e^t-1)+\frac{1}{2!}(E[X_i](e^t-1))^2+\cdots \notag$$
+
+$$\gt 1+E[X_i](e^t-1)$$
+
+[//]:# (식 37)
+
+이다. 따라서, 식 (34)에서의 마지막 결과값에 대해 다음과 같이 정리할 수 있다.
+
+$$\prod_{i=1}^{N}E[e^{tX_i}]=\prod_{i=1}^{N}(1+E[X](e^t-1))<\prod_{i=1}^{N}\exp(E[X_i](e^t-1))$$
+
+[//]:# (식 38)
+
+한편, 
+
+$$\prod_{i=1}^{N}\exp(E[X_i](e^t-1))=\exp\left(E\left[\sum_{i=1}^{N}X_i\right](e^t-1)\right)=\exp(E[X](e^t-1))$$
+
+[//]:# (식 39)
+
+이므로 위 결과를 식 (33)에 대입하면,
+
+$$P(X\gt(1+\delta)E[X])\leq \frac{\exp(E[X])(e^t-1)}{e^{t(1+\delta)E[X]}}$$
+
+[//]:# (식 40)
+
+임을 알 수 있다. Lower-tail boundary에서와 마찬가지로 식 (40)의 우변을 미분하여, 미분 계수를 0으로 만들어줄 수 있는 가장 tight한 $t=t^\ast$를 찾으면 다음과 같다.
+
+$$t^\ast=\ln(1+\delta)$$
 
 # Reference
 
