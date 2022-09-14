@@ -62,9 +62,9 @@ $$\Rightarrow P(X\lt (1-\delta)E[X]) \leq \frac{E[e^{-tX}]}{e^{-t(1-\delta)E[X]}
 
 이 성립한다. 또 $X$를 구성하고 있는 $X_i$ 들은 독립적으로 발생한 사건이다. 위 식의 우변의 분자를 보면,
 
-$$\begin{aligned}E[e^{-tX}]&=E[e^{-t\cdot\sum_{i}X_i}]\\&=E[e^{-t(X_1+X_2+\cdots+X_N)}]\\
+$$E[e^{-tX}]=E[e^{-t\cdot\sum_{i}X_i}]=E[e^{-t(X_1+X_2+\cdots+X_N)}]\notag$$
 
-&=E[e^{-tX_1}\cdot e^{-tX_2}\cdot e^{-tX_3}\cdot \cdots \cdot e^{-t X_N}]\end{aligned}$$
+$$=E[e^{-tX_1}\cdot e^{-tX_2}\cdot e^{-tX_3}\cdot \cdots \cdot e^{-t X_N}]$$
 
 [//]:# (식 7)
 
@@ -98,7 +98,9 @@ $$\prod_{i=1}^{N}E[e^{-tX_i}]\lt\prod_{i=1}^{N}e^{E[X_i](e^{-t}-1)}$$
 
 이 성립하게 됨을 알 수 있는데, 위 식의 우변을 또 다시 쓰면,
 
-$$\begin{aligned}\prod_{i=1}^{N}\exp(E[X_i](e^{-t}-1))&=\exp\left(\sum_{i=1}^{N}E[X_i]\cdot (e^{-t}-1)\right)\\&=\exp\left(E[X](e^{-t}-1)\right)\end{aligned}$$
+$$\prod_{i=1}^{N}\exp(E[X_i](e^{-t}-1))=\exp\left(\sum_{i=1}^{N}E[X_i]\cdot (e^{-t}-1)\right)\notag$$
+
+$$=\exp\left(E[X](e^{-t}-1)\right)$$
 
 [//]:# (식 13)
 
@@ -118,7 +120,9 @@ $$\exp(E[X](e^{-t}-1)+t(1-\delta)E[X])$$
 
 이를 조금만 더 정리하고 $f(t)$라고 이름 붙이자.
 
-$$\begin{aligned}f(t) &= \exp\left(E[X]e^{-t}-E[X]+tE[X]-t\delta E[X]\right)\\&=\exp\left(E[X](e^{-t}+t-t\delta -1)\right)\end{aligned}$$
+$$f(t) = \exp\left(E[X]e^{-t}-E[X]+tE[X]-t\delta E[X]\right)\notag$$
+
+$$=\exp\left(E[X](e^{-t}+t-t\delta -1)\right)$$
 
 [//]:# (식 16)
 
@@ -171,11 +175,11 @@ $$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}\cdots = -\sum_{i=1}^{N}\frac{x^n}{n}$$
 
 이므로,
 
-$$\begin{aligned}(1-\delta)\ln(1-\delta) &= - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots\\
+$$(1-\delta)\ln(1-\delta) = - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots$$
 
-&=-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\\
+$$=-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\notag$$
 
-&=-\delta+\delta^2/2+\cdots\end{aligned}$$
+$$=-\delta+\delta^2/2+\cdots$$
 
 [//]:# (식 25)
 
@@ -257,13 +261,9 @@ $$\exp(x) = 1+\frac{x}{1!}+\frac{x^2}{2}+\cdots$$
 
 이므로 $\exp(E[X_i]\cdot(e^t-1))$은 
 
-$$\begin{aligned}
+$$\exp(E[X_i]\cdot(e^t-1))=1+E[X_i](e^t-1)+\frac{1}{2!}(E[X_i](e^t-1))^2+\cdots \notag$$
 
-\exp(E[X_i]\cdot(e^t-1))&=1+E[X_i](e^t-1)+\frac{1}{2!}(E[X_i](e^t-1))^2+\cdots \\ 
-&\gt 1+E[X_i](e^t-1)
-
-\end{aligned}
-$$
+$$\gt 1+E[X_i](e^t-1)$$
 
 [//]:# (식 37)
 
