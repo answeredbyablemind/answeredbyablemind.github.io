@@ -208,3 +208,7 @@ $$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
 (증명 끝)
 
 ## Upper-Tail Chernoff Bound
+
+# Reference
+
+* Outlier Analysis (2nd e.d), Charu C. Aggarwal, Springer
