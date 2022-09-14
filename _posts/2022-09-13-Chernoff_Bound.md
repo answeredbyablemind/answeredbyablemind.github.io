@@ -175,7 +175,7 @@ $$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}\cdots = -\sum_{i=1}^{N}\frac{x^n}{n}$$
 
 이므로,
 
-$$(1-\delta)\ln(1-\delta) = - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots$$
+$$(1-\delta)\ln(1-\delta) = - (1-\delta)\delta - (1-\delta)\frac{\delta^2}{2}\cdots\notag$$
 
 $$=-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\notag$$
 
