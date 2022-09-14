@@ -104,30 +104,70 @@ $$\prod_{i=1}^{N}\exp(E[X_i](e^{-t}-1))=\exp\left(\sum_{i=1}^{N}E[X_i]\cdot (e^{
 
 이다. 따라서 식 (13)의 결과를 식 (6)에 대입하면 아래와 같은 식을 얻을 수 있다.
 
-$$P(X<(1-\delta)E[X]) \leq \frac{\exp\left(E[X](e^{-t}-1)\right)}{\exp\left(\right)}$$
+$$P(X<(1-\delta)E[X]) \leq \frac{\exp\left(E[X](e^{-t}-1)\right)}{\exp\left(-t(1-\delta)E[X]\right)}$$
 
-위 식은 어떤 $t>0$에 대해서라도 성립하는 식이다. 이제는 식 (14)가 최대한 tight한 boundary에 대해 성립할 수 있도록 식 (14)의 최소값을 내주는 $t=t^\ast$ 값을 찾자. 이 과정은 식 (14)를 미분하고 미분한 값이 $0$이 되는 $t^\ast$를 찾음으로써 해결할 수 있다. 이 과정은 생략하며 $t^*$는 다음과 같다는 것을 알 수 있다.
+[//]:# (식 14)
 
-$$t^* = \ln\left(\frac{1}{1-\delta}\right)$$
+위 식은 어떤 $t>0$에 대해서라도 성립하는 식이다. 이제는 식 (14)가 최대한 tight한 boundary에 대해 성립할 수 있도록 식 (14)의 최소값을 내주는 $t=t^\ast$ 값을 찾자. 이 과정은 식 (14)를 미분하고 미분한 값이 $0$이 되는 $t^\ast$를 찾음으로써 해결할 수 있다. 
+
+식 (14)의 우변에 지수법칙을 적용하여 한줄로 쓰면 다음과 같다.
+
+$$\exp(E[X](e^{-t}-1)+t(1-\delta)E[X])$$
 
 [//]:# (식 15)
 
-식 (15)를 식 (14)에 대입하면 식 (3)을 얻을 수 있게 된다. 식 (15)를 식 (14)에 대입하면,
+이를 조금만 더 정리하고 $f(t)$라고 이름 붙이자.
+
+$$f(t) = \exp\left(E[X]e^{-t}-E[X]+tE[X]-t\delta E[X]\right)=\exp\left(E[X](e^{-t}+t-t\delta -1)\right)$$
+
+[//]:# (식 16)
+
+이제 $f(t)$를 $t$에 대해 미분하면,
+
+$$f'(t) = \exp\left(E[X](e^{-t}+t-t\delta -1)\right)(E[X])(e^{-t}+1-\delta)$$
+
+[//]:# (식 17)
+
+임을 알 수 있다. 식 (17)에서 맨 앞의 $\exp()$ 함수는 항상 양수이며 $E[X]$ 역시 양수이다. 따라서, 가장 오른쪽의 괄호 안의 값만 0이 되도록 하면 $t=t^\ast$를 찾을 수 있다.
+
+따라서, 
+
+$$e^{-t}+1-\delta = 0$$
+
+을 만족하는 $t=t^\ast$는
+
+$$t=t^\ast = \ln\left(\frac{1}{1-\delta}\right)$$
+
+[//]:# (식 19)
+
+이다.
+
+식 (19)를 식 (14)에 대입하면 식 (3)을 얻을 수 있게 된다. 식 (19)를 식 (14)에 대입하면,
 
 $$\Rightarrow P(X<(1-\delta) E[X])\leq 
   \frac{\exp\left(E[X]\left(e^{-\ln\left(1/(1-\delta)\right)}-1\right)\right)}{\exp\left(-\ln(1/(1-\delta))(1-\delta)E[X]\right)}$$
+
+[//]:# (식 20)
 
 여기서 우변만 보면 다음과 같다.
 
 $$\text{(우변)}\Rightarrow \frac{E[X](1-\delta -1)}{\exp(-(1-\delta)E[X]\ln\left(1/(1-\delta)\right))}$$
 
+[//]:# (식 21)
+
 $$=\frac{\exp(E[X](-\delta))}{\exp(\ln(1-\delta)^{(1-\delta E[X])})}=\frac{\exp(-\delta E[X])}{(1-\delta)^{(1-\delta)E[X]}}$$
 
+[//]:# (식 22)
+
 $$=\left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}$$
+
+[//]:# (식 23)
 
 한편, 
 
 $$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}\cdots = -\sum_{i=1}^{N}\frac{x^n}{n}$$
+
+[//]:# (식 24)
 
 이므로,
 
@@ -137,6 +177,8 @@ $$-\delta+\delta^2-\frac{\delta^2}{2}+\frac{\delta^3}{2}\cdots\notag$$
 
 $$=-\delta+\delta^2/2+\cdots$$
 
+[//]:# (식 25)
+
 과 같다. 따라서 
 
 $$(1-\delta)\ln(1-\delta) \gt -\delta +\frac{\delta^2}{2}$$
@@ -145,19 +187,21 @@ $$(1-\delta)\ln(1-\delta) \gt -\delta +\frac{\delta^2}{2}$$
 
 $$(1-\delta)^{(1-\delta)}\gt\exp\left(-\delta + \frac{\delta^2}{2}\right)$$
 
+[//]:# (식 27)
+
 가 성립함을 알 수 있다.
 
-따라서, 식 (23)을 식(18)에 대입하면,
+따라서, 식 (27)을 식(23)에 대입하면,
 
 $$\left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(\frac{e^{-\delta}}{e^{(-\delta+\delta^2/2)}}\right)^{E[X]}$$
 
-$$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(e^{-\delta^2/2}\right)^{E[X]}\tag{25}$$
+$$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(e^{-\delta^2/2}\right)^{E[X]}$$
 
-이다. 따라서, 이 결과를 식 (16)과 식 (19)에 대입하면,
+이다. 따라서, 이 결과를 식 (20)과 식 (23)에 대입하면,
 
 $$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
 
-[//]:# (식 26)
+[//]:# (식 30)
 
 이다.
 
