@@ -151,11 +151,11 @@ $$(1-\delta)^{(1-\delta)}\gt\exp\left(-\delta + \frac{\delta^2}{2}\right)$$
 
 $$\left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(\frac{e^{-\delta}}{e^{(-\delta+\delta^2/2)}}\right)^{E[X]}$$
 
-$$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(e^{-\delta^2/2}\right)^{E[X]}$$
+$$\Rightarrow \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{E[X]}\lt \left(e^{-\delta^2/2}\right)^{E[X]}\tag{25}$$
 
 이다. 따라서, 이 결과를 식 (16)과 식 (19)에 대입하면,
 
-$$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)\tag{26}$$
+$$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
 
 [//]:# (식 26)
 
