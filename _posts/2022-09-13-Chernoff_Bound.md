@@ -14,6 +14,10 @@ tags: 통계학
 
 * [마르코프 부등식과 체비셰프 부등식](https://angeloyeo.github.io/2022/09/12/Markov_Chebyshev_Inequality.html)
 
+# 증명
+
+Chernoff 부등식은 Lower-tail 버전과 Upper-tail 버전의 형태가 다르다. 아래에서는 증명 과정을 소개하고자 한다.
+
 ## Lower-Tail Chernoff Bound
 
 $X$가 $N$ 개의 독립적인 랜덤변수의 합이라고 하자. 또, 이때 이 랜덤 변수들은 베르누이 분포를 따르며 $p_i$의 확률로 1의 값을 갖는다고 하자.
@@ -213,13 +217,13 @@ $$\Rightarrow P(X\lt (1-\delta)E[X])\lt \exp(-E[X]\delta^2/2)$$
 
 ## Upper-Tail Chernoff Bound
 
-(아직 고민 중...)
+Upper-Tail 부분에 대한 증명은 Lower-tail에 대한 증명과 거의 유사한 방식으로 진행된다. 따라서 Upper-tail에 대한 증명은 더 빠르게 진행되며 빠르게 넘어간 부분은 Lower-tail 파트 증명에서 참고하기 바란다. 식 (1)과 같은 랜덤변수 $X$에 대해 임의의 $\delta\in(0, 1)$[^1]을 선정하면 다음이 성립한다.
 
-Upper-Tail 부분에 대한 증명은 Lower-tail에 대한 증명과 거의 유사한 방식으로 진행된다. 따라서 Upper-tail에 대한 증명은 더 빠르게 진행되며 빠르게 넘어간 부분은 Lower-tail 파트 증명에서 참고하기 바란다. 식 (1)과 같은 랜덤변수 $X$에 대해 임의의 $\delta\in(0, 2e-1)$을 선정하면 다음이 성립한다.
-
-$$P(X\gt(1+\delta)E[X]) \lt e^{-E[X]\cdot \delta^2/4}$$
+$$P(X\gt(1+\delta)E[X]) \lt e^{-E[X]\cdot \delta^2/3}$$
 
 [//]:# (식 31)
+
+[^1]: 책 Outlier Analysis (Charu C. Aggarwal)에서는 (0, 2e-1)의 범위에서 성립하는 Chernoff Bound를 보여주고 있으나 아직까지 어떻게 증명해야 하는지 잘 모르겠다. 그래서 다른 교과서에서 소개하고 있는 (0, 1) 바운드에 대한 Chernoff Bound를 소개한다.
 
 여기서 $e$는 자연로그의 밑이다.
 
@@ -305,10 +309,35 @@ $$\Rightarrow P(X\gt(1+\delta)E[X]) \leq \left(\frac{e^\delta}{(1+\delta)^{(1+\d
 
 [//]:# (식 44)
 
-식 (44)의 우변에대해 로그를 취하면 다음과 같아진다.
+식 (44)로부터 식 (31)을 증명하기 위해선 아래의 수식이 사실인지 확인하면 된다.
 
-(더 고민 좀 ... ㅠㅠ)
+$$\frac{e^\delta}{(1+\delta)^{(1+\delta)}}<e^{-\mu^2/3}$$
+
+[//]:# (식 45)
+
+식 (45)의 양변에 로그를 취하면 아래와 같은 식을 얻을 수 있다.
+
+$$f(\delta) = \delta - (1+\delta)\ln (1+\delta) + \frac{\delta^2}{3}< 0$$
+
+[//]:# (식 46)
+
+$f(\delta)$의 미분계수를 구하면 아래와 같다.
+
+$$f'(\delta) = 1-\frac{1+\delta}{1+\delta}-\ln(1+\delta)+\frac{2}{3}\delta = -\ln(1+\delta)+\frac{2}{3}\delta$$
+
+$$f''(\delta) = - \frac{1}{1+\delta}+\frac{2}{3}$$
+
+여기서 2계 도함수로부터 알 수 있는 것은 아래와 같다.
+
+$$\begin{cases}f''(\delta)\lt 0\text{ for } 0\leq \delta \lt 1/2 \\ f''(\delta) > 0 \text{ for } \delta >1/2\end{cases}$$
+
+다시 말해, $f'(\delta)$는 $(0,1)$ 구간에서 처음에는 감소하다가 증가하게 되는 형태를 띈다는 것이다. 또한, 1계 도함수 식을 보면 $f'(0)=0$이고 $f'(1)\lt 0$이라는 사실이다. 따라서, $(0,1)$ 구간에서 $f'(\delta)\lt 0$이라는 사실을 알 수 있다. 마지막으로 $f(0)=0$이므로 $(0,1)$ 구간에서 $f(\delta)$는 항상 음수임을 알 수 있다.
+
+그러므로, 식 (46)은 사실임을 알 수 있고 식 (31) 또한 성립하는 것이다.
+
+(증명 끝)
 
 # Reference
 
 * Outlier Analysis (2nd e.d), Charu C. Aggarwal, Springer
+* Probability and Computing (2nd e.d.), Michael Mitzenmacher and Eli Upfal, Cambridge University Press
