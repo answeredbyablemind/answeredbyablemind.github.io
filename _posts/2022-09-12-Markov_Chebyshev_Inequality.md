@@ -59,12 +59,30 @@ $$식(6)\Rightarrow E[x]\geq \alpha P(X\gt \alpha) % 식 (7)$$
 
 체비셰프 부등식은 다음과 같다. 임의의 랜덤 변수 $X$와 임의의 상수 $\alpha$에 대하여 다음이 성립한다.
 
-$$P(\left|X-E[X]\right|\gt\alpha)\leq Var[X]/\alpha^2$$
+$$P(\left|X-E[X]\right|\gt\alpha)\leq Var[X]/\alpha^2 % 식 (8)$$
 
-체비셰프 부등식은 마르코프 부등식과 다르게 $X$와 $\alpha$에 대한 제약 조건이 없으나 절대값 부호에서 볼 수 있듯이 양측 극값 $\alpha$에 대한 부등식이다.
+체비셰프 부등식은 마르코프 부등식과 다르게 $X$와 $\alpha$에 대한 제약 조건이 없으나 절대값 부호에서 볼 수 있듯이 양측 극값 $E[X]\pm\alpha$에 대한 부등식이다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-12-Markov_Chebyshev_Inequality/pic2.png">
   <br>
-  그림 2. 체비셰프 부등식이 의미하는 것은 전체 데이터 분포에서 기댓값을 기준으로 랜덤변수 $x$가 어떤 양쪽 극값 $\alpha\pm E[X]$ 보다 크거나 같을 확률에 관한 것이다.
+  그림 2. 체비셰프 부등식이 의미하는 것은 전체 데이터 분포에서 기댓값을 기준으로 랜덤변수 $x$가 어떤 양쪽 극값 $E[X]\pm\alpha$ 보다 크거나 작은 확률에 관한 것이다.
 </p>
+
+증명은 생각보다 간단하고 위의 마르코프 부등식을 이용하여 진행된다. 식 (8)의 부등식 $\|X-E[X]\|\gt\alpha$은 다음과 같이 생각할 수 있다.
+
+$$|X-E[X]|\gt\alpha \Leftrightarrow (X-E[X])^2\gt \alpha^2$$
+
+이에 아래와 같은 새로운 랜덤 변수 $Y$를 정의하자.
+
+$$Y=(X-E[X])^2$$
+
+그러면 분산의 정의 상 $E[Y]=Var[X]$이다. 따라서, $Y$와 $\alpha^2$에 대한 마르코프 부등식을 확인하면 다음과 같다.
+
+$$P(Y\gt\alpha^2)\leq E[Y]/\alpha^2$$
+
+이를 $X$에 대한 식으로 다시 바꾸면,
+
+$$P((X-E[X])^2\gt\alpha^2)\leq Var[X]/\alpha^2$$
+
+가 되고 식 (9)에 의해 식 (8)을 얻을 수 있게 된다.
