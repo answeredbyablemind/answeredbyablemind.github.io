@@ -1,5 +1,5 @@
 ---
-title: 마르코프 부등식과 체비쇼프 부등식
+title: 마르코프 부등식과 체비셰프 부등식
 sidebar:
   nav: docs-ko
 aside:
@@ -55,16 +55,16 @@ $$식(6)\Rightarrow E[x]\geq \alpha P(X\gt \alpha) % 식 (7)$$
 
 여기서 위 식을 정리하면 식 (1)을 얻을 수 있다.
 
-# 체비쇼프 부등식 (Chebyshev Inequality)
+# 체비셰프 부등식 (Chebyshev Inequality)
 
-체비쇼프 부등식은 다음과 같다. 임의의 랜덤 변수 $X$와 임의의 상수 $\alpha$에 대하여 다음이 성립한다.
+체비셰프 부등식은 다음과 같다. 임의의 랜덤 변수 $X$와 임의의 상수 $\alpha$에 대하여 다음이 성립한다.
 
 $$P(\left|X-E[X]\right|\gt\alpha)\leq Var[X]/\alpha^2$$
 
-체비쇼프 부등식은 마르코프 부등식과 다르게 $X$와 $\alpha$에 대한 제약 조건이 없으나 절대값 부호에서 볼 수 있듯이 양측 극값 $\alpha$에 대한 부등식이다.
+체비셰프 부등식은 마르코프 부등식과 다르게 $X$와 $\alpha$에 대한 제약 조건이 없으나 절대값 부호에서 볼 수 있듯이 양측 극값 $\alpha$에 대한 부등식이다.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-12-Markov_Chebyshev_Inequality/pic2.png">
   <br>
-  그림 2. 체비쇼프 부등식이 의미하는 것은 전체 데이터 분포에서 기댓값을 기준으로 랜덤변수 $x$가 어떤 양쪽 극값 $\alpha\pm E[X]$ 보다 크거나 같을 확률에 관한 것이다.
+  그림 2. 체비셰프 부등식이 의미하는 것은 전체 데이터 분포에서 기댓값을 기준으로 랜덤변수 $x$가 어떤 양쪽 극값 $\alpha\pm E[X]$ 보다 크거나 같을 확률에 관한 것이다.
 </p>
