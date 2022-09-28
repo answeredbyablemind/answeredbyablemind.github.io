@@ -16,7 +16,7 @@ $X$가 음수가 아닌 값을 가지는 랜덤 변수라고 했을때, $\alpha\
 
 [^1]: Reference 책인 Outlier Analysis, Charu C. Aggarwal에는 $\alpha\gt E[X]$라고 쓰여있으나 일반적인 조건은 아닌 것으로 보인다. Wikipedia에도 $\alpha \gt 0$이라고 표시되어 있다.
 
-$$P(X\gt \alpha) \leq E[X]/\alpha$$
+$$P(X\geq \alpha) \leq E[X]/\alpha$$
 
 위 식의 의미를 간단히 살펴보기 위해 아래의 그림을 보도록 하자.
 
@@ -27,7 +27,7 @@ $$P(X\gt \alpha) \leq E[X]/\alpha$$
   그림 1. 마르코프 부등식이 의미하는 것은 전체 데이터 분포에서 기댓값을 기준으로 랜덤변수 $x$가 어떤 극값 $\alpha$ 보다 클 확률에 관한 것이다.
 </p>
 
-그림 1을 보면 어떤 랜덤 변수 $X$에 대한 pdf가 그려져 있는 것을 알 수 있다. 여기서 $X$는 음수가 아닌 값이라는 점을 강조하고자 가로축 왼쪽에 0을 표시했다. 또, 기댓값은 임의로 분포 중앙으로 설정하였으며 $P(x\gt \alpha)$는 파란색 영역으로 표시되어 있다. 
+그림 1을 보면 어떤 랜덤 변수 $X$에 대한 pdf가 그려져 있는 것을 알 수 있다. 여기서 $X$는 음수가 아닌 값이라는 점을 강조하고자 가로축 왼쪽에 0을 표시했다. 또, 기댓값은 임의로 분포 중앙으로 설정하였으며 $P(X\geq \alpha)$는 파란색 영역으로 표시되어 있다. 
 
 정리하자면 마르코프 부등식은 음수가 아닌 랜덤 변수에 대해 기댓값을 기준으로 $X$가 극값 $\alpha$ 보다 클 확률에 관한 정리(theorem)라고 할 수 있다.
 
@@ -37,23 +37,23 @@ $$E[X]=\int_x x f_X(x)dx$$
 
 위 적분에 대한 적분 범위를 $\alpha$를 기준으로 나눠 다음과 같이 쓸 수 있다.
 
-$$\Rightarrow \int_{0\leq x \leq \alpha}xf_X(x)dx + \int_{x\gt \alpha}xf_X(x)dx$$
+$$\Rightarrow \int_{0\leq x \lt \alpha}xf_X(x)dx + \int_{X\geq \alpha}xf_X(x)dx$$
 
 여기서 $x$의 값은 항상 음수가 아닌 값이므로 위 식의 왼쪽 항은 항상 양수이다. 따라서, 아래와 같은 관계가 성립한다.
 
-$$\Rightarrow \int_{0\leq x \leq \alpha}xf_X(x)dx + \int_{x\gt \alpha}xf_X(x)dx \geq \int_{x\gt \alpha}xf_X(x)dx$$
+$$\Rightarrow \int_{0\leq x \lt \alpha}xf_X(x)dx + \int_{X\geq \alpha}xf_X(x)dx \geq \int_{X\geq \alpha}xf_X(x)dx$$
 
-또한, 위 식의 우변의 값에서 $x\gt \alpha$이므로 다음이 성립한다.
+또한, 위 식의 우변의 값에서 $X\geq \alpha$이므로 다음이 성립한다.
 
-$$\Rightarrow \int_{x\gt \alpha}xf_X(x)dx\geq \int_{x\gt \alpha}\alpha f_X(x)dx % 식 (5)$$
+$$\Rightarrow \int_{X\geq \alpha}xf_X(x)dx\geq \int_{X\geq \alpha}\alpha f_X(x)dx % 식 (5)$$
 
 따라서, 결론적으로 식 (2)와 식 (5)만을 가져오면,
 
-$$\Rightarrow E[X]\geq \int_{x\gt\alpha} \alpha f_X(x)dx % 식 (6)$$
+$$\Rightarrow E[X]\geq \int_{x\geq \alpha} \alpha f_X(x)dx % 식 (6)$$
 
 이며, pdf와 확률의 정의에 따라 위 식은 다음과 같이 쓸 수도 있다.
 
-$$식(6)\Rightarrow E[x]\geq \alpha P(X\gt \alpha) % 식 (7)$$
+$$식(6)\Rightarrow E[x]\geq \alpha P(X\geq \alpha) % 식 (7)$$
 
 여기서 위 식을 정리하면 식 (1)을 얻을 수 있다.
 
@@ -61,7 +61,7 @@ $$식(6)\Rightarrow E[x]\geq \alpha P(X\gt \alpha) % 식 (7)$$
 
 체비셰프 부등식은 다음과 같다. 임의의 랜덤 변수 $X$와 임의의 상수 $\alpha$에 대하여 다음이 성립한다.
 
-$$P(\left|X-E[X]\right|\gt\alpha)\leq Var[X]/\alpha^2 % 식 (8)$$
+$$P(\left|X-E[X]\right|\geq\alpha)\leq Var[X]/\alpha^2 % 식 (8)$$
 
 체비셰프 부등식은 마르코프 부등식과 다르게 $X$와 $\alpha$에 대한 제약 조건이 없으나 절대값 부호에서 볼 수 있듯이 양측 극값 $E[X]\pm\alpha$에 대한 부등식이다.
 
@@ -73,7 +73,7 @@ $$P(\left|X-E[X]\right|\gt\alpha)\leq Var[X]/\alpha^2 % 식 (8)$$
 
 증명은 생각보다 간단하고 위의 마르코프 부등식을 이용하여 진행된다. 식 (8)의 부등식 $\|X-E[X]\|\gt\alpha$은 다음과 같이 생각할 수 있다.
 
-$$|X-E[X]|\gt\alpha \Leftrightarrow (X-E[X])^2\gt \alpha^2$$
+$$|X-E[X]|\geq\alpha \Leftrightarrow (X-E[X])^2\geq \alpha^2$$
 
 이에 아래와 같은 새로운 랜덤 변수 $Y$를 정의하자.
 
@@ -85,6 +85,10 @@ $$P(Y\gt\alpha^2)\leq E[Y]/\alpha^2$$
 
 이를 $X$에 대한 식으로 다시 바꾸면,
 
-$$P((X-E[X])^2\gt\alpha^2)\leq Var[X]/\alpha^2$$
+$$P((X-E[X])^2\geq\alpha^2)\leq Var[X]/\alpha^2$$
 
 가 되고 식 (9)에 의해 식 (8)을 얻을 수 있게 된다.
+
+# Reference
+
+* Outlier Analysis 2nd e.d., Charu C. Aggarwal, Springer
