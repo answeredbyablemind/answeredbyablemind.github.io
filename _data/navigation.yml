@@ -96,6 +96,8 @@ docs-ko:
         url:    2021/06/17/Cholesky_decomposition.html
       - title:  양의 정부호 행렬
         url:    2021/12/20/positive_definite.html
+      - title:  마할라노비스 거리
+        url:    2022/09/28/Mahalanobis_distance.html
 
   - title:      기초 미적분학
     children:
