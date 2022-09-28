@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20220928
-tags: 선형대수학, 통계학
+tags: 선형대수학 통계학
 ---
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/2022-09-28-Mahalanobis_distance/" width="650" height = "520" frameborder="0"></iframe></p>

@@ -146,19 +146,19 @@ function drawdots() {
      push();
      translate(width / 2, height / 2);
      scale(1, -1);
-     fill(255, 50, 50);
+     fill(0, 144, 190);
      noStroke();
      for (let i =0; i<n_dots; i++){
           ellipse(newdots._data[0][i] * scl, newdots._data[1][i] * scl, 10);
      }
 
-     fill(52, 168, 235)
+     fill(218, 83, 25)
      ellipse(newdots._data[0][n_dots+0] * scl, newdots._data[1][n_dots+0] * scl, 20);
-     fill(225,235,52)
+     fill(238,178,32)
      ellipse(newdots._data[0][n_dots+1] * scl, newdots._data[1][n_dots+1] * scl, 20);
-     fill(52, 168, 235)
+     fill(218, 83, 25)
      ellipse(newdots._data[0][n_dots+2] * scl, newdots._data[1][n_dots+2] * scl, 20);
-     fill(225,235,52)
+     fill(238,178,32)
      ellipse(newdots._data[0][n_dots+3] * scl, newdots._data[1][n_dots+3] * scl, 20);
 
      pop();
