@@ -33,3 +33,6 @@ ylim([-7, 7]);
 % S_new = (X_new - mean(X_new))'*(X_new - mean(X_new))/(1000-1);
 
 %%
+X = randn(200,2) * [3,2;2,4];
+
+chol(X'*X/200)
