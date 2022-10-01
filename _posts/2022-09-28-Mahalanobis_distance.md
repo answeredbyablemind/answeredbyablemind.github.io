@@ -43,7 +43,7 @@ tags: 선형대수학 통계학
 
 여기서 임의의 점 $\vec x$와 $\vec y$ 까지의 유클리드 거리를 계산하려면 어떤 식을 사용해야 할까? 두 벡터의 차와 내적을 이용해 계산할 수 있다. 이와 같은 거리를 유클리드 거리(Euclidean distance)라고 부른다.
 
-$$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)}$$
+$$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
 
 그런데 두 벡터 $\vec x$와 $\vec y$ 만을 생각하는 것이 아니라, 주변에 다른 데이터들을 고려한다면 두 점 사이의 거리는 다르게 생각해야 할 수도 있다.
 
@@ -63,13 +63,37 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)}$$
 
 여기서는 "맥락", "등고선" 등의 모호한 표현을 사용했지만 데이터의 분포 형태를 설명하는 것은 공분산 행렬을 이용해 가능하다. 공분산 행렬은 여기서는 $\Sigma$로 표현하고자 하며 이를 이용해 정의하는 상대적 거리인 마할라노비스 거리(Mahalanobis)는 임의의 벡터 $\vec x$, $\vec y$에 대해 다음과 같이 정의한다.
 
-$$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)}$$
+$$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
 $d_E$와 비교했을 때 $\Sigma$의 역행렬 $\Sigma^{-1}$이 가운데 곱해져 있다는 점에 주목하자. 
 
 # 행렬의 기하학적 의미
 
+마할라노비스 거리의 의미를 잘 이해하기 위해서는 행렬이 갖는 기하학적 의미에 대해 아는 것이 중요하다. [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html) 편에서는 행렬이 벡터 공간을 선형적으로 변환시키는 기능을 한다고 소개한 바 있다. 
+
 ## 행렬은 선형 변환이다.
+
+벡터 공간을 선형 변환한다는 것은 공간의 변환 전 후에 1) 원점의 위치가 변하지 않고 2) 격자들의 형태가 직선이며 3) 격자 간의 간격이 동일하다는 것을 의미한다. 아래의 Applet은 행렬 
+
+$$A=\begin{bmatrix}2 & -3 \\ 1 & 1\end{bmatrix} % 식 (3)$$
+
+이 보여주는 선형 변환이다.
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/transformation1/" width="650" height = "520" frameborder="0"></iframe></p>
+
+위 애플릿의 슬라이드를 가장 오른쪽으로 옮겼을 때의 결과는 다음과 같은데,
+
+<p align = "center"><img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png"></br>
+
+위 그림의 빨간색 화살표와 초록색 화살표는 행렬 $A$를 구성하고 있는 열벡터들
+
+$$\begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}$$
+
+에 대응되는 것이다. 이 시각화를 통해 확인할 수 있듯이 선형 변환의 변환 대상은 벡터이다. 벡터는 화살표 뿐만 아니라 점으로도 표현할 수 있다. 만약, 수 많은 벡터들이 벡터 공간상에 놓여있다고 했을 때 이것들을 한꺼번에 식 (3)의 행렬로 변환 시켜주면 어떤 결과를 얻게 될까?
+
+<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2022-09-28-Mahalanobis_distance/example2/" width="650" height = "520" frameborder="0"></iframe></p>
+
+그림 4의 (b)에서 보여주는 데이터의 형태를 다시 생각해보자. 위 애플릿의 선형 변환 결과물과 비교해 우리가 얻을 수 있는 인사이트는 무엇일까?
 
 ## 주어진 데이터를 보는 새로운 관점
 
