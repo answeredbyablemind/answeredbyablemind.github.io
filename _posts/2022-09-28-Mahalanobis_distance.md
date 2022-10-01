@@ -83,7 +83,11 @@ $$A=\begin{bmatrix}2 & -3 \\ 1 & 1\end{bmatrix} % 식 (3)$$
 
 위 애플릿의 슬라이드를 가장 오른쪽으로 옮겼을 때의 결과는 다음과 같은데,
 
-<p align = "center"><img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png"></br>
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png"></br>
+  <br>
+  그림 5. 식 (3)의 행렬이 취해주는 선형 변환의 최종 결과
+</p>
 
 위 그림의 빨간색 화살표와 초록색 화살표는 행렬 $A$를 구성하고 있는 열벡터들
 
