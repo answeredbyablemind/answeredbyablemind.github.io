@@ -1,26 +1,26 @@
 let scl;
 let ellipseSize;
-let numData = 80;
+let numData = 200;
 let randomTemp = [
      [],
      []
 ]
 let button1, button2, button3, button4, button5
 let mtx1 = [
-     [3, 2],
-     [2, 4]
+     [1.7321, 0],
+     [1.1547, 1.6330]
 ]
 let mtx2 = [
-     [3, -2],
-     [-2, 4]
+     [1.7321, 0],
+     [-1.1547, 1.6330]
 ]
 let mtx3 = [
-     [5, 0],
+     [2.2361, 0],
      [0, 1]
 ]
 let mtx4 = [
      [1, 0],
-     [0, 5]
+     [0, 2.2361]
 ]
 let mtx2Apply = [
      [],

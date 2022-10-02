@@ -160,3 +160,40 @@ axis square
 set(gca,'fontsize',15)
 title('(b)')
 set(gca,'visible','off')
+
+
+%% pic 10
+R = chol([3,2;2,4]);
+rng('default')
+X_ori = randn(1000,2);
+
+theta = transpose(linspace(0, 2*pi, 1000));
+
+my_color = lines(4);
+my_color(1,:) = [0,0,0];
+figure('position',[753, 233, 1811, 745]);
+subplot(1,2,1)
+scatter(X_ori(:,1), X_ori(:,2),80, lines(1),'filled','MarkerFaceAlpha', 0.2);
+xlabel('$$x_1$$','interpreter','latex');
+ylabel('$$x_2$$','interpreter','latex');
+grid on;
+xlim([-10, 10]);
+ylim([-10, 10]);
+set(gca,'fontsize',15)
+title('(a)')
+set(gca,'visible','off')
+
+subplot(1,2,2)
+X_new = X_ori * R;
+
+h1 = scatter(X_new(:,1), X_new(:,2),80, lines(1),'filled','MarkerFaceAlpha', 0.2);
+xlabel('$$x_1$$','interpreter','latex');
+ylabel('$$x_2$$','interpreter','latex');
+grid on;
+xlim([-10, 10]);
+ylim([-10, 10]);
+
+axis square
+set(gca,'fontsize',15)
+title('(b)')
+set(gca,'visible','off')
