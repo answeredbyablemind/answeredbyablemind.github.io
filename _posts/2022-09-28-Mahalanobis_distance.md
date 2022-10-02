@@ -72,7 +72,7 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
 다시 말해, 아래의 그림과 같이 표준편차를 기준삼아 등고선을 표시할 수 있다. 그리고 이 등고선이 "맥락을 고려한" 거리의 지표가 되는 것이다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic6.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic6.png">
  <br>
  그림 6. 평균으로부터 68, 95, 99.7% 등 표준편차 만큼 떨어진 거리를 등고선으로 표시한 그림
 </p>
@@ -80,7 +80,7 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
 그런데, 우리가 가지고 있는 가장 간단한 거리의 지표는 유클리드 거리이다. 만약, 모든 "맥락"을 정규화 시킬 수 있다면 어떤 방법을 취해야 할까? 그것은 아래 그림과 같이 데이터가 표시 되어 있는 벡터 공간을 변형함으로써 가능할 것이다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic7.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic7.png">
  <br>
  그림 7. 데이터의 "맥락"의 표현과 "맥락"을 "정규화" 하기 위한 데이터(벡터) 공간의 변형
 </p>
@@ -88,12 +88,12 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
 본 포스팅 맨 처음의 애플릿을 다시 한번 생각해보자. "맥락"을 고려하면 아래 그림의 왼쪽과 같이 주황색 점들보다는 노란색 점들이 더 거리가 먼 거리다. 이것은 데이터가 어떻게 분포되어 있는지를 곰곰히 생각해보고 얻어지는 결과이다. 그런데, 아래 그림의 오른쪽과 같이 "맥락"을 정규화시키면 단순히 유클리드 거리만 계산한 결과를 보기만 하면 이미 "맥락"이 고려된 결과를 얻는 것과 같다. 왜냐하면 "정규화" 과정에서 "맥락"이 고려되어 데이터(벡터) 공간을 변형시켰기 때문이다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic8.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic8.png">
  <br>
  그림 8. "맥락"을 정규화 시키고나서 측정한 유클리드 거리는 이미 맥락을 고려한 거리가 된다.
 </p>
 
-벡터 공간의 변형은 행렬로 표현할 수 있다. 특히, 데이터의 "맥락"을 표현하는 행렬은 공분산 행렬($\Sigma$)이고, 그것을 다시 돌려 놓기 위한 행렬은 공분산 행렬의 역행렬($\Sigma^{-1}$)로 표현가능하다.
+벡터 공간의 변형은 행렬로 표현할 수 있다. 특히, 데이터의 "맥락"을 표현하는 행렬은 공분산 행렬($\Sigma$)과 관련되어 있고, 그것을 다시 돌려 놓기 위한 행렬은 공분산 행렬의 역행렬($\Sigma^{-1}$)과 관련되어 있다.
 
 아래의 수식은 마할라노비스 거리 공식이다. 식 (1)과 다르게 공분산 행렬의 역행렬이 들어있는 것에 주목할 필요가 있다. 지금부터는 행렬의 의미에 대해 조금 더 자세히 설명하고, "맥락"의 "정규화"를 수행하는 것과 식 (2)의 형태의 관계에 대해 더 자세하게 설명하도록 하겠다.
 
@@ -133,40 +133,14 @@ $$\begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}$$
 
 ## 주어진 데이터를 보는 새로운 관점
 
-우리가 갖게 된 데이터 $x$를 다음과 같이 어떤 행렬 $A$에 의해 원시 형태의 데이터 $z$가 선형변환 된 것이라고 생각해보자. 이 때, $z$는 표준정규분포를 따른다고 가정하자.
+우리는 지금의 데이터의 분포에 대해 "원래의 원의 형태로 주어졌던 데이터가 선형변환에 의해 변환된 결과로써 보자"라는 관점에서 데이터를 보고자 한다. 즉 그림 6을 놓고 설명하자면 우리에게 주어진 데이터는 그림 6의 (b)와 같지만, 이것은 어떤 행렬에 의해[^note] 선형 변형된 결과이며 그 선형 변형된 전 단계의 "원시 형태"는 그림 6의 (a)와 같다는 것이다.
 
-$$x=Az\text{; } z\sim\mathcal{N}(0,1)$$
-
-즉, 행렬 $A$는 데이터가 어떻게 선형변환 되어 얻어진 것인가를 표현해주고 있다.
-
-$$x^Tx=z^TA^TAz$$
-
-반대로
-
-$$z=A^{-1}x$$
-
-$$z^Tz=x^T(A^{-1})^TA^{-1}x$$
-
-$$=x^T(AA^T)^{-1}x$$
-
-## 공분산 행렬의 기하학적 의미
-
-우선 공분산 행렬을 기하학적으로 파악해보도록 하자. [행렬이란 선형 변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)이고 하나의 벡터 공간을 선형적으로 다른 벡터 공간으로 mapping 하는 기능을 가진다.
-
-즉, 조금 다르게 말하면 우리는 지금의 데이터의 분포에 대해 "원래의 원의 형태로 주어졌던 데이터가 선형변환에 의해 변환된 결과로써 보자"라는 관점에서 데이터를 보고자 한다. 다음과 같이 어떤 행렬에 의해[^note] mapping 되는 mapping 전 단계의 데이터의 분포를 생각해보자. 
-
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-27_PCA/pic4.png">
-<br>
-그림 5. 2차원 벡터공간에 bivariate Gaussian distribution을 통해 random values를 원형으로 뿌려보았음
-</p>
-
-그림 5과 같은 데이터에 대해 행렬을 적용하여 선형 변환을 시켜주면[^note] 어떤 일이 일어나는지 알아보자. 그림 3에서 데이터가 자리잡고 있는 2차원 벡터공간에 대한 선형 변환은 그림 아래의 애플릿과 같이 나타난다.
+그림 6의 (a)와 같은 데이터에 대해 행렬을 적용하여 선형 변환을 시켜주면[^note] 어떤 일이 일어나는지 알아보자. 그림 6의 (a)가 보여주고 있는 "원시 형태"가 자리잡고 있는 2차원 벡터공간에 대한 선형 변환은 그림 아래의 애플릿과 같이 나타난다.
 
 [^note]: 실제로 곱해지는 행렬은 공분산 행렬이 아닌 공분산 행렬을 숄레스키 분해하여 얻은 삼각행렬이다.
 
 <p align="center">
-  <iframe width = "400" height = "400" src="https://angeloyeo.github.io/p5/2019-07-27-PCA_applet1/" frameborder = "0"></iframe>
+  <iframe width = "400" height = "400" src="https://angeloyeo.github.io/p5/2022-09-28-Mahalanobis_distance/example3/" frameborder = "0"></iframe>
 </p>
 
 각 버튼을 눌렀을 때 얻게 되는 결과들의 공분산 행렬은 아래와 같다.
