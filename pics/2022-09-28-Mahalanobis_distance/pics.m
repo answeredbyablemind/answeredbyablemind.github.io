@@ -35,14 +35,15 @@ X_new = randn(1000,2) * R;
 
 figure;
 
-plot(X(:,1), X(:,2),'o','markerfacecolor',lines(1),'markeredgecolor','none');
+plot(X_new(:,1), X_new(:,2),'o','markerfacecolor',lines(1),'markeredgecolor','none');
 xlabel('$$x_1$$','interpreter','latex');
 ylabel('$$x_2$$','interpreter','latex');
 grid on;
 xlim([-7, 7]);
 ylim([-7, 7]);
 
-S_new = (X_new - mean(X_new))'*(X_new - mean(X_new))/(1000-1);
+% S_new = (X_new - mean(X_new))'*(X_new - mean(X_new))/(1000-1);
+S_new = 1/1000*X_new'*X_new
 
 %% pic 6
 R = chol([3,2;2,4]);

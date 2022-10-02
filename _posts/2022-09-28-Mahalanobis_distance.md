@@ -85,7 +85,7 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
  그림 7. 데이터의 "맥락"의 표현과 "맥락"을 "정규화" 하기 위한 데이터(벡터) 공간의 변형
 </p>
 
-본 포스팅 맨 처음의 애플릿을 다시 한번 생각해보자. "맥락"을 고려하면 아래 그림의 왼쪽과 같이 주황색 점들보다는 노란색 점들이 더 거리가 먼 거리다. 이것은 데이터가 어떻게 분포되어 있는지를 곰곰히 생각해보고 얻어지는 결과이다. 그런데, 아래 그림의 오른쪽과 같이 "맥락"을 정규화시키면 단순히 유클리드 거리만 계산한 결과를 보기만 하면 이미 "맥락"이 고려된 결과를 얻는 것과 같다. 왜냐하면 "정규화" 과정에서 "맥락"이 고려되어 데이터(벡터) 공간을 변형시켰기 때문이다.
+본 포스팅 맨 처음의 애플릿을 다시 한번 생각해보자. 아래의 그림 8의 왼쪽을 보면, 주어진 데이터의 "맥락"을 고려했을 때 주황색 점들보다는 노란색 점들이 더 먼 거리라고 판단해주어야 한다. 이것은 데이터가 어떻게 분포되어 있는지를 곰곰히 생각해보고 얻어지는 결과이다. 그런데, 그림 8의 오른쪽과 같이 "맥락"을 정규화시키면 단순히 유클리드 거리만 계산한 결과로도 노란색 점들 간의 거리가 더 멀다. "정규화" 과정으로 이미 주어진 데이터에 대한 "맥락"을 고려시켜 기존의 데이터(벡터) 공간을 변형시켰기 때문이다.
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic8.png">
@@ -99,89 +99,19 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
 
 $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
-# 공분산 행렬과 역행렬의 의미
+# 공분산 행렬과 그 역행렬의 의미
 
-마할라노비스 거리의 의미를 잘 이해하기 위해서는 행렬이 갖는 기하학적 의미에 대해 아는 것이 중요하다. [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html) 편에서는 행렬이 벡터 공간을 선형적으로 변환시키는 기능을 한다고 소개한 바 있다. 
+데이터 샘플의 수가 $n$이고 feature의 개수가 $d$라고 했을 때 데이터를 n by d 행렬 $X$로 표시하자. 이 때, 각 열의 평균은 0이라고 가정하자. 공분산 행렬을 계산하기 위해선 아래와 같은 수식을 적용함으로써 얻어낼 수 있다[^1].
 
-## 행렬은 선형 변환이다.
+[^1]: 불편향 공분산을 얻기 위해선 n 대신에 n-1로 나눌 수도 있다.
 
-벡터 공간을 선형 변환한다는 것은 공간의 변환 전 후에 1) 원점의 위치가 변하지 않고 2) 격자들의 형태가 직선이며 3) 격자 간의 간격이 동일하다는 것을 의미한다. 아래의 Applet은 행렬 
+$$\Sigma=\frac{1}{n}X^TX % 식 (3)$$
 
-$$A=\begin{bmatrix}2 & -3 \\ 1 & 1\end{bmatrix} % 식 (3)$$
-
-이 보여주는 선형 변환이다.
-
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/Matrix_as_a_linear_transformation/transformation1/" width="650" height = "520" frameborder="0"></iframe></p>
-
-위 애플릿의 슬라이드를 가장 오른쪽으로 옮겼을 때의 결과는 다음과 같은데,
+실제 샘플 [데이터](https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/covariance_matrix_data.csv)를 직접 도시해보고 공분산도 계산해보면 아래 그림과 같다.
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png">
-  <br>
-  그림 9. 식 (3)의 행렬이 취해주는 선형 변환의 최종 결과
-</p>
-
-위 그림의 빨간색 화살표와 초록색 화살표는 행렬 $A$를 구성하고 있는 열벡터들
-
-$$\begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}$$
-
-에 대응되는 것이다. 이 시각화를 통해 확인할 수 있듯이 선형 변환의 변환 대상은 벡터이다. 벡터는 화살표 뿐만 아니라 점으로도 표현할 수 있다. 만약, 수 많은 벡터들이 벡터 공간상에 놓여있다고 했을 때 이것들을 한꺼번에 식 (3)의 행렬로 변환 시켜주면 어떤 결과를 얻게 될까?
-
-<p align="center"><iframe  src="https://angeloyeo.github.io/p5/2022-09-28-Mahalanobis_distance/example2/" width="650" height = "520" frameborder="0"></iframe></p>
-
-그림 4의 (b)에서 보여주는 데이터의 형태를 다시 생각해보자. 위 애플릿의 선형 변환 결과물과 비교해 우리가 얻을 수 있는 인사이트는 무엇일까?
-
-## 공분산 행렬의 의미
-
-이제부터는 우리에게 주어진 데이터는 표준 정규 분포를 따르는 "원시 형태"의 데이터가 선형변환에 의해 변환된 결과라고 보자.
-
-<p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic10.png">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic12.png">
  <br>
- 그림 10. 우리에게 주어진 데이터는 표준 정규 분포를 따르는 "원시 형태"의 데이터가 선형변환에 의해 변환된 결과라고 보자.
-</p>
-
-즉, 우리에게 주어진 데이터 $x$는 다음과 같이 어떤 행렬 $A$에 의해 원시 형태의 데이터 $z$를 선형변환 시켜 얻어낸 결과이다.
-
-$$x=Az; z\sim\mathcal{N}(0,1)$$
-
-이제 아래의 애플릿에서 그림 10의 왼쪽과 같은 "원시 형태"의 데이터에 행렬을 적용하여 선형 변환을 시켜주면 어떤 일이 일어나는지 알아보자. 
-
-<p align="center">
-  <iframe width = "400" height = "400" src="https://angeloyeo.github.io/p5/2022-09-28-Mahalanobis_distance/example3/" frameborder = "0"></iframe>
-</p>
-
-각 버튼을 눌렀을 때 얻게 되는 결과들의 공분산 행렬은 아래와 같다.
-
-<center>
-
-Matrix 1: $
-\begin{bmatrix}
-3 & 2 \\
-2 & 4
-\end{bmatrix}
-$, Matrix 2: $
-\begin{bmatrix}
-3 & -2 \\
--2 & 4
-\end{bmatrix}
-$, Matrix 3: $
-\begin{bmatrix}
-5 & 0 \\
-0 & 1
-\end{bmatrix}
-$, Matrix 4: $
-\begin{bmatrix}
-1 & 0 \\
-0 & 5
-\end{bmatrix}
-$
-</center>
-
-4개의 행렬 중, Matrix 1에 대해서만 설명하자면, Matrix 1의 1행 1열의 원소는 1번 feature의 variance를 나타낸다. 즉, x축 방향으로 얼마만큼 퍼져있는가를 말해준다. 또, 1행 2열의 원소와 2행 1열의 원소는 각각 x, y축으로 함께 얼마만큼 퍼져있는가를 설명하며, 마지막으로 2행 2열의 원소는 y축 방향으로 얼마만큼 퍼져있는지를 설명해준다.
-
-<p align = "center">
-  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-27_PCA/pics_mtx1.png">
-  <br>그림 11. 공분산행렬 Matrix 1의 각 원소들이 의미하는 것
+ 그림 9. 예시 샘플 데이터의 분포와 공분산
 </p>
 
