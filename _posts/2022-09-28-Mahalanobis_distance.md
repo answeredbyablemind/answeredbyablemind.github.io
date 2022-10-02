@@ -17,7 +17,7 @@ tags: 선형대수학 통계학
 * [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
 * [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
 
-# 거리를 재는 방법
+# 절대적 거리와 상대적 거리
 
 공간 상의 두 점 사이의 거리를 재는 방법은 피타고라스 정리에서 출발한다고 볼 수 있다.
 
@@ -61,13 +61,45 @@ $$d_E = \sqrt{(\vec x-\vec y)^T(\vec x-\vec y)} % 식 (1)$$
   그림 4. 다른 데이터들의 맥락을 고려한 두 점 사이의 거리는 다르게 계산되어야 할 수도 있다.
 </p>
 
-여기서는 "맥락", "등고선" 등의 모호한 표현을 사용했지만 데이터의 분포 형태를 설명하는 것은 공분산 행렬을 이용해 가능하다. 공분산 행렬은 여기서는 $\Sigma$로 표현하고자 하며 이를 이용해 정의하는 상대적 거리인 마할라노비스 거리(Mahalanobis)는 임의의 벡터 $\vec x$, $\vec y$에 대해 다음과 같이 정의한다.
+여기서는 "맥락", "등고선" 등의 모호한 표현을 사용했지만 이 개념을 조금 더 수학적으로 다듬어보자. 만약 데이터의 분포를 정규분포의 형태라고 가정할 수 있다면 정규분포의 표준 편차의 성질을 이용해 다음과 같이 평균(중심)으로부터 1, 2, 3 표준편차 만큼 떨어진 곳에 68, 95, 99.7%만큼의 데이터가 들어온다는 사실을 이용해보자.
+
+<p align = "center">
+  <img width = "600" src = "https://upload.wikimedia.org/wikipedia/commons/2/22/Empirical_rule_histogram.svg">
+ <br>
+ 그림 5. 정규 분포에서 중심으로부터 1, 2, 3 표준편차 만큼 멀어질 때 얼마만큼의 데이터가 포함되는가? (68–95–99.7 rule)
+</p>
+
+다시 말해, 아래의 그림과 같이 표준편차를 기준삼아 등고선을 표시할 수 있다. 그리고 이 등고선이 "맥락을 고려한" 거리의 지표가 되는 것이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic6.png">
+ <br>
+ 그림 6. 평균으로부터 68, 95, 99.7% 등 표준편차 만큼 떨어진 거리를 등고선으로 표시한 그림
+</p>
+
+그런데, 우리가 가지고 있는 가장 간단한 거리의 지표는 유클리드 거리이다. 만약, 모든 "맥락"을 정규화 시킬 수 있다면 어떤 방법을 취해야 할까? 그것은 아래 그림과 같이 데이터가 표시 되어 있는 벡터 공간을 변형함으로써 가능할 것이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic7.png">
+ <br>
+ 그림 7. 데이터의 "맥락"의 표현과 "맥락"을 "정규화" 하기 위한 데이터(벡터) 공간의 변형
+</p>
+
+본 포스팅 맨 처음의 애플릿을 다시 한번 생각해보자. "맥락"을 고려하면 아래 그림의 왼쪽과 같이 주황색 점들보다는 노란색 점들이 더 거리가 먼 거리다. 이것은 데이터가 어떻게 분포되어 있는지를 곰곰히 생각해보고 얻어지는 결과이다. 그런데, 아래 그림의 오른쪽과 같이 "맥락"을 정규화시키면 단순히 유클리드 거리만 계산한 결과를 보기만 하면 이미 "맥락"이 고려된 결과를 얻는 것과 같다. 왜냐하면 "정규화" 과정에서 "맥락"이 고려되어 데이터(벡터) 공간을 변형시켰기 때문이다.
+
+<p align = "center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic8.png">
+ <br>
+ 그림 8. "맥락"을 정규화 시키고나서 측정한 유클리드 거리는 이미 맥락을 고려한 거리가 된다.
+</p>
+
+벡터 공간의 변형은 행렬로 표현할 수 있다. 특히, 데이터의 "맥락"을 표현하는 행렬은 공분산 행렬($\Sigma$)이고, 그것을 다시 돌려 놓기 위한 행렬은 공분산 행렬의 역행렬($\Sigma^{-1}$)로 표현가능하다.
+
+아래의 수식은 마할라노비스 거리 공식이다. 식 (1)과 다르게 공분산 행렬의 역행렬이 들어있는 것에 주목할 필요가 있다. 지금부터는 행렬의 의미에 대해 조금 더 자세히 설명하고, "맥락"의 "정규화"를 수행하는 것과 식 (2)의 형태의 관계에 대해 더 자세하게 설명하도록 하겠다.
 
 $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
-$d_E$와 비교했을 때 $\Sigma$의 역행렬 $\Sigma^{-1}$이 가운데 곱해져 있다는 점에 주목하자. 
-
-# 행렬의 기하학적 의미
+# 공분산 행렬과 역행렬의 의미
 
 마할라노비스 거리의 의미를 잘 이해하기 위해서는 행렬이 갖는 기하학적 의미에 대해 아는 것이 중요하다. [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html) 편에서는 행렬이 벡터 공간을 선형적으로 변환시키는 기능을 한다고 소개한 바 있다. 
 
@@ -84,9 +116,9 @@ $$A=\begin{bmatrix}2 & -3 \\ 1 & 1\end{bmatrix} % 식 (3)$$
 위 애플릿의 슬라이드를 가장 오른쪽으로 옮겼을 때의 결과는 다음과 같은데,
 
 <p align = "center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png"></br>
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/matrix_as_a_transformation/pic1.png">
   <br>
-  그림 5. 식 (3)의 행렬이 취해주는 선형 변환의 최종 결과
+  그림 9. 식 (3)의 행렬이 취해주는 선형 변환의 최종 결과
 </p>
 
 위 그림의 빨간색 화살표와 초록색 화살표는 행렬 $A$를 구성하고 있는 열벡터들
@@ -101,17 +133,17 @@ $$\begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}$$
 
 ## 주어진 데이터를 보는 새로운 관점
 
-$$y=Ax$$
+$$x=Az$$
 
-$$y^Ty=x^TA^TAx$$
+$$x^Tx=z^TA^TAz$$
 
 반대로
 
-$$x=A^{-1}y$$
+$$z=A^{-1}x$$
 
-$$x^Tx=y^T(A^{-1})^TA^{-1}y$$
+$$z^Tz=x^T(A^{-1})^TA^{-1}x$$
 
-$$=y^T(AA^T)^{-1}y$$
+$$=x^T(AA^T)^{-1}x$$
 
 ## 공분산 행렬의 기하학적 의미
 
