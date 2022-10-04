@@ -15,38 +15,38 @@ let basisVecX = [],
      newBasisVecY = [];
 let dots = [[],[]],
      newdots = [[],[]];
-let n_dots = 200;
+let n_dots = 1000;
 
 function setup() {
      // createCanvas(windowWidth - 20, windowHeight - 20);
      // TODO: window size에 맞춰서 animation을 만들 수 없을까?
      createCanvas(600, 480);
-     scl = (height / 8); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
+     scl = round(height / 13); // height가 낮다보니 height에 scale을 맞추는게 좋아보임.
 
      // 각 아래의 내용을 vu, vd, hl, hr에 맞출 수 있게... 벡터화 하고자 함.
      // 즉, 초기화된 벡터를 만들고 싶음.
      // vertical line에 해당하는 vectors
-     for (let i = -floor(width / scl) / 2 -30; i < floor(width / scl) / 2+30; i++) {
+     for (let i = -floor(width / scl) / 2 -40; i < floor(width / scl) / 2+40; i++) {
           // line(i * scl, -height / 2, i * scl, height / 2)
           vu.push([
                [i],
-               [height / (2 * scl)+30]
+               [height / (2 * scl)+40]
           ]);
           vd.push([
                [i],
-               [-height / (2 * scl)-30]
+               [-height / (2 * scl)-40]
           ]);
      }
      // horizontal line에 해당하는 vectors
-     for (let i = -floor(height / scl) / 2-30; i < floor(height / scl) / 2+30; i++) {
+     for (let i = -floor(height / scl) / 2-40; i < floor(height / scl) / 2+40; i++) {
           // line(-width / 2, i * scl, width / 2, i * scl)
           // line(x1, y1, x2, y2) 형식으로 그려짐
           hl.push([
-               [-width / (2 * scl)-30],
+               [-width / (2 * scl)-40],
                [i]
           ]);
           hr.push([
-               [width / (2 * scl)+30],
+               [width / (2 * scl)+40],
                [i]
           ]);
      }
@@ -56,9 +56,9 @@ function setup() {
 
      // matrix 설정하기
      myMtx = [
-          [0.5, -0.25],
-          [-0.25, 0.375]
-     ]; // inverse of [3, 2; 2, 4]
+          [0.5774, 0],
+          [-0.4082, 0.6124]
+     ]; // R = chol([3,2;2,4]); inv(R')
 
      myMtx = math.add(myMtx, math.matrix([
           [-1, 0],
@@ -75,27 +75,27 @@ function setup() {
      ]
 
      for (let i = 0; i < n_dots; i++){
-          dots[0][i] = randomGaussian(0, 0.3)
-          dots[1][i] = randomGaussian(0, 0.3)
+          dots[0][i] = randomGaussian(0, 1)
+          dots[1][i] = randomGaussian(0, 1)
      }
 
      // additional dots for reference
-     dots[0][n_dots] = 0.5;
-     dots[1][n_dots] = 0.25;
+     dots[0][n_dots] = 2.3094;
+     dots[1][n_dots] = 0.8165;
 
-     dots[0][n_dots+1] = 1.5;
-     dots[1][n_dots+1] = -1.25;
+     dots[0][n_dots+1] = 2.3094;
+     dots[1][n_dots+1] = -4.0825;
 
-     dots[0][n_dots+2] = -0.5;
-     dots[1][n_dots+2] = -0.25;
+     dots[0][n_dots+2] = -2.3094;
+     dots[1][n_dots+2] = -0.8165;
 
-     dots[0][n_dots+3] = -1.5;
-     dots[1][n_dots+3] = 1.25;
+     dots[0][n_dots+3] = -2.3094;
+     dots[1][n_dots+3] = 4.0825;
 
      dots = math.multiply(math.matrix([
-          [3, 2],
-          [2, 4]
-     ]), dots)
+          [1.7321, 0],
+          [1.1547, 1.6330]
+     ]), dots) // R = chol([3,2;2,4]); R'
 
 }
 
