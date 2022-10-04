@@ -44,9 +44,16 @@ ylim([-7, 7]);
 
 % S_new = (X_new - mean(X_new))'*(X_new - mean(X_new))/(1000-1);
 S_new = 1/1000*X_new'*X_new;
-
+% 이것은 R'*transpose(R')과 동일한 결과임.
+R'*transpose(R')
+S_new
 %% 
 d_m = sqrt(mahal([4, 4; 4, -4; -4, -4; -4, 4], X_new))
+
+D_inv = inv(R')*transpose([4, 4; 4, -4; -4, -4; -4, 4]);
+sqrt(sum(D_inv.^2))
+
+
 
 %% pic 6
 R = chol([3,2;2,4]);
