@@ -43,7 +43,10 @@ xlim([-7, 7]);
 ylim([-7, 7]);
 
 % S_new = (X_new - mean(X_new))'*(X_new - mean(X_new))/(1000-1);
-S_new = 1/1000*X_new'*X_new
+S_new = 1/1000*X_new'*X_new;
+
+%% 
+d_m = sqrt(mahal([4, 4; 4, -4; -4, -4; -4, 4], X_new))
 
 %% pic 6
 R = chol([3,2;2,4]);
