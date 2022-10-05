@@ -208,3 +208,29 @@ axis square
 set(gca,'fontsize',15)
 title('(b)')
 set(gca,'visible','off')
+
+
+%% alien dataset
+
+R = chol([3,2;2,4]);
+rng('default')
+X = randn(1000,2);
+
+height = X(:,1) + 10;
+weight = X(:,2) + 4;
+
+figure('position',[1000, 558, 1437, 420]);
+subplot(1,2,1);
+histogram(height);
+xlabel('height'); ylabel('frequency')
+grid on;
+title('height of martians') 
+subplot(1,2,2);
+histogram(weight)
+xlabel('weight'); ylabel('frequency')
+grid on;
+title('weight of martians')
+
+round([height(1:5), weight(1:5)])
+
+[height, weight]
