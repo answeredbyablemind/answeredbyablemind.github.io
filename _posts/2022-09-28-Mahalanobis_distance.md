@@ -87,15 +87,27 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
 ## 주어진 데이터를 이해하는 또 다른 방법
 
-화성에 사는 외계인 중 1000명을 임의로 선별해 키와 몸무게를 조사했고 이것을 표로 나타내보았다. 놀랍게도 평균키는 10cm이고 평균 몸무게는 5kg이었다고 한다. 표로 정리해보면 대략 아래와 같았다고 하자.
+화성에 사는 외계인 중 1000명을 임의로 선별해 키와 몸무게를 조사했고 이것을 표로 나타내보았다. 놀랍게도 평균키는 10cm이고 평균 몸무게는 4kg이었다고 한다. 표로 정리해보면 대략 아래와 같았다고 하자.
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_table.png">
  <br>
- 그림 7. 화성 외계인들의 키와 몸무게를 정리한 표 (4번 외계인까지만 표시)
+ 그림 7. 화성 외계인들의 키와 몸무게를 정리한 표 (4번 외계인까지만 반올림하여 표시함)
 </p>
 
 외계인들의 키와 몸무게 데이터는 [여기](https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/alien_height_weight.csv)서 받을 수 있다.
+
+키와 몸무게를 정리한 데이터를 $\mathcal D$라고 하자. 또, 표본이 된 외계인의 수를 $n$이라고 하고 키와 몸무게와 같은 특징의 숫자를 $d$라고 하면 $\mathcal D$는 다음과 같은 행렬이라고도 볼 수 있다.
+
+$$\mathcal D\in\mathbb{R}^{n\times d}$$
+
+그리고 $\mathcal D$의 분포를 그려보면 다음과 같다. 가로축에는 키 데이터를 놓고 세로축에는 몸무게 데이터를 놓았다.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_alien_distribution.png">
+ <br>
+ 그림 8. 화성 외계인들의 키와 몸무게 데이터의 분포
+</p>
 
 
 

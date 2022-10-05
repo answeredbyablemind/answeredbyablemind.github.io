@@ -211,13 +211,15 @@ set(gca,'visible','off')
 
 
 %% alien dataset
-
+close all;
 R = chol([3,2;2,4]);
 rng('default')
-X = randn(1000,2);
+X = randn(1000,2) * R;
+
+min(X)
 
 height = X(:,1) + 10;
-weight = X(:,2) + 4;
+weight = X(:,2) + 8;
 
 figure('position',[1000, 558, 1437, 420]);
 subplot(1,2,1);
@@ -234,3 +236,13 @@ title('weight of martians')
 round([height(1:5), weight(1:5)])
 
 [height, weight]
+
+figure;
+scatter(height, weight,80, lines(1),'filled','MarkerFaceAlpha', 0.2);
+xlabel('height (cm)')
+ylabel('weight (kg)')
+grid on;
+title('distribution of $$\mathcal{D}$$','interpreter','latex')
+
+xlim([2, 18])
+ylim([0, 16])
