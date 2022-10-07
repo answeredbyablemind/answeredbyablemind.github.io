@@ -121,7 +121,7 @@ $$\mathbb{E}\left[Z^TZ\right]
   z_d^T z_1 & z_d^T z_2 & \cdots & z_d^Tz_d
   \end{bmatrix}\right ] % 식 (5)$$
 
-여기서 $i=1,2,\cdots, d$에 대해 $\mathbb{E}\left[z_i^T z_i \right]=1$ 이다. 또, $z_i$는 독립적으로 추출되었으므로 서로 다른 $i$와 $j$에 대해 $z_i^Tz_j=0$ 이다.
+여기서 $i=1,2,\cdots, d$에 대해 $\mathbb{E}\left[z_i^T z_i \right]$는 분산 $1$이 $n$ 개 더해진 것과 같으므로 $\mathbb{E}\left[z_i^T z_i \right]=n$이다. 또, $z_i$는 독립적으로 추출되었으므로 서로 다른 $i$와 $j$에 대해 $\mathbb E \left[z_i^T z_j \right]=0$ 이다.
 
 따라서 식 (5)는
 
@@ -161,7 +161,7 @@ $$\mathcal D\in\mathbb{R}^{n\times d} % 식 (7)$$
 이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 그리고 feature 별 평균값이 모두 0인 새로운 분포를 $X$라고 부르자.
 
 <p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_move_distribution.png">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_move_distribution.png">
  <br>
  그림 9. 분포 중심의 이동
 </p>
