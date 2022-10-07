@@ -20,7 +20,11 @@ tags: 선형대수학 통계학
 공분산 행렬에 대한 더 친절한 설명이 필요한 경우 아래의 포스트를 확인하십시오.
 
 * [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
+  
+아래는 알고 계시면 도움이 되는 포스팅입니다.
 
+* [숄레스키 분해](https://angeloyeo.github.io/2021/06/17/Cholesky_decomposition.html)
+ 
 # 맥락을 고려한 상대적인 거리
 
 아래와 같이 두 벡터 $\vec x$와 $\vec y$를 생각해보자.
@@ -85,6 +89,51 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
 # 공분산 행렬과 그 역행렬의 의미
 
+## iid(independent and identically distributed) 정규분포 샘플 대한 기초적인 이해
+
+데이터의 구조에 대해 이해하기에 앞서 우선 iid(independent and identically distributed) 정규 분포 샘플의 성질에 대해 이해할 필요가 있다. 용어는 어려워 보이지만 차근히 들여다보면 어려울 것이 하나도 없다. iid는 랜덤 데이터 샘플을 추출해내는 가장 단순한 방법론 중 하나이다. 
+
+iid를 풀어서 설명하자면 다음과 같은 가정(assumption)이다
+
+* 추출된 데이터는 독립적으로 추출되었다. 
+* 추출된 데이터는 모두 동일한 확률 분포에서 추출되었다.
+
+또, 여기서 추출된 확률 분포가 정규 분포라고 가정할 수 있다면 추출된 샘플은 "indenepdent and identically distributed normal random variables다" 라고 말 할 수 있는 것이다.
+
+이번에는 $Z\in\mathbb{R}^{n\times d}$ 와 같이 여러개의 iid normal randon variables $z_1, \cdots ,z_d$를 좌우로 쌓아보자. 특히, 계산의 편의를 위해 표준 정규분포를 가정하자.
+
+$$Z =\begin{bmatrix} | & | & & |\\ z_1 & z_2 & \cdots & z_d\\ | & | & & |\end{bmatrix} % 식 (3)$$
+
+$$\text{where } z_1, z_2, \cdots, z_n \text{ are i.i.d. normal random variables with mean 0 and variance 1}\notag$$
+
+표준 정규분포에서 추출한 샘플들이므로 아래의 사실을 확인할 수 있다. 추출한 분포의 평균이 0이라는 점을 생각하면,
+
+$$\mathbb{E}\left[z_i\right]=0 \text{ for } i = 1, 2, \cdots, d % 식 (4)$$
+
+또한 추출한 분포의 분산이 1이라는 것을 생각하여 아래에 대해서도 생각해보자.
+
+$$\mathbb{E}\left[Z^TZ\right]
+
+= \mathbb{E}\left [\begin{bmatrix}
+  z_1^T z_1 & z_1^T z_2 & \cdots & z_1^Tz_d \\ 
+  z_2^T z_1 & z_2^T z_2 & \cdots & z_2^T z_d \\
+  \vdots    & \vdots    & \ddots & \vdots \\
+  z_d^T z_1 & z_d^T z_2 & \cdots & z_d^Tz_d
+  \end{bmatrix}\right ] % 식 (5)$$
+
+여기서 $i=1,2,\cdots, d$에 대해 $\mathbb{E}\left[z_i^T z_i \right]=1$ 이다. 또, $z_i$는 독립적으로 추출되었으므로 서로 다른 $i$와 $j$에 대해 $z_i^Tz_j=0$ 이다.
+
+따라서 식 (5)는
+
+$$식 (5) \Rightarrow \begin{bmatrix}
+  n & 0 & \cdots & 0 \\ 
+  0 & n & \cdots & 0 \\
+  \vdots    & \vdots    & \ddots & \vdots \\
+  0 & 0 & \cdots & n
+  \end{bmatrix} = n I % 식 (6)$$
+
+와 같다. 여기서 $I$는 $d\times d$ 차원의 단위행렬이다.
+
 ## 주어진 데이터를 이해하는 또 다른 방법
 
 화성에 사는 외계인 중 1000명을 임의로 선별해 키와 몸무게를 조사했고 이것을 표로 나타내보았다. 놀랍게도 평균키는 10cm이고 평균 몸무게는 8kg이었다고 한다. 표로 정리해보면 대략 아래와 같았다고 하자.
@@ -99,7 +148,7 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
 키와 몸무게를 정리한 데이터를 $\mathcal D$라고 하자. 또, 표본이 된 외계인의 수를 $n$이라고 하고 키와 몸무게와 같은 특징의 숫자를 $d$라고 하면 $\mathcal D$는 다음과 같은 행렬이라고도 볼 수 있다.
 
-$$\mathcal D\in\mathbb{R}^{n\times d}$$
+$$\mathcal D\in\mathbb{R}^{n\times d} % 식 (7)$$
 
 그리고 $\mathcal D$의 분포를 그려보면 다음과 같다. 가로축에는 키 데이터를 놓고 세로축에는 몸무게 데이터를 놓았다.
 
@@ -109,8 +158,13 @@ $$\mathcal D\in\mathbb{R}^{n\times d}$$
  그림 8. 화성 외계인들의 키와 몸무게 데이터의 분포
 </p>
 
-이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 
+이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 그리고 feature 별 평균값이 모두 0인 새로운 분포를 $X$라고 부르자.
 
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_move_distribution.png">
+ <br>
+ 그림 9. 분포 중심의 이동
+</p>
 
 
 [//]:# (아래의 두 가지에 주목하면 글이 잘 진행될 수 있을 것 같다.)

@@ -31,7 +31,8 @@ set(gca,'visible','off')
 %% Cholesky 분해를 이용해 시각화하는 방법도 있음
 R = chol([3,2;2,4]);
 rng('default')
-X_new = randn(1000,2) * R;
+X = randn(1000,2);
+X_new = X * R;
 
 figure;
 
@@ -246,3 +247,25 @@ title('distribution of $$\mathcal{D}$$','interpreter','latex')
 
 xlim([2, 18])
 ylim([0, 16])
+
+
+figure('position',[1000, 558, 1448, 420]);
+subplot(1,2,1)
+scatter(height, weight,80, lines(1),'filled','MarkerFaceAlpha', 0.2);
+xlabel('height (cm)')
+ylabel('weight (kg)')
+grid on;
+title('distribution of $$\mathcal{D}$$','interpreter','latex')
+
+xlim([2, 18])
+ylim([0, 16])
+
+subplot(1,2,2)
+scatter(height-10, weight-8,80, lines(1),'filled','MarkerFaceAlpha', 0.2);
+xlabel('x_1')
+ylabel('x_2')
+grid on;
+title('distribution of $$X$$','interpreter','latex')
+
+xlim([2, 18]-10)
+ylim([0, 16]-8)
