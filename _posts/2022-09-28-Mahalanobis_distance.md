@@ -89,7 +89,7 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
 # 공분산 행렬과 그 역행렬의 의미
 
-## iid(independent and identically distributed) 정규분포 샘플 대한 기초적인 이해
+## iid 정규분포 샘플 대한 기초적인 이해
 
 데이터의 구조에 대해 이해하기에 앞서 우선 iid(independent and identically distributed) 정규 분포 샘플의 성질에 대해 이해할 필요가 있다. 용어는 어려워 보이지만 차근히 들여다보면 어려울 것이 하나도 없다. iid는 랜덤 데이터 샘플을 추출해내는 가장 단순한 방법론 중 하나이다. 
 
@@ -109,6 +109,8 @@ $$\text{where } z_1, z_2, \cdots, z_n \text{ are i.i.d. normal random variables 
 표준 정규분포에서 추출한 샘플들이므로 아래의 사실을 확인할 수 있다. 추출한 분포의 평균이 0이라는 점을 생각하면,
 
 $$\mathbb{E}\left[z_i\right]=0 \text{ for } i = 1, 2, \cdots, d % 식 (4)$$
+
+이다.
 
 또한 추출한 분포의 분산이 1이라는 것을 생각하여 아래에 대해서도 생각해보자.
 
@@ -158,7 +160,7 @@ $$\mathcal D\in\mathbb{R}^{n\times d} % 식 (7)$$
  그림 8. 화성 외계인들의 키와 몸무게 데이터의 분포
 </p>
 
-이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 그리고 feature 별 평균값이 모두 0인 새로운 분포를 $X$라고 부르자.
+이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 그리고 feature 별 평균값이 모두 0인 새로운 데이터를 행렬 $X$로 보자.
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_move_distribution.png">
@@ -166,6 +168,39 @@ $$\mathcal D\in\mathbb{R}^{n\times d} % 식 (7)$$
  그림 9. 분포 중심의 이동
 </p>
 
+이제 우리는 행렬 $X$를 다음과 같이 "새롭게" 이해해보자. $X$는 원시 데이터 $Z$가 있으며 이것이 선형변환된 결과물이라고 보는 것이다.
+
+$$X = ZR % 식 (8)$$
+
+$$\text{ where }Z \in \mathbb{R}^{n\times d} \text{ and } R \in \mathbb{R}^{d\times d}\notag$$
+
+그리고 $Z$의 모든 열은 iid(independent and identically distributed) 표준 정규분포에서부터 추출한 데이터셋이라고 보자.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic10.png">
+ <br>
+ 그림 10. 주어진 데이터를 일부 수정한 $X$를 원시 형태의 데이터 $Z$로부터 선형변환 된 결과로 보자.
+</p>
+
+이제부터 feature 간의 닮음을 조사하자. feature의 닮음을 조사한다면 데이터의 "맥락"을 파악할 수 있다. 왜냐하면, 가령, feature 1과 feature 2가 많이 닮아있다면 서로 상관관계가 높은 것을 의미하기 때문이다. feature 간의 닮음을 계산하기 위해 아래와 같은 연산을 취해주자.
+
+<p align="center">
+  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-27_PCA/XTX.png">
+  <br>
+  그림 11. 공분산 행렬을 계산하기 위해 각 데이터 특징들의 변동이 서로 얼마나 닮았는지 계산하는 과정.
+</p>
+
+여기서 다시 한번 식 (8)을 이용해보면,
+
+$$X^TX=(ZR)^TZR=R^TZ^TZR=R^T(Z^TZ)R$$
+
+여기서 식 (6)에 따라,
+
+$$X^TX \approx R^T(nI)R=nR^TR$$
+
+가 성립하게 된다. 여기서 "$\approx$"를 쓴 것은 실제 데이터에서는 기댓값과 정확히 같은 값이 나오지 않기 때문에 사용하였다. 그리고 아래와 같은 사실을 확인할 수 있다.
+
+$$R^TR\approx \frac{1}{n}X^TX$$
 
 [//]:# (아래의 두 가지에 주목하면 글이 잘 진행될 수 있을 것 같다.)
 
