@@ -21,10 +21,6 @@ tags: 선형대수학 통계학
 
 * [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
   
-아래는 알고 계시면 도움이 되는 포스팅입니다.
-
-* [숄레스키 분해](https://angeloyeo.github.io/2021/06/17/Cholesky_decomposition.html)
- 
 # 맥락을 고려한 상대적인 거리
 
 아래와 같이 두 벡터 $\vec x$와 $\vec y$를 생각해보자.
@@ -152,23 +148,17 @@ $$식 (5) \Rightarrow \begin{bmatrix}
 
 $$\mathcal D\in\mathbb{R}^{n\times d} % 식 (7)$$
 
-그리고 $\mathcal D$의 분포를 그려보면 다음과 같다. 가로축에는 키 데이터를 놓고 세로축에는 몸무게 데이터를 놓았다.
+이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 그리고 feature 별 평균값이 모두 0인 새로운 데이터를 데이터 $X$로 보자.
 
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_alien_distribution.png">
- <br>
- 그림 8. 화성 외계인들의 키와 몸무게 데이터의 분포
-</p>
-
-이번에는 임의의 1000명 외계인의 키와 몸무게라는 데이터를 이용했지만 어떤 데이터든지 분포를 확인할 수 있다. "새로운" 관점에서 데이터 분포를 이해해보기 위해 데이터셋의 각 feature 별 평균값을 모두 0으로 이동시키자. 그리고 feature 별 평균값이 모두 0인 새로운 데이터를 행렬 $X$로 보자.
+$\mathcal D$와 $X$의 분포를 그려보면 다음과 같다. 
 
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_move_distribution.png">
  <br>
- 그림 9. 분포 중심의 이동
+ 그림 8. 화성 외계인들의 키와 몸무게 데이터의 분포
 </p>
 
-이제 우리는 행렬 $X$를 다음과 같이 "새롭게" 이해해보자. $X$는 원시 데이터 $Z$가 있으며 이것이 선형변환된 결과물이라고 보는 것이다.
+이제 우리는 데이터 $X$를 다음과 같이 "새롭게" 이해해보자. $X$는 원시 데이터 $Z$가 있으며 이것이 선형변환된 결과물이라고 보는 것이다.
 
 $$X = ZR % 식 (8)$$
 
@@ -179,33 +169,33 @@ $$\text{ where }Z \in \mathbb{R}^{n\times d} \text{ and } R \in \mathbb{R}^{d\ti
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic10.png">
  <br>
- 그림 10. 주어진 데이터를 일부 수정한 $X$를 원시 형태의 데이터 $Z$로부터 선형변환 된 결과로 보자.
+ 그림 9. 주어진 데이터를 일부 수정한 $X$를 원시 형태의 데이터 $Z$로부터 선형변환 된 결과로 보자.
 </p>
 
-이제부터 feature 간의 닮음을 조사하자. feature의 닮음을 조사한다면 데이터의 "맥락"을 파악할 수 있다. 왜냐하면, 가령, feature 1과 feature 2가 많이 닮아있다면 서로 상관관계가 높은 것을 의미하기 때문이다. feature 간의 닮음을 계산하기 위해 아래와 같은 연산을 취해주자.
+이제부터 feature 간의 닮음을 조사하자. feature의 닮음을 조사한다면 데이터의 "맥락" 혹은 형태 구조를 파악할 수 있다. 왜냐하면, 가령, feature 1과 feature 2가 많이 닮아있다면 서로 상관관계가 높은 것을 의미하기 때문이다. feature 간의 닮음을 계산하기 위해 아래와 같은 연산을 취해주자.
 
 <p align="center">
-  <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-27_PCA/XTX.png">
+  <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-27_PCA/XTX.png">
   <br>
-  그림 11. 공분산 행렬을 계산하기 위해 각 데이터 특징들의 변동이 서로 얼마나 닮았는지 계산하는 과정.
+  그림 10. 공분산 행렬을 계산하기 위해 각 데이터 특징들의 변동이 서로 얼마나 닮았는지 계산하는 과정.
 </p>
 
 여기서 다시 한번 식 (8)을 이용해보면,
 
-$$X^TX=(ZR)^TZR=R^TZ^TZR=R^T(Z^TZ)R$$
+$$X^TX=(ZR)^TZR=R^TZ^TZR=R^T(Z^TZ)R % 식 (9)$$
 
 여기서 식 (6)에 따라,
 
-$$X^TX \approx R^T(nI)R=nR^TR$$
+$$X^TX \approx R^T(nI)R=nR^TR % 식 (10)$$
 
 가 성립하게 된다. 여기서 "$\approx$"를 쓴 것은 실제 데이터에서는 기댓값과 정확히 같은 값이 나오지 않기 때문에 사용하였다. 그리고 아래와 같은 사실을 확인할 수 있다.
 
-$$R^TR\approx \frac{1}{n}X^TX$$
+$$R^TR\approx \frac{1}{n}X^TX % 식 (11)$$
 
-[//]:# (아래의 두 가지에 주목하면 글이 잘 진행될 수 있을 것 같다.)
+결국 식 (11)이 의미하는 것은 무엇인가? 식 (11)은 데이터 $X$의 형태 구조 혹은 데이터의 "맥락"를 얻기 위한 방법이다. 이것은 원시 형태의 $Z$를 주어진 데이터 $X$ 로 변환하기 위한 선형변환 $R$에 대한 $R^TR$와 거의 같다. 그리고 식 (11)의 형태 구조를 표현하는 행렬을 공분산 행렬이라고 부른다. 여기서는 공분산 행렬을 $\Sigma$라고 쓰도록 하자.
 
+$$\Sigma = \frac{1}{n}X^TX$$
 
-[//]:# (왜 공분산 행렬은 "맥락" 이 될 수 있나?)
+참고로 $n$ 대신 $n-1$로 나누는 방법도 있다. $n$ 대신 $n-1$로 나누어 얻게 되는 공분산 행렬은 표본 공분산이라고 한다.
 
-
-[//]:# (왜 공분산 행렬의 역행렬은 "맥락"을 정규화 해주는 것과 같은 기능을 할까?)
+[//]:# (이 두 가지에 주목하자. 왜 공분산 행렬은 "맥락" 이 될 수 있나? 왜 공분산 행렬의 역행렬은 "맥락"을 정규화 해주는 것과 같은 기능을 할까?)
