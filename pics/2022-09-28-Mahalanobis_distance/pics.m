@@ -210,6 +210,14 @@ set(gca,'fontsize',15)
 title('(b)')
 set(gca,'visible','off')
 
+%% types of bivariate gaussian
+
+bi_norm = @(x, mu, S) (2*pi)^(-1)/sqrt(det(S))*exp(-1/2*(x-mu)'*inv(S)*(x-mu));
+
+[X, Y] = meshgrid(linspace(-1,1,100));
+
+my_pdf = bi_norm([X(:), Y(:)]', [0; 0],  [2,1;1,2]);
+
 
 %% alien dataset
 close all;
