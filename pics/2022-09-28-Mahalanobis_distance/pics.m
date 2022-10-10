@@ -215,9 +215,56 @@ set(gca,'visible','off')
 bi_norm = @(x, mu, S) (2*pi)^(-1)/sqrt(det(S))*exp(-1/2*(x-mu)'*inv(S)*(x-mu));
 
 [X, Y] = meshgrid(linspace(-1,1,100));
+mu = [0; 0];
+S1 = [2,1;1,2];
+S2 = [2,-1;-1,2];
+S3 = [1,0;0,1];
+z1 = zeros(100,100);
+z2 = zeros(100,100);
+z3 = zeros(100,100);
 
-my_pdf = bi_norm([X(:), Y(:)]', [0; 0],  [2,1;1,2]);
+for i = 1:100
+    for j = 1:100
+        x = [X(i,j); Y(i,j)];
+        z1(i,j) = bi_norm(x, mu, S1);
+        z2(i,j) = bi_norm(x, mu, S2);
+        z3(i,j) = bi_norm(x, mu, S3);
+    end
+end
 
+figure('position',[422, 558, 2114, 420]);
+subplot(1,3,1);
+imagesc(linspace(-1,1,100), linspace(-1,1,100), z1)
+hold on;
+contour(linspace(-1,1,100), linspace(-1,1,100), z1,'color','k')
+plot(-0.8, -0.8, 'w+','markersize',20,'linewidth',3)
+set(gca,'ydir','normal')
+colorbar;
+xlabel('$x_1$','interpreter','latex')
+ylabel('$x_2$','interpreter','latex')
+set(gca,'fontsize',11)
+
+subplot(1,3,2);
+imagesc(linspace(-1,1,100), linspace(-1,1,100), z2)
+hold on;
+contour(linspace(-1,1,100), linspace(-1,1,100), z2,'color','k')
+plot(-0.8, -0.8, 'w+','markersize',20,'linewidth',3)
+set(gca,'ydir','normal')
+colorbar
+xlabel('$x_1$','interpreter','latex')
+ylabel('$x_2$','interpreter','latex')
+set(gca,'fontsize',11)
+
+subplot(1,3,3);
+imagesc(linspace(-1,1,100), linspace(-1,1,100), z3)
+hold on;
+contour(linspace(-1,1,100), linspace(-1,1,100), z3,'color','k')
+plot(-0.8, -0.8, 'w+','markersize',20,'linewidth',3)
+set(gca,'ydir','normal')
+colorbar
+xlabel('$x_1$','interpreter','latex')
+ylabel('$x_2$','interpreter','latex')
+set(gca,'fontsize',11)
 
 %% alien dataset
 close all;

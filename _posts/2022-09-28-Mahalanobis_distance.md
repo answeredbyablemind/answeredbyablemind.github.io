@@ -91,6 +91,12 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 
 공분산 행렬은 데이터 셋 전체의 전반적 구조에 대해 설명하기에 용이한 방법이며 특히 다변수 정규 분포와 밀접한 관련이 있다. 만약 feature 가 두 개인 데이터셋이 2변수 정규 분포를 따른다고 하면 크게 아래와 같은 세 종류 중 하나의 형태를 따른다.
 
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/types_of_bivariate_gaussian.png">
+ <br>
+ 그림 7. 
+</p>
+
 ## iid 정규분포 샘플 대한 기초적인 이해
 
 데이터의 구조에 대해 이해하기에 앞서 우선 iid(independent and identically distributed) 정규 분포 샘플의 성질에 대해 이해할 필요가 있다. 용어는 어려워 보이지만 차근히 들여다보면 어려울 것이 하나도 없다. iid는 랜덤 데이터 샘플을 추출해내는 가장 단순한 방법론 중 하나이다. 
@@ -145,7 +151,7 @@ $$식 (5) \Rightarrow \begin{bmatrix}
 <p align = "center">
   <img width = "300" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_table1.png">
  <br>
- 그림 7. 화성 외계인들의 키와 몸무게를 정리한 표 (4번 외계인까지만 반올림하여 표시함)
+ 그림 8. 화성 외계인들의 키와 몸무게를 정리한 표 (4번 외계인까지만 반올림하여 표시함)
 </p>
 
 1000명 외계인들의 키와 몸무게 데이터는 [여기](https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/alien_height_weight.csv)서 받을 수 있다.
@@ -161,7 +167,7 @@ $\mathcal D$와 $X$의 분포를 그려보면 다음과 같다.
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic_move_distribution.png">
  <br>
- 그림 8. 화성 외계인들의 키와 몸무게 데이터의 분포
+ 그림 9. 화성 외계인들의 키와 몸무게 데이터의 분포
 </p>
 
 이제 우리는 데이터 $X$를 다음과 같이 "새롭게" 이해해보자. $X$는 원시 데이터 $Z$가 있으며 이것이 선형변환된 결과물이라고 보는 것이다.
@@ -175,7 +181,7 @@ $$\text{ where }Z \in \mathbb{R}^{n\times d} \text{ and } R \in \mathbb{R}^{d\ti
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/pic10.png">
  <br>
- 그림 9. 주어진 데이터를 일부 수정한 $X$를 원시 형태의 데이터 $Z$로부터 선형변환 된 결과로 보자.
+ 그림 10. 주어진 데이터를 일부 수정한 $X$를 원시 형태의 데이터 $Z$로부터 선형변환 된 결과로 보자.
 </p>
 
 이제부터 feature 간의 닮음을 조사하자. feature의 닮음을 조사한다면 데이터의 "맥락" 혹은 형태 구조를 파악할 수 있다. 왜냐하면, 가령, feature 1과 feature 2가 많이 닮아있다면 서로 상관관계가 높은 것을 의미하기 때문이다. feature 간의 닮음을 계산하기 위해 아래와 같은 연산을 취해주자.
@@ -183,7 +189,7 @@ $$\text{ where }Z \in \mathbb{R}^{n\times d} \text{ and } R \in \mathbb{R}^{d\ti
 <p align="center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-27_PCA/XTX.png">
   <br>
-  그림 10. 공분산 행렬을 계산하기 위해 각 데이터 특징들의 변동이 서로 얼마나 닮았는지 계산하는 과정.
+  그림 11. 공분산 행렬을 계산하기 위해 각 데이터 특징들의 변동이 서로 얼마나 닮았는지 계산하는 과정.
 </p>
 
 여기서 다시 한번 식 (8)을 이용해보면,
