@@ -94,7 +94,23 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/types_of_bivariate_gaussian.png">
  <br>
- 그림 7. 
+ 그림 7. 가장 대표적인 세 가지 형태의 2변수 정규 분포
+</p>
+
+공분산 행렬의 각 원소가 뜻하는 바는 각 feature들의 분산 혹은 공분산이다. 다시 말해, 그림 7과 같이 feature가 2개인 경우 1번 feature와 2번 feature가 각각 x 축 방향, y 축 방향으로 얼마나 데이터들이 퍼져서 분포하는지, 그리고 1번, 2번 feature가 얼마나 함께 변하는지를 나타내는 것이다. 
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/meaning_of_cov_mtx.png">
+ <br>
+ 그림 8. 공분산 행렬의 각 원소가 의미하는 것
+</p>
+
+그런데, 분산의 개념은 상대적으로 이해하기가 쉬운 것이 x 축 혹은 y 축을 떼어놓고 데이터를 보는 것은 직관적이기 때문이다. 반면에 공분산의 개념은 복잡하다. 왜냐하면 x, y축으로 함께 퍼진다는 말은 쉽게 이해하기 어렵기 때문이다. 따라서, 우리는 새로운 축을 잡고 데이터를 표현하는 것이 합리적이라는 사실을 알 수 있다. 그림 7의 가장 왼쪽의 그림을 예로 들어 아래와 같이 주축(principal axis)을 생각해보자.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/principal_axis.png">
+ <br>
+ 그림 9. 특정 분포에 대한 주축을 생각해보자
 </p>
 
 ## iid 정규분포 샘플 대한 기초적인 이해
