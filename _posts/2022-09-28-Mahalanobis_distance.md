@@ -15,13 +15,14 @@ tags: 선형대수학 통계학
 본 포스트를 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
 
 * [행렬과 선형변환](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation.html)
-* [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
 
 공분산 행렬에 대한 더 친절한 설명이 필요한 경우 아래의 포스트를 확인하십시오.
 
 * [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
   
 # 맥락을 고려한 상대적인 거리
+
+[//]:# (아래의 거리 계산 공식 부분이 수정되어야 할 것 같다. 마할라노비스 거리를 계산하기 위한 식을 지금으로썬 유도할 수가 없음. 행렬 X의 형태에 맞게 아래의 거리 공식들을 다시 손봐야함.)
 
 아래와 같이 두 벡터 $\vec x$와 $\vec y$를 생각해보자.
 
@@ -84,46 +85,6 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 벡터 공간의 변형은 행렬로 표현할 수 있다. 특히, 데이터의 "맥락"을 표현하는 행렬은 공분산 행렬($\Sigma$)과 관련되어 있고, 그것을 다시 돌려 놓기 위한 행렬은 공분산 행렬의 역행렬($\Sigma^{-1}$)과 관련되어 있다. 지금부터는 수식적으로 데이터의 "맥락"을 파악하는 방법을 이해해보자. 또, "맥락"의 "정규화"를 수행하는 방법을 더 자세하게 다루어 보자.
 
 # 공분산 행렬과 그 역행렬의 의미
-
-## 데이터의 분포 형태를 표현하는 방법
-
-데이터 과학을 공부하다보면 데이터의 분포 형태를 설명하기 위한 여러가지 방법이 있음을 알게 된다. 그중 하나가 이번에 보게 될 공분산 행렬이다. 
-
-공분산 행렬은 데이터 셋 전체의 전반적 구조에 대해 설명하기에 용이한 방법이며 특히 다변수 정규 분포와 밀접한 관련이 있다. 만약 feature 가 두 개인 데이터셋이 2변수 정규 분포를 따른다고 하면 크게 아래와 같은 세 종류 중 하나의 형태를 따른다.
-
-<p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/types_of_bivariate_gaussian.png">
- <br>
- 그림 7. 가장 대표적인 세 가지 형태의 2변수 정규 분포
-</p>
-
-공분산 행렬의 각 원소가 뜻하는 바는 각 feature들의 분산 혹은 공분산이다. 다시 말해, 그림 7과 같이 feature가 2개인 경우 1번 feature와 2번 feature가 각각 x 축 방향, y 축 방향으로 얼마나 데이터들이 퍼져서 분포하는지, 그리고 1번, 2번 feature가 얼마나 함께 변하는지를 나타내는 것이다. 
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/meaning_of_cov_mtx.png">
- <br>
- 그림 8. 공분산 행렬의 각 원소가 의미하는 것
-</p>
-
-그런데, 분산의 개념은 상대적으로 이해하기가 쉬운 것이 x 축 혹은 y 축을 떼어놓고 데이터를 보는 것은 직관적이기 때문이다. 반면에 공분산의 개념은 복잡하다. 왜냐하면 x, y축으로 함께 퍼진다는 말은 쉽게 이해하기 어렵기 때문이다. 따라서, 우리는 새로운 축을 잡고 데이터를 표현하는 것이 합리적이라는 사실을 알 수 있다. 이렇게 데이터의 구조를 표현하면 두 개의 주축이 x축 기준으로 얼마만큼 회전했는지와 각 축이 얼마만큼 늘어나거나 줄어들었는지에 관해서면 설명한다면 아주 직관적으로 데이터의 구조를 설명할 수 있기 때문이다. 예를 들어, 그림 7의 가장 왼쪽의 그림을 예로 들어 아래와 같이 주축(principal axis)을 생각해보자.
-
-<p align = "center">
-  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/principal_axis.png">
- <br>
- 그림 9. 임의의 2변수 정규 분포와 이에 대한 주축
-</p>
-
-그림 9에서 보면 PC1과 PC2는 각각 x축, y 축이 대략 60도 정도 시계방향으로 회전한 것을 알 수 있고 그림 7의 세 번째 분포와 비교했을 때 PC1은 좀 늘어난 것 같고 PC2는 줄어든 것 같아 보인다. 모호하게 표현된 이 말은 공분산 행렬의 고유 벡터와 고윳값을 계산하면 정확히 파악할 수 있다.
-
-그림 9에서 보여주는 공분산 행렬을 고윳값 분해하면 다음과 같다.
-
-$$\Sigma=V\Lambda V^{-1}$$
-
-where
-
-$$V = \begin{bmatrix}-0.8507 & 0.5257 \\ 0.5257 & 0.8507 \end{bmatrix}\text{ and } \Lambda = \begin{bmatrix}0.6910 & 0 \\ 0 & 1.8090 \end{bmatrix}$$
-
-여기서 $V$의 첫 번째, 두 번째 열벡터들이 PC2와 PC1에 해당하며 $\Lambda$의 첫 번째 대각성분이 PC2가 퍼진 정도, 두 번째 대각 성분이 PC1이 퍼진 정도를
 
 ## iid 정규분포 샘플 대한 기초적인 이해
 
@@ -236,6 +197,26 @@ $$R^TR\approx \frac{1}{n}X^TX % 식 (11)$$
 
 $$\Sigma = \frac{1}{n}X^TX$$
 
-참고로 $n$ 대신 $n-1$로 나누는 방법도 있다. $n$ 대신 $n-1$로 나누어 얻게 되는 공분산 행렬은 표본 공분산이라고 한다.
+참고로 $n$ 대신 $n-1$로 나누는 방법도 있다. $n$ 대신 $n-1$로 나누어 얻게 되는 공분산 행렬은 표본 공분산 행렬이라고 한다.
 
-[//]:# (이 두 가지에 주목하자. 왜 공분산 행렬은 "맥락" 이 될 수 있나? 왜 공분산 행렬의 역행렬은 "맥락"을 정규화 해주는 것과 같은 기능을 할까?)
+공분산 행렬은 데이터 셋 전체의 전반적 구조에 대해 설명하기에 용이한 방법이며 특히 다변수 정규 분포와 밀접한 관련이 있다. 만약 feature 가 두 개인 데이터셋이 2변수 정규 분포를 따른다고 하면 크게 아래와 같은 세 종류 중 하나의 형태를 따른다고 볼 수 있다.
+
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/types_of_bivariate_gaussian.png">
+ <br>
+ 그림 12. 가장 대표적인 세 가지 형태의 2변수 정규 분포
+</p>
+
+공분산 행렬의 각 원소가 뜻하는 바는 각 feature들의 분산 혹은 공분산이다. 다시 말해, 그림 12와 같이 feature가 2개인 경우 1번 feature와 2번 feature가 각각 x 축 방향, y 축 방향으로 얼마나 데이터들이 퍼져서 분포하는지, 그리고 1번, 2번 feature가 얼마나 함께 변하는지를 나타내는 것이다. 
+
+<p align = "center">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/meaning_of_cov_mtx.png">
+ <br>
+ 그림 13. 공분산 행렬의 각 원소가 의미하는 것
+</p>
+
+## 역행렬을 이용한 역-선형변환
+
+식 (8)에 따르면 주어진 데이터의 "맥락"을 원시 데이터의 형태로 되돌려 놓기 위해선 아래와 같이 수행하여 가능하다는 것을 알 수 있다.
+
+$$Z=XR^{-1}$$
