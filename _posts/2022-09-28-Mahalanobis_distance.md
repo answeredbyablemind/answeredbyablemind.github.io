@@ -100,18 +100,30 @@ $$d_M = \sqrt{(\vec x-\vec y)^T\Sigma^{-1}(\vec x-\vec y)} % 식 (2)$$
 공분산 행렬의 각 원소가 뜻하는 바는 각 feature들의 분산 혹은 공분산이다. 다시 말해, 그림 7과 같이 feature가 2개인 경우 1번 feature와 2번 feature가 각각 x 축 방향, y 축 방향으로 얼마나 데이터들이 퍼져서 분포하는지, 그리고 1번, 2번 feature가 얼마나 함께 변하는지를 나타내는 것이다. 
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/meaning_of_cov_mtx.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/meaning_of_cov_mtx.png">
  <br>
  그림 8. 공분산 행렬의 각 원소가 의미하는 것
 </p>
 
-그런데, 분산의 개념은 상대적으로 이해하기가 쉬운 것이 x 축 혹은 y 축을 떼어놓고 데이터를 보는 것은 직관적이기 때문이다. 반면에 공분산의 개념은 복잡하다. 왜냐하면 x, y축으로 함께 퍼진다는 말은 쉽게 이해하기 어렵기 때문이다. 따라서, 우리는 새로운 축을 잡고 데이터를 표현하는 것이 합리적이라는 사실을 알 수 있다. 그림 7의 가장 왼쪽의 그림을 예로 들어 아래와 같이 주축(principal axis)을 생각해보자.
+그런데, 분산의 개념은 상대적으로 이해하기가 쉬운 것이 x 축 혹은 y 축을 떼어놓고 데이터를 보는 것은 직관적이기 때문이다. 반면에 공분산의 개념은 복잡하다. 왜냐하면 x, y축으로 함께 퍼진다는 말은 쉽게 이해하기 어렵기 때문이다. 따라서, 우리는 새로운 축을 잡고 데이터를 표현하는 것이 합리적이라는 사실을 알 수 있다. 이렇게 데이터의 구조를 표현하면 두 개의 주축이 x축 기준으로 얼마만큼 회전했는지와 각 축이 얼마만큼 늘어나거나 줄어들었는지에 관해서면 설명한다면 아주 직관적으로 데이터의 구조를 설명할 수 있기 때문이다. 예를 들어, 그림 7의 가장 왼쪽의 그림을 예로 들어 아래와 같이 주축(principal axis)을 생각해보자.
 
 <p align = "center">
-  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/principal_axis.png">
+  <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/principal_axis.png">
  <br>
- 그림 9. 특정 분포에 대한 주축을 생각해보자
+ 그림 9. 임의의 2변수 정규 분포와 이에 대한 주축
 </p>
+
+그림 9에서 보면 PC1과 PC2는 각각 x축, y 축이 대략 60도 정도 시계방향으로 회전한 것을 알 수 있고 그림 7의 세 번째 분포와 비교했을 때 PC1은 좀 늘어난 것 같고 PC2는 줄어든 것 같아 보인다. 모호하게 표현된 이 말은 공분산 행렬의 고유 벡터와 고윳값을 계산하면 정확히 파악할 수 있다.
+
+그림 9에서 보여주는 공분산 행렬을 고윳값 분해하면 다음과 같다.
+
+$$\Sigma=V\Lambda V^{-1}$$
+
+where
+
+$$V = \begin{bmatrix}-0.8507 & 0.5257 \\ 0.5257 & 0.8507 \end{bmatrix}\text{ and } \Lambda = \begin{bmatrix}0.6910 & 0 \\ 0 & 1.8090 \end{bmatrix}$$
+
+여기서 $V$의 첫 번째, 두 번째 열벡터들이 PC2와 PC1에 해당하며 $\Lambda$의 첫 번째 대각성분이 PC2가 퍼진 정도, 두 번째 대각 성분이 PC1이 퍼진 정도를
 
 ## iid 정규분포 샘플 대한 기초적인 이해
 
