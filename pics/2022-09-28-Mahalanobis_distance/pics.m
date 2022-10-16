@@ -266,6 +266,95 @@ xlabel('$x_1$','interpreter','latex')
 ylabel('$x_2$','interpreter','latex')
 set(gca,'fontsize',11)
 
+%% types of bivariate gaussian
+
+bi_norm = @(x, mu, S) (2*pi)^(-1)/sqrt(det(S))*exp(-1/2*(x-mu)'*inv(S)*(x-mu));
+
+[X, Y] = meshgrid(linspace(-1,1,100));
+mu = [0; 0];
+S1 = [2,1;1,3]/2;
+z1 = zeros(100,100);
+
+for i = 1:100
+    for j = 1:100
+        x = [X(i,j); Y(i,j)];
+        z1(i,j) = bi_norm(x, mu, S1);
+    end
+end
+
+figure;
+imagesc(linspace(-1,1,100), linspace(-1,1,100), z1)
+hold on;
+contour(linspace(-1,1,100), linspace(-1,1,100), z1,'color','k')
+plot(-0.8, -0.8, 'w+','markersize',20,'linewidth',3)
+set(gca,'ydir','normal')
+colorbar;
+xlabel('$x_1$','interpreter','latex')
+ylabel('$x_2$','interpreter','latex')
+set(gca,'fontsize',11)
+axis square
+[V,D] = eig(S1);
+
+quiver(0,0, V(1,1), V(2,1),'color',[0.85, 0.325, 0.098],'linewidth',2)
+quiver(0,0, V(1,2), V(2,2),'color',[0, 0.4470, 0.7410],'linewidth',2);
+
+%% movie clip: change in covariance matrix
+
+bi_norm = @(x, mu, S) (2*pi)^(-1)/sqrt(det(S))*exp(-1/2*(x-mu)'*inv(S)*(x-mu));
+
+[X, Y] = meshgrid(linspace(-1,1,100));
+mu = [0; 0];
+S1 = [1,0;0,1];
+S2 = [2,1;1,3]/2;
+z1 = zeros(100,100);
+z2 = zeros(100,100);
+
+for i = 1:100
+    for j = 1:100
+        x = [X(i,j); Y(i,j)];
+        z1(i,j) = bi_norm(x, mu, S1);
+        z2(i,j) = bi_norm(x, mu, S2);
+    end
+end
+
+n_step = 100;
+
+newVid = VideoWriter('pic_cov_change', 'MPEG-4'); % New
+newVid.FrameRate = 60;
+newVid.Quality = 100;
+open(newVid);
+
+for i_step = 0:n_step
+
+    z = z1 + i_step / n_step * (z2-z1);
+    imagesc(linspace(-1,1,100), linspace(-1,1,100), z)
+    hold on;
+    contour(linspace(-1,1,100), linspace(-1,1,100), z,'color','k')
+    plot(-0.8, -0.8, 'w+','markersize',20,'linewidth',3)
+    set(gca,'ydir','normal')
+    colorbar;
+    xlabel('$x_1$','interpreter','latex')
+    ylabel('$x_2$','interpreter','latex')
+    set(gca,'fontsize',11)
+
+        writeVideo(newVid, getframe(gcf))
+
+    if i_step == n_step || i_step == 0
+        for ii = 1:30
+        writeVideo(newVid, getframe(gcf));
+        end
+    end
+    drawnow;
+    if i_step < n_step
+        cla
+    end
+
+    
+end
+
+close(newVid)
+
+
 %% alien dataset
 close all;
 R = chol([3,2;2,4]);
