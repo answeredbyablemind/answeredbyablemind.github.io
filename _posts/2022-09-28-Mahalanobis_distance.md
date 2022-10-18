@@ -133,7 +133,7 @@ iid를 풀어서 설명하자면 다음과 같은 가정(assumption)이다
 
 $$Z =\begin{bmatrix} | & | & & |\\ z_1 & z_2 & \cdots & z_d\\ | & | & & |\end{bmatrix} % 식 (9)$$
 
-$$\text{where } z_1, z_2, \cdots, z_n \text{ are i.i.d. normal random variables with mean 0 and variance 1}\notag$$
+$$\text{where } z_1, z_2, \cdots, z_d \text{ are i.i.d. normal random variables with mean 0 and variance 1}\notag$$
 
 표준 정규분포에서 추출한 샘플들이므로 아래의 사실을 확인할 수 있다. 추출한 분포의 평균이 0이라는 점을 생각하면,
 
