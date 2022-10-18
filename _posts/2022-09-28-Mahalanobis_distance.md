@@ -255,6 +255,12 @@ $$z=xR^{-1}$$
 
 여기서 역행렬을 이용한 선형변환은 주어진 선형변환 $R$에 의해 변환된 벡터 공간을 원래 형태로 돌려 놓는 것이다. 즉 그림 10에서 왼쪽으로부터 오른쪽으로 변하는 과정이 원래의 선형 변환 $R$이 수행해주는 변환이라고 하면, 역변환인 $R^{-1}$은 그림 10의 오른족에서 왼쪽으로의 변환이라고 볼 수 있는 것이다.
 
+<p align = "center">
+  <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/inverse_of_pic10.png">
+ <br>
+ 그림 14. 공분산 행렬의 각 원소가 의미하는 것
+</p>
+
 여기서, 식 (7)을 적용해 원시 데이터의 벡터 공간에서 원점과의 거리 $d_z$를 구하면 다음과 같다.
 
 $$d_z=\sqrt{zz^T}=\sqrt{(xR^{-1})(xR^{-1})^T}$$
@@ -294,12 +300,12 @@ $$\Sigma = Q\Lambda Q^{-1}=Q\Lambda Q^T$$
 
 $$\begin{bmatrix}1 & 0.5\\0.5 & 1.5\end{bmatrix}=\begin{bmatrix}-0.8507 & 0.5257 \\ 0.5257 & 0.8507\end{bmatrix}\begin{bmatrix}0.6910 & 0 \\ 0 & 1.8090\end{bmatrix}\begin{bmatrix}-0.8507 & 0.5257 \\ 0.5257 & 0.8507\end{bmatrix}^T$$
 
-그리고 $Q$의 각 열은 얼마만큼 표준 정규 분포를 회전했는지에 관한 정보를 보여주며, 좀 더 정확하게는 주성분(principal component, PC)의 방향을 나타내준다. 또, $\Lambda$의 대각성분들은 각 주성분 방향으로 얼마만큼 분포가 늘어져있는지를 보여준다. 아래의 그림 14를 참고하여 더 시각적으로 이해해보자.
+그리고 $Q$의 각 열은 얼마만큼 표준 정규 분포를 회전했는지에 관한 정보를 보여주며, 좀 더 정확하게는 주성분(principal component, PC)의 방향을 나타내준다. 또, $\Lambda$의 대각성분들은 각 주성분 방향으로 얼마만큼 분포가 늘어져있는지를 보여준다. 아래의 그림 15를 참고하여 더 시각적으로 이해해보자.
 
 <p align = "center">
   <img width = "600" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/principal_axis.png">
  <br>
- 그림 14. 공분산 행렬의 고윳값 분해 결과는 표준 정규 분포를 얼마나 늘리고 회전했는지를 벡터로 표현해줄 수 있게 해준다. 여기서 $\sigma_1$과 $\sigma_2$는 각각 PC1과 PC2가 늘어난 정도를 의미한다.
+ 그림 15. 공분산 행렬의 고윳값 분해 결과는 표준 정규 분포를 얼마나 늘리고 회전했는지를 벡터로 표현해줄 수 있게 해준다. 여기서 $\sigma_1$과 $\sigma_2$는 각각 PC1과 PC2가 늘어난 정도를 의미한다.
 </p>
 
 이 결과를 다시 한번 설명하자면 그림 3에서 그림 5까지의 내용을 더 수학적으로 표현해준 것과 같다. $Q$의 주성분 방향은 표준편차를 계산할 가장 대표적인 방향 두 가지가 되는 것이며, $\Lambda$의 대각성분은 다시 말해 주성분 방향으로의 표준편차를 의미하게 된다. 
