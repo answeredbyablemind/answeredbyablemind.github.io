@@ -258,7 +258,7 @@ $$z=xR^{-1}$$
 <p align = "center">
   <img width = "800" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-09-28-Mahalanobis_distance/inverse_of_pic10.png">
  <br>
- 그림 14. 공분산 행렬의 각 원소가 의미하는 것
+ 그림 14. 행렬 R과 그 역행렬이 의미하는 선형 변환
 </p>
 
 여기서, 식 (7)을 적용해 원시 데이터의 벡터 공간에서 원점과의 거리 $d_z$를 구하면 다음과 같다.
