@@ -1,0 +1,39 @@
+[
+ {
+  "sid":"untitled",
+  "className":"Simulink.BlockDiagram",
+  "icon":"untitled0",
+  "name":"untitled",
+  "label":"untitled*",
+  "parent":"",
+  "inspector":{
+   "params":[
+    "ModelVersion",
+    "LastModifiedDate",
+    "LibraryLinkDisplay",
+    "ModelBrowserVisibility",
+    "Dirty",
+    "Description"
+   ],
+   "values":[
+    "1.0",
+    "Thu Aug 19 19:12:15 2021",
+    "disabled",
+    "on",
+    "on",
+    ""
+   ],
+   "tabs":[
+   ],
+   "tabs_idx":[
+   ]
+  },
+  "viewer":{
+   "jshandler":"webview/handlers/ElementHandler"
+  },
+  "obj_viewer":[
+  ],
+  "finder":[
+  ]
+ }
+]
