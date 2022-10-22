@@ -311,3 +311,7 @@ $$\begin{bmatrix}1 & 0.5\\0.5 & 1.5\end{bmatrix}=\begin{bmatrix}-0.8507 & 0.5257
 이 결과를 다시 한번 설명하자면 그림 3에서 그림 5까지의 내용을 더 수학적으로 표현해준 것과 같다. $Q$의 주성분 방향은 표준편차를 계산할 가장 대표적인 방향 두 가지가 되는 것이며, $\Lambda$의 대각성분은 다시 말해 주성분 방향으로의 표준편차를 의미하게 된다. 
 
 따라서, 주축 상에 있는 데이터들을 중심으로 마할라노비스 거리를 이해한다면 (혹은 데이터들을 주축에 정사영 시키는 경우를 가정한다면) 주축을 원래의 xy 축으로 역 회전시키고 $\Lambda$로부터 얻은 표준편차 값으로 나눠주어 정규화시킨 거리를 의미한다고도 볼 수 있는 것이다. 
+
+<p align = "center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/afLiJWeeqmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
