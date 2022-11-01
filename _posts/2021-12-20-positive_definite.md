@@ -115,7 +115,7 @@ $$x^TAx = x^T\lambda x=\lambda |x|^2$$
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-12-20-positive_definite/pic3.png">
   <br>
-  그림 3. 선형 변환 후에 기저벡터들이 서로 뒤집히거나 두 기저벡터 간의 각도가 둔각이 되는 경우 두 고윳값 중 적어도 하나는 음수가 된다.
+  그림 3. 선형 변환 후에 기저벡터들이 서로 뒤집히거나 두 기저벡터 간의 각도가 -90 ~ 90도를 넘어가는 경우 두 고윳값 중 적어도 하나는 음수가 된다.
 </p>
 
 ## 양의 정부호와 헤시안 행렬
