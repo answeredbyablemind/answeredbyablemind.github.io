@@ -1,5 +1,5 @@
 clear; close all; clc;
-
+clea
 %% Prey-Predator model
 a=2;
 b=1;
