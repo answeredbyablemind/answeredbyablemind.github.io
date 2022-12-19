@@ -1,7 +1,7 @@
 clear;
 rng(1); % for reproducibility
 is_male = false(1, 100);
-ismale(rand(1, 100) > 0.5) = true;
+is_male(rand(1, 100) > 0.5) = true;
 age = clip(round(randn(1,100)) + 20, 20, inf);
 temp = clip(...
     round(mvnrnd([0; 0], [2, 1; 1,2], 100) * 10) + [50, 70]...
