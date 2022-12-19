@@ -10,8 +10,8 @@ score_english = temp(:,1)';
 score_math = temp(:, 2)'; 
 clear temp
 is_football_lover = false(1, 100);
-is_football_lover(rand(1, 100) > 0.5) = true;
+is_football_lover(rand(1, 100) > 0.7) = true;
 is_chicken_lover = false(1, 100);
-is_chicken_lover(rand(1, 100) > 0.5) = true;
+is_chicken_lover(rand(1, 100) > 0.3) = true;
 
 save('logical_data_example.mat')
