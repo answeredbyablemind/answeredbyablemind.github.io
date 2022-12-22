@@ -159,7 +159,7 @@ $$\Rightarrow P(X<(1-\delta) E[X])\leq
 
 여기서 우변만 보면 다음과 같다.
 
-$$\text{(우변)}\Rightarrow \frac{E[X](1-\delta -1)}{\exp(-(1-\delta)E[X]\ln\left(1/(1-\delta)\right))}$$
+$$\text{(우변)}\Rightarrow \frac{\exp(E[X](1-\delta -1))}{\exp(-(1-\delta)E[X]\ln\left(1/(1-\delta)\right))}$$
 
 [//]:# (식 21)
 
