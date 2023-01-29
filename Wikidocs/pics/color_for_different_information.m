@@ -25,7 +25,7 @@ for i_al = 1:length(al_vec)
     writeVideo(newVid, getframe(gcf)) % 0.5초씩 그리기
 
     if i_al == 100
-        for j = 1:90
+        for j = 1:60
             writeVideo(newVid, getframe(gcf));
         end
     end
