@@ -1,7 +1,7 @@
 close all;
 figure('color','w');
 peaks(50);
-colorbar;
+cbar = colorbar;
 h = findobj('type', 'surf');
 
 x = h.XData;
@@ -9,6 +9,8 @@ y = h.YData;
 z = h.ZData;
 
 h.CData = sqrt(x.^2 + y.^2);
+
+title(cbar, 'dist from origin')
 
 [ez_default, al_default] = view;
 
