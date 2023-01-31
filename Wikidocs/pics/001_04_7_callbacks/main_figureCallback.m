@@ -1,3 +1,10 @@
+function main_figureCallback()
+
+figure(WindowKeyPressFcn=@figureCallback);
+plot(1:10)
+
+end
+
 function figureCallback(src,event)
 line = findobj(src,"Type","Line");
 if event.Character == "+"

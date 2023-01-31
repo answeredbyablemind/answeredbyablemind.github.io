@@ -1,4 +1,4 @@
-function using_slider()
+function main_using_slider()
 a = -pi : pi/2 : pi;                                % Define Corners
 ph = pi/4;                                          % Define Angular Orientation (‘Phase’)
 x = [cos(a+ph); cos(a+ph)]/cos(ph);
@@ -27,16 +27,17 @@ Slider2 = uicontrol('style','slider','position',[figsize(3)*0, figsize(4)*0 560 
 addlistener(Slider1, 'Value','PostSet',@callbackfn_slider1);
 addlistener(Slider2, 'Value','PostSet',@callbackfn_slider2);
 
-    function callbackfn_slider1(~, eventdata)
-        [az,~]=view;
-        el = get(eventdata.AffectedObject, 'Value');
-        view([az,el]);
-        grid on;
-    end
+end
 
-    function callbackfn_slider2(~, eventdata)
-        [~,el]=view;
-        az = get(eventdata.AffectedObject, 'Value');
-        view([az,el]);
-    end
+function callbackfn_slider1(~, eventdata)
+[az,~]=view;
+el = get(eventdata.AffectedObject, 'Value');
+view([az,el]);
+grid on;
+end
+
+function callbackfn_slider2(~, eventdata)
+[~,el]=view;
+az = get(eventdata.AffectedObject, 'Value');
+view([az,el]);
 end
