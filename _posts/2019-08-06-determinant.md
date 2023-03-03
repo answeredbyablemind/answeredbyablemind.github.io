@@ -16,6 +16,15 @@ tags: 선형대수
 
 ※ 본 article에서는 열벡터(column vector) convention을 따릅니다.
 
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/keizikang_determinant_image/keizikang_determinant.gif">
+  <br>
+  행렬식의 값은 왜 ad-bc?
+  <br>
+  원작자: 게으른맽랩(
+    <a href = "https://lazymatlab.tistory.com/">https://lazymatlab.tistory.com/</a>)
+</p>
+
 # 행렬식
 
 역행렬을 구할 때 사용되는 행렬식(determinant)는 $2\times 2$ 행렬에서 다음과 같이 정의된다.
