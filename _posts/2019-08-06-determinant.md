@@ -108,7 +108,7 @@ $$=ad-bc = det(A)$$
   행렬식의 값은 왜 ad-bc?
   <br>
   원작자: 게으른맽랩(
-    <a href = "https://lazymatlab.tistory.com/">https://lazymatlab.tistory.com/</a>)
+    <a href = "https://lazymatlab.tistory.com/201">https://lazymatlab.tistory.com/201/</a>)
 </p>
 
 
