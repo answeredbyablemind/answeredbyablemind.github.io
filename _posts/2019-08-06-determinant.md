@@ -16,15 +16,6 @@ tags: 선형대수
 
 ※ 본 article에서는 열벡터(column vector) convention을 따릅니다.
 
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/keizikang_determinant_image/keizikang_determinant.gif">
-  <br>
-  행렬식의 값은 왜 ad-bc?
-  <br>
-  원작자: 게으른맽랩(
-    <a href = "https://lazymatlab.tistory.com/">https://lazymatlab.tistory.com/</a>)
-</p>
-
 # 행렬식
 
 역행렬을 구할 때 사용되는 행렬식(determinant)는 $2\times 2$ 행렬에서 다음과 같이 정의된다.
@@ -108,6 +99,18 @@ $$=ad-bc = det(A)$$
 기하학적으로 봤을 때, 역행렬은 원래 행렬을 이용한 선형변환의 역-선형변환이라고 할 수 있다. 다시 말하자면, 위 설명의 행렬을 통한 선형 변환은 한 변의 길이가 1인 정사각형을 넓이가 ad-bc인 평행사변형꼴로 바꾼 선형변환이며, 같은 행렬의 역행렬은 평행사변형 꼴로 바뀐 도형을 다시 한 변의 길이가 1인 정사각형으로 되돌려주는 역-선행변환이다.
 
 그러므로, 역행렬에서는 $1/det(A)$라는 요소가 들어가게 되는 것이다.
+
+마지막으로, 행렬식의 "ad-bc"라는 값을 시각적으로 확인할 수 있게하는 아주 좋은 애니메이션이 있어 첨부하고자 한다.
+
+<p align = "center">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-08-06_determinant/keizikang_determinant_image/keizikang_determinant.gif">
+  <br>
+  행렬식의 값은 왜 ad-bc?
+  <br>
+  원작자: 게으른맽랩(
+    <a href = "https://lazymatlab.tistory.com/">https://lazymatlab.tistory.com/</a>)
+</p>
+
 
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/2bv_7QzBS4Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
