@@ -349,7 +349,7 @@ $$\begin{bmatrix}a\\b\end{bmatrix}:=\begin{bmatrix}a\\b\end{bmatrix}-\alpha\nabl
 
 $$a := a - \alpha \frac{\partial f}{\partial a}$$
 
-$$b := b - \alpha \frac{\partial f}{\partial b}$$
+$$b := b - \alpha \frac{\partial f}{\partial b} % 식 24$$
 
 <p align = "center">
   <video width = "600" height = "auto" loop autoplay controls muted>
