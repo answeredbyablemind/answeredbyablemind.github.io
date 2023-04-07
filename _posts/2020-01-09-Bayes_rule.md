@@ -105,7 +105,7 @@ $$P(H|E) = \frac{P(E|H)P(H)}{P(E)} = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)
 
 따라서, 우리가 구하고자 하는 $P(H\|E)$를 계산하면 결과값은 다음과 같다.
 
-$$P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)} = \frac{0.001\times 0.99}{0.001\times 0.99 + 0.999\times 0.02}\notag$$
+$$P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)} = \frac{0.001\times 0.99}{0.001\times 0.99 + 0.02\times 0.999}\notag$$
 
 $$= 0.047\text{ (소숫점 세자리까지 반올림)}$$
 
@@ -131,7 +131,7 @@ Hypothesis는 다음과 같이 바꿔 생각할 수 있기 때문이다.
 
 따라서, 우리가 구하고자 하는 $P(H\|E)$를 계산하면 결과값은 다음과 같다.
 
-$$P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)} = \frac{0.047\times 0.99}{0.047\times 0.99 + 0.953\times 0.02}\notag$$
+$$P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)} = \frac{0.047\times 0.99}{0.047\times 0.99 + 0.02\times 0.953}\notag$$
 
 $$= 0.709\text{ (소숫점 세자리까지 반올림)}$$ 
 
