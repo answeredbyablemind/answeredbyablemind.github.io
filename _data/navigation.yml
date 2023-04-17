@@ -3,8 +3,11 @@ header:
   - titles:
       ko      : &KO       저자 소개
       ko-KR   : *KO
-      en      : &EN       About
     url: /about.html
+    
+  - titles:
+      en      : &EN       About
+    url: /about_en.html
     
   - titles:
       ko      : &KO       후원하기
