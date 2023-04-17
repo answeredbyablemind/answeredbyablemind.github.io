@@ -3,6 +3,7 @@ header:
   - titles:
       ko      : &KO       저자 소개
       ko-KR   : *KO
+      en      : &EN       About
     url: /about.html
     
   - titles:
@@ -19,6 +20,11 @@ header:
       ko      : &KO       Youtube 채널
       ko-KR   : *KO
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
+
+docs-en:
+  - title:     my_test_en
+    children:
+      - title: 2019/01/01/my_test_en.html
 
 docs-ko:
   - title:      MATLAB
