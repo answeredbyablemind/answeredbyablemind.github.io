@@ -61,6 +61,8 @@ docs-en:
         url:    2019/06/04/2-1-angle_rad_en.html
   - title:      Signal Processing
     children:
+      - title:  Phasor
+        url:    2019/06/18/phasor_en.html
       - title:  Discrete Convolution and Impulse Response
         url:    2019/06/18/Discrete_Time_Convolution_en.html
 
