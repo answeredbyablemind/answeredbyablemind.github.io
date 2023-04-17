@@ -59,7 +59,10 @@ docs-en:
         url:    2019/06/16/imaginary_root_en.html
       - title:  Meaning of Degrees and Radians
         url:    2019/06/04/2-1-angle_rad_en.html
-
+  - title:      Signal Processing
+    children:
+      - title:  Discrete Convolution and Impulse Response
+        url:    2019/06/18/Discrete_Time_Convolution_en.html
 
 docs-ko:
   - title:      MATLAB
