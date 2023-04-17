@@ -6,10 +6,6 @@ header:
     url: /about.html
     
   - titles:
-      en      : &EN       About
-    url: /about_en.html
-    
-  - titles:
       ko      : &KO       후원하기
       ko-KR   : *KO
     url: 2019/01/01/donation.html
