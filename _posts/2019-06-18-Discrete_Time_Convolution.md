@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 2019061832
 tags: 신호처리
+lang: ko
 ---
 
 # Prerequisites

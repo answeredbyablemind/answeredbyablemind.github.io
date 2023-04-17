@@ -5,7 +5,7 @@ sidebar:
 aside:
   toc: true
 key: 20190616_en
-tags: BasicMath
+tags: Basic_Math
 lang: en
 ---
 
