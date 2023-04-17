@@ -21,9 +21,13 @@ header:
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
 docs-en:
-  - title:     my_test_en
+  - title:    Complex number and Euler's equation
     children:
-      - title: 2019/01/01/my_test_en.html
+      - title:  Meaning of Imaginary Numbers
+        url:    2019/06/15/imaginary_number_en.html  
+      - title:  Meaning of Degrees and Radians
+        url:    2019/06/04/2-1-angle_rad_en.html
+
 
 docs-ko:
   - title:      MATLAB
