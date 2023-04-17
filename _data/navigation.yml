@@ -1,23 +1,53 @@
 header:
 
   - titles:
+      ko      : &KO       EN
+      ko-KR   : *KO
+      en      : &EN       EN
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+    url: /2019/06/15/imaginary_number_en.html
+
+  - titles:
       ko      : &KO       저자 소개
       ko-KR   : *KO
+      en      : &EN       About
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
     url: /about.html
     
   - titles:
       ko      : &KO       후원하기
       ko-KR   : *KO
+      en      : &EN       Donation
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
     url: 2019/01/01/donation.html
     
   - titles:
       ko      : &KO       태그 검색
       ko-KR   : *KO
+      en      : &EN       Tag Search
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
     url: /archive.html
 
   - titles:
-      ko      : &KO       Youtube 채널
+      ko      : &KO       유튜브 채널
       ko-KR   : *KO
+      en      : &EN       Youtube Channel
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
     url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
 
 docs-en:
@@ -25,6 +55,8 @@ docs-en:
     children:
       - title:  Meaning of Imaginary Numbers
         url:    2019/06/15/imaginary_number_en.html  
+      - title:  Location of Imaginary Roots
+        url:    2019/06/16/imaginary_root_en.html
       - title:  Meaning of Degrees and Radians
         url:    2019/06/04/2-1-angle_rad_en.html
 

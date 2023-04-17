@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 2019061522_en
 tags: BasicMath
+lang: en
 
 ---
 
@@ -40,11 +41,11 @@ People may have needed to introduce the concept of imaginary numbers to answer t
 
 What does the discovery of imaginary numbers have to do with extending the one-dimensional vector space that the number system has been expressed in thus far? The discovery of imaginary numbers has a remarkable significance in that it expands the number system, which was previously represented as a one-dimensional vector in the real number field, to a two-dimensional vector[^myfootnote].
 
-To understand the concept of imaginary numbers precisely, we need to think again about the meaning of squaring a number. What is squaring? It means multiplying the same number twice. That is, $x^2$ means $x$ multiplied by itself. For example, $3^2$ has the following meaning: 1 times 3 times 3. That is, it means making the original number, 1, three times as large in the positive direction and then making it three times as large again in the positive direction.
+To understand the concept of imaginary numbers precisely, we need to think again about the meaning of squaring a number. What is squaring? It means multiplying the same number twice. That is, $x^2$ means $x$ multiplied by itself. For example, $3^2$ has the following meaning: $1$ times $3$ times $3$. That is, it means making the original number, $1$, three times as large in the positive direction and then making it three times as large again in the positive direction.
 
 Now, let's consider the square of a negative number. What about $(-3)^2$? It will have the meaning of 1 times -1 times 3 times -1 times 3. That is, it means making the number 1 three times as large in the negative direction and then making it three times as large again in the opposite direction. As a result, we can think of $x=3$ or $x=-3$ when $x^2=9$.
 
-When we consider 1 times x times $x = -9$, we must be able to get -9 when we perform the transformation of multiplying the same number twice. We cannot solve this equation with a real number because multiplying a positive number twice results in a positive number, and multiplying a negative number twice results in a positive number.
+When we consider $1$ times $x$ times $x = -9$, we must be able to get $-9$ when we perform the transformation of multiplying the same number twice. We cannot solve this equation with a real number because multiplying a positive number twice results in a positive number, and multiplying a negative number twice results in a positive number.
 
 
 <p align="center"><iframe  src="https://angeloyeo.github.io/p5/imaginary_number_1_to_minus_1/" width="420" height = "320" frameborder="0"></iframe></p>

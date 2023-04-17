@@ -6,7 +6,7 @@ aside:
   toc: true
 key: 2019061522
 tags: 기초수학
-
+lang: ko
 ---
 
 # 1. 수의 발견 

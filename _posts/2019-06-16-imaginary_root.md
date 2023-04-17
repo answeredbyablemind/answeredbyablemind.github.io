@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190616
 tags: 기초수학
+lang: ko
 ---
 
 
@@ -15,12 +16,9 @@ tags: 기초수학
 
 $y=x^2+1$의 2차 함수를 생각해보자. 근은 $x=\pm \sqrt{-1}=\pm i$이다. 함수를 2차원 평면 상에 그려보도록 하자.
 
-<p align="center"><iframe width = "480" height = "480" frameborder = "0" src="https://angeloyeo.github.io/p5/yx2_2019_06_22_00_21_14/"></iframe></p>
-
-
-<center>
+<p align="center"><iframe width = "480" height = "480" frameborder = "0" src="https://angeloyeo.github.io/p5/yx2_2019_06_22_00_21_14/"></iframe><br>
 그림 1 두 실수 축에서 생각할 수 있는 $y=x^2+1$의 그래프
-</center>
+</p>
 
 근이라고 하는 것은 함수의 값을 0으로 만족시켜줄 수 있는 입력값 $x$이어야 한다. 하지만 이 그림에서 함수의 값을 0으로 만들어주는 $\pm\sqrt{-1}=\pm i$의 값은 축 어디에도 없다. 왜냐하면 우리가 그린 $x$축과 $y$축은 모두 실수(real number)축이기 때문이다.
 
@@ -32,9 +30,7 @@ $\lt$ 허수의 존재 의미 $\gt$ 편에서 허수에 대해 짧게 다루었�
 
 복소수는 실수와 허수를 모두 합한 수체계를 의미하기 때문에, 따라서, 실수와 복소수를 동시에 한 평면에 나타내면 실수 축과 허수 축이 직교하는 형태의 ‘복소 평면’을 얻을 수 있게 된다.
 
-<p align="center"><iframe width = "320" height = "320" frameborder = "0" src="https://angeloyeo.github.io/p5/imaginary_roots_pic2_circle/"></iframe></p>
-
-<center>그림 2 복소 평면. 실수 축과 허수 축은 서로 직교한다.</center>
+<p align="center"><iframe width = "320" height = "320" frameborder = "0" src="https://angeloyeo.github.io/p5/imaginary_roots_pic2_circle/"></iframe><br>그림 2 복소 평면. 실수 축과 허수 축은 서로 직교한다.</p>
 
 즉, 다시 말해 우리가 허근을 가지는 이차함수의 값이 0이 되는 부분을 찾기 위해서는 실수의 수준에서 그래프를 그리면 안되고 복소수 수준에서 그래프를 그려야 한다는 사실을 짐작할 수 있게 된다. 이 때, 우리는 복소수는 실수와 다르게 크기와 방향을 동시에 가지는 수라는 점을 꼭 인지하고 있어야 한다.
 
