@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 2019062341
 tags: 푸리에 신호처리
+lang: ko
 ---
 
 <p align="center"><iframe width = "610" height = "410" frameborder = "0" src="https://angeloyeo.github.io/p5/Fourier_Series_Practice/"></iframe><br>푸리에 급수가 말하는 것: 임의의 주기함수는 <b>삼각함수의 합</b>으로 표현될 수 있다.</p>

@@ -67,6 +67,8 @@ docs-en:
         url:    2019/06/18/Discrete_Time_Convolution_en.html
       - title:  Continuous Time Convolution
         url:    2019/07/01/Continuous_Time_Convolution_en.html
+      - title:  Continuous Time Fourier Series
+        url:    2019/06/23/Fourier_Series_en.html
       - title:  Continuous Time Fourier Transform
         url:    2019/07/07/CTFT_en.html
 
