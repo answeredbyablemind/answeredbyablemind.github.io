@@ -65,6 +65,8 @@ docs-en:
         url:    2019/06/18/phasor_en.html
       - title:  Discrete Convolution and Impulse Response
         url:    2019/06/18/Discrete_Time_Convolution_en.html
+      - title:  Continuous Time Convolution
+        url:    2019/07/01/Continuous_Time_Convolution_en.html
 
 docs-ko:
   - title:      MATLAB
