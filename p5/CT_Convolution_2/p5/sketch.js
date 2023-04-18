@@ -43,7 +43,7 @@ function draw() {
      background(255);
 
      push();
-     text('슬라이더를 움직여 보세요!', 435, 40)
+     text('Move the slider!', 435, 40)
      text('(c) 공돌이의 수학정리노트', 435, height-10)
      text('x',232,360)
      text('y',20,170)
