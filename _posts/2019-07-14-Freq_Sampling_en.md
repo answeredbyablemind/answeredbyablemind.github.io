@@ -229,7 +229,7 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 
 [//]:# (eq 40)
 
-In the article [Matrices and Linear Transformations](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation_en.html) it was mentioned that matrices are a type of linear transformation.
+In the article [Matrix as Linear Transformation](https://angeloyeo.github.io/2019/07/15/Matrix_as_Linear_Transformation_en.html) it was mentioned that matrices are a type of linear transformation.
 
 In the article on [Another Perspective on Matrix Multiplication](https://angeloyeo.github.io/2020/09/08/matrix_multiplication_en.html), it was explained that the general multiplication of matrices involves the dot product between a row of the matrix on the left and a column of the matrix on the right.
 
