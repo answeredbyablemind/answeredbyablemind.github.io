@@ -41,7 +41,7 @@ function draw() {
      fill(255);
      textAlign(CENTER);
      textSize(12);
-     text('x와 Ax를 평행하게 만들어보세요.', width/2, height * 0.875)
+     text('Can you make x and Ax parallel?.', width/2, height * 0.875)
 
      textSize(12)
      textAlign(RIGHT)
