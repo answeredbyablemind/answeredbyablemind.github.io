@@ -55,6 +55,8 @@ docs-en:
     children:
       - title:  Matrix as Linear Transformation
         url:    2019/07/15/Matrix_as_Linear_Transformation_en.html
+      - title:  Eigenvalue and Eigenvector
+        url:    2019/07/17/eigen_vector_en.html
 
   - title:    Complex number and Euler's equation
     children:
