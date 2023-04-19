@@ -58,6 +58,11 @@ docs-en:
       - title:  Eigenvalue and Eigenvector
         url:    2019/07/17/eigen_vector_en.html
 
+  - title:      Applications of Linear Algebra
+    children:
+      - title:  Principal Component Analysis(PCA)
+        url:    2019/07/27/PCA_en.html
+
   - title:    Complex number and Euler's equation
     children:
       - title:  Meaning of Imaginary Numbers
@@ -91,7 +96,6 @@ docs-en:
         url:    2019/07/14/Freq_Sampling_en.html
       - title:  Negative Frequency
         url:    2019/07/22/Negative_Frequency_en.html   
-
 
 docs-ko:
   - title:      MATLAB
