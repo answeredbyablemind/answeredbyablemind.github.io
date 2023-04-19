@@ -6,9 +6,12 @@ aside:
   toc: true
 key: 20190714
 tags: 신호처리 푸리에
+lang: ko
 ---
 
 {% raw %}
+
+# 주파수 샘플링과 DFT
 
 ## 주파수 샘플링 하는 목적에 대해서
 
@@ -20,11 +23,11 @@ tags: 신호처리 푸리에
  
 | DEFINITION: Discrete Time Fourier Series (DTFS) |
 | --------- |
-| 주기 이산 신호에 대하여,<br><center> $$x[n] = \sum_{k=N_1}^{N_2}a_k exp\left(j\frac{2\pi k}{N}n\right)$$<br>where<br>$$a_k=\frac{1}{N}\sum_{n=N_1}^{N_2}x[n] exp\left(-j\frac{2\pi k}{N}n\right)$$</center>|
+| 주기 이산 신호에 대하여,<br><center> $$x[n] = \sum_{k=N_1}^{N_2}a_k \exp\left(j\frac{2\pi k}{N}n\right)$$<br>where<br>$$a_k=\frac{1}{N}\sum_{n=N_1}^{N_2}x[n] \exp\left(-j\frac{2\pi k}{N}n\right)$$</center>|
 
 | DEFINITION: Discrete Time Fourier Transform (DTFT) |
 | --------- |
-| 이산 신호에 대하여,<br><center> $$x[n] = \int_{-0.5}^{0.5}X(f) exp(j2\pi fn) df$$<br>where<br>$$X(f)=\sum_{n=-\infty}^{\infty}x[n]exp(-j2\pi fn)$$</center>|
+| 이산 신호에 대하여,<br><center> $$x[n] = \int_{-0.5}^{0.5}X(f) \exp(j2\pi fn) df$$<br>where<br>$$X(f)=\sum_{n=-\infty}^{\infty}x[n]\exp(-j2\pi fn)$$</center>|
 
  다시 한번 DTFT의 수식을 살펴보면 $x[n]$ 과 $X(f)$ 모두 연속주파수 $f$ 를 가지고 있다는 것을 알 수 있다. 그렇기 때문에 컴퓨터를 이용해 일반적인 이산신호 $x[n]$ 의 주파수 응답을 알아보고 싶다면 연속 주파수 $f$ 를 샘플링하는 과정은 필연적인 것이다.
 
@@ -33,17 +36,17 @@ tags: 신호처리 푸리에
  우리는 연속주파수를 sample하기 전에 몇 가지 사실에 대해서 짚고 넘어가야 할 필요가 있다. 그것은 우리가 컴퓨터를 통해서 받는 신호는 any discrete time signal $x[n]$ 이라고 하지만, 어쨋든 길이가 유한할 수 밖에 없다. 그렇기 때문에 우리는 컴퓨터에서 사용할 일반적 이산신호 $x[n]$ 의 길이를 $N$ 으로 정하도록 하자. 그렇기 때문에 DTFT $X(f)$ 는 다음과 같이 생각될 수 있다.
 
 
-$$\hat{X}(f)=\sum_{n=0}^{N-1}x[n]exp(-j2\pi fn)$$
+$$\hat{X}(f)=\sum_{n=0}^{N-1}x[n]\exp(-j2\pi fn)$$
 
  이제, 연속 주파수를 이산 주파수로 바꿔보자. CTFT와 DTFT의 유도과정을 다시 생각해보면 이렇게 바꿀 수 있다는 것을 금방 알 수 있을 것이다. 연속주파수 $f$는 $\lim_{N\rightarrow\infty}{\frac{k}{N}}$ 에서 출발했기 때문이다. 그러므로,
 
- $$\hat{X}[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$
+ $$\hat{X}[k] = \sum_{n=0}^{N-1}x[n]\exp\left(-j\frac{2\pi k}{N}n\right)$$
 
 이제, 위의 $\hat{X}[k]$ 를 새로운 푸리에 변환인 Discrete Fourier Transform이라고 정의할 수 있다.
 
 | DEFINITION: Discrete Fourier Transform (DFT) |
 | --------- |
-| 전체 신호의 길이가 N인 이산 신호 $x[n]$ 에 대하여,<br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center>|
+| 전체 신호의 길이가 N인 이산 신호 $x[n]$ 에 대하여,<br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]\exp\left(-j\frac{2\pi k}{N}n\right)$$ </center>|
 
 
 이제, inverse Discrete Fourier Transform을 유도해보자. 지금껏 유도해왔던 Fourier Analysis Series와 마찬가지로 직교성(orthogonality)의 성질을 이용하면 된다.
@@ -54,42 +57,42 @@ $$\hat{X}(f)=\sum_{n=0}^{N-1}x[n]exp(-j2\pi fn)$$
 
 DFT는 아래와 같이 정의되었다.
 
-$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$
+$$X[k] = \sum_{n=0}^{N-1}x[n]\exp\left(-j\frac{2\pi k}{N}n\right)$$
 
 두 정수 $p, n$ 에 대하여 다음과 같은 식을 생각하여 이산신호의 직교성의 성질을 이용하자.
 
-$$\sum_{p=0}^{N-1}X[k] exp\left(j\frac{2\pi p}{N}k\right)$$
+$$\sum_{p=0}^{N-1}X[k] \exp\left(j\frac{2\pi p}{N}k\right)$$
 
 $$=\sum_{p=0}^{N-1}
-\sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)
-exp\left(j\frac{2\pi p}{N}k\right)$$
+\sum_{n=0}^{N-1}x[n]\exp\left(-j\frac{2\pi k}{N}n\right)
+\exp\left(j\frac{2\pi p}{N}k\right)$$
 
-$$=\sum_{p=0}^{N-1}\sum_{n=0}^{N-1}x[n] exp\left(j\frac{2\pi(p-n)}{N}k\right)$$
+$$=\sum_{p=0}^{N-1}\sum_{n=0}^{N-1}x[n] \exp\left(j\frac{2\pi(p-n)}{N}k\right)$$
 
 여기서도 CTFS에서 사용했던 방법과 마찬가지로 $p\neq n$, $p=n$ 의 두 가지 경우를 생각할 수 있다.
 
 
 1) $p\neq n$인 경우,직교성의 성질에 의해
 
-$$식(9) = \sum_{p=0}^{N-1}X[k] exp\left(j\frac{2\pi p}{N}k\right) = 0$$
+$$식(9) = \sum_{p=0}^{N-1}X[k] \exp\left(j\frac{2\pi p}{N}k\right) = 0$$
 
 이고,
 
 2) $p=n$인 경우 직교성의 성질에 의해
 
-$$식(9) = \sum_{p=0}^{N-1}X[k] exp\left(j\frac{2\pi p}{N}k\right) = Nx[n]$$
+$$식(9) = \sum_{p=0}^{N-1}X[k] \exp\left(j\frac{2\pi p}{N}k\right) = Nx[n]$$
 
  이다.
 
 그러므로, inverse DFT는
 
-$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$
+$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] \exp\left(j\frac{2\pi k}{N}n\right)$$
 
 이다.
 
 | DEFINITION: inverse Discrete Fourier Transform (iDFT) |
 | --------- |
-| 전체 신호의 길이가 N인 이산 주파수 성분 $X[k]$ 에 대하여 <br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
+| 전체 신호의 길이가 N인 이산 주파수 성분 $X[k]$ 에 대하여 <br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] \exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
 
 
 ## 예제를 통해  DFT를 조금 더 자세히 알아보자.
@@ -108,10 +111,10 @@ Sol)
 
 DFT의 정의에 따라,
 
-$$X[k] = \sum_{n=0}^{3} 1 \times exp\left(-j\frac{2\pi k}{4}n\right)$$
+$$X[k] = \sum_{n=0}^{3} 1 \times \exp\left(-j\frac{2\pi k}{4}n\right)$$
 
-$$= 1 + exp\left(-j\frac{\pi}{2}k\right) 
-+ exp\left(-j\pi k\right) + exp\left(-j\frac{3\pi}{2}k\right)$$
+$$= 1 + \exp\left(-j\frac{\pi}{2}k\right) 
++ \exp\left(-j\pi k\right) + \exp\left(-j\frac{3\pi}{2}k\right)$$
 
 그러므로, $k=0$ 일 때, $X[0]=4$ 이고, $k= 1,2,3$ 일 때, $X[k]=0$ 이다.
 
@@ -132,19 +135,19 @@ $$
 
 Sol)
 
-$$X(f) = \sum_{n=0}^{3}\left(1\times exp({-j2\pi fn})\right)$$
+$$X(f) = \sum_{n=0}^{3}\left(1\times \exp({-j2\pi fn})\right)$$
 
-$$=\frac{1-exp({-j8\pi f})}{1-exp({-j2\pi f})}$$
+$$=\frac{1-\exp({-j8\pi f})}{1-\exp({-j2\pi f})}$$
 
 여기서 위 식은 다음과 같이 변형할 수 있다.
 
 $$ = \frac
-{\frac{exp({j4\pi f})-exp({-j4\pi f})}{exp({j4\pi f})}}
-{\frac{exp({j\pi f})-exp({-j\pi f})}{exp({j\pi f})}}$$
+{\frac{\exp({j4\pi f})-\exp({-j4\pi f})}{\exp({j4\pi f})}}
+{\frac{\exp({j\pi f})-\exp({-j\pi f})}{\exp({j\pi f})}}$$
 
-$$ = \frac{exp({j\pi f})}{exp({j 4\pi f})} \times \frac{exp({j 4\pi f}) - exp({-j 4\pi f})}{exp({j \pi f}) - exp({-j \pi f})}$$
+$$ = \frac{\exp({j\pi f})}{\exp({j 4\pi f})} \times \frac{\exp({j 4\pi f}) - \exp({-j 4\pi f})}{\exp({j \pi f}) - \exp({-j \pi f})}$$
 
-$$=exp\left(-j 3\pi f \right) \frac{\sin(4\pi f)}{\sin(\pi f)}$$
+$$=\exp\left(-j 3\pi f \right) \frac{\sin(4\pi f)}{\sin(\pi f)}$$
 
  Ex2의 답의 결과에서 주파수 $f$를 $\frac{k}{4}$로 치환함으로써 주파수를 이산화해보자. 그렇게하면, 각각의 $k=0,1,2,3$ 에 대하여 Ex1의 결과와 같은 결과물을 얻게 된다는 것을 알 수 있다.
 
@@ -193,7 +196,7 @@ DFT를 이해하는 또 다른 방법은 신호를 벡터화 하고, 푸리에 �
 
 | DEFINITION: DFT and iDFT|
 | --------- |
-| 전체 신호의 길이가 N인 이산 신호 $X[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
+| 전체 신호의 길이가 N인 이산 신호 $X[n]$과 길이가 N인 이산 주파수 성분 $X[k]$에 대하여 <br><center>$$X[k] = \sum_{n=0}^{N-1}x[n]\exp\left(-j\frac{2\pi k}{N}n\right)$$ </center><br><center>$$x[n] = \frac{1}{N}\sum_{k=0}^{N-1}X[k] \exp\left(j\frac{2\pi k}{N}n\right)$$ </center>|
 
 생각해보면 길이가 $N$인 신호 $x[n]$은 $N$차원 열벡터로 생각할 수 있으며, 여기에 마찬가지로 길이가 $N$인 이산 주파수 성분 $X[k]$역시 마찬가지로 $N$차원 열벡터로 생각할 수 있을 것이다.
 
@@ -213,7 +216,7 @@ $$X[0] = x[0]\exp\left(-j\frac{2\pi 0}{N}0\right) + x[1]\exp\left(-j\frac{2\pi 0
 
 $$=x[0]\cdot 1 + x[1]\cdot 1 + \cdots + x[N-1] \cdot 1$$
 
-$$X[1] = x[0]\exp(\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp(\left(-j\frac{2\pi 1}{N}1\right)+x[N-1]\exp(\left(-j\frac{2\pi 1}{N}(N-1)\right)$$
+$$X[1] = x[0]\exp\left(-j\frac{2\pi 1}{N}0\right)+x[1]\exp\left(-j\frac{2\pi 1}{N}1\right)+x[N-1]\exp\left(-j\frac{2\pi 1}{N}(N-1)\right)$$
 
 여기서 표기의 단순화를 위해 
 
@@ -249,7 +252,7 @@ $$\begin{bmatrix}X[0]\\X[1]\\ \vdots \\ X[N-1]\end{bmatrix} =
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic1.png">
   <br>
-  그림 1. 주파수 성분 벡터는 푸리에 행렬의 행과 시계열 벡터가 얼마나 닮았는지를 봄으로써 얻을 수 있는 것이다.
+  그림 2. 주파수 성분 벡터는 푸리에 행렬의 행과 시계열 벡터가 얼마나 닮았는지를 봄으로써 얻을 수 있는 것이다.
 </p>
 
 그렇다면, 푸리에 행렬의 각각의 행이 가져다주는 의미는 무엇일까?
@@ -266,7 +269,7 @@ $$e^{j\theta}=\cos(\theta) + j\sin(\theta)$$
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-07-07-Euler_Formula/pic1.png">
-  <br> 그림 2. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
+  <br> 그림 3. 복소 평면 상에서 표현한 x+iy. 삼각함수로 표현하면 x축으로부터의 각도를 theta 라디안이라 했을 때 cos(theta) + i sin(theta)이다.
 </p>
 
 다시 말해 식 (40)에 있는 $w$는 다음과 같이 계산하는데,
@@ -284,15 +287,15 @@ $N=8$인 경우 푸리에 행렬에 들어가는 $w$의 값은 $w=\exp\left(-j\f
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/20201106_150356.png">
   <br>
-  그림 3. $\exp(-j 2\pi/8)$을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
+  그림 4. $\exp(-j 2\pi/8)$을 복소평면 상에 표시한 것. 빨간색 별표는 w의 0승, 2승, 3승, ..., 7승을 표시한 것.
 </p>
 
-그림 3과 같이 $w$의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 4와 같을 것이다.
+그림 4와 같이 $w$의 복소평면의 단위원 위의 phase로 푸리에 행렬 내의 복소수를 그림으로 대체하면 아래의 그림 5와 같을 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic2.png">
   <br>
-  그림 4. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
+  그림 5. $N=8$인 경우의 푸리에 행렬을 시각화 한 것. 푸리에 행렬 내의 그림은 복소수 $w$가 가르키는 phase를 표시하였다.
 </p>
 
 cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개념이므로 회전시 phase의 값은 모두 cosine 혹은 sine 함수의 값으로 바꿔 생각해볼 수 있다.
@@ -302,27 +305,27 @@ cosine 함수나 sine 함수 모두 원의 회전으로부터 출발하는 개�
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic3.png">
   <br>
-  그림 5. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
+  그림 6. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
 </p>
 
-위의 그림 5에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 cosine 함수를 표현하고 있는 것을 알 수 있다.
+위의 그림 6에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 cosine 함수를 표현하고 있는 것을 알 수 있다.
 
 또, 푸리에 행렬의 phase를 sine 함수에 대해 생각해보면,
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic4.png">
   <br>
-  그림 6. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
+  그림 7. 푸리에 행렬 내의 각 복소수 원소들의 phase를 sine 함수로 치환해 생각해본 경우
 </p>
 
-위의 그림 6에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 sine 함수도 함께 표현하고 있는 것을 알 수 있다.
+위의 그림 7에서 볼 수 있듯이 푸리에 행렬의 각 행은 주파수 0에서부터 fundamental frequency의 배수만큼의 sine 함수도 함께 표현하고 있는 것을 알 수 있다.
 
 즉, DFT를 계산할 때 사용하는 푸리에 행렬은 fundamental frequency의 배수로 구성된 cosine, sine 함수들이며, 이 함수들이 실수부와 허수부를 구성하며, 원래의 시간 신호와 하나 하나 내적되어 결과를 얻어주는 것이다.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-07-14-Freq_Sampling/pic5.png">
   <br>
-  그림 7. 푸리에 행렬 내의 값들은 모두 복소수이며, 실수부와 허수부는 각각 cosine, sine 함수로 구성되어 있다는 것을 알 수 있다.
+  그림 8. 푸리에 행렬 내의 값들은 모두 복소수이며, 실수부와 허수부는 각각 cosine, sine 함수로 구성되어 있다는 것을 알 수 있다.
 </p>
 
 ## 푸리에 행렬의 특성
