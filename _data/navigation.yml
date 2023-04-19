@@ -29,16 +29,6 @@ header:
       en-CA   : *EN
       en-AU   : *EN
     url: 2019/01/01/donation.html
-    
-  - titles:
-      ko      : &KO       태그 검색
-      ko-KR   : *KO
-      en      : &EN       Tag Search
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-    url: /archive.html
 
   - titles:
       ko      : &KO       유튜브 채널
