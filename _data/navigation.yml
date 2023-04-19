@@ -73,6 +73,8 @@ docs-en:
         url:    2019/07/07/CTFT_en.html
       - title:  Discrete Time Fourier Series
         url:    2019/07/08/DTFS_en.html
+      - title:  Discrete Time Fourier Transform
+        url:    2019/07/09/DTFT_en.html
 
 docs-ko:
   - title:      MATLAB
