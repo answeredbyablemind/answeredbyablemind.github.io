@@ -42,11 +42,11 @@ $$x_d[n]=x_c(nT)$$
 
 연속시간 신호 $x_c(t)$ 에 대하여, 다음과 같은 푸리에 변환을 가진다는 것을 알고 있다.
 
-$$X_c(f) = \int_{-\infty}^{\infty}x_c(t) exp(-j2\pi f t)dt$$
+$$X_c(f) = \int_{-\infty}^{\infty}x_c(t) \exp(-j2\pi f t)dt$$
 
 이산시간 신호 $x_d[n]$ 에 대하여, 우리는 다음과 같은 푸리에 변환이 가능함을 알고 있다.
 
-$$X_d(f) = \sum_{n=-\infty}^{\infty}x_d[n]exp(-j2\pi fn)$$
+$$X_d(f) = \sum_{n=-\infty}^{\infty}x_d[n]\exp(-j2\pi fn)$$
 
 이 때, $X_c(f)$ 와 $X_d(f)$ 의 관계를 수학적으로 표현해보고자 한다.
 
@@ -73,13 +73,13 @@ $$y_c(t) = x_c(t)p_c(t) = \sum_{n=-\infty}^{\infty}x_d[n]\delta_c(t-nT)$$
 
 $y_c(t)$ 는 비주기 연속신호이므로 푸리에변환 할 수 있다. $y_c(t)$ 의 푸리에 변환 $Y_c(f)$ 는 다음과 같이 쓸 수 있다.
 
-$$Y_c(f) = \int_{-\infty}^{\infty}y_c(t) exp(-j2\pi ft)dt $$
+$$Y_c(f) = \int_{-\infty}^{\infty}y_c(t) \exp(-j2\pi ft)dt $$
 
-$$=\int_{-\infty}^{\infty}\sum_{n=-\infty}^{\infty}x_d[n] \delta(t-nT) exp(-j2\pi ft)dt$$
+$$=\int_{-\infty}^{\infty}\sum_{n=-\infty}^{\infty}x_d[n] \delta(t-nT) \exp(-j2\pi ft)dt$$
 
-$$=\sum_{n=-\infty}^{\infty}x_d[n]\int_{-\infty}^{\infty}\delta(t-nT) exp(-j2\pi ft)dt$$
+$$=\sum_{n=-\infty}^{\infty}x_d[n]\int_{-\infty}^{\infty}\delta(t-nT) \exp(-j2\pi ft)dt$$
 
-$$=\sum_{n=-\infty}^{\infty}x_d[n] exp(-j2\pi f nT) = X_d(Tf)$$
+$$=\sum_{n=-\infty}^{\infty}x_d[n] \exp(-j2\pi f nT) = X_d(Tf)$$
 
 여기서 식 (8) 에서 식 (9)로 넘어갈 때에는 다음과 같은 델타 함수의 성질을 이용한 것이다.
 
@@ -89,36 +89,36 @@ $$\int_{-\infty}^{\infty}\delta(t-k)f(t) dt = f(k)$$
 
 $$p_c(t) = \sum_{n=-\infty}^{\infty} \delta(t-nT)$$
 
-$$=\sum_{k=-\infty}^{\infty} a_k exp\left(j \frac{2\pi k}{T}t\right)$$
+$$=\sum_{k=-\infty}^{\infty} a_k \exp\left(j \frac{2\pi k}{T}t\right)$$
 
 <center> where </center>
 
-$$a_k = \frac{1}{T}\int_{-T/2}^{T/2}\delta(t) exp\left(-j \frac{2\pi k}{T}t\right)dt = \frac{1}{T}$$
+$$a_k = \frac{1}{T}\int_{-T/2}^{T/2}\delta(t) \exp\left(-j \frac{2\pi k}{T}t\right)dt = \frac{1}{T}$$
 
 <center>(여기서도 식 (10)의 성질을 이용했다.)</center>
 <br>
 
 그런데, 동시에 CTFT는 주기 신호이던 아니던 관계없이 어떤 연속 신호라도 적용할 수 있으므로, $p_c(t)$ 에 CTFT를 적용해도 무방하다.
 
-$$P_c(f) = \int_{-\infty}^{\infty}p_c(t) exp(-j2\pi ft) dt $$
+$$P_c(f) = \int_{-\infty}^{\infty}p_c(t) \exp(-j2\pi ft) dt $$
 
-$$=\int_{-\infty}^{\infty}\frac{1}{T} \sum_{k=-\infty}^{\infty} exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
+$$=\int_{-\infty}^{\infty}\frac{1}{T} \sum_{k=-\infty}^{\infty} \exp\left(j\frac{2\pi k}{T}t\right) \exp(-j2\pi ft)dt$$
 
-$$=\frac{1}{T} \sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty} exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
+$$=\frac{1}{T} \sum_{k=-\infty}^{\infty}\int_{-\infty}^{\infty} \exp\left(j\frac{2\pi k}{T}t\right) \exp(-j2\pi ft)dt$$
 
 여기서 식 (16) 내의 정적분 파트에 대해서 생각해보자. 이 식을 다시 쓰면 아래의 식 (17)과 같다.
 
-$$\int_{-\infty}^{\infty}exp\left(j\frac{2\pi k}{T}t\right) exp(-j2\pi ft)dt$$
+$$\int_{-\infty}^{\infty}\exp\left(j\frac{2\pi k}{T}t\right) \exp(-j2\pi ft)dt$$
 
-식 (17)은 $exp\left(j\frac{2\pi k}{T}t\right)$ 를 푸리에 변환한 것으로 해석할 수도 있다.
+식 (17)은 $\exp\left(j\frac{2\pi k}{T}t\right)$ 를 푸리에 변환한 것으로 해석할 수도 있다.
 
 식 (17)을 이해하기 위해 다음의 두 푸리에 변환에 대해 생각해보자.
 
-$$ \mathfrak{F}(1) = \int_{-\infty}^{\infty}1 \times exp\left(-j2\pi ft\right) = \delta(f)$$
+$$ \mathfrak{F}(1) = \int_{-\infty}^{\infty}1 \times \exp\left(-j2\pi ft\right) = \delta(f)$$
 
 또,  $\mathfrak{F}(f(t)) = F(f)$ 라고 했을 때
 
-$$\mathfrak{F}\left(exp\left(j2\pi f_0 t\right)f(t)\right) = F(f-f_0)$$
+$$\mathfrak{F}\left(\exp\left(j2\pi f_0 t\right)f(t)\right) = F(f-f_0)$$
 
 
 즉, 식(17)은 1의 푸리에 변환인데, 그것이 $\frac{k}{T}$ 만큼 modulation 되었다고 생각할 수 있는 것이다.
@@ -232,20 +232,20 @@ T,  & \text{if } |f|<\frac{1}{2T} \\
 \end{cases}
 $$
 
-$$\mathfrak{F}^{-1}(H_c(f)) = \int_{-\infty}^{\infty}H_c(f) exp(j2\pi ft) df$$
+$$\mathfrak{F}^{-1}(H_c(f)) = \int_{-\infty}^{\infty}H_c(f) \exp(j2\pi ft) df$$
 
-$$= \int_{-1/2T}^{1/2T} T \space exp(j2\pi ft) df$$
+$$= \int_{-1/2T}^{1/2T} T \space \exp(j2\pi ft) df$$
 
-$$=\frac{T}{j2\pi t} \left\|exp\left(j2\pi ft\right)\right\|^{1/2T}_{-1/2T}$$
+$$=\frac{T}{j2\pi t} \left\|\exp\left(j2\pi ft\right)\right\|^{1/2T}_{-1/2T}$$
 
 $$
 =\frac{T}{j2\pi ft} \left(
-exp\left(\frac{j2\pi t}{2T}\right) - exp\left(-\frac{j2\pi t}{2T}\right)
+\exp\left(\frac{j2\pi t}{2T}\right) - \exp\left(-\frac{j2\pi t}{2T}\right)
 \right)
 $$
 
 $$=\frac{T}{\pi t}\space\frac{1}{2j}\left(
-exp\left(j\frac{\pi t}{T}\right)-exp\left(-j\frac{\pi t}{T}\right)
+\exp\left(j\frac{\pi t}{T}\right)-\exp\left(-j\frac{\pi t}{T}\right)
 \right)$$
 
 $$=\frac{T}{\pi t}\sin\left(\frac{\pi t}{T}\right) = \frac{\sin(\pi t /T)}{\pi t /T}$$
