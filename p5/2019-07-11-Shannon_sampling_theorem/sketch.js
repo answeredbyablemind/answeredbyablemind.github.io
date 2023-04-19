@@ -30,7 +30,7 @@ function draw() {
      plottingAxis(xscl);
 
      
-     my_str = "마우스를 움직여 보세요!"
+     my_str = "Place your mouse cursor on it and move"
      textSize(15);
      text(my_str, width/2, height* 0.15)
 

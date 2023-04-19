@@ -59,6 +59,8 @@ docs-en:
         url:    2019/06/16/imaginary_root_en.html
       - title:  Meaning of Degrees and Radians
         url:    2019/06/04/2-1-angle_rad_en.html
+      - title:  Phasor
+        url:    2019/06/18/phasor_en.html
   - title:      Signal Processing
     children:
       - title:  Phasor
@@ -75,6 +77,8 @@ docs-en:
         url:    2019/07/08/DTFS_en.html
       - title:  Discrete Time Fourier Transform
         url:    2019/07/09/DTFT_en.html
+      - title:  Shannon's Sampling Theorem
+        url:    2019/07/11/Shannon_sampling_theorem_en.html
 
 docs-ko:
   - title:      MATLAB

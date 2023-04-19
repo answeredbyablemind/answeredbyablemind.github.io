@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190711
 tags: 신호처리
+lang: ko
 ---
 
 [//]:# (섀넌의 샘플링 정리라는 수정된 제목에 맞춰 내용 수정할 것. )
@@ -21,7 +22,7 @@ tags: 신호처리
 
 {% raw %}
 
-## 시간 샘플링?
+# 시간 샘플링?
 
 물리적인 (아날로그) 신호를 디지털 화면 상에 표시해주기 위해선 샘플링이 필요하다. 대개 신호처리에서 샘플링이라고 하면 시간 샘플링을 말하는 것 같다.
 
@@ -186,10 +187,7 @@ $$Y_c(f) = X_d(Tf) = \frac{1}{T}\sum_{-\infty}^{\infty}X_c\left(f-\frac{k}{T}\ri
 
 $$Y_c(f) = X_d(Tf) = \frac{1}{T}X_c(f) \space for \space |f| < \frac{1}{2T}$$
 
----
-
-
-## ideal reconstruction
+# ideal reconstruction
 
  지금까지 Frequency Domain에서 $X_c(f)$ 와 $X_d(f)$ 의 관계에 대해서 알아보았다. 그렇다면 둘의 관계에 대해서 아는 것은 어떤 의미를 갖는 것일까? 혹은 어떤 것을 파악하기 위해서 $X_c(f)$ 와 $X_d(f)$ 의 관계를 수식적으로 이해해야 하는 것일까?
 
