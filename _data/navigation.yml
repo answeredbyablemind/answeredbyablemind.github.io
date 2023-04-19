@@ -89,6 +89,8 @@ docs-en:
         url:    2019/07/11/Shannon_sampling_theorem_en.html
       - title:  Frequency Sampling and DFT
         url:    2019/07/14/Freq_Sampling_en.html
+      - title:  Negative Frequency
+        url:    2019/07/22/Negative_Frequency_en.html   
 
 
 docs-ko:
