@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190809
 tags: 신호처리
+lang: ko
 ---
 <style>
   @media screen and (max-width:500px){
@@ -213,15 +214,17 @@ $\because sgn(f)$는 0에 대해 symmetric function이기 때문
 
 주파수 대역(spectra)가 겹치지 않는 두개의 신호 $c(t)$와 $m(t)$를 생각해보자. 이 때, $m(t)$가 lowpass filter이고 $c(t)$가 highpass filter라고 할 수 있으며 다음이 성립한다.
 
-<center><img src="http://bit.ly/1NrjSRF"></center>
+<p align = "center">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-09-Hilbert_Transform/eq83.png">
+</p>
 
 즉, $f_0$의 높은 주파수로 신호가 amplitude modulation된다고 했을 때, modulation되는 신호를 $m(t)$라고 하고 carrier signal을 $c(t)$라고 하면 다음이 성립한다.
 
-<center>
-<img src="http://bit.ly/1RER6ER">
-<br>
-<img src="http://bit.ly/1NrjX7W">
-</center>
+<p align = "center">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-09-Hilbert_Transform/eq87.png">
+  <br>
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/equations/2019-08-09-Hilbert_Transform/eq88.png">
+</p>
 
 ## Signal의 Envelope
 <p align = "center">

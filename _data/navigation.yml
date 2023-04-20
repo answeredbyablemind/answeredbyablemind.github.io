@@ -89,7 +89,9 @@ docs-en:
       - title:  Frequency Sampling and DFT
         url:    2019/07/14/Freq_Sampling_en.html
       - title:  Negative Frequency
-        url:    2019/07/22/Negative_Frequency_en.html   
+        url:    2019/07/22/Negative_Frequency_en.html
+      - title:  Hilbert Transform
+        url:    2019/08/09/Hilbert_Transform_en.html   
 
 docs-ko:
   - title:      MATLAB
@@ -441,3 +443,5 @@ docs-ko:
         url:    2020/09/27/Chebyshev.html   
       - title:  Frequency Transformation
         url:    2020/09/29/frequency_transformation.html
+      - title:  힐버트 변환
+        url:    2019/08/09/Hilbert_Transform.html
