@@ -111,9 +111,6 @@ $$h(t) = -j \lim_{\alpha \rightarrow 0}g(t;\alpha) = -j\lim_{\alpha \rightarrow 
 $$= -j \frac{j4\pi t}{4\pi ^2 t^2} = -j \frac{j}{\pi t} = \frac{1}{\pi t}$$
 
 ---
-Translation:
-
----
 
 As a general rule, the output function $y(t)$ for an input function $x(t)$ can be expressed in terms of the impulse response $h(t)$ of the system as:
 

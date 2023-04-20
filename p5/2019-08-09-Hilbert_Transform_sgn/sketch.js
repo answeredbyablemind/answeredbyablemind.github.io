@@ -32,7 +32,7 @@ function draw() {
      fill(255);
      textSize(20/ 800 * width)
      textAlign(LEFT)
-     let my_array= ['↓ alpha 값: ', a];
+     let my_array= ['↓ alpha: ', a];
      text(join(my_array, ' '), 0.01 * width , height * 0.95)
      textAlign(RIGHT)
      text('(c) 공돌이의 수학정리노트', width * 0.95, height * 0.95)
