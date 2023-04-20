@@ -52,6 +52,8 @@ docs-en:
     children:
       - title:  Principal Component Analysis(PCA)
         url:    2019/07/27/PCA_en.html
+      - title:  Singular Value Decomposition(SVD)
+        url:    2019/08/01/SVD_en.html
 
   - title:    Complex number and Euler's equation
     children:
