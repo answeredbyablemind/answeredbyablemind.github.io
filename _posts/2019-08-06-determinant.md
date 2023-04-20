@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190806
 tags: 선형대수
+lang: ko
 ---
 
 <p align = "center">
