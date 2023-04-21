@@ -50,11 +50,6 @@ docs-en:
       - title:  Eigenvalue and Eigenvector
         url:    2019/07/17/eigen_vector_en.html
 
-  - title:      Machine Learning
-    children:
-      - title:  Layer-wise Relevance Propagation
-        url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
-
   - title:      Applications of Linear Algebra
     children:
       - title:  Principal Component Analysis(PCA)
@@ -74,6 +69,18 @@ docs-en:
         url:    2019/08/25/curl_en.html
       - title:  Laplacian of Scalar Field
         url:    2019/08/28/laplacian_en.html
+        
+  - title:      Partial Differential Equation
+    children:
+      - title:  Meaning of Heat/Wave Equation
+        url:    2019/08/29/Heat_Wave_Equation_en.html
+      - title:  Meaning of Laplace Equation
+        url:    2019/08/31/Laplace_Equation_en.html
+
+  - title:      Machine Learning
+    children:
+      - title:  Layer-wise Relevance Propagation
+        url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
 
   - title:    Complex number and Euler's equation
     children:
