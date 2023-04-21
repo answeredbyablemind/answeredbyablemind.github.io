@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190817
 tags: 머신러닝 딥러닝
+lang: ko
 ---
 
 # Deep Nerual Network Transparency

@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190817_en
 tags: Machine_Learning Deep_Learning
+lang: en
 ---
 
 # Deep Neural Network Transparency
