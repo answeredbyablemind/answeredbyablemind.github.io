@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190829
 tags: 미적분학
+lang: ko
 ---
 
 # 열방정식 (heat equation)

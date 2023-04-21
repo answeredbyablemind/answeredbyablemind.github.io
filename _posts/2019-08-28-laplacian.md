@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190828
 tags: 미적분학
+lang: ko
 ---
 
 # 1. 라플라시안의 정의 (definition)

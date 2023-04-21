@@ -66,10 +66,14 @@ docs-en:
 
   - title:      Multivariate Calculus
     children:
+      - title:  Gradient of Scalar Field
+        url:    2019/08/25/gradient_en.html
       - title:  Divergence of Vector Field
         url:    2019/08/25/divergence_en.html
       - title:  Curl of Vector Field
         url:    2019/08/25/curl_en.html
+      - title:  Laplacian of Scalar Field
+        url:    2019/08/28/laplacian_en.html
 
   - title:    Complex number and Euler's equation
     children:
