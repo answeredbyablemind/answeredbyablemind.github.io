@@ -127,7 +127,7 @@ Translation:
   Figure 3. The posterior probability calculated in Example 1 is used as the prior probability in Example 2 (indicated by the red arrow), and it can be used to calculate the updated posterior probability once again. The figure visualizes the relative areas of the given probability values as rectangles.
 </p>
 
-Therefore, the value of $P(H|E)$ that we want to calculate is as follows.
+Therefore, the value of $P(H\|E)$ that we want to calculate is as follows.
 
 $$P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|H^c)P(H^c)} = \frac{0.047\times 0.99}{0.047\times 0.99 + 0.02\times 0.953}\notag$$
 
