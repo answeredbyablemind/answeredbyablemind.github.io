@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200109
 tags: 통계학 머신러닝
+lang: ko
 ---
 
 # 베이즈 정리의 공식

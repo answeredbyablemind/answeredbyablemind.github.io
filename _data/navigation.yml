@@ -60,6 +60,8 @@ docs-en:
         url:    2019/08/20/correlation_and_inner_product_en.html
       - title:  Geometric Meaning of Gauss-Jordan Elimination
         url:    2019/09/09/Gauss_Jordan_en.html
+      - title:  Why does Wronskian work?
+        url:    2019/10/10/Wronskian_en.html
 
   - title:      Basic Calculus
     children:
@@ -90,6 +92,11 @@ docs-en:
     children:
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
+
+  - title:    Bayesian Statistics
+    children:
+      - title:  Meaning of Bayes' Theorem
+        url:    2020/01/09/Bayes_rule_en.html
 
   - title:    Complex number and Euler's equation
     children:
@@ -122,10 +129,14 @@ docs-en:
         url:    2019/07/08/DTFS_en.html
       - title:  Discrete Time Fourier Transform
         url:    2019/07/09/DTFT_en.html
+      - title:  Fourier Transform and Phase
+        url:    2019/10/11/Foureir_Phase_en.html
       - title:  Shannon's Sampling Theorem
         url:    2019/07/11/Shannon_sampling_theorem_en.html
       - title:  Frequency Sampling and DFT
         url:    2019/07/14/Freq_Sampling_en.html
+      - title:  Frequency Resolution
+        url:    2019/10/12/Frequency_Resolution_en.html
       - title:  Laplace Transform
         url:    2019/08/12/Laplace_transform_en.html
       - title:  Z-Transform
@@ -467,10 +478,14 @@ docs-ko:
         url:    2019/07/08/DTFS.html
       - title:  이산 시간 푸리에 변환(DTFT)
         url:    2019/07/09/DTFT.html  
+      - title:  푸리에 변환과 위상(phase)
+        url:    2019/10/11/Foureir_Phase.html
       - title:  섀넌의 샘플링 정리
         url:    2019/07/11/Shannon_sampling_theorem.html
       - title:  주파수 샘플링과 DFT
         url:    2019/07/14/Freq_Sampling.html
+      - title:  주파수 해상도
+        url:    2019/10/12/Frequency_Resolution.html
       - title:  라플라스 변환
         url:    2019/08/12/Laplace_transform.html
       - title:  Z-변환

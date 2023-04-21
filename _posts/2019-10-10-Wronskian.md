@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20191010
 tags: 선형대수
+lang: ko
 ---
 
 # 정의
