@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190912
 tags: 기초수학
+lang: ko
 ---
 
 <p align = "center">

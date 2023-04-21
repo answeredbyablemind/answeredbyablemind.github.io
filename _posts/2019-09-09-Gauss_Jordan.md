@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190909
 tags: 선형대수
+lang: ko
 ---
 
 # 가우스-조던 행렬 소거법이란?
