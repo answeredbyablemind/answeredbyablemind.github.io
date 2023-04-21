@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190904
 tags: 기초수학
+lang: ko
 ---
 
 # 자연상수 $e$의 정의
@@ -222,7 +223,7 @@ $$\Rightarrow f(x+1) = 2f(x)$$
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2019-09-04_natural_number_e/pic4.png">
   <br>
-  $f=2^x$에서 매 $x$의 성장률은 자기 자신이다.
+  그림 4. $f=2^x$에서 매 $x$의 성장률은 자기 자신이다.
 </p>
 
 즉, $h=1$일 때 식 (18)의 의미를 조금 자세히 볼 수 있다. 변화율이 자기 자신이라는 것이다.

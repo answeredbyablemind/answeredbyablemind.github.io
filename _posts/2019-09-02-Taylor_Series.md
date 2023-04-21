@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190902
 tags: 미적분학
+lang: ko
 ---
 
 # 테일러 급수 공식 유도

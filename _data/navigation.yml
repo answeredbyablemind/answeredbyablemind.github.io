@@ -59,6 +59,11 @@ docs-en:
       - title:  Correlation and Inner Product
         url:    2019/08/20/correlation_and_inner_product_en.html
 
+  - title:      Basic Calculus
+    children:
+      - title:  Derivation of Taylor Seris and Its Meaning
+        url:    2019/09/02/Taylor_Series_en.html
+
   - title:      Multivariate Calculus
     children:
       - title:  Gradient of Scalar Field
@@ -90,6 +95,8 @@ docs-en:
         url:    2019/06/16/imaginary_root_en.html
       - title:  Meaning of Degrees and Radians
         url:    2019/06/04/2-1-angle_rad_en.html
+      - title:  Meaning of Natural Number e
+        url:    2019/09/04/natural_number_e_en.html
       - title:  Phasor
         url:    2019/06/18/phasor_en.html
 
