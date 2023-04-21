@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20190812
 tags: 신호처리
+lang: ko
 ---
 
 <p align = "center">
