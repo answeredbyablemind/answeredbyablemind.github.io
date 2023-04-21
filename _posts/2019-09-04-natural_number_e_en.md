@@ -51,9 +51,9 @@ After 6 months, 1 dollar becomes 0.5 dollars, and after another 6 months, that 0
   Figure 2. The magic piggy bank that grows by 50% every 6 months
 </p>
 
-The key point here is that if you grow it by 50% every 6 months as shown in Figure 2, it will become $2.25 instead of $2 after one year.
+The key point here is that if you grow it by 50% every 6 months as shown in Figure 2, it will become \$2.25 instead of \$2 after one year.
 
-That is, it has increased by $0.25 more than if it had grown by 100% all at once as in Figure 1.
+That is, it has increased by \$0.25 more than if it had grown by 100% all at once as in Figure 1.
 
 Now, let's see what happens if we divide it into 3 parts and grow it.
 
@@ -86,11 +86,12 @@ If we expand the equation (4), we get:
 
 $$Equation(4) = 1\times(1+0.5) + 0.5\times(1+0.5)$$
 
-That is, the original $1 in Figure 2 becomes $1.5 in the first term on the right-hand side, and the $0.5 obtained after 6 months becomes $0.75 in the second term.
+That is, the original \$1 in Figure 2 becomes \$1.5 in the first term on the right-hand side, and the \$0.5 obtained after 6 months becomes \$0.75 in the second term.
 
 Using the same principle, we can formulate Figure 3 into an equation as follows:
 
 $$(1+\frac{1}{3})^3$$
+
 Using the same principle, we can achieve the following results by dividing 100% growth into n times and promoting growth.
 
 $$(1+\frac{1}{n})^n$$
@@ -187,7 +188,7 @@ Let's assume $y=f(x)$.
 
 $$Equation (18) = \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=f(x)$$
 
-Although we wrote it down to this extent, the limit in Equation (19) seems difficult, so let's start by considering the case when $h=1".
+Although we wrote it down to this extent, the limit in Equation (19) seems difficult, so let's start by considering the case when $h=1$.
 
 ## 1. Does Equation (16) really mean exponential growth?
 
@@ -207,7 +208,7 @@ What does Equation (21) mean? It means $f(x) = 2^x$. If we draw a graph, it look
   Figure 4. The growth rate of $f=2^x$ at every $x$ is itself.
 </p>
 
-In other words, we can see the meaning of Equation (18) in more detail when $h=1". It means the rate of change is itself.
+In other words, we can see the meaning of Equation (18) in more detail when $h=1$. It means the rate of change is itself.
 
 In other words, it means that the function grows by the current size of the function at the next $x$."
 
