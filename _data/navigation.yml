@@ -63,6 +63,8 @@ docs-en:
     children:
       - title:  Derivation of Taylor Seris and Its Meaning
         url:    2019/09/02/Taylor_Series_en.html
+      - title:  Geometric Meaning of L'Hopital's Rule
+        url:    2019/09/08/LHopital_rule_en.html
 
   - title:      Multivariate Calculus
     children:
