@@ -64,6 +64,11 @@ docs-en:
       - title:  Correlation and Inner Product
         url:    2019/08/20/correlation_and_inner_product_en.html
 
+  - title:      Multivariate Calculus
+    children:
+      - title:  Curl of Vector Field
+        url:    2019/08/25/curl_en.html
+
   - title:    Complex number and Euler's equation
     children:
       - title:  Meaning of Imaginary Numbers
