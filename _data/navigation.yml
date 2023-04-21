@@ -93,6 +93,11 @@ docs-en:
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
 
+  - title:    Probability & Statistics Basics
+    children:
+      - title:  Proof of Central Limit Theorem
+        url:    2020/01/10/CLT_proof_en.html
+
   - title:    Bayesian Statistics
     children:
       - title:  Meaning of Bayes' Theorem
@@ -344,7 +349,7 @@ docs-ko:
       - title:  GMM과 EM 알고리즘
         url:    2021/02/08/GMM_and_EM.html
       
-  - title:    확률/통계 기초와 확률 분포
+  - title:    확률/통계 기초
     children:
       - title:  이항 분포
         url:    2021/04/23/binomial_distribution.html
