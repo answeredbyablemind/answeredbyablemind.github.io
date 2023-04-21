@@ -90,6 +90,8 @@ docs-en:
         url:    2019/07/14/Freq_Sampling_en.html
       - title:  Laplace Transform
         url:    2019/08/12/Laplace_transform_en.html
+      - title:  Z-Transform
+        url:    2019/08/13/Z_transform_en.html
       - title:  Negative Frequency
         url:    2019/07/22/Negative_Frequency_en.html
       - title:  Hilbert Transform
