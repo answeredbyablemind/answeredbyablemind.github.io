@@ -11,10 +11,10 @@ import matplotlib
 import matplotlib.font_manager as fm
 import os
 
-font_location = 'C:/HANDotum.ttf'  
-                    # ex - 'C:/asiahead4.ttf'
-font_name = fm.FontProperties(fname = font_location).get_name()
-matplotlib.rc('font', family = font_name)
+# font_location = 'C:/HANDotum.ttf'  
+#                     # ex - 'C:/asiahead4.ttf'
+# font_name = fm.FontProperties(fname = font_location).get_name()
+# matplotlib.rc('font', family = font_name)
 
 
 D = np.random.randn(2,500)
@@ -38,15 +38,18 @@ for i in range(D.shape[0]):
 D[1,:] = D[1,:]-5
 
 plt.scatter(D[0,:], D[1,:])
-plt.title('시험 점수의 분포')
-plt.xlabel('수학 점수')
-plt.ylabel('영어 점수')
-plt.grid(b=True)
+# plt.title('시험 점수의 분포')
+# plt.xlabel('수학 점수')
+# plt.ylabel('영어 점수')
+plt.title('Distribution of Test Scores')
+plt.xlabel('Math Score')
+plt.ylabel('English Score')
+# plt.grid(True)
 
 savepath = 'C:/angeloyeo.github.io/pics/2019-08-20_correlation_and_inner_product/'
 
 if not os.path.exists(savepath):
     os.makedirs(savepath)
 
-plt.savefig(savepath + 'pic1.png', dpi = 300)
+plt.savefig(savepath + 'pic1_en.png', dpi = 300)
 plt.show()

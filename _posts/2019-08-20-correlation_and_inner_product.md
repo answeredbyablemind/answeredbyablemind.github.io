@@ -1,11 +1,12 @@
 ---
-title: 상관계수는 벡터의 내적이다.
+title: 상관 계수와 벡터의 내적
 sidebar:
   nav: docs-ko
 aside:
   toc: true
 key: 20190820
 tags: 선형대수
+lang: ko
 ---
 
 # 상관 계수의 용도와 정의
