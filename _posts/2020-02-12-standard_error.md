@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200212
 tags: 통계학
+lang: ko
 ---
 
 # 모집단과 표본 집단

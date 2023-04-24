@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200211
 tags: 통계학
+lang: ko
 ---
 
 <p align = "center">

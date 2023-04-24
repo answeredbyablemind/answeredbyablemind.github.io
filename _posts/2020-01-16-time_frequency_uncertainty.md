@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200116
 tags: 푸리에 신호처리
+lang: ko
 ---
 
 # 가우시안 함수
