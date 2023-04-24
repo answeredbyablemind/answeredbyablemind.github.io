@@ -57,13 +57,17 @@ docs-en:
       - title:  Singular Value Decomposition(SVD)
         url:    2019/08/01/SVD_en.html
       - title:  Correlation and Inner Product
+        url:    2019/08/20/correlation_and_inner_product_en.html
+      - title:  Geometric Meaning of Jacobian Matrix
+        url:    2020/07/24/Jacobian_en.html
       - title:  Geometric Meaning of Hessian Matrix
         url:    2020/06/17/Hessian_en.html
-        url:    2019/08/20/correlation_and_inner_product_en.html
       - title:  Geometric Meaning of Gauss-Jordan Elimination
         url:    2019/09/09/Gauss_Jordan_en.html
       - title:  Why does Wronskian work?
         url:    2019/10/10/Wronskian_en.html
+      - title:  Independent Component Analysis(ICA)
+        url:    2020/07/14/ICA_en.html
 
   - title:      Basic Calculus
     children:
@@ -123,8 +127,10 @@ docs-en:
     children:
       - title:  Meaning of Bayes' Theorem
         url:    2020/01/09/Bayes_rule_en.html
+      - title:  Maximum Likelihood Estimation(MLE)
+        url:    2020/07/17/MLE_en.html
 
-  - title:    Complex number and Euler's equation
+  - title:    Complex number and Euler's formula
     children:
       - title:  Meaning of Imaginary Numbers
         url:    2019/06/15/imaginary_number_en.html  
@@ -134,6 +140,8 @@ docs-en:
         url:    2019/06/04/2-1-angle_rad_en.html
       - title:  Meaning of Natural Number e
         url:    2019/09/04/natural_number_e_en.html
+      - title:  Geometric Meaning of Euler's Formula
+        url:    2020/07/07/Euler_Formula_en.html
       - title:  Exponential Functions with Negative Bases
         url:    2019/09/12/negative_base_exponential_en.html
       - title:  Phasor
@@ -167,6 +175,8 @@ docs-en:
         url:    2019/08/12/Laplace_transform_en.html
       - title:  Z-Transform
         url:    2019/08/13/Z_transform_en.html
+      - title:  Laplace Transform and Z-Transform
+        url:    2020/07/23/laplace_and_z_en.html       
       - title:  Negative Frequency
         url:    2019/07/22/Negative_Frequency_en.html
       - title:  Time-Frequency Uncertainty

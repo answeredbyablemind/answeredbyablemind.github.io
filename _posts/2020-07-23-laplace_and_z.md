@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200723
 tags: 신호처리
+lang: ko
 ---
 
 <style>
