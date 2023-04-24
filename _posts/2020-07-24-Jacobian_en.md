@@ -20,7 +20,9 @@ lang: en
 {% raw %}
 
 ※ In this article, we follow the convention of column vectors.
+
 ※ We would like to acknowledge that most of the content in this post was borrowed from Grant Sanderson's Khan Academy Jacobian lecture.
+
 ※ Khan Academy video source: https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/jacobian/v/jacobian-prerequisite-knowledge
 
 # Prerequisites
