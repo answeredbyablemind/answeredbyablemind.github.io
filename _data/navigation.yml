@@ -114,6 +114,8 @@ docs-en:
         url:    2020/02/29/ANOVA_en.html
       - title:  The Theory of Praying for Failure - Null Hypothesis and Alternative Hypothesis.
         url:    2020/03/25/hypothesis_en.html
+      - title:  Meaning of p-value
+        url:    2020/03/29/p_value_en.html
 
   - title:    Bayesian Statistics
     children:

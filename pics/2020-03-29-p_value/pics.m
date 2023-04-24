@@ -1,7 +1,7 @@
 clear; close all; clc;
 
 
-%% 샘플 수는 고정시킨 채로 effect size를 늘렸을 때 t-value와 p-value의 변화
+%% 샘플 수는 fixed시킨 채로 effect size를 늘렸을 때 t-value와 p-value의 변화
 rng(4);
 
 effect_sizes = [0.1, 0.2, 1, 5];
@@ -38,7 +38,7 @@ for i = 1:length(effect_sizes)
     t = stats.tstat;
     p;
     
-    title(['n = ',num2str(n),' (고정), effect size = ',num2str(effect_size)]);
+    title(['n = ',num2str(n),' (fixed), effect size = ',num2str(effect_size)]);
     
     if p < 0.01
         text(0.03, 0.87, sprintf('t-value: %.2f \np-value: %.2e',t, p),'Units','normalized','fontsize',12)
@@ -51,7 +51,7 @@ for i = 1:length(effect_sizes)
     
     
 end
-%% effect size는 고정시킨 채로 샘플 수를 늘렸을 때 t-value와 p-value의 변화
+%% effect size는 fixed시킨 채로 샘플 수를 늘렸을 때 t-value와 p-value의 변화
 rng(4);
 
 ns = [50, 100, 1000, 5000];
@@ -81,7 +81,7 @@ for i = 1:length(ns)
     t = stats.tstat;
     p;
     
-    title(['n = ',num2str(n),' / effect size = -0.1 (고정)']);
+    title(['n = ',num2str(n),' / effect size = -0.1 (fixed)']);
     
     if p < 0.01
         text(0.03, 0.87, sprintf('t-value: %.2f \np-value: %.2e',t, p),'Units','normalized','fontsize',12)
