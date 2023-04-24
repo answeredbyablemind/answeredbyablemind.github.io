@@ -104,6 +104,10 @@ docs-en:
     children:
       - title:  Statistical Inference - Big Picture
         url:    2020/02/11/big_picture_stats_infer_en.html
+      - title:  Meaning of Sampling and Standard Error
+        url:    2020/02/12/standard_error_en.html
+      - title:  Meaning of t-value and Student's t-test
+        url:    2020/02/13/Students_t_test_en.html
 
   - title:    Bayesian Statistics
     children:
