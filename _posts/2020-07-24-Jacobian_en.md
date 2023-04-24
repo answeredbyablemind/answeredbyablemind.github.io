@@ -1,12 +1,12 @@
 ---
-title: 자코비안(Jacobian) 행렬의 기하학적 의미
+title: Geometric Meaning of Jacobian Matrix
 sidebar:
-  nav: docs-ko
+  nav: docs-en
 aside:
   toc: true
-key: 20200724
-tags: 미적분학
-lang: ko
+key: 20200724_en
+tags: Calculus
+lang: en
 ---
 
 <style>
