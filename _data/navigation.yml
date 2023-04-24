@@ -108,6 +108,8 @@ docs-en:
         url:    2020/02/12/standard_error_en.html
       - title:  Meaning of t-value and Student's t-test
         url:    2020/02/13/Students_t_test_en.html
+      - title:  Meaning of F-value and Analysis of Variance
+        url:    2020/02/29/ANOVA_en.html
 
   - title:    Bayesian Statistics
     children:
