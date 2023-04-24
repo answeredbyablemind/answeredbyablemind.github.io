@@ -57,6 +57,8 @@ docs-en:
       - title:  Singular Value Decomposition(SVD)
         url:    2019/08/01/SVD_en.html
       - title:  Correlation and Inner Product
+      - title:  Geometric Meaning of Hessian Matrix
+        url:    2020/06/17/Hessian_en.html
         url:    2019/08/20/correlation_and_inner_product_en.html
       - title:  Geometric Meaning of Gauss-Jordan Elimination
         url:    2019/09/09/Gauss_Jordan_en.html
