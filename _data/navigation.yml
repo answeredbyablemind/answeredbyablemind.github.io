@@ -105,11 +105,15 @@ docs-en:
       - title:  Statistical Inference - Big Picture
         url:    2020/02/11/big_picture_stats_infer_en.html
       - title:  Meaning of Sampling and Standard Error
+      - title:  Sample variance is divided by n-1 instead of n
+        url:    2020/03/23/sample_variance_en.html
         url:    2020/02/12/standard_error_en.html
       - title:  Meaning of t-value and Student's t-test
         url:    2020/02/13/Students_t_test_en.html
       - title:  Meaning of F-value and Analysis of Variance
         url:    2020/02/29/ANOVA_en.html
+      - title:  The Theory of Praying for Failure - Null Hypothesis and Alternative Hypothesis.
+        url:    2020/03/25/hypothesis_en.html
 
   - title:    Bayesian Statistics
     children:

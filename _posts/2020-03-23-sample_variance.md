@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200323
 tags: 통계학
+lang: ko
 ---
 
 # 표본 분산의 기댓값은 모분산이 되어야 한다.
