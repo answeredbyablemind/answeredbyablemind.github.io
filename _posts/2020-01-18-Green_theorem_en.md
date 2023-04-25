@@ -135,7 +135,7 @@ This completes the proof of Green's theorem.
 
 To understand the following content, it is recommended to know the following:
 
-* [Curl of a vector field](https://angeloyeo.github.io/2019/08/25/curl_en.html)
+* [Curl of vector field](https://angeloyeo.github.io/2019/08/25/curl_en.html)
 * [Meaning of multiple integrals](https://angeloyeo.github.io/2020/07/30/multiple_integral_en.html)
 * [Line integrals of vector fields](https://angeloyeo.github.io/2020/08/17/line_integral_en.html)
 
