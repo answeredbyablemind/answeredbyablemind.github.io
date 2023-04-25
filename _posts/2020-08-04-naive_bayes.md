@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200804
 tags: 통계학 머신러닝
+lang: ko
 ---
 
 <style>
