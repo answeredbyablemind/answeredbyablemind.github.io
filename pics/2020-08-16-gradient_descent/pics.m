@@ -21,7 +21,7 @@ yy_prime = 2*xx;
 n_iter = 100;
 
 step_sizes = [0.001, 0.018, 1.02];
-titles = {'너무 작은 step size', '적절한 step size', '너무 큰 step size'};
+titles = {'Too small step size', 'Proper step size', 'Too big step size'};
 figure('position',[250, 442, 1080, 320]);
 my_color = jet(n_iter);
 

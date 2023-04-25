@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200816
 tags: 미적분학 머신러닝
+lang: ko
 ---
 
 <center>

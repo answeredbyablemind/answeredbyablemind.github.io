@@ -100,6 +100,8 @@ docs-en:
 
   - title:      Machine Learning
     children:
+      - title:  Gradient Descent
+        url:    2020/08/16/gradient_descent_en.html
       - title:  Naive Bayes Classifier
         url:    2020/08/04/naive_bayes_en.html
       - title:  ROC curve

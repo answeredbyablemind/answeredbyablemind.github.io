@@ -226,7 +226,7 @@ end
 
 %% 영상 촬영 
 
-newVid = VideoWriter('pic11', 'MPEG-4'); % New
+newVid = VideoWriter('pic13_en', 'MPEG-4'); % New
 newVid.FrameRate = 30;
 newVid.Quality = 100;
 open(newVid);
@@ -243,9 +243,11 @@ for i_epoch = 1:10:2000
     xlim([0, 100])
     ylim([0, 350])
 
-    xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
-    title('여러 도시에서 발생한 교통사고 건수와 그 주의 인구');
+    xlabel('# Population (10k)'); ylabel('# Accidents on Highway'); grid on;
+    title('The number of traffic accidents that occurred in various cities and the population of each week.');
     
+    % xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
+    % title('여러 도시에서 발생한 교통사고 건수와 그 주의 인구');
     subplot(1, 2, 2);
     contour(a,b,f, 30)
     hold on;
