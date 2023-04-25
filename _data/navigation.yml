@@ -102,6 +102,8 @@ docs-en:
     children:
       - title:  Naive Bayes Classifier
         url:    2020/08/04/naive_bayes_en.html
+      - title:  ROC curve
+        url:    2020/08/05/ROC_en.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
 
