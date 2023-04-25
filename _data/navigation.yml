@@ -86,6 +86,8 @@ docs-en:
         url:    2019/08/25/curl_en.html
       - title:  Laplacian of Scalar Field
         url:    2019/08/28/laplacian_en.html
+      - title:  Green's Theorem
+        url:    2020/01/18/Green_theorem_en.html
         
   - title:      Partial Differential Equation
     children:
