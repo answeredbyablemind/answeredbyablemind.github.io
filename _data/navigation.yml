@@ -92,6 +92,8 @@ docs-en:
         url:    2020/08/17/line_integral_en.html
       - title:  Green's Theorem
         url:    2020/01/18/Green_theorem_en.html
+      - title:  Flux(2D) of Vector Field
+        url:    2020/08/18/flux_2D_en.html
         
   - title:      Partial Differential Equation
     children:
