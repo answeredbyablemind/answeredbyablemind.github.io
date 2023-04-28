@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200907
 tags: 선형대수
+lang: ko
 ---
 
 # 벡터란 무엇인가?

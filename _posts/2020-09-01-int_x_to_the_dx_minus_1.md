@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200901
 tags: 미적분학
+lang: ko
 ---
 
 ※ 이 포스팅은 Quora의 글 중 [What is $\int x^{dx}-1$?](https://www.quora.com/What-is-int-x-dx-1)의 Oden Petersen의 답변을 재구성한 것입니다.
