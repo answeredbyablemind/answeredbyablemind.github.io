@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200821
 tags: 미적분학
+lang: ko
 ---
 
 # preprequisites

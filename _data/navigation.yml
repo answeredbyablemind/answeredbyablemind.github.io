@@ -98,6 +98,8 @@ docs-en:
         url:    2020/08/19/divergence_theorem_2D_en.html  
       - title:  Normal Vector of Infinitesimal Curved Surface
         url:    2020/08/20/normal_vector.html
+      - title:  Surface Integral of Vector Field(3D)
+        url:    2020/08/21/surface_integral_en.html
         
   - title:      Partial Differential Equation
     children:
