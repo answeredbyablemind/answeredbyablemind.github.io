@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200822
 tags: 미적분학
+lang: ko
 ---
 
 # 스토크스 정리의 수식
