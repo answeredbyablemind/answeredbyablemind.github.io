@@ -124,8 +124,10 @@ y = 3 * x + 1 + randn(size(x)) * 30;
 y = abs(y);
 
 figure; plot(x, y, 'o');
-xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
-title('여러 도시에서 발생한 교통사고 건수와 그 주의 인구');
+% xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
+% title('여러 도시에서 발생한 교통사고 건수와 그 주의 인구');
+xlabel('# Population(10k)'); ylabel('# Accidents on Highway'); grid on;
+title('# Accidents on highway in various cities and their population');
 
 c1 = fit(x', y', 'poly1');
 XLIMs = xlim;
@@ -244,7 +246,7 @@ for i_epoch = 1:10:2000
     ylim([0, 350])
 
     xlabel('# Population (10k)'); ylabel('# Accidents on Highway'); grid on;
-    title('The number of traffic accidents that occurred in various cities and the population of each week.');
+    title('# traffic accidents that occurred in various cities and their population.');
     
     % xlabel('인구 수 (만 명)'); ylabel('고속도고 사고 발생 건수 (건)'); grid on;
     % title('여러 도시에서 발생한 교통사고 건수와 그 주의 인구');
