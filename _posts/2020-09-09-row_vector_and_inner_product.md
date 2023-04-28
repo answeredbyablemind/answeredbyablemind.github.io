@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200909
 tags: 선형대수
+lang: ko
 ---
 
 지금까지 우리는 [벡터란 무엇인지에 대해 알아보고](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html), [행렬과 벡터의 곱](https://angeloyeo.github.io/2020/09/08/matrix_multiplication.html)에 대해 알아보았다.

@@ -1,6 +1,5 @@
 clear; close all; clc;
-addpath('D:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
-addpath('C:\angeloyeo.github.io\MATLAB\다른사람참고code\Annotate-v1.2.1\Annotate\');
+addpath('C:\angeloyeo.github.io\pics\2020-09-09-row_vector_and_inner_product\Annotate-v1.2.3\Annotate');
 
 %% 두 개의 subplot에 두 종류의 벡터들 그려주기
 figure('position',[680, 560, 1080, 420])
@@ -198,7 +197,8 @@ for i_onto = 1:length(ontos)
     end
     
     % title 써주기
-    text(0, 3.5, ['출력값이 ',num2str(onto),'인 벡터들'],'HorizontalAlignment','center')
+    % text(0, 3.5, ['출력값이 ',num2str(onto),'인 벡터들'],'HorizontalAlignment','center')
+    text(0, 3.5, ['Vectors with ouputs equal to ',num2str(onto)],'HorizontalAlignment','center')
     
     ii=ii+1;
 end
@@ -266,7 +266,8 @@ h.Primitive.Color = [1, 0, 0];
 h.Primitive.LineWidth = 2;
 text(2.0087, 1.1816, '(2, 1)')
 % title 써주기
-text(0, 3.3, ['출력값이 ',num2str(onto),'인 벡터 중 하나'],'HorizontalAlignment','center','fontsize',12)
+% text(0, 3.3, ['출력값이 ',num2str(onto),'인 벡터 중 하나'],'HorizontalAlignment','center','fontsize',12)
+text(0, 3.3, ['One of vectors with output equals to ',num2str(onto)],'HorizontalAlignment','center','fontsize',12)
 
 %% 2x+y=4인 경우이고 x=0~2사이의 값만 표현한 그림하나 그릴 것.
 figure('color','w','position',[680, 300, 300, 480]);

@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200908
 tags: 선형대수
+lang: ko
 ---
 
 # 일반적으로 이용하는 행렬곱의 방법

@@ -45,6 +45,10 @@ docs-en:
     children:
       - title:  Basic Operations of Vectors
         url:    2020/09/07/basic_vector_operation_en.html
+      - title:  View Points on Matrix Multiplication
+        url:    2020/09/08/matrix_multiplication_en.html
+      - title:  Meaning of Row Vector and Inner Product
+        url:    2020/09/09/row_vector_and_inner_product_en.html
       - title:  Matrix as Linear Transformation
         url:    2019/07/15/Matrix_as_Linear_Transformation_en.html
       - title:  Geometric Meaning of Determinant
