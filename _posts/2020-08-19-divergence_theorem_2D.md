@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200817
 tags: 미적분학
+lang: ko
 ---
 
 # 발산 정리의 수식
