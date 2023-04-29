@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200914
 tags: 통계학
+lang: ko
 ---
 
 이번 포스트에서는 정규 분포(혹은 가우스 분포)의 공식을 유도해보고자 한다.
@@ -269,7 +270,7 @@ $$=\sqrt{\frac{k}{2\pi}}\int_{-\infty}^{\infty}x^2\exp\left(-\frac{1}{2}kx^2\rig
 
 $$\Rightarrow \sqrt{\frac{k}{2\pi}}\int_{-\infty}^{\infty}x\cdot x\exp\left(-\frac{1}{2}kx^2\right)dx$$
 
-여기서 부분적분을 이용해 식 (40)을 적분해조자.
+여기서 부분적분을 이용해 식 (40)을 적분해보자.
 
 $x$를 $u$ 라고 하고 $x\exp\left(-\frac{1}{2}kx^2\right)$을 $dv$라고 하면,
 
