@@ -141,6 +141,8 @@ docs-en:
         url:    2020/01/17/Gaussian_Integral_en.html
       - title:  Derivation of Normal Distribution
         url:    2020/09/14/normal_distribution_derivation_en.html
+      - title:  Meaning of Central Limit Theorem
+        url:    2020/09/15/CLT_meaning_en.html
       - title:  Proof of Central Limit Theorem
         url:    2020/01/10/CLT_proof_en.html
 
