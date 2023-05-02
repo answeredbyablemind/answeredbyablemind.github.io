@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200922
 tags: 기초수학
+lang: ko
 ---
 
 임의의 복소수 $x+iy$를 생각해보자.
