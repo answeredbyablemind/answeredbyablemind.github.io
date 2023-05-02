@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200916
 tags: 통계학
+lang: ko
 ---
 
 # 확률 분포로부터 샘플 추출

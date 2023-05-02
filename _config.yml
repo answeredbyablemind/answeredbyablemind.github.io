@@ -17,7 +17,7 @@ text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : 공돌이의 수학정리노트
+title   : Angelo's Math Notes (공돌이의 수학정리노트)
 description: > # this means to ignore newlines until "Language & timezone"
   Your Site Description
 
@@ -32,7 +32,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type      : # "person" (default), "organization"
-  name      : Donghoon Yeo
+  name      : Angelo Yeo
   url       :
   avatar    : # path or url of avatar image (square)
   bio       : 

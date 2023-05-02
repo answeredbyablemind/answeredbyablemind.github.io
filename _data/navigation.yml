@@ -169,6 +169,10 @@ docs-en:
         url:    2020/01/09/Bayes_rule_en.html
       - title:  Maximum Likelihood Estimation(MLE)
         url:    2020/07/17/MLE_en.html
+      - title:  Rejection Sampling
+        url:    2020/09/16/rejection_sampling_en.html
+      - title:  Markov Chain Monte Carlo
+        url:    2020/09/17/MCMC_en.html
 
   - title:    Complex number and Euler's formula
     children:
@@ -497,7 +501,7 @@ docs-ko:
         url:    2020/08/04/naive_bayes.html
       - title:  칼만 필터
         url:    2021/04/07/Kalman_filter.html
-      - title:  Rejection sampling
+      - title:  Rejection Sampling
         url:    2020/09/16/rejection_sampling.html
       - title:  Markov Chain Monte Carlo
         url:    2020/09/17/MCMC.html

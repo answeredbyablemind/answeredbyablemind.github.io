@@ -1,7 +1,7 @@
 clear; close all; clc;
 %% inverse CDF
 rng(1)
-addpath('D:\angeloyeo.github.io\pics\')
+addpath('C:\angeloyeo.github.io\pics\')
 x = linspace(-3,3,100);
 p = normcdf(x);
 
@@ -60,7 +60,8 @@ ylabel('$$f(x), g(x)$$','interpreter','latex');
 grid on;
 
 legend([h1, h2], 'target','proposal');
-title('타겟 분포와 제안 분포');
+% title('타겟 분포와 제안 분포');
+title('Target Distribution and Proposal Distribution')
 
 set(gca,'ytick',sort([0:0.1:8, 1/24]))
 set(gca,'xtick',sort([-10:5:20, -7, 17]))
@@ -78,8 +79,10 @@ xlabel('$$x$$','interpreter','latex');
 ylabel('$$f(x), Mg(x)$$','interpreter','latex');
 grid on;
 
-legend([h1, h2], 'target','proposal x 상수','location','best');
-title('타겟 분포와 제안 분포의 상수배');
+% legend([h1, h2], 'target','proposal x 상수','location','best');
+% title('타겟 분포와 제안 분포의 상수배');
+legend([h1, h2], 'target','proposal x constant','location','best');
+title('Traget Distribution and Proposal Dist \times Constant');
 
 % set(gca,'ytick',sort([0:0.1:8, 0.04]))
 set(gca,'xtick',sort([-10:5:20, -7, 17]))

@@ -5,7 +5,7 @@ accept = 0;
 reject = 0;
 figure('position',[680, 558, 453, 420],'color','w')
 
-newVid = VideoWriter('pic1', 'MPEG-4'); % New
+newVid = VideoWriter('pic1_en', 'MPEG-4'); % New
 newVid.FrameRate = 20;
 newVid.Quality = 100;
 open(newVid);
@@ -24,7 +24,8 @@ for i_iter = 1:n_iter
     plot(x, y,'.', 'color',c);
     hold on;
     
-    t = text(0, -0.77557, sprintf('추정 넓이: %.4f',4 * accept / i_iter),'fontsize',15,'fontweight','bold','BackgroundColor','w');
+    % t = text(0, -0.77557, sprintf('추정 넓이: %.4f',4 * accept / i_iter),'fontsize',15,'fontweight','bold','BackgroundColor','w');
+    t = text(0, -0.77557, sprintf('Approx. Area: %.4f',4 * accept / i_iter),'fontsize',15,'fontweight','bold','BackgroundColor','w');
     
     if rem(i_iter, 100) == 0
         xlim([-1, 1])
@@ -72,7 +73,8 @@ ylabel('$$y$$','interpreter','latex');
 title('$$f(x) = 0.3e^{-0.2x^2} + 0.7e^{-0.2(x-10)^2}$$','interpreter','latex')
 hold on;
 h2 = plot(xx, normpdf(xx, 7, 2),'linewidth',2,'linestyle','--');
-legend([h1, h2], '타겟 분포', '제안 분포')
+% legend([h1, h2], '타겟 분포', '제안 분포')
+legend([h1, h2], 'Target Dist', 'Proposal Dist')
 
 %% 제안분포로부터 다음 포인트 추천 받기
 
@@ -82,7 +84,8 @@ h1 = plot(xx, target(xx),'linewidth',2);
 grid on;
 xlabel('$$x$$','interpreter','latex');
 ylabel('$$y$$','interpreter','latex');
-title('새로운 제안을 거절하는 경우')
+% title('새로운 제안을 거절하는 경우')
+title('When rejecting new proposal')
 hold on;
 h2 = plot(xx, normpdf(xx, 7, 2),'linewidth',2,'linestyle','--');
 rng(1); x_new = randn(1) * 2 + 7
@@ -93,14 +96,16 @@ plot(7, target(7),'o','markerfacecolor','r');
 line([x_new x_new],[0, target(x_new)],'color','b','linestyle','--')
 plot(x_new, target(x_new),'o','markerfacecolor','b');
 
-legend([h1, h2], '타겟 분포', '제안 분포')
+% legend([h1, h2], '타겟 분포', '제안 분포')
+legend([h1, h2], 'Target Dist', 'Proposal Dist')
 
 subplot(1,2,2);
 h1 = plot(xx, target(xx),'linewidth',2);
 grid on;
 xlabel('$$x$$','interpreter','latex');
 ylabel('$$y$$','interpreter','latex');
-title('새로운 제안을 수용하는 경우')
+% title('새로운 제안을 수용하는 경우')
+title('When accepting new proposal')
 hold on;
 h2 = plot(xx, normpdf(xx, 7, 2),'linewidth',2,'linestyle','--');
 x_new = 10;
@@ -111,7 +116,8 @@ plot(7, target(7),'o','markerfacecolor','r');
 line([x_new x_new],[0, target(x_new)],'color','b','linestyle','--')
 plot(x_new, target(x_new),'o','markerfacecolor','b');
 
-legend([h1, h2], '타겟 분포', '제안 분포')
+% legend([h1, h2], '타겟 분포', '제안 분포')
+legend([h1, h2], 'Target Dist', 'Proposal Dist')
 
 %%  Metropolis Hastings
 
