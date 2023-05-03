@@ -127,7 +127,9 @@ docs-en:
       - title:  Gradient Descent
         url:    2020/08/16/gradient_descent_en.html
       - title:  Linear Regression
-        url:    2020/08/24/linear_regression_en.html        
+        url:    2020/08/24/linear_regression_en.html     
+      - title:  Logistic Regression
+        url:    2020/09/23/logistic_regression_en.html   
       - title:  Naive Bayes Classifier
         url:    2020/08/04/naive_bayes_en.html
       - title:  ROC curve
@@ -227,6 +229,8 @@ docs-en:
         url:    2019/07/22/Negative_Frequency_en.html
       - title:  Time-Frequency Uncertainty
         url:    2020/01/16/time_frequency_uncertainty_en.html   
+      - title:  Butterworth Filter
+        url:    2020/09/25/Butterworth_en.html   
       - title:  Hilbert Transform
         url:    2019/08/09/Hilbert_Transform_en.html   
 

@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200923
 tags: 머신러닝
+lang: ko
 ---
 
 # Prerequisites
@@ -41,7 +42,7 @@ tags: 머신러닝
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic2.png">
   <br>
-  그림 2. 범주형 데이터에 대해 선형회귀 모델을 적용하는 경우
+  그림 3. 범주형 데이터에 대해 선형회귀 모델을 적용하는 경우
 </p>
 
 선형회귀 메소드를 적용했을 때에도 $\hat{y} = ax+b\geq 0.5$인 경우 1로 분류하고 아닌 경우 0으로 분류할 수 있다.
@@ -50,12 +51,12 @@ tags: 머신러닝
 
 다시 말해, 선형 모델모다 범주형 데이터에 좀 더 어울리는 모델을 생각해보도록 하자.
 
-범주형 데이터에 대한 모델을 세우기 위해서 필요한 함수는 아래의 그림 3과 같이 어떤 값을 넘어가기 전에는 0, 넘어간 뒤에는 1의 값을 가지는 형태의 함수여야 한다.
+범주형 데이터에 대한 모델을 세우기 위해서 필요한 함수는 아래의 그림 4와 같이 어떤 값을 넘어가기 전에는 0, 넘어간 뒤에는 1의 값을 가지는 형태의 함수여야 한다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic3.png">
   <br>
-  그림 3. 범주형 데이터에 어울리는 함수의 형태는 특정 $x$값 이전에는 0을 출력하고 그 값 이후에는 1을 출력해주는 커브여야 한다.
+  그림 4. 범주형 데이터에 어울리는 함수의 형태는 특정 $x$값 이전에는 0을 출력하고 그 값 이후에는 1을 출력해주는 커브여야 한다.
 </p>
 
 이 S자 커브 함수에 대한 여러가지 후보가 있겠으나 우리는 sigmoid 함수를 사용하도록 하자.
@@ -73,18 +74,18 @@ sigmoid함수 외에도 다른 함수를 쓸 수 있지만 굳이 sigmoid 함수
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic4.png">
   <br>
-  그림 4. sigmoid 함수의 형태
+  그림 5. sigmoid 함수의 형태
 </p>
 
 
 이 sigmoid 함수의 출력이 0.5보다 큰 경우에는 label을 1로 생각하고, 그렇지 않은 경우에는 label을 0으로 생각할 수 있다.
 
-그림 2에서 확인한 우리의 데이터에 sigmoid 함수를 적용하면 아래의 그림 5와 같은 형태일 것이다.
+그림 2에서 확인한 우리의 데이터에 sigmoid 함수를 적용하면 아래의 그림 6과 같은 형태일 것이다.
 
 <p align = "center">
   <img width = "400" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-23-logistic_regression/pic5.png">
   <br>
-  그림 5. Sigmoid 함수를 이용해 회귀모델을 만든 경우의 예시
+  그림 6. Sigmoid 함수를 이용해 회귀모델을 만든 경우의 예시
 </p>
 
 이 때, 우리가 sigmoid 함수의 형태를 결정하기 위해서 다음과 같이 파라미터 $a$와 $b$를 sigmoid 함수의 식에 넣어주도록 하자.
