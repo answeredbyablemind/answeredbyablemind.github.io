@@ -40,7 +40,7 @@ function draw() {
      step_size = my_slider.value()
      noStroke()
      fill(255)
-     text('시작 위치', 10, height - 70)
+     text('Starting Point', 10, height - 70)
 
      loc = my_slider2.value()
      text('step size', 10, height - 30)

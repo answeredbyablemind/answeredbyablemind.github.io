@@ -102,7 +102,7 @@ docs-en:
         url:    2020/08/17/line_integral_en.html
       - title:  Green's Theorem
         url:    2020/01/18/Green_theorem_en.html
-      - title:  Flux(2D) of Vector Field
+      - title:  Flux of Vector Field(2D)
         url:    2020/08/18/flux_2D_en.html
       - title:  Divergence Theorem(2D)
         url:    2020/08/19/divergence_theorem_2D_en.html  
@@ -132,6 +132,8 @@ docs-en:
         url:    2020/08/24/linear_regression_en.html     
       - title:  Logistic Regression
         url:    2020/09/23/logistic_regression_en.html   
+      - title:  Support Vector Machine(SVM)
+        url:    2020/09/30/SVM_en.html
       - title:  Naive Bayes Classifier
         url:    2020/08/04/naive_bayes_en.html
       - title:  ROC curve
