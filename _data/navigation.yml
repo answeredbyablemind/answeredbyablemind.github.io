@@ -243,6 +243,8 @@ docs-en:
         url:    2019/07/22/Negative_Frequency_en.html
       - title:  Time-Frequency Uncertainty
         url:    2020/01/16/time_frequency_uncertainty_en.html   
+      - title:  Savitzky-Golay Filter
+        url:    2020/10/21/Savitzky_Golay_en.html   
       - title:  Butterworth Filter
         url:    2020/09/25/Butterworth_en.html   
       - title:  Chebyshev Filter
@@ -606,6 +608,8 @@ docs-ko:
         url:    2019/07/22/Negative_Frequency.html   
       - title:  시간-주파수 불확정도
         url:    2020/01/16/time_frequency_uncertainty.html   
+      - title:  사비츠키-골레이 필터
+        url:    2020/10/21/Savitzky_Golay.html   
       - title:  Butterworth Filter
         url:    2020/09/25/Butterworth.html   
       - title:  Chebyshev Filter
