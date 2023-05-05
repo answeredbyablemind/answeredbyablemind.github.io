@@ -190,6 +190,11 @@ docs-en:
       - title:  Markov Chain Monte Carlo
         url:    2020/09/17/MCMC_en.html
 
+  - title:    Information Theory
+    children:
+      - title:  Information Entropy
+        url:    2020/10/26/information_entropy_en.html
+
   - title:    Complex number and Euler's formula
     children:
       - title:  Meaning of Imaginary Numbers
