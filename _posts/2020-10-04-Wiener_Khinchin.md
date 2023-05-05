@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20201004
 tags: 신호처리
+lang: ko
 ---
 
 # 1. Random Process와 Fourier Transform

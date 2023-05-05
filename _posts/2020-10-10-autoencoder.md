@@ -1,11 +1,12 @@
 ---
-title: AutoEncoder
+title: 오토인코더(AutoEncoder)
 sidebar:
   nav: docs-ko
 aside:
   toc: true
 key: 20201010
 tags: 기계학습
+lang: ko
 ---
 
 ※ 이 포스팅은 [미술관에 GAN 딥러닝 실전 프로젝트](http://www.yes24.com/Product/Goods/81538614)의 결과와 소스 코드를 이용해 작성한 것임을 밝힙니다.

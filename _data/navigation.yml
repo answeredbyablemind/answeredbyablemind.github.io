@@ -142,6 +142,8 @@ docs-en:
         url:    2020/08/05/ROC_en.html
       - title:  Restricted Boltzmann Machine
         url:    2020/10/02/RBM_en.html
+      - title:  AutoEncoder
+        url:    2020/10/10/autoencoder_en.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
 
@@ -245,6 +247,10 @@ docs-en:
         url:    2020/09/29/frequency_transformation_en.html
       - title:  Hilbert Transform
         url:    2019/08/09/Hilbert_Transform_en.html   
+      - title:  Wiener Kinchin Theorem
+        url:    2020/10/04/Wiener_Kinchin_en.html
+      - title:  Wold's Theorem
+        url:    2020/10/05/Wold_theorem_en.html
 
 docs-ko:
   - title:      MATLAB
@@ -435,7 +441,7 @@ docs-ko:
         url:    2020/08/05/ROC.html
       - title:  Restricted Boltzmann Machine
         url:    2020/10/02/RBM.html
-      - title:  Auto Encoder
+      - title:  오토인코더(AutoEncoder)
         url:    2020/10/10/autoencoder.html
       - title:  Variational AutoEncoder
         url:    2020/10/11/VAE.html
@@ -604,3 +610,7 @@ docs-ko:
         url:    2020/09/29/frequency_transformation.html
       - title:  힐버트 변환
         url:    2019/08/09/Hilbert_Transform.html
+      - title:  위너-킨친 정리
+        url:    2020/10/04/Wiener_Kinchin.html
+      - title:  월드 정리
+        url:    2020/10/05/Wold_theorem.html

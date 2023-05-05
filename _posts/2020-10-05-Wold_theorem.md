@@ -1,11 +1,12 @@
 ---
-title: Wold's theorem
+title: 월드 정리(Wold's theorem)
 sidebar:
   nav: docs-ko
 aside:
   toc: true
 key: 20201005
 tags: 신호처리
+lang: ko
 ---
 
 ※ Wold's theorem은 [위너-킨친 정리](https://angeloyeo.github.io/2020/10/04/Wiener_Khinchin.html)의 Discrete Time Random Signal 버전이라고 할 수 있다.
