@@ -144,6 +144,8 @@ docs-en:
         url:    2020/10/02/RBM_en.html
       - title:  AutoEncoder
         url:    2020/10/10/autoencoder_en.html
+      - title:  Variational AutoEncoder
+        url:    2020/10/11/VAE_en.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
 
