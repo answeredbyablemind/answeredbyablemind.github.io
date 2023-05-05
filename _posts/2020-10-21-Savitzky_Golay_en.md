@@ -13,7 +13,7 @@ lang: en
 
 To understand this post, you need to have prior knowledge of the following:
 
-* [Convolution of Discrete Time Signals](https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution.html)
+* [Convolution of Discrete Time Signals](https://angeloyeo.github.io/2019/06/18/Discrete_Time_Convolution_en.html)
   * Convolution operation
   * Concept of impulse response
 * FIR filter
