@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200929
 tags: 신호처리
+lang: ko
 ---
 
 본 포스팅은 IIT의 [S. C. Duta Roy 교수님의 강의](https://www.youtube.com/watch?v=UTznDX7GgkQ&ab_channel=nptelhrd)를 정리한 것임을 먼저 밝힙니다.
@@ -25,7 +26,7 @@ tags: 신호처리
 ## 가. Normalized Lowpass Filter
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4068/20160129_115508.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic1.png">
   <br>
   그림 1. Normalized Lowpass Filter의 형태
 </p>
@@ -143,7 +144,7 @@ $$S =\infty \rightarrow s = \begin{cases}0 \\ \infty\end{cases}$$
 NLPF의 $S=\infty$의 값은 0또는 neglibigle한 값을 가지고 있기 때문에 Def.3 의 transformation을 통해서 얻을 수 있는 bandpass filter의 모양은 다음과 같다.
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4068/20160130_194623.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic2.png">
   <br> 그림 2. Bandpass filter의 모양
 </p>
 
@@ -268,7 +269,7 @@ $$S = \infty \rightarrow s = \pm j\Omega_0$$
 그러므로, 다음과 같은 모양의 결과가 나온다는 것을 수식을 통해서 알 수 있다.
 
 <p align = "center">
-  <img src= "https://wikidocs.net/images/page/4068/20160130_200914.png">
+  <img src= "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic3.png">
   <br>
 </p>
 
@@ -285,7 +286,7 @@ $$\Omega_0^2 = \Omega_{p1}\Omega_{p2}=\Omega_{s1}\Omega_{s2}$$
  우리는 지금까지 LPF외에 다른 종류의 필터를 설계 할 때에는 Normalized LPF를 통해서 설계가 가능하다는 사실을 공부했다. 그 방법은 Frequency Transformation이라는 방법이고 구체적인 내용은 다음과 같았다.
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4068/20160130_201110.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic4.png">
   <br>
 </p>
 
@@ -306,7 +307,7 @@ $$\Omega_0^2 = \Omega_{p1}\Omega_{p2} = \Omega_{s1}\Omega_{s2}$$
 그렇다면, $\Omega_{s1}$과 $\Omega_{s2}$중에서 어떤 것을 작게 만들어야 할까? 아래의 그림을 보면서 생각해보자.
 
 <p align = "center">
-  <img src = "https://wikidocs.net/images/page/4068/20160130_201805.png">
+  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2020-09-29-frequency_transformation/pic5.png">
 </p>
 
 다시 한번 말하자면, 우리는 $\Omega_{s1}\Omega_{s2}>\Omega_{p1}\Omega_{p2}$, $\Omega_{p1}\Omega_{p2}=\Omega_0^2$인 경우에 처해있다. 

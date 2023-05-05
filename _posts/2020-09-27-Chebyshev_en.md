@@ -13,7 +13,7 @@ This post is a summary of Professor S.C. Duta Roy's lecture at IIT, which can be
 
 # Objectives
 
-1. Understand the characteristics of Chebyshev filters compared to Butterworth filters.
+1. Understand the characteristics of Chebyshev filters compared to [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html).
 2. Understand the characteristics of Chebyshev polynomials.
 3. Understand the determination methods for the implementation conditions of Chebyshev filters, namely the value of $N$ and $\epsilon$.
 
@@ -21,9 +21,9 @@ This post is a summary of Professor S.C. Duta Roy's lecture at IIT, which can be
 
 ## a. Introduction to Chebyshev Filter
 
-Like the Butterworth filter, the Chebyshev filter is an all-pole filter that is primarily designed for low-pass filter design.
+Like the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html), the Chebyshev filter is an all-pole filter that is primarily designed for low-pass filter design.
 
-As described in the previous post about the Butterworth filter, this post will also focus on the design of low-pass filters using Chebyshev filters.
+As described in the previous post about the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html), this post will also focus on the design of low-pass filters using Chebyshev filters.
 
 In general, the Chebyshev filter can be considered the closest to an ideal filter when compared to other types of filters, excluding elliptic filters. This is because for the same filter order ($N$) and specification requirements, the transition band is the narrowest and the transition slope is the steepest.
 
@@ -63,11 +63,11 @@ $$|H_a(j\Omega)| = A / \sqrt{ 1+\epsilon^2 C_N\left(\frac{\Omega}{\Omega_p}\righ
 
 Here, A is the gain factor. Typically, if you don't want amplification at the passband frequency, set A to 1.
 
-If we take a closer look at this equation, we can see the characteristics of the Chebyshev filter. When compared specifically to the Butterworth filter, it can help us to gain a more intuitive understanding. The equation for the Butterworth filter is as follows:
+If we take a closer look at this equation, we can see the characteristics of the Chebyshev filter. When compared specifically to the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html), it can help us to gain a more intuitive understanding. The equation for the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html) is as follows:
 
 $$|H_a(j\Omega)|^2 = 1/\left\lbrace 1+\left(\frac{\Omega}{\Omega_c}\right)\right\rbrace$$
 
-In other words, the equation for the Chebyshev filter contains elements that are not present in the equation for the Butterworth filter, namely $\epsilon$ and $C_N(x)$. A minor but important difference between the Chebyshev and Butterworth filters is that the Chebyshev filter equation includes $\Omega_p$, while the Butterworth filter includes $\Omega_c$. This means that when implementing the Chebyshev filter, we do not directly need $\Omega_c$.
+In other words, the equation for the Chebyshev filter contains elements that are not present in the equation for the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html), namely $\epsilon$ and $C_N(x)$. A minor but important difference between the Chebyshev and [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html) is that the Chebyshev filter equation includes $\Omega_p$, while the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html) includes $\Omega_c$. This means that when implementing the Chebyshev filter, we do not directly need $\Omega_c$.
 
 $\epsilon$ determines the size of the ripple, while $C_N(x)$ determines the shape of the ripple based on the order N of the filter. $C_N(x)$ is defined as follows:
 
@@ -239,7 +239,7 @@ When $N=1$,
 
 Since $N$ is odd, $C_1(0)=0$. Also, $\|H_a(j\Omega)\|_{\Omega = 0}=1$.
 
-Therefore, we can see that when N=1, the Chebyshev filter starts at 1. Moreover, when N=1, it has a similar appearance to a Butterworth filter. However, depending on the value of $\epsilon$, it may or may not have the same values as a Butterworth filter, so having a similar shape does not necessarily mean that it is the same filter.
+Therefore, we can see that when N=1, the Chebyshev filter starts at 1. Moreover, when N=1, it has a similar appearance to a [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html). However, depending on the value of $\epsilon$, it may or may not have the same values as a [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html), so having a similar shape does not necessarily mean that it is the same filter.
 
 When N=2,
 
@@ -313,11 +313,11 @@ $$1+\epsilon^2C^2_N\left(\frac{s}{j\Omega_p}\right) = 0$$
 
 However, unfortunately, I couldn't fully understand the algebra needed to solve this equation. Therefore, I will omit the explanation of the algebra to find poles.
 
-However, the conclusion is that when we find the poles, they will be located on an ellipse, unlike the poles of the Butterworth filter. For a detailed explanation, please refer to Wikipedia.
+However, the conclusion is that when we find the poles, they will be located on an ellipse, unlike the poles of the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html). For a detailed explanation, please refer to Wikipedia.
 
 ## b. The transfer function of Chebyshev filter
 
-Like the Butterworth filter, the Chebyshev filter can also be divided into two cases when the degree of N is even and odd. As seen in the overall shape of the Chebyshev filter according to the degree of N described above, the starting point differs depending on whether N is even or odd, and therefore the formula also changes accordingly.
+Like the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html), the Chebyshev filter can also be divided into two cases when the degree of N is even and odd. As seen in the overall shape of the Chebyshev filter according to the degree of N described above, the starting point differs depending on whether N is even or odd, and therefore the formula also changes accordingly.
 
 $N$ : odd
 
@@ -382,8 +382,8 @@ $$N_C\geq\frac{\cosh^{-1}\left(\sqrt{\frac{1/\delta_s^2-1}{1/\delta^2_p - 1}}\ri
 
 we can find $N_C$ that satisfies the above equation. (Here, $C$ in $N_C$ stands for Chebyshev.)
 
-For reference, the order $N_B$ of the Butterworth filter was as follows:
+For reference, the order $N_B$ of the [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html) was as follows:
 
 $$N_B\geq \frac{\log_{10}\sqrt{\frac{1/\delta^2_s-1}{1/\delta^2_p-1}}}{\log_{10}\left(\frac{\Omega_s}{\Omega_p}\right)}$$
 
-In the end, we can say that the methods for determining $N$ in Chebyshev and Butterworth filters are very similar.
+In the end, we can say that the methods for determining $N$ in Chebyshev and [Butterworth filter](https://angeloyeo.github.io/2020/09/25/Butterworth_en.html) are very similar.

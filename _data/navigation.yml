@@ -234,7 +234,9 @@ docs-en:
       - title:  Butterworth Filter
         url:    2020/09/25/Butterworth_en.html   
       - title:  Chebyshev Filter
-        url:    2020/09/27/Chebyshev_en.html   
+        url:    2020/09/27/Chebyshev_en.html
+      - title:  Frequency Transformation
+        url:    2020/09/29/frequency_transformation_en.html
       - title:  Hilbert Transform
         url:    2019/08/09/Hilbert_Transform_en.html   
 
