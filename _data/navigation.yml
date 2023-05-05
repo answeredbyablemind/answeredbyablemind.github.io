@@ -126,6 +126,8 @@ docs-en:
     children:
       - title:  Gradient Descent
         url:    2020/08/16/gradient_descent_en.html
+      - title:  Optimization Method with Momentum - ADAM
+        url:    2020/09/26/gradient_descent_with_momentum_en.html
       - title:  Linear Regression
         url:    2020/08/24/linear_regression_en.html     
       - title:  Logistic Regression
@@ -231,6 +233,8 @@ docs-en:
         url:    2020/01/16/time_frequency_uncertainty_en.html   
       - title:  Butterworth Filter
         url:    2020/09/25/Butterworth_en.html   
+      - title:  Chebyshev Filter
+        url:    2020/09/27/Chebyshev_en.html   
       - title:  Hilbert Transform
         url:    2019/08/09/Hilbert_Transform_en.html   
 

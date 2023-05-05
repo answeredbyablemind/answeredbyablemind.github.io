@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20200926
 tags: 머신러닝
+lang: ko
 ---
 
 ※ 본 포스팅은 [Andrew Ng 교수님의 강의](https://www.youtube.com/watch?v=JXQT_vxqwIs&ab_channel=Deeplearning.ai)를 정리한 것임을 밝힙니다.
