@@ -64,6 +64,8 @@ docs-en:
         url:    2020/08/24/linear_regression_en.html
       - title:  Singular Value Decomposition(SVD)
         url:    2019/08/01/SVD_en.html
+      - title:  NMF(Non-negative Matrix Factorization)
+        url:    2020/10/15/NMF_en.html
       - title:  Correlation and Inner Product
         url:    2019/08/20/correlation_and_inner_product_en.html
       - title:  Geometric Meaning of Jacobian Matrix
