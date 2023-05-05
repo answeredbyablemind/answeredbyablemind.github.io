@@ -8,7 +8,7 @@ header:
       en-US   : *EN
       en-CA   : *EN
       en-AU   : *EN
-    url: /2019/06/15/imaginary_number_en.html
+    url: /2019/09/08/LHopital_rule_en.html
 
   - titles:
       ko      : &KO       저자 소개
@@ -140,6 +140,8 @@ docs-en:
         url:    2020/08/04/naive_bayes_en.html
       - title:  ROC curve
         url:    2020/08/05/ROC_en.html
+      - title:  Restricted Boltzmann Machine
+        url:    2020/10/02/RBM_en.html
       - title:  Layer-wise Relevance Propagation
         url:    2019/08/17/Layerwise_Relevance_Propagation_en.html
 
