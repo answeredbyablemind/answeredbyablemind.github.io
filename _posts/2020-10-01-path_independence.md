@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20201001
 tags: 미적분학
+lang: ko
 ---
 
 line integral을 할 때 어떤 벡터장은 path에 상관없이 같은 결과를 보여준다. 

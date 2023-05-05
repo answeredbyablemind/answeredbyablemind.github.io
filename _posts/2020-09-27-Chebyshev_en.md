@@ -212,7 +212,7 @@ For $\|x\|>1$, we can draw a continuous line along the respective color. This is
 
 Therefore, we can see that the ripple shown in the Chebyshev filter oscillates equally.
 
-## The Shape of Chebyshev Filter Depending on N
+## c. The Shape of Chebyshev Filter Depending on N
 
 Let's write the formula for the Chebyshev filter again:
 
