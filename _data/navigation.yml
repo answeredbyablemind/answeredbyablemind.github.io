@@ -60,8 +60,12 @@ docs-en:
     children:
       - title:  Principal Component Analysis(PCA)
         url:    2019/07/27/PCA_en.html
+      - title:  Meaning of Complex Eigenvalue and Eigenvector
+        url:    2020/11/02/complex_eigen_en.html
       - title:  Linear Regression
         url:    2020/08/24/linear_regression_en.html
+      - title:  Geometric Meaning of Pseudo Inverse
+        url:    2020/11/11/pseudo_inverse_en.html
       - title:  Singular Value Decomposition(SVD)
         url:    2019/08/01/SVD_en.html
       - title:  NMF(Non-negative Matrix Factorization)
@@ -72,6 +76,8 @@ docs-en:
         url:    2020/07/24/Jacobian_en.html
       - title:  Geometric Meaning of Hessian Matrix
         url:    2020/06/17/Hessian_en.html
+      - title:  Linear Algebra and Fourier Transform
+        url:    2020/11/08/linear_algebra_and_Fourier_transform_en.html
       - title:  Geometric Meaning of Gauss-Jordan Elimination
         url:    2019/09/09/Gauss_Jordan_en.html
       - title:  Why does Wronskian work?
