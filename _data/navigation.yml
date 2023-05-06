@@ -194,6 +194,8 @@ docs-en:
     children:
       - title:  Information Entropy
         url:    2020/10/26/information_entropy_en.html
+      - title:  KL divergence
+        url:    2020/10/27/KL_divergence_en.html
 
   - title:    Complex number and Euler's formula
     children:
