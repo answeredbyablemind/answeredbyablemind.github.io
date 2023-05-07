@@ -1,12 +1,12 @@
 ---
-title: QR 분해
+title: QR Decomposition
 sidebar:
-  nav: docs-ko
+  nav: docs-en
 aside:
   toc: true
-key: 20201123
-tags: 선형대수
-lang: ko
+key: 20201123_en
+tags: Linear_Algebra
+lang: en
 ---
 
 ※ 시각화와 이해의 편의를 도모하기 위해 벡터와 행렬이 정의되는 체(field)는 실수(real number)로 한정함.

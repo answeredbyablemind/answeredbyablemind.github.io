@@ -62,12 +62,16 @@ docs-en:
     children:
       - title:  Principal Component Analysis(PCA)
         url:    2019/07/27/PCA_en.html
+      - title:  EigenValue Decomposition(EVD)
+        url:    2020/11/19/eigen_decomposition_en.html
       - title:  Meaning of Complex Eigenvalue and Eigenvector
         url:    2020/11/02/complex_eigen_en.html
       - title:  Linear Regression
         url:    2020/08/24/linear_regression_en.html
       - title:  Geometric Meaning of Pseudo Inverse
         url:    2020/11/11/pseudo_inverse_en.html
+      - title:  QR Decomposition
+        url:    2020/11/23/gram_schmidt_en.html
       - title:  Singular Value Decomposition(SVD)
         url:    2019/08/01/SVD_en.html
       - title:  NMF(Non-negative Matrix Factorization)
