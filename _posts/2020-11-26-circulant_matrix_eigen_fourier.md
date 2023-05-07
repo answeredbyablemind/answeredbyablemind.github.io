@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20201126
 tags: 선형대수
+lang: ko
 ---
 
 # Prerequisites

@@ -86,6 +86,8 @@ docs-en:
         url:    2020/11/08/linear_algebra_and_Fourier_transform_en.html
       - title:  Circulant Matrix and Convolution
         url:    2020/11/25/permutation_and_circulant_matrix_en.html
+      - title:  Eigenvector of Circulant Matrix and Fourier Matrix
+        url:    2020/11/26/circulant_matrix_eigen_fourier_en.html
       - title:  Geometric Meaning of Gauss-Jordan Elimination
         url:    2019/09/09/Gauss_Jordan_en.html
       - title:  Why does Wronskian work?
