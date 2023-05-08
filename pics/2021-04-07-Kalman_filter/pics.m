@@ -64,7 +64,7 @@ set(gca,'fontname','나눔고딕')
 
 %% 두 가우시안의 합성곱 애니메이션으로
 
-newVid = VideoWriter('pic_conv', 'MPEG-4'); % New
+newVid = VideoWriter('pic_conv_en', 'MPEG-4'); % New
 newVid.FrameRate = 40;
 newVid.Quality = 100;
 open(newVid);
@@ -97,7 +97,8 @@ for i_tau = 1:length(tautau)
     xlabel('x');
     ylabel('pdf');
     set(gca,'fontname','나눔고딕');
-    title('두 정규 분포의 합성곱');
+    % title('두 정규 분포의 합성곱');
+    title('Convolution of two Gaussian Distributions');
     legend(h,'f(\tau)','g(t-\tau)','Area under f(\tau)g(t-\tau)','(f*g)(t)')
     writeVideo(newVid, getframe(gcf))
 

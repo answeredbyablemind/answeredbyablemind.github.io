@@ -1,7 +1,7 @@
 clear; close all; clc;
 
 
-newVid = VideoWriter('pic_kalman_main', 'MPEG-4'); % New
+newVid = VideoWriter('pic_kalman_main_en', 'MPEG-4'); % New
 newVid.FrameRate = 40;
 newVid.Quality = 100;
 open(newVid);
@@ -27,10 +27,12 @@ xlabel('x');
 ylabel('pdf');
 xlim([0, 10])
 ylim([0, 0.35])
-t = text(0, 0.25, '첫 Prior 나옴','edgecolor','k','backgroundcolor','w','fontsize',15);
+% t = text(0, 0.25, '첫 Prior 나옴','edgecolor','k','backgroundcolor','w','fontsize',15);
+t = text(0, 0.25, 'First Prior','edgecolor','k','backgroundcolor','w','fontsize',15);
 legend(h, 'Prior');
 set(gca,'fontname','나눔고딕')
-title('칼만 필터의 작동')
+% title('칼만 필터의 작동')
+title('How Kalman Filter works')
 for ii = 1:40
     writeVideo(newVid, getframe(gcf))
 end
@@ -46,7 +48,8 @@ for i = 1:length(measurements)
     end
     
     h(2) = plot(xx, yy2,'color',my_color(2,:),'linewidth',2); % measurement 얻은 것
-    t = text(0, 0.25, '측정','edgecolor','k','backgroundcolor','w','fontsize',15);
+    % t = text(0, 0.25, '측정','edgecolor','k','backgroundcolor','w','fontsize',15);
+    t = text(0, 0.25, 'Measure','edgecolor','k','backgroundcolor','w','fontsize',15);
     legend(h, 'Prior','Measurement');
     
     for ii = 1:40
@@ -64,7 +67,8 @@ for i = 1:length(measurements)
     
     
     h(3) = plot(xx, yy1,'color',my_color(3,:),'linewidth',2); hold on; % Posterior가 나옴.
-    t = text(0, 0.25,'Prior → Posterior 업데이트.','edgecolor','k','backgroundcolor','w','fontsize',15);
+    % t = text(0, 0.25,'Prior → Posterior 업데이트.','edgecolor','k','backgroundcolor','w','fontsize',15);
+    t = text(0, 0.25,'Update Prior to Posterior.','edgecolor','k','backgroundcolor','w','fontsize',15);
     legend(h, 'Prior','Measurement','Posterior');
 
     for ii = 1:40
@@ -80,7 +84,8 @@ for i = 1:length(measurements)
     
     delete(h(1))
     h(1) = plot(xx, yy1,'color',my_color(1,:),'linewidth',2); hold on; % 다음 Prior 예측함.
-    t = text(0, 0.25, '다음번 Prior로 이동','edgecolor','k','backgroundcolor','w','fontsize',15);
+    % t = text(0, 0.25, '다음번 Prior로 이동','edgecolor','k','backgroundcolor','w','fontsize',15);
+    t = text(0, 0.25, 'To next Prior','edgecolor','k','backgroundcolor','w','fontsize',15);
     legend(h, 'Next Prior','Measurement','Posterior');
 
     for ii = 1:40
