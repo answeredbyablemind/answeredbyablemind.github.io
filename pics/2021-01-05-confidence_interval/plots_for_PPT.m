@@ -11,7 +11,8 @@ figure;
 h(1) = plot(xx, pdf_norm,'linewidth',2);
 hold on;
 h(2) = plot(xx, pdf_t,'linewidth',2);
-[~, icons] = legend(h, '표준정규분포', ['t-분포 (자유도: ',num2str(dof),')']);
+% [~, icons] = legend(h, '표준정규분포', ['t-분포 (자유도: ',num2str(dof),')']);
+[~, icons] = legend(h, 'Standard Normal Dist', ['t-dist (Degree of Freecom: ',num2str(dof),')']);
 icons = findobj(icons,'Type','line'); % Type은 line이면서 Marker는 없지는 않는 것을 찾아야 함.
 set(icons, 'linewidth', 5)
 grid on;
@@ -39,8 +40,10 @@ for i = 1:length(dofs)
     h(i+1) = plot(xx, pdf_t(i,:),'linewidth',2);
 end
 
+% [~, icons] = legend(h, ...
+    % '표준정규분포', 't-분포 (자유도: 1)', 't-분포 (자유도: 2)', 't-분포 (자유도: 5)', 't-분포 (자유도: 10)');
 [~, icons] = legend(h, ...
-    '표준정규분포', 't-분포 (자유도: 1)', 't-분포 (자유도: 2)', 't-분포 (자유도: 5)', 't-분포 (자유도: 10)');
+    'Standard Normal Dist', 't-dist (Degree of Freecom: 1)', 't-dist (Degree of Freecom: 2)', 't-dist (Degree of Freecom: 5)', 't-dist (Degree of Freecom: 10)');
 
 icons = findobj(icons,'Type','line'); % Type은 line이면서 Marker는 없지는 않는 것을 찾아야 함.
 set(icons, 'linewidth', 5)
@@ -252,7 +255,9 @@ figure;
 clear h;
 h(1) = histogram(xx1,20); hold on;
 h(2) = histogram(xx2,20);
-legend(h, '치료군', '대조군')
-xlabel('이완기 혈압 (mmHg)');
+% legend(h, '치료군', '대조군')
+% xlabel('이완기 혈압 (mmHg)');
+legend(h, 'Treatment Group', 'Control Group')
+xlabel('diastolic blood pressure (mmHg)');
 ylabel('count');
 grid on;
