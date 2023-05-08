@@ -177,6 +177,8 @@ docs-en:
     children:
       - title:  Binomial Distribution
         url:    2021/04/23/binomial_distribution_en.html
+      - title:  Poisson Distribution
+        url:    2021/04/26/Poisson_distribution_en.html
       - title:  Gaussian Integral
         url:    2020/01/17/Gaussian_Integral_en.html
       - title:  Derivation of Normal Distribution
