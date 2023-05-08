@@ -136,7 +136,12 @@ docs-en:
         url:    2020/08/22/stokes_theorem_en.html
       - title:  Divergence Theorem(3D)
         url:    2020/08/23/divergence_theorem_3D_en.html  
-        
+
+  - title:      Ordinary Differential Equation
+    children:
+      - title:  Direction Fields and Euler's Method
+        url:    2021/04/30/direction_fields_en.html
+
   - title:      Partial Differential Equation
     children:
       - title:  Meaning of Heat/Wave Equation
