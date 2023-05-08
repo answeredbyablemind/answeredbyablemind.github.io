@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210428
 tags: 통계학
+lang: ko
 ---
 
 <center>

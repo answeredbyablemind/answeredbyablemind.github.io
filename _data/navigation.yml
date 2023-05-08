@@ -177,6 +177,8 @@ docs-en:
     children:
       - title:  Binomial Distribution
         url:    2021/04/23/binomial_distribution_en.html
+      - title:  Geometric Distribution
+        url:    2021/04/28/geometric_distribution_en.html
       - title:  Poisson Distribution
         url:    2021/04/26/Poisson_distribution_en.html
       - title:  Exponential Distribution

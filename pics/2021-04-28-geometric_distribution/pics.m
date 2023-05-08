@@ -20,10 +20,12 @@ for i =1:3
 end
 xlim([0, 10])
 grid on;
-xlabel('처음 성공한 회차 k');
+% xlabel('처음 성공한 회차 k');
+xlabel('The number of attepts k to obtain the first success');
 ylabel('Pr(K=k)');
 ylim([-0.05, 0.85])
-title('기하 분포의 확률질량함수')
+% title('기하 분포의 확률질량함수')
+title('Probability Mass Function Geometric Distribution')
 legend(h, 'p = 0.2', 'p = 0.5', 'p = 0.8');
 set(gca,'fontname','나눔고딕');
 set(gca,'xtick',0:10)

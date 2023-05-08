@@ -25,7 +25,7 @@ lang: en
 
 To understand exponential distribution, it is recommended that you know the following:
 
-* [Poisson distribution](https://angeloyeo.github.io/2021/04/26/Poisson_distribution.html)
+* [Poisson distribution](https://angeloyeo.github.io/2021/04/26/Poisson_distribution_en.html)
 
 # Definition of exponential distribution
 
