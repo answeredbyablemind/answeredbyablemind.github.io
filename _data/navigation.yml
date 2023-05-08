@@ -196,6 +196,8 @@ docs-en:
         url:    2020/03/25/hypothesis_en.html
       - title:  Meaning of p-value
         url:    2020/03/29/p_value_en.html
+      - title:  Meaning of Confidence Interval
+        url:    2021/01/05/confidence_interval_en.html
 
   - title:    Bayesian Statistics
     children:
