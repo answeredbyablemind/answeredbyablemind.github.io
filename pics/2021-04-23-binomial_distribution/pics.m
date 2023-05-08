@@ -40,7 +40,7 @@ histogram(res_sim);
 %% simulation + discrete histogram으로 ...
 
 
-newVid = VideoWriter('pic2', 'MPEG-4'); % New
+newVid = VideoWriter('pic2_en', 'MPEG-4'); % New
 newVid.FrameRate = 10;
 newVid.Quality = 100;
 open(newVid);
@@ -59,9 +59,12 @@ for i_data = 1:length(res_sim)
         [255, 177, 51]/255,'markeredgecolor','k','markersize',10);
     ylim([0, 25])
     xlim([0, 10])
-    xlabel('10번 중 앞면이 나온 횟수(k)');
-    ylabel('빈도');
-    title(['경험적 이항분포 / n: ',num2str(n),', p: ',num2str(p)])
+    % xlabel('10번 중 앞면이 나온 횟수(k)');
+    xlabel('Count of head out of 10(k)');
+    % ylabel('빈도');
+    ylabel('Frequency');
+    % title(['경험적 이항분포 / n: ',num2str(n),', p: ',num2str(p)])
+    title(['Empirical Binomial Dist. / n: ',num2str(n),', p: ',num2str(p)])
     
     grid on;
     
