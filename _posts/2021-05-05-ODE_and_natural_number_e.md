@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210505
 tags: 미분방정식
+lang: ko
 ---
 
 미분방정식의 해는 많은 경우 exponential 함수로 표현된다.

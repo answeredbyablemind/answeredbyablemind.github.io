@@ -139,8 +139,12 @@ docs-en:
 
   - title:      Ordinary Differential Equation
     children:
+      - title:  Modeling with Differential Equations
+        url:    2021/05/01/modeling_with_differential_equation_en.html
       - title:  Direction Fields and Euler's Method
         url:    2021/04/30/direction_fields_en.html
+      - title:  Euler's Number e and Homogeneous Differential Equation
+        url:    2021/05/05/ODE_and_natural_number_e.html
 
   - title:      Partial Differential Equation
     children:
