@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210510
 tags: 미분방정식
+lang: ko
 ---
 
 이전 포스팅 [1계 선형 미분 방정식의 해법](https://angeloyeo.github.io/2021/05/08/first_order_linear_equations.html) 편에서는 아래와 같은 미분방정식의 해법을 찾는 방법에 대해 다룬 바 있다.

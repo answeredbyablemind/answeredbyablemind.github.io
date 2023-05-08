@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210511
 tags: 미분방정식
+lang: ko
 ---
 
 ※ 본 포스팅의 내용은 Thomas Judson의 [The ordinary differential equations project](http://faculty.sfasu.edu/judsontw/ode/)에서 많은 부분을 차용하였음을 밝힙니다.

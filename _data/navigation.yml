@@ -149,6 +149,10 @@ docs-en:
         url:    2021/05/06/separable_differential_equations_en.html
       - title:  Solution to 1st Order Linear Differential Equations
         url:    2021/05/08/first_order_linear_equations_en.html
+      - title:  Bernoulli Equation
+        url:    2021/05/10/Bernoulli_equation_en.html
+      - title:  Modeling with System of Differential Equations
+        url:    2021/05/11/modeling_with_systems_en.html
 
   - title:      Partial Differential Equation
     children:
