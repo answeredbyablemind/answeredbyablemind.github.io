@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210407
 tags: 통계학 신호처리
+lang: ko
 ---
 
 <center>
@@ -258,90 +259,6 @@ Update 단계에서는 Predict를 통해 계산한 예측된 위치를 갱신해
   <br>
   그림 y.
 </p>
-
-# 좀 더 복잡한 칼만 필터
-
-## state vector & state equation
-
-
-
-
-(작성 예정 ㅠㅠ)
-
-$$P(Hx)=\frac{P(z|H\hat{x})P(H\hat{x})}{P(z)}$$
-
-$$=\frac{P(z|H\hat{x})P(H\hat{x})}{\int P(z|H\hat{x})P(H\hat{x}) dH\hat{x}}$$
-
-$$=\frac{1}{Z}P(z|H\hat{x})P(H\hat{x})$$
-
-여기서 $Z$는 measurement에 대한 확률값을 나타낸 것인데, 이 값의 역할은 Posterior, P(Hx)를 정규화해 줌으로써 전체 면적이 1이될 수 있도록 해주는 역할만을 수행해주는 것이다.
-
-그런데, 만약 이 정규화 과정을 수행해주지 않았다고 P(Hx)에서 말해주는 평균값의 위치가 변할까? 그리고, 분산 값이 변할까? 전혀 그렇지 않을 것이다. 정규화 과정이 해주는 일은 확률 분포 함수의 높이만을 조정해주는 것이지 그 함수의 파라미터까지 수정하는 것은 아니기 때문이다.
-
-따라서, 우리가 원하는 것이 Posterior의 파라미터만을 아는 것이라면 Prior와 Likelihood의 곱만을 이용해서 Posterior의 파라미터를 구하면 충분할 것이다.
-
-칼만필터에서는 Prior, Likelihood, Posterior 모두 정규 분포를 따른다고 가정한다.
-
-그런데, 놀랍게도, 정규 분포와 정규 분포를 곱해주면 또 다른 정규 분포가 얻어진다고 알려져 있다.
-
-다음과 같이 평균, 분산이 각각 $(\mu_0, \sigma_0^2), (\mu_1, \sigma_1^2)$인 두 정규 분포가 곱해져서 얻어지는 정규 분포의 평균, 분산이 $(\mu_2, \sigma_2^2)$라고 하면 다음과 같은 관계로 표현할 수 있다.
-
-$$\mathcal{N}(\mu_0, \sigma_0^2)\cdot\mathcal{N}(\mu_1, \sigma_1^2) = \mathcal{N}(\mu_2, \sigma_2^2)$$
-
-<center>where</center>
-
-$$\mu_2 = \mu_1 +\frac{\sigma_0^2(\mu_1-\mu_0)}{\sigma_0^2 + \sigma_1^2}$$
-
-$$\sigma_2^2 = \sigma_0^2 -\frac{\sigma_0^4}{\sigma_0^2 + \sigma_1^2}$$
-
-위 공식을 활용하여 우리가 풀고자하는 문제의 변수로 치환하면 다음과 같이 치환해야 한다.
-
-* $\mu_0 \Rightarrow H\hat{x}$
-
-* $\sigma_0^2 \Rightarrow H\sigma_{\hat{x}}^2$
-
-* $\mu_1 \Rightarrow z$
-
-* $\sigma_1^2 \Rightarrow \sigma_{z}^2$
-
-* $\mu_2 \Rightarrow Hx$
-
-* $\sigma_2^2 \Rightarrow H\sigma_{x}^2$
-
-그러면 원래의 두 정규 분포의 곱과 그의 결과에 대한 식을 다음과 같이 쓸 수 있다.
-
-$$\mathcal{N}(r, H\hat{x}, H\sigma_{\hat{x}}^2)\cdot\mathcal{N}(r, z, \sigma_1^2) = \mathcal{N}(r, Hx, H\sigma_{x}^2)$$
-
-$$Hx = H\hat{x} +\frac{H\sigma_{\hat{x}}^2(z-H\hat{x})}{H\sigma_{\hat{x}}^2 + \sigma_1^2}$$
-
-$$H\sigma_{x}^2 = H\sigma_{\hat{x}}^2 -\frac{H^2\sigma_0^4}{H\sigma_{\hat{x}}^2 + \sigma_1^2}$$
-
-여기서 $Hx$과 $H\sigma_{x}^2$에 공통적으로 포함된 부분을 아래와 같이 새로운 변수로 설정해보자.
-
-$$k=\frac{\sigma_{\hat{x}}^2}{H\sigma_{\hat{x}}^2 + \sigma_{x}^2}$$
-
-그러면 $Hx$에 관한 식은 아래와 같이 쓸 수 있다.
-
-$$Hx = H\hat{x} + kH(z - H\hat{x})$$
-
-여기서 양변을 $H$로 나눠주면,
-
-$$\Rightarrow x = \hat{x} + k(z - H\hat{x})$$
-
-$$=(1-k)H\hat{x} +k z$$
-
-다시 말해 새로운 $x$는 $\hat{x}$와 $z$를 적절히 섞은 것으로 생각할 수 있으며, $k$가 클 수록 $z$의 값을 더 많이 섞어준다는 의미이다. (생각해보면 $k$는 최대 1일 것이다.)
-
-다시 말해 $H\sigma_{\hat{x}}^2$가 크면 클 수록 $Hx$는 $z$의 값을 더 많이 가져오고, $H\sigma_{\hat{x}}^2$가 작아지면 작아질 수록 $Hx$는 $\mu_0$의 값을 더 많이 가져온다는 의미를 가진다.
-
-
-$$H\sigma_{x}^2= H\sigma_{\hat{x}}^2 -\frac{H^2\sigma_{\hat{x}}^4}{H\sigma_{\hat{x}}^2 + \sigma_{x}^2}$$
-
-$$=H\sigma_{\hat{x}}^2 -H^2k\sigma_{\hat{x}}^2$$
-
-$$\Rightarrow \sigma'^2 = \sigma_{\hat{x}}^2 - kH\sigma_{\hat{x}}^2=(1-kH)\sigma_{\hat{x}}^2$$
-
-즉, Posterior의 분산은 Prior 보다는 작아진다.
 
 # 참고 문헌
 

@@ -211,6 +211,12 @@ docs-en:
         url:    2020/01/09/Bayes_rule_en.html
       - title:  Maximum Likelihood Estimation(MLE)
         url:    2020/07/17/MLE_en.html
+      - title:  GMM & EM Algorithm
+        url:    2021/02/08/GMM_and_EM_en.html
+      - title:  Naive Bayes Classifier
+        url:    2020/08/04/naive_bayes_en.html
+      - title:  Kalman Filter
+        url:    2021/04/07/Kalman_filter_en.html
       - title:  Rejection Sampling
         url:    2020/09/16/rejection_sampling_en.html
       - title:  Markov Chain Monte Carlo
