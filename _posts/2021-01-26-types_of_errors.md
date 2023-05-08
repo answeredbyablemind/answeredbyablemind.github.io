@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210126
 tags: 통계학
+lang: ko
 ---
 
 통계학을 공부하면서 많은 새로운 용어들과 만나게 된다. 그 중 1종 오류와 2종 오류가 대표적인 새로운 용어라고 할 수 있다.
@@ -43,7 +44,7 @@ tags: 통계학
 # 1종 오류와 2종 오류
 
 <p align = "center">
-  <img src = "https://upload.wikimedia.org/wikipedia/commons/e/eb/Wheelock_mt2.jpg">
+  <img width = "500" src = "https://upload.wikimedia.org/wikipedia/commons/e/eb/Wheelock_mt2.jpg">
   <br>
   그림 1. 1종 오류와 2종 오류를 이해하는 데에는 화재경보 만한 예시가 없는 것 같다.
   <br>
