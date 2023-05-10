@@ -161,6 +161,8 @@ docs-en:
         url:    2021/05/27/second_order_ODE_en.html
       - title:  Meaning of Non-Homogeneous Differential Equation
         url:    2021/05/25/nonhomogeneous_equation_en.html
+      - title:  Boundary Value Problem (BVP)
+        url:    2021/05/28/Boundary_Value_Problem_en.html
 
   - title:      Partial Differential Equation
     children:
