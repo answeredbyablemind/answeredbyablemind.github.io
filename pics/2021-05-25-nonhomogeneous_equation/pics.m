@@ -4,7 +4,7 @@ fn = cd;
 fn = fullfile(fn, '..');
 fn = [fn '\2021-05-11-modeling_with_systems'];
 addpath(fn);
-addpath('D:\angeloyeo.github.io\pics\');
+addpath('C:\angeloyeo.github.io\pics\');
 
 %% 1°è ¹ÌºÐ¹æÁ¤½Ä 
 figure('position',[680, 558, 1122, 420]);
@@ -48,7 +48,8 @@ my_color = jet(8);
 for i_patch = -4:3
     p = patch([i_patch, i_patch+1, i_patch+1, i_patch], [-4, -4, 4, 4], my_color(i_patch+5,:),'edgecolor', ones(1,3) * 0.6);
     alpha(p, 0.2)
-    t = text(i_patch+0.5,3.3,sprintf('±â¿ï±â\n+%.1f',exp(i_patch/2)),'HorizontalAlignment','center','Color','k','BackgroundColor','w','edgecolor','k','fontname','³ª´®°íµñ')
+%     t = text(i_patch+0.5,3.3,sprintf('±â¿ï±â\n+%.1f',exp(i_patch/2)),'HorizontalAlignment','center','Color','k','BackgroundColor','w','edgecolor','k','fontname','³ª´®°íµñ')
+    t = text(i_patch+0.5,3.3,sprintf('slope\n+%.1f',exp(i_patch/2)),'HorizontalAlignment','center','Color','k','BackgroundColor','w','edgecolor','k','fontname','³ª´®°íµñ')
 end
 
 
