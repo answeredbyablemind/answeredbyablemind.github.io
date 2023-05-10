@@ -163,6 +163,8 @@ docs-en:
         url:    2021/05/25/nonhomogeneous_equation_en.html
       - title:  Boundary Value Problem (BVP)
         url:    2021/05/28/Boundary_Value_Problem_en.html
+      - title:  Linear Operators and Function Space
+        url:    2021/05/31/linear_operator_and_function_space_en.html
 
   - title:      Partial Differential Equation
     children:

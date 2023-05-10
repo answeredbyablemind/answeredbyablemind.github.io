@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210531
 tags: 미분방정식
+lang: ko
 ---
 
 # 미분방정식을 보는 또 다른 관점
