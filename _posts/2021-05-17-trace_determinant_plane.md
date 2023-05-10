@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210517
 tags: 미분방정식
+lang: ko
 ---
 
 <p align = "center">
