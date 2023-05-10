@@ -16,7 +16,7 @@ title(['고유함수들 ',num2str(N),'개'])
 %%
 
 
-newVid = VideoWriter('pic2', 'MPEG-4'); % New
+newVid = VideoWriter('pic2_en', 'MPEG-4'); % New
 newVid.FrameRate = 20;
 newVid.Quality = 100;
 open(newVid);
@@ -44,7 +44,8 @@ for total_n = 1:10
     grid on;
     xlabel('x');
     ylabel('u(x)')
-    h_legend = legend([h,h2],'고유함수 solution','True Solution','location','none','Units','normalized');
+%     h_legend = legend([h,h2],'고유함수 solution','True Solution','location','none','Units','normalized');
+    h_legend = legend([h,h2],'Solution with eigenfunctions','True Solution','location','none','Units','normalized');
     set(h_legend, 'Position',[0.59696, 0.14548, 0.25714, 0.086905])
     title(['n = ',num2str(total_n)]);
     for i = 1:10

@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210601
 tags: 미분방정식
+lang: ko
 ---
 
 이 포스팅은 [Nathan Kutz 교수님의 강의](https://www.youtube.com/watch?v=_ZOJjiuO4eE&ab_channel=NathanKutz)를 많이 참고 하여 작성한 것임을 미리 밝힙니다.
