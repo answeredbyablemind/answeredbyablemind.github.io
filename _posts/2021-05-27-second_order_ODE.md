@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210527
 tags: 미분방정식
+lang: ko
 ---
 
 # Prerequisitess
