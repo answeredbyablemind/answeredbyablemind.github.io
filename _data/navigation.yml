@@ -157,8 +157,10 @@ docs-en:
         url:    2021/05/12/phase_plane_en.html
       - title:  Trace-Determinant plane
         url:    2021/05/17/trace_determinant_plane_en.html
-      - title:  Solution to 2nd order linear ODE (1)
+      - title:  Solving Second-Order Linear Differential Equations (1)
         url:    2021/05/27/second_order_ODE_en.html
+      - title:  Solving Second-Order Linear Differential Equations (2)
+        url:    2021/06/02/second_order_ODE_2_en.html
       - title:  Meaning of Non-Homogeneous Differential Equation
         url:    2021/05/25/nonhomogeneous_equation_en.html
       - title:  Boundary Value Problem (BVP)

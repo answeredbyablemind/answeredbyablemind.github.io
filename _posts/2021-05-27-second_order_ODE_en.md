@@ -1,5 +1,5 @@
 ---
-title: Solution to 2nd order linear ODE (1)
+title: Solving Second-Order Linear Differential Equations (1)
 sidebar:
   nav: docs-en
 aside:
