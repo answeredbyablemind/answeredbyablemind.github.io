@@ -157,6 +157,8 @@ docs-en:
         url:    2021/05/12/phase_plane_en.html
       - title:  Trace-Determinant plane
         url:    2021/05/17/trace_determinant_plane_en.html
+      - title:  Meaning of Non-Homogeneous Differential Equation
+        url:    2021/05/25/nonhomogeneous_equation_en.html
 
   - title:      Partial Differential Equation
     children:
