@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210608
 tags: 선형대수학
+lang: ko
 ---
 
 # 행렬식의 성질

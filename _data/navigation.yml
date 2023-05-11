@@ -96,6 +96,8 @@ docs-en:
         url:    2019/10/10/Wronskian_en.html
       - title:  Independent Component Analysis(ICA)
         url:    2020/07/14/ICA_en.html
+      - title:  Geometric Meaning of Cramer's Rule
+        url:    2021/06/08/Cramers_rule_en.html
 
   - title:      Basic Calculus
     children:
@@ -169,6 +171,8 @@ docs-en:
         url:    2021/06/04/undetermined_coefficients_en.html
       - title:  Method of Variation of Parameters
         url:    2021/06/05/variation_of_parameters_en.html
+      - title:  Euler-Cauchy Differential Equation
+        url:    2021/06/07/Euler_Cauchy_en.html
       - title:  Boundary Value Problem (BVP)
         url:    2021/05/28/Boundary_Value_Problem_en.html
       - title:  Linear Operators and Function Space
@@ -177,6 +181,8 @@ docs-en:
         url:    2021/06/01/eigenfunction_expansions_en.html
       - title:  Sturm Liouville Theory
         url:    2021/06/06/Sturm_Liouville_en.html
+      - title:  Solution with Green's Funcion
+        url:    2021/06/09/Greens_function_en.html
 
   - title:      Partial Differential Equation
     children:
