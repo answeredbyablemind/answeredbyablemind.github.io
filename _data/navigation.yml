@@ -161,8 +161,14 @@ docs-en:
         url:    2021/05/27/second_order_ODE_en.html
       - title:  Solving Second-Order Linear Differential Equations (2)
         url:    2021/06/02/second_order_ODE_2_en.html
+      - title:  Reduction of Order
+        url:    2021/06/03/reduction_of_order_en.html
       - title:  Meaning of Non-Homogeneous Differential Equation
         url:    2021/05/25/nonhomogeneous_equation_en.html
+      - title:  Method of Undetermined Coefficients
+        url:    2021/06/04/undetermined_coefficients_en.html
+      - title:  Method of Variation of Parameters
+        url:    2021/06/05/variation_of_parameters_en.html
       - title:  Boundary Value Problem (BVP)
         url:    2021/05/28/Boundary_Value_Problem_en.html
       - title:  Linear Operators and Function Space
