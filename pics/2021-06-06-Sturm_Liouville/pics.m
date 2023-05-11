@@ -15,7 +15,8 @@ plot(my_roots, -my_roots,'o','markerfacecolor','r','markeredgecolor','k')
 grid on;
 xlabel('x');
 ylabel('y = tan(x) & y = -x');
-title('tan(x)=-x의 solution 찾기');
+% title('tan(x)=-x의 solution 찾기');
+title('finding solutions of tan(x)=-x');
 set(gca,'fontname','나눔고딕');
 
 
@@ -38,7 +39,7 @@ for i = 1:10
     my_sol = my_sol + sin(my_roots(i))*sin(my_roots(i)*xx) / (my_roots(i)^2 * (my_roots(i)^2 - 2) * (1+cos(my_roots(i))^2));
     %     my_sol = my_sol + sin(my_roots(i)) * sin(my_roots(i) * xx) / (my_roots(i)^2*(1+cos(my_roots(i))^2)); % f(x)
     h(2) = plot(xx, 4 * my_sol, 'k','linewidth',2);
-    h_legend = legend(h ,'True Solution','고유함수 solution','location','none','Units','normalized');
+    h_legend = legend(h ,'True Solution','Solution using eigenfunctions','location','none','Units','normalized');
     set(h_legend, 'Position',[0.59696, 0.14548, 0.25714, 0.086905])
     title(['n = ',num2str(i)]);
     
@@ -77,7 +78,7 @@ for i = 1:length(my_roots)
 %     my_sol = my_sol + sin(my_roots(i))*sin(my_roots(i)*xx) / (my_roots(i)^2 * (my_roots(i)^2 - 2) * (1+cos(my_roots(i))^2));
     my_sol = my_sol + sin(my_roots(i)) * sin(my_roots(i) * xx) / (my_roots(i)^2*(1+cos(my_roots(i))^2)); % f(x)
     h(2) = plot(xx, 4 * my_sol, 'k','linewidth',2);
-    h_legend = legend(h ,'True f(x)','고유함수 f(x)','location','none','Units','normalized');
+    h_legend = legend(h ,'True f(x)','f(x) represented with eigenfunctions','location','none','Units','normalized');
     set(h_legend, 'Position',[0.59696, 0.14548, 0.25714, 0.086905])
     title(['n = ',num2str(i)]);
     

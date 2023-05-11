@@ -175,6 +175,8 @@ docs-en:
         url:    2021/05/31/linear_operator_and_function_space_en.html
       - title:  Eigenfunction Expansion
         url:    2021/06/01/eigenfunction_expansions_en.html
+      - title:  Sturm Liouville Theory
+        url:    2021/06/06/Sturm_Liouville_en.html
 
   - title:      Partial Differential Equation
     children:
