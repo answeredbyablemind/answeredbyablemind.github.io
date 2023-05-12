@@ -15,11 +15,13 @@ ylim([0, 20])
 set(gca,'fontsize',12)
 set(gca,'fontname','³ª´®°íµñ')
 grid on;
-text(-19.758, 19.504, '½ÇÇè±º°ú ´ëÁ¶±º','fontsize',12, 'fontname','³ª´®°íµñ')
+% text(-19.758, 19.504, '½ÇÇè±º°ú ´ëÁ¶±º','fontsize',12, 'fontname','³ª´®°íµñ')
+text(-23, 19.504, 'Exp group and control group','fontsize',12, 'fontname','³ª´®°íµñ')
 str = sprintf('\\color{%s} %d %d %d %d \\color{%s} %d %d %d %d %d', 'red', data(1:4), 'blue', data(5:9));
 text(-24.826, 18.058, str, 'fontsize',13, 'fontname','³ª´®°íµñ')
 
-text(4.122, 19.504, '°¢ ±×·ì Æò±Õ°ª°ú Â÷ÀÌ','fontsize',12, 'fontname','³ª´®°íµñ')
+% text(4.122, 19.504, '°¢ ±×·ì Æò±Õ°ª°ú Â÷ÀÌ','fontsize',12, 'fontname','³ª´®°íµñ')
+text(8, 19.504, 'diff of mean','fontsize',12, 'fontname','³ª´®°íµñ')
 str = sprintf('\\color{%s} %0.2f \\color{black} - \\color{%s} %0.2f \\color{black} = %0.2f', 'red', mean(data(1:4)), 'blue', mean(data(5:9)), mean(data(1:4))-mean(data(5:9)));
 text(3, 18.058, str, 'fontsize',13, 'fontname','³ª´®°íµñ')
 
@@ -30,11 +32,12 @@ xpos_data = [-22.9838709677419,-20.1036866359447,-17.5691244239631,-14.688940092
 ypos_data = 17.5;
 
 histdata2show = [];
-xlabel('±×·ì º° Æò±Õ Â÷ÀÌ')
+% xlabel('±×·ì º° Æò±Õ Â÷ÀÌ')
+xlabel('Mean difference of each group')
 ylabel('bin count')
 
 if h_record
-    newVid = VideoWriter('perm_vid','MPEG-4');
+    newVid = VideoWriter('perm_vid_en','MPEG-4');
     
     newVid.FrameRate = 5;
     newVid.Quality = 100;
@@ -90,7 +93,8 @@ for i = 1:100
     else
         my_txt(6) = text(11.8088, 14, sprintf('p-value = %0.2f', my_pval),'fontsize',12, 'fontname','³ª´®°íµñ');
         text(-9, 10, '¡é ¡é', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
-        text(-17.96, 12, 'Permutation ºÐÆ÷', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
+        % text(-17.96, 12, 'Permutation ºÐÆ÷', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
+        text(-17.96, 12, 'Permutation dist', 'color',lines(1),'fontsize',20, 'fontname','³ª´®°íµñ','fontweight','bold')
         if h_record
             for j = 1:10
                 writeVideo(newVid, getframe(gcf));

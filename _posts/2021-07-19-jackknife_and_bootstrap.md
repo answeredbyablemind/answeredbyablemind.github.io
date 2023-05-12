@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210719
 tags: 통계학
+lang: ko
 ---
 
 # Prerequisites
