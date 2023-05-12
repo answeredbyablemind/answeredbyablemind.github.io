@@ -267,6 +267,10 @@ docs-en:
         url:    2021/01/05/confidence_interval_en.html
       - title:  Type-1 and Type-2 error
         url:    2021/01/26/types_of_errors_en.html
+      - title:  Paired Sample t-test
+        url:    2021/10/29/paired_t_test_en.html
+      - title:  Repeated Measures ANOVA (RM ANOVA)
+        url:    2021/11/02/RM_ANOVA_en.html
 
   - title:    Nonparametric Statistics
     children:

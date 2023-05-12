@@ -12,8 +12,10 @@ xlim([-1, 2])
 ylim([600, 1400])
 grid on;
 set(gca,'xtick',[0, 1]);
-set(gca,'xticklabel',{'플라시보','처치약'})
-ylabel('일일 소변량 (mL/d)');
+% set(gca,'xticklabel',{'플라시보','처치약'})
+set(gca,'xticklabel',{'Placebo','Treatment Drug'})
+% ylabel('일일 소변량 (mL/d)');
+ylabel('amount of urine per day (mL/d)');
 title('A');
 % set(gca,'fontname','나눔고딕')
 
@@ -29,8 +31,10 @@ plot(grp, [placebo, drug],'o','markerfacecolor',lines(1),'markeredgecolor','k')
 
 grid on;
 set(gca,'xtick',[0, 1]);
-set(gca,'xticklabel',{'플라시보','처치약'})
-ylabel('일일 소변량 (mL/d)');
+% set(gca,'xticklabel',{'플라시보','처치약'})
+set(gca,'xticklabel',{'Placebo','Treatment Drug'})
+% ylabel('일일 소변량 (mL/d)');
+ylabel('amount of urine per day (mL/d)');
 title('B');
 % set(gca,'fontname','나눔고딕')
 
