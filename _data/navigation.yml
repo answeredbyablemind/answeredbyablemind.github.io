@@ -63,6 +63,8 @@ docs-en:
         url:    2021/06/15/elementary_square_matrices_en.html
       - title:  LU Decomposition
         url:    2021/06/16/LU_decomposition_en.html
+      - title:  Gauss/Gauss-Jordan Elimination
+        url:    2021/06/19/Gauss_elimination_en.html
 
   - title:      Applications of Linear Algebra
     children:
@@ -102,6 +104,8 @@ docs-en:
         url:    2020/07/14/ICA_en.html
       - title:  Geometric Meaning of Cramer's Rule
         url:    2021/06/08/Cramers_rule_en.html
+      - title:  Cholesky Decomposition
+        url:    2021/06/17/Cholesky_decomposition_en.html
 
   - title:      Basic Calculus
     children:
