@@ -61,6 +61,8 @@ docs-en:
         url:    2020/12/07/change_of_basis_en.html
       - title:  Elementary Square Matrices
         url:    2021/06/15/elementary_square_matrices_en.html
+      - title:  LU Decomposition
+        url:    2021/06/16/LU_decomposition_en.html
 
   - title:      Applications of Linear Algebra
     children:

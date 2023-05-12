@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20210616
 tags: 선형대수학
+lang: ko
 ---
 
 # Prerequisites
