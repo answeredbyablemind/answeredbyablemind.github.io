@@ -1,5 +1,5 @@
 ---
-title: Introduction to Signal Processing
+title: Introduction to Signals and Systems
 sidebar:
   nav: docs-en
 aside:
