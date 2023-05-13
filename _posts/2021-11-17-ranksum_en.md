@@ -1,12 +1,12 @@
 ---
-title: 윌콕슨 순위합 검정
+title: Wilcoxon Rank Sum Test
 sidebar:
-  nav: docs-ko
+  nav: docs-en
 aside:
   toc: true
-key: 20211117
-tags: 통계학
-lang: ko
+key: 20211117_en
+tags: Statistics
+lang: en
 ---
 
 ※ The Wilcoxon rank sum test is equivalent to the Mann-Whitney U test.
