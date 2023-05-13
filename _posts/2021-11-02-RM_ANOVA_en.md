@@ -351,7 +351,7 @@ Let's consider between-subject variation, variation in body fat measurement due 
 
 Here, we are interested in the variation in body fat measurement over time.
 
-And to statistically handle this, as was done when studying [t-tests] (https://angeloyeo.github.io/2021/10/29/paired_t_test_en.html), we can create an F-value by dividing the variation in body fat measurement over time by the residual variation.
+And to statistically handle this, as was done when studying [t-tests](https://angeloyeo.github.io/2021/10/29/paired_t_test_en.html), we can create an F-value by dividing the variation in body fat measurement over time by the residual variation.
 
 This is because the term "residual variation" implies variation due to errors that cannot be measured.
 
