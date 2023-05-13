@@ -334,7 +334,7 @@ docs-en:
 
   - title:      Signal Processing
     children:
-      - title:  Introduction to Signal Processing
+      - title:  Introduction to Signals and Systems
         url:    2022/01/03/signal_processing_introduction_en.html
       - title:  Phasor
         url:    2019/06/18/phasor_en.html
