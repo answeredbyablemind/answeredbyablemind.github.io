@@ -37,7 +37,7 @@ In this post, we introduce the paired t-test as a parametric statistical techniq
 In the Motivation section, we mentioned that if it is possible to compare before/after data of the same subject for a given treatment, it would be more effective in verifying the effect of the treatment. Let's take a closer look at what this means with an example illustrated in Figure 1, which shows the results of an experiment to verify the effect of a diuretic drug (a drug that increases urine output).
 
 <p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-29-paired_t_test/pic1.png">
+  <img width="600" src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-10-29-paired_t_test/pic1_en.png">
   <br>
   Figure 1. Results of an experiment to observe the treatment effect of a diuretic drug
   <br>

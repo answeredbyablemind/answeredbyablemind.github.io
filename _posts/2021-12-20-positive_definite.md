@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 2021220
 tags: 선형대수학
+lang: ko
 ---
 
 <center>
