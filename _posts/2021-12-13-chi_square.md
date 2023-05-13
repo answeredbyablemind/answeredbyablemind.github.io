@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 2021213
 tags: 통계학
+lang: ko
 ---
 
 # 카이 제곱 분포

@@ -246,6 +246,8 @@ docs-en:
         url:    2020/09/15/CLT_meaning_en.html
       - title:  Proof of Central Limit Theorem
         url:    2020/01/10/CLT_proof_en.html
+      - title:  Chi-Square Distribution and Test
+        url:    2021/12/13/chi_square_en.html  
 
   - title:    Statistical Inference
     children:
@@ -271,6 +273,8 @@ docs-en:
         url:    2021/10/29/paired_t_test_en.html
       - title:  Repeated Measures ANOVA (RM ANOVA)
         url:    2021/11/02/RM_ANOVA_en.html
+      - title:  Chi-Square Distribution and Test
+        url:    2021/12/13/chi_square_en.html 
 
   - title:    Nonparametric Statistics
     children:
