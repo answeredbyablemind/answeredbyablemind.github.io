@@ -39,8 +39,6 @@ This definition may seem strange at first glance. Why do we take the transpose o
 
 ## The Meaning of the Name "Positive Definite"
 
-There are some mathematical terms that are translated very well. The translation of "positive definite" into "양의 정부호" seems to be more intuitive than the English word "positive definite".
-
 "Positive definite" is related to signs. In other words, if a matrix is positive definite, it implies that the way positive numbers work applies in a similar way.
 
 Let's consider an arbitrary positive real number $a$. Also, let's consider an arbitrary real number $b$.
