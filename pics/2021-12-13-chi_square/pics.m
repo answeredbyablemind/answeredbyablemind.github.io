@@ -13,7 +13,7 @@ set(gca,'visible','off')
 
 %% k=1인 카이제곱 분포 시뮬레이션
 figure('color', 'w');
-newVid = VideoWriter('pic2','MPEG-4');
+newVid = VideoWriter('pic2_en','MPEG-4');
 
 newVid.FrameRate = 20;
 newVid.Quality = 100;
@@ -27,10 +27,12 @@ for i = round(linspace(1,1000,100))
     xlim([0, 12])
     xlabel('x');
     ylabel('frequency');
-    title('자유도가 1인 카이제곱 분포 시뮬레이션');
+    % title('자유도가 1인 카이제곱 분포 시뮬레이션');
+    title('Simulation of Chi-Squared dist of DOF = 1');
     grid on;
     YLIM = ylim;
-    text(8, YLIM(2) * 0.9, ['반복 횟수 = ',num2str(i)], 'fontsize', 12);
+    % text(8, YLIM(2) * 0.9, ['반복 횟수 = ',num2str(i)], 'fontsize', 12);
+    text(7, YLIM(2) * 0.9, ['Repeat Count = ',num2str(i)], 'fontsize', 12);
     writeVideo(newVid, getframe(gcf));
     if i == 1000
         for j = 1:20
@@ -61,7 +63,7 @@ title('자유도가 1인 카이제곱 분포와의 비교');
 
 %% k=3인 카이제곱 분포 시뮬레이션
 figure('color','w');
-newVid = VideoWriter('pic5','MPEG-4');
+newVid = VideoWriter('pic5_en','MPEG-4');
 
 newVid.FrameRate = 20;
 newVid.Quality = 100;
@@ -76,10 +78,13 @@ for i = round(linspace(1,1000,100))
     xlim([0, 16])
     xlabel('x');
     ylabel('frequency');
-    title('자유도가 3인 카이제곱 분포 시뮬레이션');
+    % title('자유도가 3인 카이제곱 분포 시뮬레이션');
+    title('Simulation of Chi-Squared dist of DOF = 3');
+
     grid on;
     YLIM = ylim;
-    text(8, YLIM(2) * 0.9, ['반복 횟수 = ',num2str(i)], 'fontsize', 12);
+    % text(8, YLIM(2) * 0.9, ['반복 횟수 = ',num2str(i)], 'fontsize', 12);
+    text(7, YLIM(2) * 0.9, ['Repeat Count = ',num2str(i)], 'fontsize', 12);
     writeVideo(newVid, getframe(gcf));
     if i == 1000
         for j = 1:20
@@ -151,9 +156,13 @@ y = [21, 13, 6;
 figure;
 h = bar(x, y);
 set(gca,'xtick', 1:3);
-set(gca,'xticklabel', {'짜장면','짬뽕','마라탕'});
-legend(h, '남학생', '여학생');
+% set(gca,'xticklabel', {'짜장면','짬뽕','마라탕'});
+set(gca,'xticklabel', {'Black Noodle','Jjamppong','Mara Soup'});
+% legend(h, '남학생', '여학생');
+legend(h, 'Boys', 'Girls');
 grid on;
-ylabel('빈도 카운트');
-xlabel('중국집 메뉴');
+% ylabel('빈도 카운트');
+ylabel('frequency');
+% xlabel('중국집 메뉴');
+xlabel('Chinese Restaurant Menu');
 set(gca,'fontsize', 12)
