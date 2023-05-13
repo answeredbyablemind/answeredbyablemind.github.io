@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20220103
 tags: 신호처리
+lang: ko
 ---
 
 # 시작하면서...
