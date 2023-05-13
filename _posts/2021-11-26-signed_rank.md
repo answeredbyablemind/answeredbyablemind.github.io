@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20211126
 tags: 통계학
+lang: ko
 ---
 
 ※ 이 포스팅의 내용은 Stanton Glantz의 Primer of biostatistics 교재를 참고하여 작성되었습니다.

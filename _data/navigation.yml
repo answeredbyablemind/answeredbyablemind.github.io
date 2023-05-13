@@ -276,6 +276,8 @@ docs-en:
     children:
       - title:  Wilcoxon Rank Sum Test
         url:    2021/11/17/ranksum_en.html
+      - title:  Wilcoxon Signed Sum Test
+        url:    2021/11/26/signed_rank_en.html
       - title:  Jackknife & Bootstrap
         url:    2021/07/19/jackknife_and_bootstrap_en.html
       - title:  Permutation Test)
