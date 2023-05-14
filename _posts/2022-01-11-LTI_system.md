@@ -167,7 +167,7 @@ $$x[n]=\alpha x_1[n] \longmapsto y[n]=\alpha y_1[n]$$
 
 $$w[n]=\alpha(x_1[n])^2 + \beta (x_2[n])^2$$
 
-$$y[n]=(\alpha x_1[n])+\beta x_2[n])^2 = \alpha^2 (x_1[n])^2 + 2\alpha\beta x_1[n]x_2[n]+\beta ^2 (x_2[n])^2$$
+$$y[n]=(\alpha x_1[n])+\beta (x_2[n])^2 = \alpha^2 (x_1[n])^2 + 2\alpha\beta x_1[n]x_2[n]+\beta ^2 (x_2[n])^2$$
 
 이 두 함수가 다르다는 것을 알 수 있으므로, 제곱 시스템은 비선형 시스템이다.
 

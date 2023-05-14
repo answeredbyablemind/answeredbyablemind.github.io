@@ -352,6 +352,8 @@ docs-en:
         url:    2022/01/05/complex_number_basic_en.html
       - title:  Phasor
         url:    2019/06/18/phasor_en.html
+      - title:  Linear Time Invariant(LTI) System
+        url:    2022/01/11/LTI_system_en.html
       - title:  Discrete Convolution and Impulse Response
         url:    2019/06/18/Discrete_Time_Convolution_en.html
       - title:  Continuous Time Convolution
