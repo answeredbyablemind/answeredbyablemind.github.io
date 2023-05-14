@@ -1,331 +1,324 @@
 ---
-title: 신호 공간(signal space)
+title: Signal Space
 sidebar:
-  nav: docs-ko
+  nav: docs-en
 aside:
   toc: true
-key: 20220112
-tags: 신호처리
-lang: ko
+key: 20220112_en
+tags: Signal_Processing
+lang: en
 ---
 
 # Prerequisites
 
-본 포스팅을 더 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
+To better understand this post, it is recommended that you have knowledge of the following:
 
-* [벡터의 기본 연산](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)
+* [Basic operations of vectors](https://angeloyeo.github.io/2020/09/07/basic_vector_operation_en.html)
 
-[//]:# (신호가 벡터임을 보이는 것도 좋은 설명 방법)
+[//]:# (It is also a good way to explain that the signal is a vector.)
 
-[//]:# (벡터 공간 위의 점 하나가 벡터이고 --> 신호 공간 위의 한 점이 신호라는 점을 부각할 것)
+[//]:# (Emphasize that a point on a vector space is a vector --> A point on a signal space is a signal.)
 
-[//]:# (벡터 공간 위의 한 점을 표현하기 위해 기저벡터들의 선형결합을 이용할 수 있다는 점을 꼭 넣을 것)
+[//]:# (Make sure to include that linear combinations of basis vectors can be used to represent a point on a vector space.)
 
-# signals as vectors
+# Signals as Vectors
 
-※ 이 꼭지의 내용은 이전 포스팅 중 [선형 연산자와 신호 공간](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space.html)의 일부 내용을 가져다 썼습니다.
+※ The contents of this section were taken from [Linear operators and function spaces](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space_en.html), a previous post.
 
-이전 포스팅 중 선형대수학의 기초 부분인 [벡터의 기본 연산(상수배, 덧셈)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html)에서는 세 가지 관점으로 벡터를 생각했다.
+In a previous post, [Basic operations of vectors (scalar multiplication, addition)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation_en.html), which covered the basics of linear algebra, we considered vectors from three different perspectives.
 
-각각은 벡터란 화살표 같은 것, 숫자의 나열, 벡터 공간의 원소라는 정의였다.
+These perspectives were that a vector is like an arrow, a list of numbers, and an element of a vector space.
 
-그 중 벡터란 벡터 공간의 원소라는 정의가 가장 수학적인 정의라고 말한 바 있는데, 이 정의가 중요한 이유는 '이런 방식으로 벡터를 정의하는 것은 이러한 특성을 가진 것들은 모두 벡터로 취급해서 다룰 수 있다는 점을 강조한다'라고 언급했다.
+Of these, we said that the definition of a vector as an element of a vector space is the most mathematical definition, and we emphasized that "defining vectors in this way highlights the fact that any concept with these characteristics can be treated as a vector and handled accordingly using techniques and concepts from linear algebra."
 
-다시 말해, 벡터의 특성을 가지는 개념을 발견한다면, 선형대수학에서 적용해볼 수 있었던 테크닉들과 개념들을 확장해 적용해볼 수 있게 되는 것이다.
+In other words, if a concept has the properties of a vector, then techniques and concepts from linear algebra can be extended and applied to it.
 
-조금 더 구체적으로 말하자면 어떤 수학적 object(가령, 벡터, 행렬, 신호, 등등...)가 벡터이기 위해선 다음의 두 가지 연산에 대해 닫혀있어야 한다.
+To be more specific, in order for a mathematical object (such as a vector, matrix, signal, etc.) to be a vector, it must be closed under the following two operations:
 
-* 벡터의 상수배
-* 벡터의 합
+* Scalar multiplication of vectors
+* Vector addition
 
-너무 단순한가?
+Is it too simple?
 
-마치 쿠팡에서 로켓와우 멤버십 가입비 2900원만내면[^1] 쿠팡에서 제공하는 모든 로켓배송 서비스를 누릴 수 있는 것 처럼, 어떤 수학적 object가 위의 두 개의 법칙만 잘 만족하는 것이라고 확인된다면 '벡터'라는 멤버십을 받게 되는 것이다.
+Just like how by paying a membership fee for Netflix's membership gives you access to all Rocket Delivery services provided by Coupang, if it is confirmed that a mathematical object satisfies only these two laws, it becomes a member of the "vector" group.
 
-[^1]: 지금은 회비가 좀 올랐다.
-
-그리고 이에 따라 선형대수학에서 열심히 일궈놓은 개념들과 테크닉들을 적용받을 수 있게 된다.
+And accordingly, it can receive the concepts and techniques that have been hard-earned in linear algebra.
 
 <p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2021-05-31-linear_operator_and_function_space/pic1.png">
+  <img src = "https://images.ctfassets.net/4cd45et68cgf/5ZVnTR7jyrRs0lePAlVT71/0a7c103de12f7a4c0b6c3b6edd535298/Ads_Plan_Blog_Header_Image.png?w=2560">
   <br>
-  그림 1. 쿠팡에서 로켓와우 멤버십에 가입해 누릴 수 있는 혜택들 (출처: 쿠팡)
+  Figure 1. Benefits that can be enjoyed by subscribing to Netflix (Source: Netflix)
 </p>
 
-엄밀한 증명은 아니지만 간단하게만 생각해봐도 신호는 벡터로 볼 수 있는 자격을 갖췄다.
+Although not a rigorous proof, it is simple to see that a signal can be regarded as a vector.
 
-아래는 이산 신호의 상수배와 신호끼리의 합을 표현한 것이다. 
+Below are expressions for scaling a discrete signal and adding signals together.
 
-$$(c\cdot x)[n] = c\cdot x[n] % 식 (1)$$
+$$(c\cdot x)[n] = c\cdot x[n] % Equation (1)$$
 
-$$(x+z)[n] = x[n]+z[n] % 식 (2)$$
+$$(x+z)[n] = x[n]+z[n] % Equation (2)$$
 
-다시 말해 어떤 신호 $x[n]$에 임의의 상수 $c$를 곱하더라도 여전히 $cx[n]$는 신호이고,
-
-어떤 신호 $x[n]$과 $z[n]$를 더하더라도 $x[n]+z[n]$ 역시 신호다.
+In other words, if we multiply any signal $x[n]$ by an arbitrary constant $c$, $cx[n]$ is still a signal, and if we add any signals $x[n]$ and $z[n]$, $x[n]+z[n]$ is still a signal.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic1.png">
   <br>
-  그림 2. 임의의 이산 신호에 상수배를 해주어도 여전히 이산 신호이다.
+  Figure 2. Scaling any arbitrary discrete signal still results in a discrete signal.
 </p>
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic2.png">
   <br>
-  그림 3. 서로 다른 임의의 두 이산 신호를 더하더라도 여전히 이산 신호이다.
+  Figure 3. Adding any two arbitrary discrete signals still results in a discrete signal.
 </p>
 
-단순히 이산 신호 뿐만 아니라 연속 신호도 마찬가지로 상수배 혹은 신호끼리의 합을 수행하더라도 여전히 연속 신호로 남게 된다.
+Not only discrete signals, but also continuous signals, when scaled or added together, remain continuous signals.
 
 <p align = "center">
   <img src = "https://upload.wikimedia.org/wikipedia/commons/d/d7/Example_for_addition_of_functions.svg">
   <br>
-  그림 4. 두 연속 신호의 합
+  Figure 4. Sum of two continuous signals.
   <br>
-  <a href = "https://en.wikipedia.org/wiki/Function_space"> 그림 출처: Function space, Wikipeda </a>
+  <a href = "https://en.wikipedia.org/wiki/Function_space"> Image source: Function space, Wikipedia </a>
 </p>
 
-이렇게 되면 벡터가 벡터 공간의 원소로 정의되었던 것 처럼, 신호도 벡터 공간의 원소로 정의될 수 있는 벡터가 되며, 이 때 신호가 포함되어 있는 벡터 공간을 <span style="color:red"><b>"신호 공간(signal space)"</b></span>이라고 부른다.
+Thus, as vectors are defined as elements of a vector space, signals can also be defined as elements of a vector space, and the vector space containing the signal is called the <span style="color:red"><b>"signal space"</b></span>.
 
 ---
 
-우리는 벡터의 개념을 확장해서 신호 공간이라는 개념을 얻어낼 수 있음을 알게되었다.
+We have seen that we can extend the concept of vectors to obtain the concept of signal spaces.
 
-이제 중요한 점은 어떻게 벡터에 적용되는 선형대수학의 개념들과 테크닉 중 어떤 것을 신호에 적용할 것인가 라는 점이다.
+Now, the important point is which linear algebra concepts and techniques applicable to vectors can be applied to signals.
 
-어떤 개념을 확장시키고자 할 때는 아주 기초적인 것들부터 의심해봐야한다. 벡터의 '좌표' 라는 개념부터 의심해보는 것이 현명한 스타트라는 생각이 든다.
+When we try to extend a concept, we must question even the most fundamental aspects. I think it is a wise start to question the concept of "coordinates" of a vector.
 
-## 신호는 신호 공간 상의 한 점
+## A signal is a point in signal space
 
-벡터에 대해 생각할 때 가장 먼저 떠오르는 것 중 하나는 벡터란 화살표 같은 것이라는 정의이다. 벡터의 특징으로 '크기와 방향이 있다' 이렇게 생각하는 경우가 많다.
+When thinking about vectors, one of the first things that comes to mind is the definition of a vector as an arrow-like object. Many people tend to think of vectors as having "magnitude and direction".
 
-이러한 벡터에 대한 정의는 Euclidean vector에 한정해서만 성립하기 때문에 아주 일반적인 벡터에 대한 정의라고 볼 수는 없지만 벡터에 대해 시각적으로 이해하는데에 큰 도움을 주는 방식의 정의라고 할 수 있다.
+Although this definition of vectors only applies to Euclidean vectors and cannot be considered a general definition of vectors, it is a definition that provides a helpful way of visually understanding vectors.
 
-(다시 한번, 벡터이기 위한 요건은 스칼라배와 합이지 크기와 방향을 가져야 하는 것은 아니라는 점을 꼭 기억하자. 크기와 방향을 가지기 위해선 내적이 정의되어야만 한다.)
+(Once again, it is important to remember that what is required for something to be a vector is not just scalar multiplication and addition, but not necessarily having magnitude and direction. In order to have magnitude and direction, an inner product must be defined.)
 
-어찌되었든 우리는 2차원 공간 상의 한 점을 생각해보자. 좌표는 (3,4)라고 생각해보자.
+In any case, let's consider a point in 2-dimensional space. Let's say the coordinates are (3,4).
 
-여기서 우리가 좌표가 (3,4)인 벡터를 생각한다라고 하는 말은 어떤 2차원 벡터 공간 상의 기저 벡터 두 개를 몇 개씩 결합할것인가에 관한 표현을 간략화 한 것이다.
+When we say we are thinking of a vector with coordinates (3,4), we are simplifying an expression regarding how many base vectors in a 2-dimensional vector space we will combine.
 
-아래 그림은 좌표가 (3,4) 인 벡터와 2차원 벡터 공간 상의 기저벡터 두 개 $\hat{i}$와 $\hat{j}$를 표시한 것이다.
+The following figure shows a vector with coordinates (3,4) and two base vectors $\hat{i}$ and $\hat{j}$ in 2-dimensional vector space.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic3.png">
   <br>
-  그림 5. 좌표가 (3,4)인 벡터와 표준기저벡터 $\hat{i}$와 $\hat{j}$
+  Figure 5. A vector with coordinates (3,4) and standard base vectors $\hat{i}$ and $\hat{j}$
 </p>
 
-그리고 또 다른 아래의 그림에서는 (3,4) 좌표의 벡터가 기저벡터 3개, 4개를 각각 더해 구성할 수 있는 것임을 알 수 있다.
+And in the following figure, we can see that a vector with coordinates (3,4) can be composed by adding up 3 of one base vector and 4 of the other base vector.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic4.png">
   <br>
-  그림 6. 좌표가 (3,4)라는 말은 한 기저벡터 3개와 다른 기저벡터 4개의 합으로 그 벡터를 표현할 수 있다는 의미이다.
+  Figure 6. Saying that the coordinates are (3,4) means that the vector can be represented as a sum of three of one base vector and four of the other base vector.
 </p>
 
-그러면 이 표준기저벡터들을 항상 사용해야하는것일까? 사실은 2차원 벡터 중 아무거나 두개를 골라서 기저벡터로 삼을 수 있다.
+So do we always have to use these standard base vectors? In fact, we can choose any two of the many 2-dimensional vectors to use as base vectors.
 
-아래 그림은 좌표계를 반시계방향으로 10' 회전시켜 만든 새로운 좌표계이다. 그리고 이 때의 기저벡터는 $\hat{i}_{new}$와 $\hat{j}_{new}$로 표시했다.
+The following figure shows a new coordinate system created by rotating the coordinate system counterclockwise by 10 degrees. The base vectors in this new coordinate system are labeled as $\hat{i}_{new}$ and $\hat{j}_{new}$.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic5.png">
   <br>
-  그림 7. 위에서 (3,4)로 표현했던 벡터에 대해 새로운 기저벡터가 적용되는 좌표계로 다시 이 벡터를 표현할 수 있을까?
+  Figure 7. Can we represent the vector that was expressed as (3,4) in a coordinate system where a new set of base vectors is applied?
 </p>
 
-새로운 기저벡터를 이용해 원래의 벡터를 표현하면 좌표는 (3.6, 3.4)이다. 이것은 기저벡터가 몇 개 들어가는지를 표시하는 것과 동일하다.
+By using new basis vectors, the original vector can be expressed as coordinates (3.6, 3.4). This is equivalent to indicating how many basis vectors are included.
 
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic6.png">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic6.png">
   <br>
-  그림 8. 새로운 기저벡터를 이용하면 각각의 기저벡터를 3.6개, 3.4개 사용하여 원래의 벡터를 표현할 수 있다.
+  Figure 8. Using new basis vectors, the original vector can be represented using 3.6 and 3.4 of each basis vector, respectively.
 </p>
 
 ---
 
-이처럼 벡터는 벡터 공간상의 한 점과 같다. 다만, 이 벡터를 표현할 수 있는 방법은 기저에 따라 바뀐다. 
+In this way, a vector is like a point in vector space. However, the way to represent this vector depends on the basis.
 
-수식으로 쓰자면 임의의 벡터 $\vec{v}$는 기저벡터들의 선형결합으로 아래와 같이 쓸 수 있다.
+In mathematical notation, any vector $\vec{v}$ can be written as a linear combination of basis vectors as follows:
 
-$$\vec{v}=c_1 \hat{i} + c_2 \hat{j} = d_1 \hat{i}_{new} + d_2\hat{j}_{new}$$
+$$\vec{v} = c_1 \hat{i} + c_2 \hat{j} = d_1 \hat{i}_{new} + d_2\hat{j}_{new}$$
 
-어떤 기저는 다른 기저에 비해서 동일한 벡터를 표현하는데에도 표현이 단순해지고 간결해진다. 
+Some bases can provide a simpler and more concise representation of the same vector compared to other bases.
 
-앞선 예시에서는 $c_1$과 $c_2$는 각각 3, 4로 단순했지만 $d_1$과 $d_2$는 3.6, 3.4로 조금 더 복잡해졌다.
+In the previous example, $c_1$ and $c_2$ were simple values of 3 and 4, respectively, but $d_1$ and $d_2$ were slightly more complex values of 3.6 and 3.4.
 
-이처럼 동일한 벡터 하나를 표현하는데 좋은 기저를 정하는 것은 매우 중요하다.
+Thus, selecting a good basis for representing the same vector is crucial.
 
-신호도 마찬가지로 임의의 신호를 기저 신호의 선형결합으로 표현할 수 있다.
+Similarly, any arbitrary signal can be represented as a linear combination of basis signals in the signal space.
 
-임의의 신호 $x[k], k = 1, 2,\cdots n$이 포함되어 있는 신호 공간에 대한 기저 신호를 $\lbrace \phi_i[k] \| i = 1,2,\cdots, n\rbrace$라고 잡는다면 임의의 신호 $x[n]$은 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
+If an arbitrary signal $x[k], k = 1, 2, \cdots n$ is included in the signal space, the basis signals for the signal space can be denoted as $\lbrace \phi_i[k] \| i = 1,2,\cdots, n\rbrace$. Then, any arbitrary signal $x[n]$ can be represented as a linear combination of basis signals as follows:
 
-$$x[k]=\sum_{i=1}^{n}p_i \phi_i[k]$$
+$$x[k] = \sum_{i=1}^{n}p_i \phi_i[k]$$
 
-이는 연속 신호에 대해서도 마찬가지로 임의의 신호 $x(t)$가 포함되어 있는 신호 공간의 기저 신호를 $\lbrace \psi _i(t)\rbrace$라고 두면 이 신호는 다음과 같이 기저 신호들의 선형결합으로 표현할 수 있다.
+For continuous signals, any arbitrary signal $x(t)$ in the signal space that contains the basis signals can be represented as a linear combination of the basis signals $\lbrace \psi _i(t)\rbrace$ as follows:
 
 $$x(t) = \sum_i q_i \psi_i(t)$$
 
+Meanwhile, the number of basis vectors required to represent a vector can be calculated using the 'dot product' of vectors. That is, calculating $p_i$ and $q_i$ in the above equations is possible by defining the inner product of signals, similar to the inner product of vectors.
 
-한편, 하나의 벡터를 표현하기 위해 기저 벡터가 몇 개 들어갈지를 계산하는 방법은 '벡터의 내적'으로 알아볼 수 있다. 즉, 위 식들에서 $p_i$와 $q_i$를 계산하는 방법은 벡터의 내적처럼 신호의 내적을 정의해줌으로써 가능하다는 의미가 된다.
+## Inner product of vectors → Inner product of signals
 
-## 벡터 간의 내적 → 신호의 내적
+In linear algebra, the inner product of vectors is defined as follows.
 
-선형대수학에서 벡터의 내적은 다음과 같이 정의되었다.
+For any $n$-dimensional real vectors $\vec{a}$ and $\vec{b}$ as follows,
 
-임의의 아래와 같은 $n$차원 실수 벡터 $\vec{a}$와 $\vec{b}$에 대하여,
+$$\vec{a} = \begin{bmatrix}a_1\\ a_2 \\ \vdots \\ a_n\end{bmatrix} % equation (6)$$
 
-$$\vec{a} = \begin{bmatrix}a_1\\ a_2 \\ \vdots \\ a_n\end{bmatrix} % 식 (6)$$
+$$\vec{b} = \begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_n\end{bmatrix} % equation (7)$$
 
-$$\vec{b} = \begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_n\end{bmatrix} % 식 (7)$$
+$$\text{dot}(\vec{a}, \vec{b})=a_1b_1 + a_2b_2 +\cdots + a_nb_n % equation (8)$$
 
-$$\text{dot}(\vec{a}, \vec{b})=a_1b_1 + a_2b_2 +\cdots + a_nb_n % 식 (8)$$
+If $\vec{a}$ and $\vec{b}$ were complex vectors, the inner product is defined as follows.
 
-만약 $\vec{a}$와 $\vec{b}$가 복소 벡터였다고 하면 내적은 다음과 같이 정의된다.
+$$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % equation (9)$$
 
-$$\text{dot}(\vec{a}, \vec{b})=a_1^*b_1 + a_2^*b_2 +\cdots + a_n^*b_n % 식 (9)$$
+Here, $*$ denotes the complex conjugate operation.
 
-여기서 $*$은 복소 켤레(complex conjugate) 연산이다.
+If we think about why complex vectors involve complex conjugate operations, it is to define the length of a complex vector through the inner product.
 
-왜 복소 벡터는 복소 켤레 연산이 들어가는지 생각해본다면 내적을 통해 복소 벡터에서 길이를 정의하기 위해서이다.
+The size of a real vector $\vec{a}$ (usually L2-norm) is defined as follows.
 
-어떤 실수 벡터 $\vec{a}$의 크기(보통 L2-norm)는 다음과 같이 정의된다.
+$$\text{norm}_2(\vec{a}) = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} % equation (10)$$
 
-$$\text{norm}_2(\vec{a}) = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2} % 식 (10)$$
+That is,
 
-즉,
+$$\text{norm}_2(\vec{a}) = \sqrt{\text{dot}(\vec{a}, \vec{a})}=\sqrt{a_1a_1+a_2a_2+\cdots+a_na_n} % equation (11)$$
 
-$$\text{norm}_2(\vec{a}) = \sqrt{\text{dot}(\vec{a}, \vec{a})}=\sqrt{a_1a_1+a_2a_2+\cdots+a_na_n} % 식 (11)$$
+If we extend this concept to complex vectors, then for a complex vector $\vec{a}$,
 
-이 개념을 복소벡터에까지 확장시키면, 복소 벡터 $\vec{a}$에 대해서
+$$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2+\cdots +a_n^*a_n}=\sqrt{\text{dot}(\vec{a},\vec{a})} % equation (12)$$
 
-$$\text{norm}_2(\vec{a})=\sqrt{a_1^2+a_2^2 + \cdots a_n^2}=\sqrt{a_1^*a_1+a_2^*a_2+\cdots +a_n^*a_n}=\sqrt{\text{dot}(\vec{a},\vec{a})} % 식 (12)$$
+Therefore, the inner product operation of complex vectors must be defined as in equation (9).
 
-이어야 하므로 복소벡터의 내적연산은 식 (9)과 같이 정의되어야 하는 것이다.
+Now let's extend the method of equation (9) and define the inner product of signals.
 
-이제 식 (9)의 방식을 확장해 신호의 내적을 정의해보도록 하자.
+Since signals can have complex values ​​that do not end in the range of real signals, the definition of the inner product of complex vectors is extended as follows.
 
-신호들은 실수 신호 범위에서 그치지않고 신호값이 복소수가 될 수 도 있기 때문에 다음과 같이 복소 벡터의 내적의 정의를 확장해 다음과 같이 정의한다.
-
-이산 신호의 경우 다음과 같이 정의된다. 임의의 복소 이산 신호 $x[k]$와 $z[k]$ $, k = 1, 2, \cdots, n$ 에 대하여
+For discrete signals, the inner product of arbitrary complex discrete signals $x[k]$ and $z[k]$, $k = 1, 2, \cdots, n$ is defined as follows:
 
 $$\langle x[k], z[k] \rangle \equiv \sum_{k=1}^n x[k]z^*[k]$$
 
-이다. 여기서 $z^*[k]$는 $z[k]$의 complex conjugate이다.
+Here, $z^*[k]$ is the complex conjugate of $z[k]$.
 
-또, 구간 $(a, b)$에서 정의된 임의의 복소 연속 신호 $x(t)$, $z(t)$에 대해 두 신호의 inner product $\langle f, g\rangle$은 
+Moreover, for any complex continuous signals $x(t)$ and $z(t)$ defined on the interval $(a,b)$, the inner product $\langle f, g\rangle$ of the two signals is given by:
 
-$$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % 식 (10)$$
+$$\langle x(t), z(t)\rangle \equiv \int_a^b x(t)z^*(t) dt % Equation (10)$$
 
-이다. 여기서 $z^*(t)$는 $z(t)$의 complex conjugate이다.
+where $z^*(t)$ is the complex conjugate of $z(t)$.
 
-## 고유함수
+## Eigenfunctions
 
-고유함수에 관해 더 잘 이해하기 위해선 아래의 내용에 대해 알고 오는 것이 좋습니다.
+To better understand eigenfunctions, it is recommended to have knowledge of the following:
 
-* [고윳값과 고유벡터](https://angeloyeo.github.io/2019/07/17/eigen_vector.html)
-* [오일러 공식](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)
-* [페이저(phasor)](https://angeloyeo.github.io/2019/06/18/phasor.html)
+* [Eigenvalues and eigenvectors](https://angeloyeo.github.io/2019/07/17/eigen_vector_en.html)
+* [Euler's formula](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation_en.html)
+* [Phasors](https://angeloyeo.github.io/2019/06/18/phasor_en.html)
 
-고유함수에 대해 이해하게 되면 왜 신호/시스템 분야에서 신호를 복소 정현파를 이용해 서술하는지 알 수 있다.
+Understanding eigenfunctions helps to explain why complex sinusoids are used to describe signals/systems in the field of signal processing.
 
 ---
 
-지금까지의 논의에서 신호(즉, 함수)가 벡터라는 것에 관해 알아보았다. 그리고, 신호가 벡터라면 선형대수학에서 논의되고 개발된 용어들을 확장해 적용할 수 있고 선형대수학에서 개발된 메소드마저도 이용할 수 있다는 사실을 일부 확인했다.
+In the previous discussion, we learned that a signal (i.e., a function) can be considered as a vector. Furthermore, since a signal is a vector, we can extend the terminologies and methods developed in linear algebra and apply them to signal processing.
 
-선형대수학에서 아주 중요한 주제 중 하나인 고윳값과 고유벡터를 신호 처리에 관해서도 일부 적용해볼 수 있다.
+One important topic in linear algebra is eigenvalues and eigenvectors, which can also be applied to signal processing.
 
-고유벡터의 개념에 대해서 조금 더 잘 알기 위해선 벡터와 행렬의 관계에 대해 알아야 한다. 
+To better understand the concept of eigenvectors, we need to understand the relationship between vectors and matrices.
 
-행렬은 벡터에 관한 함수라고 할 수 있다. 그리고, 행렬은 벡터를 입력 받아 또 다른 벡터를 출력하는 역할을 한다.
+A matrix can be considered as a function of vectors. Specifically, a matrix takes in a vector as input and outputs another vector.
 
 <p align = "center">
   <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic1.png">
   <br>
-  그림 9. 행렬은 벡터를 입력 받아 벡터를 출력해주는 함수이다.
+  Figure 9. A matrix is a function that takes in a vector as input and outputs another vector.
 </p>
 
-이 때, 만약 어떤 행렬이 벡터를 입력 받아 출력했는데, 출력된 벡터가 입력된 벡터와 비교했을 때 크기만 바뀌고 방향은 그대로인 경우가 있을 수 있다.
+In some cases, a matrix takes in a vector and outputs another vector whose direction is the same as the input vector, but whose magnitude is scaled by a constant.
 
 <p align = "center">
   <img width = "500" src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/eigen_vector_values/pic3.png">
   <br>
-  그림 10. 입력 벡터 ($x$)와 출력 벡터($Ax$)가 방향은 동일하고 크기만 차이나는 경우
+  Figure 10. An input vector ($x$) and output vector ($Ax$) with the same direction but different magnitude.
 </p>
 
-이런 경우에 이 벡터 $x$의 방향으로 향하는 단위 벡터를 행렬 $A$에 대한 고유벡터라고 하고, 크기의 변화량을 고윳값이라고 부른다.
+In such cases, the unit vector pointing in the direction of vector $x$ is called the eigenvector of matrix $A$, and the amount of scaling is called the eigenvalue.
 
-그런데, 우리가 공부하는 신호 시스템에서는 어떨까? 신호가 벡터라고 한다면 시스템은 행렬에 대응하는 것이다.
+However, what about in signal systems that we study? If we consider signals as vectors, the system corresponds to a matrix.
 
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic_system.png">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic_system.png">
   <br>
-  그림 11. 신호가 벡터에 대응되는 개념이라면 시스템은 행렬에 대응되는 개념이다.
+  Figure 11. If signals correspond to vectors, the system corresponds to a matrix.
 </p>
 
-그렇다면 우리가 다루는 시스템도 고유벡터에 대응하는 개념이 있을까?
+Then, is there a concept that corresponds to an eigenvector in the systems we deal with?
 
-신호, 시스템에서 고유벡터에 대응되는 개념을 우리는 보통 고유함수(eigenfunction)이라고 부른다. (고유 신호라고는 보통 부르지 않음.)
+We usually call the concept that corresponds to eigenvectors in signals and systems eigenfunctions. (We usually do not call it an eigen signal.)
 
-보통 가장 중요하게 다루는 선형시불변(Linear Time-Invariant) 시스템에서는 복소 정현파가 고유함수가 된다.
+In most cases, in linear time-invariant (LTI) systems that we deal with, complex sinusoids become eigenfunctions.
 
-<p align = "center">
-  <img src = "https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic_system2.png">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/angeloyeo/angeloyeo.github.io/master/pics/2022-01-12-signal_space/pic_system2.png">
   <br>
-  그림 12. LTI system에서는 복소 정현파가 고유함수가 된다.
+  Figure 12. In LTI systems, complex sinusoids become eigenfunctions.
 </p>
 
-조금 더 자세하게 보면, 입력이 $x(t)=e^{j\omega t}$ 이고 시스템의 impulse response가 $h(t)$라고 하면 출력은
+Looking a little more closely, if the input is $x(t) = e^{j\omega t}$ and the impulse response of the system is $h(t)$, then the output is
 
 $$y(t) = \int_{-\infty}^{\infty}e^{j\omega (t-\tau)}h(\tau)d\tau$$
 
 $$=e^{j\omega t}\int_{-\infty}^{\infty}h(\tau)e^{-j\omega\tau}d\tau$$
 
-와 같다. 여기서 $H(\omega)$를 아래와 같이 정의하였는데, 이것은 $h(t)$의 [푸리에 변환](https://angeloyeo.github.io/2019/07/07/CTFT.html)이라고 부르는 것이다.
+Here, we define $H(\omega)$ as follows, which is called the [Fourier transform](https://angeloyeo.github.io/2019/07/07/CTFT_en.html) of $h(t)$.
 
 $$H(\omega) = \int_{-\infty}^{\infty}h(\tau)e^{-j\omega\tau}d\tau$$
 
-중요한 것은 원래의 식을 다시 써보면,
+The important thing is that if we rewrite the original equation,
 
 $$y(t)=H(\omega)e^{j\omega t}$$
 
-가 되는데, 출력 함수를 보면 원래의 입력 함수 $e^{j\omega t}$가 그대로 들어있고 그것에 $H(\omega)$이 곱해져서 출력되는 것을 알 수 있다.
+we can see that the original input function $e^{j\omega t}$ remains in the output function, and $H(\omega)$ is multiplied to it and then output.
 
-생각해보면 너무 자연스럽게 $e^{j\omega t}$가 나오다보니 이게 뭐가 그렇게 특별한가 싶을지도 모르지만, 이번엔 코사인 함수를 입력으로 넣어보자.
+It may seem natural for $e^{j\omega t}$ to appear so it may not seem special, but let's try to input a cosine function this time.
 
-코사인 함수는 [오일러 공식](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation.html)에 의해 다음과 같이 수정해서 쓸 수도 있다.
+A cosine function can also be written as follows using [Euler's formula](https://angeloyeo.github.io/2020/09/22/Euler_Formula_Differential_Equation_en.html).
 
 $$x(t) = \cos(\omega t)=\frac{1}{2}(e^{j\omega t}+e^{-j\omega t})$$
 
-시스템을 $\mathfrak L$이라고 하면, 우리의 시스템은 선형 시스템이기 때문에 다음이 성립한다.
+If we call the system $\mathfrak L$, then the following equation holds because our system is a linear system:
 
 $$y(t) = (\mathfrak{L}x)(t)=\frac{1}{2}\left(\mathfrak{L}(e^{j\omega t} + \mathfrak{L}(e^{-j\omega t})\right)$$
 
-여기서 [복소수 표현](https://angeloyeo.github.io/2019/06/18/phasor.html)을 이용해 $H(\omega)$를 표현하면,
+Using [complex number notation](https://angeloyeo.github.io/2019/06/18/phasor_en.html) here, if we express $H(\omega)$, we get:
 
 $$H(\omega) = |H(\omega)|e^{j \angle H(\omega)}$$
 
 $$H(-\omega) = H^*(\omega) = |H(\omega)|e^{-j\angle H(\omega)}$$
 
-이므로, $y(t)$를 다시 쓰면 다음과 같을 것이다.
+Therefore, $y(t)$ can be rewritten as follows:
 
 $$y(t) = \frac{1}{2}|H(\omega)|\left(e^{j(\omega t +\angle H(\omega))} + e^{-j(\omega t +\angle H(\omega))}\right)$$
 
 $$=|H(\omega)|\cos(\omega t + \angle H(\omega))$$
 
-와 같다.
+So when a cosine function is input, not only does its magnitude increase by $\|H(\omega)\|$ due to the system, but the phase also shifts by $\angle H(\omega)$, so it needs to be represented accordingly.
 
-따라서, 코사인 함수를 입력으로 넣어주면 시스템에 의해 크기가 $\|H(\omega)\|$만큼 커질 뿐만 아니라 위상도 $\angle H(\omega)$만큼 shift되어 표현해주어야 한다.
-
-그러므로 코사인 함수를 입력으로 넣어줬을 때는 출력에 원래의 입력이 그대로 출력되지 않으므로 코사인 함수는 선형 시스템에 대한 고유함수가 아니다.
+Therefore, when a cosine function is input, it is not an eigenfunction of a linear system since the input does not output the original input as it is.
 
 ---
 
-여기서 알 수 있는 사실은 신호/시스템 분야에서는 신호를 표현할 때 복소 정현파를 이용해서 표현하며, 그 이유는 복소 정현파를 이용해 입력을 표현해주면 출력에는 시스템의 특성(임펄스 함수의 푸리에 변환)만 서술해주면 되어서 출력에 관한 서술이 간결해지기 때문이다.
+What we can learn from this is that in the signal/system field, complex sinusoids are used to represent signals because when we use complex sinusoids to represent the input, we only need to describe the characteristics of the system (the Fourier transform of the impulse response) for the output, making the description of the output more concise.
 
-# 참고 문헌
+# References
 
 * [Ch. 5 Vector spaces and signal spaces, Robert Gallager, MIT OCW 6.450 Principles of Digital Communications I](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-450-principles-of-digital-communications-i-fall-2006/lecture-notes/book_5.pdf)
-* [신호 공간, 정보통신기술용어해설](http://www.ktword.co.kr/test/view/view.php?m_temp1=4178)
+* [Signal Space, Telecommunications Term Explanation](http://www.ktword.co.kr/test/view/view.php?m_temp1=4178)
 * [4. Space Signal Representation of Waveforms, Prapun Suksompong, ECS452 2013, Sirindhorn International Institute of Technology](https://www2.siit.tu.ac.th/prapun/ecs452_2013_1/ECS452%204%20u2.pdf)
 * [2.4. Eigenfunctions, Digital Signal Processing Lecture Notes, Rein van den Boomgaard, Univ. of Amsterdam](https://staff.fnwi.uva.nl/r.vandenboomgaard/SignalProcessing/LinearSystems/lin_eigenfunctions.html)
