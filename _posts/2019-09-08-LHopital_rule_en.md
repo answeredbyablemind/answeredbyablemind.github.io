@@ -11,7 +11,7 @@ lang: en
 
 # L'Hopital's Rule
 
-In high school, there is a famous theorem known as L'Hopital's Rule, which was often referred to as a "trick" when studying limits.
+There is a famous theorem known as L'Hopital's Rule, which was often referred to as a "trick" when studying limits in high school.
 
 Usually, in high school, it is simply mentioned without rigorous proof, as proving it requires mathematical knowledge beyond high school level. So, in most cases, the proof is omitted.
 
