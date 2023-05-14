@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20220111
 tags: 신호처리
+lang: ko
 ---
 
 지금껏 우리는 [정현파 기초](https://angeloyeo.github.io/2022/01/04/sinusoids.html), [복소수 기초](https://angeloyeo.github.io/2022/01/05/complex_number_basic.html), [Phasor](https://angeloyeo.github.io/2019/06/18/phasor.html)에 대해 다루면서 '신호의 표현'에 대해 다루었다고 할 수 있다.

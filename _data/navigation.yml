@@ -1,6 +1,16 @@
 header:
 
   - titles:
+      ko      : &KO       한국어
+      ko-KR   : *KO
+      en      : &EN       한국어
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+    url: /2019/09/08/LHopital_rule.html
+
+  - titles:
       ko      : &KO       EN
       ko-KR   : *KO
       en      : &EN       EN
@@ -388,14 +398,6 @@ docs-en:
         url:    2020/10/05/Wold_theorem_en.html
 
 docs-ko:
-  - title:      MATLAB
-    children:
-      - title: C에서 MATLAB 호출하기
-        url: 2022/06/20/calling_MATLAB_in_C.html
-      - title: MATLAB의 TCP/IP 통신
-        url: 2022/06/25/MATLAB_tcpip.html
-      - title: MATLAB으로 email 보내기
-        url: 2022/07/01/MATLAB_email.html
   - title:      기초 선형대수학 이론
     children:
       - title:  벡터의 기본 연산(상수배, 덧셈)
