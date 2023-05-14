@@ -40,7 +40,7 @@ To be more specific, in order for a mathematical object (such as a vector, matri
 
 Is it too simple?
 
-Just like how by paying a membership fee for Netflix's membership gives you access to all Rocket Delivery services provided by Coupang, if it is confirmed that a mathematical object satisfies only these two laws, it becomes a member of the "vector" group.
+Just like how by paying a membership fee for Netflix's membership gives you access to all videoss provided by Netflix, if it is confirmed that a mathematical object satisfies only these two laws, it becomes a member of the "vector" group.
 
 And accordingly, it can receive the concepts and techniques that have been hard-earned in linear algebra.
 
