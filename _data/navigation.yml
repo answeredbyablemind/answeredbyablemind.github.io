@@ -336,6 +336,10 @@ docs-en:
     children:
       - title:  Introduction to Signals and Systems
         url:    2022/01/03/signal_processing_introduction_en.html
+      - title:  Basics of Sinusoids
+        url:    2022/01/04/sinusoids_en.html
+      - title:  Basics of Complex Number
+        url:    2022/01/05/complex_number_basic_en.html
       - title:  Phasor
         url:    2019/06/18/phasor_en.html
       - title:  Discrete Convolution and Impulse Response

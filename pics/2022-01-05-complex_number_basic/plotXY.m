@@ -72,9 +72,10 @@ if ~h_complex_plane
     t = text(-(x2-x1)*0.03,y2*1,'$$y$$','Interpreter','latex');
     t.FontSize = fontsize;
 else
-    t = text(x2*0.97,(y2-y1)*0.03,'½Ç¼ö Ãà','fontname','³ª´®°íµñ');
+    % t = text(x2*0.97,(y2-y1)*0.03,'½Ç¼ö Ãà','fontname','³ª´®°íµñ');
+    t = text(x2*0.97,(y2-y1)*0.03,'Real Axis','fontname','³ª´®°íµñ');
     t.FontSize = fontsize;
-    t = text((x2-x1)*0.03 ,y2*1,'Çã¼ö Ãà','fontname','³ª´®°íµñ');
+    t = text((x2-x1)*0.03 ,y2*1,'Imaginary Axis','fontname','³ª´®°íµñ');
     t.FontSize = fontsize;
 end
 

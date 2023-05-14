@@ -11,7 +11,7 @@ lang: en
 
 # Starting...
 
-In life, there are times when we give and receive signals. We stop and start again at traffic lights while driving. We call a dog with a gesture, or we urge a friend who is walking towards us from a distance with body language.
+In daily life, there are times when we give and receive signals. We stop and start again at traffic lights while driving. We call a dog with a gesture, or we urge a friend who is walking towards us from a distance with body language.
 
 So, when we think about it, the word 'signal' is widely used in everyday life. If we abstractly define the concept of a signal used in everyday life, it seems to be related to conveying information.
 
