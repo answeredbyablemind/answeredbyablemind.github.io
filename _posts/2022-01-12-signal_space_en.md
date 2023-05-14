@@ -23,7 +23,7 @@ To better understand this post, it is recommended that you have knowledge of the
 
 # Signals as Vectors
 
-※ The contents of this section were taken from [Linear operators and function spaces](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space_en.html), a previous post.
+※ The contents of this section were taken from [Linear operators and function spaces](https://angeloyeo.github.io/2021/05/31/linear_operator_and_function_space_en.html).
 
 In a previous post, [Basic operations of vectors (scalar multiplication, addition)](https://angeloyeo.github.io/2020/09/07/basic_vector_operation_en.html), which covered the basics of linear algebra, we considered vectors from three different perspectives.
 
