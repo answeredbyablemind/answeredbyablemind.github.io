@@ -51,6 +51,7 @@ Signals are not limited to simple square waves, they can also include images. Si
   <br>
   Figure 2. Any signal can be composed of a combination of sinusoidal waves
   <br>
+</p>
 
 Then, you might ask, how many combinations of sine waves with different frequencies are needed to express any signal? However, for more details on this topic, please refer to the "Fourier series" or "Fourier transform" section.
 
