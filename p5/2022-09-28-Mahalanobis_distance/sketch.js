@@ -138,7 +138,7 @@ function draw() {
 
      textAlign(LEFT)
      textSize(15)
-     text('↓ 슬라이더를 움직여 보세요.', width * 0.05, height * 0.95)
+     text('↓ Move the slider.', width * 0.05, height * 0.95)
 
 }
 

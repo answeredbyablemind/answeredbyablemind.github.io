@@ -126,7 +126,8 @@ plot(tt, xx,'--')
 hold on;
 stem(tt_d1, xx_d1, 'color','k','linewidth',2);
 axis tight
-title('주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * 10');
+% title('주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * 10');
+title('Periodic Discrete Signal: \omega_0=2\pi, \Omega_0 = 2\pi * 10');
 xlabel('time (s)');
 grid on;
 set(gca,'fontname','나눔고딕');
@@ -136,7 +137,8 @@ plot(tt, xx,'--')
 hold on;
 stem(tt_d2, xx_d2, 'color','k','linewidth',2);
 axis tight
-title('비주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * \surd 110');
+% title('비주기 이산 신호: \omega_0=2\pi, \Omega_0 = 2\pi * \surd 110');
+title('Aperiodic Discrete Signal: \omega_0=2\pi, \Omega_0 = 2\pi * \surd 110');
 xlabel('time (s)');
 grid on;
 set(gca,'fontname','나눔고딕');
@@ -160,9 +162,11 @@ set(gca,'xtick', [-0.8, 0.8]);
 set(gca,'xticklabel',{'-\omega_B','\omega_B'})
 
 set(gca,'ytick',[]);
-title('연속 주기 신호의 주파수 스펙트럼 (CTFS)');
+% title('연속 주기 신호의 주파수 스펙트럼 (CTFS)');
+title('Frequency Spectrum of Continuous Periodic Signal (CTFS)');
 set(gca,'fontname','나눔고딕');
-xlabel('각주파수 \omega [rad/s]');
+% xlabel('각주파수 \omega [rad/s]');
+xlabel('Angular Frequency \omega [rad/s]');
 
 subplot(2,1,2);
 stem(xx, yy,'b','linewidth',2)
@@ -182,9 +186,11 @@ xlim([-4, 4])
 set(gca,'xtick', [-4:-1, -0.8, 0, 0.8, 1:4]);
 set(gca,'xticklabel', {'-4\pi','-3\pi','-2\pi','-\pi','-\Omega_B','0','\Omega_B','\pi','2\pi','3\pi','4\pi'})
 set(gca,'ytick',[]);
-title('이산 주기 신호의 주파수 스펙트럼 (DTFS)');
+% title('이산 주기 신호의 주파수 스펙트럼 (DTFS)');
+title('Frequency Spectrum of Discrete Periodic Signal (DTFS)');
 set(gca,'fontname','나눔고딕');
-xlabel('디지털 각주파수 \Omega [rad]');
+% xlabel('디지털 각주파수 \Omega [rad]');
+xlabel('Digital Angular Frequency \Omega [rad]');
 
 %% Replicated frequency spectrum of sampled signal (비주기 신호)
 

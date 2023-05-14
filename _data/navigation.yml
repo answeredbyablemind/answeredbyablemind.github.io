@@ -118,6 +118,8 @@ docs-en:
         url:    2021/06/17/Cholesky_decomposition_en.html
       - title:  Positive Definite Matrix
         url:    2021/12/20/positive_definite_en.html
+      - title:  Mahalanobis Distance
+        url:    2022/09/28/Mahalanobis_distance_en.html
 
   - title:      Basic Calculus
     children:
@@ -260,6 +262,10 @@ docs-en:
         url:    2020/01/10/CLT_proof_en.html
       - title:  Chi-Square Distribution and Test
         url:    2021/12/13/chi_square_en.html  
+      - title:  Markov Inequality and CHebyshev Inequality
+        url:    2022/09/12/Markov_Chebyshev_Inequality_en.html
+      - title:  Chernoff Bound
+        url:    2022/09/13/Chernoff_Bound_en.html  
 
   - title:    Statistical Inference
     children:
@@ -356,6 +362,8 @@ docs-en:
         url:    2022/01/11/LTI_system_en.html
       - title:  Discrete Convolution and Impulse Response
         url:    2019/06/18/Discrete_Time_Convolution_en.html
+      - title:  Sampling Continuous Signal to Discrete Signal
+        url:    2022/01/14/sampling_CT_to_DT_en.html
       - title:  Continuous Time Convolution
         url:    2019/07/01/Continuous_Time_Convolution_en.html
       - title:  Signal Space

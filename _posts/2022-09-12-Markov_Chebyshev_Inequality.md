@@ -6,6 +6,7 @@ aside:
   toc: true
 key: 20220912
 tags: 통계학
+lang: ko
 ---
 
 # 마르코프 부등식 (Markov Inequality)
