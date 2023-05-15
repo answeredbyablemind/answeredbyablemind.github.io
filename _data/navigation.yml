@@ -19,16 +19,6 @@ header:
       en-CA   : *EN
       en-AU   : *EN
     url: /2019/09/08/LHopital_rule_en.html
-
-  - titles:
-      ko      : &KO       저자 소개
-      ko-KR   : *KO
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-    url: /about.html
     
   - titles:
       ko      : &KO       후원하기
