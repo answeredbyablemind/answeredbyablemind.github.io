@@ -29,16 +29,16 @@ header:
       en-CA   : *EN
       en-AU   : *EN
     url: 2019/01/01/donation.html
-
+    
   - titles:
-      ko      : &KO       유튜브 채널
+      ko      : &KO       매트랩 튜토리얼
       ko-KR   : *KO
-      en      : &EN       Youtube Channel
+      en      : &EN       MATLAB Tutorial
       en-GB   : *EN
       en-US   : *EN
       en-CA   : *EN
       en-AU   : *EN
-    url: https://www.youtube.com/channel/UCoCrPRq7wa6q0p59abF5aNw?view_as=subscriber
+    url: https://matlabtutorial.github.io/
 
 docs-en:
   - title:      Basic Linear Algebra Theories
