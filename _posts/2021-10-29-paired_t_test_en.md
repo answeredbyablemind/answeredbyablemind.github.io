@@ -96,7 +96,7 @@ $$\bar{d}=-52.2$$
 
 $s_{\bar{d}}$ can be calculated as $s_{\bar{d}}=s_d/\sqrt{n}$, where $s_d$ is the standard deviation of $d$, hence:
 
-$$s_{\bar{d}}=\frac{s_d}{\sqrt{n}}=\frac{57.4723}{\sqrt{10}}=16.9094$$
+$$s_{\bar{d}}=\frac{s_d}{\sqrt{n}}=\frac{53.4723}{\sqrt{10}}=16.9094$$
 
 Therefore, the t-value is:
 
