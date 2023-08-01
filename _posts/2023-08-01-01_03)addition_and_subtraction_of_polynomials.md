@@ -1,6 +1,14 @@
-
-# 다항식의 덧셈과 뺄셈 (학습)
-> 이번 시간에는 다항식의 덧셈과 뺄셈에 대해 알아보겠습니다.
+---
+title: 다항식의 덧셈과 뺄셈
+sidebar:
+  nav: docs-ko
+aside:
+  toc: true
+key: 20230801
+tags: 공통수학I
+lang: ko
+---
+이번 시간에는 다항식의 덧셈과 뺄셈에 대해 알아보겠습니다.
 
 ### 다항식의 덧셈과 뺄셈
 <video width="800" height="450" controls src="media/H11_0103_Scene1.mp4" autoplay muted></video>
