@@ -20,54 +20,16 @@ header:
       en-AU   : *EN
     url: https://www.answered.co.kr
 
-docs-en:
-  - title:      Basic Linear Algebra Theories
-    children:
-      - title:  Basic Operations of Vectors
-        url:    2020/09/07/basic_vector_operation_en.html
-      - title:  View Points on Matrix Multiplication
-        url:    2020/09/08/matrix_multiplication_en.html
-      - title:  Meaning of Row Vector and Inner Product
-        url:    2020/09/09/row_vector_and_inner_product_en.html
-      - title:  Matrix as Linear Transformation
-        url:    2019/07/15/Matrix_as_Linear_Transformation_en.html
-      - title:  Geometric Meaning of Determinant
-        url:    2019/08/06/determinant_en.html
-      - title:  Eigenvalue and Eigenvector
-        url:    2019/07/17/eigen_vector_en.html
-      - title:  Relationship of Four Fundamental Subspaces
-        url:    2020/11/17/four_fundamental_subspaces_en.html
-      - title:  Change of Basis
-        url:    2020/12/07/change_of_basis_en.html
-      - title:  Elementary Square Matrices
-        url:    2021/06/15/elementary_square_matrices_en.html
-      - title:  LU Decomposition
-        url:    2021/06/16/LU_decomposition_en.html
-      - title:  Gauss/Gauss-Jordan Elimination
-        url:    2021/06/19/Gauss_elimination_en.html
-
 docs-ko:
   - title:      공통수학I (구 고등수학 (상))
     children:
       - title:  다항식의 뜻
         url:    2023/08/01/01_01)meaning_of_polynomials.html
       - title:  다항식의 정리
-        url:    2023/08/01/01_02)simplifying_polynomials
+        url:    2023/08/01/01_02)simplifying_polynomials.html
       - title:  다항식의 덧셈과 뺄셈
         url:    2023/08/01/01_03)addition_and_subtraction_of_polynomials.html
       - title:  지수법칙
         url:    2023/08/01/01_04)law_of_exponents.html
       - title:  다항식의 곱셈
         url:    2023/08/01/01_05)multiplication_of_polynomials.html
-      - title:  고윳값과 고유벡터
-        url:    2019/07/17/eigen_vector.html
-      - title:  4개 주요 부분 공간의 관계
-        url:    2020/11/17/four_fundamental_subspaces.html
-      - title:  기저의 변환
-        url:    2020/12/07/change_of_basis.html
-      - title:  기본 행렬
-        url:    2021/06/15/elementary_square_matrices.html
-      - title:  LU 분해
-        url:    2021/06/16/LU_decomposition.html
-      - title:  가우스/가우스-조던 소거법
-        url:    2021/06/19/Gauss_elimination.html
