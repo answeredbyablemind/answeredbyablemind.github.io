@@ -6,12 +6,27 @@
 {%- assign _mathjax_autoNumber = __return -%}
 
 <script type="text/x-mathjax-config">
-	var _config = { tex2jax: {
-		inlineMath: [['$','$'], ['\\(','\\)']]
-	}};
+	var _config = {
+		jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+		extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "a11y/accessibility-menu.js"],
+		TeX: {
+		  extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","color.js"]
+		},
+		'HTML-CSS': { availableFonts: ['TeX'] },
+		tex2jax: {
+		  inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+		  displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+		  processEnvironments: true,
+		  processEscapes: true,
+		}
+	  };
 	{%- if _mathjax_autoNumber == true -%}
 		_config.TeX = { equationNumbers: { autoNumber: "all" } };
 	{%- endif -%}
 	MathJax.Hub.Config(_config);
 </script>
 <script type="text/javascript" src="{{ _sources.mathjax }}" async></script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
