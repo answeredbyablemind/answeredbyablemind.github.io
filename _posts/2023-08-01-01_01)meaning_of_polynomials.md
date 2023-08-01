@@ -11,7 +11,7 @@ lang: ko
 
 이번 시간에는 다항식의 뜻에 대해 알아보겠습니다.
 중학교에서 다음과 같은 용어들을 배웠던 것 기억하시나요?
-
+\(\require{color}\)
 $\definecolor{PURPLEA}{rgb}{0.792, 0.639, 0.91}\definecolor{TEALC}{rgb}{0.361, 0.816, 0.702}\definecolor{BLUEC}{rgb}{0.345, 0.769, 0.867}\definecolor{YELLOWE}{rgb}{0.91, 0.757, 0.11}\definecolor{REDC}{rgb}{0.988, 0.384, 0.333}
 \definecolor{GREENC}{rgb}{0.514, 0.757, 0.404}
 \newcommand\gr[1]{\color{GREENC}#1}
