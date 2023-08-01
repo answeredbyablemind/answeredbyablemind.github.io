@@ -8,6 +8,24 @@ key: 20230801
 tags: 공통수학I
 lang: ko
 ---
+      {% raw %}
+      $\definecolor{PURPLEA}{rgb}{0.792, 0.639, 0.91}\definecolor{TEALC}{rgb}{0.361, 0.816, 0.702}\definecolor{BLUEC}{rgb}{0.345, 0.769, 0.867}\definecolor{YELLOWE}{rgb}{0.91, 0.757, 0.11}\definecolor{REDC}{rgb}{0.988, 0.384, 0.333}
+      \definecolor{GREENC}{rgb}{0.514, 0.757, 0.404}
+      \newcommand\gr[1]{{\color{GREENC}#1}}
+      \newcommand\pp[1]{{\color{PURPLEA}#1}}
+      \newcommand\tl[1]{{\color{TEALC}#1}}
+      \newcommand\pk[1]{{\color{PURPLEA}#1}}
+      \newcommand\bl[1]{{\color{BLUEC}#1}}
+      \newcommand\or[1]{{\color{YELLOWE}#1}}
+      \newcommand\rd[1]{{\color{REDC}#1}}
+      \newcommand\grx{\gr{x}}\newcommand\gry{\gr{y}}
+      \newcommand\tlx{\tl{x}}\newcommand\tly{\tl{y}}\newcommand\pkx{\pk{x}}\newcommand\pky{\pk{y}}\newcommand\ppx{\pk{x}}\newcommand\ppy{\pk{y}}
+      \newcommand\blx{\bl{x}}\newcommand\bly{\bl{y}}\newcommand\orx{\or{x}}\newcommand\ory{\or{y}}\newcommand\rdx{\rd{x}}\newcommand\rdy{\rd{y}}$ 
+      <!--①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿
+      ⓵⓶⓷⓸⓹⓺⓻⓼⓽⓾
+      ❶❷❸❹❺❻❼❽❾❿⓫⓬⓭⓮⓯⓰⓱⓲⓳⓴
+      ⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇-->{% endraw %}
+
 
 이번 시간에는 다항식의 뜻에 대해 알아보겠습니다.
 중학교에서 다음과 같은 용어들을 배웠던 것 기억하시나요?
