@@ -1,0 +1,117 @@
+<!-- RED_C = #FC6255
+>>> GREEN_C'#83C167'
+>>> TEAL_C'#5CD0B3'
+>>> YELLOW_E'#E8C11C'
+>>> PURPLE_A'#CAA3E8' >>> --> 
+$\definecolor{PURPLEA}{rgb}{0.792, 0.639, 0.91}\definecolor{TEALC}{rgb}{0.361, 0.816, 0.702}\definecolor{BLUEC}{rgb}{0.345, 0.769, 0.867}\definecolor{YELLOWE}{rgb}{0.91, 0.757, 0.11}\definecolor{REDC}{rgb}{0.988, 0.384, 0.333}
+\definecolor{GREENC}{rgb}{0.514, 0.757, 0.404}
+\newcommand\gr[1]{{\color{GREENC}#1}}
+\newcommand\pp[1]{{\color{PURPLEA}#1}}
+\newcommand\tl[1]{{\color{TEALC}#1}}
+\newcommand\pk[1]{{\color{PURPLEA}#1}}
+\newcommand\bl[1]{{\color{BLUEC}#1}}
+\newcommand\or[1]{{\color{YELLOWE}#1}}
+\newcommand\rd[1]{{\color{REDC}#1}}
+\newcommand\grx{\gr{x}}\newcommand\gry{\gr{y}}
+\newcommand\tlx{\tl{x}}\newcommand\tly{\tl{y}}\newcommand\pkx{\pk{x}}\newcommand\pky{\pk{y}}\newcommand\ppx{\pk{x}}\newcommand\ppy{\pk{y}}
+\newcommand\blx{\bl{x}}\newcommand\bly{\bl{y}}\newcommand\orx{\or{x}}\newcommand\ory{\or{y}}\newcommand\rdx{\rd{x}}\newcommand\rdy{\rd{y}}$ 
+<!--①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿
+⓵⓶⓷⓸⓹⓺⓻⓼⓽⓾
+❶❷❸❹❺❻❼❽❾❿⓫⓬⓭⓮⓯⓰⓱⓲⓳⓴
+⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇-->
+
+# 다항식의 정리 (학습)
+> 이번 시간에는 다항식의 정리에 대해 알아보겠습니다.
+다항식은 동류항끼리 모아 정리해서 간단히 나타낼 수 있는데요, 
+그 방법을 알아봅시다.
+
+
+## 내림차순 정리와 오름차순 정리
+<!--<video width="800" height="450" src="media/H11_0102_Scene1.mp4" type="video/mp4" controls>-->
+<img width="800" height="450" src="media/H11_0102_Scene1.png">
+
+
+어느 한 문자에 대해서 
+
+- 내림차순 정리를 하는 것은, **그 문자를 기준으로**
+차수가 높은 항부터 낮은 항까지 차례로 나타내는 것을 의미하고,
+- 오름차순 정리를 하는 것은  **그 문자를 기준으로**
+차수가 낮은 항부터 높은 항까지 차례로 나타내는 것을 의미합니다.
+
+## 예제 1
+다음 식을 여러 가지 방법으로 정리해봅시다.
+$$x^3-3 x^2 y+2 x y+7 x^2 y-x+8$$
+
+#### $x$에 대한 내림차순 정리
+이 식을 $\tlx$에 대한 내림차순으로 정리하고 싶으면,
+우선 $\tlx$를 특정 문자로 하는 동류항을 찾아야 합니다.
+$\tlx$를 특정 문자로 하는 동류항은 다음과 같아요.
+
+- $2 \tlx y$와 $-\tlx$
+- $-3 \tl{x^2} y$와 $7 \tl{x^2} y$
+
+
+동류항으로 정리할 때는,
+다음과 같이 특정 문자 부분 $\tl{x^2}$과
+$\tlx$를 뒤로 빼서 정리해 놓는 것이 좋습니다.
+
+- $\begin{aligned}[t]
+2\tlx y-\tlx
+&= 2y\tlx - \tlx\\
+& = (2y-1) \tlx
+\end{aligned}$  
+- $\begin{aligned}[t]
+    -3 \tl{x^2} y + 7 \tl{x^2} y &= -3y \tl{x^2} + 7y \tl{x^2}\\ 
+    &= \left( -3y+7y \right)\tl{x^2} = 4y\tl{x^2}
+\end{aligned}$
+
+그러면 $6$개의 항이 $4$개의 항으로 줄게 되어요.
+
+* 정리 전 : $x^3-3 x^2 y+2 x y+7 x^2 y-x+8$
+* 정리 후 : $\tl{x^3} + 4 y \tl{x^2} + \left( 2y-1 \right)\tlx +  8$
+
+위 식과 같이 $x$에 대한 차수가 높은 것부터 차례대로 써주면 $x$에 대한 내림차순이 완성되는 것이죠.
+
+#### $y$에 대한 내림차순 정리
+
+이번에는 $\pky$에 대한 내림차순을 해보겠습니다. 
+먼저 $y$를 특정 문자로 하는 동류항은
+$-3 x^2 \pky$와 $2 x \pky$가 되겠죠?
+이 항들을 정리하면 $\left(4 x^2+2 x\right) \pky$가 됩니다.
+
+또한 $\pky$를 갖지 않은 나머지 항들인
+$x^3$, $-x$, $8$을 묶어서
+상수항 ${x^3-x+8}$로 볼 수 있어요.
+
+그러면 6개의 항이 2개의 항으로 줄게 되고,
+$\pky$의 차수가 높은 것부터 차례대로 써주면 다음과 같아요.
+
+- 정리 전 : $x^3-3 x^2 y+2 x y+7 x^2 y-x+8$
+- 정리 후 : $\left(4 x^2+2 x\right) \pky + {x^3-x+8}$
+
+이렇게 $y$에 대한 내림차순이 완성되는 것이죠.
+> $y$에 대한 내림차순에서
+일차항의 계수인 $4x^2+2x$와 상수항인 $x^3 - x+8$는 
+$x$에 대한 내림차순으로 정리되어 있어요.
+큰 틀인 전체 식은 $y$에 대해 내림차순으로
+세세한 계수는 $x$에 대해 내림차순으로
+정리하는 습관을 들이면 좋아요.
+
+
+##### 오름차순 정리
+오름차순은 내림차순과 반대로, 차수가 낮은 것부터 쓰면 된다고 했는데요.
+내림차순 된 식을 거꾸로 써주면 쉽게 해결됩니다.
+- 정리 전 : $x^3-3 x^2 y+2 x y+7 x^2 y-x+8$
+- $x$에 대한 내림차순 : $\tl{x^3} + 4 y \tl{x^2} + \left( 2y-1 \right)\tlx +  8$
+- $x$에 대한 오름차순 : $8 + \left( 2y-1 \right)\tlx  + 4 y \tl{x^2} +  \tl{x^3}$
+- $y$에 대한 내림차순 : $\left(4 x^2+2 x\right) \pky +  {x^3-x+8}$
+- $y$에 대한 오름차순 : ${x^3-x+8}+ \left(4 x^2+2 x\right) \pky$
+
+지금까지 배운 내용을 시뮬레이션으로 다시 공부해볼까요?
+
+<video width="800" height="450" controls src="media/H11_0102_Scene2.mp4" autoplay muted></video>
+
+
+## 내림차순을 더 많이 사용해요!
+* 일반적으로 중학교/고등학교 수학에선 다항식을 정리할 때는 내림차순으로 정리합니다.
+* 오름차순은 <확률과 통계>와 대학교에서 가끔 사용되니, 참고용으로만 알아두면 좋습니다.
