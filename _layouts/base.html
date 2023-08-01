@@ -36,6 +36,9 @@ layout: none
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7FCL6D"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+{%- include mathjax_settings.html -%}
+    
     <div class="root" data-is-touch="false">
       {{ content }}
     </div>
@@ -43,7 +46,5 @@ layout: none
       {%- include scripts/common.js -%}
     </script>
 
-{%- include mathjax_settings.html -%}
-    
     </body>
 </html>
