@@ -1,6 +1,16 @@
+---
+title: 지수법칙
+sidebar:
+  nav: docs-ko
+aside:
+  toc: true
+key: 20230801
+tags: 공통수학I
+lang: ko
+---
 
-# 지수법칙 복습
-> 이번 시간에는 **지수법칙**에 대해 알아보겠습니다. 지수법칙은 중학교에서 배운 내용인데요, 복습해보도록 합시다.
+이번 시간에는 **지수법칙**에 대해 알아보겠습니다.
+지수법칙은 중학교에서 배운 내용인데요, 복습해보도록 합시다.
 
 <video width="800" height="450" controls src="media/H11_0104_Scene1.mp4" autoplay muted></video>
 
