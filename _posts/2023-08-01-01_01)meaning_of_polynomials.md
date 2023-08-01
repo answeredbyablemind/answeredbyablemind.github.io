@@ -74,6 +74,8 @@ $-7 x$ 자체를 상수항으로 볼 수 있습니다.
 - 특정 문자를 $z$로 보면, $x^2 y$에는 $z$가 없으니까
 $x^2 y $자체를 상수항으로 볼 수 있습니다.
 
+<details>
+<summary>시뮬레이션으로 보기</summary>
 <video width="800" height="450" controls src="media/H11_0101_Scene2.mp4" autoplay muted></video>
 </details>
 

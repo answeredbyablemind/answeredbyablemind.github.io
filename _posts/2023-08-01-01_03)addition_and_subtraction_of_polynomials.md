@@ -32,14 +32,14 @@ $$
 $$
 \begin{align*}
 A+B & =\left(2 x^2-7 x+6\right)+\left(3 x^2+2\right) \\
-& =\bl{2 x^2}-\tl{7 x}+\pk6+\bl{3 x^2}+\pk2 \\
-& =\bl{2 x^2}-\tl{7 x}+\bl{3 x^2}+\pp6+\pp2\\
-& =\bl{2 x^2}+\bl{3 x^2}-\tl{7x}+\pk{6}+\pk{2} \\
-& =\bl{5 x^2}-\tl{7 x}+\pk8\\
+& =\BL{2 x^2}-\TL{7 x}+\PK6+\BL{3 x^2}+\PK2 \\
+& =\BL{2 x^2}-\TL{7 x}+\BL{3 x^2}+\PP6+\PP2\\
+& =\BL{2 x^2}+\BL{3 x^2}-\TL{7x}+\PK{6}+\PK{2} \\
+& =\BL{5 x^2}-\TL{7 x}+\PK8\\
 \quad\\
 A\rd{\:-2\,\!} B & =\left(2 x^2-7 x+6\right)\rd{\:-2}\left(3 x^2+2\right) \\
-&=\bl{2x^2} - \tl{7x} + \pk6 - \bl{6x^2} - \pk4\\
-& =\bl{-4 x^2}-\tl{7x}+\pk2
+&=\BL{2x^2} - \TL{7x} + \PK6 - \BL{6x^2} - \PK4\\
+& =\BL{-4 x^2}-\TL{7x}+\PK2
 \end{align*}
 $$
 
