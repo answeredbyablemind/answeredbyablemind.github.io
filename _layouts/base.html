@@ -39,17 +39,7 @@ layout: none
 
     <div class="root" data-is-touch="false">
       
-      
-      {{ content }}
-
-
-    </div>
-
-    
-    <script>
-      {%- include scripts/common.js -%}
-    </script>
-{% raw %}
+      {% raw %}
 $\definecolor{PURPLEA}{rgb}{0.60, 0.40, 0.80}
 \definecolor{GREENC}{rgb}{0.514, 0.757, 0.404}
 \definecolor{BLUEC}{rgb}{0.345, 0.769, 0.867}
@@ -67,5 +57,15 @@ $\definecolor{PURPLEA}{rgb}{0.60, 0.40, 0.80}
 \newcommand\TLx{\TL{x}}\newcommand\TLy{\TL{y}}\newcommand\PKx{\PK{x}}\newcommand\PKy{\PK{y}}\newcommand\PPx{\PK{x}}\newcommand\PPy{\PK{y}}
 \newcommand\BLx{\BL{x}}\newcommand\BLy{\BL{y}}\newcommand\ORx{\OR{x}}\newcommand\ORy{\OR{y}}\newcommand\rdx{\rd{x}}\newcommand\rdy{\rd{y}}$ 
 {% endraw %}
+      {{ content }}
+
+
+    </div>
+
+    
+    <script>
+      {%- include scripts/common.js -%}
+    </script>
+
     </body>
 </html>
